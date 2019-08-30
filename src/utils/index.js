@@ -43,6 +43,9 @@ export default {
             } catch (e) {
                 console.log(`Not valid item for key [${key}] to set.`);
             }
+        },
+        removeItem(key) {
+            localStorage.removeItem('__exam_s0_' + key);
         }
     }
 }

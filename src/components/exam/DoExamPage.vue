@@ -111,7 +111,8 @@
                 letterIndex: [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'],
                 examInfo: {},
                 hasSubmit: false,
-                examHashCode: 0
+                examHashCode: 0,
+                historyErrorExams: []
             }
         },
         computed: {
@@ -119,7 +120,9 @@
                 return this.questions.length;
             },
             questions() {
-                return (this.examInfo.questions || []).map((q, i) => ({...q, active: i === this.questionNum}));
+                return (this.examInfo.questions || []).filter(
+                    q => this.isReviewError ? this.historyErrorHashCodes.includes(q.hashCode) : true
+                ).map((q, i) => ({...q, active: i === this.questionNum}));
             },
             questionsInfo() {
                 return this.questions.map(
@@ -135,6 +138,9 @@
                         }
                     }
                 )
+            },
+            historyErrorHashCodes() {
+                return this.historyErrorExams.map(exam => exam.hashCode);
             }
         },
         methods: {
@@ -151,6 +157,12 @@
                         result += '多选题'
                     } else {
                         result += '单选题'
+                    }
+                }
+                if (this.isReviewError) {
+                    let errorExam = this.historyErrorExams.find(exam => exam.hashCode === question.hashCode);
+                    if (errorExam && errorExam.times) {
+                        result += ` (做错次数: ${errorExam.times})`;
                     }
                 }
                 return result;
@@ -207,13 +219,34 @@
                 }
                 let rightNum = this.questionsInfo.filter(q => q.answer.isPass).length;
                 let rightRate = (rightNum / this.totalNum) * 100 + '%';
+
+                // 录入错误信息
+                const errorMapKey = 'errorMap_' + this.examHashCode;
+                let errorHashCodes = this.questionsInfo.filter(q => !q.answer.isPass).map(q => q.hashCode);
+                let errorHashCodeMap = utils.storage.getItem(errorMapKey);
+                if (!errorHashCodeMap) {
+                    errorHashCodeMap = {};
+                }
+                errorHashCodes.forEach(hashCode => {
+                    let codeInfo = errorHashCodeMap[hashCode];
+                    if (!codeInfo) {
+                        codeInfo = {times: 0, rightTimes: 0}
+                    }
+                    codeInfo.times++;
+                    errorHashCodeMap[hashCode] = codeInfo;
+                });
+                utils.storage.setItem(errorMapKey, errorHashCodeMap);
+
+                // 显示答题结果
                 this.isShowResult = true;
                 Dialog.alert({message: '答题结束，成绩如下：' + `正确：${rightNum}(总共：${this.totalNum})(正确率：${rightRate})`});
                 this.hasSubmit = true;
             },
             adaptExamConfig() {
                 let examInfo = {...defaultExamInfo, ...this.examConfig};
-                examInfo.questions = examInfo.questions.map(q => ({...defaultQuestionInfo, ...q}));
+                examInfo.questions = examInfo.questions.map(q => ({
+                    ...defaultQuestionInfo, ...q, hashCode: utils.getHashCode(q)
+                }));
                 this.examInfo = examInfo;
                 this.examHashCode = utils.getHashCode(this.examConfig);
                 utils.storage.setItem(this.examHashCode, this.examConfig);
@@ -223,12 +256,22 @@
                     title: examInfo.title
                 }));
                 utils.storage.setItem('exam_list', examList);
+                if (this.isReviewError) {
+                    this.loadHistoryErrorInfo();
+                }
             },
             getOptionColor(results, option) {
                 if (this.isShowResult) {
                     return results.map(res => res.api).includes(option.api) && option.isRight ? '#44af11' : '#cd0000'
                 }
                 return '#1989fa';
+            },
+            loadHistoryErrorInfo() {
+                const errorMapKey = 'errorMap_' + this.examHashCode;
+                let errorMap = utils.storage.getItem(errorMapKey);
+                if (errorMap) {
+                    this.historyErrorExams = Object.entries(errorMap).map(([key, value]) => ({hashCode: parseInt(key), ...value}));
+                }
             }
         },
         props: {
@@ -237,6 +280,10 @@
                 default() {
                     return defaultExamInfo;
                 }
+            },
+            isReviewError: {
+                type: Boolean,
+                default: false
             }
         },
         watch: {
@@ -245,6 +292,9 @@
             }
         },
         created() {
+            this.adaptExamConfig();
+        },
+        mounted() {
             this.adaptExamConfig();
         }
     }

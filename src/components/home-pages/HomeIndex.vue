@@ -12,11 +12,11 @@
                     :key="exam.hashCode"
                     icon="notes-o"
                     clickable
-                    @click="doExam(exam.hashCode)">
+                    @click="showOption(exam)">
                 <div slot="text" class="van-grid-item__text text-align-center">{{exam.title}}</div>
             </van-grid-item>
         </van-grid>
-        <van-popup v-model="show">
+        <van-popup v-model="isShowImporter">
             <div class="exam-import-box">
                 <van-cell-group>
                     <van-field
@@ -27,6 +27,13 @@
                             rows="10"></van-field>
                 </van-cell-group>
                 <van-button type="info" size="small" block @click="importLib">导入题库</van-button>
+            </div>
+        </van-popup>
+        <van-popup v-model="isShowOption" position="bottom" >
+            <div class="">
+                <van-button type="primary" size="small" block @click="doExam(optionInfo.hashCode)">重新测试</van-button>
+                <van-button type="info" size="small" block @click="doExam(optionInfo.hashCode,true)">复习错题</van-button>
+                <van-button type="danger" size="small" block @click="clearHistory(optionInfo.hashCode)">清空错题</van-button>
             </div>
         </van-popup>
     </div>
@@ -51,13 +58,20 @@
         name: "HomeIndex",
         data() {
             return {
-                show: false,
+                isShowImporter: false,
+                isShowOption: false,
                 questionLib: '',
-                examList: []
+                examList: [],
+                optionInfo: {
+                    canReviewError: true,
+                    canDoExam: true,
+                    canClear: true,
+                    hashCode: ''
+                }
             }
         },
         methods: {
-            doExam(hashCode) {
+            doExam(hashCode, isReviewError = false) {
                 let exam = utils.storage.getItem(hashCode);
                 if (!exam) {
                     Dialog.alert({message: '该题库已失效！'});
@@ -66,12 +80,27 @@
                 this.$router.push({
                     name: 'DoExamPage',
                     params: {
-                        examConfig: exam
+                        examConfig: exam,
+                        isReviewError
                     }
                 })
             },
+            clearHistory(hashCode){
+                const errorKey = 'errorMap_' + hashCode;
+                utils.storage.removeItem(errorKey);
+                this.isShowOption = false;
+                this.initExamList();
+            },
+            showOption(exam) {
+                if (exam.hasHistoryError) {
+                    this.optionInfo.hashCode = exam.hashCode;
+                    this.isShowOption = true;
+                } else {
+                    this.doExam(exam.hashCode);
+                }
+            },
             showImporter() {
-                this.show = true;
+                this.isShowImporter = true;
             },
             importLib() {
                 try {
@@ -87,10 +116,21 @@
                 }
             },
             initExamList() {
-                this.examList = utils.storage.getItem('exam_list') || [];
+                this.examList = (utils.storage.getItem('exam_list') || []).map(exam => {
+                    const errorKey = 'errorMap_' + exam.hashCode;
+                    let errorMap = utils.storage.getItem(errorKey);
+                    if (!errorMap){
+                        errorMap = {};
+                    }
+                    const hasHistoryError = Object.keys(errorMap).length > 0;
+                    return {...exam, errorMap, hasHistoryError}
+                })
             }
         },
         created() {
+            this.initExamList();
+        },
+        mounted() {
             this.initExamList();
         }
     }
