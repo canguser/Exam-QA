@@ -1,3 +1,14 @@
 .text-align-right{
     text-align: right;
 }
+
+.exam-m-bottom-small{
+    margin-bottom: .75rem;
+}
+.exam-m-top-small{
+    margin-top: .75rem;
+}
+
+.exam-p-around-small{
+    padding: 16px;
+}
