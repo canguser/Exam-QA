@@ -42,7 +42,7 @@
                     <div class="text-align-right">
                         <van-button size="small" v-if="i>0" @click="turnTo(i-1)">上一题</van-button>
                         <van-button size="small" type="info" v-if="i<totalNum-1" @click="turnTo(i+1)">下一题</van-button>
-                        <van-button size="small" type="primary" @click="submit">提交</van-button>
+                        <van-button size="small" type="primary" v-if="!hasSubmit" @click="submit">提交</van-button>
                     </div>
                 </div>
             </van-panel>
@@ -52,7 +52,9 @@
                 <van-row>
                     <van-col span="4" v-for="(question,i) in questionsInfo" :key="i">
                         <div class="exam-circle exam-done" @click="turnTo(i)"
-                             :class="{'exam-right':question.answer.isPass&&isShowResult,'exam-error':question.answer.isMistake&&isShowResult,'exam-current': questionNum === i}">{{i+1}}</div>
+                             :class="{'exam-right':question.answer.isPass&&isShowResult,'exam-error':question.answer.isMistake&&isShowResult,'exam-current': questionNum === i}">
+                            {{i+1}}
+                        </div>
                     </van-col>
                 </van-row>
             </div>
@@ -69,7 +71,8 @@
     import {RadioGroup, Radio} from 'vant';
     import {Checkbox, CheckboxGroup} from 'vant';
     import {Dialog} from 'vant';
-    import { Row, Col } from 'vant';
+    import {Row, Col} from 'vant';
+    import utils from '../../utils';
 
     Vue.use(Row).use(Col);
     // 全局注册
@@ -106,7 +109,9 @@
                 questionNum: 0,
                 isShowResult: false,
                 letterIndex: [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'],
-                examInfo: {}
+                examInfo: {},
+                hasSubmit: false,
+                examHashCode: 0
             }
         },
         computed: {
@@ -204,11 +209,20 @@
                 let rightRate = (rightNum / this.totalNum) * 100 + '%';
                 this.isShowResult = true;
                 Dialog.alert({message: '答题结束，成绩如下：' + `正确：${rightNum}(总共：${this.totalNum})(正确率：${rightRate})`});
+                this.hasSubmit = true;
             },
             adaptExamConfig() {
                 let examInfo = {...defaultExamInfo, ...this.examConfig};
                 examInfo.questions = examInfo.questions.map(q => ({...defaultQuestionInfo, ...q}));
                 this.examInfo = examInfo;
+                this.examHashCode = utils.getHashCode(this.examConfig);
+                utils.storage.setItem(this.examHashCode, this.examConfig);
+                let examList = utils.storage.getItem('exam_list') || [];
+                examList.map(e => e.hashCode).includes(this.examHashCode) || (examList.push({
+                    hashCode: this.examHashCode,
+                    title: examInfo.title
+                }));
+                utils.storage.setItem('exam_list', examList);
             },
             getOptionColor(results, option) {
                 if (this.isShowResult) {
@@ -249,7 +263,7 @@
         word-break: break-all;
     }
 
-    .exam-circle{
+    .exam-circle {
         height: 2rem;
         width: 2rem;
         border: 1px solid #1989fa;
@@ -261,27 +275,27 @@
         margin-bottom: .5rem;
     }
 
-    .exam-circle.exam-error{
+    .exam-circle.exam-error {
         color: #cd0000;
         border-color: #cd0000;
     }
 
-    .exam-circle.exam-right{
+    .exam-circle.exam-right {
         color: #44af11;
         border-color: #44af11;
     }
 
-    .exam-circle.exam-current{
+    .exam-circle.exam-current {
         background-color: #1989fa;
         color: white;
     }
 
-    .exam-circle.exam-error.exam-current{
+    .exam-circle.exam-error.exam-current {
         background-color: #cd0000;
         color: white;
     }
 
-    .exam-circle.exam-right.exam-current{
+    .exam-circle.exam-right.exam-current {
         background-color: #44af11;
         color: white;
     }

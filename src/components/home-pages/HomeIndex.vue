@@ -2,12 +2,19 @@
     <div>
         <van-grid>
             <van-grid-item
-                    v-for="value in 1"
-                    :key="value"
                     icon="notes-o"
                     clickable
-                    @click="doExam"
-                    text="开始答题"></van-grid-item>
+                    @click="showImporter">
+                <div slot="text" class="van-grid-item__text text-align-center">开始答题（导入）</div>
+            </van-grid-item>
+            <van-grid-item
+                    v-for="exam in examList"
+                    :key="exam.hashCode"
+                    icon="notes-o"
+                    clickable
+                    @click="doExam(exam.hashCode)">
+                <div slot="text" class="van-grid-item__text text-align-center">{{exam.title}}</div>
+            </van-grid-item>
         </van-grid>
         <van-popup v-model="show">
             <div class="exam-import-box">
@@ -32,8 +39,10 @@
     import {Button} from 'vant';
     import {Field} from 'vant';
     import {Cell, CellGroup} from 'vant';
+    import utils from '../../utils';
+    import {Dialog} from 'vant';
 
-
+    Vue.use(Dialog);
     Vue.use(Field).use(Cell).use(CellGroup);
     Vue.use(Button);
     Vue.use(Popup);
@@ -43,11 +52,25 @@
         data() {
             return {
                 show: false,
-                questionLib: ''
+                questionLib: '',
+                examList: []
             }
         },
         methods: {
-            doExam() {
+            doExam(hashCode) {
+                let exam = utils.storage.getItem(hashCode);
+                if (!exam) {
+                    Dialog.alert({message: '该题库已失效！'});
+                    return;
+                }
+                this.$router.push({
+                    name: 'DoExamPage',
+                    params: {
+                        examConfig: exam
+                    }
+                })
+            },
+            showImporter() {
                 this.show = true;
             },
             importLib() {
@@ -62,7 +85,13 @@
                 } catch (e) {
                     alert('题库格式错误')
                 }
+            },
+            initExamList() {
+                this.examList = utils.storage.getItem('exam_list') || [];
             }
+        },
+        created() {
+            this.initExamList();
         }
     }
 </script>
