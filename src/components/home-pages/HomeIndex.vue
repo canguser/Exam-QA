@@ -29,11 +29,14 @@
                 <van-button type="info" size="small" block @click="importLib">导入题库</van-button>
             </div>
         </van-popup>
-        <van-popup v-model="isShowOption" position="bottom" >
+        <van-popup v-model="isShowOption" position="bottom">
             <div class="">
-                <van-button type="primary" size="small" block @click="doExam(optionInfo.hashCode)">重新测试</van-button>
-                <van-button type="info" size="small" block @click="doExam(optionInfo.hashCode,true)">复习错题</van-button>
-                <van-button type="danger" size="small" block @click="clearHistory(optionInfo.hashCode)">清空错题</van-button>
+                <van-button type="primary" block @click="doExam(optionInfo.hashCode)">重新测试
+                </van-button>
+                <van-button type="info" block @click="doExam(optionInfo.hashCode,true)">复习错题
+                </van-button>
+                <van-button type="danger" block @click="clearHistory(optionInfo.hashCode)">清空错题
+                </van-button>
             </div>
         </van-popup>
     </div>
@@ -85,7 +88,7 @@
                     }
                 })
             },
-            clearHistory(hashCode){
+            clearHistory(hashCode) {
                 const errorKey = 'errorMap_' + hashCode;
                 utils.storage.removeItem(errorKey);
                 this.isShowOption = false;
@@ -108,7 +111,8 @@
                     this.$router.push({
                         name: 'DoExamPage',
                         params: {
-                            examConfig: lib
+                            examConfig: lib,
+                            isNew: true
                         }
                     })
                 } catch (e) {
@@ -119,7 +123,7 @@
                 this.examList = (utils.storage.getItem('exam_list') || []).map(exam => {
                     const errorKey = 'errorMap_' + exam.hashCode;
                     let errorMap = utils.storage.getItem(errorKey);
-                    if (!errorMap){
+                    if (!errorMap) {
                         errorMap = {};
                     }
                     const hasHistoryError = Object.keys(errorMap).length > 0;

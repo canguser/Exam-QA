@@ -1,51 +1,59 @@
 <template>
-    <div>
+    <div class="exam-root">
         <van-nav-bar
                 :title="examInfo.title"
                 fixed
                 left-arrow
                 @click-left="$router.back()"
         ></van-nav-bar>
-        <div v-for="(question, i) in questionsInfo" :key="i" v-if="i===questionNum">
-            <van-panel :title="getQuestionTitle(question)" :desc="getQuestionDesc(question)">
-                <div v-if="question.isMulti">
-                    <van-checkbox-group v-model="question.answer.multi.apis">
-                        <van-cell-group>
-                            <van-cell v-for="(option, oi) in question.answerOptions"
-                                      clickable @click="toggleAnswer(i, option.api)"
-                                      :key="oi">
-                                <template slot="title">
-                                    <span :class="{'right-answer':option.isRight&&question.answer.isAnswered,'error-answer':!option.isRight&&question.answer.isAnswered,'custom-title':true}">{{letterIndex[oi]+'. '+option.describe}}</span>
-                                </template>
-                                <van-checkbox slot="right-icon" :name="option.api"
-                                              :checked-color="getOptionColor(question.answer.results,option)"></van-checkbox>
-                            </van-cell>
-                        </van-cell-group>
-                    </van-checkbox-group>
-                </div>
-                <div v-if="!question.isMulti">
-                    <van-radio-group v-model="question.answer.single.api">
-                        <van-cell-group>
-                            <van-cell v-for="(option, oi) in question.answerOptions"
-                                      clickable @click="setAnswer(i, [option.api])"
-                                      :key="oi">
-                                <template slot="title">
-                                    <span :class="{'right-answer':option.isRight&&question.answer.isAnswered&&isShowResult,'error-answer':!option.isRight&&question.answer.isAnswered&&isShowResult,'custom-title':true}">{{letterIndex[oi]+'. '+option.describe}}</span>
-                                </template>
-                                <van-radio slot="right-icon" :name="option.api"
-                                           :checked-color="getOptionColor(question.answer.results,option)"></van-radio>
-                            </van-cell>
-                        </van-cell-group>
-                    </van-radio-group>
-                </div>
-                <div slot="footer">
-                    <div class="text-align-right">
-                        <van-button size="small" v-if="i>0" @click="turnTo(i-1)">上一题</van-button>
-                        <van-button size="small" type="info" v-if="i<totalNum-1" @click="turnTo(i+1)">下一题</van-button>
-                        <van-button size="small" type="primary" v-if="!hasSubmit" @click="submit">提交</van-button>
+        <div class="question-box"
+             :style="`width: ${totalNum*100}%;transform:translate(${-questionNum*100/totalNum}%,0)`">
+            <div class="question-item" v-for="(question,i) in questionsInfo" :key="question.hashCode">
+                <van-panel :title="getQuestionTitle(question)" :desc="getQuestionDesc(question)">
+                    <div v-if="question.isMulti">
+                        <van-checkbox-group v-model="question.answer.multi.apis">
+                            <van-cell-group>
+                                <van-cell v-for="(option, oi) in question.answerOptions"
+                                          clickable @click="toggleAnswer(i, option.api)"
+                                          :key="oi">
+                                    <template slot="title">
+                                        <span :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isAnswered&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}">{{letterIndex[oi]+'. '+option.describe}}</span>
+                                    </template>
+                                    <van-checkbox slot="right-icon" :name="option.api"
+                                                  :checked-color="getOptionColor(question,option)"></van-checkbox>
+                                </van-cell>
+                            </van-cell-group>
+                        </van-checkbox-group>
                     </div>
-                </div>
-            </van-panel>
+                    <div v-if="!question.isMulti">
+                        <van-radio-group v-model="question.answer.single.api">
+                            <van-cell-group>
+                                <van-cell v-for="(option, oi) in question.answerOptions"
+                                          clickable @click="setAnswer(i, [option.api])"
+                                          :key="oi">
+                                    <template slot="title">
+                                        <span :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isAnswered&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}">{{letterIndex[oi]+'. '+option.describe}}</span>
+                                    </template>
+                                    <van-radio slot="right-icon" :name="option.api"
+                                               :checked-color="getOptionColor(question,option)"></van-radio>
+                                </van-cell>
+                            </van-cell-group>
+                        </van-radio-group>
+                    </div>
+                    <div slot="footer">
+                        <div class="text-align-right">
+                            <van-button size="small" v-if="i>0" @click="turnTo(i-1)">上一题</van-button>
+                            <van-button size="small" type="info" v-if="i<totalNum-1" @click="turnTo(i+1)">下一题
+                            </van-button>
+                            <van-button size="small" type="warning" v-if="isPractice&&!question.answer.isAnswered"
+                                        @click="checkResult(questionNum)">检查该题答案
+                            </van-button>
+                            <van-button size="small" type="primary" v-if="!hasSubmit" @click="confirmSubmit">提交
+                            </van-button>
+                        </div>
+                    </div>
+                </van-panel>
+            </div>
         </div>
         <div class="exam-m-top-small">
             <div class="exam-p-around-small">
@@ -210,10 +218,20 @@
             turnTo(i) {
                 this.questionNum = i;
             },
+            confirmSubmit() {
+                Dialog.confirm({
+                    title: '提交答案',
+                    message: '确认提交？'
+                }).then(() => {
+                    this.submit();
+                }).catch(e => {
+                    console.log(e);
+                });
+            },
             submit() {
                 this.checkResult();
                 let answeredNum = this.questionsInfo.filter(q => q.answer.isAnswered).length;
-                if (answeredNum !== this.totalNum) {
+                if (answeredNum < this.totalNum && this.requireAllDone) {
                     Dialog.alert({message: '题目还没有答完：' + `${answeredNum}/${this.totalNum}`});
                     return;
                 }
@@ -245,24 +263,63 @@
             adaptExamConfig() {
                 let examInfo = {...defaultExamInfo, ...this.examConfig};
                 examInfo.questions = examInfo.questions.map(q => ({
-                    ...defaultQuestionInfo, ...q, hashCode: utils.getHashCode(q)
-                }));
+                    ...defaultQuestionInfo, ...q, hashCode: utils.getHashCode(q),
+                    answerOptions: !q.answerOptions ? [] : q.answerOptions.map(a => ({
+                        ...a,
+                        api: utils.getHashCode(a.describe) + ''
+                    }))
+                })).filter(q => {
+                    if (!q.describe || q.answerOptions.length === 0) {
+                        console.log('错误的题目(无描述或无答案).', q);
+                        return false;
+                    }
+                    // 去掉无正确答案的问题
+                    const checkNoAnswer = utils.groupArray(q.answerOptions, 'isRight');
+                    if (checkNoAnswer.length === 1 && !checkNoAnswer[0][0].isRight) {
+                        console.log('错误的题目（无正确答案）.', q);
+                        return false;
+                    }
+                    // 去掉问题中重复的答案
+                    const checkDuplicate = utils.groupArray(q.answerOptions, 'describe');
+                    const resultAnswers = checkDuplicate.map(checks => {
+                        if (checks.length > 1) {
+                            const result = {...checks[0]};
+                            if (utils.groupArray(checks, 'isRight').length !== checks.length) {
+                                result.invalid = true;
+                            }
+                            return result;
+                        }
+                        return checks[0];
+                    });
+                    // 去掉答案中有重复描述且对错不一的问题
+                    if (resultAnswers.find(r => r.invalid)) {
+                        console.log('错误的题目（答案中有重复描述且对错不一）.', q);
+                        return false;
+                    }
+                    q.answerOptions = utils.randomSort(resultAnswers);
+                    return true;
+                });
+                examInfo.questions = utils.randomSort(examInfo.questions);
+
                 this.examInfo = examInfo;
                 this.examHashCode = utils.getHashCode(this.examConfig);
-                utils.storage.setItem(this.examHashCode, this.examConfig);
-                let examList = utils.storage.getItem('exam_list') || [];
-                examList.map(e => e.hashCode).includes(this.examHashCode) || (examList.push({
-                    hashCode: this.examHashCode,
-                    title: examInfo.title
-                }));
-                utils.storage.setItem('exam_list', examList);
+                console.log('添加新题库:', this.isNew);
+                if (this.isNew) {
+                    utils.storage.setItem(this.examHashCode, this.examConfig);
+                    let examList = utils.storage.getItem('exam_list') || [];
+                    examList.map(e => e.hashCode).includes(this.examHashCode) || (examList.push({
+                        hashCode: this.examHashCode,
+                        title: examInfo.title
+                    }));
+                    utils.storage.setItem('exam_list', examList);
+                }
                 if (this.isReviewError) {
                     this.loadHistoryErrorInfo();
                 }
             },
-            getOptionColor(results, option) {
-                if (this.isShowResult) {
-                    return results.map(res => res.api).includes(option.api) && option.isRight ? '#44af11' : '#cd0000'
+            getOptionColor(question, option) {
+                if (this.isShowResult || (this.isPractice && question.answer.isAnswered)) {
+                    return question.answer.results.map(res => res.api).includes(option.api) && option.isRight ? '#44af11' : '#cd0000'
                 }
                 return '#1989fa';
             },
@@ -284,15 +341,24 @@
             isReviewError: {
                 type: Boolean,
                 default: false
+            },
+            isNew: {
+                type: Boolean,
+                default: false
+            },
+            requireAllDone: {
+                type: Boolean,
+                default: false
+            },
+            isPractice: {
+                type: Boolean,
+                default: true
             }
         },
         watch: {
             examConfig() {
                 this.adaptExamConfig();
             }
-        },
-        created() {
-            this.adaptExamConfig();
         },
         mounted() {
             this.adaptExamConfig();
@@ -301,6 +367,10 @@
 </script>
 
 <style scoped>
+    .exam-root{
+        overflow-x: hidden;
+    }
+
     span.error-answer {
         color: #cd0000;
     }
@@ -310,7 +380,7 @@
     }
 
     span.custom-title {
-        word-break: break-all;
+        word-break: break-word;
     }
 
     .exam-circle {
@@ -348,6 +418,21 @@
     .exam-circle.exam-right.exam-current {
         background-color: #44af11;
         color: white;
+    }
+
+    .question-box {
+        position: relative;
+        width: 100%;
+        display: flex;
+        transition: transform .35s;
+    }
+
+    .question-item {
+        width: 100%;
+    }
+
+    .question-enter, .question-leave-to {
+        opacity: 0;
     }
 
 </style>
