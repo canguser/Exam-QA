@@ -131,9 +131,6 @@
                 })
             }
         },
-        created() {
-            this.initExamList();
-        },
         mounted() {
             this.initExamList();
         }

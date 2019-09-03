@@ -1,18 +1,27 @@
-.text-align-right{
+.text-align-right {
     text-align: right;
 }
 
-.text-align-center{
+.text-align-center {
     text-align: center;
 }
 
-.exam-m-bottom-small{
+.exam-m-bottom-small {
     margin-bottom: .75rem;
 }
-.exam-m-top-small{
+
+.exam-m-top-small {
     margin-top: .75rem;
 }
 
-.exam-p-around-small{
+.exam-p-around-small {
     padding: 16px;
+}
+
+.is-absolute {
+    position: absolute;
+}
+
+.is-relation {
+    position: relative;
 }

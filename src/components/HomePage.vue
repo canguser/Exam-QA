@@ -4,8 +4,9 @@
                 :title="activePage.label"
                 fixed
         ></van-nav-bar>
-        <div>
+        <div class="is-relation">
             <component :is="activePage.api"></component>
+            <p class="text-align-center is-absolute" style="color: #efefef;width: 100%">{{version}}</p>
         </div>
         <van-tabbar v-model="activeTabIndex">
             <van-tabbar-item v-for="(page, i) in pages" :key="i" :icon="page.icon">{{page.label}}</van-tabbar-item>
@@ -19,6 +20,7 @@
     import {Tabbar, TabbarItem} from 'vant';
     import HomeIndex from "@/components/home-pages/HomeIndex";
     import HelloWorld from "@/components/HelloWorld";
+    import config from "@/config";
 
     Vue.use(NavBar).use(Tabbar).use(TabbarItem);
 
@@ -38,6 +40,9 @@
         computed: {
             activePage() {
                 return this.pages[this.activeTabIndex] || {};
+            },
+            version() {
+                return config.version;
             }
         }
     }

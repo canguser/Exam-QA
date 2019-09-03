@@ -9,8 +9,9 @@ export default {
         if (!_self || ['string', 'number', 'boolean', 'function'].includes(typeof _self) || _self instanceof Date) {
             return '';
         }
-        return Object.entries(_self).map(([key, value]) => [key, this.getPropertyNames(value, deep--)])
-            .flat(Infinity).filter(r => r != null && r !== '')
+        return this.flat(
+            Object.entries(_self).map(([key, value]) => [key, this.getPropertyNames(value, deep--)])
+        ).filter(r => r != null && r !== '')
     },
     getMessage(_self, deep) {
         deep == null && (deep = 10);
@@ -20,9 +21,11 @@ export default {
         if (!_self || ['string', 'number', 'boolean', 'function'].includes(typeof _self) || _self instanceof Date) {
             return [_self != null ? _self.toString() : ''];
         }
-        return Object.keys(_self).map(key => {
-            return this.getMessage(_self[key], deep--);
-        }).flat(Infinity).filter(r => r != null && r !== '');
+        return this.flat(
+            Object.keys(_self).map(key => {
+                return this.getMessage(_self[key], deep--);
+            })
+        ).filter(r => r != null && r !== '');
     },
     getStrHashCode(str) {
         let hash = 0, i, chr, len;
@@ -33,6 +36,28 @@ export default {
             hash |= 0; // Convert to 32bit integer
         }
         return hash;
+    },
+    flat(arr, deep = Infinity) {
+        let ret = [];
+        let dirty = false;
+        arr.forEach(item => {
+            if (Array.isArray(item)) {
+                dirty = true;
+                ret.push(...item)
+            } else {
+                ret.push(item)
+            }
+        });
+        return dirty && deep > 0 ? this.flat(ret, deep--) : ret
+    },
+    fromEntries(arr){
+        let result = {};
+        arr.forEach(a=>{
+            if (a instanceof Array){
+                result[a[0]] = a[1];
+            }
+        });
+        return result;
     },
     storage: {
         getItem(key) {
