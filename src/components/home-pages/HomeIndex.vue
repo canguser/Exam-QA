@@ -95,6 +95,7 @@
                 this.initExamList();
             },
             showOption(exam) {
+                // console.log(exam.hashCode);
                 if (exam.hasHistoryError) {
                     this.optionInfo.hashCode = exam.hashCode;
                     this.isShowOption = true;
