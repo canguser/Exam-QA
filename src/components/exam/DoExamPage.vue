@@ -120,7 +120,7 @@
                 examInfo: {},
                 hasSubmit: false,
                 examHashCode: 0,
-                historyErrorExams: []
+                historyExams: []
             }
         },
         computed: {
@@ -148,7 +148,7 @@
                 )
             },
             historyErrorHashCodes() {
-                return this.historyErrorExams.map(exam => exam.hashCode);
+                return this.historyExams.filter(exam => exam.times > 0).map(exam => exam.hashCode);
             }
         },
         methods: {
@@ -167,10 +167,16 @@
                         result += '单选题'
                     }
                 }
-                if (this.isReviewError) {
-                    let errorExam = this.historyErrorExams.find(exam => exam.hashCode === question.hashCode);
-                    if (errorExam && errorExam.times) {
-                        result += ` (做错次数: ${errorExam.times})`;
+                let errorExam = this.historyExams.find(exam => exam.hashCode === question.hashCode);
+                if (errorExam) {
+                    if (this.isReviewError) {
+                        if (errorExam.times) {
+                            result += ` (做错次数: ${errorExam.times})`;
+                        }
+                    }
+                    const totalTimes = errorExam.times + errorExam.rightTimes;
+                    if (totalTimes > 0) {
+                        result += `（历史正确率：${(errorExam.rightTimes / totalTimes * 100).toFixed(0)}%）`;
                     }
                 }
                 return result;
@@ -243,18 +249,23 @@
 
                 // 录入错误信息
                 const errorMapKey = 'errorMap_' + this.examHashCode;
-                let errorHashCodes = this.questionsInfo.filter(q => !q.answer.isPass && q.answer.isChecked).map(q => q.hashCode);
+                let checkedQuestion = this.questionsInfo.filter(q => q.answer.isChecked);
                 // console.log(errorHashCodes);
                 let errorHashCodeMap = utils.storage.getItem(errorMapKey);
                 if (!errorHashCodeMap) {
                     errorHashCodeMap = {};
                 }
-                errorHashCodes.forEach(hashCode => {
+                checkedQuestion.forEach(question => {
+                    const hashCode = question.hashCode;
                     let codeInfo = errorHashCodeMap[hashCode];
                     if (!codeInfo) {
                         codeInfo = {times: 0, rightTimes: 0}
                     }
-                    codeInfo.times++;
+                    if (question.answer.isPass) {
+                        codeInfo.rightTimes++;
+                    } else {
+                        codeInfo.times++;
+                    }
                     errorHashCodeMap[hashCode] = codeInfo;
                 });
                 // console.log(errorHashCodeMap);
@@ -319,9 +330,7 @@
                     }));
                     utils.storage.setItem('exam_list', examList);
                 }
-                if (this.isReviewError) {
-                    this.loadHistoryErrorInfo();
-                }
+                this.loadHistoryExamInfo();
             },
             getOptionColor(question, option) {
                 if (this.isShowResult || (this.isPractice && question.answer.isChecked)) {
@@ -329,11 +338,11 @@
                 }
                 return '#1989fa';
             },
-            loadHistoryErrorInfo() {
+            loadHistoryExamInfo() {
                 const errorMapKey = 'errorMap_' + this.examHashCode;
                 let errorMap = utils.storage.getItem(errorMapKey);
                 if (errorMap) {
-                    this.historyErrorExams = Object.entries(errorMap).map(([key, value]) => ({hashCode: parseInt(key), ...value}));
+                    this.historyExams = Object.entries(errorMap).map(([key, value]) => ({hashCode: parseInt(key), ...value}));
                 }
             },
             swipe: function (evt) {
@@ -383,6 +392,20 @@
         },
         mounted() {
             this.adaptExamConfig();
+            console.log('开始答题');
+            try {
+                plus.device.setWakelock(true);
+            } catch (e) {
+                // ignore
+            }
+        },
+        destroyed() {
+            console.log('结束答题');
+            try {
+                plus.device.setWakelock(false);
+            } catch (e) {
+                // ignore
+            }
         }
     }
 </script>

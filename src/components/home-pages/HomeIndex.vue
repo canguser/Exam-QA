@@ -127,7 +127,7 @@
                     if (!errorMap) {
                         errorMap = {};
                     }
-                    const hasHistoryError = Object.keys(errorMap).length > 0;
+                    const hasHistoryError = !!Object.values(errorMap).find(q => q.times > 0);
                     return {...exam, errorMap, hasHistoryError}
                 })
             }
