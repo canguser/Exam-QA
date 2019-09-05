@@ -1,12 +1,12 @@
 <template>
-    <div class="exam-root">
+    <div class="exam-root" v-finger:swipe="swipe">
         <van-nav-bar
                 :title="examInfo.title"
                 fixed
                 left-arrow
                 @click-left="$router.back()"
         ></van-nav-bar>
-        <div class="question-box" v-finger:swipe="swipe"
+        <div class="question-box"
              :style="`width: ${totalNum*100}%;transform:translate(${-questionNum*100/totalNum}%,0)`">
             <div class="question-item" v-for="(question,i) in questionsInfo" :key="question.hashCode">
                 <van-panel :title="getQuestionTitle(question)" :desc="getQuestionDesc(question)">
@@ -395,6 +395,7 @@
             console.log('开始答题');
             try {
                 plus.device.setWakelock(true);
+                console.log('打开屏幕常亮');
             } catch (e) {
                 // ignore
             }
@@ -403,6 +404,7 @@
             console.log('结束答题');
             try {
                 plus.device.setWakelock(false);
+                console.log('关闭屏幕常亮');
             } catch (e) {
                 // ignore
             }
