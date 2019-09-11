@@ -30,10 +30,10 @@
             return {
                 activeTabIndex: 0,
                 pages: [
-                    {title: '主页', label: '主页', api: HomeIndex, icon: 'home-o'},
-                    {title: '搜索', label: '搜索', api: HelloWorld, icon: 'search'},
-                    {title: '朋友', label: '朋友', api: HomeIndex, icon: 'friends-o'},
-                    {title: '设置', label: '设置', api: HomeIndex, icon: 'setting-o'},
+                    {title: '主页', label: 'Home', api: HomeIndex, icon: 'home-o'},
+                    // {title: '搜索', label: '搜索', api: HelloWorld, icon: 'search'},
+                    // {title: '朋友', label: '朋友', api: HomeIndex, icon: 'friends-o'},
+                    // {title: '设置', label: '设置', api: HomeIndex, icon: 'setting-o'},
                 ],
             }
         },
