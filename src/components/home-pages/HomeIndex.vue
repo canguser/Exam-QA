@@ -72,6 +72,7 @@
     import {Field} from 'vant';
     import {Cell, CellGroup} from 'vant';
     import utils from '../../utils';
+    import {questionDao, historyRecordDao, bankDao} from '../../dao';
     import {Dialog} from 'vant';
     import config from "@/config";
     import {Checkbox, CheckboxGroup} from 'vant';
@@ -217,10 +218,40 @@
                     const hasHistoryError = !!Object.values(errorMap).find(q => q.times > 0);
                     return {...exam, errorMap, hasHistoryError}
                 })
+            },
+            syncDataToIndexDB() {
+                this.initExamList();
+                let exams = JSON.parse(JSON.stringify(this.examList))
+                    .map(e => ({...e, bank: utils.storage.getItem(e.hashCode)})).map(e => ({
+                        ...e, questionSet: e.bank.questions, bank: {
+                            ...e.bank, hashCode: utils.getHashCode(e.bank),
+                            questions: e.bank.questions.map(q => utils.getHashCode(q))
+                        },
+                        historyRecords: Object.entries(e.errorMap).map(([relatedQuestion, {times, rightTimes}]) => ({
+                            relatedQuestion, rightTimes, errorTimes: times
+                        }))
+                    }));
+                questionDao.upsert(utils.flat(exams.map(e => e.questionSet.map(q => ({
+                    ...q, hashCode: utils.getHashCode(q)
+                }))), 2))
+                    .then(() => {
+                        return bankDao.upsert(exams.map(e => e.bank));
+                    })
+                    .then(() => {
+                        return historyRecordDao.upsert(utils.flat(exams.map(e => e.historyRecords), 2));
+                    })
+                    .then(() => {
+                        console.log('sync success.');
+                    })
+                    .catch(e => {
+                        console.log(e);
+                    });
+                // console.log(exams);
             }
         },
         mounted() {
             this.initExamList();
+            this.syncDataToIndexDB();
         }
     }
 </script>

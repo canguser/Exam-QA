@@ -35,7 +35,7 @@ export default {
             hash = ((hash << 5) - hash) + chr;
             hash |= 0; // Convert to 32bit integer
         }
-        return hash;
+        return hash + '';
     },
     flat(arr, deep = Infinity) {
         let ret = [];
@@ -50,10 +50,10 @@ export default {
         });
         return dirty && deep > 0 ? this.flat(ret, deep--) : ret
     },
-    fromEntries(arr){
+    fromEntries(arr) {
         let result = {};
-        arr.forEach(a=>{
-            if (a instanceof Array){
+        arr.forEach(a => {
+            if (a instanceof Array) {
                 result[a[0]] = a[1];
             }
         });

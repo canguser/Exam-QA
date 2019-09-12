@@ -319,7 +319,7 @@
 
                 this.examInfo = examInfo;
                 this.examHashCode = utils.getHashCode(this.examConfig);
-                console.log(this.examHashCode);
+                // console.log(this.examHashCode);
                 console.log('添加新题库:', this.isNew);
                 if (this.isNew) {
                     utils.storage.setItem(this.examHashCode, this.examConfig);
