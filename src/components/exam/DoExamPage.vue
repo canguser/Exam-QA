@@ -342,7 +342,7 @@
                 const errorMapKey = 'errorMap_' + this.examHashCode;
                 let errorMap = utils.storage.getItem(errorMapKey);
                 if (errorMap) {
-                    this.historyExams = Object.entries(errorMap).map(([key, value]) => ({hashCode: parseInt(key), ...value}));
+                    this.historyExams = Object.entries(errorMap).map(([key, value]) => ({hashCode: key, ...value}));
                 }
             },
             swipe: function (evt) {

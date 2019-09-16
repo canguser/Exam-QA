@@ -4,6 +4,13 @@ class BaseDao {
     constructor(db, defaultEntry) {
         this.db = db;
         this.defaultEntry = defaultEntry || {};
+        this.db.hook('creating', (primKey, obj) => {
+            obj.createDate = Date.now();
+            obj.modifyDate = Date.now();
+        });
+        this.db.hook('updating', () => {
+            return {modifyDate: Date.now()};
+        })
     }
 
     async upsert(records) {
@@ -13,7 +20,7 @@ class BaseDao {
         return this.db.put({...this.defaultEntry, ...records});
     }
 
-    async query(field) {
+    query(field) {
         return this.db.where(field);
     }
 
