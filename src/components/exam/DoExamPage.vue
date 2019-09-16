@@ -319,17 +319,6 @@
 
                 this.examInfo = examInfo;
                 this.examHashCode = utils.getHashCode(this.examConfig);
-                // console.log(this.examHashCode);
-                console.log('添加新题库:', this.isNew);
-                if (this.isNew) {
-                    utils.storage.setItem(this.examHashCode, this.examConfig);
-                    let examList = utils.storage.getItem('exam_list') || [];
-                    examList.map(e => e.hashCode).includes(this.examHashCode) || (examList.push({
-                        hashCode: this.examHashCode,
-                        title: examInfo.title
-                    }));
-                    utils.storage.setItem('exam_list', examList);
-                }
                 this.loadHistoryExamInfo();
             },
             getOptionColor(question, option) {
