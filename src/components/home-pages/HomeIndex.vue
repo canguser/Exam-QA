@@ -72,7 +72,7 @@
     import {Field} from 'vant';
     import {Cell, CellGroup} from 'vant';
     import utils from '../../utils';
-    import {questionDao, historyRecordDao, bankDao} from '../../dao';
+    import {questionDao, historyRecordDao, bankDao, configDao} from '../../dao';
     import {Dialog} from 'vant';
     import config from "@/config";
     import {Checkbox, CheckboxGroup} from 'vant';
@@ -127,24 +127,37 @@
         },
         methods: {
             doExam(hashCode, isReviewError = false) {
-                let exam = utils.storage.getItem(hashCode);
-                if (!exam) {
-                    Dialog.alert({message: '该题库已失效！'});
-                    return;
-                }
-                this.$router.push({
-                    name: 'DoExamPage',
-                    params: {
-                        examConfig: exam,
-                        isReviewError
-                    }
-                })
+                // let exam = utils.storage.getItem(hashCode);
+                bankDao.query('hashCode').equals(hashCode).first()
+                    .then(exam => {
+                        return Promise.all([exam, ...exam.questions.map(q => questionDao.query('hashCode').equals(q).first())])
+                    })
+                    .then(([exam, ...questions]) => {
+                        exam.questions = questions;
+                        if (!exam) {
+                            Dialog.alert({message: '该题库已失效！'});
+                            return;
+                        }
+                        this.$router.push({
+                            name: 'DoExamPage',
+                            params: {
+                                examConfig: exam,
+                                isReviewError
+                            }
+                        })
+                    });
             },
             clearHistory(hashCode) {
-                const errorKey = 'errorMap_' + hashCode;
-                utils.storage.removeItem(errorKey);
-                this.isShowOption = false;
-                this.initExamList();
+                bankDao.queryByHashCode(hashCode)
+                    .then(bankDao => {
+                        bankDao = bankDao || {};
+                        return historyRecordDao.delete(bankDao.questions || []);
+                    }).then(() => {
+                        console.log('remove the history.');
+                        this.isShowOption = false;
+                        this.initExamList();
+                    }
+                );
             },
             showOption(exam) {
                 // console.log(exam.hashCode);
@@ -233,9 +246,9 @@
                         return Promise.all(promises);
                     })
                     .then(banks => {
-                        console.log(banks.map(e=>({...e})));
-                        console.log(this.examList.map(e=>({...e})));
-                        // this.examList = banks;
+                        // console.log(banks.map(e => ({...e})));
+                        // console.log(this.examList.map(e => ({...e})));
+                        this.examList = banks;
                     })
             },
             syncDataToIndexDB() {
@@ -263,6 +276,8 @@
                 }).then(() => {
                     return historyRecordDao.upsert(utils.flat(exams.map(e => e.historyRecords), 2));
                 }).then(() => {
+                    return configDao.upsert({key: 'hasSync', value: true});
+                }).then(() => {
                     console.log('sync success.');
                 }).catch(e => {
                     console.log(e);
@@ -272,7 +287,13 @@
         },
         mounted() {
             this.initExamList();
-            this.syncDataToIndexDB();
+            configDao.query('key').equals('hasSync').first()
+                .then(hasSync => {
+                    hasSync = !!hasSync;
+                    if (!hasSync) {
+                        this.syncDataToIndexDB();
+                    }
+                });
         }
     }
 </script>

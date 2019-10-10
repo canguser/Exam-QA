@@ -8,8 +8,13 @@ class BaseDao {
             obj.createDate = Date.now();
             obj.modifyDate = Date.now();
         });
-        this.db.hook('updating', () => {
-            return {modifyDate: Date.now()};
+        this.db.hook('updating', (changed, key, origin) => {
+            changed['modifiedDate'] = Date.now();
+            if (!origin['createdDate']) {
+                changed['createdDate'] = Date.now();
+            }
+            console.log({...changed});
+            return changed;
         })
     }
 
@@ -22,6 +27,11 @@ class BaseDao {
 
     query(field) {
         return this.db.where(field);
+    }
+
+
+    queryByHashCode(hashCode) {
+        return this.query('hashCode').equals(hashCode).first();
     }
 
     async delete(keys) {
@@ -62,6 +72,14 @@ class HistoryRecordDao extends BaseDao {
         super(historyRecordDB, {
             rightTimes: 0, errorTimes: 0, maxTime: 0, minTime: 0, totalTime: 0
         });
+    }
+
+    queryByHashCode(hashCode) {
+        return this.query('relatedQuestion').equals(hashCode).first();
+    }
+
+    queryMany(hashCodeList) {
+        return this.query('relatedQuestion').anyOf(hashCodeList).toArray();
     }
 }
 

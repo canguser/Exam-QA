@@ -81,6 +81,7 @@
     import {Dialog} from 'vant';
     import {Row, Col} from 'vant';
     import utils from '../../utils';
+    import {historyRecordDao, bankDao} from '../../dao'
 
     Vue.use(Row).use(Col);
     // 全局注册
@@ -148,7 +149,7 @@
                 )
             },
             historyErrorHashCodes() {
-                return this.historyExams.filter(exam => exam.times > 0).map(exam => exam.hashCode);
+                return this.historyExams.filter(exam => exam.errorTimes > 0).map(exam => exam.hashCode);
             }
         },
         methods: {
@@ -170,11 +171,11 @@
                 let errorExam = this.historyExams.find(exam => exam.hashCode === question.hashCode);
                 if (errorExam) {
                     if (this.isReviewError) {
-                        if (errorExam.times) {
-                            result += ` (做错次数: ${errorExam.times})`;
+                        if (errorExam.errorTimes) {
+                            result += ` (做错次数: ${errorExam.errorTimes})`;
                         }
                     }
-                    const totalTimes = errorExam.times + errorExam.rightTimes;
+                    const totalTimes = errorExam.errorTimes + errorExam.rightTimes;
                     if (totalTimes > 0) {
                         result += `（历史正确率：${(errorExam.rightTimes / totalTimes * 100).toFixed(0)}%）`;
                     }
@@ -248,28 +249,25 @@
                 let rightRate = (rightNum / this.totalNum) * 100 + '%';
 
                 // 录入错误信息
-                const errorMapKey = 'errorMap_' + this.examHashCode;
                 let checkedQuestion = this.questionsInfo.filter(q => q.answer.isChecked);
-                // console.log(errorHashCodes);
-                let errorHashCodeMap = utils.storage.getItem(errorMapKey);
-                if (!errorHashCodeMap) {
-                    errorHashCodeMap = {};
-                }
                 checkedQuestion.forEach(question => {
-                    const hashCode = question.hashCode;
-                    let codeInfo = errorHashCodeMap[hashCode];
-                    if (!codeInfo) {
-                        codeInfo = {times: 0, rightTimes: 0}
-                    }
-                    if (question.answer.isPass) {
-                        codeInfo.rightTimes++;
-                    } else {
-                        codeInfo.times++;
-                    }
-                    errorHashCodeMap[hashCode] = codeInfo;
+                    historyRecordDao.queryByHashCode(question.hashCode).then(
+                        codeInfo => {
+                            if (!codeInfo) {
+                                codeInfo = {relatedQuestion: question.hashCode, errorTimes: 0};
+                            }
+                            if (question.answer.isPass) {
+                                codeInfo.rightTimes++;
+                            } else {
+                                codeInfo.errorTimes++;
+                            }
+                            historyRecordDao.upsert(codeInfo)
+                                .then(() => {
+                                    console.log('做题信息已保存');
+                                });
+                        }
+                    );
                 });
-                // console.log(errorHashCodeMap);
-                utils.storage.setItem(errorMapKey, errorHashCodeMap);
 
                 // 显示答题结果
                 this.isShowResult = true;
@@ -279,10 +277,10 @@
             adaptExamConfig() {
                 let examInfo = {...defaultExamInfo, ...this.examConfig};
                 examInfo.questions = examInfo.questions.map(q => ({
-                    ...defaultQuestionInfo, ...q, hashCode: utils.getHashCode(q),
+                    ...defaultQuestionInfo, ...q, hashCode: q.hashCode,
                     answerOptions: !q.answerOptions ? [] : q.answerOptions.map(a => ({
                         ...a,
-                        api: utils.getHashCode(a.describe) + ''
+                        api: utils.getHashCode(a) + ''
                     }))
                 })).filter(q => {
                     if (!q.describe || q.answerOptions.length === 0) {
@@ -318,7 +316,7 @@
                 examInfo.questions = utils.randomSort(examInfo.questions);
 
                 this.examInfo = examInfo;
-                this.examHashCode = utils.getHashCode(this.examConfig);
+                this.examHashCode = this.examConfig.hashCode;
                 this.loadHistoryExamInfo();
             },
             getOptionColor(question, option) {
@@ -328,11 +326,17 @@
                 return '#1989fa';
             },
             loadHistoryExamInfo() {
-                const errorMapKey = 'errorMap_' + this.examHashCode;
-                let errorMap = utils.storage.getItem(errorMapKey);
-                if (errorMap) {
-                    this.historyExams = Object.entries(errorMap).map(([key, value]) => ({hashCode: key, ...value}));
-                }
+                historyRecordDao.queryMany(this.examConfig.questions.map(q => q.hashCode))
+                    .then(records => {
+                        // console.log(records.map(r => r.relatedQuestion));
+                        this.historyExams = records.map(r => ({...r, hashCode: r.relatedQuestion}));
+                        // console.log(this.historyExams);
+                    });
+                // const errorMapKey = 'errorMap_' + this.examHashCode;
+                // let errorMap = utils.storage.getItem(errorMapKey);
+                // if (errorMap) {
+                //     this.historyExams = Object.entries(errorMap).map(([key, value]) => ({hashCode: key, ...value}));
+                // }
             },
             swipe: function (evt) {
                 switch (evt.direction) {
