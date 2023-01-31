@@ -7,6 +7,9 @@ dexieDB.version(1).stores({
     bank: 'hashCode, title, *questions, createDate, modifyDate',
     historyRecord: 'relatedQuestion, rightTimes, errorTimes, maxTime, minTime, totalTime, createDate, modifyDate'
 });
+dexieDB.version(2).stores({
+    bank: 'hashCode, title, *questions, category, createDate, modifyDate',
+});
 const configDB = dexieDB['config'];
 const questionDB = dexieDB['question'];
 const bankDB = dexieDB['bank'];

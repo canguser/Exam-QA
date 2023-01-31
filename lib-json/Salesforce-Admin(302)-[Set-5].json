@@ -1,0 +1,329 @@
+{
+  "title": "Salesforce-Admin(302)-[Set-5]",
+  "category": "Salesforce Admin",
+  "questions": [
+    {
+      "describe": "Sales management at Universal Containers is requesting better visibility into specific types of sales deals. They need to be notified when opportunities worth a large amount are close to closing. They would also like to receive a list of opportunities that are still open past the close date. Which feature can a system administrator use to accomplish this? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Big deal alerts"
+        },
+        {
+          "isRight": false,
+          "describe": "Opportunity Escalation Rules"
+        },
+        {
+          "isRight": true,
+          "describe": "Opportunity update reminders"
+        },
+        {
+          "isRight": false,
+          "describe": "Opportunity field history tracking"
+        }
+      ]
+    },
+    {
+      "describe": "What should a system administrator consider when setting up Mobile Lite? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Mobile Lite users must have a mobile license assigned to them"
+        },
+        {
+          "isRight": true,
+          "describe": "Mobile Lite provides access to standard objects and dashboards"
+        },
+        {
+          "isRight": false,
+          "describe": "Mobile Lite configurations can be created for each user"
+        },
+        {
+          "isRight": true,
+          "describe": "Mobile Lite must be enabled before users can install it"
+        }
+      ]
+    },
+    {
+      "describe": "Which type of chart can be used to display summary values from two different levels of grouping in a report?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Stacked bar chart"
+        },
+        {
+          "isRight": false,
+          "describe": "Funnel chart"
+        },
+        {
+          "isRight": false,
+          "describe": "Donut chart"
+        },
+        {
+          "isRight": true,
+          "describe": "Grouped line chart"
+        }
+      ]
+    },
+    {
+      "describe": "Which accounts are automatically synchronized on Salesforce Classic Lite?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "All recently accessed accounts"
+        },
+        {
+          "isRight": false,
+          "describe": "Accounts selected with the sync button"
+        },
+        {
+          "isRight": false,
+          "describe": "Accounts that the user owns"
+        },
+        {
+          "isRight": false,
+          "describe": "Any account created in the last 30 days"
+        }
+      ]
+    },
+    {
+      "describe": "Which permission is required to install and uninstall packages from Salesforce AppExchange?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Create AppExchange Packages"
+        },
+        {
+          "isRight": false,
+          "describe": "Manage Package Licenses"
+        },
+        {
+          "isRight": false,
+          "describe": "Upload AppExchange Packages"
+        },
+        {
+          "isRight": true,
+          "describe": "Download AppExchange Packages"
+        }
+      ]
+    },
+    {
+      "describe": "What user interface setting must be enabled for users to edit records in a list view?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Enhanced page layout editor"
+        },
+        {
+          "isRight": true,
+          "describe": "Enhanced lists"
+        },
+        {
+          "isRight": false,
+          "describe": "Enhanced profile list views"
+        },
+        {
+          "isRight": true,
+          "describe": "Inline editing"
+        }
+      ]
+    },
+    {
+      "describe": "Which task can a delegated administrator perform? (Choose 3)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Log in as a user who has granted login access"
+        },
+        {
+          "isRight": false,
+          "describe": "Reset passwords for all users"
+        },
+        {
+          "isRight": false,
+          "describe": "Create new user profiles"
+        },
+        {
+          "isRight": true,
+          "describe": "Manage users within specified roles"
+        },
+        {
+          "isRight": true,
+          "describe": "Manage specified custom objects"
+        }
+      ]
+    },
+    {
+      "describe": "Which schedule type can be defined for a product? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Quantity"
+        },
+        {
+          "isRight": false,
+          "describe": "Forecast"
+        },
+        {
+          "isRight": true,
+          "describe": "Revenue"
+        },
+        {
+          "isRight": false,
+          "describe": "Production"
+        }
+      ]
+    },
+    {
+      "describe": "How can a sales user relate an opportunity to a campaign? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Use the campaign influences related list on the opportunity"
+        },
+        {
+          "isRight": true,
+          "describe": "Select the primary campaign source for the opportunity"
+        },
+        {
+          "isRight": false,
+          "describe": "Select the campaign record type when creating the opportunity"
+        },
+        {
+          "isRight": false,
+          "describe": "Use the campaign hierarchy related list on the opportunity"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers set the Organization-Wide Defaults for accounts to public read/write. The sales management team is importing a new set of account records and needs to limit access to them. Access should be restricted to the account owner and members of a public group. How can this be accomplished?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Update the organization - wide defaults for accounts to private and create a sharing rule for the group."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a sharing rule to grant access to members of the public group."
+        },
+        {
+          "isRight": false,
+          "describe": "Manually share each account record with members of the public group."
+        },
+        {
+          "isRight": false,
+          "describe": "Upgrade the role hierarchy and assign members of the group to a role at the top of the hierarchy."
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers is capturing a percentage discount directly on an opportunity record. Sales management needs to include the discounted opportunity amount in pipeline reports. How can the system administrator make the discounted amount available?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Create an auto-number field to calculate the discounted amount."
+        },
+        {
+          "isRight": true,
+          "describe": "Create a formula field to calculate the discounted amount."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a roll-up summary field to calculate the discounted amount."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a cross object formula field to calculate the discounted amount."
+        }
+      ]
+    },
+    {
+      "describe": "Which setting can a system administrator control in the Salesforce user interface? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Enable hover details"
+        },
+        {
+          "isRight": false,
+          "describe": "Enable spell checker"
+        },
+        {
+          "isRight": true,
+          "describe": "Enable enhanced list views"
+        },
+        {
+          "isRight": false,
+          "describe": "Enable Chatter for specific users"
+        },
+        {
+          "isRight": false,
+          "describe": "Enable customizable recent items"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers has set the organization-wide default settings for accounts to private. Amy and bob are on separate sales teams, but are assigned tot he same role in the hierarchy. Amy is a member of the \"Sales West\" public group and needs access to all accounts owned by Bob, a member of the \"Sales East\" group. How would an administrator grant Amy access to only Bob's accounts?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Add Amy to the \"Sales East\" public group"
+        },
+        {
+          "isRight": true,
+          "describe": "Add Amy to Bob's default account team"
+        },
+        {
+          "isRight": false,
+          "describe": "Create a sharing rule between the \"Sales West\" and \"Sales East\" public groups"
+        },
+        {
+          "isRight": false,
+          "describe": "Add Amy to the role above Bob in the role hierarchy"
+        }
+      ]
+    },
+    {
+      "describe": "Which record type can be updated when converting a lead? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "An existing custom object record"
+        },
+        {
+          "isRight": true,
+          "describe": "An existing opportunity record"
+        },
+        {
+          "isRight": false,
+          "describe": "An existing contact record"
+        },
+        {
+          "isRight": true,
+          "describe": "An existing account record"
+        }
+      ]
+    },
+    {
+      "describe": "Which functionality is available when customizing tasks? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Record types can be created for tasks"
+        },
+        {
+          "isRight": true,
+          "describe": "Validation rules can be created for tasks"
+        },
+        {
+          "isRight": false,
+          "describe": "Roll-up summary fields can be created for tasks"
+        },
+        {
+          "isRight": false,
+          "describe": "Recurring tasks can be assigned to more than one user"
+        }
+      ]
+    }
+  ]
+}

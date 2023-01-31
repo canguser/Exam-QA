@@ -1,0 +1,325 @@
+{
+  "title": "Salesforce-Admin(302)-[Set-2]",
+  "category": "Salesforce Admin",
+  "questions": [
+    {
+      "describe": "Which of the following fields can you expect to find on user's record detail page? (Select 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "System Permissions"
+        },
+        {
+          "isRight": true,
+          "describe": "Locale"
+        },
+        {
+          "isRight": false,
+          "describe": "Reports"
+        },
+        {
+          "isRight": true,
+          "describe": "Role"
+        },
+        {
+          "isRight": false,
+          "describe": "All of the above"
+        }
+      ]
+    },
+    {
+      "describe": "Who has the permission to edit a chatter profile? (Select 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "An Administrator"
+        },
+        {
+          "isRight": true,
+          "describe": "The individual user"
+        },
+        {
+          "isRight": false,
+          "describe": "A user's manager"
+        },
+        {
+          "isRight": false,
+          "describe": "Chatter profiles are not editable"
+        }
+      ]
+    },
+    {
+      "describe": "Chatter external users can only interact in public or private Chatter groups that they belong to.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "You have a handful of users who don't have Salesforce licenses but need access to all Chatter groups. They don't need to access any other Salesforce information. What Chatter license should they have? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Chatter External license"
+        },
+        {
+          "isRight": true,
+          "describe": "Chatter Free license"
+        },
+        {
+          "isRight": false,
+          "describe": "Chatter Only (Chatter Plus) license"
+        },
+        {
+          "isRight": false,
+          "describe": "Chatter Deluxe license"
+        }
+      ]
+    },
+    {
+      "describe": "If a Salesforce object is a table, then each row represents what? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Records"
+        },
+        {
+          "isRight": false,
+          "describe": "Fields"
+        },
+        {
+          "isRight": false,
+          "describe": "Related Lists"
+        },
+        {
+          "isRight": false,
+          "describe": "Objects"
+        }
+      ]
+    },
+    {
+      "describe": "All of the following are advantages of Force.com objects except:",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "All object attributes are described with metadata, making it easy to create and modify records programmatically or through a visual interface."
+        },
+        {
+          "isRight": true,
+          "describe": "Every object in a Salesforce organization is automatically linked with all other objects in the organization."
+        },
+        {
+          "isRight": false,
+          "describe": "Objects can have relationship fields that define how records in an object relate to records in another object."
+        },
+        {
+          "isRight": false,
+          "describe": "Objects have built-in support for access management, validation, formulas, and history tracking."
+        }
+      ]
+    },
+    {
+      "describe": "What's the difference between standard and custom objects?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Standard objects are limited to a standard set of fields; custom objects are made up of custom fields."
+        },
+        {
+          "isRight": false,
+          "describe": "Standard objects include standard layouts; custom objects allow you to change their layouts."
+        },
+        {
+          "isRight": true,
+          "describe": "Standard objects are included with Salesforce by default; custom objects are objects that you create in your organization."
+        }
+      ]
+    },
+    {
+      "describe": "Objects can have all of the following types of custom fields, except:",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Custom address"
+        },
+        {
+          "isRight": false,
+          "describe": "Picklist"
+        },
+        {
+          "isRight": false,
+          "describe": "Checkbox"
+        },
+        {
+          "isRight": false,
+          "describe": "Date/Time"
+        }
+      ]
+    },
+    {
+      "describe": "Which of these types of relationship fields can you define in Force.com?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Relational and Parent-Child"
+        },
+        {
+          "isRight": false,
+          "describe": "Link and Parent-Child"
+        },
+        {
+          "isRight": true,
+          "describe": "Lookup and Master-Detail"
+        },
+        {
+          "isRight": false,
+          "describe": "Relational and Master-Detail"
+        }
+      ]
+    },
+    {
+      "describe": "1. How can a user have full access to a record? (Select 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Ownership"
+        },
+        {
+          "isRight": false,
+          "describe": "Sharing Rules"
+        },
+        {
+          "isRight": true,
+          "describe": "Role Hierarchy"
+        },
+        {
+          "isRight": false,
+          "describe": "Manual Sharing"
+        },
+        {
+          "isRight": false,
+          "describe": "CRED Settings"
+        }
+      ]
+    },
+    {
+      "describe": "2. Which of the following can be used to grant full access to a user? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Organization Wide Default Setting's"
+        },
+        {
+          "isRight": false,
+          "describe": "Sharing Rules"
+        },
+        {
+          "isRight": false,
+          "describe": "Apex Sharing"
+        },
+        {
+          "isRight": false,
+          "describe": "Manual Sharing"
+        },
+        {
+          "isRight": true,
+          "describe": "Role Hierarchy"
+        }
+      ]
+    },
+    {
+      "describe": "What is the only feature that can be used to restrict record access? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "CRED Settings"
+        },
+        {
+          "isRight": false,
+          "describe": "Sharing Rules"
+        },
+        {
+          "isRight": false,
+          "describe": "Role Hierarchy"
+        },
+        {
+          "isRight": true,
+          "describe": "Organization Wide Default Setting's"
+        },
+        {
+          "isRight": false,
+          "describe": "Profile Login Hours"
+        }
+      ]
+    },
+    {
+      "describe": "Sharing rules can be used to restrict data access.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following approaches to sharing is flexible but only allows for one record at a time to be shared? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Organization Wide Default Setting's"
+        },
+        {
+          "isRight": false,
+          "describe": "Sharing Rules"
+        },
+        {
+          "isRight": false,
+          "describe": "Apex Sharing"
+        },
+        {
+          "isRight": true,
+          "describe": "Manual Sharing"
+        },
+        {
+          "isRight": false,
+          "describe": "Role Hierarchy"
+        }
+      ]
+    },
+    {
+      "describe": "Moving from the opportunity object to the account object is an example of what type of relationship? (Select 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Related List"
+        },
+        {
+          "isRight": true,
+          "describe": "Lookup"
+        },
+        {
+          "isRight": true,
+          "describe": "Child-to-Parent"
+        },
+        {
+          "isRight": false,
+          "describe": "One-to-Many"
+        },
+        {
+          "isRight": false,
+          "describe": "Parent-to-Child"
+        }
+      ]
+    }
+  ]
+}

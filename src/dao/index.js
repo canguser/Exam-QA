@@ -29,7 +29,6 @@ class BaseDao {
         return this.db.where(field);
     }
 
-
     queryByHashCode(hashCode) {
         return this.query('hashCode').equals(hashCode).first();
     }

@@ -25,3 +25,7 @@
 .is-relation {
     position: relative;
 }
+
+.van-grid-item__text{
+    word-break: break-word;
+}

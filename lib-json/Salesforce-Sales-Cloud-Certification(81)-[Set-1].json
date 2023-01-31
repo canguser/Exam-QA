@@ -1,0 +1,305 @@
+{
+  "title": "Salesforce-Sales-Cloud-Certification(81)-[Set-1]",
+  "category": "Salesforce Sales Cloud",
+  "questions": [
+    {
+      "describe": "Think about he metrics that UP will use to measure the success of the Sales Cloud implementation. How would you design a solution to measure success for UP?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Create an analytic snapshot for standard reports"
+        },
+        {
+          "isRight": false,
+          "describe": "Customize the Measure Success standard report"
+        },
+        {
+          "isRight": false,
+          "describe": "Create a dashboard based on standard reports"
+        },
+        {
+          "isRight": true,
+          "describe": "Download and customize a user adoption dashboard from the AppExchange."
+        }
+      ]
+    },
+    {
+      "describe": "Think about UP's biggest pain points around leads. What would you recommend to improve the quality of leads passed from marketing to sales? (2 opt)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Create a workflow rule to send email alerts to the sales manager."
+        },
+        {
+          "isRight": true,
+          "describe": "Create custom fields to capture critical lead information."
+        },
+        {
+          "isRight": true,
+          "describe": "Implement validation rules for leads."
+        },
+        {
+          "isRight": false,
+          "describe": "Create web-to-lead auto-response rules."
+        }
+      ]
+    },
+    {
+      "describe": "Think about the data access requirements for leads. UP wants all sales and marketing users to be able to see all leads, but only the Marketing Specialist should be able to create and modify lead data. What organization-wide defaults would you use for the Lead object to meet this requirement.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Private"
+        },
+        {
+          "isRight": true,
+          "describe": "Public Read-Only"
+        },
+        {
+          "isRight": false,
+          "describe": "Public Read-Write"
+        },
+        {
+          "isRight": false,
+          "describe": "Public Read/Write Transfer"
+        }
+      ]
+    },
+    {
+      "describe": "Think about the lead process at UP. How would you design a solution to support their process. (2 opt)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Use lead status to capture if the lead is contacted, open, qualified, of unqualified."
+        },
+        {
+          "isRight": true,
+          "describe": "Use a workflow rule to automatically assign follow-up tasks for open leads."
+        },
+        {
+          "isRight": false,
+          "describe": "Create an approval process for each stage in the lead process."
+        },
+        {
+          "isRight": false,
+          "describe": "Create different lead processes for each line of business."
+        }
+      ]
+    },
+    {
+      "describe": "You can track Assets through Accounts, Contacts, Products, or Cases.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "You can track only Assets sold by your company.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following statements about Standard and Custom Price Books are accurate? (2 opt)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "A Standard Price Book includes a master list of all Products with their associated Standard Prices."
+        },
+        {
+          "isRight": false,
+          "describe": "A Custom Price Book includes a master list of all Products with their associated Custom Prices."
+        },
+        {
+          "isRight": true,
+          "describe": "A Custom Price Book is a subset of the Products listed in the Standard Price Book."
+        }
+      ]
+    },
+    {
+      "describe": "There are four steps to managing Products and Price Books. Can you put the steps in order?\n1. Create Product\n2. Create Custom Price Book\n3. Defined Standard Price\n4. Set List Price",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "1, 2, 3, 4"
+        },
+        {
+          "isRight": false,
+          "describe": "4, 1, 2, 3"
+        },
+        {
+          "isRight": false,
+          "describe": "2, 1, 4, 2"
+        },
+        {
+          "isRight": true,
+          "describe": "1, 3, 2, 4"
+        }
+      ]
+    },
+    {
+      "describe": "Your organization sells a product that requires your customers to pay all at once but receive the product in increments. What should be your first step in setting up Product schedules?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Enable creation of Quantity Schedules"
+        },
+        {
+          "isRight": false,
+          "describe": "Enable creation of Revenue Schedules"
+        },
+        {
+          "isRight": false,
+          "describe": "Set up default Quantity schedules for Products"
+        },
+        {
+          "isRight": false,
+          "describe": "Set up default Revenue schedules for Products"
+        }
+      ]
+    },
+    {
+      "describe": "In addition to setting the standard price, what must you also do in order to add a Product to a Custom Price Book?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Enter a Product Code"
+        },
+        {
+          "isRight": false,
+          "describe": "Enter a Product Description"
+        },
+        {
+          "isRight": true,
+          "describe": "Check the Active checkbox"
+        },
+        {
+          "isRight": false,
+          "describe": "Select a Product Family"
+        }
+      ]
+    },
+    {
+      "describe": "Which of these steps should take place before setting a List Price for a Product? (2 opt)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Update all items in the Standard Price Book"
+        },
+        {
+          "isRight": false,
+          "describe": "Update all items in the Custom Price Book"
+        },
+        {
+          "isRight": true,
+          "describe": "Create the Product"
+        },
+        {
+          "isRight": true,
+          "describe": "Define the Product's Standard Price"
+        },
+        {
+          "isRight": false,
+          "describe": "Specify a Quantity or Revenue Schedule"
+        }
+      ]
+    },
+    {
+      "describe": "Your org-wide defaults for Price Books are set to \"No Access\". What should you do to enable your Sales Reps to view the South America Price Book and add Products in this Price Book to Opportunities?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Set the org-wide defaults to \"Use\", then manually change all non Sales Reps' access to \"No Access\""
+        },
+        {
+          "isRight": false,
+          "describe": "Set the org-wide defaults for all Sales Reps to \"Use\""
+        },
+        {
+          "isRight": true,
+          "describe": "Grant specific \"Use\" access rights to Sales Reps for the South America Price Book"
+        },
+        {
+          "isRight": false,
+          "describe": "Change all Custom Price Books' access for Sales Reps to \"Use\""
+        }
+      ]
+    },
+    {
+      "describe": "Your org-wide defaults for access rights to Price Books are set to \"Use\", but only Sales Reps should have access to Price Books. What should be your first step?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Change the org-wide default setting to \"No Access\""
+        },
+        {
+          "isRight": false,
+          "describe": "Change the org-wide default setting to \"View Only\""
+        },
+        {
+          "isRight": false,
+          "describe": "Leave the org-wide default setting, but change the Sales Reps' access rights"
+        },
+        {
+          "isRight": false,
+          "describe": "Change the Sales Reps' access rights to \"Use'"
+        }
+      ]
+    },
+    {
+      "describe": "Your company has decided they want to track payment and deliveries for their products and services. Place the steps in order:\n1. Set up default schedules for any products that involve regular payments or delivery.\n2. Do not set up default schedules for products that involve payments or deliveries that are unique to each opportunity.\n3. Enable Scheduling for all products.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "1, 2, 3"
+        },
+        {
+          "isRight": false,
+          "describe": "2, 1, 3"
+        },
+        {
+          "isRight": true,
+          "describe": "3, 1, 2"
+        },
+        {
+          "isRight": false,
+          "describe": "2, 3, 1"
+        }
+      ]
+    },
+    {
+      "describe": "Your company sells service contracts where the customer pays once a year for a monthly service package. What type of schedule should you set up?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Default Quantity Schedule"
+        },
+        {
+          "isRight": false,
+          "describe": "Default Revenue Schedule"
+        },
+        {
+          "isRight": false,
+          "describe": "Default Revenue and Quantity Schedule"
+        },
+        {
+          "isRight": false,
+          "describe": "Don't create any default schedule"
+        }
+      ]
+    }
+  ]
+}

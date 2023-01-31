@@ -1,0 +1,305 @@
+{
+  "title": "Salesforce-Admin(302)-[Set-3]",
+  "category": "Salesforce Admin",
+  "questions": [
+    {
+      "describe": "Which of the following features can be used to assign different picklist values for different business processes? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Page Layout"
+        },
+        {
+          "isRight": true,
+          "describe": "Record Type"
+        },
+        {
+          "isRight": false,
+          "describe": "Validation Rule"
+        },
+        {
+          "isRight": false,
+          "describe": "Field Level Security"
+        },
+        {
+          "isRight": false,
+          "describe": "Formula Field"
+        }
+      ]
+    },
+    {
+      "describe": "AW Computing wants their sales reps to see the sum of the total opportunities on each account that they own. What feature can be used to display this information? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Roll-Up Summary Field"
+        },
+        {
+          "isRight": false,
+          "describe": "Page Layout"
+        },
+        {
+          "isRight": false,
+          "describe": "Cross Object Formula"
+        },
+        {
+          "isRight": false,
+          "describe": "Record Type"
+        },
+        {
+          "isRight": false,
+          "describe": "Field Level Security"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following features can be used to make a field required? (Select 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Page Layout"
+        },
+        {
+          "isRight": false,
+          "describe": "Record Type"
+        },
+        {
+          "isRight": true,
+          "describe": "Validation Rule"
+        },
+        {
+          "isRight": false,
+          "describe": "Field Level Security"
+        },
+        {
+          "isRight": false,
+          "describe": "Formula Field"
+        }
+      ]
+    },
+    {
+      "describe": "An admin needs to keep track of all the changes made to the stage, amount, and close date on opportunities. (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Validation Rule"
+        },
+        {
+          "isRight": true,
+          "describe": "Field History Tracking"
+        },
+        {
+          "isRight": false,
+          "describe": "Formula field"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow"
+        },
+        {
+          "isRight": false,
+          "describe": "Page Layout"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following data import tools can import up to 50,000 records at a time, and provides a simple interface to specify the configuration parameters, data sources, and the field mappings that map the field names in your import file with the field names in Salesforce? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Data Loader"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Importer"
+        },
+        {
+          "isRight": true,
+          "describe": "Data Import Wizard"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loading Wizard"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following data import tools can import up to five million records at a time, of any data type, either from files or a database connection, and can be operated either through the user interface or the command line. (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Data Loader"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Importer"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Import Wizard"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loading Wizard"
+        }
+      ]
+    },
+    {
+      "describe": "Regardless of the data import tool used, the number of records you can import depends which of the following? (Select 3).",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "On your permissions"
+        },
+        {
+          "isRight": true,
+          "describe": "The type of data you're importing"
+        },
+        {
+          "isRight": false,
+          "describe": "The types of objects you're importing"
+        },
+        {
+          "isRight": true,
+          "describe": "The overall data storage limits for your organization"
+        }
+      ]
+    },
+    {
+      "describe": "What type of data import tool would you use if you want to automate the data import process? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Data Loader"
+        },
+        {
+          "isRight": false,
+          "describe": "Your answerData Importer"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Import Wizard"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loading Wizard"
+        }
+      ]
+    },
+    {
+      "describe": "You must include universally required fields in your import files or the import will fail.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "A folder is a place where you can store which of the following? (Select 3)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Records"
+        },
+        {
+          "isRight": true,
+          "describe": "Reports"
+        },
+        {
+          "isRight": true,
+          "describe": "Dashboards"
+        },
+        {
+          "isRight": true,
+          "describe": "Email templates"
+        }
+      ]
+    },
+    {
+      "describe": "What permissions are needed to be able to delete or change a read-only folder? (Select 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Read/Write permissions"
+        },
+        {
+          "isRight": false,
+          "describe": "Folder Manager permissions"
+        },
+        {
+          "isRight": true,
+          "describe": "Manage Public Documents permissions"
+        },
+        {
+          "isRight": true,
+          "describe": "Manage Public Templates permissions"
+        }
+      ]
+    },
+    {
+      "describe": "As a System Administrator, you can edit unfiled and personal folders.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "When you share a folder with a group, managers of the group members (above the members in the role hierarchy) have no access to the folder unless those managers are also members of the group.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "You cannot cancel an import after it has started processing.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers wants to ensure that users complete the standard Industry field when creating a new account record. To address this concern, the administrator set the Industry field as required. However, some users are still able to create a new account record without completing the Industry field. What should an administrator do to troubleshoot the issue?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Verify the users have the \"Edit\" permission for accounts on their profiles"
+        },
+        {
+          "isRight": false,
+          "describe": "Verify the users have the \"Modify All Data\" permission for accounts on their profiles"
+        },
+        {
+          "isRight": true,
+          "describe": "Verify the field-level security for the Industry field is not set to \"Read Only\" on the users' profiles"
+        },
+        {
+          "isRight": true,
+          "describe": "Verify the Industry field is set as required on all the account page layouts assigned to the users' profiles"
+        }
+      ]
+    }
+  ]
+}

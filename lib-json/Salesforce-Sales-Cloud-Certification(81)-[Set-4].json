@@ -1,0 +1,309 @@
+{
+  "title": "Salesforce-Sales-Cloud-Certification(81)-[Set-4]",
+  "category": "Salesforce Sales Cloud",
+  "questions": [
+    {
+      "describe": "Which of the following describes the Forecast Category field?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Identifies where a deal is in relation to actually being closed."
+        },
+        {
+          "isRight": true,
+          "describe": "Determines the row in your Forecast where the amount will be aggregated."
+        },
+        {
+          "isRight": false,
+          "describe": "The numeric prediction that the revenue from an opportunity will be realized."
+        }
+      ]
+    },
+    {
+      "describe": "You have an Opportunity in the Value Proposition stage, for an amount of $1,000 that has a 50% Probability of closing. If all goes well, and this Opportunity closes, how much revenue will be realized?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "$1,000"
+        },
+        {
+          "isRight": false,
+          "describe": "$500"
+        },
+        {
+          "isRight": false,
+          "describe": "$750"
+        }
+      ]
+    },
+    {
+      "describe": "Forecast Categories: (Select all that apply)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Are there to help you categorize your opportunities, so you can gauge more accurately how much revenue you can bring in a given time period"
+        },
+        {
+          "isRight": false,
+          "describe": "Are the same thing as Sales Stages"
+        },
+        {
+          "isRight": true,
+          "describe": "Have a default value that is associated with the Stage field"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following stage should be matched with the Forecast Category \"Closed\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Early pipeline stages"
+        },
+        {
+          "isRight": false,
+          "describe": "Mid pipeline"
+        },
+        {
+          "isRight": false,
+          "describe": "Late pipeline stages"
+        },
+        {
+          "isRight": true,
+          "describe": "Closed and Won"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed and Lost"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following stage should be matched with the Forecast Category \"Omit\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Early pipeline stages"
+        },
+        {
+          "isRight": false,
+          "describe": "Mid pipeline"
+        },
+        {
+          "isRight": false,
+          "describe": "Late pipeline stages"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed and Won"
+        },
+        {
+          "isRight": true,
+          "describe": "Closed and Lost"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following stage should be matched with the Forecast Category \"Best Case\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Early pipeline stages"
+        },
+        {
+          "isRight": true,
+          "describe": "Mid pipeline"
+        },
+        {
+          "isRight": false,
+          "describe": "Late pipeline stages"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed and Won"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed and Lost"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following stage should be matched with the Forecast Category \"Commit\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Early pipeline stages"
+        },
+        {
+          "isRight": false,
+          "describe": "Mid pipeline"
+        },
+        {
+          "isRight": true,
+          "describe": "Late pipeline stages"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed and Won"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed and Lost"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following stage should be matched with the Forecast Category \"Pipeline\"",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Early pipeline stages"
+        },
+        {
+          "isRight": false,
+          "describe": "Mid pipeline"
+        },
+        {
+          "isRight": false,
+          "describe": "Late pipeline stages"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed and Won"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed and Lost"
+        }
+      ]
+    },
+    {
+      "describe": "Forecast Category \"Closed\" can be summarized as:",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Closed"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed + Commit"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed + Commit + Best Case"
+        },
+        {
+          "isRight": false,
+          "describe": "Commit + Best Case + Pipeline"
+        }
+      ]
+    },
+    {
+      "describe": "Forecast Category \"Commit\" can be summarized as:",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Closed"
+        },
+        {
+          "isRight": true,
+          "describe": "Closed + Commit"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed + Commit + Best Case"
+        },
+        {
+          "isRight": false,
+          "describe": "Commit + Best Case + Pipeline"
+        }
+      ]
+    },
+    {
+      "describe": "Forecast Category \"Best Case\" can be summarized as:",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Closed"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed + Commit"
+        },
+        {
+          "isRight": true,
+          "describe": "Closed + Commit + Best Case"
+        },
+        {
+          "isRight": false,
+          "describe": "Commit + Best Case + Pipeline"
+        }
+      ]
+    },
+    {
+      "describe": "Forecast Category \"Pipeline\" can be summarized as:",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Closed"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed + Commit"
+        },
+        {
+          "isRight": false,
+          "describe": "Closed + Commit + Best Case"
+        },
+        {
+          "isRight": true,
+          "describe": "Commit + Best Case + Pipeline"
+        }
+      ]
+    },
+    {
+      "describe": "Your forecast is available to your manager only after you have clicked the Submit button.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Choose the correct statement.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Any salesperson can change their quota at any time."
+        },
+        {
+          "isRight": true,
+          "describe": "Only users with the appropriate permissions can change their quota."
+        }
+      ]
+    },
+    {
+      "describe": "Your commit summary says you can bring in $1,000 this period but you've just gotten a verbal approval on a deal for $500 from a CEO. What should you do?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Nothing. It's ok if the forecast is inaccurate"
+        },
+        {
+          "isRight": true,
+          "describe": "Override the opportunity and move the stage to commit, making the forecast more realistic"
+        },
+        {
+          "isRight": false,
+          "describe": "Override the forecast summary for your commit"
+        }
+      ]
+    }
+  ]
+}

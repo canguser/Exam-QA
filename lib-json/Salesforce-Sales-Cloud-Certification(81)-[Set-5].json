@@ -1,0 +1,515 @@
+{
+  "title": "Salesforce-Sales-Cloud-Certification(81)-[Set-5]",
+  "category": "Salesforce Sales Cloud",
+  "questions": [
+    {
+      "describe": "Which of the following statements are true about managers and forecasts? (4 opt)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "A manager must have their own opportunities"
+        },
+        {
+          "isRight": true,
+          "describe": "A manager submits their own estimate of the forecast"
+        },
+        {
+          "isRight": true,
+          "describe": "A manager can adjust a forecast to a higher number"
+        },
+        {
+          "isRight": true,
+          "describe": "A manager can adjust a forecast to a lower number"
+        },
+        {
+          "isRight": true,
+          "describe": "A manager can see the forecasts of every person below them in the role hierarchy"
+        },
+        {
+          "isRight": false,
+          "describe": "A manager can override the forecast of every person below them in the role hierarchy"
+        }
+      ]
+    },
+    {
+      "describe": "The stage field is mapped to a value for the Forecast Category field and this can never be changed in an opportunity.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "You are setting up security for your client, UCI. UCI has a collaborative sales model and want to make sure all team members work together to meet the customer needs. They are likely to require an open sharing model that will allow them to cross- and up-sell opportunities.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Why are profiles important when managing security of records? (2 opt)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Profiles allow users Read permission only. To allow Create, Edit, or Delete permissions, an admin must change the default setting."
+        },
+        {
+          "isRight": true,
+          "describe": "When custom applications are installed or created, you can manage access at the profile level."
+        },
+        {
+          "isRight": true,
+          "describe": "Profiles define a user's permission to perform different functions within Salesforce."
+        },
+        {
+          "isRight": false,
+          "describe": "Profiles manage data visibility based on where users are placed among the profile hierarchy."
+        },
+        {
+          "isRight": false,
+          "describe": "To ensure appropriate system permissions, administrators often assign multiple profiles to a single user."
+        }
+      ]
+    },
+    {
+      "describe": "What are some common security challenges? (3 opt)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Consultants have different beliefs about the optimal level of security for clients"
+        },
+        {
+          "isRight": true,
+          "describe": "Different industries require and follow different security models"
+        },
+        {
+          "isRight": true,
+          "describe": "Marketing and sales organizations differ on how they access contacts."
+        },
+        {
+          "isRight": true,
+          "describe": "Salesforce users must have access to the right records and only see relevant data."
+        }
+      ]
+    },
+    {
+      "describe": "What should access to records be based on?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "The org chart"
+        },
+        {
+          "isRight": false,
+          "describe": "User preference"
+        },
+        {
+          "isRight": false,
+          "describe": "The org-wide default"
+        },
+        {
+          "isRight": true,
+          "describe": "Roles and role hierarchy"
+        }
+      ]
+    },
+    {
+      "describe": "Role hierarchy should normally mimic the org structure.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Which describes a usability and/or adoption challenge? (4 opt)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Julie is concerned that other reps will steal her leads"
+        },
+        {
+          "isRight": true,
+          "describe": "Mario is not sure that Salesforce can do everything he needs it to do"
+        },
+        {
+          "isRight": true,
+          "describe": "Mary can't figure out how to update her contact list"
+        },
+        {
+          "isRight": false,
+          "describe": "Kevin wants meetings with his manager to be more strategic and less task-oriented"
+        },
+        {
+          "isRight": true,
+          "describe": "Bob questions the quality of data in Salesforce"
+        },
+        {
+          "isRight": true,
+          "describe": "Iris is worried that once her admin makes a change, her accounts will be outdated."
+        }
+      ]
+    },
+    {
+      "describe": "Match this tip with its design consideration.\n\"Show each job function relevant information\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Tab and field naming"
+        },
+        {
+          "isRight": false,
+          "describe": "Reduced clicks"
+        },
+        {
+          "isRight": false,
+          "describe": "Search"
+        },
+        {
+          "isRight": true,
+          "describe": "Record types and page layouts"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow rules and approvals"
+        },
+        {
+          "isRight": false,
+          "describe": "Minimized redundant data entry"
+        }
+      ]
+    },
+    {
+      "describe": "Match this tip with its design consideration.\n\"Use 1-2 clicks from the Home page\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Tab and field naming"
+        },
+        {
+          "isRight": true,
+          "describe": "Reduced clicks"
+        },
+        {
+          "isRight": false,
+          "describe": "Search"
+        },
+        {
+          "isRight": false,
+          "describe": "Record types and page layouts"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow rules and approvals"
+        },
+        {
+          "isRight": false,
+          "describe": "Minimized redundant data entry"
+        }
+      ]
+    },
+    {
+      "describe": "Match this tip with its design consideration.\n\"Make it easy for users to find data\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Tab and field naming"
+        },
+        {
+          "isRight": false,
+          "describe": "Reduced clicks"
+        },
+        {
+          "isRight": true,
+          "describe": "Search"
+        },
+        {
+          "isRight": false,
+          "describe": "Record types and page layouts"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow rules and approvals"
+        },
+        {
+          "isRight": false,
+          "describe": "Minimized redundant data entry"
+        }
+      ]
+    },
+    {
+      "describe": "Match this tip with its design consideration.\n\"Use the client's language\"",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Tab and field naming"
+        },
+        {
+          "isRight": false,
+          "describe": "Reduced clicks"
+        },
+        {
+          "isRight": false,
+          "describe": "Search"
+        },
+        {
+          "isRight": false,
+          "describe": "Record types and page layouts"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow rules and approvals"
+        },
+        {
+          "isRight": false,
+          "describe": "Minimized redundant data entry"
+        }
+      ]
+    },
+    {
+      "describe": "Match this tip with its design consideration.\n\"Use alerts sparingly\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Tab and field naming"
+        },
+        {
+          "isRight": false,
+          "describe": "Reduced clicks"
+        },
+        {
+          "isRight": false,
+          "describe": "Search"
+        },
+        {
+          "isRight": false,
+          "describe": "Record types and page layouts"
+        },
+        {
+          "isRight": true,
+          "describe": "Workflow rules and approvals"
+        },
+        {
+          "isRight": false,
+          "describe": "Minimized redundant data entry"
+        }
+      ]
+    },
+    {
+      "describe": "Match this tip with its design consideration.\n\"Users should not do things more than once because it takes time and may create dirty data\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Tab and field naming"
+        },
+        {
+          "isRight": false,
+          "describe": "Reduced clicks"
+        },
+        {
+          "isRight": false,
+          "describe": "Search"
+        },
+        {
+          "isRight": false,
+          "describe": "Record types and page layouts"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow rules and approvals"
+        },
+        {
+          "isRight": true,
+          "describe": "Minimized redundant data entry"
+        }
+      ]
+    },
+    {
+      "describe": "For optimal usability and adoption, a solution must do what. (4 opt)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Provide value so users perceive it as a valuable spending of their time."
+        },
+        {
+          "isRight": true,
+          "describe": "Be easy to use so users can easily enter data and find information."
+        },
+        {
+          "isRight": true,
+          "describe": "Have trusted data."
+        },
+        {
+          "isRight": false,
+          "describe": "Be inexpensive so users don't worry about the bottom line when using the application."
+        },
+        {
+          "isRight": false,
+          "describe": "Provide both online help and hard copy reference materials to assist users at all times."
+        },
+        {
+          "isRight": true,
+          "describe": "Be easy to change through a change management process in place."
+        }
+      ]
+    },
+    {
+      "describe": "What does Salesforce usability mean?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "How many users log on to Salesforce on a daily basis"
+        },
+        {
+          "isRight": false,
+          "describe": "What is the ratio of Salesforce users to the amount of sales"
+        },
+        {
+          "isRight": false,
+          "describe": "How satisfied Salesforce users are with the application"
+        },
+        {
+          "isRight": true,
+          "describe": "How easily can customers achieve their goals using Salesforce"
+        }
+      ]
+    },
+    {
+      "describe": "How many reports should you design for optimal usability?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Five to seven reports per role"
+        },
+        {
+          "isRight": true,
+          "describe": "As many as needed per role, without overwhelming users"
+        },
+        {
+          "isRight": false,
+          "describe": "The more the better, as long as you are using a clear naming convention"
+        },
+        {
+          "isRight": false,
+          "describe": "Up to 10 reports per role"
+        }
+      ]
+    },
+    {
+      "describe": "What is clean data?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Data that is trusted by the user"
+        },
+        {
+          "isRight": false,
+          "describe": "Data that is freshly entered"
+        },
+        {
+          "isRight": false,
+          "describe": "Data that is used by a single role"
+        },
+        {
+          "isRight": false,
+          "describe": "Data that is entered by an admin"
+        },
+        {
+          "isRight": false,
+          "describe": "Data that is independent of other data"
+        }
+      ]
+    },
+    {
+      "describe": "Match the following loading option to the description of when to use it.\n\"Manual Entry\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Brian wants to consolidate all his accounts from several systems."
+        },
+        {
+          "isRight": false,
+          "describe": "Bill wants to load 20,000 lead records."
+        },
+        {
+          "isRight": false,
+          "describe": "Beckie wants to load all her 65,000 contact records."
+        },
+        {
+          "isRight": true,
+          "describe": "Bob wants to load a single account record."
+        },
+        {
+          "isRight": false,
+          "describe": "Berta wants to keep a separate system as her \"system of record\""
+        }
+      ]
+    },
+    {
+      "describe": "Match the following loading option to the description of when to use it.\n\"Import Wizard\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Brian wants to consolidate all his accounts from several systems."
+        },
+        {
+          "isRight": true,
+          "describe": "Bill wants to load 20,000 lead records."
+        },
+        {
+          "isRight": false,
+          "describe": "Beckie wants to load all her 65,000 contact records."
+        },
+        {
+          "isRight": false,
+          "describe": "Bob wants to load a single account record."
+        },
+        {
+          "isRight": false,
+          "describe": "Berta wants to keep a separate system as her \"system of record\""
+        }
+      ]
+    },
+    {
+      "describe": "Match the following loading option to the description of when to use it.\n\"Force.com Data Loader\"",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Brian wants to consolidate all his accounts from several systems."
+        },
+        {
+          "isRight": false,
+          "describe": "Bill wants to load 20,000 lead records."
+        },
+        {
+          "isRight": true,
+          "describe": "Beckie wants to load all her 65,000 contact records."
+        },
+        {
+          "isRight": false,
+          "describe": "Bob wants to load a single account record."
+        },
+        {
+          "isRight": false,
+          "describe": "Berta wants to keep a separate system as her \"system of record\""
+        }
+      ]
+    }
+  ]
+}

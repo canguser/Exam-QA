@@ -1,0 +1,321 @@
+{
+  "title": "Salesforce-Admin(302)-[Set-10]",
+  "category": "Salesforce Admin",
+  "questions": [
+    {
+      "describe": "Which Salesforce feature should be used to disable access to all objects in a custom application?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Profiles"
+        },
+        {
+          "isRight": false,
+          "describe": "Sharing"
+        },
+        {
+          "isRight": false,
+          "describe": "Web tabs"
+        },
+        {
+          "isRight": false,
+          "describe": "Page layouts"
+        }
+      ]
+    },
+    {
+      "describe": "Which statement about multi‐day and all‐day events is TRUE",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "All‐Day Events have a start and end time"
+        },
+        {
+          "isRight": false,
+          "describe": "Multi‐Day Event cannot be set as All‐Day Event"
+        },
+        {
+          "isRight": false,
+          "describe": "All‐Day Events have a check box for flagging as Multi‐Day Events"
+        },
+        {
+          "isRight": true,
+          "describe": "Multi‐Day Events have a start and end time"
+        }
+      ]
+    },
+    {
+      "describe": "If the organization‐wide default on accounts is set to public read/write, what can be used to limit access to these records?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Profile"
+        },
+        {
+          "isRight": false,
+          "describe": "List views"
+        },
+        {
+          "isRight": false,
+          "describe": "Public groups"
+        },
+        {
+          "isRight": false,
+          "describe": "Role hierarchy"
+        }
+      ]
+    },
+    {
+      "describe": "Currencies are defined at which level?\n*Choose 3 answers*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Record type"
+        },
+        {
+          "isRight": true,
+          "describe": "Organization profile"
+        },
+        {
+          "isRight": true,
+          "describe": "Opportunity (record)"
+        },
+        {
+          "isRight": true,
+          "describe": "User record (personal setup)"
+        }
+      ]
+    },
+    {
+      "describe": "When a user with pending approval requests leaves an organization, what can administrator do with the pending requests?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Mass approve pending requests"
+        },
+        {
+          "isRight": true,
+          "describe": "Mass remove pending requests"
+        },
+        {
+          "isRight": true,
+          "describe": "Mass transfer pending requests"
+        },
+        {
+          "isRight": false,
+          "describe": "Change the approval process routing steps"
+        }
+      ]
+    },
+    {
+      "describe": "If a record has been manually shared with read/write access, the user will be able to do which of the following?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Edit the record"
+        },
+        {
+          "isRight": false,
+          "describe": "Delete the record"
+        },
+        {
+          "isRight": false,
+          "describe": "Change the owner of the record"
+        },
+        {
+          "isRight": false,
+          "describe": "Share the record to another user with full access"
+        }
+      ]
+    },
+    {
+      "describe": "Which item cannot be stored in a folder?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Emails"
+        },
+        {
+          "isRight": false,
+          "describe": "Reports"
+        },
+        {
+          "isRight": false,
+          "describe": "Documents"
+        },
+        {
+          "isRight": false,
+          "describe": "Dashboards"
+        }
+      ]
+    },
+    {
+      "describe": "If a record that matches the criteria of a workflow rule is created on July 1 and the close date is July 30, the time‐dependent action is scheduled for July 23. However, what happens if the opportunity is edited before July 23 and no longer meets the criteria?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "The time‐dependent action is put on hold"
+        },
+        {
+          "isRight": false,
+          "describe": "The time‐dependent action is sent on July 23"
+        },
+        {
+          "isRight": false,
+          "describe": "The time‐dependent action is sent on July 30"
+        },
+        {
+          "isRight": true,
+          "describe": "The time‐dependent action is automatically removed from the queue"
+        }
+      ]
+    },
+    {
+      "describe": "Which UI component allows easy access to recent tags?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Tag Browser"
+        },
+        {
+          "isRight": false,
+          "describe": "Edit Tags link"
+        },
+        {
+          "isRight": false,
+          "describe": "Tag links in the header"
+        },
+        {
+          "isRight": true,
+          "describe": "Sidebar Tag widget"
+        }
+      ]
+    },
+    {
+      "describe": "Which statement is TRUE regarding record types?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Record types can be hidden from users"
+        },
+        {
+          "isRight": false,
+          "describe": "Record types are controlled by the page layout"
+        },
+        {
+          "isRight": false,
+          "describe": "Record types can only be assigned to one profile at a time"
+        },
+        {
+          "isRight": true,
+          "describe": "Record types can be used to define different picklist values for different types of users"
+        }
+      ]
+    },
+    {
+      "describe": "Charting is a report option that can be used on",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "All reports"
+        },
+        {
+          "isRight": false,
+          "describe": "Dashboards and summary reports only"
+        },
+        {
+          "isRight": false,
+          "describe": "Matrix and custom report types only"
+        },
+        {
+          "isRight": true,
+          "describe": "Dashboards, summary and matrix reports"
+        }
+      ]
+    },
+    {
+      "describe": "Once category browsing has been enabled for an organization which permission is needed to add a category to a solution record?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Edit on solutions"
+        },
+        {
+          "isRight": false,
+          "describe": "Read on solution"
+        },
+        {
+          "isRight": false,
+          "describe": "Delete on solutions"
+        },
+        {
+          "isRight": false,
+          "describe": "Create on solution"
+        }
+      ]
+    },
+    {
+      "describe": "Which function is available with standard fields?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Adding context‐sensitive help"
+        },
+        {
+          "isRight": false,
+          "describe": "Deleting fields"
+        },
+        {
+          "isRight": true,
+          "describe": "Adding or removing non‐required fields from a page layout"
+        },
+        {
+          "isRight": false,
+          "describe": "Changing field labels"
+        }
+      ]
+    },
+    {
+      "describe": "Lead assignment rules are used to\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Assign leads to lead queues"
+        },
+        {
+          "isRight": true,
+          "describe": "Assign leads to individuals that are users In Salesforce"
+        },
+        {
+          "isRight": false,
+          "describe": "Convert new leads to accounts and give assignments to appropriate users"
+        },
+        {
+          "isRight": false,
+          "describe": "Re‐assign leads if they have been neglected and reassign to individuals in Salesforce"
+        }
+      ]
+    },
+    {
+      "describe": "Email templates (text, HTML with letterhead, and Custom HTML) may include which of the following?\n* Choose 3 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Text"
+        },
+        {
+          "isRight": true,
+          "describe": "Merge fields"
+        },
+        {
+          "isRight": true,
+          "describe": "Attached files"
+        },
+        {
+          "isRight": false,
+          "describe": "Macros"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "questions": [
+    {
+      "describe": "Universal containers wants to standardize their business logic. they want to ensure that workflow order is guaranteed to be the same each time.which feature can be used to accomplish this? choose 2",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Lightning Process Builder."
+        },
+        {
+          "isRight": true,
+          "describe": "Visual workflow"
+        },
+        {
+          "isRight": false,
+          "describe": "chatter Actions."
+        },
+        {
+          "isRight": false,
+          "describe": "workflow."
+        }
+      ]
+    },
+    {
+      "describe": "what option is available to an App Builder when defining an object- specific create record custom action? choose 2",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Specifying the fields and layouts of the action."
+        },
+        {
+          "isRight": true,
+          "describe": "Redirecting the end user to the detail page of the target object."
+        },
+        {
+          "isRight": false,
+          "describe": "Pre- defining field values on the target object."
+        },
+        {
+          "isRight": false,
+          "describe": "allowing the end user to choose the record type."
+        }
+      ]
+    },
+    {
+      "describe": "what is a section of the lightning App builder tool? choose 3",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Mobile card."
+        },
+        {
+          "isRight": true,
+          "describe": "Canvas"
+        },
+        {
+          "isRight": false,
+          "describe": "Mini page layout."
+        },
+        {
+          "isRight": true,
+          "describe": "Components"
+        },
+        {
+          "isRight": true,
+          "describe": "Selected publisher actions."
+        }
+      ]
+    },
+    {
+      "describe": "what salesforce functionality is ignored when processing field updates in workflow rules and approval processes? choose 3",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Decimal places and character limits."
+        },
+        {
+          "isRight": true,
+          "describe": "Record type picklist value assignments ."
+        },
+        {
+          "isRight": true,
+          "describe": "Field level security."
+        },
+        {
+          "isRight": true,
+          "describe": "Multiple currencies."
+        },
+        {
+          "isRight": false,
+          "describe": "Validation rules."
+        }
+      ]
+    },
+    {
+      "describe": "In order to delete opportunities, universal containers would like sales reps to submit requests for approval form their sales manager. what can be used to meet these requiremens?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Approval process with apex trigger."
+        },
+        {
+          "isRight": false,
+          "describe": "Two step approval process."
+        },
+        {
+          "isRight": false,
+          "describe": "Approval process with time dependent workflow action."
+        },
+        {
+          "isRight": true,
+          "describe": "Process Builder with submit for approval action."
+        }
+      ]
+    },
+    {
+      "describe": "The crm manager at universal containers has requested that a custom text field be converted promote better data hygiene. what needs to be considered before changing the field type? choose 2",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "all data should be backed up before converting a text field."
+        },
+        {
+          "isRight": true,
+          "describe": "changing a field type will remove existing field history."
+        },
+        {
+          "isRight": false,
+          "describe": "Field references will be removed in visualforce pages."
+        },
+        {
+          "isRight": true,
+          "describe": "existing list views that reference the field may be deleted."
+        }
+      ]
+    },
+    {
+      "describe": "To synchronize Accounts, orders and shipments in real time a developer has built a custom interface external system and salesforce.prior to deployment, the developer needs to confirm that the interface syncing of thousands of records of records at a time. which sandbox environmnet is recommended to complete performance and load testing?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Developer sandbox."
+        },
+        {
+          "isRight": true,
+          "describe": "Full sandbox."
+        },
+        {
+          "isRight": false,
+          "describe": "Partial sandbox."
+        },
+        {
+          "isRight": false,
+          "describe": "Developer pro sandbox."
+        }
+      ]
+    },
+    {
+      "describe": "In salesforce classic , UC provides access to salesforce for their sales, service and marketing management wants to ensure that when users login, their home tab provides access to links and documents specifically relevent to their job function.how can this requirement be met?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Expose specific elements within a home page custom component determined by role."
+        },
+        {
+          "isRight": false,
+          "describe": "Expose specific elements within a home page custom component determined by profile."
+        },
+        {
+          "isRight": true,
+          "describe": "Create separate home page custom components and layouts; assign to users by profile"
+        },
+        {
+          "isRight": false,
+          "describe": "Create separate home page custom components and layouts; assign to users by role."
+        }
+      ]
+    },
+    {
+      "describe": "what type of field can be used to filter a report chart that has been added to a page layout?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Standard field."
+        },
+        {
+          "isRight": true,
+          "describe": "Matching ID field."
+        },
+        {
+          "isRight": false,
+          "describe": "Formula field."
+        },
+        {
+          "isRight": false,
+          "describe": "Name field."
+        }
+      ]
+    },
+    {
+      "describe": "Universal containers needs the ability to generate contract documents. all the data required for a contract resea… custom object. which is the recommended solution?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Create the HTML template for contracts and store it in the public folder."
+        },
+        {
+          "isRight": false,
+          "describe": "Store a template in the static Resources and configure the action link template to use it."
+        },
+        {
+          "isRight": false,
+          "describe": "Select the install an appExchange products to meet the contract generation needs."
+        },
+        {
+          "isRight": false,
+          "describe": "Enable the contracts feature and create a custom contract template based on the standard template."
+        }
+      ]
+    },
+    {
+      "describe": "Which values must be defined when creating a new opportunity stage? choose 3",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Amount."
+        },
+        {
+          "isRight": true,
+          "describe": "Type."
+        },
+        {
+          "isRight": true,
+          "describe": "Probability."
+        },
+        {
+          "isRight": true,
+          "describe": "Forecast Category."
+        },
+        {
+          "isRight": false,
+          "describe": "Close date."
+        }
+      ]
+    },
+    {
+      "describe": "UC provides access to Salesforce Forteir’ sales, service, and marketing teams. Management wants to ensure that when users log ¡n hew home tab provides access to links and documentation that are specifically relevant to the Job function. How can this requirement be met",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Create separate, home, page custom components and layouts assign to users by role."
+        },
+        {
+          "isRight": false,
+          "describe": "expose sçeciflc elements within a home page custom component determine by profile"
+        },
+        {
+          "isRight": false,
+          "describe": "expose sçeciflc elements within a home page custom component determine by role"
+        },
+        {
+          "isRight": true,
+          "describe": "createseperate home page custom component and layouts, assign to users by proFile."
+        }
+      ]
+    },
+    {
+      "describe": "In order to opportunities UC would like sales reps to submit requests for approval from Their sales manager What can be used to meet these requirements?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Approval process with Apex Trigger"
+        },
+        {
+          "isRight": false,
+          "describe": "Two step Approval Process"
+        },
+        {
+          "isRight": false,
+          "describe": "Approval Process with Time Dependent Workflow actions"
+        },
+        {
+          "isRight": true,
+          "describe": "Process Guilder with Submit to Approval action"
+        }
+      ]
+    },
+    {
+      "describe": "UC would like t to use a chatter group for their mergers and acquisitions team to collaborate on potential new projects. This group should not be visible for ten members to see or join and can be accessed by invite only Which chatter group type should the app builder recommend?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Public group"
+        },
+        {
+          "isRight": false,
+          "describe": "Unlisted group"
+        },
+        {
+          "isRight": false,
+          "describe": "Private group"
+        },
+        {
+          "isRight": true,
+          "describe": "Member group"
+        }
+      ]
+    }
+  ],
+  "title": "New SalesforceAppBuilderCertificationQuestions – Set 11"
+}

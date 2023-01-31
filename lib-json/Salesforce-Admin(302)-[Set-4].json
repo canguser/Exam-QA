@@ -1,0 +1,325 @@
+{
+  "title": "Salesforce-Admin(302)-[Set-4]",
+  "category": "Salesforce Admin",
+  "questions": [
+    {
+      "describe": "What type of record access can an Administrator grant through sharing rules?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Read Only"
+        },
+        {
+          "isRight": true,
+          "describe": "Read/Write"
+        },
+        {
+          "isRight": false,
+          "describe": "Read/Write/Transfer"
+        },
+        {
+          "isRight": false,
+          "describe": "Read/Write/Delete"
+        }
+      ]
+    },
+    {
+      "describe": "Which functionality is available when enhanced lists are enabled? (choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Create new records from a list view"
+        },
+        {
+          "isRight": false,
+          "describe": "Calculate the sum of a number field displayed in a list view"
+        },
+        {
+          "isRight": false,
+          "describe": "Edit dependent picklists inline from a list view"
+        },
+        {
+          "isRight": true,
+          "describe": "Edit multiple records directly from a list view"
+        }
+      ]
+    },
+    {
+      "describe": "What can a marketing user do using the Manage Members button on a campaign record? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Associate existing opportunities with the campaign"
+        },
+        {
+          "isRight": false,
+          "describe": "Create a custom report including all campaign members"
+        },
+        {
+          "isRight": true,
+          "describe": "Associate existing contacts with the campaign"
+        },
+        {
+          "isRight": true,
+          "describe": "Import new leads and associate them with the campaign"
+        }
+      ]
+    },
+    {
+      "describe": "What level of access can be set when sharing a document folder with users?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Read/Write/Create"
+        },
+        {
+          "isRight": false,
+          "describe": "Read/Write/Create/Delete"
+        },
+        {
+          "isRight": true,
+          "describe": "Read-only"
+        },
+        {
+          "isRight": true,
+          "describe": "Read/Write"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers uses a private sharing model for opportunities. The sales team wants sales engineers to be involved in specific opportunities to help sales representatives close deals faster. How can an administrator meet this request?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Add Chatter groups to opportunities"
+        },
+        {
+          "isRight": false,
+          "describe": "Add sales engineers to account teams"
+        },
+        {
+          "isRight": true,
+          "describe": "Add sales engineers to opportunity teams"
+        },
+        {
+          "isRight": false,
+          "describe": "Enable Chatter Feed Tracking on opportunities"
+        }
+      ]
+    },
+    {
+      "describe": "Sales executives at Universal Containers need to view a chart that displays opportunities grouped by stage and then by region. What chart type can a system administrator use to accomplish this?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Gauge"
+        },
+        {
+          "isRight": true,
+          "describe": "Bar"
+        },
+        {
+          "isRight": false,
+          "describe": "Funnel"
+        },
+        {
+          "isRight": false,
+          "describe": "Donut"
+        }
+      ]
+    },
+    {
+      "describe": "What does the controlling field determine when field dependencies are being created?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "The values that appear in the dependent field"
+        },
+        {
+          "isRight": false,
+          "describe": "The dependent fields that appear on a layout"
+        },
+        {
+          "isRight": false,
+          "describe": "The default value populated in the dependent field"
+        },
+        {
+          "isRight": false,
+          "describe": "The field-level security for the dependent field"
+        }
+      ]
+    },
+    {
+      "describe": "A user receives an error message when attempting to login to Salesforce. What is the first step the Salesforce administrator should take to troubleshoot the problem?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "View the login history"
+        },
+        {
+          "isRight": false,
+          "describe": "Unlock the user"
+        },
+        {
+          "isRight": false,
+          "describe": "Change the login IP ranges"
+        },
+        {
+          "isRight": false,
+          "describe": "Reset the password"
+        }
+      ]
+    },
+    {
+      "describe": "Criteria-based sharing rules can be created for which objects?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Contacts"
+        },
+        {
+          "isRight": true,
+          "describe": "Leads"
+        },
+        {
+          "isRight": true,
+          "describe": "Opportunities"
+        },
+        {
+          "isRight": true,
+          "describe": "Campaigns"
+        },
+        {
+          "isRight": true,
+          "describe": "Accounts"
+        }
+      ]
+    },
+    {
+      "describe": "Which permission is required to convert a lead? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "\"Create\" and \"Edit\" access for leads, accounts, contacts and opportunities"
+        },
+        {
+          "isRight": false,
+          "describe": "\"Transfer\" access for leads, accounts, contacts, and opportunities"
+        },
+        {
+          "isRight": true,
+          "describe": "\"Convert Leads\" profile permission"
+        },
+        {
+          "isRight": false,
+          "describe": "\"Import Leads\" profile permission"
+        }
+      ]
+    },
+    {
+      "describe": "When using sharing rules, what can records be shared with?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Queues"
+        },
+        {
+          "isRight": true,
+          "describe": "Public groups"
+        },
+        {
+          "isRight": false,
+          "describe": "Profiles"
+        },
+        {
+          "isRight": true,
+          "describe": "Roles and subordinates"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers requires that its Salesforce account data, including attachments, be backed up weekly. Which tool should a system administrator use to accomplish this?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Data Export Service"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loader"
+        },
+        {
+          "isRight": false,
+          "describe": "Account report export"
+        },
+        {
+          "isRight": false,
+          "describe": "Account analytic snapshot"
+        }
+      ]
+    },
+    {
+      "describe": "When importing data, what happens if some records do NOT meet the data validation criteria?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Import process ignores the data validation criteria"
+        },
+        {
+          "isRight": true,
+          "describe": "Import process fails only for the records with invalid data"
+        },
+        {
+          "isRight": false,
+          "describe": "Import process aborts when it encounters the first invalid record"
+        },
+        {
+          "isRight": false,
+          "describe": "Import process requires user authorization to import the invalid records"
+        }
+      ]
+    },
+    {
+      "describe": "When should a system administrator consider using the Salesforce AppExchange? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "To submit ideas for Salesforce application enhancements"
+        },
+        {
+          "isRight": false,
+          "describe": "To find answers to Salesforce application questions"
+        },
+        {
+          "isRight": true,
+          "describe": "When looking for pre-built custom applications and tools"
+        },
+        {
+          "isRight": true,
+          "describe": "When standard Salesforce functionality needs to be extended"
+        }
+      ]
+    },
+    {
+      "describe": "A marketing user has received a file of leads to import into Salesforce. What is the best way to avoid duplicating records?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Merge Leads Function"
+        },
+        {
+          "isRight": false,
+          "describe": "Validation rules"
+        },
+        {
+          "isRight": true,
+          "describe": "Import Wizard"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loader"
+        }
+      ]
+    }
+  ]
+}

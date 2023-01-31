@@ -1,14 +1,18 @@
 {
-  "name": "exam-qa",
-  "version": "1.0.0",
+  "name": "@palerock/exam-qa",
+  "version": "1.0.4",
   "description": "A Vue.js project",
   "author": "ryan <1184518756@qq.com>",
-  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "publish-pacakge": "npm run build && node gen-map.js && npm publish --access public --tag latest"
   },
+  "files": [
+    "dist",
+    "lib-json"
+  ],
   "dependencies": {
     "alloyfinger": "^0.1.16",
     "axios": "^0.19.0",
