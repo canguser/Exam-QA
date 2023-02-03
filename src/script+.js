@@ -189,6 +189,10 @@
 
 const LETTER_MAPPING = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+let answerParser = (answer)=>{
+    return answer.split('').filter(r => r && /[a-z]/i.test(r))
+}
+
 function parseQuestion(question, answer) {
     const lines = question.split('\n').map(l => l.trim()).filter(r => r)
     const body = []
@@ -205,7 +209,7 @@ function parseQuestion(question, answer) {
         }
     })
 
-    const answers = answer.split('').filter(r => r && /[a-z]/i.test(r)).map(r => r.toUpperCase())
+    const answers = answerParser(answer).map(r => r.toUpperCase())
 
     return {
         describe: body.join('\n'),

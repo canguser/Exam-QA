@@ -1,0 +1,318 @@
+{
+  "title": "Salesforce-Certified-Platform-Developer-1-[Set-1]",
+  "category": "Salesforce Dev 1",
+  "questions": [
+    {
+      "describe": "A developer needs to write a method that searches for a phone number that could be on multiple object types.\nWhich method should the developer use to accomplish this task?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "SOQL Query that includes ALL ROWS"
+        },
+        {
+          "isRight": false,
+          "describe": "SOSL Search that includes ALL ROWS"
+        },
+        {
+          "isRight": true,
+          "describe": "SOSL Search"
+        },
+        {
+          "isRight": false,
+          "describe": "SOQL Query on each object"
+        }
+      ]
+    },
+    {
+      "describe": "Given the code block:\nInteger x;\nfor(x = 0; x<10; x+=2)\n{\nif(x==8) break; if(x==10) break;\n}\nsystem.debug(x);\nWhich value will the system.debug statement display?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "4"
+        },
+        {
+          "isRight": false,
+          "describe": "2"
+        },
+        {
+          "isRight": true,
+          "describe": "8"
+        },
+        {
+          "isRight": false,
+          "describe": "10"
+        }
+      ]
+    },
+    {
+      "describe": "What are two correct examples of the Model in the Salesforce MVC architecture?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Custom field on the custom Wizard _c object"
+        },
+        {
+          "isRight": true,
+          "describe": "Standard Account lookup on the Contact object"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow rule on the Contact object"
+        },
+        {
+          "isRight": false,
+          "describe": "Standard Lightning component"
+        }
+      ]
+    },
+    {
+      "describe": "A Visualforce page uses the Contact standard controller.\nHow can a developer display the Name from the parent Account record on the page?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Use an additional standard controller for Accounts."
+        },
+        {
+          "isRight": false,
+          "describe": "Use SOQL syntax to find the related Accounts Name field."
+        },
+        {
+          "isRight": true,
+          "describe": "Use the {!contact.Account.Name} merge field syntax."
+        },
+        {
+          "isRight": false,
+          "describe": "Use additional Apex logic within the controller to query for the Name field."
+        }
+      ]
+    },
+    {
+      "describe": "What is the output of the following code?\nInteger index = 1;\nInteger counter = 2;\ndo\n{\nSystem.debug('index:: '+index);\nindex++;\ncounter++;\n} while (index == 20 && counter == 21);",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "The debug statement will output 1."
+        },
+        {
+          "isRight": false,
+          "describe": "The debug statement will repeat outputs from 1 to 20."
+        },
+        {
+          "isRight": false,
+          "describe": "The debug statement will repeat outputs from 1 to 21."
+        },
+        {
+          "isRight": false,
+          "describe": "The debug statement will output 20."
+        }
+      ]
+    },
+    {
+      "describe": "When would the use of Heroku Postgres be appropriate?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "To store user generated pictures and word documents"
+        },
+        {
+          "isRight": false,
+          "describe": "To interconnect Microsoft SQL servers to Heroku Applications"
+        },
+        {
+          "isRight": true,
+          "describe": "To store and retrieve data using the Structured Query Language"
+        },
+        {
+          "isRight": false,
+          "describe": "To cache commonly accessed data for faster retrieval"
+        }
+      ]
+    },
+    {
+      "describe": "A user selects a value from a multi-select picklist.\nHow is this selected value represented in Apex?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "As a string ending with a comma"
+        },
+        {
+          "isRight": false,
+          "describe": "As a set<string> with one element"
+        },
+        {
+          "isRight": true,
+          "describe": "As a String"
+        },
+        {
+          "isRight": false,
+          "describe": "As a List<string> with one element"
+        }
+      ]
+    },
+    {
+      "describe": ". A developer writes the following code:\nList<Account> acc = [SELECT Id FROM Account LIMIT 10];\nDelete acc;\nDatabase.emptyRecycleBin(acc);\nSystem.Debug[Limits.getDMLStatements() +', '+ Limits.getLimitDMLStatements());\nWhat is the result of the debug statement?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "2, 150"
+        },
+        {
+          "isRight": false,
+          "describe": "1, 100"
+        },
+        {
+          "isRight": false,
+          "describe": "1, 150"
+        },
+        {
+          "isRight": false,
+          "describe": "2, 200"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers (UC) wants to automate the Sales Operations process for Closed Won Opportunities. When an Opportunity is marked as Closed Won, UC wants to update the Account to mark it as a Customer. In addition, UC wants all of the Opportunity Line Items from a Closed Won Opportunity to be added automatically as Assets.\nWhat is appropriate for automating this process?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Process Builder with an Auto launched Flow"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow Rules"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow Rules and Process Builder"
+        },
+        {
+          "isRight": false,
+          "describe": "Process Builder"
+        }
+      ]
+    },
+    {
+      "describe": "Users report multiple intermittent errors and unexpected results when saving a record. Upon investigation, the developer finds that triggers are executing more than once.\nWhat is a potential solution to solve this situation?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Use a one trigger per object approach."
+        },
+        {
+          "isRight": false,
+          "describe": "Use a private class variable to ensure that the trigger only runs once."
+        },
+        {
+          "isRight": true,
+          "describe": "Use a static variable to check if the trigger has already run."
+        },
+        {
+          "isRight": false,
+          "describe": "Disable all triggers and use workflows."
+        }
+      ]
+    },
+    {
+      "describe": "Which two are true regarding a Dyno?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Is a lightweight linux container used in a collection to run Heroku applications?"
+        },
+        {
+          "isRight": false,
+          "describe": "Is a light weight VM used to run code on the Heroku Platform?"
+        },
+        {
+          "isRight": false,
+          "describe": "Has the ability to sleep as a standard and performance Dyno."
+        },
+        {
+          "isRight": true,
+          "describe": "Has Ephemeral filesystems and is rebooted every 24 hours."
+        }
+      ]
+    },
+    {
+      "describe": "Which two queries can a developer use in a Visualforce controller to protect against SOQL injection vulnerabilities?\nChoose 2 answers\nA: String qryName = '%' + String.escapeSingleQuotes(name) + '%';\nString qryString = 'SELECT Id FROM Contact WHERE Name LIKE \\'%' + qryName + '%\\' ';\nList<Contact> queryResult = Database.query(qryString);\nString qryString = 'SELECT Id FROM Contact WHERE Name LIKE :qryName';\nList<Contact> queryResult = Database.query(qryString);\nList<Contact> queryResult = Database.query(qryString);\nString qryString = 'SELECT Id FROM Contact WHERE Name LIKE :qryName';\nList<Contact> queryResult = Database.query(qryString);",
+      "answerOptions": [
+        null,
+        {
+          "isRight": true,
+          "describe": "String qryName = '%' + name + '%';"
+        },
+        {
+          "isRight": false,
+          "describe": "String qryString = 'SELECT Id FROM Contact WHERE Name LIKE \\'%' + name + '%\\' ';"
+        },
+        {
+          "isRight": false,
+          "describe": "String qryName = '%' + String.enforceSecurityChecks(name) + '%';"
+        }
+      ]
+    },
+    {
+      "describe": "A developer is asked to write negative tests as part of the unit testing for a method that calculates a person's age based on birth date.\nWhat should the negative tests include?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Assert that past dates are accepted by the method."
+        },
+        {
+          "isRight": false,
+          "describe": "Assert that a null value is accepted by the method."
+        },
+        {
+          "isRight": true,
+          "describe": "Assert that future dates are rejected by the method."
+        },
+        {
+          "isRight": false,
+          "describe": "Throwing a custom exception in the unit test."
+        }
+      ]
+    },
+    {
+      "describe": "A lead object has a custom field Prior_Email_c. The following trigger is intended to copy the current Email into the Prior_Email_c field any time the Email field is changed:\ntrigger test on Lead (before update){\nfor(Lead id: trigger.new)\n{\nif(Id.Email != trigger.oldMap.get(Id.id).email)\n{\nId.Prior_Email__c = trigger.oldMap.get(Id.id).email;\nupdate Id;\n}\n}\n}\nWhich type of exception will this trigger cause?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "A DML exception"
+        },
+        {
+          "isRight": false,
+          "describe": "A compile time exception"
+        },
+        {
+          "isRight": false,
+          "describe": "A null reference exception"
+        },
+        {
+          "isRight": false,
+          "describe": "A limit exception when doing a bulk update"
+        }
+      ]
+    },
+    {
+      "describe": "A developer encounters APEX heap limit errors in a trigger.\nWhich two methods should the developer use to avoid this error?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Remove or set collections to null after use."
+        },
+        {
+          "isRight": true,
+          "describe": "Use SOQL for loops instead of assigning large queries results to a single collection and looping through the collection."
+        },
+        {
+          "isRight": true,
+          "describe": "Use the transient keyword when declaring variables."
+        },
+        {
+          "isRight": false,
+          "describe": "Query and store fields from the related object in a collection when updating related objects."
+        }
+      ]
+    }
+  ]
+}

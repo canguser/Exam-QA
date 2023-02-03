@@ -1,0 +1,480 @@
+{
+  "title": "Salesforce-Certified-Platform-Developer-1-[Set-7]",
+  "category": "Salesforce Dev 1",
+  "questions": [
+    {
+      "describe": "How should a developer make sure that a child record on a custom object, with a lookup to the Account object, has the same sharing access as its associated account?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Include the sharing related list on the custom object page layout."
+        },
+        {
+          "isRight": true,
+          "describe": "Ensure that the relationship between the objects is Master-Detail."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a validation rule on the custom object comparing the record owners on both records."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a Sharing Rule comparing the custom object owner to the account owner."
+        }
+      ]
+    },
+    {
+      "describe": "A developer needs to test an Invoicing system integration. After reviewing the number of transactions required for the test, the developer estimates that the test data will total about 2 GB of data storage. Production data is not required for the integration testing.\nWhich two environments meet the requirements for testing?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Developer Pro Sandbox"
+        },
+        {
+          "isRight": true,
+          "describe": "Partial Sandbox"
+        },
+        {
+          "isRight": true,
+          "describe": "Full Sandbox"
+        },
+        {
+          "isRight": false,
+          "describe": "Developer Sandbox"
+        },
+        {
+          "isRight": false,
+          "describe": "Developer Edition"
+        }
+      ]
+    },
+    {
+      "describe": "Which two number expressions evaluate correctly?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Decimal d = 3.14159;"
+        },
+        {
+          "isRight": false,
+          "describe": "Long I = 3.14159;"
+        },
+        {
+          "isRight": false,
+          "describe": "Double d = 3.14159;"
+        },
+        {
+          "isRight": false,
+          "describe": "Integer i= 3.14159;"
+        }
+      ]
+    },
+    {
+      "describe": "A developer needs to create a Visualforce page that displays Case data. The page will be used by both support reps and support managers. The Support Rep profile does not allow visibility of the Customer_Satisfaction__c field, but the Support Manager profile does.\nHow can the developer create the page to enforce Field Level Security and keep future maintenance to a minimum?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Use a new Support Manager permission set."
+        },
+        {
+          "isRight": true,
+          "describe": "Use a custom controller that has the with sharing keywords."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a separate Visualforce Page for each profile."
+        },
+        {
+          "isRight": false,
+          "describe": "Create one Visualforce Page for use by both profiles."
+        }
+      ]
+    },
+    {
+      "describe": "Before putting an app into production, which step should be taken?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Scale your Dynos."
+        },
+        {
+          "isRight": false,
+          "describe": "Insure that you have installed a performance introspection add-on."
+        },
+        {
+          "isRight": false,
+          "describe": "Switch to a production database."
+        },
+        {
+          "isRight": true,
+          "describe": "Run the Production Check feature via the web interface"
+        }
+      ]
+    },
+    {
+      "describe": "A Platform Developer needs to write an Apex method that will only perform an action if a record is assigned to a specific Record Type.\nWhich two options allow the developer to dynamically determine the ID of the required Record Type by its name? Choose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Use the getRecordTypeInfosByName() method in the DescribeSObjectResult class."
+        },
+        {
+          "isRight": false,
+          "describe": "Make an outbound web services call to the SOAP API."
+        },
+        {
+          "isRight": false,
+          "describe": "Hardcode the ID as a constant in an Apex class."
+        },
+        {
+          "isRight": true,
+          "describe": "Execute a SOQL query on the RecordType object."
+        }
+      ]
+    },
+    {
+      "describe": "What are two valid options for iterating through each Account in the collection List<Account> named AccountList?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "for (List L : AccountList) {...}"
+        },
+        {
+          "isRight": true,
+          "describe": "for (Account theAccount : AccountList) {...}"
+        },
+        {
+          "isRight": false,
+          "describe": "for (AccountList) {...}"
+        },
+        {
+          "isRight": true,
+          "describe": "for (Integer i=0; i < AccountList. Size 0 ; i++){...}"
+        }
+      ]
+    },
+    {
+      "describe": "What are three characteristics of static methods? Choose 3 answers",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Initialized only when a class is loaded"
+        },
+        {
+          "isRight": false,
+          "describe": "A static variable is available outside of the scope of an Apex transaction"
+        },
+        {
+          "isRight": true,
+          "describe": "Allowed only in outer classes"
+        },
+        {
+          "isRight": false,
+          "describe": "Allowed only in inner classes"
+        },
+        {
+          "isRight": true,
+          "describe": "Excluded from the view state for a Visualforce page"
+        }
+      ]
+    },
+    {
+      "describe": "The operation manager at a construction company uses a custom object called Machinery to manage the usage and of maintenance of its cranes and other machinery. The manager wants to be able to assign machinery to different construction jobs, and track the dates and costs associated with each job. More than one piece of machinery can be assigned to one construction job.\nWhat should a developer do to meet these requirements?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Create a lookup field on the Machinery object to the Construction Job object."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a Master-Detail Lookup on the Machinery object to the Construction Job object."
+        },
+        {
+          "isRight": true,
+          "describe": "Create a junction object with Master-Detail Relationship to both the Machinery object and the Construction Job object."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a lookup field on the Construction Job object to the Machinery object."
+        }
+      ]
+    },
+    {
+      "describe": "What should a developer use to implement an automatic Approval Process submission for Cases?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Scheduled Apex"
+        },
+        {
+          "isRight": false,
+          "describe": "A Workflow Rule"
+        },
+        {
+          "isRight": true,
+          "describe": "Process Builder"
+        },
+        {
+          "isRight": false,
+          "describe": "An Assignment Rule"
+        }
+      ]
+    },
+    {
+      "describe": "Which two platform features align to the Controller portion of MVC architecture? Choose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Workflow rules"
+        },
+        {
+          "isRight": false,
+          "describe": "Date fields"
+        },
+        {
+          "isRight": true,
+          "describe": "Process Builder actions"
+        },
+        {
+          "isRight": false,
+          "describe": "Standard objects"
+        }
+      ]
+    },
+    {
+      "describe": "A developer working on a time management application wants to make total hours for each timecard available to application users. A timecard entry has a Master-Detail relationship to a timecard.\nWhich approach should the developer use to accomplish this declaratively?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "A Process Builder process that updates a field on the timecard when a timecard entry is created"
+        },
+        {
+          "isRight": false,
+          "describe": "A Visualforce page that calculates the total number of hours for a timecard and displays it on the page"
+        },
+        {
+          "isRight": true,
+          "describe": "A Roll-Up Summary field on the Timecard Object that calculates the total hours from timecard entries for that timecard"
+        },
+        {
+          "isRight": false,
+          "describe": "An Apex trigger that uses an Aggregate Query to calculate the hours for a given timecard and stores it in a custom field"
+        }
+      ]
+    },
+    {
+      "describe": "Which three options can be accomplished with formula fields? Choose 3 answers",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Return and display a field value from another object using the VLOOKUP function."
+        },
+        {
+          "isRight": false,
+          "describe": "Display the previous value for a field using the PRIORVALUE function."
+        },
+        {
+          "isRight": true,
+          "describe": "Generate a link using the HYPERLINK function to a specific record."
+        },
+        {
+          "isRight": true,
+          "describe": "Determine which of three different images to display using the IF function."
+        },
+        {
+          "isRight": true,
+          "describe": "Determine if a datetime field value has passed using the NOW function."
+        }
+      ]
+    },
+    {
+      "describe": "Why would a developer consider using a custom controller over a controller extension?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "To implement all of the logic for a page and bypass default Salesforce functionality"
+        },
+        {
+          "isRight": false,
+          "describe": "To enforce user sharing settings and permissions"
+        },
+        {
+          "isRight": false,
+          "describe": "To increase the SOQL query governor limits"
+        },
+        {
+          "isRight": false,
+          "describe": "To leverage built-in functionality of a standard controller"
+        }
+      ]
+    },
+    {
+      "describe": "How should a developer avoid hitting the governor limits in test methods?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Use @IsTest (SeeAliData=true) to use existing data."
+        },
+        {
+          "isRight": true,
+          "describe": "Use Test. startTest() to reset governor limits."
+        },
+        {
+          "isRight": false,
+          "describe": "Use Test.loadData() to load data from a static resource."
+        },
+        {
+          "isRight": false,
+          "describe": "Use @Testvisible on methods that create records."
+        }
+      ]
+    },
+    {
+      "describe": "A developer is asked to set a picklist field to 'Monitor' on any new Leads owned by a subset of Users.\nHow should the developer implement this request?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Create an after insert Lead trigger."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a before insert Lead trigger."
+        },
+        {
+          "isRight": false,
+          "describe": "Create a Lead formula field."
+        },
+        {
+          "isRight": true,
+          "describe": "Create a Lead Workflow Rule Field Update."
+        }
+      ]
+    },
+    {
+      "describe": "A Visualforce page is required for displaying and editing Case records that includes both standard and custom functionality defined in an Apex class called myControllerExtension.\nThe Visualforce page should include which <apex:page> attribute(s) to correctly implement controller functionality?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "standardController=\"Case\" and extensions=\"myControllerExtension\""
+        },
+        {
+          "isRight": false,
+          "describe": "extensions=\"myControllerExtension\""
+        },
+        {
+          "isRight": false,
+          "describe": "controller=\"myControllerExtension\""
+        },
+        {
+          "isRight": false,
+          "describe": "controller=\"Case\" and extensions=\"myControllerExtension\""
+        }
+      ]
+    },
+    {
+      "describe": "When should an Apex Trigger be required instead of a Process Builder Process?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "When multiple records related to the triggering record need to be updated"
+        },
+        {
+          "isRight": false,
+          "describe": "When a record needs to be created"
+        },
+        {
+          "isRight": true,
+          "describe": "When an action needs to be taken on a delete or undelete, or before a DML operation is executed"
+        },
+        {
+          "isRight": false,
+          "describe": "When a post to Chatter needs to be created"
+        }
+      ]
+    },
+    {
+      "describe": "A developer has the controller class below:\npublic with sharing class myFooController{\npublic integer prop { get; private set;}\n}\nWhich code block will run successfully in an execute anonymous window?\nSystem.assert(m.prop ==null);\nSystem.assert(m.prop==1);\nSystem.assert(m.prop ==0);\nSystem.assert(m.prop !=null);",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "myFooController m = new myFooController();"
+        },
+        {
+          "isRight": false,
+          "describe": "myFooController m = new myFooController();"
+        },
+        {
+          "isRight": false,
+          "describe": "myFooController m = new myFooController();"
+        },
+        {
+          "isRight": false,
+          "describe": "myFooController m = new myFooController();"
+        }
+      ]
+    },
+    {
+      "describe": "A developer wrote a unit test to confirm that a custom exception works properly in a custom controller, but the test failed due to an exception being thrown.\nWhat step should the developer take to resolve the issue and properly test the exception?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Use database methods with all or none set to FALSE."
+        },
+        {
+          "isRight": false,
+          "describe": "Use try/catch within the unit test to catch the exception."
+        },
+        {
+          "isRight": false,
+          "describe": "Use the finally block within the unit test to populate the exception."
+        },
+        {
+          "isRight": true,
+          "describe": "Use Test. isRunningTest () within the custom controller."
+        }
+      ]
+    },
+    {
+      "describe": "A newly hired developer discovers that there are multiple triggers on the case object.\nWhat should the developer consider when working with triggers?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Developers must dictate the order of trigger execution."
+        },
+        {
+          "isRight": false,
+          "describe": "Unit tests must specify the trigger being tested."
+        },
+        {
+          "isRight": true,
+          "describe": "Trigger execution order is not guaranteed for the same sObject."
+        },
+        {
+          "isRight": false,
+          "describe": "Trigger execution order is based on creation date and time."
+        }
+      ]
+    },
+    {
+      "describe": "Which approach should a developer take to automatically add a \"Maintenance Plan\" to each Opportunity that includes an \"Annual Subscription\" when an opportunity is closed?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Build an Opportunity trigger that adds a PriceBookEntry record."
+        },
+        {
+          "isRight": false,
+          "describe": "Build an OpportunityLineltem trigger to add an OpportunityLineltem record."
+        },
+        {
+          "isRight": false,
+          "describe": "Build a OpportunityLineltem trigger that adds a PriceBookEntry record."
+        },
+        {
+          "isRight": true,
+          "describe": "Build an Opportunity trigger to add an OpportunityLineltem record."
+        }
+      ]
+    }
+  ]
+}

@@ -239,6 +239,7 @@ export default {
         },
         async intoCategory(category = 'default') {
             this.currentCategory = category
+            this.examList = []
             await bankDao.query('hashCode').notEqual('').toArray().then(banks => {
                 const promises = banks.map(bank => {
                     return historyRecordDao.query('relatedQuestion').anyOf(bank.questions).sortBy('createDate')

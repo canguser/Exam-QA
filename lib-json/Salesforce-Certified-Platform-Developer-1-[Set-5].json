@@ -1,0 +1,329 @@
+{
+  "title": "Salesforce-Certified-Platform-Developer-1-[Set-5]",
+  "category": "Salesforce Dev 1",
+  "questions": [
+    {
+      "describe": "What are two benefits of using the Lightning Component Framework?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "The Lightning Component Framework includes libraries for integrating with popular web services."
+        },
+        {
+          "isRight": true,
+          "describe": "Lightning components render on the client, providing performance benefits."
+        },
+        {
+          "isRight": true,
+          "describe": "Lightning Components are built using web standards, ensuring cross-browser compatibility."
+        },
+        {
+          "isRight": false,
+          "describe": "Lightning Components render on the server, ensuring greater security and access control."
+        }
+      ]
+    },
+    {
+      "describe": "How should a developer prevent a recursive trigger?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Use a private Boolean variable."
+        },
+        {
+          "isRight": false,
+          "describe": "Use a trigger handler."
+        },
+        {
+          "isRight": false,
+          "describe": "Use a \"one trigger per object\" pattern."
+        },
+        {
+          "isRight": true,
+          "describe": "Use a static Boolean variable."
+        }
+      ]
+    },
+    {
+      "describe": "What does the context variable Trigger. old represent in an update operation?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "The previous version values of the records firing the trigger"
+        },
+        {
+          "isRight": false,
+          "describe": "The current values of the records firing the trigger"
+        },
+        {
+          "isRight": false,
+          "describe": "The same values of Trigger.new"
+        },
+        {
+          "isRight": false,
+          "describe": "A map of IDs to the old version of the record"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers (UC) has an integration with its Accounting system that creates tens of thousands of Orders inside of Salesforce in a nightly batch. UC wants to add automation that can attempt to match Leads and Contacts to these Orders using the Email Address field on the insert. UC is concerned about the performance of the automation with a large data volume.\nWhich tool should UC use to automate this process?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Process Builder"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow Rules"
+        },
+        {
+          "isRight": false,
+          "describe": "Process Builder with an Auto launched Flow"
+        },
+        {
+          "isRight": true,
+          "describe": "Apex"
+        }
+      ]
+    },
+    {
+      "describe": "Which type of controller should a developer use to include a list of related records for a Custom Object record on a Visualforce page without needing additional test coverage?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "List Controller"
+        },
+        {
+          "isRight": false,
+          "describe": "Custom Controller"
+        },
+        {
+          "isRight": false,
+          "describe": "Controller Extension"
+        },
+        {
+          "isRight": true,
+          "describe": "Standard Controller"
+        }
+      ]
+    },
+    {
+      "describe": "Where can a developer identify the time taken by each process in request using Developer Console log inspector?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Execution Tree tab under Stack Tree panel"
+        },
+        {
+          "isRight": true,
+          "describe": "Timeline tab under Execution Overview panel"
+        },
+        {
+          "isRight": false,
+          "describe": "Save Order tab under Execution Overview panel"
+        },
+        {
+          "isRight": false,
+          "describe": "Performance Tree tab under Stack Tree panel"
+        }
+      ]
+    },
+    {
+      "describe": "What is the correct invocation to push code to the app sushi-prod from the command line?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "git push master"
+        },
+        {
+          "isRight": true,
+          "describe": "git push heroku master --app sushi-prod"
+        },
+        {
+          "isRight": false,
+          "describe": "heroku push --app sushi-prod"
+        },
+        {
+          "isRight": false,
+          "describe": "heroku git push master"
+        }
+      ]
+    },
+    {
+      "describe": "Which two Apex data types can be used to reference a Salesforce record ID dynamically? Choose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "External ID"
+        },
+        {
+          "isRight": false,
+          "describe": "ENUM"
+        },
+        {
+          "isRight": true,
+          "describe": "String"
+        },
+        {
+          "isRight": true,
+          "describe": "sObject"
+        }
+      ]
+    },
+    {
+      "describe": "Given: Map<ID, Account> accountMap = new Map<ID, Account> ((SELECT Id, Name FROM Account]);\nWhat are three valid Apex loop structures for iterating through items in the collection?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "for (ID accountlD : accountMap. keySet ()) {....}"
+        },
+        {
+          "isRight": true,
+          "describe": "for (Account accountRecord : accountMap.values()) {....}"
+        },
+        {
+          "isRight": true,
+          "describe": "for (Integer i=0; i < accountmap. size (); i++) {....}"
+        },
+        {
+          "isRight": false,
+          "describe": "for (ID accountlD : accountMap) {....}"
+        },
+        {
+          "isRight": false,
+          "describe": "for (Account accountRecord : accountMap.keySet ()) {....}"
+        }
+      ]
+    },
+    {
+      "describe": "An org has a single account named 'NoContacts' that has no related contacts. Given the query:\nList<Account> accounts = [Select ID, (Select ID, Name from Contacts) from Account where Name='NoContacts'];\nWhat is the result of running this Apex?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "accounts[0].contacts is an empty list."
+        },
+        {
+          "isRight": false,
+          "describe": "accounts[0] is Null."
+        },
+        {
+          "isRight": false,
+          "describe": "accounts[0].contacts is invalid Apex."
+        },
+        {
+          "isRight": false,
+          "describe": "A QueryException is thrown."
+        }
+      ]
+    },
+    {
+      "describe": "Which two strategies should a developer use to avoid hitting governor limits when developing in a mul ti-tenant environment? Choose 2 answers",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Use collections to store all fields from a related object and not just minimally required fields."
+        },
+        {
+          "isRight": true,
+          "describe": "Use methods from the \"Limits\" class to monitor governor limits."
+        },
+        {
+          "isRight": true,
+          "describe": "Use SOQL for loops to iterate data retrieved from queries that return a high number of rows."
+        },
+        {
+          "isRight": false,
+          "describe": "Use variables within Apex classes to store large amounts of data."
+        }
+      ]
+    },
+    {
+      "describe": "Now should a developer create a new custom exception class?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "public class CustomException extends Exception{}"
+        },
+        {
+          "isRight": false,
+          "describe": "(Exception)CustomException ex = new Exception();"
+        },
+        {
+          "isRight": false,
+          "describe": "public class CustomException implements Exception{}"
+        },
+        {
+          "isRight": false,
+          "describe": "CustomException ex = new (CustomException)Exception();"
+        }
+      ]
+    },
+    {
+      "describe": "Which three tools can deploy metadata to production? Choose 3 answers",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Change Set from Developer Org"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loader"
+        },
+        {
+          "isRight": true,
+          "describe": "Force.com IDE"
+        },
+        {
+          "isRight": true,
+          "describe": "Change Set from Sandbox"
+        },
+        {
+          "isRight": true,
+          "describe": "Metadata API"
+        }
+      ]
+    },
+    {
+      "describe": "What are the eight officially supported languages on the Heroku Platform?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "C#, C++, Node, Ruby, Java, PHP, Go, .Net"
+        },
+        {
+          "isRight": false,
+          "describe": "Node, Ruby, Java, PHP, Python. .Net, C++"
+        },
+        {
+          "isRight": true,
+          "describe": "Node, Ruby, Java, PHP, Python, Go, Scala, Clojure"
+        },
+        {
+          "isRight": false,
+          "describe": "Lisp, PHP, Node, Ruby, Scala, Haskell, Go, Erlang"
+        }
+      ]
+    },
+    {
+      "describe": "What is a benefit of using an after insert trigger over using a before insert trigger?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "An after insert trigger allows a developer to bypass validation rules when updating fields on the new record."
+        },
+        {
+          "isRight": false,
+          "describe": "An after insert trigger allows a developer to insert other objects that reference the new record."
+        },
+        {
+          "isRight": false,
+          "describe": "An after insert trigger allows a developer to make a callout to an external service."
+        },
+        {
+          "isRight": false,
+          "describe": "An after insert trigger allows a developer to modify fields in the new record without a query."
+        }
+      ]
+    }
+  ]
+}
