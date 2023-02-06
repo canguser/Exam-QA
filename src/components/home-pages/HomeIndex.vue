@@ -35,6 +35,9 @@
         <van-popup v-model="isShowImporter">
             <div class="exam-import-box">
                 <div v-if="isFromOnline" style="max-height: 300px;overflow-y: auto;">
+                    <div v-if="!onlineLibs || onlineLibs.length === 0" style="text-align: center;padding: 10px">
+                        <van-loading type="spinner" />
+                    </div>
                     <van-checkbox-group v-model="onlineSelects">
                         <van-cell-group>
                             <van-cell v-for="(lib, oi) in onlineLibs"
@@ -92,7 +95,9 @@ import {questionDao, historyRecordDao, bankDao, configDao} from '../../dao';
 import {Dialog} from 'vant';
 import config from "@/config";
 import {Checkbox, CheckboxGroup} from 'vant';
+import { Loading } from 'vant';
 
+Vue.use(Loading);
 Vue.use(Dialog);
 Vue.use(Field).use(Cell).use(CellGroup);
 Vue.use(Button);
@@ -189,7 +194,7 @@ export default {
             this.isFromOnline = true;
             this.fetchOnlineLib().then(res => {
                 this.onlineLibs = res.filter(r => r.data).map(r => ({
-                    ...r.data, hashCode: utils.getHashCode(r.data)
+                    ...r.data, hashCode: r.data.hashCode || utils.getHashCode(r.data.title + r.data.category)
                 }));
             }).catch(e => {
                 console.log(e)
@@ -199,8 +204,12 @@ export default {
         },
         async fetchOnlineLib() {
             const maps = (await this.$http.get(existsMap + "/map.json")).data || []
-            const promises = maps.map(exist => this.$http.get(existsMap + "/" + exist));
-            return Promise.all(promises);
+            const libs = []
+            for (let i = 0; i < maps.length; i++) {
+                const map = maps[i];
+                libs.push(await this.$http.get(existsMap + "/" + map))
+            }
+            return libs;
         },
         async importLib() {
             try {
@@ -224,13 +233,13 @@ export default {
                 return false;
             }
             lib.questions.forEach(q=>{
-                q.hashCode = utils.getHashCode(q)
+                q.hashCode = q.hashCode || utils.getHashCode(q)
             })
             const bank = {
                 ...lib,
                 questions: lib.questions.map(q=>q.hashCode)
             }
-            bank.hashCode = utils.getHashCode(bank)
+            bank.hashCode = lib.hashCode || utils.getHashCode(bank)
             await questionDao.upsert(lib.questions)
                 .then(()=>{
                     return bankDao.upsert([bank]);
@@ -241,6 +250,10 @@ export default {
             this.currentCategory = category
             this.examList = []
             await bankDao.query('hashCode').notEqual('').toArray().then(banks => {
+                banks.sort((a, b) => {
+                    // short by ASCII total of title asc
+                    return a.title.split('').reduce((a, b) => a + b.charCodeAt(0), 0) - b.title.split('').reduce((a, b) => a + b.charCodeAt(0), 0)
+                })
                 const promises = banks.map(bank => {
                     return historyRecordDao.query('relatedQuestion').anyOf(bank.questions).sortBy('createDate')
                         .then(records => {
@@ -277,39 +290,6 @@ export default {
                 this.intoCategory(this.currentCategory)
             }
         },
-        syncDataToIndexDB() {
-            let exams = JSON.parse(JSON.stringify(this.examList))
-                .map(e => ({...e, bank: utils.storage.getItem(e.hashCode)}))
-                .map(e => ({
-                    ...e,
-                    questionSet: e.bank.questions,
-                    bank: {
-                        ...e.bank, hashCode: utils.getHashCode(e.bank),
-                        questions: e.bank.questions.map(q => utils.getHashCode(q))
-                    },
-                    historyRecords: Object.entries(e.errorMap)
-                        .map(([relatedQuestion, {times, rightTimes}]) => ({
-                            relatedQuestion, rightTimes, errorTimes: times
-                        }))
-                }));
-            questionDao.upsert(
-                utils.flat(exams.map(e => e.questionSet.map(q => ({
-                    ...q,
-                    hashCode: utils.getHashCode(q),
-                }))), 2)
-            ).then(() => {
-                return bankDao.upsert(exams.map(e => e.bank));
-            }).then(() => {
-                return historyRecordDao.upsert(utils.flat(exams.map(e => e.historyRecords), 2));
-            }).then(() => {
-                return configDao.upsert({key: 'hasSync', value: true});
-            }).then(() => {
-                console.log('sync success.');
-            }).catch(e => {
-                console.log(e);
-            });
-            // console.log(exams);
-        }
     },
     mounted() {
         this.initExamList();

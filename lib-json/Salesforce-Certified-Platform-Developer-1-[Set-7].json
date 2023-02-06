@@ -393,23 +393,23 @@
       ]
     },
     {
-      "describe": "A developer has the controller class below:\npublic with sharing class myFooController{\npublic integer prop { get; private set;}\n}\nWhich code block will run successfully in an execute anonymous window?\nSystem.assert(m.prop ==null);\nSystem.assert(m.prop==1);\nSystem.assert(m.prop ==0);\nSystem.assert(m.prop !=null);",
+      "describe": "A developer has the controller class below:\npublic with sharing class myFooController{\npublic integer prop { get; private set;}\n}\nWhich code block will run successfully in an execute anonymous window?",
       "answerOptions": [
         {
           "isRight": true,
-          "describe": "myFooController m = new myFooController();"
+          "describe": "myFooController m = new myFooController();\nSystem.assert(m.prop ==null);"
         },
         {
           "isRight": false,
-          "describe": "myFooController m = new myFooController();"
+          "describe": "myFooController m = new myFooController();\nSystem.assert(m.prop==1);"
         },
         {
           "isRight": false,
-          "describe": "myFooController m = new myFooController();"
+          "describe": "myFooController m = new myFooController();\nSystem.assert(m.prop ==0);"
         },
         {
           "isRight": false,
-          "describe": "myFooController m = new myFooController();"
+          "describe": "myFooController m = new myFooController();\nSystem.assert(m.prop !=null);"
         }
       ]
     },

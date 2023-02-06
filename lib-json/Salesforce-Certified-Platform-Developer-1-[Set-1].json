@@ -234,20 +234,23 @@
       ]
     },
     {
-      "describe": "Which two queries can a developer use in a Visualforce controller to protect against SOQL injection vulnerabilities?\nChoose 2 answers\nA: String qryName = '%' + String.escapeSingleQuotes(name) + '%';\nString qryString = 'SELECT Id FROM Contact WHERE Name LIKE \\'%' + qryName + '%\\' ';\nList<Contact> queryResult = Database.query(qryString);\nString qryString = 'SELECT Id FROM Contact WHERE Name LIKE :qryName';\nList<Contact> queryResult = Database.query(qryString);\nList<Contact> queryResult = Database.query(qryString);\nString qryString = 'SELECT Id FROM Contact WHERE Name LIKE :qryName';\nList<Contact> queryResult = Database.query(qryString);",
+      "describe": "Which two queries can a developer use in a Visualforce controller to protect against SOQL injection vulnerabilities?\nChoose 2 answers",
       "answerOptions": [
-        null,
         {
           "isRight": true,
-          "describe": "String qryName = '%' + name + '%';"
+          "describe": "String qryName = '%' + String.escapeSingleQuotes(name) + '%';\nString qryString = 'SELECT Id FROM Contact WHERE Name LIKE \\'%' + qryName + '%\\' ';\nList<Contact> queryResult = Database.query(qryString);"
+        },
+        {
+          "isRight": true,
+          "describe": "String qryName = '%' + name + '%';\nString qryString = 'SELECT Id FROM Contact WHERE Name LIKE :qryName';\nList<Contact> queryResult = Database.query(qryString);"
         },
         {
           "isRight": false,
-          "describe": "String qryString = 'SELECT Id FROM Contact WHERE Name LIKE \\'%' + name + '%\\' ';"
+          "describe": "String qryString = 'SELECT Id FROM Contact WHERE Name LIKE \\'%' + name + '%\\' ';\nList<Contact> queryResult = Database.query(qryString);"
         },
         {
           "isRight": false,
-          "describe": "String qryName = '%' + String.enforceSecurityChecks(name) + '%';"
+          "describe": "String qryName = '%' + String.enforceSecurityChecks(name) + '%';\nString qryString = 'SELECT Id FROM Contact WHERE Name LIKE :qryName';\nList<Contact> queryResult = Database.query(qryString);"
         }
       ]
     },

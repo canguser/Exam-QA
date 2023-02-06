@@ -1,0 +1,621 @@
+{
+  "title": "Salesforce-Admin-201-[Set-2]",
+  "category": "Salesforce Admin 201",
+  "questions": [
+    {
+      "describe": "Which of the following features can be used to assign different picklist values for different business processes? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Page Layout"
+        },
+        {
+          "isRight": true,
+          "describe": "Record Type"
+        },
+        {
+          "isRight": false,
+          "describe": "Validation Rule"
+        },
+        {
+          "isRight": false,
+          "describe": "Field Level Security"
+        },
+        {
+          "isRight": false,
+          "describe": "Formula Field"
+        }
+      ]
+    },
+    {
+      "describe": "AW Computing wants their sales reps to see the sum of the total opportunities on each account that they own. What feature can be used to display this information? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Roll-Up Summary Field"
+        },
+        {
+          "isRight": false,
+          "describe": "Page Layout"
+        },
+        {
+          "isRight": false,
+          "describe": "Cross Object Formula"
+        },
+        {
+          "isRight": false,
+          "describe": "Record Type"
+        },
+        {
+          "isRight": false,
+          "describe": "Field Level Security"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following features can be used to make a field required? (Select 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Page Layout"
+        },
+        {
+          "isRight": false,
+          "describe": "Record Type"
+        },
+        {
+          "isRight": true,
+          "describe": "Validation Rule"
+        },
+        {
+          "isRight": false,
+          "describe": "Field Level Security"
+        },
+        {
+          "isRight": false,
+          "describe": "Formula Field"
+        }
+      ]
+    },
+    {
+      "describe": "An admin needs to keep track of all the changes made to the stage, amount, and close date on opportunities. (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Validation Rule"
+        },
+        {
+          "isRight": true,
+          "describe": "Field History Tracking"
+        },
+        {
+          "isRight": false,
+          "describe": "Formula field"
+        },
+        {
+          "isRight": false,
+          "describe": "Workflow"
+        },
+        {
+          "isRight": false,
+          "describe": "Page Layout"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following data import tools can import up to 50,000 records at a time, and provides a simple interface to specify the configuration parameters, data sources, and the field mappings that map the field names in your import file with the field names in Salesforce? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Data Loader"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Importer"
+        },
+        {
+          "isRight": true,
+          "describe": "Data Import Wizard"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loading Wizard"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following data import tools can import up to five million records at a time, of any data type, either from files or a database connection, and can be operated either through the user interface or the command line. (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Data Loader"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Importer"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Import Wizard"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loading Wizard"
+        }
+      ]
+    },
+    {
+      "describe": "Regardless of the data import tool used, the number of records you can import depends which of the following? (Select 3).",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "On your permissions"
+        },
+        {
+          "isRight": true,
+          "describe": "The type of data you're importing"
+        },
+        {
+          "isRight": false,
+          "describe": "They types of objects you're importing"
+        },
+        {
+          "isRight": true,
+          "describe": "The overall data storage limits for your organization"
+        }
+      ]
+    },
+    {
+      "describe": "What type of data import tool would you use if you want to automate the data import process? (Select 1)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Data Loader"
+        },
+        {
+          "isRight": false,
+          "describe": "Your answerData Importer"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Import Wizard"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loading Wizard"
+        }
+      ]
+    },
+    {
+      "describe": "You must include universally required fields in your import files or the import will fail.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "A folder is a place where you can store which of the following? (Select 3)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Records"
+        },
+        {
+          "isRight": true,
+          "describe": "Reports"
+        },
+        {
+          "isRight": true,
+          "describe": "Dashboards"
+        },
+        {
+          "isRight": true,
+          "describe": "Email templates"
+        }
+      ]
+    },
+    {
+      "describe": "What permissions are needed to be able to delete or change a read-only folder? (Select 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Read/Write permissions"
+        },
+        {
+          "isRight": false,
+          "describe": "Folder Manager permissions"
+        },
+        {
+          "isRight": true,
+          "describe": "Manage Public Documents permissions"
+        },
+        {
+          "isRight": true,
+          "describe": "Manage Public Templates permissions"
+        }
+      ]
+    },
+    {
+      "describe": "As a System Administrator, you can edit unfiled and personal folders.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "When you share a folder with a group, managers of the group members (above the members in the role hierarchy) have no access to the folder unless those managers are also members of the group. A. True",
+      "answerOptions": [
+        null,
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "You cannot cancel an import after it has started processing.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Which is a capability of Chatter files? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Store Chatter posts in a Salesforce Content group"
+        },
+        {
+          "isRight": true,
+          "describe": "View a list of files shared with a Chatter group"
+        },
+        {
+          "isRight": false,
+          "describe": "Link a Salesforce Content library to a Chatter profile"
+        },
+        {
+          "isRight": false,
+          "describe": "Post files from a Salesforce Content library to a Chatter feed"
+        }
+      ]
+    },
+    {
+      "describe": "What option is available when scheduling a dashboard refresh?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Send a refresh notification to users with access to the dashboard"
+        },
+        {
+          "isRight": false,
+          "describe": "Schedule the dashboard to refresh in different time zones"
+        },
+        {
+          "isRight": false,
+          "describe": "Define the refresh times for specific dashboard components"
+        },
+        {
+          "isRight": true,
+          "describe": "View and remove a scheduled dashboard refresh"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers wants to ensure that users complete the standard Industry field when creating a new account record. To address this concern, the administrator set the Industry field as required. However, some users are still able to create a new account record without completing the Industry field. What should an administrator do to troubleshoot the issue?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Verify the users have the \"Edit\" permission for accounts on their profiles"
+        },
+        {
+          "isRight": false,
+          "describe": "Verify the users have the \"Modify All Data\" permission for accounts on their profiles"
+        },
+        {
+          "isRight": true,
+          "describe": "Verify the field-level security for the Industry field is not set to \"Read Only\" on the users' profiles"
+        },
+        {
+          "isRight": true,
+          "describe": "Verify the Industry field is set as required on all the account page layouts assigned to the users' profiles"
+        }
+      ]
+    },
+    {
+      "describe": "What type of record access can an Administrator grant through sharing rules?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Read Only"
+        },
+        {
+          "isRight": true,
+          "describe": "Read/Write"
+        },
+        {
+          "isRight": false,
+          "describe": "Read/Write/Transfer"
+        },
+        {
+          "isRight": false,
+          "describe": "Read/Write/Delete"
+        }
+      ]
+    },
+    {
+      "describe": "Which functionality is available when enhanced lists are enabled? (choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Create new records from a list view"
+        },
+        {
+          "isRight": false,
+          "describe": "Calculate the sum of a number field displayed in a list view"
+        },
+        {
+          "isRight": false,
+          "describe": "Edit dependent picklists inline from a list view"
+        },
+        {
+          "isRight": true,
+          "describe": "Edit multiple records directly from a list view"
+        }
+      ]
+    },
+    {
+      "describe": "What can a marketing user do using the Manage Members button on a campaign record? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Associate existing opportunities with the campaign"
+        },
+        {
+          "isRight": false,
+          "describe": "Create a custom report including all campaign members"
+        },
+        {
+          "isRight": true,
+          "describe": "Associate existing contacts with the campaign"
+        },
+        {
+          "isRight": true,
+          "describe": "Import new leads and associate them with the campaign"
+        }
+      ]
+    },
+    {
+      "describe": "What level of access can be set when sharing a document folder with users?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Read/Write/Create"
+        },
+        {
+          "isRight": false,
+          "describe": "Read/Write/Create/Delete"
+        },
+        {
+          "isRight": true,
+          "describe": "Read-only"
+        },
+        {
+          "isRight": true,
+          "describe": "Read/Write"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers uses a private sharing model for opportunities. The sales team wants sales engineers to be involved in specific opportunities to help sales representatives close deals faster. How can an administrator meet this request?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Add Chatter groups to opportunities"
+        },
+        {
+          "isRight": false,
+          "describe": "Add sales engineers to account teams"
+        },
+        {
+          "isRight": true,
+          "describe": "Add sales engineers to opportunity teams"
+        },
+        {
+          "isRight": false,
+          "describe": "Enable Chatter Feed Tracking on opportunities"
+        }
+      ]
+    },
+    {
+      "describe": "Sales executives at Universal Containers need to view a chart that displays opportunities grouped by stage and then by region. What chart type can a system administrator use to accomplish this?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Gauge"
+        },
+        {
+          "isRight": true,
+          "describe": "Bar"
+        },
+        {
+          "isRight": false,
+          "describe": "Funnel"
+        },
+        {
+          "isRight": false,
+          "describe": "Donut"
+        }
+      ]
+    },
+    {
+      "describe": "What does the controlling field determine when field dependencies are being created?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "The values that appear in the dependent field"
+        },
+        {
+          "isRight": false,
+          "describe": "The dependent fields that appear on a layout"
+        },
+        {
+          "isRight": false,
+          "describe": "The default value populated in the dependent field"
+        },
+        {
+          "isRight": false,
+          "describe": "The field-level security for the dependent field"
+        }
+      ]
+    },
+    {
+      "describe": "A user receives an error message when attempting to login to Salesforce. What is the first step the Salesforce administrator should take to troubleshoot the problem?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "View the login history"
+        },
+        {
+          "isRight": false,
+          "describe": "Unlock the user"
+        },
+        {
+          "isRight": false,
+          "describe": "Change the login IP ranges"
+        },
+        {
+          "isRight": false,
+          "describe": "Reset the password"
+        }
+      ]
+    },
+    {
+      "describe": "Criteria-based sharing rules can be created for which objects?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Contacts"
+        },
+        {
+          "isRight": true,
+          "describe": "Leads"
+        },
+        {
+          "isRight": true,
+          "describe": "Opportunities"
+        },
+        {
+          "isRight": true,
+          "describe": "Campaigns"
+        },
+        {
+          "isRight": true,
+          "describe": "Accounts"
+        }
+      ]
+    },
+    {
+      "describe": "Which permission is required to convert a lead? (Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "\"Create\" and \"Edit\" access for leads, accounts, contacts and opportunities"
+        },
+        {
+          "isRight": false,
+          "describe": "\"Transfer\" access for leads, accounts, contacts, and opportunities"
+        },
+        {
+          "isRight": true,
+          "describe": "\"Convert Leads\" profile permission"
+        },
+        {
+          "isRight": false,
+          "describe": "\"Import Leads\" profile permission"
+        }
+      ]
+    },
+    {
+      "describe": "When using sharing rules, what can records be shared with?(Choose 2)",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Queues"
+        },
+        {
+          "isRight": true,
+          "describe": "Public groups"
+        },
+        {
+          "isRight": false,
+          "describe": "Profiles"
+        },
+        {
+          "isRight": true,
+          "describe": "Roles and subordinates"
+        }
+      ]
+    },
+    {
+      "describe": "Universal Containers requires that its Salesforce account data, including attachments, be backed up weekly. Which tool should a system administrator use to accomplish this?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Data Export Service"
+        },
+        {
+          "isRight": false,
+          "describe": "Data Loader"
+        },
+        {
+          "isRight": false,
+          "describe": "Account report export"
+        },
+        {
+          "isRight": false,
+          "describe": "Account analytic snapshot"
+        }
+      ]
+    },
+    {
+      "describe": "When importing data, what happens if some records do NOT meet the data validation criteria?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Import process ignores the data validation criteria"
+        },
+        {
+          "isRight": true,
+          "describe": "Import process fails only for the records with invalid data"
+        },
+        {
+          "isRight": false,
+          "describe": "Import process aborts when it encounters the first invalid record"
+        },
+        {
+          "isRight": false,
+          "describe": "Import process requires user authorization to import the invalid records"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,592 @@
+{
+  "title": "Salesforce-Admin-201-[Set-7]",
+  "category": "Salesforce Admin 201",
+  "questions": [
+    {
+      "describe": "A Standard profile that has Standard User Permissions and can manage published solutions and solution\ncategories",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Marketing Profile"
+        },
+        {
+          "isRight": false,
+          "describe": "Contract Manager"
+        },
+        {
+          "isRight": false,
+          "describe": "System Administrator"
+        },
+        {
+          "isRight": false,
+          "describe": "Marketing User"
+        },
+        {
+          "isRight": true,
+          "describe": "Solution Manager"
+        }
+      ]
+    },
+    {
+      "describe": "Which of the following are setting options for the User Interface?\n*Choose 4 answers.*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Enable Collapsible Sections"
+        },
+        {
+          "isRight": true,
+          "describe": "Show Quick Create"
+        },
+        {
+          "isRight": true,
+          "describe": "Show customer Sidebar Components on All Pages"
+        },
+        {
+          "isRight": true,
+          "describe": "Transfer all Open Opportunities"
+        },
+        {
+          "isRight": true,
+          "describe": "Enable Drag-and-drop scheduling on List Views"
+        }
+      ]
+    },
+    {
+      "describe": "The Report Builder is different from the Report Wizard.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Salesforce.com archives older activities according to which of the following conditions:\n*Choose 3 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Closed Events 180 days old"
+        },
+        {
+          "isRight": true,
+          "describe": "Events with a due date greater than 365 days old"
+        },
+        {
+          "isRight": true,
+          "describe": "Open tasks with a due date greater than 365 days old"
+        },
+        {
+          "isRight": true,
+          "describe": "Closed tasks with a due date greater than 365 days old"
+        },
+        {
+          "isRight": true,
+          "describe": "Closed tasks without a due date that were created more than 365 days ago"
+        }
+      ]
+    },
+    {
+      "describe": "IF(ISPICKVAL(picklist_field)) has the same output as:",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "VAL(picklist_field)"
+        },
+        {
+          "isRight": true,
+          "describe": "CASE(picklist_field)"
+        },
+        {
+          "isRight": true,
+          "describe": "CASE(\"picklist_field\")"
+        },
+        {
+          "isRight": true,
+          "describe": "Pickli st_fie ld(VALUE)"
+        }
+      ]
+    },
+    {
+      "describe": "At this click path Setup > App Setup > Customize > Tab Names and Labels > Rename Tabs and Labels you can\nrename the Tab Names of standard objects.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Is identity confirmation necessary if a user's IP address is known and browser cookie exists?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "What is the maximum number of records to be printed in the Printable View of a list view?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "2000"
+        },
+        {
+          "isRight": false,
+          "describe": "100"
+        },
+        {
+          "isRight": true,
+          "describe": "1000"
+        },
+        {
+          "isRight": false,
+          "describe": "200"
+        }
+      ]
+    },
+    {
+      "describe": "Are custom object reports accessible when you add a custom object tab?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Yes"
+        },
+        {
+          "isRight": true,
+          "describe": "No"
+        },
+        {
+          "isRight": false,
+          "describe": "Only if the Object is not related to any other object"
+        }
+      ]
+    },
+    {
+      "describe": "What is not found on a Company Profile?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Language, Locale, and Time Zone"
+        },
+        {
+          "isRight": true,
+          "describe": "Profiles"
+        },
+        {
+          "isRight": false,
+          "describe": "Licenses"
+        },
+        {
+          "isRight": false,
+          "describe": "Storage and Used Space"
+        },
+        {
+          "isRight": true,
+          "describe": "Manage Currencies"
+        },
+        {
+          "isRight": true,
+          "describe": "Fiscal Years"
+        }
+      ]
+    },
+    {
+      "describe": "Custom Report Types (CRT) allows you to build a framework from which users can create and customize\nreports in the report wizard but not in report builder.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "A Profile is a collection of settings and permissions that determine what the user can do with records they have\naccess to and how they view those records.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "When are data Validation Rules enforced?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Upon opening the record"
+        },
+        {
+          "isRight": false,
+          "describe": "Upon closing the record"
+        },
+        {
+          "isRight": false,
+          "describe": "Upon editing a field"
+        },
+        {
+          "isRight": true,
+          "describe": "Upon saving a record"
+        }
+      ]
+    },
+    {
+      "describe": "System Administrators have this permission by default.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "None of these"
+        },
+        {
+          "isRight": false,
+          "describe": "Report Wizard"
+        },
+        {
+          "isRight": true,
+          "describe": "Report Builder"
+        },
+        {
+          "isRight": false,
+          "describe": "Both Report Wizard and Report builder"
+        }
+      ]
+    },
+    {
+      "describe": "The Salesforce Console is an example of what?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "API"
+        },
+        {
+          "isRight": true,
+          "describe": "Third Party Web integration/Application"
+        },
+        {
+          "isRight": false,
+          "describe": "UI"
+        },
+        {
+          "isRight": false,
+          "describe": "JavaScript"
+        }
+      ]
+    },
+    {
+      "describe": "What is the click path to enable Enhance Profile Management?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Setup I Customize I User Interface"
+        },
+        {
+          "isRight": false,
+          "describe": "Setup I Manage Users I Profiles"
+        },
+        {
+          "isRight": false,
+          "describe": "Setup I Profiles I Customize"
+        }
+      ]
+    },
+    {
+      "describe": "Custom formula fields can reference other custom formula fields including themselves.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "You must run the report before you can print or export it because the Printable View and Export details buttons are not available in the report builder.",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "True"
+        },
+        {
+          "isRight": false,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Which Salesforce editions provide option for customizing profiles?\n*Choose 2 answers.*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "All Editions"
+        },
+        {
+          "isRight": true,
+          "describe": "Unlimited, Developer and Enterprise Editions"
+        },
+        {
+          "isRight": false,
+          "describe": "Professional, Unlimited, and Developer Editions"
+        },
+        {
+          "isRight": true,
+          "describe": "Enterprise, Unlimited, and Developer Editions"
+        },
+        {
+          "isRight": false,
+          "describe": "All except Group Edition"
+        },
+        {
+          "isRight": false,
+          "describe": "All except Professional Edition"
+        }
+      ]
+    },
+    {
+      "describe": "How many profiles can load in a single list view with Enhanced Profile Management enabled?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "300"
+        },
+        {
+          "isRight": false,
+          "describe": "500"
+        },
+        {
+          "isRight": true,
+          "describe": "200"
+        },
+        {
+          "isRight": false,
+          "describe": "1000"
+        }
+      ]
+    },
+    {
+      "describe": "What is the maximum number of condition highlighting per report?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "5"
+        },
+        {
+          "isRight": true,
+          "describe": "3"
+        },
+        {
+          "isRight": false,
+          "describe": "10"
+        },
+        {
+          "isRight": false,
+          "describe": "20"
+        }
+      ]
+    },
+    {
+      "describe": "Which is a capability of the new Service Cloud console?\n*Choose 3 answers.*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "It provides data visibility by combining a list view and related records on one screen."
+        },
+        {
+          "isRight": true,
+          "describe": "It allows agents to view key record information in the highlights panel."
+        },
+        {
+          "isRight": false,
+          "describe": "It preserves the context of calls using primary tabs and subtabs."
+        },
+        {
+          "isRight": false,
+          "describe": "It allows access to data by opening each record in a new window."
+        },
+        {
+          "isRight": true,
+          "describe": "It allows agents to take notes in an interaction log while in a call."
+        }
+      ]
+    },
+    {
+      "describe": "User A modifies a record. This modification triggers a workflow rule for immediate execution that includes a\nfield update on the current record. After the execution is complete, what user will be listed under the Last Modified\nfield of this record?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "User A"
+        },
+        {
+          "isRight": false,
+          "describe": "The designated workflow user"
+        },
+        {
+          "isRight": false,
+          "describe": "The default workflow user"
+        },
+        {
+          "isRight": false,
+          "describe": "The last user to modify the record prior to User A"
+        }
+      ]
+    },
+    {
+      "describe": "How does Locale settings affect your exported CSV file?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "It doesn't affect anything."
+        },
+        {
+          "isRight": true,
+          "describe": "It determines the delimiter."
+        },
+        {
+          "isRight": false,
+          "describe": "It determines the encoding."
+        },
+        {
+          "isRight": false,
+          "describe": "It determines the encryption."
+        }
+      ]
+    },
+    {
+      "describe": "What are two sources from which cases can be created.\n*Choose 2 answers.*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Web-to-Lead"
+        },
+        {
+          "isRight": false,
+          "describe": "Web-to-Web"
+        },
+        {
+          "isRight": true,
+          "describe": "Email-to-Case"
+        },
+        {
+          "isRight": true,
+          "describe": "Connect for Outlook"
+        }
+      ]
+    },
+    {
+      "describe": "Which report format summarizes data in a grid against horizontal and vertical criteria and provides totals for\nboth rows and columns?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Summary"
+        },
+        {
+          "isRight": true,
+          "describe": "Matrix"
+        },
+        {
+          "isRight": false,
+          "describe": "Tabular"
+        }
+      ]
+    },
+    {
+      "describe": "Every profile, including profiles associated with Customer Portal users must have at least one visible app.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "Which statements are true about Cloud Scheduler?\n*Choose 3 answers.*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "It is available in Group, Professional, Enterprise, Unlimited, and Developer Editions only."
+        },
+        {
+          "isRight": true,
+          "describe": "Cloud Scheduler is now enabled by default for all organizations."
+        },
+        {
+          "isRight": true,
+          "describe": "You can automatically see the New Meeting Request button on all eligible contact, lead, and person account\ndetail pages."
+        },
+        {
+          "isRight": false,
+          "describe": "Meeting organizers can not use Cloud Scheduler to request meetings with customers, and have customers\nselect preferred times before confirming the meeting."
+        },
+        {
+          "isRight": true,
+          "describe": "Administrators can add or remove the New Meeting Request button on multiple page layouts using the new\nCloud Scheduler quick setup method."
+        }
+      ]
+    },
+    {
+      "describe": "Clients do not have to enable Customizable forecasting before they can ask salesforce to activate Territory\nManagement.",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "True"
+        },
+        {
+          "isRight": true,
+          "describe": "False"
+        }
+      ]
+    },
+    {
+      "describe": "What happens when you convert a Lead and an existing account and contact have the same name as the one\nspecified on the lead?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "The account and contact will automatically be overwritten."
+        },
+        {
+          "isRight": false,
+          "describe": "A new account and contact will be created with different Salesforce ID."
+        },
+        {
+          "isRight": true,
+          "describe": "You can choose to update the existing account and contact."
+        },
+        {
+          "isRight": false,
+          "describe": "The records will automattically update."
+        },
+        {
+          "isRight": false,
+          "describe": "The conversion will fail."
+        }
+      ]
+    }
+  ]
+}

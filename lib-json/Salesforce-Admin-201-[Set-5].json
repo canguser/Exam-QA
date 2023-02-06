@@ -1,0 +1,640 @@
+{
+  "title": "Salesforce-Admin-201-[Set-5]",
+  "category": "Salesforce Admin 201",
+  "questions": [
+    {
+      "describe": "The automated case user will be listed in the case history for all case actions except when the\ncase is",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Closed"
+        },
+        {
+          "isRight": false,
+          "describe": "Escalated"
+        },
+        {
+          "isRight": false,
+          "describe": "Created online"
+        },
+        {
+          "isRight": false,
+          "describe": "Automatically assigned"
+        }
+      ]
+    },
+    {
+      "describe": "What must an administrator do to schedule and email reports?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Specify a running user"
+        },
+        {
+          "isRight": false,
+          "describe": "Specify the report location in a personal folder"
+        },
+        {
+          "isRight": true,
+          "describe": "Specify a frequency"
+        },
+        {
+          "isRight": false,
+          "describe": "Specify a link to the reports"
+        }
+      ]
+    },
+    {
+      "describe": "Which object is a standard object?\n*Choose 3 answers *",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Invoices"
+        },
+        {
+          "isRight": true,
+          "describe": "Solutions"
+        },
+        {
+          "isRight": true,
+          "describe": "Accounts"
+        },
+        {
+          "isRight": true,
+          "describe": "Opportunities"
+        }
+      ]
+    },
+    {
+      "describe": "Person accounts and business accounts can be accessed via Accounts tab. To create a view that only displays person accounts, one must",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Filter based on the field \"Is Person Account\""
+        },
+        {
+          "isRight": false,
+          "describe": "Add the contract related list to the account page layout"
+        },
+        {
+          "isRight": false,
+          "describe": "Select the \"View All Data\" permission on the user profile"
+        },
+        {
+          "isRight": false,
+          "describe": "Set the access for the contact object to \"Controlled by Parent\""
+        }
+      ]
+    },
+    {
+      "describe": "When are active custom validation rules evaluated?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "When feedback to the end user is not required"
+        },
+        {
+          "isRight": true,
+          "describe": "When there are no errors in standard validations"
+        },
+        {
+          "isRight": false,
+          "describe": "When the page layout contains no required fields"
+        },
+        {
+          "isRight": false,
+          "describe": "When inline editing has been enabled for the organization"
+        }
+      ]
+    },
+    {
+      "describe": "Which statement is TRUE regarding how Salesforce allocates storage space?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Custom objects are not counted against data storage allocation"
+        },
+        {
+          "isRight": false,
+          "describe": "Data storage includes space used by files in the Documents tab"
+        },
+        {
+          "isRight": false,
+          "describe": "A user may continue to create records when storage capacities limits are exceeded by 5%"
+        },
+        {
+          "isRight": true,
+          "describe": "If you import or add a large number of records, your organisation's storage usage will not\nbe updated immediately"
+        }
+      ]
+    },
+    {
+      "describe": "Which method should be used to migrate 65.000 records from one organization to another, including accounts, contracts, lead, and opportunities?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Data loader"
+        },
+        {
+          "isRight": false,
+          "describe": "Not possible"
+        },
+        {
+          "isRight": false,
+          "describe": "Import wizard"
+        },
+        {
+          "isRight": false,
+          "describe": "Weekly data export"
+        }
+      ]
+    },
+    {
+      "describe": "Which attributes can be used when matching similar opportunities?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Custom opportunity related lists"
+        },
+        {
+          "isRight": true,
+          "describe": "Standard opportunity related lists"
+        },
+        {
+          "isRight": false,
+          "describe": "Sales team members"
+        },
+        {
+          "isRight": false,
+          "describe": "Account fields"
+        },
+        {
+          "isRight": true,
+          "describe": "Opportunity fields"
+        }
+      ]
+    },
+    {
+      "describe": "Which is not a step when creating a custom application?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Assign profiles"
+        },
+        {
+          "isRight": false,
+          "describe": "Choose a custom app logo"
+        },
+        {
+          "isRight": false,
+          "describe": "Select what tabs will display"
+        },
+        {
+          "isRight": true,
+          "describe": "Define the Custom Object relationship"
+        }
+      ]
+    },
+    {
+      "describe": "When a case is deleted, which related items are also deleted?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Events"
+        },
+        {
+          "isRight": false,
+          "describe": "Solutions"
+        },
+        {
+          "isRight": false,
+          "describe": "Accounts"
+        },
+        {
+          "isRight": true,
+          "describe": "Case comments"
+        }
+      ]
+    },
+    {
+      "describe": "An administrator would like to export a report to a Microsoft Excel spreadsheet and maintain the report format. To do this, the administrator should click on which button?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Save as"
+        },
+        {
+          "isRight": false,
+          "describe": "Customize"
+        },
+        {
+          "isRight": true,
+          "describe": "Printable View"
+        },
+        {
+          "isRight": false,
+          "describe": "Export Details"
+        }
+      ]
+    },
+    {
+      "describe": "Which information is maintained on the user record and can be modified by the user?\n*Choose 3 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Email address"
+        },
+        {
+          "isRight": false,
+          "describe": "Storage space"
+        },
+        {
+          "isRight": true,
+          "describe": "Default sales team"
+        },
+        {
+          "isRight": true,
+          "describe": "Default account team"
+        }
+      ]
+    },
+    {
+      "describe": "Which validation rule validates that a custom date field, My_Date__c, contains a date within the current year?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "YEAR( My_Date__c) = YEAR( Today())"
+        },
+        {
+          "isRight": false,
+          "describe": "YEAR( Today()) > DATE( My_Date__c)"
+        },
+        {
+          "isRight": true,
+          "describe": "YEAR( My_Date__c) <>Year(Today())"
+        },
+        {
+          "isRight": false,
+          "describe": "YEAR( My_Date__C) = DATE(MY_Date__c)"
+        }
+      ]
+    },
+    {
+      "describe": "Assuming the recycle bin limits have not been reached, how long does a user have to recover deleted data from the recycle bin before it is permanently deleted?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "30 days"
+        },
+        {
+          "isRight": false,
+          "describe": "60 days"
+        },
+        {
+          "isRight": false,
+          "describe": "Deleted data cannot be recovered from the recycle bin"
+        },
+        {
+          "isRight": false,
+          "describe": "Data remains in the recycle bi for an unlimited amount of time"
+        }
+      ]
+    },
+    {
+      "describe": "When authenticating a user through the user interface, what does Salesforce validate before allowing a user to access the application?\n*Choose 3 answers*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Whether the user's profile is API enabled"
+        },
+        {
+          "isRight": true,
+          "describe": "Whether the organization has trusted IP addresses"
+        },
+        {
+          "isRight": true,
+          "describe": "Whether the user's profile has login hour restrictions"
+        },
+        {
+          "isRight": true,
+          "describe": "Whether the user's profile has IP address restrictions"
+        }
+      ]
+    },
+    {
+      "describe": "Assuming only standard relationships, which option is available when customizing the mini‐view of the console?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "From the Contact Object, the user can choose Cases"
+        },
+        {
+          "isRight": false,
+          "describe": "From the Opportunity Object, the user can choose Campaign"
+        },
+        {
+          "isRight": true,
+          "describe": "From the Cases Object, the user can choose Account and Contact"
+        },
+        {
+          "isRight": true,
+          "describe": "From the Opportunity Object, the user can choose Account and Contact"
+        }
+      ]
+    },
+    {
+      "describe": "Which option below gives an end user the ability to import leads for the organization and associate the leads to a campaign?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Marketing user Profile"
+        },
+        {
+          "isRight": false,
+          "describe": "Marketing User License"
+        },
+        {
+          "isRight": true,
+          "describe": "\"Edit Campaigns\" Permission in the profile"
+        },
+        {
+          "isRight": false,
+          "describe": "\"Customize Application\" Permission in the profile"
+        }
+      ]
+    },
+    {
+      "describe": "Which statement is FALSE regarding object relationships?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "The lookup relationship field is not required in the page layout"
+        },
+        {
+          "isRight": false,
+          "describe": "Each custom object can have up to two master‐detail relationships"
+        },
+        {
+          "isRight": false,
+          "describe": "A standard object cannot be on the detail side of the relationship"
+        },
+        {
+          "isRight": true,
+          "describe": "The security settings for the detail record control the master record"
+        }
+      ]
+    },
+    {
+      "describe": "Users want to view report output for all opportunities that own and that are owned by users who report to them via the role hierarchy. To proceed they should verify that",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "They have the \"Manage Public Reports\" permission on their profile."
+        },
+        {
+          "isRight": false,
+          "describe": "The profiles of all users report to them in the role hierarchy and that the \"My Team's opportunities\" filter is used when running opportunity reports"
+        },
+        {
+          "isRight": true,
+          "describe": "The correct users report to them in the role hierarchy and that the \"My Team's Opportunities\" filter is used when running opportunity reports."
+        },
+        {
+          "isRight": false,
+          "describe": "The correct users report to them in the role hierarchy and that the \"My Team‐Selling and My Own Opportunities\" filter is used when running opportunities reports."
+        }
+      ]
+    },
+    {
+      "describe": "Which Salesforce feature should be used to disable access to all objects in a custom application?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Profiles"
+        },
+        {
+          "isRight": false,
+          "describe": "Sharing"
+        },
+        {
+          "isRight": false,
+          "describe": "Web tabs"
+        },
+        {
+          "isRight": false,
+          "describe": "Page layouts"
+        }
+      ]
+    },
+    {
+      "describe": "Which statement about multi‐day and all‐day events is TRUE",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "All‐Day Events have a start and end time"
+        },
+        {
+          "isRight": false,
+          "describe": "Multi‐Day Event cannot be set as All‐Day Event"
+        },
+        {
+          "isRight": false,
+          "describe": "All‐Day Events have a check box for flagging as Multi‐Day Events"
+        },
+        {
+          "isRight": true,
+          "describe": "Multi‐Day Events have a start and end time"
+        }
+      ]
+    },
+    {
+      "describe": "If the organization‐wide default on accounts is set to public read/write, what can be used to limit access to these records?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Profile"
+        },
+        {
+          "isRight": false,
+          "describe": "List views"
+        },
+        {
+          "isRight": false,
+          "describe": "Public groups"
+        },
+        {
+          "isRight": false,
+          "describe": "Role hierarchy"
+        }
+      ]
+    },
+    {
+      "describe": "Currencies are defined at which level?\n*Choose 3 answers*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Record type"
+        },
+        {
+          "isRight": true,
+          "describe": "Organization profile"
+        },
+        {
+          "isRight": true,
+          "describe": "Opportunity (record)"
+        },
+        {
+          "isRight": true,
+          "describe": "User record (personal setup)"
+        }
+      ]
+    },
+    {
+      "describe": "When a user with pending approval requests leaves an organization, what can administrator do with the pending requests?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Mass approve pending requests"
+        },
+        {
+          "isRight": true,
+          "describe": "Mass remove pending requests"
+        },
+        {
+          "isRight": true,
+          "describe": "Mass transfer pending requests"
+        },
+        {
+          "isRight": false,
+          "describe": "Change the approval process routing steps"
+        }
+      ]
+    },
+    {
+      "describe": "If a record has been manually shared with read/write access, the user will be able to do which of the following?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Edit the record"
+        },
+        {
+          "isRight": false,
+          "describe": "Delete the record"
+        },
+        {
+          "isRight": false,
+          "describe": "Change the owner of the record"
+        },
+        {
+          "isRight": false,
+          "describe": "Share the record to another user with full access"
+        }
+      ]
+    },
+    {
+      "describe": "Which item cannot be stored in a folder?",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Emails"
+        },
+        {
+          "isRight": false,
+          "describe": "Reports"
+        },
+        {
+          "isRight": false,
+          "describe": "Documents"
+        },
+        {
+          "isRight": false,
+          "describe": "Dashboards"
+        }
+      ]
+    },
+    {
+      "describe": "If a record that matches the criteria of a workflow rule is created on July 1 and the close date is July 30, the time‐dependent action is scheduled for July 23. However, what happens if the opportunity is edited before July 23 and no longer meets the criteria?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "The time‐dependent action is put on hold"
+        },
+        {
+          "isRight": false,
+          "describe": "The time‐dependent action is sent on July 23"
+        },
+        {
+          "isRight": false,
+          "describe": "The time‐dependent action is sent on July 30"
+        },
+        {
+          "isRight": true,
+          "describe": "The time‐dependent action is automatically removed from the queue"
+        }
+      ]
+    },
+    {
+      "describe": "Which UI component allows easy access to recent tags?",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "Tag Browser"
+        },
+        {
+          "isRight": false,
+          "describe": "Edit Tags link"
+        },
+        {
+          "isRight": false,
+          "describe": "Tag links in the header"
+        },
+        {
+          "isRight": true,
+          "describe": "Sidebar Tag widget"
+        }
+      ]
+    },
+    {
+      "describe": "Which statement is TRUE regarding record types?\n*Choose 2 answers*",
+      "answerOptions": [
+        {
+          "isRight": true,
+          "describe": "Record types can be hidden from users"
+        },
+        {
+          "isRight": false,
+          "describe": "Record types are controlled by the page layout"
+        },
+        {
+          "isRight": false,
+          "describe": "Record types can only be assigned to one profile at a time"
+        },
+        {
+          "isRight": true,
+          "describe": "Record types can be used to define different picklist values for different types of users"
+        }
+      ]
+    },
+    {
+      "describe": "Charting is a report option that can be used on",
+      "answerOptions": [
+        {
+          "isRight": false,
+          "describe": "All reports"
+        },
+        {
+          "isRight": false,
+          "describe": "Dashboards and summary reports only"
+        },
+        {
+          "isRight": false,
+          "describe": "Matrix and custom report types only"
+        },
+        {
+          "isRight": true,
+          "describe": "Dashboards, summary and matrix reports"
+        }
+      ]
+    }
+  ]
+}

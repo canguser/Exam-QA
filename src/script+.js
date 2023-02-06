@@ -198,14 +198,20 @@ function parseQuestion(question, answer) {
     const body = []
     const options = []
 
+    let lastIndex = -1
     lines.forEach((line,i)=>{
-        const reg = /^([A-Z])[.)(](.*)$/i
+        const reg = /^([A-Z])[.)(:](.*)$/i
         const match = line.match(reg)
         if (match && i > 0) {
             const index = LETTER_MAPPING.indexOf(match[1])
             options[index] = (match[2] || '').trim()
+            lastIndex = index
         } else {
-            body.push(line)
+            if (lastIndex >= 0){
+                options[lastIndex] = ((options[lastIndex] || '') + '\n' + line).trim()
+            }else{
+                body.push(line)
+            }
         }
     })
 
@@ -234,6 +240,9 @@ function chunk(arr, size) {
 
 }
 
+let q_c = '.SetPageTerm-wordText'
+let a_c = '.SetPageTerm-definitionText'
+
 function getAllQuiz(category = '', titleSuffix = '', pageSize = 15) {
     const title = document.querySelector('.SetPageStickyHeader h3').innerText + titleSuffix
     const sections = document.querySelectorAll('.SetPageTerm-content')
@@ -246,8 +255,8 @@ function getAllQuiz(category = '', titleSuffix = '', pageSize = 15) {
             questions: []
         }
         sections.forEach((section, i) => {
-            const questionText = section.querySelector('.SetPageTerm-wordText').innerText
-            const answerText = section.querySelector('.SetPageTerm-definitionText').innerText
+            const questionText = section.querySelector(q_c).innerText
+            const answerText = section.querySelector(a_c).innerText
             const question = parseQuestion(questionText, answerText)
             result.questions.push(question)
         })
