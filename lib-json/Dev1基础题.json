@@ -1,0 +1,1347 @@
+{
+  "title": "Dev1基础题",
+  "category": "Dev1-自由部落侠",
+  "questions": [
+    {
+      "describe": "A company has a custom object, Sales_Help_Request__c, that has a Lookup relationship to Opportunity. The Sales_Help_Request__c has a number field, Number_of_Hours__c, that represents the amount of time spent on the Sales_Help_Request__c.\nA developer is tasked with creating a field, Total_hours__c, on Opportunity that should be the sum of all of the Number_of_Hours__c values for the Sales_Help_Request__c records related to that Opportunity.\nWhat should the developer use to implement this?",
+      "answerOptions": [
+        {
+          "describe": "A trigger on the Opportunity object",
+          "isRight": false
+        },
+        {
+          "describe": "A roll-up summary field on the Opportunity object",
+          "isRight": false
+        },
+        {
+          "describe": "A record-triggered flow on the Sales_Help_Request__c object",
+          "isRight": true
+        },
+        {
+          "describe": "A roll-up summary field on the Sales_Help_Request__c object.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1995171579"
+    },
+    {
+      "describe": "AW Computing tracks order information in custom objects called Order__c and Order_Line__c. Currently, all shipping information is stored in the Order__c object.\nThe company wants to expand its order application to support split shipments so that any number of Order_Line__c records on a single Order__c can be shipped to different locations.\nWhat should a developer add to fulfill this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Order_Shipment_Group__c object and master-detail field on Order__c",
+          "isRight": false
+        },
+        {
+          "describe": "Order_Shipment_Group__c object and master-detail field on Order_Line__c",
+          "isRight": false
+        },
+        {
+          "describe": "Order_Shipment_Group__c object and master-detail field on Order_Shipment_Group__c",
+          "isRight": false
+        },
+        {
+          "describe": "Order_Shipment_Group__c object and master-detail field on Order__c and Order_Line__c",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1995171577"
+    },
+    {
+      "describe": "UC is developing a process for their sales teams that requires all sales reps to go through a set of scripted steps with each new customer they create.\nIn the first step of collecting information, UC's ERP system must be checked via a REST endpoint to see if the customer exists. If the customer exists, the data must be presented to the sales rep in Salesforce.\nWhich two should a developer implement to satisfy the requirements?Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Trigger",
+          "isRight": false
+        },
+        {
+          "describe": "Invocable method",
+          "isRight": false
+        },
+        {
+          "describe": "Flow",
+          "isRight": true
+        },
+        {
+          "describe": "Future method",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1995171576"
+    },
+    {
+      "describe": "A developer created these three roll-up summary fields on the custom object, Project__c:\nTotal_Timesheets__c\nTotal_Approved_Timesheets__c\nTotal_Rejected_Timesheet__c\nThe developer is asked to create a new field that shows the ratio between rejected and approved timesheets for a given project.\nWhich should the developer use to implement the business requirement in order to minimize maintenance overhead?",
+      "answerOptions": [
+        {
+          "describe": "Roll-up summary field",
+          "isRight": false
+        },
+        {
+          "describe": "Record-triggered flow",
+          "isRight": false
+        },
+        {
+          "describe": "Formula field",
+          "isRight": true
+        },
+        {
+          "describe": "Apex trigger",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1995171571"
+    },
+    {
+      "describe": "A business has a proprietary Order Management System (OMS) that creates orders from their website and the orders.When the order Is created in the OMS,an integration also creates an order record In Salesforce relates it to the contact as identified by the email on the order As the order goes through different stages inOMS, the integration also updates it in Salesforce.\nIt is noticed that each update from the OMS creates new order record in Salesforce.\nWhich two actions will prevent the duplicate order records from being created in Salesforce?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Ensure that the order number in the OMS is unique",
+          "isRight": true
+        },
+        {
+          "describe": "Use the order number from the OMS as an external ID.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the email on the contact record as an external ID.",
+          "isRight": false
+        },
+        {
+          "describe": "Write a before trigger on the order object to delete any duplicates",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674164"
+    },
+    {
+      "describe": "UH is using Salesforce to capture job applications. A salesforce administrator created two custom objects; Job__c acting as the master object, Job_Application__c acting as the detail.\nWithin the Job__c object, a custom multi-select picklist, Preferred_Locations__c, contains a list of approved status for the position. Each Job_Application__c record relates to a Contact within the system through a master-detail relationship.\nRecruiters have requested the ability to view whether the Contact's Mailing State value matches a value selected on the Preferred_Locations__c field, within the Job_Application__c record. Recruiters would like this value to be kept in sync, if changes occur to the Contact's Mailing State or if the Job's Preferred_Locations__c field is updated.\nWhat is the recommended tool a developer should use to meet the business requirement?",
+      "answerOptions": [
+        {
+          "describe": "Apex trigger",
+          "isRight": true
+        },
+        {
+          "describe": "Record-triggered flow",
+          "isRight": false
+        },
+        {
+          "describe": "Formula field",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674162"
+    },
+    {
+      "describe": "A large corporation stores Orders and Line Items in Salesforce for different lines of business. Users are allowed see Orders across the entire organization,but,for security purposes, should only be able to see the Line Orders in their line of business.\nWhich type of relationship should be used between Line Items and Orders?",
+      "answerOptions": [
+        {
+          "describe": "Master-Detail",
+          "isRight": true
+        },
+        {
+          "describe": "Lookup",
+          "isRight": false
+        },
+        {
+          "describe": "Direct Lookup",
+          "isRight": false
+        },
+        {
+          "describe": "Indirect Lookup",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674161"
+    },
+    {
+      "describe": "What Is an example of a polymorphic lookup field in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "The WhatId field on the standard Event object",
+          "isRight": true
+        },
+        {
+          "describe": "A custom field,Link_c, on the standard Contact object that looks up to an Account",
+          "isRight": false
+        },
+        {
+          "describe": "The LeadId and ContactId fields on the standard Campaign Member object",
+          "isRight": false
+        },
+        {
+          "describe": "The ParentId field on the standard Account object",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674157"
+    },
+    {
+      "describe": "When a user edits the Postal Code on an Account,a custom Account text field named \"Tim updated based on the values in another custom object called PostalCodeToTimezone_c.\nWhat is the optimal way to implement this feature?",
+      "answerOptions": [
+        {
+          "describe": "Create an account approval proce",
+          "isRight": false
+        },
+        {
+          "describe": "Build a flow with Flow Builder.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a formula field.",
+          "isRight": false
+        },
+        {
+          "describe": "Build an account assignment rule,",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674131"
+    },
+    {
+      "describe": "In terms of the MVC paradigm,what are two advantages of lmplementing the viewlayer of application using Lightning Web Component-based development over Visualforce?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Built-in standard and custom set controllers",
+          "isRight": false
+        },
+        {
+          "describe": "Log capturing via the Debug Logs Setup page",
+          "isRight": false
+        },
+        {
+          "describe": "Self-contained and reusable units of an application",
+          "isRight": true
+        },
+        {
+          "describe": "Rich component ecosystem",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674130"
+    },
+    {
+      "describe": "UC uses a custom object called Vendor. The Vendor custom object has relationship with the standard Account object.\nBased on some internal discussions, the UC administrator tried to change the master-detail lookup relationship, but was not able to do so.\nWhat is a possible reason that this change was not permitted?",
+      "answerOptions": [
+        {
+          "describe": "The organization wide default for the Vendor object is Public Read/Write.",
+          "isRight": false
+        },
+        {
+          "describe": "Some of the Vendor records have null for the Account field.",
+          "isRight": false
+        },
+        {
+          "describe": "The Account object has a roll-up summary field on the Vendor object.",
+          "isRight": true
+        },
+        {
+          "describe": "The Account object does not allow changing a field type for a custom field.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674127"
+    },
+    {
+      "describe": "Universal Containers has a support process that allows users to request support from its engineering team using custom object, Engineering_Support_c.\nUsers should be able to associate multiple Engineering Support_c records to a single Opportunty record.Addltionally, aggregate information about the Engineering Support _c records should be shown on the Opportunity record.\nWhat should a developer implement to support these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Lookup field from Engineering_Support_c to Opportunity",
+          "isRight": false
+        },
+        {
+          "describe": "Master-detail field from EngineeringSupport_c to Opportunity",
+          "isRight": true
+        },
+        {
+          "describe": "Lookup field from Opportunity to Engineering Support_c",
+          "isRight": false
+        },
+        {
+          "describe": "Master-detail field from Opportunity to Engineering Support_c",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674126"
+    },
+    {
+      "describe": "A software company uses the following objects and relationships:\nCase: to handle customer support issues\nDefect_c: a custom object to represent known issues with the company's software\nCase_effect_c: a junction object between Case and Defect_c to represent that a defect is a cause of a customer issue\nCase and Defect_c have Private organization-wide defaults.\nWhat should be done to share a specific case_Defect_c record with a user?",
+      "answerOptions": [
+        {
+          "describe": "Share the parent Case and Defect_c records.",
+          "isRight": true
+        },
+        {
+          "describe": "Share the parent Case record.",
+          "isRight": false
+        },
+        {
+          "describe": "Share the case_Defect_c record.",
+          "isRight": false
+        },
+        {
+          "describe": "Share the parent Defect_c record.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674096"
+    },
+    {
+      "describe": "UC has implemented an order management application. Each Order can have one or more Order Line items. The order Line object is related to the Order via a master-detail relationship. For each Order Line item, the total price is calculated by multiplying the Order Line item price with the quantity ordered.\nWhat is the best practice to get the sum of all Order Line item totals on the Order record?",
+      "answerOptions": [
+        {
+          "describe": "Roll-up summary field",
+          "isRight": true
+        },
+        {
+          "describe": "Quick action",
+          "isRight": false
+        },
+        {
+          "describe": "Apex trigger",
+          "isRight": false
+        },
+        {
+          "describe": "Formula field",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674071"
+    },
+    {
+      "describe": "Which two settings must be defined in order to update a record of a junction object?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Read/write access on the primary relationship",
+          "isRight": true
+        },
+        {
+          "describe": "Read/write access on the junction object",
+          "isRight": false
+        },
+        {
+          "describe": "Read/write access on the secondary relationship",
+          "isRight": true
+        },
+        {
+          "describe": "Read access on the primary relationship",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674069"
+    },
+    {
+      "describe": "What can be used to override the Account's standard Edit button for Lightning Experience?",
+      "answerOptions": [
+        {
+          "describe": "Lightning action",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning component",
+          "isRight": true
+        },
+        {
+          "describe": "Lightning page",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning flow",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674068"
+    },
+    {
+      "describe": "Universal Containers is bullding a recruiting app with an Applicant object that stores information about an individual person and a Job object that represents a job. Each applicant may apply for more than one job.\nWhat should a developer implement to represent that an applicant has applied for a job?",
+      "answerOptions": [
+        {
+          "describe": "Master-detail field from Aplicant to Job",
+          "isRight": true
+        },
+        {
+          "describe": "Junction object between Applicant and Job",
+          "isRight": false
+        },
+        {
+          "describe": "Lookup field from Applicant to Job",
+          "isRight": false
+        },
+        {
+          "describe": "Formula field on Applicant that references Job",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674064"
+    },
+    {
+      "describe": "A developer created a custom order management app that uses an Apex class. The order is represented by an Order object and an OrderItem object that has a master-detail relationship to Order. During order processing, an order may be split into multiple orders.\nWhat should a developer do to allow their code to move some existing OrderItem records to a new Order record?",
+      "answerOptions": [
+        {
+          "describe": "Select the Allow reparenting option on the master-detail relationship.",
+          "isRight": false
+        },
+        {
+          "describe": "Change the master-detail relationship to an external lookup relationship.",
+          "isRight": false
+        },
+        {
+          "describe": "Add without sharing to the Apex class declaration.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a junction object between OrderItem and Order.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674041"
+    },
+    {
+      "describe": "A developer is integrating with a legacy on-premise SQL database.\nWhat should the developer use to ensure the data being integrated is matched to the right records in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "Lookup field",
+          "isRight": false
+        },
+        {
+          "describe": "External ID field",
+          "isRight": true
+        },
+        {
+          "describe": "Formula field",
+          "isRight": false
+        },
+        {
+          "describe": "External Object",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674035"
+    },
+    {
+      "describe": "UC uses a Master-Detail relationship and stores the availability date on each Line Item of an Order and Orders are only shipped when all of the Line Items \nare available.\nWhich method should be used to calculate the estimated ship date for an Order?",
+      "answerOptions": [
+        {
+          "describe": "Use a LATEST formula on each of the latest availability date fields.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a CEILING formula on each of the latest availability date fields.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a MAX Roll-Up Summary field on the latest availability date fields.",
+          "isRight": true
+        },
+        {
+          "describe": "Use a DAYS formula on each of the availability date fields and a COUNT Roll-Up Summary field on the Order.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674006"
+    },
+    {
+      "describe": "A developer created these three roll-up summary fields on the custom object, Project__c:\nTotal_Timesheets__c\nTotal_Approved_Timesheets__c\nTotal_Rejected_Timesheet__c\nThe developer is asked to create a new field that shows the ratio between rejected and approved timesheets for a given project.\nWhat are two benefits of choosing a formula field instead of an Apex trigger to fulfill the request? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "A test class will validate the formula field during deployment.",
+          "isRight": false
+        },
+        {
+          "describe": "Using a formula field reduces maintenance overhead.",
+          "isRight": true
+        },
+        {
+          "describe": "A formula field will calculate the value retroactively for existing records.",
+          "isRight": true
+        },
+        {
+          "describe": "A formula field will trigger existing automation when delpoyed.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673328"
+    },
+    {
+      "describe": "In the Lightning UI, where should a developer look to find information about a Paused Flow Interview?",
+      "answerOptions": [
+        {
+          "describe": "In the system debug log by filtering on Paused Flow Interview",
+          "isRight": false
+        },
+        {
+          "describe": "On the Paused Flow Interviews related list for a given record",
+          "isRight": false
+        },
+        {
+          "describe": "On the Paused Flow Interviews component on the Home page",
+          "isRight": true
+        },
+        {
+          "describe": "In the Paused Interviews section of the Apex Flex Queue",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673326"
+    },
+    {
+      "describe": "What are two benefits of using declarative customizations over code? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Declarative customizations automatically update with each Salesforce release.",
+          "isRight": true
+        },
+        {
+          "describe": "Declarative customizations cannot generate run time errors.",
+          "isRight": false
+        },
+        {
+          "describe": "Declarative customizations automatically generate test classes.",
+          "isRight": false
+        },
+        {
+          "describe": "Declarative customizations generally require less maintenance.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673323"
+    },
+    {
+      "describe": "The values 'High', 'Medium', and 'Low' are identified as common values for multiple picklists across different objects.\nWhat is an approach a developer can take to streamline maintenance of the picklists and their values, while also restricting \nthe values to the ones mentioned above?",
+      "answerOptions": [
+        {
+          "describe": "Create the Picklist on each object and use a Global Picklist Value Set containing the values.",
+          "isRight": true
+        },
+        {
+          "describe": "Create the Picklist on each object as a required field and select \"Display values alphabetically, not in the order entered\".",
+          "isRight": false
+        },
+        {
+          "describe": "Create the Picklist on each object and select \"Restrict picklist to the values defined in the value set\".",
+          "isRight": false
+        },
+        {
+          "describe": "Create the Picklist on each object and add a validation rule to ensure data integrity.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673295"
+    },
+    {
+      "describe": "When importing and exporting data into Salesforce, Which two statement are true?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Data import wizard is a client application provided by Salesforce.",
+          "isRight": false
+        },
+        {
+          "describe": "Developer and Developer Pro sandboxes have different storage limits.",
+          "isRight": true
+        },
+        {
+          "describe": "Bulk API can be used to import large data volumes in development environments without bypassing the storage limits.",
+          "isRight": true
+        },
+        {
+          "describe": "Bulk API can be used to bypass the storage limits when importing large data volumes in development environments.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673294"
+    },
+    {
+      "describe": "A developer needs to join data received from an integration with an external system with parent records in Salesforce. The data set does not contain the Salesforce IDs of the parent records, but it does have a foreign key attribute that can be used to identify the parent.\n\nWhich action will allow the developer to relate records in the data model without knowing the salesforce ID?",
+      "answerOptions": [
+        {
+          "describe": "Create and populate a custom field on the parent object marked as an External ID.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a custom field on the child object of type Lookup. ",
+          "isRight": false
+        },
+        {
+          "describe": "Create a custom field on the child object of type  External Relationship.",
+          "isRight": false
+        },
+        {
+          "describe": "Create and populate a custom field on the parent object marked as Unique.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673292"
+    },
+    {
+      "describe": "What is an example of a polymorphic lookup field in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "The Leadld and Contactld fields on the standard Campaign Member object",
+          "isRight": false
+        },
+        {
+          "describe": "A custom field, Link__c, on the standard Contact object that looks up to an Account or a Campaign",
+          "isRight": false
+        },
+        {
+          "describe": "The Whatld field on the standard Event object",
+          "isRight": true
+        },
+        {
+          "describe": "The Parentld field on the standard Account object",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673290"
+    },
+    {
+      "describe": "UC wants to assess the advantages of declarative development versus programmatic customization for specific use cases in its Salesforce implementation.\n\nWhat are two characteristics of declarative development over programmatic customization? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Declarative development has higher design limits and query limits.",
+          "isRight": false
+        },
+        {
+          "describe": "Declarative development can be done using the Setup UI.",
+          "isRight": true
+        },
+        {
+          "describe": "Declarative development does not require maintenance.",
+          "isRight": true
+        },
+        {
+          "describe": "Declarative development does not require Apex test classes.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673262"
+    },
+    {
+      "describe": "UC decides to use purely declarative development to build out a new Salesforce application.\nWhich three options can be used to build out the business logic layer for this application?Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Validation Rules",
+          "isRight": true
+        },
+        {
+          "describe": "Remote Actions",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Flow Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Batch Jobs",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673260"
+    },
+    {
+      "describe": "A PrimaryId__c custom field exists on the Candidate__c custom object. The field is used to store each candidate's id number and is marked as Unique in the schema definition.\n\nAs part of a data enrichment process, UC has a CSV file that contains updated data for all candidates in the system. The file contains each Candidate's primary id as a data point. UC wants to upload this information into Salesforce, while ensuring all data rows are correctly mapped to a candidate in the system.\n\nWhich technique should the developer implement to streamline the data upload?",
+      "answerOptions": [
+        {
+          "describe": "Create a before insert trigger to correctly map the records. ",
+          "isRight": false
+        },
+        {
+          "describe": "Upload the CSV into a custom object related to Candidate__c. ",
+          "isRight": false
+        },
+        {
+          "describe": "Update the Primaryld__c field definition to mark it as an External Id.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Process Builder on the Candidate__c object to map the records.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673259"
+    },
+    {
+      "describe": "Which two types of process automation can be used to calculate the shipping cost for an Order when the Order is placed and apply a percentage of the shipping cost to some of the related Order Products? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Process Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Approval Process",
+          "isRight": false
+        },
+        {
+          "describe": "Workflow Rule",
+          "isRight": false
+        },
+        {
+          "describe": "Flow Builder",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673231"
+    },
+    {
+      "describe": "What are two characteristics related to formulas? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Formulas can reference themselves.",
+          "isRight": false
+        },
+        {
+          "describe": "Formulas are calculated at runtime and are not stored in the database.",
+          "isRight": true
+        },
+        {
+          "describe": "Fields that are used in a formula field can be deleted or edited without editing the formula.",
+          "isRight": false
+        },
+        {
+          "describe": "Formulas can reference values in related objects.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673228"
+    },
+    {
+      "describe": "What is fundamental different between a Mater-Detail relationship and a Lookup relationship?",
+      "answerOptions": [
+        {
+          "describe": "In a Master-Detail relationship, when a record of a master object is deleted, the detail records are not deleted.",
+          "isRight": false
+        },
+        {
+          "describe": "A Master-Detail relationship detail record inherits the sharing and security of its master record.",
+          "isRight": true
+        },
+        {
+          "describe": "In a Lookup relationship, the field value is mandatory.",
+          "isRight": false
+        },
+        {
+          "describe": "In a Lookup relationship when the parent record is deleted, the child records are always deleted.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673204"
+    },
+    {
+      "describe": "Which two statements accurately represent the MVC framework implementation in Salesforce?Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Standard and Custom objects used in the app schema represent the View (V) part of the MVC framework.",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning component HTML files represent the Model (M) part of the MVC framework.",
+          "isRight": false
+        },
+        {
+          "describe": "Tigger used to create records represent the Model (M) part of the MVC framework.",
+          "isRight": true
+        },
+        {
+          "describe": "Validation rules enforce business rules and represent the Controller (C) part of the MVC framework.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673201"
+    },
+    {
+      "describe": "What is a benefit of developing applications in a multi-tenant environment?",
+      "answerOptions": [
+        {
+          "describe": "Default out-of-the-box configuration",
+          "isRight": true
+        },
+        {
+          "describe": "Access to predefined computing resources",
+          "isRight": false
+        },
+        {
+          "describe": "Unlimited processing power and memory",
+          "isRight": false
+        },
+        {
+          "describe": "Enforced best practices for development",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673199"
+    },
+    {
+      "describe": "A SSN__c custom field exists on the Candidate __c custom object. The field is used to store each candidate's social security number and is marked as Unique in the schema definition.\n\nAs part of a data enrichment process, Universal Containers has a CSV file that contains updated data for all candidates in the system. The file contains each Candidate's social security number as a data point. Universal Containers wants to upload this information into Salesforce, while ensuring all data rows are correctly mapped to a candidate in the system. Which technique should the developer implement to streamline the data upload?",
+      "answerOptions": [
+        {
+          "describe": "Upload the CSV into a custom object related to Candidate__c. ",
+          "isRight": false
+        },
+        {
+          "describe": "Update the SSN__c field definition to mark it as an External Id.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a before insert trigger to correctly map the records. ",
+          "isRight": false
+        },
+        {
+          "describe": "Create a process Builder on the Candidate__c object to map the records.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673197"
+    },
+    {
+      "describe": "Which three operations affect the number of times a trigger can fire? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Email messages",
+          "isRight": false
+        },
+        {
+          "describe": "Roll-Up Summary fields",
+          "isRight": true
+        },
+        {
+          "describe": "Workflow Rules",
+          "isRight": true
+        },
+        {
+          "describe": "Criteria-based Sharing calculations",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning Flows",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673166"
+    },
+    {
+      "describe": "When a user edits the Postal Code on an Account, a custom Account text field named \"TimeZone\" must be updated based on the values in a PostalCodeToTimeZone__c custom object.\nHow should a developer implement this feature?",
+      "answerOptions": [
+        {
+          "describe": "Build an Account custom trigger",
+          "isRight": true
+        },
+        {
+          "describe": "Build an Account Workflow Rule",
+          "isRight": false
+        },
+        {
+          "describe": "Build an Account Assignment Rule",
+          "isRight": false
+        },
+        {
+          "describe": "Build an Account Approval Process.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673165"
+    },
+    {
+      "describe": "A developer wants to import 500 Opportunity records into a sandbox.\nWhy should the developer choose to use Data Loader instead of Data Import Wizard?",
+      "answerOptions": [
+        {
+          "describe": "Data Import Wizard does not support Opportunities.",
+          "isRight": true
+        },
+        {
+          "describe": "Data Import Wizard can not import all 500 records.",
+          "isRight": false
+        },
+        {
+          "describe": "Data Loader runs from the developer's browser.",
+          "isRight": false
+        },
+        {
+          "describe": "Data Loader automatically relates Opportunities to Accounts.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673138"
+    },
+    {
+      "describe": "Universal Containers has an order system that uses an Order Number to indentify an order for customers and service agents. Order records will be imported into Salesforce. \nHow should the Order Number field be defined in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "Indirect Lookup",
+          "isRight": false
+        },
+        {
+          "describe": "Lookup",
+          "isRight": false
+        },
+        {
+          "describe": "Number with External ID",
+          "isRight": true
+        },
+        {
+          "describe": "Direct Lookup",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673111"
+    },
+    {
+      "describe": "UC uses a custom object called Vendor. The Vendor custom object has a Master-Detail relationship with the standard Account object.\nBased on some internal discussions, the UC administrator tried to change the Master-Detail relationship to a Lookup relationship but was not able to do so.\n\nWhat is possible reason that this change was not permitted?",
+      "answerOptions": [
+        {
+          "describe": "The Vendor object must use a Master-Detail field for reporting.",
+          "isRight": false
+        },
+        {
+          "describe": "The Account object is included on a workflow on the Vendor object.",
+          "isRight": false
+        },
+        {
+          "describe": "The Account records contain Vendor roll-up summary fields.",
+          "isRight": true
+        },
+        {
+          "describe": "The Vendor records has existing values in the Account object.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673105"
+    },
+    {
+      "describe": "An org has an existing Flow that creates an Opportunity with an Update Records element. A developer must update the Visual Flow to also create a Contact and store the created Contact's ID on the Opportunity.\nWhich update should the developer make in the Visual Flow?",
+      "answerOptions": [
+        {
+          "describe": "Add a new Get Records element.",
+          "isRight": false
+        },
+        {
+          "describe": "Add a new Update Records element.",
+          "isRight": false
+        },
+        {
+          "describe": "Add a new Create Records element.",
+          "isRight": true
+        },
+        {
+          "describe": "Add a new Quick Action(of type Create) element.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673103"
+    },
+    {
+      "describe": "A custom picklist field Food_Preference__c, exists an a custom object. The picklist contains the following options:\n'Vegan'. 'Kosher', 'No Preference'. The developer must ensure a value is populated every time a record is created or updated.",
+      "answerOptions": [
+        {
+          "describe": "Mark the field as Required on the object's page Layout.",
+          "isRight": false
+        },
+        {
+          "describe": "Mark the field as Required on the field definition.",
+          "isRight": true
+        },
+        {
+          "describe": "Set \"Use the first value in the list as default value\" as True.",
+          "isRight": false
+        },
+        {
+          "describe": "Set a validation rule to enforce a value is selected.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673081"
+    },
+    {
+      "describe": "Universal Containers decides to use exclusively declarative development to build out a new Salesforce application.\nWhich three options should be used to build out the database layer for the application? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Relationships",
+          "isRight": true
+        },
+        {
+          "describe": "Flows",
+          "isRight": false
+        },
+        {
+          "describe": "Triggers",
+          "isRight": false
+        },
+        {
+          "describe": "Custom Objects and Fields",
+          "isRight": true
+        },
+        {
+          "describe": "Roll-up Summaries",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673079"
+    },
+    {
+      "describe": "An org tracks customer orders on an Order object and the line items of an Order on the Line Item object. The Line Item object has a \nMaster/Detail relationship to the Order object. A developer has requirement to calculate the order amount on an Order and the line amount \non each Line Item based on quantity and price.\nWhat is the correct implementation?",
+      "answerOptions": [
+        {
+          "describe": "Write a process an the Line Item that calculated the item amount and order amount and updates the fields on the Line Item and the Order.",
+          "isRight": false
+        },
+        {
+          "describe": "Implement the line amount as a numeric formula field and the order amount as a roll-up summary field.",
+          "isRight": true
+        },
+        {
+          "describe": "Implement the line amount as a currency field and the order amount as SUM formula field.",
+          "isRight": false
+        },
+        {
+          "describe": "Write a single before trigger on the Line Item that calculates the item amount and updates the order amount on the Order.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673045"
+    },
+    {
+      "describe": "A developer needs to implement the functionality for a service agent to gather multiple pieces of imformation from a customer in order to \nsend a replacement credit card.\nWhich automation tool meets these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Lightning Component",
+          "isRight": false
+        },
+        {
+          "describe": "Flow Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Approval Process",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673043"
+    },
+    {
+      "describe": "Universal Containers used a simple Order Management app. On the Order Lines, the order line total is calculated by multiplying the item price \nwith the quantity ordered. There is a Master-Detail relationship between the Order and the Order Lines object.\nWhat is the best practice to get the sum of all order line totals on the order header?",
+      "answerOptions": [
+        {
+          "describe": "Apex Trigger",
+          "isRight": false
+        },
+        {
+          "describe": "Declarative Roll-Up Summary App",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Roll-Up Summary Field",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673042"
+    },
+    {
+      "describe": "Which aspect of Apex programming is limited due to multitenancy?",
+      "answerOptions": [
+        {
+          "describe": "The number of methods in an Apex class",
+          "isRight": false
+        },
+        {
+          "describe": "The number of records returned from database queries",
+          "isRight": true
+        },
+        {
+          "describe": "The number of active Apex classes",
+          "isRight": false
+        },
+        {
+          "describe": "The number of records processed in a loop.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673041"
+    },
+    {
+      "describe": "Universal Containers stores Orders and Line Items in Salesforce. For security reasons, financial representatives are allowed to see information\non the Order such as order amount, but they are not allowed to see the Line Item on the Order.\nWhich type of relationship should be user?",
+      "answerOptions": [
+        {
+          "describe": "Indirect Lookup",
+          "isRight": false
+        },
+        {
+          "describe": "Lookup",
+          "isRight": true
+        },
+        {
+          "describe": "Master-Detail",
+          "isRight": false
+        },
+        {
+          "describe": "Direct Lookup",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672368"
+    },
+    {
+      "describe": "In terms of the MVC paradigm, what are two advantages of implementing the view layer of a Salesforce application using Aura Component-based \ndevelopment over Visualforce?Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Server-side run-time debugging",
+          "isRight": false
+        },
+        {
+          "describe": "Self-contained and reusable units of an application",
+          "isRight": true
+        },
+        {
+          "describe": "Automatic code generation",
+          "isRight": false
+        },
+        {
+          "describe": "Rich component ecosystem",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672367"
+    },
+    {
+      "describe": "Universal Containers wants to back up all of the data and attachments in Salesforce org once a month.\nWhich approach should a developer use to meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Schedule a report",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Schedulable Apex Class",
+          "isRight": false
+        },
+        {
+          "describe": "Define a Data Export scheduled job.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the data loader command line.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672365"
+    },
+    {
+      "describe": "A developer must build an application that tracks which Accounts have purchaesd specific pieces of equipment that are represented as \nProducts Each Account could purchse many pieces of equipment.\nHow should the developer track that an Account has purchased a piece of equipment?",
+      "answerOptions": [
+        {
+          "describe": "Use a Lookup on Account to Product",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Asset object",
+          "isRight": true
+        },
+        {
+          "describe": "Use a Master-Detail on Product to Account",
+          "isRight": false
+        },
+        {
+          "describe": "Use a Custom object",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672337"
+    },
+    {
+      "describe": "UC wants to lower its shipping cost while making the shipping process more efficient. The Distribution Officer advises UC to implement global addresses to allow multiple Accounts to share a default pickup address. The developer is tasked to create the supporting object and relationship for this business requirement and uses the Setup Menu to create a custom object called \"Global Address\".\n\nWhich field should the developer add to create the most efficient model that supports the business need?",
+      "answerOptions": [
+        {
+          "describe": "Add a Master-Detail field on the Global Address object to the Account object.",
+          "isRight": false
+        },
+        {
+          "describe": "Add a Lookup field on the Account object to the Global Address object.",
+          "isRight": true
+        },
+        {
+          "describe": "Add a Master-Detail field on the Account object to the Global Address object.",
+          "isRight": false
+        },
+        {
+          "describe": "Add a Lookup field on the Global Address object to the Account object.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672335"
+    },
+    {
+      "describe": "A developer has a requirement to create an Order when an Opportunity reaches a 'Closed-Won' status.\nWhich tool should be used to implement this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Lightning Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Apex Trigger",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning Component",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672361"
+    },
+    {
+      "describe": "A Licensed_Professional __c custom object exists in the system with two Master-Detail fields for the following objects: Certification__c and Contact.\n\nUsers with the \"Certification Representative\" role can access the Certification records they own and view the related Licensed Professionals records, however users with the \"Sales Representative\" role report they cannot view any Licensed Professional records even though they own the associated Contact record.\n\nWhat are two likely causes of users in the \"Sales Representative\" role not being able to access the Licensed Professional records?Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "The organization has a private sharing model for Certification__c, and Contact is the primary relationship in the Licensed_Professinal__c object.",
+          "isRight": false
+        },
+        {
+          "describe": "The organization has a private sharing model for Certification__c, and Certification__c is the primary relationship in the Licensed_Professinal__c object. ",
+          "isRight": true
+        },
+        {
+          "describe": "The organization recently modified the Sales Representative role to restrict Read/Write access to Licensed_Professinal__c. ",
+          "isRight": false
+        },
+        {
+          "describe": "The organization recently modified the Sales Representative role to restrict Read access to Licensed_Professinal__c. ",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672332"
+    },
+    {
+      "describe": "Which three process automations can immediately send an email notification to the owner of an Opportunity \nwhen its Amount is changed to be greater than $10.000? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Escalation Rule",
+          "isRight": false
+        },
+        {
+          "describe": "Workflow Rule",
+          "isRight": true
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Flow Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Approval Process",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672330"
+    },
+    {
+      "describe": "Which process automation should be used to send an outbound message without using Apex code?",
+      "answerOptions": [
+        {
+          "describe": "Flow Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Approval Process",
+          "isRight": false
+        },
+        {
+          "describe": "Workflow Rule",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672329"
+    },
+    {
+      "describe": "A developer at Universal Containers is tasked with implementing a new Salesforce application that must built by their company's Salesforce administrator.\nWhich three options should be considered for building out the business logic layer of the application? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Scheduled Jobs",
+          "isRight": false
+        },
+        {
+          "describe": "Validation Rules",
+          "isRight": true
+        },
+        {
+          "describe": "Invocable Actions",
+          "isRight": false
+        },
+        {
+          "describe": "Workflows",
+          "isRight": true
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672328"
+    },
+    {
+      "describe": "A developer has the following requirements:\n1. Calculate the total amount on an Order.\n2. Calculate the line amount for each Line Item based on quantity selected and price.\n3. Move Line Items to a different Order if a Line Item is not in stock.\nWhich relationship implementation supports these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Line Item has a Master-Detail field to Order and the Master can be re-parented.",
+          "isRight": true
+        },
+        {
+          "describe": "Order has a Lookup field to Line Item and there can be many Line Item per Order.",
+          "isRight": false
+        },
+        {
+          "describe": "Line Item has a Lookup field to Order and there can be many Line Item per Order.",
+          "isRight": false
+        },
+        {
+          "describe": "Order has a Master-Detail field to Line Item and there can be many Line Item per Order.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672306"
+    },
+    {
+      "describe": "UC uses a custom object called Vendor. The Vendor custom object has a Master-Detail relationship with the standard Account object.\nBased on some internal discussions, the UC administrator tried to change the Master-Detail relationship to a Lookup relationship but was not able to do so.\nWhat is possible reason that this change was not permitted?",
+      "answerOptions": [
+        {
+          "describe": "The Vendor object must use a Master-Detail field for reporting.",
+          "isRight": false
+        },
+        {
+          "describe": "The Account object is included on a workflow on the Vendor object.",
+          "isRight": false
+        },
+        {
+          "describe": "The Account records contain Vendor roll-up summary fields.",
+          "isRight": true
+        },
+        {
+          "describe": "The Vendor records has existing values in the Account object.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672274"
+    }
+  ],
+  "hashCode": "-123844663"
+}

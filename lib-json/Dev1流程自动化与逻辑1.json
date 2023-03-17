@@ -1,0 +1,1519 @@
+{
+  "title": "Dev1流程自动化与逻辑1",
+  "category": "Dev1-自由部落侠",
+  "questions": [
+    {
+      "describe": "UC processes orders in Salesforce in a custom object, Order__c. They also allow sales reps to upload CSV files with thousands of orders at a time.\nA developer is tasked with integrating orders places in Salesforce with UC's enterprise resource planning (ERP) system.\nAfter the status for an Order__c is first set to 'Placed', the order information must be sent to a REST endpoint in the ERP system that can process one order at a time.\nWhat should the developer implement to accomplish this?",
+      "answerOptions": [
+        {
+          "describe": "Flow with a callout from an invovable method",
+          "isRight": false
+        },
+        {
+          "describe": "Callout from an @future method called from a trigger",
+          "isRight": false
+        },
+        {
+          "describe": "Callout from a Barchable class called from a scheduled job",
+          "isRight": true
+        },
+        {
+          "describe": "Callout from a Queueable class from a trigger",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1995171578"
+    },
+    {
+      "describe": "UMS has a custom object, ServiceJob__c, with an optinal Lookup field to Account called Partner_Service_Provider__c.\nThe TotalJobs__c field on Account tracks the total number of ServiceJob__c records to which a partner service provider Account is related.\nWhat is the most efficient way to ensure that the TotalJobs__c field is kept up to date?",
+      "answerOptions": [
+        {
+          "describe": " Create a schedule-triggered flow on ServiceJob__c",
+          "isRight": false
+        },
+        {
+          "describe": "Create an Apex trigger on ServiceJob__c",
+          "isRight": false
+        },
+        {
+          "describe": "Change TotalJobs__c to a roll-up summary field.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a record-triggered flow on ServiceJob__c",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1995171575"
+    },
+    {
+      "describe": "Which two scenarious require an Apex method to be called imperatively from a Lightning web component? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Calling a method that makes a web service callout.",
+          "isRight": false
+        },
+        {
+          "describe": "Calling a method that is not annotated with cacheable=true",
+          "isRight": true
+        },
+        {
+          "describe": "Calling a method with the click of a button",
+          "isRight": true
+        },
+        {
+          "describe": "Calling a method that is external to the main controller for the Lightning web component",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1995171574"
+    },
+    {
+      "describe": "Which Apex class contains methods to return the amount of resources that have been used for a particular governor, such as the number of DML statements?",
+      "answerOptions": [
+        {
+          "describe": "OrgLimits",
+          "isRight": false
+        },
+        {
+          "describe": "Messaging",
+          "isRight": false
+        },
+        {
+          "describe": "Exception",
+          "isRight": false
+        },
+        {
+          "describe": "Limits",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1995171572"
+    },
+    {
+      "describe": "As part of a data cleanup strategy, AW Computing wants to proactively delete associated opportunity records when the related Account is deleted.\nWhich automation tool should be used to meet this business requirement?",
+      "answerOptions": [
+        {
+          "describe": "Outbound messaging",
+          "isRight": false
+        },
+        {
+          "describe": "Record-triggered flow",
+          "isRight": true
+        },
+        {
+          "describe": "Scheduled job",
+          "isRight": false
+        },
+        {
+          "describe": "Flow Orchestration",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1995171549"
+    },
+    {
+      "describe": "While writing an Apex class, a developer wants to make sure that all functionality being developed is handled as specified by the requirements.\nWhich approach should the developer use to be sure that the Apex class is working according to specifications?",
+      "answerOptions": [
+        {
+          "describe": "Create a test class to execute the business logic and run the test in the Developer Console.",
+          "isRight": false
+        },
+        {
+          "describe": "Include a try/catch block to the Apex class.",
+          "isRight": true
+        },
+        {
+          "describe": "Run the code in an Execute Anonymous block in the Developer Console.",
+          "isRight": false
+        },
+        {
+          "describe": "Include a savepoint and Database.rollback().",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674188"
+    },
+    {
+      "describe": "Universal Containers has created a unique process for tracking container repairs. A custom Field,Status_c has been created within the container_c custom object. A developer is tasked with sending notifications to multiple external systems every time the value of the status_c picklist changes.\nWhich two tools should the developer use to meet the business requirement and ensure low maintenance of the solution?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Record-Triggered flow",
+          "isRight": false
+        },
+        {
+          "describe": "Apex trigger",
+          "isRight": true
+        },
+        {
+          "describe": "Apex callouts",
+          "isRight": false
+        },
+        {
+          "describe": "Platform event",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674166"
+    },
+    {
+      "describe": "A developer creates a custom exception as shown below:\n\npublic class ParityException extends Exception {}\n\nWhat are two ways the developer can fire the exception in Apex?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "new ParityException('parity does not match');",
+          "isRight": false
+        },
+        {
+          "describe": "throw new ParityException('parity does not match');",
+          "isRight": true
+        },
+        {
+          "describe": "throw new ParityException ();",
+          "isRight": true
+        },
+        {
+          "describe": "new ParityException();",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674159"
+    },
+    {
+      "describe": "An Approval Process is defined in the Expense_Item_c object.A business rule dictates that whenever a changes the Status to 'Submitted' on an Expense _Report_ c record,all the Expense_Itemc records related the expense report must enter the approval process individually.\nA developer is asked to explore if this automation can be implemented without writing any Apex code.\nWhich statement is true regarding this automation request?",
+      "answerOptions": [
+        {
+          "describe": "This can only be automated with Apex code.",
+          "isRight": false
+        },
+        {
+          "describe": "This approval step cannot be automated and must be done manually.",
+          "isRight": false
+        },
+        {
+          "describe": "The developer can use Einstein Next Best Actions.",
+          "isRight": true
+        },
+        {
+          "describe": "The developer can use a record triggered flow with Actions.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674158"
+    },
+    {
+      "describe": "<p>A developer migrated functionallty from JavaScriptRemoting to a Lightning web component and existing getopportunities() method to provide data.\nWhich modification to the method Is necessary?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The method must be decorated with (cacheable=true).</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The method must be decorated with @AuraEnabled.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The method must return a JSON Object.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The method must return a String of serialized JSON Array.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674135"
+    },
+    {
+      "describe": "Which two process automations can be used on their own to send Salesforce Outbound Message?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Workfow Rule",
+          "isRight": true
+        },
+        {
+          "describe": "Flow Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Strategy Builder",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674134"
+    },
+    {
+      "describe": "Managers at Universal Containers want to ensure that only decommissioned containers are able the system. To meet the business requirement a Salesforce developer adds \"Decommissioned\"for the status_c custom field within the container_c object.\nWhich tool should the developer use to enforce only Container records with a status of \"Decommissioned\" delated?",
+      "answerOptions": [
+        {
+          "describe": "After record-triggered flow",
+          "isRight": false
+        },
+        {
+          "describe": "validation rule",
+          "isRight": false
+        },
+        {
+          "describe": "Before record-triggered flow",
+          "isRight": false
+        },
+        {
+          "describe": "Apex trigger",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674128"
+    },
+    {
+      "describe": "A company has been adding data to Salesforce and has not done a good job of limiting the creation of duplicate Lead records. The developer is considering writing an Apex process to identify duplicates and merge the recordstogether.\nWhich two statements are valid considerations when using merge?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "The field values on the master record are overwritten by the records being merged.",
+          "isRight": false
+        },
+        {
+          "describe": "The merge method allows up to three records, including the master and two additional records withthe same sObject type,to be merged into the master record.",
+          "isRight": true
+        },
+        {
+          "describe": "External ID fields can be used with the merge method.",
+          "isRight": true
+        },
+        {
+          "describe": "Merge is supported with accounts, contacts,cases, and leads.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674099"
+    },
+    {
+      "describe": "A business implemented a gamification plan to encourage its customers to watch some educational videos.\nCustomers can watch videos over several days, and their progress is recorded.Award points are grantedcustomers for all completed videos. When the video is marked as completed in Salesforce, an external webservice must be called so that points can be awarded to the user.\nA developer implemented these requirements in the after update trigger by making a call to an external webservice.However, a Syetem,Cal1outException is occurring.\nWhat should the developer do to fix this error?",
+      "answerOptions": [
+        {
+          "describe": "Move the callout to an asynchronous method with @future(callout=true) annotation.",
+          "isRight": true
+        },
+        {
+          "describe": "Replace the after update trigger with a before insert trigger.",
+          "isRight": false
+        },
+        {
+          "describe": "Surround the external call with a try-catch block to handle the exception.",
+          "isRight": false
+        },
+        {
+          "describe": "Write a REST service to integrate with the external web service.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674097"
+    },
+    {
+      "describe": "<p>When a user edits the Postal Code on an Account, a custom Account text field named &quot;Timezone&quot; must be updated based on the values in a PostalCodeToTimezone__c custom object.\nWhich two automation tools can be used to implement this feature?\nChoose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Fast Field Updates record-triggered flow</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Approval process</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Quick actions</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Account trigger</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674095"
+    },
+    {
+      "describe": "A developer wants to invoke an outbound message when a record meets a specific criteria.\nWhich two features satisfy this use case?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Flow Builder can be used to check the record criteria and send an outbound message.",
+          "isRight": true
+        },
+        {
+          "describe": "Next Best Action can be used to check the record criteria and send an outbound message.",
+          "isRight": false
+        },
+        {
+          "describe": "Entitlement Process can be used to check the record criteria and send an outbound message without Apex code.",
+          "isRight": false
+        },
+        {
+          "describe": "Approval Process can be used to check the record criteria and send an outbound message withoutApex code.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674073"
+    },
+    {
+      "describe": "What are two use cases for executing Anonymous Apex code?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "To add unit test code coverage to an org",
+          "isRight": false
+        },
+        {
+          "describe": "To run a batch Apex cass to update all Contacts",
+          "isRight": true
+        },
+        {
+          "describe": "To delete 15,000 inactive Accounts in a single transaction after a deployment",
+          "isRight": false
+        },
+        {
+          "describe": "To schedule an Apex class to run periodically",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674072"
+    },
+    {
+      "describe": "A custom object Trainer_c has a lookup field to another custom object Gym_c.\nWhich SOQL query will get the record for the Viridian City Gym and all it's trainers?",
+      "answerOptions": [
+        {
+          "describe": "SELECT Id,(SELECT Id FROMTrainer_c)FROM Gym__c WHERE Name = \"Viridian City Sym'",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT ID FROM Trainer__c WHEREGym_r.Name = 'Viridian city Gym'",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Id,(SELECT Id FROM Trainers_c)FROM Gym_c WHERE Name = 'Viridian City Gym'",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Id,(SELECT Id FROMTrainer__r)FROM Gym_c WHERE Name = 'Viridian City Gym'",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674067"
+    },
+    {
+      "describe": "The Salesforce Administrator created a custom picklist field Account_ status_c, on the Account object. This picklist has possible values of \"Inactive\" and \"Active\". As part of a new business process, management wants to ensure an opportunity record is created only for Accounts marked as Active. A developer is asked to implement this business requirement.\nWhich automation tool should be used to fulfill the business need?",
+      "answerOptions": [
+        {
+          "describe": "Entitlement Process",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce Flow",
+          "isRight": true
+        },
+        {
+          "describe": "Outbound Messaing",
+          "isRight": false
+        },
+        {
+          "describe": "Approval Process",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674066"
+    },
+    {
+      "describe": "A developer is asked to prevent anyone other than a user with Sales Manager profile from changing the Opportunity Status to Closed Lost If the lost reason is blank.\nWhich automation allows the developer to satisfy this requirement in the most efficient manner?",
+      "answerOptions": [
+        {
+          "describe": "An error condition formula on a validation rule on Opportunity",
+          "isRight": true
+        },
+        {
+          "describe": "A record trigger flow on the Opportunity object",
+          "isRight": false
+        },
+        {
+          "describe": "An approval process on the Opportunity object",
+          "isRight": false
+        },
+        {
+          "describe": "An Apex trigger on the Opportunity object",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674065"
+    },
+    {
+      "describe": "Universal Containers uses Service Cloud with a custom field, stage_c, on the Case object.\nManagement wants to send a follow-up email reminder 6 hours after the stage_c field is set to \"Waiting on Customer\". The Salesforce Administrator wants to ensure the solution used is bulk safe.\nWhich automation tool should a developer recommend to meet these business requirements?",
+      "answerOptions": [
+        {
+          "describe": "Record-Triggered Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Entitlement Process",
+          "isRight": false
+        },
+        {
+          "describe": "Scheduled Flow",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Next Best Action",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674039"
+    },
+    {
+      "describe": "On a brand new developer org, a developer writes a single trigger named AccountTrigger on the Account object to perform complex validations on the after insert and after update DML events. A Salesforce administrator creates a Process Builder to update a custom field within the same object every time an Account is created or updated.\nHow many times will the AccountTrigger fire if a new Account is inserted, assuming no other automation logic is implemented on the Account?",
+      "answerOptions": [
+        {
+          "describe": "1",
+          "isRight": false
+        },
+        {
+          "describe": "2",
+          "isRight": true
+        },
+        {
+          "describe": "6",
+          "isRight": false
+        },
+        {
+          "describe": "4",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674040"
+    },
+    {
+      "describe": "A developer is tasked with performing a complex validation using Apex as part of advanced business logic. When certain criteria are met for a PurchaseOrder, the developer must throw a custom exception.\nWhat is the correct way for the developer to declare a class that can be used as an exception?",
+      "answerOptions": [
+        {
+          "describe": "public class PurchaseOrderException implements Exception{}",
+          "isRight": false
+        },
+        {
+          "describe": "public class PurchaseOrder extends Exception{}",
+          "isRight": false
+        },
+        {
+          "describe": "public class PurchaseOrderException extends Exception{)",
+          "isRight": true
+        },
+        {
+          "describe": "public class PurchaseOrder implements Exception{}",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674037"
+    },
+    {
+      "describe": "A Salesforce Administrator is creating a record-triggered flow. When certain criteria are met, the flow must call an Apex method to execute a complex validation involving several types of objects.\nWhen creating the Apex method, which annotation should a developer use to ensure the method can be used within the flow?",
+      "answerOptions": [
+        {
+          "describe": "@future",
+          "isRight": false
+        },
+        {
+          "describe": "@AuraEnabled",
+          "isRight": false
+        },
+        {
+          "describe": "@InvocableMethod",
+          "isRight": true
+        },
+        {
+          "describe": "@RemoteAction",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674034"
+    },
+    {
+      "describe": "CK has a multi-screen flow that its call center agents use when handling inbound service desk calls.\nAt one of the steps in the flow, the agents should be presented with a list of order numbers and dates that are retrieved from an external order management system in real time and displayed on the screen.\nWhat should a developer use to satisfy this requirement?",
+      "answerOptions": [
+        {
+          "describe": "An Apex REST class",
+          "isRight": true
+        },
+        {
+          "describe": "An outbound message",
+          "isRight": false
+        },
+        {
+          "describe": "An Apex controller",
+          "isRight": false
+        },
+        {
+          "describe": "An invocable method",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674033"
+    },
+    {
+      "describe": "Which process automation should be used to post a message to Chatter without using Apex code?",
+      "answerOptions": [
+        {
+          "describe": "Outbound Message",
+          "isRight": false
+        },
+        {
+          "describe": "Entitlement Process",
+          "isRight": false
+        },
+        {
+          "describe": "Strategy Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Flow Builder",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674009"
+    },
+    {
+      "describe": "A developer is migrating a Visualforce page into a Lightning web component.\nThe Visualforce page shows information about a single record. The developer decides to use Lightning Data Service to access record data.\nWhich security consideration should the developer be aware of？",
+      "answerOptions": [
+        {
+          "describe": "Lightning Data Service handles sharing rules and field-level security.",
+          "isRight": true
+        },
+        {
+          "describe": "Lightning Data Service ignores field-level security.",
+          "isRight": false
+        },
+        {
+          "describe": "The ishccessible() method must be used for field-level access checks.",
+          "isRight": false
+        },
+        {
+          "describe": "The with sharing keyword must be used to enforce sharing rules.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674007"
+    },
+    {
+      "describe": "An Opportunity needs to have an amount rolled up from a custom object that is not in a master-detail relationship.\nHow can this be achieved?",
+      "answerOptions": [
+        {
+          "describe": "Write a trigger on the child object and use a red-black tree sorting to sum the amount for all related child objects under the Opportunity.",
+          "isRight": false
+        },
+        {
+          "describe": "Write a Process Builder that links the custom object to the Opportunity.",
+          "isRight": false
+        },
+        {
+          "describe": "Write a trigger on the child object and use an aggregate function to sum the amount for all related child objects under the Opportunity.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the Streaming API to create real-time roll-up summaries.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674004"
+    },
+    {
+      "describe": "Which statement describes the execution order when triggers are associated to the same object and event?",
+      "answerOptions": [
+        {
+          "describe": "Trigger execution order cannot be guaranteed.",
+          "isRight": true
+        },
+        {
+          "describe": "Triggers are executed in the order they are created.",
+          "isRight": false
+        },
+        {
+          "describe": "Triggers are executed alphabetically by trigger name.",
+          "isRight": false
+        },
+        {
+          "describe": "Triggers are executed in the order they are modified.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674003"
+    },
+    {
+      "describe": "UC wants Opportunities to no longer be editable when reaching the Closed/Won stage.\nHow should a developer accomplish this?",
+      "answerOptions": [
+        {
+          "describe": "Use a validation rule.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the Process Automation settings.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Flow Builder.",
+          "isRight": false
+        },
+        {
+          "describe": "Mark fields as read-only on the page layout.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673329"
+    },
+    {
+      "describe": "A developer created a new trigger that inserts a Task when a new Lead is created. After deploying to production, an outside integration that reads task \nrecords is periodically reporting errors.\nWhich change should the developer make to ensure the integration is not affected with minimal impact to business logic?",
+      "answerOptions": [
+        {
+          "describe": "Use the Database method with allOrNone set to false.",
+          "isRight": true
+        },
+        {
+          "describe": "Deactivate the trigger before the integration runs.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a try-catch block after the insert statement.",
+          "isRight": false
+        },
+        {
+          "describe": "Remove the Apex class from the integration user's profile.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673324"
+    },
+    {
+      "describe": "Which annotation exposes an Apex class as a RESTful web service?",
+      "answerOptions": [
+        {
+          "describe": "@AuraEnabled",
+          "isRight": false
+        },
+        {
+          "describe": "@RestResource",
+          "isRight": true
+        },
+        {
+          "describe": "@RemoteAction",
+          "isRight": false
+        },
+        {
+          "describe": "@HttpInvocable",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673321"
+    },
+    {
+      "describe": "UC hires a developer to built a custom search page to help users find the Accounts they want.\nUsers will be able to search on Name, Description, and a custom comments field.\nWhich consideration should the developer be aware of when deciding between SOQL and SOSL?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "SOQL is able to return more records.",
+          "isRight": true
+        },
+        {
+          "describe": "SOSL is faster for text searches.",
+          "isRight": true
+        },
+        {
+          "describe": "SOQL is faster for text searches.",
+          "isRight": false
+        },
+        {
+          "describe": "SOSL is able to return more records.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673320"
+    },
+    {
+      "describe": "What is the value of the Trigger.old context variable in a Before Insert trigger?",
+      "answerOptions": [
+        {
+          "describe": "A list of newly created sObjects without IDs",
+          "isRight": false
+        },
+        {
+          "describe": "Undefined",
+          "isRight": false
+        },
+        {
+          "describe": "An empty list of sObjects",
+          "isRight": false
+        },
+        {
+          "describe": "null",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673298"
+    },
+    {
+      "describe": "Which statement should be used to allow some of the records in a list of records to be inserted if others fail to be inserted?",
+      "answerOptions": [
+        {
+          "describe": "insert records",
+          "isRight": false
+        },
+        {
+          "describe": "Database.insert(records, true)",
+          "isRight": false
+        },
+        {
+          "describe": "insert(records, false)",
+          "isRight": false
+        },
+        {
+          "describe": "Database.insert(records, false)",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673297"
+    },
+    {
+      "describe": "A developer receives an error when trying to call a global server-side method using the @remoteAction decorator.\nHow can the developer resolve the error?",
+      "answerOptions": [
+        {
+          "describe": "Change the function signature to be private static.",
+          "isRight": false
+        },
+        {
+          "describe": "Add static to the server-side method signature.",
+          "isRight": false
+        },
+        {
+          "describe": "Decorate the server-side method with (static=true).",
+          "isRight": true
+        },
+        {
+          "describe": "Decorate the server-side method with (static=false).",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673296"
+    },
+    {
+      "describe": "An Approval Process is defined in the Expense_Item__c object. A business rule dictates that whenever a user changes the Status to 'Submitted' on an Expense_Export__c record, all the Expense_Item__c records related to the expense report must enter the approval process individually. \n\nWhat approach should be used to ensure the business requirement is met?",
+      "answerOptions": [
+        {
+          "describe": "Create a Process Builder on Expense_Report__c with an 'Apex' action type to submit all related Expense_Item__c records when the criteria is met.",
+          "isRight": true
+        },
+        {
+          "describe": "Create two Process Builder, one on Expense_Report__c to mark the related Expense_Item__c to submit the records for approval. ",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Process Builder on Expense_Report__c with a 'Submit for Approval' action type to submit all related Expense_Item__c records when the criteria is met.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Process Builder on Expense_Report__c to mark the related Expense_Item__c as submittable and a trigger on Expense_Item__c to submit the records for approval. ",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673293"
+    },
+    {
+      "describe": "A workflow updates the value of a custom field for an existing Account.\nHow can a developer access the updated custom field value from a trigger?",
+      "answerOptions": [
+        {
+          "describe": "By writing a Before Insert trigger and accessing the field value from Trigger.new",
+          "isRight": false
+        },
+        {
+          "describe": "By writing an After Update trigger and accessing the field value from Trigger.old",
+          "isRight": true
+        },
+        {
+          "describe": "By writing a Before Update trigger and accessing the field value from Trigger.new",
+          "isRight": false
+        },
+        {
+          "describe": "By writing an After Insert trigger and accessing the field value from Trigger.old",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673263"
+    },
+    {
+      "describe": "Which action may cause triggers to fire?",
+      "answerOptions": [
+        {
+          "describe": "Updates to Feed Items",
+          "isRight": true
+        },
+        {
+          "describe": "Cascading delete operations",
+          "isRight": false
+        },
+        {
+          "describe": "Renaming or replacing a picklist entry",
+          "isRight": false
+        },
+        {
+          "describe": "Changing a user's default division when the transfer division option is checked",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673258"
+    },
+    {
+      "describe": "Instead of sending emails to support personnel directly from Salesforce, UC wants to notify an external system in the event that an unhandled exception occurs. \n\nWhat is the appropriate publish/subscribe logic to meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Publish the error event using the addError( ) method and write a trigger to subscribe to the event and notify the external system.",
+          "isRight": false
+        },
+        {
+          "describe": "Publish the error event using the Eventbus.publish( ) method and have the external system subscribe to the event using CometD.",
+          "isRight": true
+        },
+        {
+          "describe": "Publish the error event using the addError( ) method and have the external system subscribe to the event using CometD.",
+          "isRight": false
+        },
+        {
+          "describe": "Have the external System subscribe to the BatchApexError event, no publishing is necessary.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673236"
+    },
+    {
+      "describe": "Which action causes a before trigger to fire by default for Accounts?",
+      "answerOptions": [
+        {
+          "describe": "Importing data using the Data Loader and the Bulk API",
+          "isRight": true
+        },
+        {
+          "describe": "Converting Leads to Contact accounts",
+          "isRight": false
+        },
+        {
+          "describe": "Updating addresses using the Mass Address update tool",
+          "isRight": false
+        },
+        {
+          "describe": "Renaming or replacing picklists",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673235"
+    },
+    {
+      "describe": "Uiversal Containers wants Opporunities to be locked from editing when reaching the Closed/Won stage.\nWhich two strategies should a developer use to accomplish this? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Use a validation rule.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the Process Automation settings.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a trigger. ",
+          "isRight": true
+        },
+        {
+          "describe": "Use Flow Builder.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673205"
+    },
+    {
+      "describe": "A developer needs to create a custom interface in Apex. Which three considerations must the developer keep in mind while developing the Apex interface? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "A method implementation can be defined within the Apex Interface.",
+          "isRight": false
+        },
+        {
+          "describe": "New methods can be added to a public interface within a released package.",
+          "isRight": true
+        },
+        {
+          "describe": "The Apex class must be declared using the interface keyword.",
+          "isRight": true
+        },
+        {
+          "describe": "The Apex class access modifier can be set to Private, Public, or Global.",
+          "isRight": false
+        },
+        {
+          "describe": "A method defined in an Apex interface cannot have an access modifier. ",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673200"
+    },
+    {
+      "describe": "A developer wants to invoke an outbound message when a record meets a specific criteria. \nWhich three features satisfy this use case? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Process builder can be used to check the record criteria and send an outbound message without Apex Code.",
+          "isRight": false
+        },
+        {
+          "describe": "Visual Workflow can be used to check the record criteria and send an outbound message without Apex Code.",
+          "isRight": false
+        },
+        {
+          "describe": "Process builder can be used to check the record criteria and send an outbound message with Apex Code.",
+          "isRight": true
+        },
+        {
+          "describe": "Approval Process has the capability to check the record criteria and send an outbound message without Apex Code.",
+          "isRight": true
+        },
+        {
+          "describe": "Workfows can be used to check the record citeria and send an outbound message.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673174"
+    },
+    {
+      "describe": "A developer is creating a page that allows users to create multiple Opportunities. The deceloper is asked to verify the current user's default Opportunity record type, and set certain default values based on the record type before inserting the record.\nHow can the developer find the current user's default record type?",
+      "answerOptions": [
+        {
+          "describe": "Use the Schema.userInfo.Opportunity.getDefaultRecordType( ) method.",
+          "isRight": false
+        },
+        {
+          "describe": "Query the Profile where the ID equals userInfo.getProfileID( ) and then use the profile.Opportunity.getDefaultRecordType( ) method.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Opportunity.SObjectType.getDescribe( ).getRecordTypeInfos( ) to get a list of record types, and iterate through them until isDefaultRecordTypeMapping( ) is true.",
+          "isRight": true
+        },
+        {
+          "describe": "Create the opportunity and check the opportunity.recordType before inserting, which will have the record ID of the current user's default record type.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673171"
+    },
+    {
+      "describe": "The sales management team at Universal Containers requires that the Lead Source field of the Lead record be populated when a Lead is converted.\nWhat should be used to ensure that user poulates the Lead Source field prior to converting a Lead?",
+      "answerOptions": [
+        {
+          "describe": "Validation Rule",
+          "isRight": true
+        },
+        {
+          "describe": "Formula Field",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Workflow Rule",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673169"
+    },
+    {
+      "describe": "Which two operations can be performed using a formula field? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Displaying the lasy four digits of an encrypted Social Security number.",
+          "isRight": false
+        },
+        {
+          "describe": "Triggering a Process Builder.",
+          "isRight": false
+        },
+        {
+          "describe": "Displaying an Image based on the Opportunity Amount.",
+          "isRight": true
+        },
+        {
+          "describe": "Calculating a score on a Lead based on the information from another field.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673141"
+    },
+    {
+      "describe": "What are three considerations when using the @InvocableMethod annotation in Apex? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Only one method using the @InvocableMethod annotation can be defined per Apex class.",
+          "isRight": true
+        },
+        {
+          "describe": "A method using the @InvocableMethod annotation must be declared as static. ",
+          "isRight": true
+        },
+        {
+          "describe": "A method using the @InvocableMethod annotation must define a return value.",
+          "isRight": false
+        },
+        {
+          "describe": "A method using the @InvocableMethod can have multiple input parameters.",
+          "isRight": false
+        },
+        {
+          "describe": "A method using the @InvocableMethod annotation can be declared as Public or Global.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673140"
+    },
+    {
+      "describe": "A developer is implementing an Apex class for a financial system. Within the class, the variables 'creditAmount' and 'debitAmount' should not be able to change once a value is assigned.\nIn which two ways can the developer declare the variables to ensure their value can only be assigned one time? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Use the final keyword and assign its value in the class constructor. ",
+          "isRight": true
+        },
+        {
+          "describe": "Use the static keyword and assign its value in the dass constructor. ",
+          "isRight": false
+        },
+        {
+          "describe": "Use the static keyword and assign its value in sstatic initializer. ",
+          "isRight": false
+        },
+        {
+          "describe": "Use the final keyword and assign its value when declaring the variable. ",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673139"
+    },
+    {
+      "describe": "A developer identifies the following triggers on the Expense__c object:\ndeleteExpense;\napplyDefaultsToExpense;\nvalidateExpenseUpdate;\n\nThe triggers process before delete, before insert, and before update event respectively.\nWhich two techniques should the developer implement to ensure reigger best practices are followed? Chooose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Unify all three triggers in a single trigger on the Expense__c object that includes all events.",
+          "isRight": true
+        },
+        {
+          "describe": "Create helper classes to execute the appropriate logic when a record is saved.",
+          "isRight": true
+        },
+        {
+          "describe": "Maintain all three triggers on the Expense__c object, but move the Apex logic out of the trigger definition.",
+          "isRight": false
+        },
+        {
+          "describe": "Unify the before insert and before update triggers and use Process Builder for the delete action.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673136"
+    },
+    {
+      "describe": "The Job_Application__c custom object has a field that is a Master-Detail relationship to the Contact object, where the Contact object is the Master. As part of a feature implementation, a developer needs to retrieve a list containing all Contact records where the related Account Industry is 'Technology' while also retrieving the contact's Job_ Application__ c records.\n\nBased on the object's relationships, what is the most efficient statement to retrieve the list of contacts?",
+      "answerOptions": [
+        {
+          "describe": "[SELECT Id, (SELECT Id FROM Job_ Application__ c) FROM Contact WHERE Accounts. Industry = 'Technology'];",
+          "isRight": false
+        },
+        {
+          "describe": "[SELECT Id, (SELECT Id FROM Job_ Application__ c) FROM Contact WHERE Account. Industry = 'Technology'];",
+          "isRight": false
+        },
+        {
+          "describe": "[SELECT Id, (SELECT Id FROM Job_ Application__ r) FROM Contact WHERE Account. Industry = 'Technology'];",
+          "isRight": true
+        },
+        {
+          "describe": "[SELECT Id, (SELECT Id FROM Job_ Application__ r) FROM Contact WHERE Accounts. Industry = 'Technology'];",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673134"
+    },
+    {
+      "describe": "A developer has to identify a method in an Apex class that performs resource intensive actions in memory by iterating over the result set of a SOQL statement on the account. The method also performs a DML statement to save the changes to the database.\n\nWhich two techniques should the developer implement as a best practice to ensure transaction control and avoid exceeding governor limits? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Use the Database.Savepoint method to enforce database integrity.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the @ReadOnly annotation to bypass the number of rows returned by a SOQL.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the System.Limit class to monitor the current CPU governor limit consumption. ",
+          "isRight": true
+        },
+        {
+          "describe": "Use Partial DML statements to ensure only valid data is committed.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673110"
+    },
+    {
+      "describe": "Which three data types can a SOQL query return? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Long",
+          "isRight": false
+        },
+        {
+          "describe": "sObject",
+          "isRight": true
+        },
+        {
+          "describe": "List",
+          "isRight": true
+        },
+        {
+          "describe": "Integer",
+          "isRight": true
+        },
+        {
+          "describe": "Double",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673109"
+    },
+    {
+      "describe": "A developer has a requirement to create a Case when a record on the Complaint__c object is created. Which two ways can this be solved? \nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Create a flow that initiates a new Case.",
+          "isRight": true
+        },
+        {
+          "describe": "Use platform events add create a trigger on after insert of the Complaint__c record to create the Case.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Lightning Conponent that listens for the event and calls an Apex method to create the Case",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Process Builder that triggers when a Complaint__c record is created, and create the Case.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673108"
+    },
+    {
+      "describe": "UC decides it will not to send emails to support personnel directly from Salesforce in the event that an unhandled \nexception occurs.  Instead, UC wants an external system be notified of the error.\nWhat is the appropriate publish/subscribe logic to meet these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Publish the error event using the  Eventbus.publish() method and have the external system subscribe to the event using CometD.",
+          "isRight": true
+        },
+        {
+          "describe": "Have the external system subscribe to the BatchApexError event, no publishing is necessary.",
+          "isRight": false
+        },
+        {
+          "describe": "Publish the error event using the addError() method and write a trigger to subscribe to the event and notify the external system.",
+          "isRight": false
+        },
+        {
+          "describe": "Publish the error event using the addError() method and have the external system subscribe to the event suing CometD.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673077"
+    },
+    {
+      "describe": "A devveloper uses a loop to check each Contact in a list. When a Contact with the Title of 'Boss' is found, the Apex method should jump to \nthe first line of code outside of the for loop.\nWhich Apex solution will let the developer implement this requirement?",
+      "answerOptions": [
+        {
+          "describe": "break",
+          "isRight": true
+        },
+        {
+          "describe": "continue;",
+          "isRight": false
+        },
+        {
+          "describe": "return;",
+          "isRight": false
+        },
+        {
+          "describe": "System.assert(false);",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673075"
+    },
+    {
+      "describe": "Cloud Kicks Fitness, an ISV Salesforce partner, is developing a managed package application, One of the application modules allows the user to \ncalculate body fat using the Apex class, BodyFat, and its method, calculateBodyFat(). The product owner wants to ensure this method is accessible by \nthe consumer of the application when developing customizations outside the ISV's package namespace.\nWhich approach should a developer take to ensure calculateBodyFat() is accessible outside the package namespace?",
+      "answerOptions": [
+        {
+          "describe": "Declare the class and method using the global asscess modifier.",
+          "isRight": true
+        },
+        {
+          "describe": "Declare the class and method using the public asscess modifier.",
+          "isRight": false
+        },
+        {
+          "describe": "Declare the class as global and use the public access modifier on the method.",
+          "isRight": false
+        },
+        {
+          "describe": "Declare the class as public and use the global access modifier on the method.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673049"
+    },
+    {
+      "describe": "If Apex code executes inside the execute() method of an Apex class when implementing the Batchable interface, which two statement are true regarding governor limits? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "The Apex governor limits are reset for each iteration of execute() method.",
+          "isRight": true
+        },
+        {
+          "describe": "The Apex governor limits cannot be exceeded due to the asynchronous nature of the transaction.",
+          "isRight": true
+        },
+        {
+          "describe": "The Apex governor limits might be higher due to the asynchronous nature of the transaction.",
+          "isRight": false
+        },
+        {
+          "describe": "The Apex governor limits are relaxed while calling the constructor of the Apex class.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673048"
+    },
+    {
+      "describe": "A recursive transaction is initiated by a DML statement creating records for these two objects:\n1. Accounts\n2. Contacts\nThe Account trigger hits a stack depth of 16:\nWhich statement is true regarding the outcome of the transaction?",
+      "answerOptions": [
+        {
+          "describe": "The transaction fails and all the changes are rolled back.",
+          "isRight": true
+        },
+        {
+          "describe": "The transaction succeeds as long as the Contact trigger stack depth is less than 16.",
+          "isRight": false
+        },
+        {
+          "describe": "The transaction succeeds and all changes are committed to the database.",
+          "isRight": false
+        },
+        {
+          "describe": "The transaction fails only if the Contact trigger stack depth is greater or equal to 16.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673047"
+    },
+    {
+      "describe": "Universal Containers implemented a private sharing model for the Account object. A custom Account search tool was developer with Apex to \nhelp sales representatives find accounts that match multiple criteria they specify. Since its release, users of the tool report can see Accounts they do not own.\nWhat should the developer use to enforce sharing permissions for the currently logged-in user while using the custom search tool?",
+      "answerOptions": [
+        {
+          "describe": "Use the with sharing keyword on the class declaration.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the UserInfo Apex class to filter all SOQL queries to returned records owned by the logged-in user.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the without sharing keyword on the class declaration.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the schema describe calls to detemine if the logged-in user has access to the Account object.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673046"
+    },
+    {
+      "describe": "A developer must write an Apex method that will be called from a Lightning component. The method may delete an Account stored in the accountRec variable.\nWhich method should a developer use to ensure only users that should be able to delete Accounts can successfully perform deletions?",
+      "answerOptions": [
+        {
+          "describe": "accountRec.isDeletable()",
+          "isRight": false
+        },
+        {
+          "describe": "Schema.sObjectType.Account.isDeletable()",
+          "isRight": true
+        },
+        {
+          "describe": "accountRec.sObjectType.isDeletable()",
+          "isRight": false
+        },
+        {
+          "describe": "Account.isDeletable()",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673044"
+    },
+    {
+      "describe": "Which Salesforce feature allows a developer to see when a user last logged in to Salesforce if real-time notification is not required?",
+      "answerOptions": [
+        {
+          "describe": "Calendar Events",
+          "isRight": false
+        },
+        {
+          "describe": "Event Monitoring Log",
+          "isRight": true
+        },
+        {
+          "describe": "Developer Log",
+          "isRight": false
+        },
+        {
+          "describe": "Asynchronous Data Capture Events",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672362"
+    },
+    {
+      "describe": "Which exception type cannot be caught?",
+      "answerOptions": [
+        {
+          "describe": "A Custom Exception",
+          "isRight": false
+        },
+        {
+          "describe": "NoAccessException",
+          "isRight": false
+        },
+        {
+          "describe": "CalloutException",
+          "isRight": false
+        },
+        {
+          "describe": "LimitException",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672359"
+    },
+    {
+      "describe": "A developer must create an Apex class, ContactController, that a Lightning component can use to search for Contact records. Users of the \nLightning component should only be able to search for Contact records to which they have access.\nWhich two will restrict records correctly? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "public without sharing class ContactController",
+          "isRight": false
+        },
+        {
+          "describe": "public class ContactController",
+          "isRight": false
+        },
+        {
+          "describe": "public inherited sharing class ContactController",
+          "isRight": true
+        },
+        {
+          "describe": "public with sharing class ContactController",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672334"
+    },
+    {
+      "describe": "A developer has an integer variable called maxAttempts. The developer needs to ensure that once maxAttempts is initialized, it preserves its value for the length of the Apex transaction; while being able to share the variable's state between trigger executions.\n\nHow should the developer declare max attempts to meet these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Declare maxAttempts as a variable on a helper class.",
+          "isRight": false
+        },
+        {
+          "describe": "Declare maxAttempts as constant using the static and final keywords.",
+          "isRight": true
+        },
+        {
+          "describe": "Declare maxAttempts as a private static variable on a helper class. ",
+          "isRight": false
+        },
+        {
+          "describe": "Declare maxAttempts as a member variable on the trigger definition.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672305"
+    },
+    {
+      "describe": "A developer writes a single trigger on the Account object on the after insert and after update events. A workflow rule modifies a field every time an Account is created or updated.\nHow many times will the trigger fire if a new Account is inserted, assuming no other automation logic is implemented on the Account?",
+      "answerOptions": [
+        {
+          "describe": "8",
+          "isRight": false
+        },
+        {
+          "describe": "1",
+          "isRight": false
+        },
+        {
+          "describe": "4",
+          "isRight": false
+        },
+        {
+          "describe": "2",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672304"
+    },
+    {
+      "describe": "A develper writes a trigger on the Account object on the before update event that increments a count field. A workflow rule also increments the count field every time that an Account is created or updated. The field update in the workflow rule is configured to not re-evaluate workflow rules.\nWhat is the value of the count field if an Account is inserted with an initial value of zero, assuming no other automation logic is implemented on theAccount?",
+      "answerOptions": [
+        {
+          "describe": "4",
+          "isRight": false
+        },
+        {
+          "describe": "2",
+          "isRight": true
+        },
+        {
+          "describe": "1",
+          "isRight": false
+        },
+        {
+          "describe": "3",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672299"
+    },
+    {
+      "describe": "Universal Containers recently transltioned from Classic to Lightning Experience. One of its business processes requires \ncontain values from the Opportunity object to be sent via an HTTP REST callout to its external order management system \nbased on a user-initiated action on the Opportunity detail page, Example values are as follows:\nName\nAmount\nAccount\nWhich two methods should the developer implement to fulfill the business requirement?",
+      "answerOptions": [
+        {
+          "describe": "Create an after trigger on the Opportunity object that calls a helper method using @Future(Callout=true) to perform \nthe HTTP REST callout.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Visualforce page that performs the HTTP REST callout, and use a Visualforce quick action to expose the component \non the Opportunity detail page.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Lightning component that performs the HTTP REST callout, and use a Lightning Action to expose the component \non the Opportunity detail page.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Process Builder on the Opportunity object that exeutes an Apex immediate action to perform the HTTP RESR callout \nwhenever the Opportunity is updated.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672275"
+    }
+  ],
+  "hashCode": "1494717394"
+}

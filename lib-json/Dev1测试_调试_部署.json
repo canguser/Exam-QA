@@ -1,0 +1,889 @@
+{
+  "title": "Dev1测试/调试/部署",
+  "category": "Dev1-自由部落侠",
+  "questions": [
+    {
+      "describe": "What should a developer use to script the deployment and unit test execution as part of continuous Integration?",
+      "answerOptions": [
+        {
+          "describe": "Execute Anonymous",
+          "isRight": false
+        },
+        {
+          "describe": "VS Code",
+          "isRight": false
+        },
+        {
+          "describe": "Developer Console",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce CLI",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674160"
+    },
+    {
+      "describe": "The Account object in an organization has a master detail relationship to a child object called Branch. The following automations exist:\nRollup summary fields.\nCustom validation rules\nDuplicate rules\nA developer created a trigger on the Account object.\nWhat two things should the developer consider while testing the trigger code?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Rollup summary fields can cause the parent record to go through Save.",
+          "isRight": true
+        },
+        {
+          "describe": "The trigger may fire multiple times during a transaction.",
+          "isRight": true
+        },
+        {
+          "describe": "Duplicate rules are executed once all DML operations commit to the database.",
+          "isRight": false
+        },
+        {
+          "describe": "The validation rules will cause the trigger to fire again.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674104"
+    },
+    {
+      "describe": "Which two sfdx commands can be used to add testing data to a Developer sandbox?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "force:data:tree:import",
+          "isRight": true
+        },
+        {
+          "describe": "force: data:object:create",
+          "isRight": false
+        },
+        {
+          "describe": "force:data:bulk: upsert",
+          "isRight": true
+        },
+        {
+          "describe": "force:data:async:apsert",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674100"
+    },
+    {
+      "describe": "Which three statements are accurate about debug logs?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Debug log levels are cumulative; where FINE log level includes all events logged at the DEBUG, INFO,WARN,and ERROR levels.",
+          "isRight": false
+        },
+        {
+          "describe": "The maximum size of a debug log is 5 MB.",
+          "isRight": false
+        },
+        {
+          "describe": "Only the 20 most recent debug logs for a user are kept.",
+          "isRight": true
+        },
+        {
+          "describe": "Debug logs can be set for specific users, classes, and triggers.",
+          "isRight": true
+        },
+        {
+          "describe": "System debug logs are retained for 24 hours.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674098"
+    },
+    {
+      "describe": "A developer created a trigger on the Account object and wants to test if the trigger is properly bulkified.The developer team decided that the trigger should be tested with 200 account records with unique names.\nWhat two things should be done to create the test data within the unit test with the least amount of code?Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Use the @isTest(seeAllData=true)annotation in the test class.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a static resource containing test data.",
+          "isRight": true
+        },
+        {
+          "describe": "Use Test.loadData to populate data in your test methods.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the @isTest(isParallel=true) annotation in the test class.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674070"
+    },
+    {
+      "describe": "A developer completed modifications to a customized feature that is comprised of two elements:\n●Apex trigger\n●Trigger handler Apex class\nWhat are two factors that the developer must take into account to properly deploy the modification to the production environment?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Apex classes must have at least 75% code coverage org-wide.",
+          "isRight": true
+        },
+        {
+          "describe": "Test methods must be declared with the testMethod keyword.",
+          "isRight": false
+        },
+        {
+          "describe": "At least one line of code must be executed for the Apex trigger.",
+          "isRight": true
+        },
+        {
+          "describe": "All methods in the test classes must use @isTest.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674042"
+    },
+    {
+      "describe": "What should a developer do to check the code coverage of a class after running all tests?",
+      "answerOptions": [
+        {
+          "describe": "Select and run the class on the Apex Test Execution page in the Developer Console.",
+          "isRight": false
+        },
+        {
+          "describe": "View the Code Coverage column in the list view on the Apex Classes page.",
+          "isRight": false
+        },
+        {
+          "describe": "View the Code Coverage percentage for the class using the Overall Code Coverage panel in the Developer Console Tests tab.",
+          "isRight": true
+        },
+        {
+          "describe": "View the Class Test Percentage tab on the Apex Class list view in Salesforce Setup.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673327"
+    },
+    {
+      "describe": "What are three characteristics of change set deployments? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Deployment is done in a one-way, single transaction.",
+          "isRight": true
+        },
+        {
+          "describe": "Change sets can deploy custom settings data.",
+          "isRight": false
+        },
+        {
+          "describe": "Change sets can only be used between related organizations.",
+          "isRight": true
+        },
+        {
+          "describe": "Change sets can be used to transfer records.",
+          "isRight": false
+        },
+        {
+          "describe": "Sending a change set between two orgs requires a deployment connection.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673267"
+    },
+    {
+      "describe": "Which three statements are accurate about debug logs? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Amount of information logged in the debug log can be controlled by the log levels.",
+          "isRight": true
+        },
+        {
+          "describe": "To View Debug Logs, \"Manager Users or \"View AI Data\" permission is needed.",
+          "isRight": true
+        },
+        {
+          "describe": "Debug Log levels are cumulative, where FINE log level includes all events logged at the DEBUG, INFO, WARN, and ERROR levels.",
+          "isRight": true
+        },
+        {
+          "describe": "Amount of information logged in the debug log can be controlled programmatically.",
+          "isRight": false
+        },
+        {
+          "describe": "To View Debug Logs, \"Manager users\" or \"Modify All Data\" permission is needed. ",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673266"
+    },
+    {
+      "describe": "A developer needs to create a baseline set of data(Accounts, Contacts, Products, Assets) for an entire suite of tests allowing them to test independent requirements various types of Salesforce Cases.\nWhich approach can efficiently generate the required data for each unit test?",
+      "answerOptions": [
+        {
+          "describe": "Create a mock using the Stub API.",
+          "isRight": false
+        },
+        {
+          "describe": "Add @IsTest(seeAllData=true) at the start of the unit test class. ",
+          "isRight": false
+        },
+        {
+          "describe": "Create test data before Test.startTest( ) in the unit test. ",
+          "isRight": false
+        },
+        {
+          "describe": "Use @TestSetup with a void method.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673261"
+    },
+    {
+      "describe": "Which two statements are true about using the @testSetup annotation in an Apex test class?Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Test data is inserted once for all test methods in a class.",
+          "isRight": true
+        },
+        {
+          "describe": "The @testSetup annotation is not supported when the @isTest(SeeAllData=True) annotation is used.",
+          "isRight": true
+        },
+        {
+          "describe": "A method defined with the @testSetup annotation automatically executes before each test method in the test class is executes.",
+          "isRight": false
+        },
+        {
+          "describe": "Records created in the test setup method cannot be updated in individual test methods.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673234"
+    },
+    {
+      "describe": "A developer needs to have records with specific field values in order to test a new Apex class.\nWhat should the developer do to ensure the data is available to the test?",
+      "answerOptions": [
+        {
+          "describe": "Use SOQL to query the org for the required data.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Anonymous Apex to create the required data.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Test.loadData( ) and reference a CSV file.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Test.loadData( ) and reference a static resource.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673233"
+    },
+    {
+      "describe": "While working in a sandbox an Apex test fails when run in the Test Framework, but the Apex test logic succeeds with no exceptions or errors when run in the Developer Console.\n\nWhy did the method fail in the sandbox test framework but succeed in the Developer Console?",
+      "answerOptions": [
+        {
+          "describe": "The test method does not use System.runAs to execute as a specific user. ",
+          "isRight": false
+        },
+        {
+          "describe": "The test method is calling an @future method.",
+          "isRight": false
+        },
+        {
+          "describe": "The test method has a syntax error in the code. ",
+          "isRight": false
+        },
+        {
+          "describe": "The test method relies on exiting data in the sandbox.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673232"
+    },
+    {
+      "describe": "When using SalesforceDX, what does a developer need to enable to create and manage scratch orgs?",
+      "answerOptions": [
+        {
+          "describe": "Sandbox",
+          "isRight": false
+        },
+        {
+          "describe": "Dev Hub",
+          "isRight": true
+        },
+        {
+          "describe": "Environment Hub",
+          "isRight": false
+        },
+        {
+          "describe": "Production",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673230"
+    },
+    {
+      "describe": "A development team wants to use a deployment script to automatically deploy to a sandbox during their development cycles.\n\nWhich two tools can they use to run a script that deploys to a sandbox? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Change Sets",
+          "isRight": false
+        },
+        {
+          "describe": "SFDX CLI",
+          "isRight": true
+        },
+        {
+          "describe": "Developer Console",
+          "isRight": false
+        },
+        {
+          "describe": "Ant Migration Tool",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673229"
+    },
+    {
+      "describe": "Which scenario is valid for execution by unit tests?",
+      "answerOptions": [
+        {
+          "describe": "Execute anonymous Apex as a different user.",
+          "isRight": false
+        },
+        {
+          "describe": "Generate a Visualforce PDF with getContentAsPDF( )·",
+          "isRight": false
+        },
+        {
+          "describe": "Load data from a remote site with a callout.",
+          "isRight": true
+        },
+        {
+          "describe": "Set the created date of a record using a system method.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673227"
+    },
+    {
+      "describe": "Which Salesforce org has a complete duplicate copy of the production org including data and configuration?",
+      "answerOptions": [
+        {
+          "describe": "Full Sandbox",
+          "isRight": true
+        },
+        {
+          "describe": "Developer Pro Sandbox",
+          "isRight": false
+        },
+        {
+          "describe": "Production",
+          "isRight": false
+        },
+        {
+          "describe": "Partial Copy Sandbox",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673203"
+    },
+    {
+      "describe": "How can a developer check the test coverage of active Process Builders and Flows before deploying them in a Change Set?",
+      "answerOptions": [
+        {
+          "describe": "Use the Flow Properties page.",
+          "isRight": false
+        },
+        {
+          "describe": "Use SOQL and the Tooling API.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the ApexTestResult class.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Code Coverage Setup page.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673202"
+    },
+    {
+      "describe": "While writing an Apex class that creates Accounts, a developer wants to make sure that all required fields are handled properly.\nWhich approach should the developer use to be sure that the Apex classworks correctly?",
+      "answerOptions": [
+        {
+          "describe": "Add the business logic to a test class.",
+          "isRight": true
+        },
+        {
+          "describe": "Include a try/catch block to the Apex class. ",
+          "isRight": false
+        },
+        {
+          "describe": "Perform a code review with another developer.",
+          "isRight": false
+        },
+        {
+          "describe": "Run the code in an Execute Anonymous block.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673198"
+    },
+    {
+      "describe": "For which three items can a trace flag be configured? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Visualforce",
+          "isRight": false
+        },
+        {
+          "describe": "Apex Class",
+          "isRight": true
+        },
+        {
+          "describe": "User",
+          "isRight": true
+        },
+        {
+          "describe": "Apex Trigger",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673196"
+    },
+    {
+      "describe": "A developer wrote Apex code that calls out to an external system.\nHow should a developer write the test to provide test coverage?",
+      "answerOptions": [
+        {
+          "describe": "Write a class that extends HTTPCalloutMock. ",
+          "isRight": false
+        },
+        {
+          "describe": "Write a class that extends WebserviceMock.",
+          "isRight": false
+        },
+        {
+          "describe": "Write a class that implements the HTTPCalloutMock interface.",
+          "isRight": true
+        },
+        {
+          "describe": "Write a class that implements WebserviceMock.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673170"
+    },
+    {
+      "describe": "A developer needs to confirm that a Contact works correctly without changing the organization's data. \nWhat should the developer do to test the Contact trigger?",
+      "answerOptions": [
+        {
+          "describe": "Use Deploy from the VSCode IDE to deploy an 'insert Contact' Apex class.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Test menu on the Developer Console to run all tests classes for the Contact trigger.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the Open Execute Anonymous feature on the Developer Console to run an 'insert Contact' DML statement.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the New button on the Salesforce Contacts Tab to create a new Contact record.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673142"
+    },
+    {
+      "describe": "How should a developer write unit tests for a private method in an Apex class?",
+      "answerOptions": [
+        {
+          "describe": "Add a test method in the Apex class.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the TestVisible annotation.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the SeeAllData annotation.",
+          "isRight": false
+        },
+        {
+          "describe": "Mark the Apex class as global.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673137"
+    },
+    {
+      "describe": "A development team wants to use a deployment script to automatically deploy to a sandbox during their deployment cycles.\nWhich tool should they use to deploy to the sandbox?",
+      "answerOptions": [
+        {
+          "describe": "Ant Migration Tool",
+          "isRight": true
+        },
+        {
+          "describe": "Developer Console",
+          "isRight": false
+        },
+        {
+          "describe": "VSCode",
+          "isRight": false
+        },
+        {
+          "describe": "Change Sets",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673135"
+    },
+    {
+      "describe": "Which Salesforce org has a complete duplicate copy of the production org including data and configuration?",
+      "answerOptions": [
+        {
+          "describe": "Developer Pro Sandbox",
+          "isRight": false
+        },
+        {
+          "describe": "Production",
+          "isRight": false
+        },
+        {
+          "describe": "Partial Copy Sandbox",
+          "isRight": false
+        },
+        {
+          "describe": "Full Sandbox",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673112"
+    },
+    {
+      "describe": "What are two ways a developer can get the status of an enqueued job for a class that implements the queuable interface? \nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Query the AsyncApex Job object",
+          "isRight": true
+        },
+        {
+          "describe": "View the Apex Jobs Page",
+          "isRight": true
+        },
+        {
+          "describe": "View the Apex Status Page",
+          "isRight": false
+        },
+        {
+          "describe": "View the Apex Flex Queue",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673107"
+    },
+    {
+      "describe": "What are three ways for a developer to execute tests in an org? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Metadata API",
+          "isRight": false
+        },
+        {
+          "describe": "Bulk API",
+          "isRight": false
+        },
+        {
+          "describe": "SalesforceDX",
+          "isRight": true
+        },
+        {
+          "describe": "Tooling API",
+          "isRight": true
+        },
+        {
+          "describe": "Developer Console",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673106"
+    },
+    {
+      "describe": "A team of many developers work in their own individual orgs that have the same configuration as the production org. \nWhich type of org is best suited for this scenario?",
+      "answerOptions": [
+        {
+          "describe": "Developer Edition",
+          "isRight": false
+        },
+        {
+          "describe": "Partner Developer Edition",
+          "isRight": false
+        },
+        {
+          "describe": "Full Sandbox",
+          "isRight": false
+        },
+        {
+          "describe": "Developer Sandbox",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673104"
+    },
+    {
+      "describe": "A developer observes that an Apex test method fails in the Sandbox. To identify the issue, the developer copies the code inside the test method and execute it \nvia the Execute Anonymous tool in the Developer Console. The code then executes with no exceptions or errors.\nWhy did the test method fail in the sandbox and pass in the Developer Console?",
+      "answerOptions": [
+        {
+          "describe": "The test method does not use System.runAs to execute as a specific user.",
+          "isRight": false
+        },
+        {
+          "describe": "A developer needs to provide way to mass edit, update and delete records from list view, which two ways can this be achieved? Choose 2",
+          "isRight": false
+        },
+        {
+          "describe": "The test method relies on existing data in the sandbox.",
+          "isRight": true
+        },
+        {
+          "describe": "The test method has syntax error in the code.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673074"
+    },
+    {
+      "describe": "Which two events need to happen when deploying to a production org?Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "All  Apex code must have at least 75% test coverage.",
+          "isRight": true
+        },
+        {
+          "describe": "All Process Builder Processes must have at least 1% test coverage.",
+          "isRight": false
+        },
+        {
+          "describe": "All Visual Flows must have at least 1% test coverage.",
+          "isRight": false
+        },
+        {
+          "describe": "All Triggers must have at least 1% test coverage.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673073"
+    },
+    {
+      "describe": "A developer created this Apex trigger that calls MyClass.myStaticMethod;\ntrigger myTrigger on Contact(before insert){\nMyClass.myStaticMethod(trigger.new, trigger.oldMap);}\nThe developer creates a test class with a test method that calls MyClass.myStaticMethod, resulting in 81% overall code coverage.\nWhat happens when the developer tries to deploy the trigger and two classes to production, assuming no other code exists?",
+      "answerOptions": [
+        {
+          "describe": "The deployment fails because no assertions were made in the test method.",
+          "isRight": false
+        },
+        {
+          "describe": "The deployment passes because the Apex code has required(>75%) code coverage.",
+          "isRight": false
+        },
+        {
+          "describe": "The deployment passes because both classes and the trigger were included in the deployment.",
+          "isRight": false
+        },
+        {
+          "describe": "The deployment fails because the Apex trigger has no code coverage.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673072"
+    },
+    {
+      "describe": "A developer created a new Apex trigger with a helper class, and writes a test class that only exercises 95% coverage of the new Apex helper class.\nChange set deployment to production fails with the test coverage warning:\n\"Test coverage of selected Apex Trigger is 0%, at least 1% test coverage is required.\"\nWhat should the developer do to successfully deploy the new Apex trigger and helper class?",
+      "answerOptions": [
+        {
+          "describe": "Increase the test class coverage on the helper class.",
+          "isRight": false
+        },
+        {
+          "describe": "Run the tests using the 'Run All Tests' method.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a test class and methods to cover the Apex trigger.",
+          "isRight": true
+        },
+        {
+          "describe": "Remove the failing test methods from the test class.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672366"
+    },
+    {
+      "describe": "Where are two locations a developer can look to find information about the status of asynchronous or future calls? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Time-Based Workflow Monitor",
+          "isRight": false
+        },
+        {
+          "describe": "Apex Flex Queue",
+          "isRight": true
+        },
+        {
+          "describe": "Apex Jobs",
+          "isRight": true
+        },
+        {
+          "describe": "Paused Flow Interviews component",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672363"
+    },
+    {
+      "describe": "A developer is writing tests for a class and needs to insert records to validate functionality.\nWhich annotation method should be used to create records for every method in the test class?",
+      "answerOptions": [
+        {
+          "describe": "@PreTest",
+          "isRight": false
+        },
+        {
+          "describe": "@StartTest",
+          "isRight": false
+        },
+        {
+          "describe": "@isTest(SeeAllData=true)",
+          "isRight": false
+        },
+        {
+          "describe": "@TestSetup",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672333"
+    },
+    {
+      "describe": "What are two way for a developer to execute tests in an org? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Bulk API",
+          "isRight": false
+        },
+        {
+          "describe": "Tooling API",
+          "isRight": true
+        },
+        {
+          "describe": "Metadata API",
+          "isRight": false
+        },
+        {
+          "describe": "Developer Console",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672331"
+    },
+    {
+      "describe": "A developer wants to get access to the standard price book in the org while writing a test class that covers an OpportunityLineItem trigger.\nWhich method allows access to the price book?",
+      "answerOptions": [
+        {
+          "describe": "Use Test.getStandardPricebookId() to get the standard price book ID.",
+          "isRight": true
+        },
+        {
+          "describe": "Use @TestVisible to allow the test method to see the standard price book.",
+          "isRight": false
+        },
+        {
+          "describe": "Use @IsTest(SeeAllData=true) and delete the existing standard price book.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Test.loadData() and a static resource to load a standard price book.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672302"
+    },
+    {
+      "describe": "Which three statements are true regarding custom exceptions in Apex? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "A custom exception class cannot contain member variables or methods.",
+          "isRight": false
+        },
+        {
+          "describe": "A custom exception class can implement one or many interfaces.",
+          "isRight": true
+        },
+        {
+          "describe": "A custom exception class name must be end with \"Exception\".",
+          "isRight": true
+        },
+        {
+          "describe": "A custom exception class must extend the system Exception class.",
+          "isRight": true
+        },
+        {
+          "describe": "A custom exception class can extend other classes besides the Exception class.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672301"
+    },
+    {
+      "describe": "A team of developers is working on a source-driven project that allows them to work independently, with many different org configurations.\nWhich type of Salesforce orgs should they use for their development?",
+      "answerOptions": [
+        {
+          "describe": "Full Copy sandboxes",
+          "isRight": false
+        },
+        {
+          "describe": "Developer orgs",
+          "isRight": false
+        },
+        {
+          "describe": "Developer sandboxes",
+          "isRight": false
+        },
+        {
+          "describe": "Scratch orgs.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672300"
+    },
+    {
+      "describe": "What should be used to create scratch orgs?",
+      "answerOptions": [
+        {
+          "describe": "Sandbox refresh",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce CLI",
+          "isRight": true
+        },
+        {
+          "describe": "Developer Console",
+          "isRight": false
+        },
+        {
+          "describe": "Workbench",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672298"
+    }
+  ],
+  "hashCode": "878610257"
+}

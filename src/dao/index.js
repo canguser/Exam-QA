@@ -52,7 +52,7 @@ class QuestionDao extends BaseDao {
     constructor() {
         super(questionDB, {
             describe: '',
-            type: 'picklist'
+            type: 'option'
         });
     }
 }

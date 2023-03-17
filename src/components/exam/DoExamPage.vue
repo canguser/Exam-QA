@@ -23,7 +23,13 @@
         <div class="question-box" @dblclick.stop="showAcButtons = true"
              :style="`width: ${totalNum*100}%;transform:translate(${-questionNum*100/totalNum}%,0)`">
             <div class="question-item" v-for="(question,i) in questionsInfo" :key="question.hashCode">
-                <van-panel :title="getQuestionTitle(question)" :desc="getQuestionDesc(question)">
+                <van-panel>
+                    <div style="padding: 10px 16px;" >
+                        <div style=" margin-bottom: 5px" v-for="t in getQuestionTitle(question)">
+                            {{t}}
+                        </div>
+                        <div style="font-size: 12px; color: #999">{{getQuestionDesc(question)}}</div>
+                    </div>
                     <div v-if="question.isMulti">
                         <van-checkbox-group v-model="question.answer.multi.apis"  @click.stop @dblclick.stop>
                             <van-cell-group>
@@ -162,7 +168,7 @@ export default {
     },
     methods: {
         getQuestionTitle(question) {
-            return [`(${this.questionNum + 1}/${this.totalNum})`, question.describe].join(' ');
+            return [`(${this.questionNum + 1}/${this.totalNum})`, question.describe].join(' ').split('\n');
         },
         getQuestionDesc(question) {
             let result = '';
@@ -188,7 +194,7 @@ export default {
                     result += `（历史正确率：${(errorExam.rightTimes / totalTimes * 100).toFixed(0)}%）`;
                 }
             }
-            return result;
+            return result
         },
         /**
          * @param i
@@ -517,6 +523,10 @@ span.custom-title {
     bottom: 0;
     background: rgba(0, 0, 0, .5);
     z-index: 1;
+}
+
+.van-panel__header{
+    display: none;
 }
 
 </style>

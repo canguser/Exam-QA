@@ -1,0 +1,1191 @@
+{
+  "title": "Dev1用户界面",
+  "category": "Dev1-自由部落侠",
+  "questions": [
+    {
+      "describe": "A developer is asked to create a Visualforce page that lists the contacts owned by the current user. This component will be embedded in a Lightning page.\nWithout writing unnecessary code, which controller should be used for this purpose?",
+      "answerOptions": [
+        {
+          "describe": "Lightning controller",
+          "isRight": false
+        },
+        {
+          "describe": "Standard list controller",
+          "isRight": false
+        },
+        {
+          "describe": "Standard controller",
+          "isRight": true
+        },
+        {
+          "describe": "Custom controller",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1995171573"
+    },
+    {
+      "describe": "UC has a Visualforce page that displays a table of every Container__c being rented by a given Account. Recently this page is failing with a view state limit because some of the customers rent over 10,000 containers.\nWhat should a developer change about the Visualforce page to help with the page load errors?",
+      "answerOptions": [
+        {
+          "describe": "Implement pagination with a StandardSetController.",
+          "isRight": true
+        },
+        {
+          "describe": "Implement pagination with an OffsetController.",
+          "isRight": false
+        },
+        {
+          "describe": "Use JavaScript remoting with SOQL Offset.",
+          "isRight": false
+        },
+        {
+          "describe": "Use lazy loading and a transient List variable.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674189"
+    },
+    {
+      "describe": "A developer is creating an app that contains multiple Lightning web components.\nOne of the child components is used for navigation purposes.When a user clicks a button called component, the parent component must be alerted so it can navigate to the next page.\nHow should this be accomplished?",
+      "answerOptions": [
+        {
+          "describe": "Fire a notification.",
+          "isRight": false
+        },
+        {
+          "describe": "Update a property on the parent.",
+          "isRight": false
+        },
+        {
+          "describe": "Call a method in the Apex controller.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a custom event.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674165"
+    },
+    {
+      "describe": "Which two statements are true about getter and setter methods as they relate to Visualforce?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "A corresponding setter method Is required for each getter method.",
+          "isRight": true
+        },
+        {
+          "describe": "Getter methods pass values from controller to a page.",
+          "isRight": true
+        },
+        {
+          "describe": "Setter methods always have to be declared global.",
+          "isRight": false
+        },
+        {
+          "describe": "Getter methods must be named getVariable and setter methods must be named setVariable.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674163"
+    },
+    {
+      "describe": "A developer created a weather app that contains multiple Lightning web components.\nOne of the components, called Toggle, has a toggle for Fahrenheit or Celsius units,Another Temperature, displays the current temperature in the unit selected in the Toggle component,.When a user toggles from Fahrenheit to Celsius or vice versa in the Toggle component, sent to the Temperature component so the temperature can be converted and displayed.\nWhat is the recommended way to accomplish this?",
+      "answerOptions": [
+        {
+          "describe": "The Toggle component should call a method in the Temperature component.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a custom event to handle the communication between components.",
+          "isRight": true
+        },
+        {
+          "describe": "Use an application event to communicate between the components.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Lightning Message Service to communicate between the components.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674133"
+    },
+    {
+      "describe": "A credit card company needs to implement the functionality for a service agent to process credit cards. When the customers call in, the service agent must gather many places of information tasked to implement this functionality.\nWhat should the developer use to satisfy this requirement in the most efficient manner?",
+      "answerOptions": [
+        {
+          "describe": "Flow Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning Component",
+          "isRight": true
+        },
+        {
+          "describe": "Approval Process",
+          "isRight": false
+        },
+        {
+          "describe": "Apex Trigger",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674132"
+    },
+    {
+      "describe": "A third-party vendor created an unmanaged Lightning web component. The Salesforce Administrators expose the component only on Record Page Layouts.\nWhich two actions should the developer take to accomplish this business objective?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Ensure isExposed Is set to true on the XML file.",
+          "isRight": true
+        },
+        {
+          "describe": "Specify lightningcommunity_ PageLayout as a target in the XML file.",
+          "isRight": false
+        },
+        {
+          "describe": "Specify lightningcommunity_Page as a target in the XML file.",
+          "isRight": true
+        },
+        {
+          "describe": "Specify lightning_ RecordPage as a target in the XML file.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674129"
+    },
+    {
+      "describe": "What are two best practices when it comes to Lightning Web Component events?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Use event.target to communicate data to elements that aren't in the same shadow tree.",
+          "isRight": true
+        },
+        {
+          "describe": "Use events configured with bubbles: false and composed: false.",
+          "isRight": false
+        },
+        {
+          "describe": "Use CuatomEvent to pass data from a child to a parent component.",
+          "isRight": true
+        },
+        {
+          "describe": "Use event.detail to communicate data to elements in the same shadow tree.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674103"
+    },
+    {
+      "describe": "An org has two custom objects:\nPlan_c, that has a master-detail relationship to the Account object\nPlan_Item__c, that has a master-detail relationship to the Plan_c object\nWhat should a developer use to create a Visualforce section on the Account page layout that displays all of the Plan__c records related to the Account and all of the Plan_Item__c records related to those Plan_c records.",
+      "answerOptions": [
+        {
+          "describe": "A standard controller with a controller extension",
+          "isRight": true
+        },
+        {
+          "describe": "A standard controller with a custom controller",
+          "isRight": false
+        },
+        {
+          "describe": "A custom controller by itself",
+          "isRight": false
+        },
+        {
+          "describe": "A controller extension with a custom controller",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674102"
+    },
+    {
+      "describe": "A developer is creating a Lightning web component to show a list of sales records.\nThe Sales Representative user should be able to see the commission field on each record. The Sales Assistant usershould be able to see all fields on the record except the commission field.\nHow should this be enforced so that the component works for both users without showing any errors?",
+      "answerOptions": [
+        {
+          "describe": "Use Lightning Data Service to get the collection of sales records.",
+          "isRight": false
+        },
+        {
+          "describe": "Use WITH SECURITY_ENFORCED in the SOQL that fetches the data for the component.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Security.stripInaccessible to remove fields inaccessible to the current user.",
+          "isRight": true
+        },
+        {
+          "describe": "Use Lightning Locker Service to enforce sharing rules and field-level security.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674101"
+    },
+    {
+      "describe": "Which two are phases in the Aura application event propagation framework?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Default",
+          "isRight": true
+        },
+        {
+          "describe": "Emit",
+          "isRight": false
+        },
+        {
+          "describe": "Control",
+          "isRight": false
+        },
+        {
+          "describe": "Bubble",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674038"
+    },
+    {
+      "describe": "A developer created a child Lightning web component nested inside a parent Lightning web component. The parent component needs to pass a string value to the child component.\nIn which two ways can this be accomplished?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "The parent component can use the Apex controller class to send data to the child component.",
+          "isRight": false
+        },
+        {
+          "describe": "The parent component can invoke a method in the child component.",
+          "isRight": false
+        },
+        {
+          "describe": "The parent component can use a public property to pass the data to the child component.",
+          "isRight": true
+        },
+        {
+          "describe": "The parent component can use a custom event to pass the data to the child component.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674036"
+    },
+    {
+      "describe": "A developer needs to create a custom button for the Account object that, when clicked, will perform a series of calculations and redirect the user to a custom Visualforce page. The developer wants to ensure the Visualforce page matches the Lightning Experience user interface.\nWhat attribute needs to be defined within the <apex:page> tag to meet the requirement?",
+      "answerOptions": [
+        {
+          "describe": "applyHtmlTag=\"true\"",
+          "isRight": false
+        },
+        {
+          "describe": "wizard=\"true\"",
+          "isRight": false
+        },
+        {
+          "describe": "setup=\"true\"",
+          "isRight": false
+        },
+        {
+          "describe": "lightningStylesheets=\"true\"",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674011"
+    },
+    {
+      "describe": "A developer needs to allow users to complete a form on an Account record that will create a record for a custom object. The form needs to display different fields depending on the user's job role. The functionality should only be available to a small group of users.\nWhich three things should the developer do to satisfy these requirements?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Add a dynamic action to the user's assigned page layouts.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Lightning web component.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a dynamic form.",
+          "isRight": true
+        },
+        {
+          "describe": "Add a dynamic action to the Account record page.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a custom permission for the users.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674010"
+    },
+    {
+      "describe": "A Salesforce Administrator used Flow Builder to create a flow named \"accountOnboarding\". The flow must be used inside an Aura component.\nWhich tag should a developer use to display the flow in the component?",
+      "answerOptions": [
+        {
+          "describe": "lightning-flow",
+          "isRight": false
+        },
+        {
+          "describe": "aura:flow",
+          "isRight": false
+        },
+        {
+          "describe": "aura-flow",
+          "isRight": false
+        },
+        {
+          "describe": "lightning:flow",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674008"
+    },
+    {
+      "describe": "What can be developed using the Lightning Component framework?",
+      "answerOptions": [
+        {
+          "describe": "Dynamic web sites",
+          "isRight": false
+        },
+        {
+          "describe": "Hosted web applications",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce integrations",
+          "isRight": false
+        },
+        {
+          "describe": "Single-page web apps",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674005"
+    },
+    {
+      "describe": "A developer has a single custom controller class that works with a Visualforce Wizard to support creating and editing multiple sObjects. The wizard accepts \ndata from user inputs across multiple Visualforce pages and from a parameter on the initial URL.\nWhich three statements are useful inside the unit test to effectively test the custom controller? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "String nextPage = controller.save( ).getUrl( );",
+          "isRight": true
+        },
+        {
+          "describe": "Test.setCurrentPage(pageRef);",
+          "isRight": true
+        },
+        {
+          "describe": "insert pageRef;",
+          "isRight": false
+        },
+        {
+          "describe": "ApexPages.currentPage( ).getParameters( ).put('input', 'TestValue');",
+          "isRight": true
+        },
+        {
+          "describe": "public ExtendedController(ApexPages.StandardController cntrl) { }",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674002"
+    },
+    {
+      "describe": "A developer must troubleshoot to pinpoint the causes of performance issues when a custom page loads in their org.\nWhich tool should the developer use to troubleshoot?",
+      "answerOptions": [
+        {
+          "describe": "AppExchange",
+          "isRight": false
+        },
+        {
+          "describe": "Developer Console",
+          "isRight": true
+        },
+        {
+          "describe": "Visual Studio Code IDE",
+          "isRight": false
+        },
+        {
+          "describe": "Setup Menu",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673325"
+    },
+    {
+      "describe": "Which two statements are true about Getter and Setter methods as they relate to Visualforce? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Getter methods can pass a value from a controller to a page.",
+          "isRight": true
+        },
+        {
+          "describe": "There is no guarantee for the order in which Getter or Setter methods are executed.",
+          "isRight": true
+        },
+        {
+          "describe": "Setter methods always have to be declared global.",
+          "isRight": false
+        },
+        {
+          "describe": "Setter methods can pass a value from a controller to a page.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673291"
+    },
+    {
+      "describe": "Which two characteristics are true for Aura component events? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "The event propagates to every owner in the containment hierarchy.",
+          "isRight": true
+        },
+        {
+          "describe": "Only parent components that create subcomponents(either in their markup or programmatically) can handle events.",
+          "isRight": false
+        },
+        {
+          "describe": "lf a container component needs to handle a component event, add a handleFacets=\"true\" attribute to its handler.",
+          "isRight": true
+        },
+        {
+          "describe": "Depending on the current  propagation phase, calling event.stopPropagation( ) may not propagation.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673289"
+    },
+    {
+      "describe": "What are two ways that a controller and extension can be specified for a custom object named Notice on a Visualforce page? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "apex:page controller = \"Notice__c\" extensions=\"myControllerExtension\"",
+          "isRight": true
+        },
+        {
+          "describe": "apex:page standardController = \"Notice__c\" extensions=\"myControllerExtension\"",
+          "isRight": true
+        },
+        {
+          "describe": "apex:page controllers = \"Notice__c, myControllerExtension\"",
+          "isRight": false
+        },
+        {
+          "describe": "apex:page = Notice extends = \"myControllerExtension\"",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673265"
+    },
+    {
+      "describe": "Which three resources in an Aura Component can contain JavaScript functions? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Helper",
+          "isRight": true
+        },
+        {
+          "describe": "Controller",
+          "isRight": true
+        },
+        {
+          "describe": "Style",
+          "isRight": false
+        },
+        {
+          "describe": "Design",
+          "isRight": false
+        },
+        {
+          "describe": "Renderer",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673264"
+    },
+    {
+      "describe": "Which three Salesforce resources can be accessed from a Lighting web component?  Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "All external libraries",
+          "isRight": false
+        },
+        {
+          "describe": "Static resources",
+          "isRight": true
+        },
+        {
+          "describe": "Content asset files",
+          "isRight": true
+        },
+        {
+          "describe": "Third-party web components",
+          "isRight": false
+        },
+        {
+          "describe": "SVG resources",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673173"
+    },
+    {
+      "describe": "What are two ways that a controller extension can be specified on a Visualforce page? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "apex:page controller=\"Account\" extensions=\"myControllerExtension\"",
+          "isRight": true
+        },
+        {
+          "describe": "apex:page extends=\"myControllerExtension\"",
+          "isRight": false
+        },
+        {
+          "describe": "apex:page controller=\"Accunt, myControllerExtension\"",
+          "isRight": false
+        },
+        {
+          "describe": "apex:page standardController=\"Account\" extensions=\"myControllerExtension\"",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673172"
+    },
+    {
+      "describe": "How does the Lightning Component framework help developers implement solutions faster?",
+      "answerOptions": [
+        {
+          "describe": "By providing an Agile process with default steps",
+          "isRight": false
+        },
+        {
+          "describe": "By providing device-awarenedd for mobile and desktops",
+          "isRight": true
+        },
+        {
+          "describe": "By providing code review standards and processes",
+          "isRight": false
+        },
+        {
+          "describe": "By providing change history and version control",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673168"
+    },
+    {
+      "describe": "which two are best practices when it comes to Aura component and application event handling? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Reuse the event logic in a component bundle, by putting the logic in the helper.",
+          "isRight": true
+        },
+        {
+          "describe": "Handle low-level events in the event handler and re-fire them as higher-level events.",
+          "isRight": true
+        },
+        {
+          "describe": "Use component events to communicate actions that should be handled at the application level.",
+          "isRight": false
+        },
+        {
+          "describe": "Try to use application events as opposed to component events.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673143"
+    },
+    {
+      "describe": "How should a custom user interface be privided when a user edits an Account in Lightning Experience?",
+      "answerOptions": [
+        {
+          "describe": "Override the Account's Edit button with a Lightning component.",
+          "isRight": true
+        },
+        {
+          "describe": "Override the Account's Edit button with a Lightning Flow.",
+          "isRight": false
+        },
+        {
+          "describe": "Override the Account's Edit button with a Lightning Action.",
+          "isRight": false
+        },
+        {
+          "describe": "Override the Account's Edit button with a Lightning page.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673080"
+    },
+    {
+      "describe": "Which three web technologies can be integrated into a Visualforce page?",
+      "answerOptions": [
+        {
+          "describe": "JavaScript",
+          "isRight": true
+        },
+        {
+          "describe": "HTML",
+          "isRight": true
+        },
+        {
+          "describe": "Java",
+          "isRight": false
+        },
+        {
+          "describe": "CSS",
+          "isRight": true
+        },
+        {
+          "describe": "PHP",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673078"
+    },
+    {
+      "describe": "Which three steps allow a custom SVG to be included in a Lightning web component?Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Reference the getter in the HTML template.",
+          "isRight": false
+        },
+        {
+          "describe": "Upload the SVG as a static resource.",
+          "isRight": true
+        },
+        {
+          "describe": "Import the SVG as a content asset file.",
+          "isRight": false
+        },
+        {
+          "describe": "Import the static resource and provide a getter for it in JavaScript.",
+          "isRight": true
+        },
+        {
+          "describe": "Reference the import in the HTML template.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988673076"
+    },
+    {
+      "describe": "A developer must provide a custom user interface when users edit a Contact. Users must be able to use the interface in Salesforce Classic and Lightning Experience.\nWhat should the developer do to provide the custom user interface?",
+      "answerOptions": [
+        {
+          "describe": "Override the Contact's Edit button with a Lightning page in Salesforce Classic and a Visualforce page in Lightning Experience.",
+          "isRight": false
+        },
+        {
+          "describe": "Override the Contact's Edit button with a Visualforce page in Salesforce Classic and a Lightning component in Lightning Experience.",
+          "isRight": true
+        },
+        {
+          "describe": "Override the Contact's Edit button with a Visualforce page in Salesforce Classic and a Lightning page in Lightning Experience.",
+          "isRight": false
+        },
+        {
+          "describe": "Override the Contacts's Edit button with a Lightning component in Salesforce Classic and a Lightning component in Lightning Experience.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673050"
+    },
+    {
+      "describe": "A developer has an Apex controller for a Visualforce page that takes an ID as a URL parameter.\nHow should the developer prevent a cross site scripting vulnerability?",
+      "answerOptions": [
+        {
+          "describe": "String.escapeSingleQuotes(ApexPages.currentPage().getParameters().get('url_param'))",
+          "isRight": false
+        },
+        {
+          "describe": "ApexPage.currentPage().getParameters().get('url_param')",
+          "isRight": false
+        },
+        {
+          "describe": "String.ValueOf(ApexPages.currentPage().getParameters().get('url_param'))",
+          "isRight": false
+        },
+        {
+          "describe": "ApePages.currentPage().getParameters().get('url_param').escapeHtml4()",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988672364"
+    },
+    {
+      "describe": "Which two are phases in the Salesforce Application Event propagation framework? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Control",
+          "isRight": false
+        },
+        {
+          "describe": "Default",
+          "isRight": true
+        },
+        {
+          "describe": "Bubble",
+          "isRight": true
+        },
+        {
+          "describe": "Emit",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672360"
+    },
+    {
+      "describe": "Application Events follow the traditional publish-subscribe model\nWhich method is used to fire an event?",
+      "answerOptions": [
+        {
+          "describe": "fire()",
+          "isRight": true
+        },
+        {
+          "describe": "emit()",
+          "isRight": false
+        },
+        {
+          "describe": "fireEvent()",
+          "isRight": false
+        },
+        {
+          "describe": "registerEvent()",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672336"
+    },
+    {
+      "describe": "Universal Containers has a large number of custom applications that were built using a third-party JavaScript framework and exposed using Visualforce pages. The company wants to update these applications to apply styling that resembles the look and feel of Lightning Experience.\nWhat should the developer do to fulfill the business request in the quickest and most effective manner?",
+      "answerOptions": [
+        {
+          "describe": "Set the attribute enableLightning to true in the definition.",
+          "isRight": false
+        },
+        {
+          "describe": "Incorporate the Salesforce Lightning Design System CSS stylesheet into the JavaScript applications. ",
+          "isRight": true
+        },
+        {
+          "describe": "Enable Available for Lightning Experience, Lightning Communities, and the mobile app on Visualforce pages used by the custom application. ",
+          "isRight": false
+        },
+        {
+          "describe": "Rewrite all Visualfocre pages as Lightning components. ",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672303"
+    },
+    {
+      "describe": "What does the Lightning Component framework provide to developers?",
+      "answerOptions": [
+        {
+          "describe": "Extended governor limits for applications",
+          "isRight": false
+        },
+        {
+          "describe": "Templated to create custom components",
+          "isRight": false
+        },
+        {
+          "describe": "Prebuilt components that can be reused",
+          "isRight": true
+        },
+        {
+          "describe": "Support for Classic and Lightning UIs",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672297"
+    },
+    {
+      "describe": "<p>A developer is asked to create a Visualforce page that displays some Account fields as well as fields configured on the page layout for related Contacts.\nHow should the developer implement this request?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use the &lt;apex:include&gt; tag.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add a method to the standard controller.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the &lt;apex:relatedList&gt; tag.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Create a controller extension.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674190"
+    },
+    {
+      "describe": "<p>Refer to the code snippet below:</p><p>import fetchOpps from &#39;@salesforce/apex/OpportunitySearch.fetchOpportunities&#39;;</p><p>@wire(fetchOpps)</p><p>opportunities;</p><p>When a Lightning web component is rendered, a list of opportunities that match certain criteria should be retrieved from the database and displayed to the end-user.</p><p>Which three considerations must the developer implement to make the fetchOpportunities method available within the Lightning web component? Choose 3 answers</p><p style=\"line-height: 1.5em;\" dir=\"ltr\"><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">The method cannot mutate the result set retrieved from the database.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">The method must be annotated with the @InvocableMethod annotation</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">The method must specify the(continuation=true) attribute.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">The method must be annotated with the @AuraEnabled annotation</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">The method must specify the(cacheable=true) attribute.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1995171603"
+    },
+    {
+      "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">Which code statement includes an Apex method named updateAccounts in the class AccountController for use in a Lightning web component?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">import updateAccounts from &#39;AccountController&#39;;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">import updateAccounts from &#39;AccountController.updateAccounts&#39;;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">import updateAccounts from &#39;@salesforce/apex/AccountController&#39;;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">import updateAccounts from &#39;@salesforce/apex/AccountController.updateAccounts&#39;;</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1995171602"
+    },
+    {
+      "describe": "<p>A developer wrote an Apex method to update a list of Contacts and wants to make it available for use by Lightning web components.</p><p>Which annotation should the developer add to the Apex method to achieve this?</p><p style=\"line-height: 1.5em;\" dir=\"ltr\"><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">@AuraEnabled(cacheable=true)</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">@RemoteAction</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">@RemoteAction(cacheable=true)</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">@AuraEnabled</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1995171580"
+    },
+    {
+      "describe": "<p>A developer created a Lightning web component called statusComponent to be inserted into the Account record page.\nWhich two things should the developer do to make this component available? Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add &lt;isExposed&gt;true&lt;/isExposed&gt; to the statusComponent.js-meta.xml file.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add &lt;target&gt;lightning__RecordPage&lt;/target&gt; to the statusComponent.js-meta.xml file.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add &lt;masterLabel&gt;Account&lt;/masterLabel&gt; to the statusComponent.js-meta.xml file.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add &lt;target&gt;lightning__RecordPage&lt;/target&gt; to the statusComponent.js file.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988675025"
+    },
+    {
+      "describe": "<p>A custom Visualforce controller calls the ApexPages.addMessage( ) method, but no messages are rendering on the page.</p><p>Which component should be added to the Visualforce page to display the message?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;apex:pageMessages /&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:pageMessages severity=&quot;info&quot; /&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:facet name=&quot;message&quot; /&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:message for=&quot;info&quot; /&gt;</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674971"
+    },
+    {
+      "describe": "<p>Which three code lines are required to create a Lightning component on a Visualforce page? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>$lightning.useComponent</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:slds/&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>$lightning.use</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:includeLightning/&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>$Lightning.createComponent</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674968"
+    },
+    {
+      "describe": "<p>What are three capabilities of the &lt;ltng:require&gt; tag when loading JavaScript resources in Aura components? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Specifying loading order</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Loading scripts in parallel</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Loading files from Documents</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>One-time loading for duplicate scripts</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Loading externally hosted scripts</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674965"
+    },
+    {
+      "describe": "<p>A developer needs to create a custom button for the Account object that, when clicked, will perform a series of calculations and redirect the user to a custom Visualforce page.</p><p><br/></p><p>Which three attributes need to be defined with values in the &lt;apex:page&gt; tag to accomplish this? Choose 3 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>extensions</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>action</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>standardController</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>renderAs</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>readOnly</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674289"
+    },
+    {
+      "describe": "<p>Which code in a Visualforce page and/or cotroller might present a security vulnerability?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;apex : outputText escape=&quot;false&quot; value= &quot;{ !$CurrentPage . parameters .userInput } &quot; /&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex : outputField value=&quot;{ !ctrl . userInput }&quot; / &gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex : outputText value=&quot;{ !$CurrentPage . parameters . userInput } &quot; /&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex : outputField escape=&quot;false&quot; value=&quot;{ !ctrl . userInput }&quot; /&gt;</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674283"
+    },
+    {
+      "describe": "<p>An Apex method, getAccounts, that returns a List of Accounts given a searchTerm, is available for Lightning Web components to use.</p><p>What is the correct definition of a Lightning Web component property that uses the getAccounts method?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&nbsp;@AuraEnabled (getAccounts, { searchTerm: &#39;$searchTerm&#39; } )</p><p>accountList;</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&nbsp;@wire (getAccounts, &#39;$searchTerm&#39;)</p><p>accountList;</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&nbsp;@wire (getAccounts, { searchTerm: &#39;$searchTerm&#39; })</p><p>accountList;</p><p><br/></p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&nbsp;@AuraEnabled(getAccounts, &#39;$searchTerm&#39;)</p><p>accountList;</p><p><br/></p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674257"
+    },
+    {
+      "describe": "<p>A developer must crreate a Lightning component that allows users to input Contact record information to create a Contact record, including a Salary__c custom field.\nWhat should the developer use, along with a lightning-record-edit-form, so that Salary__c field functions as a currency input and is only viewable and editable by users that have the correct field level permissions on Salary__c ?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;lightning-input-field field-name=&quot;Salary__c&quot;&gt;&lt;/lightning-input-field&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;lightning-input-currency value=&quot;Salary__c&quot;&gt;&lt;/lightning-input-currency&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning-input type=&quot;number&quot; value=&quot;Salary__c&quot; formatter=&quot;currency&quot;&gt;&lt;/lightning-input&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning-formatted-number value=&quot;Salary__c&quot; format-style=&quot;currency&quot;&gt;&lt;/lightning-formatted-number&gt;</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674228"
+    },
+    {
+      "describe": "<p>Universal Containers wants a list button to display a Visualforce page that allows users to edit multiple records.\nWhich Visualforce feature supports this requirement?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>recordSetVar page attribute</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:listButton&gt; tag</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>custom controller</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>controller extension</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674226"
+    },
+    {
+      "describe": "<p>A Lightning component has a wired property, searchResults, that stores a list of Opportunities.\nWhich definition of the Apex method, to which the searchResults property is wired, should be used?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>@AuraEnabled(cacheable=false)</p><p>public List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>@AuraEnabled(cacheable=true)</p><p>public List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>@AuraEnabled(cacheable=false)</p><p>public static List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>@AuraEnabled(cacheable=true)</p><p>public static List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674220"
+    },
+    {
+      "describe": "<p>A developer has a Visualforce page and custom controller to save Account records. The developer wants to display any validation rule violations to the user.\n\nHow can the developer make sure that validation rule violations are displayed?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Include &lt;apex:messages&gt; on the Visualforce page.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Perform the DML using the Database.upsert( ) method.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add custom controller attributes to display the message.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use a try/catch with a custom exception class.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674196"
+    },
+    {
+      "describe": "<p>Which code displays the contents of a Visualforce page as a PDF?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;apex:page renderAs=&quot;pdf&quot;&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:page contentType=&quot;pdf&quot;&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:page contentType=&quot;application/pdf&quot;&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:page renderAs=&quot;application/pdf&quot;&gt;</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674193"
+    },
+    {
+      "describe": "<p>Which code should be used to update an existing Visualforce page that uses standard Visualforce components so that the page \nmatches the look and feel of Lightning Experience?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;apex:page LightningStyleSheets=&quot;true&quot;&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:slds/&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:incluedLightning/&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:styleSheet value=&quot;{!$Resource.slds, &#39;assets/slds.css&#39;)}&quot;&gt;</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674191"
+    }
+  ],
+  "hashCode": "-1307154604"
+}
