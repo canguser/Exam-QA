@@ -22,11 +22,10 @@
         </div>
         <div class="question-box" @dblclick.stop="showAcButtons = true"
              :style="`width: ${totalNum*100}%;transform:translate(${-questionNum*100/totalNum}%,0)`">
-            <div class="question-item" v-for="(question,i) in questionsInfo" :key="question.hashCode">
+            <div class="question-item" :style="`width: ${100/totalNum}%`" v-for="(question,i) in questionsInfo" :key="question.hashCode">
                 <van-panel>
-                    <div style="padding: 10px 16px;" >
-                        <div style=" margin-bottom: 5px" v-for="t in getQuestionTitle(question)">
-                            {{t}}
+                    <div style="padding: 10px 16px; line-height: 30px">
+                        <div class="main-qa" v-for="t in getQuestionTitle(question)" v-html="t">
                         </div>
                         <div style="font-size: 12px; color: #999">{{getQuestionDesc(question)}}</div>
                     </div>
@@ -37,10 +36,8 @@
                                           clickable @click="toggleAnswer(i, option.api)"
                                           :key="oi">
                                     <template slot="title">
-                                        <span
-                                            :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}">{{
-                                                letterIndex[oi] + '. ' + option.describe
-                                            }}</span>
+                                        <div v-html="letterIndex[oi] + '. ' + option.describe"
+                                            :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}"></div>
                                     </template>
                                     <van-checkbox slot="right-icon" :name="option.api"
                                                   :checked-color="getOptionColor(question,option)"></van-checkbox>
@@ -55,10 +52,8 @@
                                           clickable @click="setAnswer(i, [option.api])"
                                           :key="oi">
                                     <template slot="title">
-                                        <span
-                                            :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}">{{
-                                                letterIndex[oi] + '. ' + option.describe
-                                            }}</span>
+                                        <div v-html="letterIndex[oi] + '. ' + option.describe"
+                                            :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}"></div>
                                     </template>
                                     <van-radio slot="right-icon" :name="option.api"
                                                :checked-color="getOptionColor(question,option)"></van-radio>
@@ -491,7 +486,7 @@ span.custom-title {
 }
 
 .question-item {
-    width: 100%;
+    flex-shrink: 0;
 }
 
 .question-enter, .question-leave-to {
@@ -529,4 +524,12 @@ span.custom-title {
     display: none;
 }
 
+.van-cell, .main-qa{
+    white-space: break-spaces;
+    word-break: break-word;
+}
+
+.van-cell__title{
+    padding-right: 10px;
+}
 </style>

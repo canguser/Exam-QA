@@ -37,6 +37,10 @@
         margin-top: 60px;
     }
 
+    * {
+        box-sizing: border-box;
+    }
+
     .appView {
         position: absolute;
         width: 100%;
@@ -64,5 +68,9 @@
         /*transform: translate(100%, 0);*/
         left: 100%;
         z-index: 20;
+    }
+
+    p {
+        margin: 0;
     }
 </style>
