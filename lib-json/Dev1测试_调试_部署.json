@@ -1,5 +1,5 @@
 {
-  "title": "Dev1测试/调试/部署",
+  "title": "Dev1测试_调试_部署",
   "category": "Dev1-自由部落侠",
   "questions": [
     {
@@ -22,7 +22,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674160"
+      "hashCode": "1988674160",
+      "analysis": ""
     },
     {
       "describe": "The Account object in an organization has a master detail relationship to a child object called Branch. The following automations exist:\nRollup summary fields.\nCustom validation rules\nDuplicate rules\nA developer created a trigger on the Account object.\nWhat two things should the developer consider while testing the trigger code?\nChoose 2 answers",
@@ -44,7 +45,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674104"
+      "hashCode": "1988674104",
+      "analysis": ""
     },
     {
       "describe": "Which two sfdx commands can be used to add testing data to a Developer sandbox?\nChoose 2 answers",
@@ -66,7 +68,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674100"
+      "hashCode": "1988674100",
+      "analysis": ""
     },
     {
       "describe": "Which three statements are accurate about debug logs?\nChoose 3 answers",
@@ -92,7 +95,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674098"
+      "hashCode": "1988674098",
+      "analysis": ""
     },
     {
       "describe": "A developer created a trigger on the Account object and wants to test if the trigger is properly bulkified.The developer team decided that the trigger should be tested with 200 account records with unique names.\nWhat two things should be done to create the test data within the unit test with the least amount of code?Choose 2 answers",
@@ -114,7 +118,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674070"
+      "hashCode": "1988674070",
+      "analysis": ""
     },
     {
       "describe": "A developer completed modifications to a customized feature that is comprised of two elements:\n●Apex trigger\n●Trigger handler Apex class\nWhat are two factors that the developer must take into account to properly deploy the modification to the production environment?\nChoose 2 answers",
@@ -136,7 +141,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674042"
+      "hashCode": "1988674042",
+      "analysis": ""
     },
     {
       "describe": "What should a developer do to check the code coverage of a class after running all tests?",
@@ -158,7 +164,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673327"
+      "hashCode": "1988673327",
+      "analysis": ""
     },
     {
       "describe": "What are three characteristics of change set deployments? Choose 3 answers",
@@ -184,7 +191,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673267"
+      "hashCode": "1988673267",
+      "analysis": ""
     },
     {
       "describe": "Which three statements are accurate about debug logs? Choose 3 answers",
@@ -210,7 +218,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673266"
+      "hashCode": "1988673266",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to create a baseline set of data(Accounts, Contacts, Products, Assets) for an entire suite of tests allowing them to test independent requirements various types of Salesforce Cases.\nWhich approach can efficiently generate the required data for each unit test?",
@@ -232,7 +241,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673261"
+      "hashCode": "1988673261",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_testsetup_using.htm"
     },
     {
       "describe": "Which two statements are true about using the @testSetup annotation in an Apex test class?Choose 2 answers",
@@ -254,7 +264,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673234"
+      "hashCode": "1988673234",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_testsetup_using.htm"
     },
     {
       "describe": "A developer needs to have records with specific field values in order to test a new Apex class.\nWhat should the developer do to ensure the data is available to the test?",
@@ -276,7 +287,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673233"
+      "hashCode": "1988673233",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_load_data.htm"
     },
     {
       "describe": "While working in a sandbox an Apex test fails when run in the Test Framework, but the Apex test logic succeeds with no exceptions or errors when run in the Developer Console.\n\nWhy did the method fail in the sandbox test framework but succeed in the Developer Console?",
@@ -298,7 +310,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673232"
+      "hashCode": "1988673232",
+      "analysis": ""
     },
     {
       "describe": "When using SalesforceDX, what does a developer need to enable to create and manage scratch orgs?",
@@ -320,7 +333,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673230"
+      "hashCode": "1988673230",
+      "analysis": "https://help.salesforce.com/articleView?id=managing_scratch_orgs.htm&type=5"
     },
     {
       "describe": "A development team wants to use a deployment script to automatically deploy to a sandbox during their development cycles.\n\nWhich two tools can they use to run a script that deploys to a sandbox? Choose 2 answers",
@@ -342,7 +356,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673229"
+      "hashCode": "1988673229",
+      "analysis": ""
     },
     {
       "describe": "Which scenario is valid for execution by unit tests?",
@@ -364,7 +379,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673227"
+      "hashCode": "1988673227",
+      "analysis": ""
     },
     {
       "describe": "Which Salesforce org has a complete duplicate copy of the production org including data and configuration?",
@@ -386,7 +402,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673203"
+      "hashCode": "1988673203",
+      "analysis": ""
     },
     {
       "describe": "How can a developer check the test coverage of active Process Builders and Flows before deploying them in a Change Set?",
@@ -408,7 +425,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673202"
+      "hashCode": "1988673202",
+      "analysis": ""
     },
     {
       "describe": "While writing an Apex class that creates Accounts, a developer wants to make sure that all required fields are handled properly.\nWhich approach should the developer use to be sure that the Apex classworks correctly?",
@@ -430,7 +448,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673198"
+      "hashCode": "1988673198",
+      "analysis": ""
     },
     {
       "describe": "For which three items can a trace flag be configured? Choose 3 answers",
@@ -456,7 +475,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673196"
+      "hashCode": "1988673196",
+      "analysis": ""
     },
     {
       "describe": "A developer wrote Apex code that calls out to an external system.\nHow should a developer write the test to provide test coverage?",
@@ -478,7 +498,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673170"
+      "hashCode": "1988673170",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to confirm that a Contact works correctly without changing the organization's data. \nWhat should the developer do to test the Contact trigger?",
@@ -500,7 +521,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673142"
+      "hashCode": "1988673142",
+      "analysis": ""
     },
     {
       "describe": "How should a developer write unit tests for a private method in an Apex class?",
@@ -522,7 +544,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673137"
+      "hashCode": "1988673137",
+      "analysis": ""
     },
     {
       "describe": "A development team wants to use a deployment script to automatically deploy to a sandbox during their deployment cycles.\nWhich tool should they use to deploy to the sandbox?",
@@ -544,7 +567,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673135"
+      "hashCode": "1988673135",
+      "analysis": ""
     },
     {
       "describe": "Which Salesforce org has a complete duplicate copy of the production org including data and configuration?",
@@ -566,7 +590,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673112"
+      "hashCode": "1988673112",
+      "analysis": ""
     },
     {
       "describe": "What are two ways a developer can get the status of an enqueued job for a class that implements the queuable interface? \nChoose 2 answers",
@@ -588,7 +613,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673107"
+      "hashCode": "1988673107",
+      "analysis": ""
     },
     {
       "describe": "What are three ways for a developer to execute tests in an org? Choose 3 answers",
@@ -614,7 +640,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673106"
+      "hashCode": "1988673106",
+      "analysis": ""
     },
     {
       "describe": "A team of many developers work in their own individual orgs that have the same configuration as the production org. \nWhich type of org is best suited for this scenario?",
@@ -636,7 +663,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673104"
+      "hashCode": "1988673104",
+      "analysis": ""
     },
     {
       "describe": "A developer observes that an Apex test method fails in the Sandbox. To identify the issue, the developer copies the code inside the test method and execute it \nvia the Execute Anonymous tool in the Developer Console. The code then executes with no exceptions or errors.\nWhy did the test method fail in the sandbox and pass in the Developer Console?",
@@ -658,7 +686,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673074"
+      "hashCode": "1988673074",
+      "analysis": ""
     },
     {
       "describe": "Which two events need to happen when deploying to a production org?Choose 2 answers",
@@ -680,7 +709,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673073"
+      "hashCode": "1988673073",
+      "analysis": ""
     },
     {
       "describe": "A developer created this Apex trigger that calls MyClass.myStaticMethod;\ntrigger myTrigger on Contact(before insert){\nMyClass.myStaticMethod(trigger.new, trigger.oldMap);}\nThe developer creates a test class with a test method that calls MyClass.myStaticMethod, resulting in 81% overall code coverage.\nWhat happens when the developer tries to deploy the trigger and two classes to production, assuming no other code exists?",
@@ -702,7 +732,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673072"
+      "hashCode": "1988673072",
+      "analysis": ""
     },
     {
       "describe": "A developer created a new Apex trigger with a helper class, and writes a test class that only exercises 95% coverage of the new Apex helper class.\nChange set deployment to production fails with the test coverage warning:\n\"Test coverage of selected Apex Trigger is 0%, at least 1% test coverage is required.\"\nWhat should the developer do to successfully deploy the new Apex trigger and helper class?",
@@ -724,7 +755,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672366"
+      "hashCode": "1988672366",
+      "analysis": ""
     },
     {
       "describe": "Where are two locations a developer can look to find information about the status of asynchronous or future calls? Choose 2 answers",
@@ -746,7 +778,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672363"
+      "hashCode": "1988672363",
+      "analysis": ""
     },
     {
       "describe": "A developer is writing tests for a class and needs to insert records to validate functionality.\nWhich annotation method should be used to create records for every method in the test class?",
@@ -768,7 +801,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672333"
+      "hashCode": "1988672333",
+      "analysis": ""
     },
     {
       "describe": "What are two way for a developer to execute tests in an org? Choose 2 answers",
@@ -790,7 +824,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672331"
+      "hashCode": "1988672331",
+      "analysis": ""
     },
     {
       "describe": "A developer wants to get access to the standard price book in the org while writing a test class that covers an OpportunityLineItem trigger.\nWhich method allows access to the price book?",
@@ -812,7 +847,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672302"
+      "hashCode": "1988672302",
+      "analysis": ""
     },
     {
       "describe": "Which three statements are true regarding custom exceptions in Apex? Choose 3 answers",
@@ -838,7 +874,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672301"
+      "hashCode": "1988672301",
+      "analysis": ""
     },
     {
       "describe": "A team of developers is working on a source-driven project that allows them to work independently, with many different org configurations.\nWhich type of Salesforce orgs should they use for their development?",
@@ -860,7 +897,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672300"
+      "hashCode": "1988672300",
+      "analysis": ""
     },
     {
       "describe": "What should be used to create scratch orgs?",
@@ -882,8 +920,9 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672298"
+      "hashCode": "1988672298",
+      "analysis": ""
     }
   ],
-  "hashCode": "878610257"
+  "hashCode": "944331089"
 }

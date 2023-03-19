@@ -22,7 +22,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1995171578"
+      "hashCode": "1995171578",
+      "analysis": ""
     },
     {
       "describe": "UMS has a custom object, ServiceJob__c, with an optinal Lookup field to Account called Partner_Service_Provider__c.\nThe TotalJobs__c field on Account tracks the total number of ServiceJob__c records to which a partner service provider Account is related.\nWhat is the most efficient way to ensure that the TotalJobs__c field is kept up to date?",
@@ -44,7 +45,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1995171575"
+      "hashCode": "1995171575",
+      "analysis": ""
     },
     {
       "describe": "Which two scenarious require an Apex method to be called imperatively from a Lightning web component? Choose 2 answers",
@@ -66,7 +68,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1995171574"
+      "hashCode": "1995171574",
+      "analysis": ""
     },
     {
       "describe": "Which Apex class contains methods to return the amount of resources that have been used for a particular governor, such as the number of DML statements?",
@@ -88,7 +91,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1995171572"
+      "hashCode": "1995171572",
+      "analysis": ""
     },
     {
       "describe": "As part of a data cleanup strategy, AW Computing wants to proactively delete associated opportunity records when the related Account is deleted.\nWhich automation tool should be used to meet this business requirement?",
@@ -110,7 +114,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1995171549"
+      "hashCode": "1995171549",
+      "analysis": ""
     },
     {
       "describe": "While writing an Apex class, a developer wants to make sure that all functionality being developed is handled as specified by the requirements.\nWhich approach should the developer use to be sure that the Apex class is working according to specifications?",
@@ -132,7 +137,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674188"
+      "hashCode": "1988674188",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers has created a unique process for tracking container repairs. A custom Field,Status_c has been created within the container_c custom object. A developer is tasked with sending notifications to multiple external systems every time the value of the status_c picklist changes.\nWhich two tools should the developer use to meet the business requirement and ensure low maintenance of the solution?\nChoose 2 answers",
@@ -154,7 +160,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674166"
+      "hashCode": "1988674166",
+      "analysis": ""
     },
     {
       "describe": "A developer creates a custom exception as shown below:\n\npublic class ParityException extends Exception {}\n\nWhat are two ways the developer can fire the exception in Apex?\nChoose 2 answers",
@@ -176,7 +183,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674159"
+      "hashCode": "1988674159",
+      "analysis": ""
     },
     {
       "describe": "An Approval Process is defined in the Expense_Item_c object.A business rule dictates that whenever a changes the Status to 'Submitted' on an Expense _Report_ c record,all the Expense_Itemc records related the expense report must enter the approval process individually.\nA developer is asked to explore if this automation can be implemented without writing any Apex code.\nWhich statement is true regarding this automation request?",
@@ -198,7 +206,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674158"
+      "hashCode": "1988674158",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer migrated functionallty from JavaScriptRemoting to a Lightning web component and existing getopportunities() method to provide data.\nWhich modification to the method Is necessary?</p>",
@@ -220,7 +229,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674135"
+      "hashCode": "1988674135",
+      "analysis": ""
     },
     {
       "describe": "Which two process automations can be used on their own to send Salesforce Outbound Message?\nChoose 2 answers",
@@ -242,7 +252,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674134"
+      "hashCode": "1988674134",
+      "analysis": ""
     },
     {
       "describe": "Managers at Universal Containers want to ensure that only decommissioned containers are able the system. To meet the business requirement a Salesforce developer adds \"Decommissioned\"for the status_c custom field within the container_c object.\nWhich tool should the developer use to enforce only Container records with a status of \"Decommissioned\" delated?",
@@ -264,7 +275,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674128"
+      "hashCode": "1988674128",
+      "analysis": ""
     },
     {
       "describe": "A company has been adding data to Salesforce and has not done a good job of limiting the creation of duplicate Lead records. The developer is considering writing an Apex process to identify duplicates and merge the recordstogether.\nWhich two statements are valid considerations when using merge?\nChoose 2 answers",
@@ -286,7 +298,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674099"
+      "hashCode": "1988674099",
+      "analysis": ""
     },
     {
       "describe": "A business implemented a gamification plan to encourage its customers to watch some educational videos.\nCustomers can watch videos over several days, and their progress is recorded.Award points are grantedcustomers for all completed videos. When the video is marked as completed in Salesforce, an external webservice must be called so that points can be awarded to the user.\nA developer implemented these requirements in the after update trigger by making a call to an external webservice.However, a Syetem,Cal1outException is occurring.\nWhat should the developer do to fix this error?",
@@ -308,7 +321,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674097"
+      "hashCode": "1988674097",
+      "analysis": ""
     },
     {
       "describe": "<p>When a user edits the Postal Code on an Account, a custom Account text field named &quot;Timezone&quot; must be updated based on the values in a PostalCodeToTimezone__c custom object.\nWhich two automation tools can be used to implement this feature?\nChoose 2 answers</p>",
@@ -330,7 +344,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674095"
+      "hashCode": "1988674095",
+      "analysis": ""
     },
     {
       "describe": "A developer wants to invoke an outbound message when a record meets a specific criteria.\nWhich two features satisfy this use case?\nChoose 2 answers",
@@ -352,7 +367,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674073"
+      "hashCode": "1988674073",
+      "analysis": ""
     },
     {
       "describe": "What are two use cases for executing Anonymous Apex code?\nChoose 2 answers",
@@ -374,7 +390,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674072"
+      "hashCode": "1988674072",
+      "analysis": ""
     },
     {
       "describe": "A custom object Trainer_c has a lookup field to another custom object Gym_c.\nWhich SOQL query will get the record for the Viridian City Gym and all it's trainers?",
@@ -396,7 +413,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674067"
+      "hashCode": "1988674067",
+      "analysis": ""
     },
     {
       "describe": "The Salesforce Administrator created a custom picklist field Account_ status_c, on the Account object. This picklist has possible values of \"Inactive\" and \"Active\". As part of a new business process, management wants to ensure an opportunity record is created only for Accounts marked as Active. A developer is asked to implement this business requirement.\nWhich automation tool should be used to fulfill the business need?",
@@ -418,7 +436,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674066"
+      "hashCode": "1988674066",
+      "analysis": ""
     },
     {
       "describe": "A developer is asked to prevent anyone other than a user with Sales Manager profile from changing the Opportunity Status to Closed Lost If the lost reason is blank.\nWhich automation allows the developer to satisfy this requirement in the most efficient manner?",
@@ -440,29 +459,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674065"
-    },
-    {
-      "describe": "Universal Containers uses Service Cloud with a custom field, stage_c, on the Case object.\nManagement wants to send a follow-up email reminder 6 hours after the stage_c field is set to \"Waiting on Customer\". The Salesforce Administrator wants to ensure the solution used is bulk safe.\nWhich automation tool should a developer recommend to meet these business requirements?",
-      "answerOptions": [
-        {
-          "describe": "Record-Triggered Flow",
-          "isRight": false
-        },
-        {
-          "describe": "Entitlement Process",
-          "isRight": false
-        },
-        {
-          "describe": "Scheduled Flow",
-          "isRight": true
-        },
-        {
-          "describe": "Einstein Next Best Action",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988674039"
+      "hashCode": "1988674065",
+      "analysis": ""
     },
     {
       "describe": "On a brand new developer org, a developer writes a single trigger named AccountTrigger on the Account object to perform complex validations on the after insert and after update DML events. A Salesforce administrator creates a Process Builder to update a custom field within the same object every time an Account is created or updated.\nHow many times will the AccountTrigger fire if a new Account is inserted, assuming no other automation logic is implemented on the Account?",
@@ -484,7 +482,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674040"
+      "hashCode": "1988674040",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers uses Service Cloud with a custom field, stage_c, on the Case object.\nManagement wants to send a follow-up email reminder 6 hours after the stage_c field is set to \"Waiting on Customer\". The Salesforce Administrator wants to ensure the solution used is bulk safe.\nWhich automation tool should a developer recommend to meet these business requirements?",
+      "answerOptions": [
+        {
+          "describe": "Record-Triggered Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Entitlement Process",
+          "isRight": false
+        },
+        {
+          "describe": "Scheduled Flow",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Next Best Action",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674039",
+      "analysis": ""
     },
     {
       "describe": "A developer is tasked with performing a complex validation using Apex as part of advanced business logic. When certain criteria are met for a PurchaseOrder, the developer must throw a custom exception.\nWhat is the correct way for the developer to declare a class that can be used as an exception?",
@@ -506,7 +528,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674037"
+      "hashCode": "1988674037",
+      "analysis": ""
     },
     {
       "describe": "A Salesforce Administrator is creating a record-triggered flow. When certain criteria are met, the flow must call an Apex method to execute a complex validation involving several types of objects.\nWhen creating the Apex method, which annotation should a developer use to ensure the method can be used within the flow?",
@@ -528,7 +551,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674034"
+      "hashCode": "1988674034",
+      "analysis": ""
     },
     {
       "describe": "CK has a multi-screen flow that its call center agents use when handling inbound service desk calls.\nAt one of the steps in the flow, the agents should be presented with a list of order numbers and dates that are retrieved from an external order management system in real time and displayed on the screen.\nWhat should a developer use to satisfy this requirement?",
@@ -550,7 +574,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674033"
+      "hashCode": "1988674033",
+      "analysis": ""
     },
     {
       "describe": "Which process automation should be used to post a message to Chatter without using Apex code?",
@@ -572,7 +597,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674009"
+      "hashCode": "1988674009",
+      "analysis": ""
     },
     {
       "describe": "A developer is migrating a Visualforce page into a Lightning web component.\nThe Visualforce page shows information about a single record. The developer decides to use Lightning Data Service to access record data.\nWhich security consideration should the developer be aware of？",
@@ -594,7 +620,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674007"
+      "hashCode": "1988674007",
+      "analysis": ""
     },
     {
       "describe": "An Opportunity needs to have an amount rolled up from a custom object that is not in a master-detail relationship.\nHow can this be achieved?",
@@ -616,7 +643,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674004"
+      "hashCode": "1988674004",
+      "analysis": ""
     },
     {
       "describe": "Which statement describes the execution order when triggers are associated to the same object and event?",
@@ -638,7 +666,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674003"
+      "hashCode": "1988674003",
+      "analysis": ""
     },
     {
       "describe": "UC wants Opportunities to no longer be editable when reaching the Closed/Won stage.\nHow should a developer accomplish this?",
@@ -660,7 +689,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673329"
+      "hashCode": "1988673329",
+      "analysis": ""
     },
     {
       "describe": "A developer created a new trigger that inserts a Task when a new Lead is created. After deploying to production, an outside integration that reads task \nrecords is periodically reporting errors.\nWhich change should the developer make to ensure the integration is not affected with minimal impact to business logic?",
@@ -682,7 +712,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673324"
+      "hashCode": "1988673324",
+      "analysis": ""
     },
     {
       "describe": "Which annotation exposes an Apex class as a RESTful web service?",
@@ -704,7 +735,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673321"
+      "hashCode": "1988673321",
+      "analysis": ""
     },
     {
       "describe": "UC hires a developer to built a custom search page to help users find the Accounts they want.\nUsers will be able to search on Name, Description, and a custom comments field.\nWhich consideration should the developer be aware of when deciding between SOQL and SOSL?\nChoose 2 answers",
@@ -726,7 +758,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673320"
+      "hashCode": "1988673320",
+      "analysis": ""
     },
     {
       "describe": "What is the value of the Trigger.old context variable in a Before Insert trigger?",
@@ -748,7 +781,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673298"
+      "hashCode": "1988673298",
+      "analysis": ""
     },
     {
       "describe": "Which statement should be used to allow some of the records in a list of records to be inserted if others fail to be inserted?",
@@ -770,7 +804,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673297"
+      "hashCode": "1988673297",
+      "analysis": ""
     },
     {
       "describe": "A developer receives an error when trying to call a global server-side method using the @remoteAction decorator.\nHow can the developer resolve the error?",
@@ -792,7 +827,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673296"
+      "hashCode": "1988673296",
+      "analysis": ""
     },
     {
       "describe": "An Approval Process is defined in the Expense_Item__c object. A business rule dictates that whenever a user changes the Status to 'Submitted' on an Expense_Export__c record, all the Expense_Item__c records related to the expense report must enter the approval process individually. \n\nWhat approach should be used to ensure the business requirement is met?",
@@ -814,7 +850,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673293"
+      "hashCode": "1988673293",
+      "analysis": ""
     },
     {
       "describe": "A workflow updates the value of a custom field for an existing Account.\nHow can a developer access the updated custom field value from a trigger?",
@@ -836,7 +873,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673263"
+      "hashCode": "1988673263",
+      "analysis": ""
     },
     {
       "describe": "Which action may cause triggers to fire?",
@@ -858,7 +896,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673258"
+      "hashCode": "1988673258",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_ignoring_operations.htm"
     },
     {
       "describe": "Instead of sending emails to support personnel directly from Salesforce, UC wants to notify an external system in the event that an unhandled exception occurs. \n\nWhat is the appropriate publish/subscribe logic to meet this requirement?",
@@ -880,7 +919,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673236"
+      "hashCode": "1988673236",
+      "analysis": "https://help.salesforce.com/articleView?id=platform_events.htm&type=5"
     },
     {
       "describe": "Which action causes a before trigger to fire by default for Accounts?",
@@ -902,7 +942,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673235"
+      "hashCode": "1988673235",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_ignoring_operations.htm"
     },
     {
       "describe": "Uiversal Containers wants Opporunities to be locked from editing when reaching the Closed/Won stage.\nWhich two strategies should a developer use to accomplish this? Choose 2 answers",
@@ -924,7 +965,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673205"
+      "hashCode": "1988673205",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to create a custom interface in Apex. Which three considerations must the developer keep in mind while developing the Apex interface? Choose 3 answers",
@@ -950,7 +992,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673200"
+      "hashCode": "1988673200",
+      "analysis": ""
     },
     {
       "describe": "A developer wants to invoke an outbound message when a record meets a specific criteria. \nWhich three features satisfy this use case? Choose 3 answers",
@@ -976,7 +1019,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673174"
+      "hashCode": "1988673174",
+      "analysis": ""
     },
     {
       "describe": "A developer is creating a page that allows users to create multiple Opportunities. The deceloper is asked to verify the current user's default Opportunity record type, and set certain default values based on the record type before inserting the record.\nHow can the developer find the current user's default record type?",
@@ -998,7 +1042,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673171"
+      "hashCode": "1988673171",
+      "analysis": ""
     },
     {
       "describe": "The sales management team at Universal Containers requires that the Lead Source field of the Lead record be populated when a Lead is converted.\nWhat should be used to ensure that user poulates the Lead Source field prior to converting a Lead?",
@@ -1020,7 +1065,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673169"
+      "hashCode": "1988673169",
+      "analysis": ""
     },
     {
       "describe": "Which two operations can be performed using a formula field? Choose 2 answers",
@@ -1042,7 +1088,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673141"
+      "hashCode": "1988673141",
+      "analysis": ""
     },
     {
       "describe": "What are three considerations when using the @InvocableMethod annotation in Apex? Choose 3 answers",
@@ -1068,7 +1115,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673140"
+      "hashCode": "1988673140",
+      "analysis": ""
     },
     {
       "describe": "A developer is implementing an Apex class for a financial system. Within the class, the variables 'creditAmount' and 'debitAmount' should not be able to change once a value is assigned.\nIn which two ways can the developer declare the variables to ensure their value can only be assigned one time? Choose 2 answers",
@@ -1090,7 +1138,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673139"
+      "hashCode": "1988673139",
+      "analysis": ""
     },
     {
       "describe": "A developer identifies the following triggers on the Expense__c object:\ndeleteExpense;\napplyDefaultsToExpense;\nvalidateExpenseUpdate;\n\nThe triggers process before delete, before insert, and before update event respectively.\nWhich two techniques should the developer implement to ensure reigger best practices are followed? Chooose 2 answers",
@@ -1112,7 +1161,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673136"
+      "hashCode": "1988673136",
+      "analysis": ""
     },
     {
       "describe": "The Job_Application__c custom object has a field that is a Master-Detail relationship to the Contact object, where the Contact object is the Master. As part of a feature implementation, a developer needs to retrieve a list containing all Contact records where the related Account Industry is 'Technology' while also retrieving the contact's Job_ Application__ c records.\n\nBased on the object's relationships, what is the most efficient statement to retrieve the list of contacts?",
@@ -1134,7 +1184,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673134"
+      "hashCode": "1988673134",
+      "analysis": ""
     },
     {
       "describe": "A developer has to identify a method in an Apex class that performs resource intensive actions in memory by iterating over the result set of a SOQL statement on the account. The method also performs a DML statement to save the changes to the database.\n\nWhich two techniques should the developer implement as a best practice to ensure transaction control and avoid exceeding governor limits? Choose 2 answers",
@@ -1156,7 +1207,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673110"
+      "hashCode": "1988673110",
+      "analysis": ""
     },
     {
       "describe": "Which three data types can a SOQL query return? Choose 3 answers",
@@ -1182,7 +1234,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673109"
+      "hashCode": "1988673109",
+      "analysis": ""
     },
     {
       "describe": "A developer has a requirement to create a Case when a record on the Complaint__c object is created. Which two ways can this be solved? \nChoose 2 answers",
@@ -1204,7 +1257,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673108"
+      "hashCode": "1988673108",
+      "analysis": ""
     },
     {
       "describe": "UC decides it will not to send emails to support personnel directly from Salesforce in the event that an unhandled \nexception occurs.  Instead, UC wants an external system be notified of the error.\nWhat is the appropriate publish/subscribe logic to meet these requirements?",
@@ -1226,7 +1280,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673077"
+      "hashCode": "1988673077",
+      "analysis": ""
     },
     {
       "describe": "A devveloper uses a loop to check each Contact in a list. When a Contact with the Title of 'Boss' is found, the Apex method should jump to \nthe first line of code outside of the for loop.\nWhich Apex solution will let the developer implement this requirement?",
@@ -1248,7 +1303,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673075"
+      "hashCode": "1988673075",
+      "analysis": ""
     },
     {
       "describe": "Cloud Kicks Fitness, an ISV Salesforce partner, is developing a managed package application, One of the application modules allows the user to \ncalculate body fat using the Apex class, BodyFat, and its method, calculateBodyFat(). The product owner wants to ensure this method is accessible by \nthe consumer of the application when developing customizations outside the ISV's package namespace.\nWhich approach should a developer take to ensure calculateBodyFat() is accessible outside the package namespace?",
@@ -1270,7 +1326,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673049"
+      "hashCode": "1988673049",
+      "analysis": ""
     },
     {
       "describe": "If Apex code executes inside the execute() method of an Apex class when implementing the Batchable interface, which two statement are true regarding governor limits? Choose 2 answers",
@@ -1292,7 +1349,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673048"
+      "hashCode": "1988673048",
+      "analysis": ""
     },
     {
       "describe": "A recursive transaction is initiated by a DML statement creating records for these two objects:\n1. Accounts\n2. Contacts\nThe Account trigger hits a stack depth of 16:\nWhich statement is true regarding the outcome of the transaction?",
@@ -1314,7 +1372,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673047"
+      "hashCode": "1988673047",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers implemented a private sharing model for the Account object. A custom Account search tool was developer with Apex to \nhelp sales representatives find accounts that match multiple criteria they specify. Since its release, users of the tool report can see Accounts they do not own.\nWhat should the developer use to enforce sharing permissions for the currently logged-in user while using the custom search tool?",
@@ -1336,7 +1395,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673046"
+      "hashCode": "1988673046",
+      "analysis": ""
     },
     {
       "describe": "A developer must write an Apex method that will be called from a Lightning component. The method may delete an Account stored in the accountRec variable.\nWhich method should a developer use to ensure only users that should be able to delete Accounts can successfully perform deletions?",
@@ -1358,7 +1418,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673044"
+      "hashCode": "1988673044",
+      "analysis": ""
     },
     {
       "describe": "Which Salesforce feature allows a developer to see when a user last logged in to Salesforce if real-time notification is not required?",
@@ -1380,7 +1441,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672362"
+      "hashCode": "1988672362",
+      "analysis": ""
     },
     {
       "describe": "Which exception type cannot be caught?",
@@ -1402,7 +1464,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672359"
+      "hashCode": "1988672359",
+      "analysis": ""
     },
     {
       "describe": "A developer must create an Apex class, ContactController, that a Lightning component can use to search for Contact records. Users of the \nLightning component should only be able to search for Contact records to which they have access.\nWhich two will restrict records correctly? Choose 2 answers",
@@ -1424,7 +1487,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672334"
+      "hashCode": "1988672334",
+      "analysis": ""
     },
     {
       "describe": "A developer has an integer variable called maxAttempts. The developer needs to ensure that once maxAttempts is initialized, it preserves its value for the length of the Apex transaction; while being able to share the variable's state between trigger executions.\n\nHow should the developer declare max attempts to meet these requirements?",
@@ -1446,7 +1510,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672305"
+      "hashCode": "1988672305",
+      "analysis": ""
     },
     {
       "describe": "A developer writes a single trigger on the Account object on the after insert and after update events. A workflow rule modifies a field every time an Account is created or updated.\nHow many times will the trigger fire if a new Account is inserted, assuming no other automation logic is implemented on the Account?",
@@ -1468,7 +1533,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672304"
+      "hashCode": "1988672304",
+      "analysis": ""
     },
     {
       "describe": "A develper writes a trigger on the Account object on the before update event that increments a count field. A workflow rule also increments the count field every time that an Account is created or updated. The field update in the workflow rule is configured to not re-evaluate workflow rules.\nWhat is the value of the count field if an Account is inserted with an initial value of zero, assuming no other automation logic is implemented on theAccount?",
@@ -1490,7 +1556,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672299"
+      "hashCode": "1988672299",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers recently transltioned from Classic to Lightning Experience. One of its business processes requires \ncontain values from the Opportunity object to be sent via an HTTP REST callout to its external order management system \nbased on a user-initiated action on the Opportunity detail page, Example values are as follows:\nName\nAmount\nAccount\nWhich two methods should the developer implement to fulfill the business requirement?",
@@ -1512,7 +1579,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672275"
+      "hashCode": "1988672275",
+      "analysis": ""
     }
   ],
   "hashCode": "1494717394"

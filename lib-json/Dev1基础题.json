@@ -22,7 +22,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1995171579"
+      "hashCode": "1995171579",
+      "analysis": ""
     },
     {
       "describe": "AW Computing tracks order information in custom objects called Order__c and Order_Line__c. Currently, all shipping information is stored in the Order__c object.\nThe company wants to expand its order application to support split shipments so that any number of Order_Line__c records on a single Order__c can be shipped to different locations.\nWhat should a developer add to fulfill this requirement?",
@@ -44,7 +45,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1995171577"
+      "hashCode": "1995171577",
+      "analysis": ""
     },
     {
       "describe": "UC is developing a process for their sales teams that requires all sales reps to go through a set of scripted steps with each new customer they create.\nIn the first step of collecting information, UC's ERP system must be checked via a REST endpoint to see if the customer exists. If the customer exists, the data must be presented to the sales rep in Salesforce.\nWhich two should a developer implement to satisfy the requirements?Choose 2 answers",
@@ -66,7 +68,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1995171576"
+      "hashCode": "1995171576",
+      "analysis": ""
     },
     {
       "describe": "A developer created these three roll-up summary fields on the custom object, Project__c:\nTotal_Timesheets__c\nTotal_Approved_Timesheets__c\nTotal_Rejected_Timesheet__c\nThe developer is asked to create a new field that shows the ratio between rejected and approved timesheets for a given project.\nWhich should the developer use to implement the business requirement in order to minimize maintenance overhead?",
@@ -88,7 +91,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1995171571"
+      "hashCode": "1995171571",
+      "analysis": ""
     },
     {
       "describe": "A business has a proprietary Order Management System (OMS) that creates orders from their website and the orders.When the order Is created in the OMS,an integration also creates an order record In Salesforce relates it to the contact as identified by the email on the order As the order goes through different stages inOMS, the integration also updates it in Salesforce.\nIt is noticed that each update from the OMS creates new order record in Salesforce.\nWhich two actions will prevent the duplicate order records from being created in Salesforce?\nChoose 2 answers",
@@ -110,7 +114,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674164"
+      "hashCode": "1988674164",
+      "analysis": ""
     },
     {
       "describe": "UH is using Salesforce to capture job applications. A salesforce administrator created two custom objects; Job__c acting as the master object, Job_Application__c acting as the detail.\nWithin the Job__c object, a custom multi-select picklist, Preferred_Locations__c, contains a list of approved status for the position. Each Job_Application__c record relates to a Contact within the system through a master-detail relationship.\nRecruiters have requested the ability to view whether the Contact's Mailing State value matches a value selected on the Preferred_Locations__c field, within the Job_Application__c record. Recruiters would like this value to be kept in sync, if changes occur to the Contact's Mailing State or if the Job's Preferred_Locations__c field is updated.\nWhat is the recommended tool a developer should use to meet the business requirement?",
@@ -132,7 +137,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674162"
+      "hashCode": "1988674162",
+      "analysis": ""
     },
     {
       "describe": "A large corporation stores Orders and Line Items in Salesforce for different lines of business. Users are allowed see Orders across the entire organization,but,for security purposes, should only be able to see the Line Orders in their line of business.\nWhich type of relationship should be used between Line Items and Orders?",
@@ -154,7 +160,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674161"
+      "hashCode": "1988674161",
+      "analysis": ""
     },
     {
       "describe": "What Is an example of a polymorphic lookup field in Salesforce?",
@@ -176,7 +183,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674157"
+      "hashCode": "1988674157",
+      "analysis": ""
     },
     {
       "describe": "When a user edits the Postal Code on an Account,a custom Account text field named \"Tim updated based on the values in another custom object called PostalCodeToTimezone_c.\nWhat is the optimal way to implement this feature?",
@@ -198,7 +206,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674131"
+      "hashCode": "1988674131",
+      "analysis": ""
     },
     {
       "describe": "In terms of the MVC paradigm,what are two advantages of lmplementing the viewlayer of application using Lightning Web Component-based development over Visualforce?\nChoose 2 answers",
@@ -220,7 +229,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674130"
+      "hashCode": "1988674130",
+      "analysis": ""
     },
     {
       "describe": "UC uses a custom object called Vendor. The Vendor custom object has relationship with the standard Account object.\nBased on some internal discussions, the UC administrator tried to change the master-detail lookup relationship, but was not able to do so.\nWhat is a possible reason that this change was not permitted?",
@@ -242,7 +252,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674127"
+      "hashCode": "1988674127",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers has a support process that allows users to request support from its engineering team using custom object, Engineering_Support_c.\nUsers should be able to associate multiple Engineering Support_c records to a single Opportunty record.Addltionally, aggregate information about the Engineering Support _c records should be shown on the Opportunity record.\nWhat should a developer implement to support these requirements?",
@@ -264,7 +275,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674126"
+      "hashCode": "1988674126",
+      "analysis": ""
     },
     {
       "describe": "A software company uses the following objects and relationships:\nCase: to handle customer support issues\nDefect_c: a custom object to represent known issues with the company's software\nCase_effect_c: a junction object between Case and Defect_c to represent that a defect is a cause of a customer issue\nCase and Defect_c have Private organization-wide defaults.\nWhat should be done to share a specific case_Defect_c record with a user?",
@@ -286,7 +298,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674096"
+      "hashCode": "1988674096",
+      "analysis": ""
     },
     {
       "describe": "UC has implemented an order management application. Each Order can have one or more Order Line items. The order Line object is related to the Order via a master-detail relationship. For each Order Line item, the total price is calculated by multiplying the Order Line item price with the quantity ordered.\nWhat is the best practice to get the sum of all Order Line item totals on the Order record?",
@@ -308,7 +321,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674071"
+      "hashCode": "1988674071",
+      "analysis": ""
     },
     {
       "describe": "Which two settings must be defined in order to update a record of a junction object?\nChoose 2 answers",
@@ -330,7 +344,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674069"
+      "hashCode": "1988674069",
+      "analysis": ""
     },
     {
       "describe": "What can be used to override the Account's standard Edit button for Lightning Experience?",
@@ -352,7 +367,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674068"
+      "hashCode": "1988674068",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers is bullding a recruiting app with an Applicant object that stores information about an individual person and a Job object that represents a job. Each applicant may apply for more than one job.\nWhat should a developer implement to represent that an applicant has applied for a job?",
@@ -374,7 +390,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674064"
+      "hashCode": "1988674064",
+      "analysis": ""
     },
     {
       "describe": "A developer created a custom order management app that uses an Apex class. The order is represented by an Order object and an OrderItem object that has a master-detail relationship to Order. During order processing, an order may be split into multiple orders.\nWhat should a developer do to allow their code to move some existing OrderItem records to a new Order record?",
@@ -396,7 +413,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674041"
+      "hashCode": "1988674041",
+      "analysis": ""
     },
     {
       "describe": "A developer is integrating with a legacy on-premise SQL database.\nWhat should the developer use to ensure the data being integrated is matched to the right records in Salesforce?",
@@ -418,7 +436,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674035"
+      "hashCode": "1988674035",
+      "analysis": ""
     },
     {
       "describe": "UC uses a Master-Detail relationship and stores the availability date on each Line Item of an Order and Orders are only shipped when all of the Line Items \nare available.\nWhich method should be used to calculate the estimated ship date for an Order?",
@@ -440,7 +459,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674006"
+      "hashCode": "1988674006",
+      "analysis": ""
     },
     {
       "describe": "A developer created these three roll-up summary fields on the custom object, Project__c:\nTotal_Timesheets__c\nTotal_Approved_Timesheets__c\nTotal_Rejected_Timesheet__c\nThe developer is asked to create a new field that shows the ratio between rejected and approved timesheets for a given project.\nWhat are two benefits of choosing a formula field instead of an Apex trigger to fulfill the request? Choose 2 answers",
@@ -462,7 +482,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673328"
+      "hashCode": "1988673328",
+      "analysis": ""
     },
     {
       "describe": "In the Lightning UI, where should a developer look to find information about a Paused Flow Interview?",
@@ -484,7 +505,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673326"
+      "hashCode": "1988673326",
+      "analysis": ""
     },
     {
       "describe": "What are two benefits of using declarative customizations over code? Choose 2 answers",
@@ -506,29 +528,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673323"
-    },
-    {
-      "describe": "The values 'High', 'Medium', and 'Low' are identified as common values for multiple picklists across different objects.\nWhat is an approach a developer can take to streamline maintenance of the picklists and their values, while also restricting \nthe values to the ones mentioned above?",
-      "answerOptions": [
-        {
-          "describe": "Create the Picklist on each object and use a Global Picklist Value Set containing the values.",
-          "isRight": true
-        },
-        {
-          "describe": "Create the Picklist on each object as a required field and select \"Display values alphabetically, not in the order entered\".",
-          "isRight": false
-        },
-        {
-          "describe": "Create the Picklist on each object and select \"Restrict picklist to the values defined in the value set\".",
-          "isRight": false
-        },
-        {
-          "describe": "Create the Picklist on each object and add a validation rule to ensure data integrity.",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988673295"
+      "hashCode": "1988673323",
+      "analysis": ""
     },
     {
       "describe": "When importing and exporting data into Salesforce, Which two statement are true?\nChoose 2 answers",
@@ -550,7 +551,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673294"
+      "hashCode": "1988673294",
+      "analysis": ""
+    },
+    {
+      "describe": "The values 'High', 'Medium', and 'Low' are identified as common values for multiple picklists across different objects.\nWhat is an approach a developer can take to streamline maintenance of the picklists and their values, while also restricting \nthe values to the ones mentioned above?",
+      "answerOptions": [
+        {
+          "describe": "Create the Picklist on each object and use a Global Picklist Value Set containing the values.",
+          "isRight": true
+        },
+        {
+          "describe": "Create the Picklist on each object as a required field and select \"Display values alphabetically, not in the order entered\".",
+          "isRight": false
+        },
+        {
+          "describe": "Create the Picklist on each object and select \"Restrict picklist to the values defined in the value set\".",
+          "isRight": false
+        },
+        {
+          "describe": "Create the Picklist on each object and add a validation rule to ensure data integrity.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988673295",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to join data received from an integration with an external system with parent records in Salesforce. The data set does not contain the Salesforce IDs of the parent records, but it does have a foreign key attribute that can be used to identify the parent.\n\nWhich action will allow the developer to relate records in the data model without knowing the salesforce ID?",
@@ -572,7 +597,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673292"
+      "hashCode": "1988673292",
+      "analysis": ""
     },
     {
       "describe": "What is an example of a polymorphic lookup field in Salesforce?",
@@ -594,7 +620,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673290"
+      "hashCode": "1988673290",
+      "analysis": ""
     },
     {
       "describe": "UC wants to assess the advantages of declarative development versus programmatic customization for specific use cases in its Salesforce implementation.\n\nWhat are two characteristics of declarative development over programmatic customization? Choose 2 answers",
@@ -616,7 +643,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673262"
+      "hashCode": "1988673262",
+      "analysis": ""
     },
     {
       "describe": "UC decides to use purely declarative development to build out a new Salesforce application.\nWhich three options can be used to build out the business logic layer for this application?Choose 3 answers",
@@ -642,7 +670,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673260"
+      "hashCode": "1988673260",
+      "analysis": ""
     },
     {
       "describe": "A PrimaryId__c custom field exists on the Candidate__c custom object. The field is used to store each candidate's id number and is marked as Unique in the schema definition.\n\nAs part of a data enrichment process, UC has a CSV file that contains updated data for all candidates in the system. The file contains each Candidate's primary id as a data point. UC wants to upload this information into Salesforce, while ensuring all data rows are correctly mapped to a candidate in the system.\n\nWhich technique should the developer implement to streamline the data upload?",
@@ -664,7 +693,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673259"
+      "hashCode": "1988673259",
+      "analysis": "https://help.salesforce.com/articleView?id=000320964&type=1&mode=1"
     },
     {
       "describe": "Which two types of process automation can be used to calculate the shipping cost for an Order when the Order is placed and apply a percentage of the shipping cost to some of the related Order Products? Choose 2 answers",
@@ -686,7 +716,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673231"
+      "hashCode": "1988673231",
+      "analysis": ""
     },
     {
       "describe": "What are two characteristics related to formulas? Choose 2 answers",
@@ -708,7 +739,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673228"
+      "hashCode": "1988673228",
+      "analysis": ""
     },
     {
       "describe": "What is fundamental different between a Mater-Detail relationship and a Lookup relationship?",
@@ -730,7 +762,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673204"
+      "hashCode": "1988673204",
+      "analysis": ""
     },
     {
       "describe": "Which two statements accurately represent the MVC framework implementation in Salesforce?Choose 2 answers",
@@ -752,7 +785,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673201"
+      "hashCode": "1988673201",
+      "analysis": "https://developer.salesforce.com/forums/?id=906F0000000kDZpIAM"
     },
     {
       "describe": "What is a benefit of developing applications in a multi-tenant environment?",
@@ -774,7 +808,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673199"
+      "hashCode": "1988673199",
+      "analysis": ""
     },
     {
       "describe": "A SSN__c custom field exists on the Candidate __c custom object. The field is used to store each candidate's social security number and is marked as Unique in the schema definition.\n\nAs part of a data enrichment process, Universal Containers has a CSV file that contains updated data for all candidates in the system. The file contains each Candidate's social security number as a data point. Universal Containers wants to upload this information into Salesforce, while ensuring all data rows are correctly mapped to a candidate in the system. Which technique should the developer implement to streamline the data upload?",
@@ -796,7 +831,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673197"
+      "hashCode": "1988673197",
+      "analysis": ""
     },
     {
       "describe": "Which three operations affect the number of times a trigger can fire? Choose 3 answers",
@@ -822,7 +858,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673166"
+      "hashCode": "1988673166",
+      "analysis": ""
     },
     {
       "describe": "When a user edits the Postal Code on an Account, a custom Account text field named \"TimeZone\" must be updated based on the values in a PostalCodeToTimeZone__c custom object.\nHow should a developer implement this feature?",
@@ -844,7 +881,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673165"
+      "hashCode": "1988673165",
+      "analysis": ""
     },
     {
       "describe": "A developer wants to import 500 Opportunity records into a sandbox.\nWhy should the developer choose to use Data Loader instead of Data Import Wizard?",
@@ -866,7 +904,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673138"
+      "hashCode": "1988673138",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers has an order system that uses an Order Number to indentify an order for customers and service agents. Order records will be imported into Salesforce. \nHow should the Order Number field be defined in Salesforce?",
@@ -888,7 +927,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673111"
+      "hashCode": "1988673111",
+      "analysis": ""
     },
     {
       "describe": "UC uses a custom object called Vendor. The Vendor custom object has a Master-Detail relationship with the standard Account object.\nBased on some internal discussions, the UC administrator tried to change the Master-Detail relationship to a Lookup relationship but was not able to do so.\n\nWhat is possible reason that this change was not permitted?",
@@ -910,7 +950,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673105"
+      "hashCode": "1988673105",
+      "analysis": ""
     },
     {
       "describe": "An org has an existing Flow that creates an Opportunity with an Update Records element. A developer must update the Visual Flow to also create a Contact and store the created Contact's ID on the Opportunity.\nWhich update should the developer make in the Visual Flow?",
@@ -932,7 +973,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673103"
+      "hashCode": "1988673103",
+      "analysis": ""
     },
     {
       "describe": "A custom picklist field Food_Preference__c, exists an a custom object. The picklist contains the following options:\n'Vegan'. 'Kosher', 'No Preference'. The developer must ensure a value is populated every time a record is created or updated.",
@@ -954,7 +996,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673081"
+      "hashCode": "1988673081",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers decides to use exclusively declarative development to build out a new Salesforce application.\nWhich three options should be used to build out the database layer for the application? Choose 3 answers",
@@ -980,7 +1023,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673079"
+      "hashCode": "1988673079",
+      "analysis": ""
     },
     {
       "describe": "An org tracks customer orders on an Order object and the line items of an Order on the Line Item object. The Line Item object has a \nMaster/Detail relationship to the Order object. A developer has requirement to calculate the order amount on an Order and the line amount \non each Line Item based on quantity and price.\nWhat is the correct implementation?",
@@ -1002,7 +1046,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673045"
+      "hashCode": "1988673045",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to implement the functionality for a service agent to gather multiple pieces of imformation from a customer in order to \nsend a replacement credit card.\nWhich automation tool meets these requirements?",
@@ -1024,7 +1069,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673043"
+      "hashCode": "1988673043",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers used a simple Order Management app. On the Order Lines, the order line total is calculated by multiplying the item price \nwith the quantity ordered. There is a Master-Detail relationship between the Order and the Order Lines object.\nWhat is the best practice to get the sum of all order line totals on the order header?",
@@ -1046,7 +1092,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673042"
+      "hashCode": "1988673042",
+      "analysis": ""
     },
     {
       "describe": "Which aspect of Apex programming is limited due to multitenancy?",
@@ -1068,7 +1115,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673041"
+      "hashCode": "1988673041",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers stores Orders and Line Items in Salesforce. For security reasons, financial representatives are allowed to see information\non the Order such as order amount, but they are not allowed to see the Line Item on the Order.\nWhich type of relationship should be user?",
@@ -1090,7 +1138,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672368"
+      "hashCode": "1988672368",
+      "analysis": ""
     },
     {
       "describe": "In terms of the MVC paradigm, what are two advantages of implementing the view layer of a Salesforce application using Aura Component-based \ndevelopment over Visualforce?Choose 2 answers",
@@ -1112,7 +1161,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672367"
+      "hashCode": "1988672367",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers wants to back up all of the data and attachments in Salesforce org once a month.\nWhich approach should a developer use to meet this requirement?",
@@ -1134,51 +1184,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672365"
-    },
-    {
-      "describe": "A developer must build an application that tracks which Accounts have purchaesd specific pieces of equipment that are represented as \nProducts Each Account could purchse many pieces of equipment.\nHow should the developer track that an Account has purchased a piece of equipment?",
-      "answerOptions": [
-        {
-          "describe": "Use a Lookup on Account to Product",
-          "isRight": false
-        },
-        {
-          "describe": "Use the Asset object",
-          "isRight": true
-        },
-        {
-          "describe": "Use a Master-Detail on Product to Account",
-          "isRight": false
-        },
-        {
-          "describe": "Use a Custom object",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988672337"
-    },
-    {
-      "describe": "UC wants to lower its shipping cost while making the shipping process more efficient. The Distribution Officer advises UC to implement global addresses to allow multiple Accounts to share a default pickup address. The developer is tasked to create the supporting object and relationship for this business requirement and uses the Setup Menu to create a custom object called \"Global Address\".\n\nWhich field should the developer add to create the most efficient model that supports the business need?",
-      "answerOptions": [
-        {
-          "describe": "Add a Master-Detail field on the Global Address object to the Account object.",
-          "isRight": false
-        },
-        {
-          "describe": "Add a Lookup field on the Account object to the Global Address object.",
-          "isRight": true
-        },
-        {
-          "describe": "Add a Master-Detail field on the Account object to the Global Address object.",
-          "isRight": false
-        },
-        {
-          "describe": "Add a Lookup field on the Global Address object to the Account object.",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988672335"
+      "hashCode": "1988672365",
+      "analysis": ""
     },
     {
       "describe": "A developer has a requirement to create an Order when an Opportunity reaches a 'Closed-Won' status.\nWhich tool should be used to implement this requirement?",
@@ -1200,7 +1207,54 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672361"
+      "hashCode": "1988672361",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer must build an application that tracks which Accounts have purchaesd specific pieces of equipment that are represented as \nProducts Each Account could purchse many pieces of equipment.\nHow should the developer track that an Account has purchased a piece of equipment?",
+      "answerOptions": [
+        {
+          "describe": "Use a Lookup on Account to Product",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Asset object",
+          "isRight": true
+        },
+        {
+          "describe": "Use a Master-Detail on Product to Account",
+          "isRight": false
+        },
+        {
+          "describe": "Use a Custom object",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672337",
+      "analysis": ""
+    },
+    {
+      "describe": "UC wants to lower its shipping cost while making the shipping process more efficient. The Distribution Officer advises UC to implement global addresses to allow multiple Accounts to share a default pickup address. The developer is tasked to create the supporting object and relationship for this business requirement and uses the Setup Menu to create a custom object called \"Global Address\".\n\nWhich field should the developer add to create the most efficient model that supports the business need?",
+      "answerOptions": [
+        {
+          "describe": "Add a Master-Detail field on the Global Address object to the Account object.",
+          "isRight": false
+        },
+        {
+          "describe": "Add a Lookup field on the Account object to the Global Address object.",
+          "isRight": true
+        },
+        {
+          "describe": "Add a Master-Detail field on the Account object to the Global Address object.",
+          "isRight": false
+        },
+        {
+          "describe": "Add a Lookup field on the Global Address object to the Account object.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988672335",
+      "analysis": ""
     },
     {
       "describe": "A Licensed_Professional __c custom object exists in the system with two Master-Detail fields for the following objects: Certification__c and Contact.\n\nUsers with the \"Certification Representative\" role can access the Certification records they own and view the related Licensed Professionals records, however users with the \"Sales Representative\" role report they cannot view any Licensed Professional records even though they own the associated Contact record.\n\nWhat are two likely causes of users in the \"Sales Representative\" role not being able to access the Licensed Professional records?Choose 2 answers",
@@ -1222,7 +1276,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672332"
+      "hashCode": "1988672332",
+      "analysis": "https://help.salesforce.com/articleView?id=relationships_considerations.htm&type=5"
     },
     {
       "describe": "Which three process automations can immediately send an email notification to the owner of an Opportunity \nwhen its Amount is changed to be greater than $10.000? Choose 3 answers",
@@ -1248,7 +1303,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672330"
+      "hashCode": "1988672330",
+      "analysis": ""
     },
     {
       "describe": "Which process automation should be used to send an outbound message without using Apex code?",
@@ -1270,7 +1326,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672329"
+      "hashCode": "1988672329",
+      "analysis": ""
     },
     {
       "describe": "A developer at Universal Containers is tasked with implementing a new Salesforce application that must built by their company's Salesforce administrator.\nWhich three options should be considered for building out the business logic layer of the application? Choose 3 answers",
@@ -1296,7 +1353,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672328"
+      "hashCode": "1988672328",
+      "analysis": ""
     },
     {
       "describe": "A developer has the following requirements:\n1. Calculate the total amount on an Order.\n2. Calculate the line amount for each Line Item based on quantity selected and price.\n3. Move Line Items to a different Order if a Line Item is not in stock.\nWhich relationship implementation supports these requirements?",
@@ -1318,7 +1376,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672306"
+      "hashCode": "1988672306",
+      "analysis": ""
     },
     {
       "describe": "UC uses a custom object called Vendor. The Vendor custom object has a Master-Detail relationship with the standard Account object.\nBased on some internal discussions, the UC administrator tried to change the Master-Detail relationship to a Lookup relationship but was not able to do so.\nWhat is possible reason that this change was not permitted?",
@@ -1340,7 +1399,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672274"
+      "hashCode": "1988672274",
+      "analysis": ""
     }
   ],
   "hashCode": "-123844663"

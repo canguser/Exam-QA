@@ -22,29 +22,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673041"
-    },
-    {
-      "describe": "What is a benefit of developing applications in a multi-tenant environment?",
-      "answerOptions": [
-        {
-          "describe": "Default out-of-the-box configuration",
-          "isRight": true
-        },
-        {
-          "describe": "Access to predefined computing resources",
-          "isRight": false
-        },
-        {
-          "describe": "Unlimited processing power and memory",
-          "isRight": false
-        },
-        {
-          "describe": "Enforced best practices for development",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988673199"
+      "hashCode": "1988673041",
+      "analysis": ""
     },
     {
       "describe": "In the Lightning UI, where should a developer look to find information about a Paused Flow Interview?",
@@ -66,29 +45,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673326"
+      "hashCode": "1988673326",
+      "analysis": ""
     },
     {
-      "describe": "An org tracks customer orders on an Order object and the line items of an Order on the Line Item object. The Line Item object has a \nMaster/Detail relationship to the Order object. A developer has requirement to calculate the order amount on an Order and the line amount \non each Line Item based on quantity and price.\nWhat is the correct implementation?",
+      "describe": "What is a benefit of developing applications in a multi-tenant environment?",
       "answerOptions": [
         {
-          "describe": "Write a process an the Line Item that calculated the item amount and order amount and updates the fields on the Line Item and the Order.",
-          "isRight": false
-        },
-        {
-          "describe": "Implement the line amount as a numeric formula field and the order amount as a roll-up summary field.",
+          "describe": "Default out-of-the-box configuration",
           "isRight": true
         },
         {
-          "describe": "Implement the line amount as a currency field and the order amount as SUM formula field.",
+          "describe": "Access to predefined computing resources",
           "isRight": false
         },
         {
-          "describe": "Write a single before trigger on the Line Item that calculates the item amount and updates the order amount on the Order.",
+          "describe": "Unlimited processing power and memory",
+          "isRight": false
+        },
+        {
+          "describe": "Enforced best practices for development",
           "isRight": false
         }
       ],
-      "hashCode": "1988673045"
+      "hashCode": "1988673199",
+      "analysis": ""
     },
     {
       "describe": "Which process automation should be used to send an outbound message without using Apex code?",
@@ -110,29 +91,31 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672329"
+      "hashCode": "1988672329",
+      "analysis": ""
     },
     {
-      "describe": "A large corporation stores Orders and Line Items in Salesforce for different lines of business. Users are allowed see Orders across the entire organization,but,for security purposes, should only be able to see the Line Orders in their line of business.\nWhich type of relationship should be used between Line Items and Orders?",
+      "describe": "An org tracks customer orders on an Order object and the line items of an Order on the Line Item object. The Line Item object has a \nMaster/Detail relationship to the Order object. A developer has requirement to calculate the order amount on an Order and the line amount \non each Line Item based on quantity and price.\nWhat is the correct implementation?",
       "answerOptions": [
         {
-          "describe": "Master-Detail",
+          "describe": "Write a process an the Line Item that calculated the item amount and order amount and updates the fields on the Line Item and the Order.",
+          "isRight": false
+        },
+        {
+          "describe": "Implement the line amount as a numeric formula field and the order amount as a roll-up summary field.",
           "isRight": true
         },
         {
-          "describe": "Lookup",
+          "describe": "Implement the line amount as a currency field and the order amount as SUM formula field.",
           "isRight": false
         },
         {
-          "describe": "Direct Lookup",
-          "isRight": false
-        },
-        {
-          "describe": "Indirect Lookup",
+          "describe": "Write a single before trigger on the Line Item that calculates the item amount and updates the order amount on the Order.",
           "isRight": false
         }
       ],
-      "hashCode": "1988674161"
+      "hashCode": "1988673045",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers stores Orders and Line Items in Salesforce. For security reasons, financial representatives are allowed to see information\non the Order such as order amount, but they are not allowed to see the Line Item on the Order.\nWhich type of relationship should be user?",
@@ -154,29 +137,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672368"
+      "hashCode": "1988672368",
+      "analysis": ""
     },
     {
-      "describe": "A developer wants to import 500 Opportunity records into a sandbox.\nWhy should the developer choose to use Data Loader instead of Data Import Wizard?",
+      "describe": "A large corporation stores Orders and Line Items in Salesforce for different lines of business. Users are allowed see Orders across the entire organization,but,for security purposes, should only be able to see the Line Orders in their line of business.\nWhich type of relationship should be used between Line Items and Orders?",
       "answerOptions": [
         {
-          "describe": "Data Import Wizard does not support Opportunities.",
+          "describe": "Master-Detail",
           "isRight": true
         },
         {
-          "describe": "Data Import Wizard can not import all 500 records.",
+          "describe": "Lookup",
           "isRight": false
         },
         {
-          "describe": "Data Loader runs from the developer's browser.",
+          "describe": "Direct Lookup",
           "isRight": false
         },
         {
-          "describe": "Data Loader automatically relates Opportunities to Accounts.",
+          "describe": "Indirect Lookup",
           "isRight": false
         }
       ],
-      "hashCode": "1988673138"
+      "hashCode": "1988674161",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to join data received from an integration with an external system with parent records in Salesforce. The data set does not contain the Salesforce IDs of the parent records, but it does have a foreign key attribute that can be used to identify the parent.\n\nWhich action will allow the developer to relate records in the data model without knowing the salesforce ID?",
@@ -198,29 +183,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673292"
+      "hashCode": "1988673292",
+      "analysis": ""
     },
     {
-      "describe": "Universal Containers has a support process that allows users to request support from its engineering team using custom object, Engineering_Support_c.\nUsers should be able to associate multiple Engineering Support_c records to a single Opportunty record.Addltionally, aggregate information about the Engineering Support _c records should be shown on the Opportunity record.\nWhat should a developer implement to support these requirements?",
+      "describe": "A developer wants to import 500 Opportunity records into a sandbox.\nWhy should the developer choose to use Data Loader instead of Data Import Wizard?",
       "answerOptions": [
         {
-          "describe": "Lookup field from Engineering_Support_c to Opportunity",
-          "isRight": false
-        },
-        {
-          "describe": "Master-detail field from EngineeringSupport_c to Opportunity",
+          "describe": "Data Import Wizard does not support Opportunities.",
           "isRight": true
         },
         {
-          "describe": "Lookup field from Opportunity to Engineering Support_c",
+          "describe": "Data Import Wizard can not import all 500 records.",
           "isRight": false
         },
         {
-          "describe": "Master-detail field from Opportunity to Engineering Support_c",
+          "describe": "Data Loader runs from the developer's browser.",
+          "isRight": false
+        },
+        {
+          "describe": "Data Loader automatically relates Opportunities to Accounts.",
           "isRight": false
         }
       ],
-      "hashCode": "1988674126"
+      "hashCode": "1988673138",
+      "analysis": ""
     },
     {
       "describe": "UC has implemented an order management application. Each Order can have one or more Order Line items. The order Line object is related to the Order via a master-detail relationship. For each Order Line item, the total price is calculated by multiplying the Order Line item price with the quantity ordered.\nWhat is the best practice to get the sum of all Order Line item totals on the Order record?",
@@ -242,7 +229,54 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674071"
+      "hashCode": "1988674071",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers has a support process that allows users to request support from its engineering team using custom object, Engineering_Support_c.\nUsers should be able to associate multiple Engineering Support_c records to a single Opportunty record.Addltionally, aggregate information about the Engineering Support _c records should be shown on the Opportunity record.\nWhat should a developer implement to support these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Lookup field from Engineering_Support_c to Opportunity",
+          "isRight": false
+        },
+        {
+          "describe": "Master-detail field from EngineeringSupport_c to Opportunity",
+          "isRight": true
+        },
+        {
+          "describe": "Lookup field from Opportunity to Engineering Support_c",
+          "isRight": false
+        },
+        {
+          "describe": "Master-detail field from Opportunity to Engineering Support_c",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674126",
+      "analysis": ""
+    },
+    {
+      "describe": "In terms of the MVC paradigm,what are two advantages of lmplementing the viewlayer of application using Lightning Web Component-based development over Visualforce?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Built-in standard and custom set controllers",
+          "isRight": false
+        },
+        {
+          "describe": "Log capturing via the Debug Logs Setup page",
+          "isRight": false
+        },
+        {
+          "describe": "Self-contained and reusable units of an application",
+          "isRight": true
+        },
+        {
+          "describe": "Rich component ecosystem",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674130",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers decides to use exclusively declarative development to build out a new Salesforce application.\nWhich three options should be used to build out the database layer for the application? Choose 3 answers",
@@ -268,51 +302,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673079"
-    },
-    {
-      "describe": "In terms of the MVC paradigm,what are two advantages of lmplementing the viewlayer of application using Lightning Web Component-based development over Visualforce?\nChoose 2 answers",
-      "answerOptions": [
-        {
-          "describe": "Built-in standard and custom set controllers",
-          "isRight": false
-        },
-        {
-          "describe": "Log capturing via the Debug Logs Setup page",
-          "isRight": false
-        },
-        {
-          "describe": "Self-contained and reusable units of an application",
-          "isRight": true
-        },
-        {
-          "describe": "Rich component ecosystem",
-          "isRight": true
-        }
-      ],
-      "hashCode": "1988674130"
-    },
-    {
-      "describe": "When importing and exporting data into Salesforce, Which two statement are true?\nChoose 2 answers",
-      "answerOptions": [
-        {
-          "describe": "Data import wizard is a client application provided by Salesforce.",
-          "isRight": false
-        },
-        {
-          "describe": "Developer and Developer Pro sandboxes have different storage limits.",
-          "isRight": true
-        },
-        {
-          "describe": "Bulk API can be used to import large data volumes in development environments without bypassing the storage limits.",
-          "isRight": true
-        },
-        {
-          "describe": "Bulk API can be used to bypass the storage limits when importing large data volumes in development environments.",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988673294"
+      "hashCode": "1988673079",
+      "analysis": ""
     },
     {
       "describe": "Which three process automations can immediately send an email notification to the owner of an Opportunity \nwhen its Amount is changed to be greater than $10.000? Choose 3 answers",
@@ -338,29 +329,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672330"
+      "hashCode": "1988672330",
+      "analysis": ""
     },
     {
-      "describe": "As part of a data cleanup strategy, AW Computing wants to proactively delete associated opportunity records when the related Account is deleted.\nWhich automation tool should be used to meet this business requirement?",
+      "describe": "When importing and exporting data into Salesforce, Which two statement are true?\nChoose 2 answers",
       "answerOptions": [
         {
-          "describe": "Outbound messaging",
+          "describe": "Data import wizard is a client application provided by Salesforce.",
           "isRight": false
         },
         {
-          "describe": "Record-triggered flow",
+          "describe": "Developer and Developer Pro sandboxes have different storage limits.",
           "isRight": true
         },
         {
-          "describe": "Scheduled job",
-          "isRight": false
+          "describe": "Bulk API can be used to import large data volumes in development environments without bypassing the storage limits.",
+          "isRight": true
         },
         {
-          "describe": "Flow Orchestration",
+          "describe": "Bulk API can be used to bypass the storage limits when importing large data volumes in development environments.",
           "isRight": false
         }
       ],
-      "hashCode": "1995171549"
+      "hashCode": "1988673294",
+      "analysis": ""
     },
     {
       "describe": "Which process automation should be used to post a message to Chatter without using Apex code?",
@@ -382,29 +375,31 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674009"
+      "hashCode": "1988674009",
+      "analysis": ""
     },
     {
-      "describe": "A recursive transaction is initiated by a DML statement creating records for these two objects:\n1. Accounts\n2. Contacts\nThe Account trigger hits a stack depth of 16:\nWhich statement is true regarding the outcome of the transaction?",
+      "describe": "As part of a data cleanup strategy, AW Computing wants to proactively delete associated opportunity records when the related Account is deleted.\nWhich automation tool should be used to meet this business requirement?",
       "answerOptions": [
         {
-          "describe": "The transaction fails and all the changes are rolled back.",
+          "describe": "Outbound messaging",
+          "isRight": false
+        },
+        {
+          "describe": "Record-triggered flow",
           "isRight": true
         },
         {
-          "describe": "The transaction succeeds as long as the Contact trigger stack depth is less than 16.",
+          "describe": "Scheduled job",
           "isRight": false
         },
         {
-          "describe": "The transaction succeeds and all changes are committed to the database.",
-          "isRight": false
-        },
-        {
-          "describe": "The transaction fails only if the Contact trigger stack depth is greater or equal to 16.",
+          "describe": "Flow Orchestration",
           "isRight": false
         }
       ],
-      "hashCode": "1988673047"
+      "hashCode": "1995171549",
+      "analysis": ""
     },
     {
       "describe": "A developer has an integer variable called maxAttempts. The developer needs to ensure that once maxAttempts is initialized, it preserves its value for the length of the Apex transaction; while being able to share the variable's state between trigger executions.\n\nHow should the developer declare max attempts to meet these requirements?",
@@ -426,29 +421,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672305"
+      "hashCode": "1988672305",
+      "analysis": ""
     },
     {
-      "describe": "The Salesforce Administrator created a custom picklist field Account_ status_c, on the Account object. This picklist has possible values of \"Inactive\" and \"Active\". As part of a new business process, management wants to ensure an opportunity record is created only for Accounts marked as Active. A developer is asked to implement this business requirement.\nWhich automation tool should be used to fulfill the business need?",
+      "describe": "A recursive transaction is initiated by a DML statement creating records for these two objects:\n1. Accounts\n2. Contacts\nThe Account trigger hits a stack depth of 16:\nWhich statement is true regarding the outcome of the transaction?",
       "answerOptions": [
         {
-          "describe": "Entitlement Process",
-          "isRight": false
-        },
-        {
-          "describe": "Salesforce Flow",
+          "describe": "The transaction fails and all the changes are rolled back.",
           "isRight": true
         },
         {
-          "describe": "Outbound Messaing",
+          "describe": "The transaction succeeds as long as the Contact trigger stack depth is less than 16.",
           "isRight": false
         },
         {
-          "describe": "Approval Process",
+          "describe": "The transaction succeeds and all changes are committed to the database.",
+          "isRight": false
+        },
+        {
+          "describe": "The transaction fails only if the Contact trigger stack depth is greater or equal to 16.",
           "isRight": false
         }
       ],
-      "hashCode": "1988674066"
+      "hashCode": "1988673047",
+      "analysis": ""
     },
     {
       "describe": "A develper writes a trigger on the Account object on the before update event that increments a count field. A workflow rule also increments the count field every time that an Account is created or updated. The field update in the workflow rule is configured to not re-evaluate workflow rules.\nWhat is the value of the count field if an Account is inserted with an initial value of zero, assuming no other automation logic is implemented on theAccount?",
@@ -470,29 +467,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672299"
+      "hashCode": "1988672299",
+      "analysis": ""
     },
     {
-      "describe": "CK has a multi-screen flow that its call center agents use when handling inbound service desk calls.\nAt one of the steps in the flow, the agents should be presented with a list of order numbers and dates that are retrieved from an external order management system in real time and displayed on the screen.\nWhat should a developer use to satisfy this requirement?",
+      "describe": "The Salesforce Administrator created a custom picklist field Account_ status_c, on the Account object. This picklist has possible values of \"Inactive\" and \"Active\". As part of a new business process, management wants to ensure an opportunity record is created only for Accounts marked as Active. A developer is asked to implement this business requirement.\nWhich automation tool should be used to fulfill the business need?",
       "answerOptions": [
         {
-          "describe": "An Apex REST class",
+          "describe": "Entitlement Process",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce Flow",
           "isRight": true
         },
         {
-          "describe": "An outbound message",
+          "describe": "Outbound Messaing",
           "isRight": false
         },
         {
-          "describe": "An Apex controller",
-          "isRight": false
-        },
-        {
-          "describe": "An invocable method",
+          "describe": "Approval Process",
           "isRight": false
         }
       ],
-      "hashCode": "1988674033"
+      "hashCode": "1988674066",
+      "analysis": ""
     },
     {
       "describe": "UMS has a custom object, ServiceJob__c, with an optinal Lookup field to Account called Partner_Service_Provider__c.\nThe TotalJobs__c field on Account tracks the total number of ServiceJob__c records to which a partner service provider Account is related.\nWhat is the most efficient way to ensure that the TotalJobs__c field is kept up to date?",
@@ -514,29 +513,31 @@
           "isRight": true
         }
       ],
-      "hashCode": "1995171575"
+      "hashCode": "1995171575",
+      "analysis": ""
     },
     {
-      "describe": "If Apex code executes inside the execute() method of an Apex class when implementing the Batchable interface, which two statement are true regarding governor limits? Choose 2 answers",
+      "describe": "CK has a multi-screen flow that its call center agents use when handling inbound service desk calls.\nAt one of the steps in the flow, the agents should be presented with a list of order numbers and dates that are retrieved from an external order management system in real time and displayed on the screen.\nWhat should a developer use to satisfy this requirement?",
       "answerOptions": [
         {
-          "describe": "The Apex governor limits are reset for each iteration of execute() method.",
+          "describe": "An Apex REST class",
           "isRight": true
         },
         {
-          "describe": "The Apex governor limits cannot be exceeded due to the asynchronous nature of the transaction.",
-          "isRight": true
-        },
-        {
-          "describe": "The Apex governor limits might be higher due to the asynchronous nature of the transaction.",
+          "describe": "An outbound message",
           "isRight": false
         },
         {
-          "describe": "The Apex governor limits are relaxed while calling the constructor of the Apex class.",
+          "describe": "An Apex controller",
+          "isRight": false
+        },
+        {
+          "describe": "An invocable method",
           "isRight": false
         }
       ],
-      "hashCode": "1988673048"
+      "hashCode": "1988674033",
+      "analysis": ""
     },
     {
       "describe": "Which two process automations can be used on their own to send Salesforce Outbound Message?\nChoose 2 answers",
@@ -558,29 +559,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674134"
+      "hashCode": "1988674134",
+      "analysis": ""
     },
     {
-      "describe": "<p>When a user edits the Postal Code on an Account, a custom Account text field named &quot;Timezone&quot; must be updated based on the values in a PostalCodeToTimezone__c custom object.\nWhich two automation tools can be used to implement this feature?\nChoose 2 answers</p>",
+      "describe": "If Apex code executes inside the execute() method of an Apex class when implementing the Batchable interface, which two statement are true regarding governor limits? Choose 2 answers",
       "answerOptions": [
         {
-          "describe": "<p>Fast Field Updates record-triggered flow</p>",
+          "describe": "The Apex governor limits are reset for each iteration of execute() method.",
           "isRight": true
         },
         {
-          "describe": "<p>Approval process</p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>Quick actions</p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>Account trigger</p>",
+          "describe": "The Apex governor limits cannot be exceeded due to the asynchronous nature of the transaction.",
           "isRight": true
+        },
+        {
+          "describe": "The Apex governor limits might be higher due to the asynchronous nature of the transaction.",
+          "isRight": false
+        },
+        {
+          "describe": "The Apex governor limits are relaxed while calling the constructor of the Apex class.",
+          "isRight": false
         }
       ],
-      "hashCode": "1988674095"
+      "hashCode": "1988673048",
+      "analysis": ""
     },
     {
       "describe": "A developer identifies the following triggers on the Expense__c object:\ndeleteExpense;\napplyDefaultsToExpense;\nvalidateExpenseUpdate;\n\nThe triggers process before delete, before insert, and before update event respectively.\nWhich two techniques should the developer implement to ensure reigger best practices are followed? Chooose 2 answers",
@@ -602,29 +605,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673136"
+      "hashCode": "1988673136",
+      "analysis": ""
     },
     {
-      "describe": "A developer created a weather app that contains multiple Lightning web components.\nOne of the components, called Toggle, has a toggle for Fahrenheit or Celsius units,Another Temperature, displays the current temperature in the unit selected in the Toggle component,.When a user toggles from Fahrenheit to Celsius or vice versa in the Toggle component, sent to the Temperature component so the temperature can be converted and displayed.\nWhat is the recommended way to accomplish this?",
+      "describe": "<p>When a user edits the Postal Code on an Account, a custom Account text field named &quot;Timezone&quot; must be updated based on the values in a PostalCodeToTimezone__c custom object.\nWhich two automation tools can be used to implement this feature?\nChoose 2 answers</p>",
       "answerOptions": [
         {
-          "describe": "The Toggle component should call a method in the Temperature component.",
-          "isRight": false
-        },
-        {
-          "describe": "Create a custom event to handle the communication between components.",
+          "describe": "<p>Fast Field Updates record-triggered flow</p>",
           "isRight": true
         },
         {
-          "describe": "Use an application event to communicate between the components.",
+          "describe": "<p>Approval process</p>",
           "isRight": false
         },
         {
-          "describe": "Use Lightning Message Service to communicate between the components.",
+          "describe": "<p>Quick actions</p>",
           "isRight": false
+        },
+        {
+          "describe": "<p>Account trigger</p>",
+          "isRight": true
         }
       ],
-      "hashCode": "1988674133"
+      "hashCode": "1988674095",
+      "analysis": ""
     },
     {
       "describe": "UC has a Visualforce page that displays a table of every Container__c being rented by a given Account. Recently this page is failing with a view state limit because some of the customers rent over 10,000 containers.\nWhat should a developer change about the Visualforce page to help with the page load errors?",
@@ -646,29 +651,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674189"
+      "hashCode": "1988674189",
+      "analysis": ""
     },
     {
-      "describe": "A credit card company needs to implement the functionality for a service agent to process credit cards. When the customers call in, the service agent must gather many places of information tasked to implement this functionality.\nWhat should the developer use to satisfy this requirement in the most efficient manner?",
+      "describe": "A developer created a weather app that contains multiple Lightning web components.\nOne of the components, called Toggle, has a toggle for Fahrenheit or Celsius units,Another Temperature, displays the current temperature in the unit selected in the Toggle component,.When a user toggles from Fahrenheit to Celsius or vice versa in the Toggle component, sent to the Temperature component so the temperature can be converted and displayed.\nWhat is the recommended way to accomplish this?",
       "answerOptions": [
         {
-          "describe": "Flow Builder",
+          "describe": "The Toggle component should call a method in the Temperature component.",
           "isRight": false
         },
         {
-          "describe": "Lightning Component",
+          "describe": "Create a custom event to handle the communication between components.",
           "isRight": true
         },
         {
-          "describe": "Approval Process",
+          "describe": "Use an application event to communicate between the components.",
           "isRight": false
         },
         {
-          "describe": "Apex Trigger",
+          "describe": "Use Lightning Message Service to communicate between the components.",
           "isRight": false
         }
       ],
-      "hashCode": "1988674132"
+      "hashCode": "1988674133",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to create a custom button for the Account object that, when clicked, will perform a series of calculations and redirect the user to a custom Visualforce page. The developer wants to ensure the Visualforce page matches the Lightning Experience user interface.\nWhat attribute needs to be defined within the <apex:page> tag to meet the requirement?",
@@ -690,7 +697,54 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674011"
+      "hashCode": "1988674011",
+      "analysis": ""
+    },
+    {
+      "describe": "A credit card company needs to implement the functionality for a service agent to process credit cards. When the customers call in, the service agent must gather many places of information tasked to implement this functionality.\nWhat should the developer use to satisfy this requirement in the most efficient manner?",
+      "answerOptions": [
+        {
+          "describe": "Flow Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning Component",
+          "isRight": true
+        },
+        {
+          "describe": "Approval Process",
+          "isRight": false
+        },
+        {
+          "describe": "Apex Trigger",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674132",
+      "analysis": ""
+    },
+    {
+      "describe": "A Salesforce Administrator used Flow Builder to create a flow named \"accountOnboarding\". The flow must be used inside an Aura component.\nWhich tag should a developer use to display the flow in the component?",
+      "answerOptions": [
+        {
+          "describe": "lightning-flow",
+          "isRight": false
+        },
+        {
+          "describe": "aura:flow",
+          "isRight": false
+        },
+        {
+          "describe": "aura-flow",
+          "isRight": false
+        },
+        {
+          "describe": "lightning:flow",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674008",
+      "analysis": ""
     },
     {
       "describe": "A developer has a single custom controller class that works with a Visualforce Wizard to support creating and editing multiple sObjects. The wizard accepts \ndata from user inputs across multiple Visualforce pages and from a parameter on the initial URL.\nWhich three statements are useful inside the unit test to effectively test the custom controller? Choose 3 answers",
@@ -716,55 +770,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674002"
-    },
-    {
-      "describe": "A Salesforce Administrator used Flow Builder to create a flow named \"accountOnboarding\". The flow must be used inside an Aura component.\nWhich tag should a developer use to display the flow in the component?",
-      "answerOptions": [
-        {
-          "describe": "lightning-flow",
-          "isRight": false
-        },
-        {
-          "describe": "aura:flow",
-          "isRight": false
-        },
-        {
-          "describe": "aura-flow",
-          "isRight": false
-        },
-        {
-          "describe": "lightning:flow",
-          "isRight": true
-        }
-      ],
-      "hashCode": "1988674008"
-    },
-    {
-      "describe": "Which three web technologies can be integrated into a Visualforce page?",
-      "answerOptions": [
-        {
-          "describe": "JavaScript",
-          "isRight": true
-        },
-        {
-          "describe": "HTML",
-          "isRight": true
-        },
-        {
-          "describe": "Java",
-          "isRight": false
-        },
-        {
-          "describe": "CSS",
-          "isRight": true
-        },
-        {
-          "describe": "PHP",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988673078"
+      "hashCode": "1988674002",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to allow users to complete a form on an Account record that will create a record for a custom object. The form needs to display different fields depending on the user's job role. The functionality should only be available to a small group of users.\nWhich three things should the developer do to satisfy these requirements?\nChoose 3 answers",
@@ -790,29 +797,35 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674010"
+      "hashCode": "1988674010",
+      "analysis": ""
     },
     {
-      "describe": "Which two statements are true about Getter and Setter methods as they relate to Visualforce? Choose 2 answers",
+      "describe": "Which three web technologies can be integrated into a Visualforce page?",
       "answerOptions": [
         {
-          "describe": "Getter methods can pass a value from a controller to a page.",
+          "describe": "JavaScript",
           "isRight": true
         },
         {
-          "describe": "There is no guarantee for the order in which Getter or Setter methods are executed.",
+          "describe": "HTML",
           "isRight": true
         },
         {
-          "describe": "Setter methods always have to be declared global.",
+          "describe": "Java",
           "isRight": false
         },
         {
-          "describe": "Setter methods can pass a value from a controller to a page.",
+          "describe": "CSS",
+          "isRight": true
+        },
+        {
+          "describe": "PHP",
           "isRight": false
         }
       ],
-      "hashCode": "1988673291"
+      "hashCode": "1988673078",
+      "analysis": ""
     },
     {
       "describe": "Which three Salesforce resources can be accessed from a Lighting web component?  Choose 3 answers",
@@ -838,29 +851,31 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673173"
+      "hashCode": "1988673173",
+      "analysis": "https://developer.salesforce.com/docs/component-library/documentation/en/lwc/create_global_value_providers"
     },
     {
-      "describe": "A developer created a new Apex trigger with a helper class, and writes a test class that only exercises 95% coverage of the new Apex helper class.\nChange set deployment to production fails with the test coverage warning:\n\"Test coverage of selected Apex Trigger is 0%, at least 1% test coverage is required.\"\nWhat should the developer do to successfully deploy the new Apex trigger and helper class?",
+      "describe": "Which two statements are true about Getter and Setter methods as they relate to Visualforce? Choose 2 answers",
       "answerOptions": [
         {
-          "describe": "Increase the test class coverage on the helper class.",
-          "isRight": false
-        },
-        {
-          "describe": "Run the tests using the 'Run All Tests' method.",
-          "isRight": false
-        },
-        {
-          "describe": "Create a test class and methods to cover the Apex trigger.",
+          "describe": "Getter methods can pass a value from a controller to a page.",
           "isRight": true
         },
         {
-          "describe": "Remove the failing test methods from the test class.",
+          "describe": "There is no guarantee for the order in which Getter or Setter methods are executed.",
+          "isRight": true
+        },
+        {
+          "describe": "Setter methods always have to be declared global.",
+          "isRight": false
+        },
+        {
+          "describe": "Setter methods can pass a value from a controller to a page.",
           "isRight": false
         }
       ],
-      "hashCode": "1988672366"
+      "hashCode": "1988673291",
+      "analysis": ""
     },
     {
       "describe": "How should a developer write unit tests for a private method in an Apex class?",
@@ -882,29 +897,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673137"
+      "hashCode": "1988673137",
+      "analysis": ""
     },
     {
-      "describe": "When using SalesforceDX, what does a developer need to enable to create and manage scratch orgs?",
+      "describe": "A developer created a new Apex trigger with a helper class, and writes a test class that only exercises 95% coverage of the new Apex helper class.\nChange set deployment to production fails with the test coverage warning:\n\"Test coverage of selected Apex Trigger is 0%, at least 1% test coverage is required.\"\nWhat should the developer do to successfully deploy the new Apex trigger and helper class?",
       "answerOptions": [
         {
-          "describe": "Sandbox",
+          "describe": "Increase the test class coverage on the helper class.",
           "isRight": false
         },
         {
-          "describe": "Dev Hub",
+          "describe": "Run the tests using the 'Run All Tests' method.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a test class and methods to cover the Apex trigger.",
           "isRight": true
         },
         {
-          "describe": "Environment Hub",
-          "isRight": false
-        },
-        {
-          "describe": "Production",
+          "describe": "Remove the failing test methods from the test class.",
           "isRight": false
         }
       ],
-      "hashCode": "1988673230"
+      "hashCode": "1988672366",
+      "analysis": ""
     },
     {
       "describe": "While writing an Apex class that creates Accounts, a developer wants to make sure that all required fields are handled properly.\nWhich approach should the developer use to be sure that the Apex classworks correctly?",
@@ -926,29 +943,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673198"
+      "hashCode": "1988673198",
+      "analysis": ""
     },
     {
-      "describe": "A team of developers is working on a source-driven project that allows them to work independently, with many different org configurations.\nWhich type of Salesforce orgs should they use for their development?",
+      "describe": "When using SalesforceDX, what does a developer need to enable to create and manage scratch orgs?",
       "answerOptions": [
         {
-          "describe": "Full Copy sandboxes",
+          "describe": "Sandbox",
           "isRight": false
         },
         {
-          "describe": "Developer orgs",
-          "isRight": false
-        },
-        {
-          "describe": "Developer sandboxes",
-          "isRight": false
-        },
-        {
-          "describe": "Scratch orgs.",
+          "describe": "Dev Hub",
           "isRight": true
+        },
+        {
+          "describe": "Environment Hub",
+          "isRight": false
+        },
+        {
+          "describe": "Production",
+          "isRight": false
         }
       ],
-      "hashCode": "1988672300"
+      "hashCode": "1988673230",
+      "analysis": "https://help.salesforce.com/articleView?id=managing_scratch_orgs.htm&type=5"
     },
     {
       "describe": "While working in a sandbox an Apex test fails when run in the Test Framework, but the Apex test logic succeeds with no exceptions or errors when run in the Developer Console.\n\nWhy did the method fail in the sandbox test framework but succeed in the Developer Console?",
@@ -970,29 +989,31 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673232"
+      "hashCode": "1988673232",
+      "analysis": ""
     },
     {
-      "describe": "A developer is writing tests for a class and needs to insert records to validate functionality.\nWhich annotation method should be used to create records for every method in the test class?",
+      "describe": "A team of developers is working on a source-driven project that allows them to work independently, with many different org configurations.\nWhich type of Salesforce orgs should they use for their development?",
       "answerOptions": [
         {
-          "describe": "@PreTest",
+          "describe": "Full Copy sandboxes",
           "isRight": false
         },
         {
-          "describe": "@StartTest",
+          "describe": "Developer orgs",
           "isRight": false
         },
         {
-          "describe": "@isTest(SeeAllData=true)",
+          "describe": "Developer sandboxes",
           "isRight": false
         },
         {
-          "describe": "@TestSetup",
+          "describe": "Scratch orgs.",
           "isRight": true
         }
       ],
-      "hashCode": "1988672333"
+      "hashCode": "1988672300",
+      "analysis": ""
     },
     {
       "describe": "Which scenario is valid for execution by unit tests?",
@@ -1014,29 +1035,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673227"
+      "hashCode": "1988673227",
+      "analysis": ""
     },
     {
-      "describe": "A developer completed modifications to a customized feature that is comprised of two elements:\n●Apex trigger\n●Trigger handler Apex class\nWhat are two factors that the developer must take into account to properly deploy the modification to the production environment?\nChoose 2 answers",
+      "describe": "A developer is writing tests for a class and needs to insert records to validate functionality.\nWhich annotation method should be used to create records for every method in the test class?",
       "answerOptions": [
         {
-          "describe": "Apex classes must have at least 75% code coverage org-wide.",
-          "isRight": true
-        },
-        {
-          "describe": "Test methods must be declared with the testMethod keyword.",
+          "describe": "@PreTest",
           "isRight": false
         },
         {
-          "describe": "At least one line of code must be executed for the Apex trigger.",
-          "isRight": true
+          "describe": "@StartTest",
+          "isRight": false
         },
         {
-          "describe": "All methods in the test classes must use @isTest.",
+          "describe": "@isTest(SeeAllData=true)",
           "isRight": false
+        },
+        {
+          "describe": "@TestSetup",
+          "isRight": true
         }
       ],
-      "hashCode": "1988674042"
+      "hashCode": "1988672333",
+      "analysis": ""
     },
     {
       "describe": "A developer created a trigger on the Account object and wants to test if the trigger is properly bulkified.The developer team decided that the trigger should be tested with 200 account records with unique names.\nWhat two things should be done to create the test data within the unit test with the least amount of code?Choose 2 answers",
@@ -1058,7 +1081,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674070"
+      "hashCode": "1988674070",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer completed modifications to a customized feature that is comprised of two elements:\n●Apex trigger\n●Trigger handler Apex class\nWhat are two factors that the developer must take into account to properly deploy the modification to the production environment?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Apex classes must have at least 75% code coverage org-wide.",
+          "isRight": true
+        },
+        {
+          "describe": "Test methods must be declared with the testMethod keyword.",
+          "isRight": false
+        },
+        {
+          "describe": "At least one line of code must be executed for the Apex trigger.",
+          "isRight": true
+        },
+        {
+          "describe": "All methods in the test classes must use @isTest.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674042",
+      "analysis": ""
     },
     {
       "describe": "Which two events need to happen when deploying to a production org?Choose 2 answers",
@@ -1080,7 +1127,31 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673073"
+      "hashCode": "1988673073",
+      "analysis": ""
+    },
+    {
+      "describe": "Which two sfdx commands can be used to add testing data to a Developer sandbox?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "force:data:tree:import",
+          "isRight": true
+        },
+        {
+          "describe": "force: data:object:create",
+          "isRight": false
+        },
+        {
+          "describe": "force:data:bulk: upsert",
+          "isRight": true
+        },
+        {
+          "describe": "force:data:async:apsert",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674100",
+      "analysis": ""
     },
     {
       "describe": "Which three statements are true regarding custom exceptions in Apex? Choose 3 answers",
@@ -1106,7 +1177,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672301"
+      "hashCode": "1988672301",
+      "analysis": ""
     },
     {
       "describe": "The Account object in an organization has a master detail relationship to a child object called Branch. The following automations exist:\nRollup summary fields.\nCustom validation rules\nDuplicate rules\nA developer created a trigger on the Account object.\nWhat two things should the developer consider while testing the trigger code?\nChoose 2 answers",
@@ -1128,51 +1200,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674104"
-    },
-    {
-      "describe": "Which two sfdx commands can be used to add testing data to a Developer sandbox?\nChoose 2 answers",
-      "answerOptions": [
-        {
-          "describe": "force:data:tree:import",
-          "isRight": true
-        },
-        {
-          "describe": "force: data:object:create",
-          "isRight": false
-        },
-        {
-          "describe": "force:data:bulk: upsert",
-          "isRight": true
-        },
-        {
-          "describe": "force:data:async:apsert",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988674100"
-    },
-    {
-      "describe": "<p>Refer to the following code snippet for an environment has more than 200 Accounts belonging to the &#39;Technology&#39; industry:</p><p>for(Account thisAccount : [Select Id, Industry FROM Account LIMIT 150]){</p><p>&nbsp; &nbsp; &nbsp;if(thisAccount.Industry == &#39;Technology&#39; ){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;thisAccount.Is_Tech__c = true;</p><p>&nbsp; &nbsp; &nbsp; }</p><p>update thisAccount;</p><p>}</p><p><br/></p><p>When the code executes, what happens as a result of the Apex transaction?</p><p><br/></p>",
-      "answerOptions": [
-        {
-          "describe": "<p>If executed in an asynchronous context, the Apex transaction is likely to fail by exceeding the DML governor limit.</p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>If executed in a synchronous context, the Apex transaction is likely to fail by exceeding the DML governor limit.</p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>The Apex transaction succeeds regardless of any uncaught exception and all processed accounts are updated.</p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>The Apex transaction fails with the following message: Sobject row was retrieved via SOQL without querying the requested field: Account.Is_Tech__c.</p>",
-          "isRight": true
-        }
-      ],
-      "hashCode": "1988675002"
+      "hashCode": "1988674104",
+      "analysis": ""
     },
     {
       "describe": "<p>The following Apex method is part of the ContactSertvice class that is called from a trigger:</p><p>public static void setBusinessUnitToEMEA(Contact thisContact){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; thisContact . Business_Unit__c = &#39;EMEA&#39;;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; update thisContact;</p><p>}</p><p><br/></p><p>How should the developer modify the code to ensure best practices are met?</p><p><br/></p>",
@@ -1194,29 +1223,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674285"
+      "hashCode": "1988674285",
+      "analysis": ""
     },
     {
-      "describe": "<p>A developer wrote the following two classes:</p><p><br/></p><p>public with sharing class statusFetcher{</p><p>private Boolean active = true;</p><p>private Boolean isActive(){</p><p>return active;</p><p>}</p><p>}</p><p>public with sharing class Calculator{</p><p>public void doCalculations()</p><p>StatusFetcher sFetcher = new StatusFetcher();</p><p>if(sFetcher.isActive())</p><p>//do calculatlons here</p><p>}</p><p>&nbsp; }</p><p>}</p><p><br/></p><p>The StatusFetcher class successfully complled and saved.However, the calculator class has a compile time error.</p><p>How should the developer fix this code?</p><p><br/></p>",
+      "describe": "<p>Refer to the following code snippet for an environment has more than 200 Accounts belonging to the &#39;Technology&#39; industry:</p><p>for(Account thisAccount : [Select Id, Industry FROM Account LIMIT 150]){</p><p>&nbsp; &nbsp; &nbsp;if(thisAccount.Industry == &#39;Technology&#39; ){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;thisAccount.Is_Tech__c = true;</p><p>&nbsp; &nbsp; &nbsp; }</p><p>update thisAccount;</p><p>}</p><p><br/></p><p>When the code executes, what happens as a result of the Apex transaction?</p><p><br/></p>",
       "answerOptions": [
         {
-          "describe": "<p>Make the docalculations method in the calculator class private.</p>",
+          "describe": "<p>If executed in an asynchronous context, the Apex transaction is likely to fail by exceeding the DML governor limit.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>Change the class declaration for the calculator class to public with inherited sharing.</p>",
+          "describe": "<p>If executed in a synchronous context, the Apex transaction is likely to fail by exceeding the DML governor limit.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>Change the class declaration for the statusFetcher class to public with inherited sharing.</p>",
+          "describe": "<p>The Apex transaction succeeds regardless of any uncaught exception and all processed accounts are updated.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>Make the isActive method in the statusFetcher class public.</p>",
+          "describe": "<p>The Apex transaction fails with the following message: Sobject row was retrieved via SOQL without querying the requested field: Account.Is_Tech__c.</p>",
           "isRight": true
         }
       ],
-      "hashCode": "1988674999"
+      "hashCode": "1988675002",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer needs to implement a custom SOAP Web Service that is used by an external Web Application. The developer chooses to include helper methods that are not used by the Web Application in the implementation of the Web Service Class.\nWhich code segment shows the correct declaration of the class and methods?</p>",
@@ -1238,29 +1269,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674994"
+      "hashCode": "1988674994",
+      "analysis": ""
     },
     {
-      "describe": "<p>Refer to the following code that runs in an Execute Anonymous block:</p><p>for( List&lt;Lead&gt; theseLeads : [SELECT LastName, Company, Email FROM Lead LIMIT 20000]) {</p><p>&nbsp; &nbsp; for(Lead thisLead : theseLeads) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(thisLead.Email == null)</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; thisLead.Email = assignGenericEmail(thisLead.LastName, thisLead.Company);</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp;Database.Update(theseLeads, false);</p><p>}</p><p>In an environment where the full result set is returned, what is a possible outcome of this code?</p><p><br/></p>",
+      "describe": "<p>A developer wrote the following two classes:</p><p><br/></p><p>public with sharing class statusFetcher{</p><p>private Boolean active = true;</p><p>private Boolean isActive(){</p><p>return active;</p><p>}</p><p>}</p><p>public with sharing class Calculator{</p><p>public void doCalculations()</p><p>StatusFetcher sFetcher = new StatusFetcher();</p><p>if(sFetcher.isActive())</p><p>//do calculatlons here</p><p>}</p><p>&nbsp; }</p><p>}</p><p><br/></p><p>The StatusFetcher class successfully complled and saved.However, the calculator class has a compile time error.</p><p>How should the developer fix this code?</p><p><br/></p>",
       "answerOptions": [
         {
-          "describe": "<p>The transaction will succeed and the first ten thousand records will be committed to the database.</p>",
+          "describe": "<p>Make the docalculations method in the calculator class private.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>The total number of DML statements issued will be exceeded.</p>",
+          "describe": "<p>Change the class declaration for the calculator class to public with inherited sharing.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>The total number of records processed as a result of DML statements will be exceeded.</p>",
+          "describe": "<p>Change the class declaration for the statusFetcher class to public with inherited sharing.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Make the isActive method in the statusFetcher class public.</p>",
           "isRight": true
-        },
-        {
-          "describe": "<p>The transaction will succeed and the full result set changes will be committed to the database.</p>",
-          "isRight": false
         }
       ],
-      "hashCode": "1988674966"
+      "hashCode": "1988674999",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer must modify the following code snippet to prevent the number of SOQL queries issued from exceeding the platform governor limit.</p><p>public without sharing class OpportunityService{</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; public static List&lt;OpportunityLineItem&gt; getOpportunityProducts(Set&lt;Id&gt; opportunityIds){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List&lt;OpportunityLineItem&gt; oppLineItems = new List&lt;OpportunityLineItem&gt;();</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for(Id thisOppId : opportunityIds){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; oppLineItems. addAll([Select Id FROM OppLineItem WHERE OpportunityId = :thisOppId]);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; &nbsp; return oppLineItems;</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp;}</p><p><br/></p><p>The above method might be called during a trigger execution via a Lightning component.</p><p>Which technique should be implemented to avoid reaching the governor limit?</p><p><br/></p>",
@@ -1282,29 +1315,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674194"
+      "hashCode": "1988674194",
+      "analysis": ""
     },
     {
-      "describe": "<p>Given the following code snippet, that is part of a custom controller for a Visualforce page:</p><p>public void updateContact(Contact thisContact) {</p><p>&nbsp; &nbsp; &nbsp;thisContact.Is_Active__c = false;</p><p>&nbsp; &nbsp; &nbsp;try{</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; update thisContact;</p><p>&nbsp; &nbsp; &nbsp;}catch(Exception e) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String errorMessage = &#39;An error occurred while updating the Contact. &#39; + e.getMessage());</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ApexPages.addmessage(new ApexPages.message(ApexPages.severity.FATAL.errorMessage));</p><p>&nbsp; &nbsp; &nbsp;}</p><p>}</p><p>In which two ways can the try/catch be enclosed to enforce object and field-level permissions and prevent the DML statement from being executed if the&nbsp;</p><p>current logged-in user does not have the appropriate level of access?&nbsp;</p><p>Choose 2 answers</p><p><br/></p>",
+      "describe": "<p>Refer to the following code that runs in an Execute Anonymous block:</p><p>for( List&lt;Lead&gt; theseLeads : [SELECT LastName, Company, Email FROM Lead LIMIT 20000]) {</p><p>&nbsp; &nbsp; for(Lead thisLead : theseLeads) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(thisLead.Email == null)</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; thisLead.Email = assignGenericEmail(thisLead.LastName, thisLead.Company);</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp;Database.Update(theseLeads, false);</p><p>}</p><p>In an environment where the full result set is returned, what is a possible outcome of this code?</p><p><br/></p>",
       "answerOptions": [
         {
-          "describe": "<p>Use if (thisContact.OwnerId == UserInfo.getUserId())</p>",
+          "describe": "<p>The transaction will succeed and the first ten thousand records will be committed to the database.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>Use if (Schema.sObjectType.Contact.isUpdatable())</p>",
-          "isRight": true
-        },
-        {
-          "describe": "<p>Use if (Schema.sObjectType.Contact.isAccessible())</p>",
+          "describe": "<p>The total number of DML statements issued will be exceeded.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>Use if (Schema.sObjectType.Contact.fields.Is_Active__c.isUpdateable())</p>",
+          "describe": "<p>The total number of records processed as a result of DML statements will be exceeded.</p>",
           "isRight": true
+        },
+        {
+          "describe": "<p>The transaction will succeed and the full result set changes will be committed to the database.</p>",
+          "isRight": false
         }
       ],
-      "hashCode": "1988674970"
+      "hashCode": "1988674966",
+      "analysis": ""
     },
     {
       "describe": "<p>What will be the output in the debug log in the event of a QueryException duing a call to the aQuery method in the following example?</p><p><br/></p><p>class myClass {</p><p>&nbsp; &nbsp;class CustomException extends QueryException&nbsp; { }</p><p>&nbsp; &nbsp;public static Account aQuery( ) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Account theAccount;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;try {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;system. debug( &#39; Querying Accounts. &#39;);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;theAccount = [SELECT Id FROM Account WHERE CreatedDate &gt; TODAY] ;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; catch (CustomException eX) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; system.debug(&#39; Custom Exception. &#39;);</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; catch (QueryException eX) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; system.debug(&#39;Query Exception. &#39;);</p><p>&nbsp; &nbsp; &nbsp; }&nbsp;</p><p>&nbsp; &nbsp; &nbsp;finally {</p><p>&nbsp; &nbsp; &nbsp; &nbsp;system.debug(&#39;Done. &#39;);</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; return theAccount ;</p><p>&nbsp; }</p><p>}</p><p><br/></p>",
@@ -1326,29 +1361,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674284"
+      "hashCode": "1988674284",
+      "analysis": ""
     },
     {
-      "describe": "<p>Which code displays the contents of a Visualforce page as a PDF?</p>",
+      "describe": "<p>Given the following code snippet, that is part of a custom controller for a Visualforce page:</p><p>public void updateContact(Contact thisContact) {</p><p>&nbsp; &nbsp; &nbsp;thisContact.Is_Active__c = false;</p><p>&nbsp; &nbsp; &nbsp;try{</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; update thisContact;</p><p>&nbsp; &nbsp; &nbsp;}catch(Exception e) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String errorMessage = &#39;An error occurred while updating the Contact. &#39; + e.getMessage());</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ApexPages.addmessage(new ApexPages.message(ApexPages.severity.FATAL.errorMessage));</p><p>&nbsp; &nbsp; &nbsp;}</p><p>}</p><p>In which two ways can the try/catch be enclosed to enforce object and field-level permissions and prevent the DML statement from being executed if the&nbsp;</p><p>current logged-in user does not have the appropriate level of access?&nbsp;</p><p>Choose 2 answers</p><p><br/></p>",
       "answerOptions": [
         {
-          "describe": "<p>&lt;apex:page renderAs=&quot;pdf&quot;&gt;</p>",
+          "describe": "<p>Use if (thisContact.OwnerId == UserInfo.getUserId())</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use if (Schema.sObjectType.Contact.isUpdatable())</p>",
           "isRight": true
         },
         {
-          "describe": "<p>&lt;apex:page contentType=&quot;pdf&quot;&gt;</p>",
+          "describe": "<p>Use if (Schema.sObjectType.Contact.isAccessible())</p>",
           "isRight": false
         },
         {
-          "describe": "<p>&lt;apex:page contentType=&quot;application/pdf&quot;&gt;</p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>&lt;apex:page renderAs=&quot;application/pdf&quot;&gt;</p>",
-          "isRight": false
+          "describe": "<p>Use if (Schema.sObjectType.Contact.fields.Is_Active__c.isUpdateable())</p>",
+          "isRight": true
         }
       ],
-      "hashCode": "1988674193"
+      "hashCode": "1988674970",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer wrote an Apex method to update a list of Contacts and wants to make it available for use by Lightning web components.</p><p>Which annotation should the developer add to the Apex method to achieve this?</p><p style=\"line-height: 1.5em;\" dir=\"ltr\"><br/></p>",
@@ -1370,29 +1407,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1995171580"
+      "hashCode": "1995171580",
+      "analysis": ""
     },
     {
-      "describe": "<p>A Lightning component has a wired property, searchResults, that stores a list of Opportunities.\nWhich definition of the Apex method, to which the searchResults property is wired, should be used?</p>",
+      "describe": "<p>Which code displays the contents of a Visualforce page as a PDF?</p>",
       "answerOptions": [
         {
-          "describe": "<p>@AuraEnabled(cacheable=false)</p><p>public List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>@AuraEnabled(cacheable=true)</p><p>public List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>@AuraEnabled(cacheable=false)</p><p>public static List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>@AuraEnabled(cacheable=true)</p><p>public static List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
+          "describe": "<p>&lt;apex:page renderAs=&quot;pdf&quot;&gt;</p>",
           "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:page contentType=&quot;pdf&quot;&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:page contentType=&quot;application/pdf&quot;&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:page renderAs=&quot;application/pdf&quot;&gt;</p>",
+          "isRight": false
         }
       ],
-      "hashCode": "1988674220"
+      "hashCode": "1988674193",
+      "analysis": ""
     },
     {
       "describe": "<p>Which code in a Visualforce page and/or cotroller might present a security vulnerability?</p>",
@@ -1414,7 +1453,54 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674283"
+      "hashCode": "1988674283",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A Lightning component has a wired property, searchResults, that stores a list of Opportunities.\nWhich definition of the Apex method, to which the searchResults property is wired, should be used?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>@AuraEnabled(cacheable=false)</p><p>public List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>@AuraEnabled(cacheable=true)</p><p>public List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>@AuraEnabled(cacheable=false)</p><p>public static List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>@AuraEnabled(cacheable=true)</p><p>public static List&lt;Opportunity&gt; search(String term){ /*implementation*/ }</p><p><br/></p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1988674220",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer created a Lightning web component called statusComponent to be inserted into the Account record page.\nWhich two things should the developer do to make this component available? Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add &lt;isExposed&gt;true&lt;/isExposed&gt; to the statusComponent.js-meta.xml file.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add &lt;target&gt;lightning__RecordPage&lt;/target&gt; to the statusComponent.js-meta.xml file.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add &lt;masterLabel&gt;Account&lt;/masterLabel&gt; to the statusComponent.js-meta.xml file.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add &lt;target&gt;lightning__RecordPage&lt;/target&gt; to the statusComponent.js file.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988675025",
+      "analysis": ""
     },
     {
       "describe": "<p>What are three capabilities of the &lt;ltng:require&gt; tag when loading JavaScript resources in Aura components? Choose 3 answers</p>",
@@ -1440,29 +1526,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674965"
-    },
-    {
-      "describe": "<p>A developer created a Lightning web component called statusComponent to be inserted into the Account record page.\nWhich two things should the developer do to make this component available? Choose 2 answers</p>",
-      "answerOptions": [
-        {
-          "describe": "<p>Add &lt;isExposed&gt;true&lt;/isExposed&gt; to the statusComponent.js-meta.xml file.</p>",
-          "isRight": true
-        },
-        {
-          "describe": "<p>Add &lt;target&gt;lightning__RecordPage&lt;/target&gt; to the statusComponent.js-meta.xml file.</p>",
-          "isRight": true
-        },
-        {
-          "describe": "<p>Add &lt;masterLabel&gt;Account&lt;/masterLabel&gt; to the statusComponent.js-meta.xml file.</p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>Add &lt;target&gt;lightning__RecordPage&lt;/target&gt; to the statusComponent.js file.</p>",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988675025"
+      "hashCode": "1988674965",
+      "analysis": ""
     }
   ],
   "hashCode": "-1271771784"

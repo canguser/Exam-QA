@@ -10,6 +10,9 @@ dexieDB.version(1).stores({
 dexieDB.version(2).stores({
     bank: 'hashCode, title, *questions, category, createDate, modifyDate',
 });
+dexieDB.version(3).stores({
+    question: 'hashCode, describe, type, createDate, modifyDate, analysis',
+});
 const configDB = dexieDB['config'];
 const questionDB = dexieDB['question'];
 const bankDB = dexieDB['bank'];

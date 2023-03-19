@@ -22,7 +22,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1995171573"
+      "hashCode": "1995171573",
+      "analysis": ""
     },
     {
       "describe": "UC has a Visualforce page that displays a table of every Container__c being rented by a given Account. Recently this page is failing with a view state limit because some of the customers rent over 10,000 containers.\nWhat should a developer change about the Visualforce page to help with the page load errors?",
@@ -44,7 +45,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674189"
+      "hashCode": "1988674189",
+      "analysis": ""
     },
     {
       "describe": "A developer is creating an app that contains multiple Lightning web components.\nOne of the child components is used for navigation purposes.When a user clicks a button called component, the parent component must be alerted so it can navigate to the next page.\nHow should this be accomplished?",
@@ -66,7 +68,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674165"
+      "hashCode": "1988674165",
+      "analysis": ""
     },
     {
       "describe": "Which two statements are true about getter and setter methods as they relate to Visualforce?\nChoose 2 answers",
@@ -88,7 +91,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674163"
+      "hashCode": "1988674163",
+      "analysis": ""
     },
     {
       "describe": "A developer created a weather app that contains multiple Lightning web components.\nOne of the components, called Toggle, has a toggle for Fahrenheit or Celsius units,Another Temperature, displays the current temperature in the unit selected in the Toggle component,.When a user toggles from Fahrenheit to Celsius or vice versa in the Toggle component, sent to the Temperature component so the temperature can be converted and displayed.\nWhat is the recommended way to accomplish this?",
@@ -110,7 +114,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674133"
+      "hashCode": "1988674133",
+      "analysis": ""
     },
     {
       "describe": "A credit card company needs to implement the functionality for a service agent to process credit cards. When the customers call in, the service agent must gather many places of information tasked to implement this functionality.\nWhat should the developer use to satisfy this requirement in the most efficient manner?",
@@ -132,7 +137,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674132"
+      "hashCode": "1988674132",
+      "analysis": ""
     },
     {
       "describe": "A third-party vendor created an unmanaged Lightning web component. The Salesforce Administrators expose the component only on Record Page Layouts.\nWhich two actions should the developer take to accomplish this business objective?\nChoose 2 answers",
@@ -154,7 +160,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674129"
+      "hashCode": "1988674129",
+      "analysis": ""
     },
     {
       "describe": "What are two best practices when it comes to Lightning Web Component events?\nChoose 2 answers",
@@ -176,29 +183,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674103"
-    },
-    {
-      "describe": "An org has two custom objects:\nPlan_c, that has a master-detail relationship to the Account object\nPlan_Item__c, that has a master-detail relationship to the Plan_c object\nWhat should a developer use to create a Visualforce section on the Account page layout that displays all of the Plan__c records related to the Account and all of the Plan_Item__c records related to those Plan_c records.",
-      "answerOptions": [
-        {
-          "describe": "A standard controller with a controller extension",
-          "isRight": true
-        },
-        {
-          "describe": "A standard controller with a custom controller",
-          "isRight": false
-        },
-        {
-          "describe": "A custom controller by itself",
-          "isRight": false
-        },
-        {
-          "describe": "A controller extension with a custom controller",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988674102"
+      "hashCode": "1988674103",
+      "analysis": ""
     },
     {
       "describe": "A developer is creating a Lightning web component to show a list of sales records.\nThe Sales Representative user should be able to see the commission field on each record. The Sales Assistant usershould be able to see all fields on the record except the commission field.\nHow should this be enforced so that the component works for both users without showing any errors?",
@@ -220,7 +206,31 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674101"
+      "hashCode": "1988674101",
+      "analysis": ""
+    },
+    {
+      "describe": "An org has two custom objects:\nPlan_c, that has a master-detail relationship to the Account object\nPlan_Item__c, that has a master-detail relationship to the Plan_c object\nWhat should a developer use to create a Visualforce section on the Account page layout that displays all of the Plan__c records related to the Account and all of the Plan_Item__c records related to those Plan_c records.",
+      "answerOptions": [
+        {
+          "describe": "A standard controller with a controller extension",
+          "isRight": true
+        },
+        {
+          "describe": "A standard controller with a custom controller",
+          "isRight": false
+        },
+        {
+          "describe": "A custom controller by itself",
+          "isRight": false
+        },
+        {
+          "describe": "A controller extension with a custom controller",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674102",
+      "analysis": ""
     },
     {
       "describe": "Which two are phases in the Aura application event propagation framework?\nChoose 2 answers",
@@ -242,7 +252,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674038"
+      "hashCode": "1988674038",
+      "analysis": ""
     },
     {
       "describe": "A developer created a child Lightning web component nested inside a parent Lightning web component. The parent component needs to pass a string value to the child component.\nIn which two ways can this be accomplished?\nChoose 2 answers",
@@ -264,7 +275,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674036"
+      "hashCode": "1988674036",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to create a custom button for the Account object that, when clicked, will perform a series of calculations and redirect the user to a custom Visualforce page. The developer wants to ensure the Visualforce page matches the Lightning Experience user interface.\nWhat attribute needs to be defined within the <apex:page> tag to meet the requirement?",
@@ -286,7 +298,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674011"
+      "hashCode": "1988674011",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to allow users to complete a form on an Account record that will create a record for a custom object. The form needs to display different fields depending on the user's job role. The functionality should only be available to a small group of users.\nWhich three things should the developer do to satisfy these requirements?\nChoose 3 answers",
@@ -312,7 +325,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674010"
+      "hashCode": "1988674010",
+      "analysis": ""
     },
     {
       "describe": "A Salesforce Administrator used Flow Builder to create a flow named \"accountOnboarding\". The flow must be used inside an Aura component.\nWhich tag should a developer use to display the flow in the component?",
@@ -334,7 +348,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674008"
+      "hashCode": "1988674008",
+      "analysis": ""
     },
     {
       "describe": "What can be developed using the Lightning Component framework?",
@@ -356,7 +371,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674005"
+      "hashCode": "1988674005",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.aura_overview.htm&type=5"
     },
     {
       "describe": "A developer has a single custom controller class that works with a Visualforce Wizard to support creating and editing multiple sObjects. The wizard accepts \ndata from user inputs across multiple Visualforce pages and from a parameter on the initial URL.\nWhich three statements are useful inside the unit test to effectively test the custom controller? Choose 3 answers",
@@ -382,7 +398,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674002"
+      "hashCode": "1988674002",
+      "analysis": ""
     },
     {
       "describe": "A developer must troubleshoot to pinpoint the causes of performance issues when a custom page loads in their org.\nWhich tool should the developer use to troubleshoot?",
@@ -404,7 +421,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673325"
+      "hashCode": "1988673325",
+      "analysis": ""
     },
     {
       "describe": "Which two statements are true about Getter and Setter methods as they relate to Visualforce? Choose 2 answers",
@@ -426,7 +444,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673291"
+      "hashCode": "1988673291",
+      "analysis": ""
     },
     {
       "describe": "Which two characteristics are true for Aura component events? Choose 2 answers",
@@ -448,7 +467,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673289"
+      "hashCode": "1988673289",
+      "analysis": ""
     },
     {
       "describe": "What are two ways that a controller and extension can be specified for a custom object named Notice on a Visualforce page? Choose 2 answers",
@@ -470,7 +490,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673265"
+      "hashCode": "1988673265",
+      "analysis": ""
     },
     {
       "describe": "Which three resources in an Aura Component can contain JavaScript functions? Choose 3 answers",
@@ -496,7 +517,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673264"
+      "hashCode": "1988673264",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_bundle.htm"
     },
     {
       "describe": "Which three Salesforce resources can be accessed from a Lighting web component?  Choose 3 answers",
@@ -522,7 +544,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673173"
+      "hashCode": "1988673173",
+      "analysis": "https://developer.salesforce.com/docs/component-library/documentation/en/lwc/create_global_value_providers"
     },
     {
       "describe": "What are two ways that a controller extension can be specified on a Visualforce page? Choose 2 answers",
@@ -544,7 +567,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673172"
+      "hashCode": "1988673172",
+      "analysis": ""
     },
     {
       "describe": "How does the Lightning Component framework help developers implement solutions faster?",
@@ -566,7 +590,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673168"
+      "hashCode": "1988673168",
+      "analysis": ""
     },
     {
       "describe": "which two are best practices when it comes to Aura component and application event handling? Choose 2 answers",
@@ -588,7 +613,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673143"
+      "hashCode": "1988673143",
+      "analysis": ""
     },
     {
       "describe": "How should a custom user interface be privided when a user edits an Account in Lightning Experience?",
@@ -610,7 +636,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673080"
+      "hashCode": "1988673080",
+      "analysis": ""
     },
     {
       "describe": "Which three web technologies can be integrated into a Visualforce page?",
@@ -636,7 +663,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673078"
+      "hashCode": "1988673078",
+      "analysis": ""
     },
     {
       "describe": "Which three steps allow a custom SVG to be included in a Lightning web component?Choose 3 answers",
@@ -662,7 +690,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988673076"
+      "hashCode": "1988673076",
+      "analysis": ""
     },
     {
       "describe": "A developer must provide a custom user interface when users edit a Contact. Users must be able to use the interface in Salesforce Classic and Lightning Experience.\nWhat should the developer do to provide the custom user interface?",
@@ -684,7 +713,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988673050"
+      "hashCode": "1988673050",
+      "analysis": ""
     },
     {
       "describe": "A developer has an Apex controller for a Visualforce page that takes an ID as a URL parameter.\nHow should the developer prevent a cross site scripting vulnerability?",
@@ -706,7 +736,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988672364"
+      "hashCode": "1988672364",
+      "analysis": ""
     },
     {
       "describe": "Which two are phases in the Salesforce Application Event propagation framework? Choose 2 answers",
@@ -728,7 +759,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672360"
+      "hashCode": "1988672360",
+      "analysis": ""
     },
     {
       "describe": "Application Events follow the traditional publish-subscribe model\nWhich method is used to fire an event?",
@@ -750,7 +782,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672336"
+      "hashCode": "1988672336",
+      "analysis": ""
     },
     {
       "describe": "Universal Containers has a large number of custom applications that were built using a third-party JavaScript framework and exposed using Visualforce pages. The company wants to update these applications to apply styling that resembles the look and feel of Lightning Experience.\nWhat should the developer do to fulfill the business request in the quickest and most effective manner?",
@@ -772,7 +805,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672303"
+      "hashCode": "1988672303",
+      "analysis": ""
     },
     {
       "describe": "What does the Lightning Component framework provide to developers?",
@@ -794,7 +828,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988672297"
+      "hashCode": "1988672297",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer is asked to create a Visualforce page that displays some Account fields as well as fields configured on the page layout for related Contacts.\nHow should the developer implement this request?</p>",
@@ -816,7 +851,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674190"
+      "hashCode": "1988674190",
+      "analysis": ""
     },
     {
       "describe": "<p>Refer to the code snippet below:</p><p>import fetchOpps from &#39;@salesforce/apex/OpportunitySearch.fetchOpportunities&#39;;</p><p>@wire(fetchOpps)</p><p>opportunities;</p><p>When a Lightning web component is rendered, a list of opportunities that match certain criteria should be retrieved from the database and displayed to the end-user.</p><p>Which three considerations must the developer implement to make the fetchOpportunities method available within the Lightning web component? Choose 3 answers</p><p style=\"line-height: 1.5em;\" dir=\"ltr\"><br/></p>",
@@ -842,7 +878,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1995171603"
+      "hashCode": "1995171603",
+      "analysis": ""
     },
     {
       "describe": "<p style=\"line-height: 1.5em;\" dir=\"ltr\">Which code statement includes an Apex method named updateAccounts in the class AccountController for use in a Lightning web component?</p>",
@@ -864,7 +901,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1995171602"
+      "hashCode": "1995171602",
+      "analysis": "<p>https://developer.salesforce.com/docs/component-library/documentation/en/lwc/apex_import_method</p>"
     },
     {
       "describe": "<p>A developer wrote an Apex method to update a list of Contacts and wants to make it available for use by Lightning web components.</p><p>Which annotation should the developer add to the Apex method to achieve this?</p><p style=\"line-height: 1.5em;\" dir=\"ltr\"><br/></p>",
@@ -886,7 +924,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1995171580"
+      "hashCode": "1995171580",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer created a Lightning web component called statusComponent to be inserted into the Account record page.\nWhich two things should the developer do to make this component available? Choose 2 answers</p>",
@@ -908,7 +947,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988675025"
+      "hashCode": "1988675025",
+      "analysis": ""
     },
     {
       "describe": "<p>A custom Visualforce controller calls the ApexPages.addMessage( ) method, but no messages are rendering on the page.</p><p>Which component should be added to the Visualforce page to display the message?</p><p><br/></p>",
@@ -930,7 +970,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674971"
+      "hashCode": "1988674971",
+      "analysis": ""
     },
     {
       "describe": "<p>Which three code lines are required to create a Lightning component on a Visualforce page? Choose 3 answers</p>",
@@ -956,7 +997,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674968"
+      "hashCode": "1988674968",
+      "analysis": ""
     },
     {
       "describe": "<p>What are three capabilities of the &lt;ltng:require&gt; tag when loading JavaScript resources in Aura components? Choose 3 answers</p>",
@@ -982,7 +1024,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674965"
+      "hashCode": "1988674965",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer needs to create a custom button for the Account object that, when clicked, will perform a series of calculations and redirect the user to a custom Visualforce page.</p><p><br/></p><p>Which three attributes need to be defined with values in the &lt;apex:page&gt; tag to accomplish this? Choose 3 answers</p><p><br/></p>",
@@ -1008,7 +1051,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674289"
+      "hashCode": "1988674289",
+      "analysis": ""
     },
     {
       "describe": "<p>Which code in a Visualforce page and/or cotroller might present a security vulnerability?</p>",
@@ -1030,7 +1074,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674283"
+      "hashCode": "1988674283",
+      "analysis": ""
     },
     {
       "describe": "<p>An Apex method, getAccounts, that returns a List of Accounts given a searchTerm, is available for Lightning Web components to use.</p><p>What is the correct definition of a Lightning Web component property that uses the getAccounts method?</p><p><br/></p>",
@@ -1052,7 +1097,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674257"
+      "hashCode": "1988674257",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer must crreate a Lightning component that allows users to input Contact record information to create a Contact record, including a Salary__c custom field.\nWhat should the developer use, along with a lightning-record-edit-form, so that Salary__c field functions as a currency input and is only viewable and editable by users that have the correct field level permissions on Salary__c ?</p>",
@@ -1074,7 +1120,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674228"
+      "hashCode": "1988674228",
+      "analysis": ""
     },
     {
       "describe": "<p>Universal Containers wants a list button to display a Visualforce page that allows users to edit multiple records.\nWhich Visualforce feature supports this requirement?</p>",
@@ -1096,7 +1143,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674226"
+      "hashCode": "1988674226",
+      "analysis": ""
     },
     {
       "describe": "<p>A Lightning component has a wired property, searchResults, that stores a list of Opportunities.\nWhich definition of the Apex method, to which the searchResults property is wired, should be used?</p>",
@@ -1118,7 +1166,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674220"
+      "hashCode": "1988674220",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer has a Visualforce page and custom controller to save Account records. The developer wants to display any validation rule violations to the user.\n\nHow can the developer make sure that validation rule violations are displayed?</p>",
@@ -1140,7 +1189,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674196"
+      "hashCode": "1988674196",
+      "analysis": ""
     },
     {
       "describe": "<p>Which code displays the contents of a Visualforce page as a PDF?</p>",
@@ -1162,7 +1212,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674193"
+      "hashCode": "1988674193",
+      "analysis": ""
     },
     {
       "describe": "<p>Which code should be used to update an existing Visualforce page that uses standard Visualforce components so that the page \nmatches the look and feel of Lightning Experience?</p>",
@@ -1184,7 +1235,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674191"
+      "hashCode": "1988674191",
+      "analysis": ""
     }
   ],
   "hashCode": "-1307154604"

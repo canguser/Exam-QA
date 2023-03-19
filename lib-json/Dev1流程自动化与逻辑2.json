@@ -22,7 +22,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988675003"
+      "hashCode": "1988675003",
+      "analysis": ""
     },
     {
       "describe": "<p>Refer to the following code snippet for an environment has more than 200 Accounts belonging to the &#39;Technology&#39; industry:</p><p>for(Account thisAccount : [Select Id, Industry FROM Account LIMIT 150]){</p><p>&nbsp; &nbsp; &nbsp;if(thisAccount.Industry == &#39;Technology&#39; ){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;thisAccount.Is_Tech__c = true;</p><p>&nbsp; &nbsp; &nbsp; }</p><p>update thisAccount;</p><p>}</p><p><br/></p><p>When the code executes, what happens as a result of the Apex transaction?</p><p><br/></p>",
@@ -44,7 +45,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988675002"
+      "hashCode": "1988675002",
+      "analysis": ""
     },
     {
       "describe": "<p>Considering the following code snippet:</p><p>public static void insertAccounts(List&lt;Account&gt; theseAccounts){</p><p>&nbsp; &nbsp; &nbsp; for(Account thisAccount : theseAccounts) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(thisAccount.website == null) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; thisAccount.website = &#39;https://www.demo.com&#39;;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;update theseAccounts;</p><p>}</p><p>when the code executes, a DML exceptionis thrown.</p><p>How should the developer modify the code to ensure exceptions are handled gracefully?</p><p><br/></p>",
@@ -66,7 +68,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988675001"
+      "hashCode": "1988675001",
+      "analysis": ""
     },
     {
       "describe": "<p>The orderHelper class is a utility class that contains business logic for processing orders. Consider the code snippet:</p><p><br/></p><p>public class without sharing OrderHelper{</p><p>//code implementation.</p><p>}</p><p><br/></p><p>A developer needs to create a constant named DELIVERY_MULTIPLIER with a value of 4.15, The valua of instant should not change at any time in the code.</p><p>How should the developer declare the DELIVERY_MULTIPLIER Constant to meet the business objectives?</p><p><br/></p>",
@@ -88,7 +91,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988675000"
+      "hashCode": "1988675000",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer wrote the following two classes:</p><p><br/></p><p>public with sharing class statusFetcher{</p><p>private Boolean active = true;</p><p>private Boolean isActive(){</p><p>return active;</p><p>}</p><p>}</p><p>public with sharing class Calculator{</p><p>public void doCalculations()</p><p>StatusFetcher sFetcher = new StatusFetcher();</p><p>if(sFetcher.isActive())</p><p>//do calculatlons here</p><p>}</p><p>&nbsp; }</p><p>}</p><p><br/></p><p>The StatusFetcher class successfully complled and saved.However, the calculator class has a compile time error.</p><p>How should the developer fix this code?</p><p><br/></p>",
@@ -110,7 +114,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674999"
+      "hashCode": "1988674999",
+      "analysis": ""
     },
     {
       "describe": "<p>Given the code below in an Apex class:</p><p><br/></p><p>List&lt;Account&gt; aList=[SELECT Id, Active_c EROM Account];</p><p>for (Account a : a List){</p><p>if[!a.Active_c){</p><p>a.Name = &#39;INACTIVE&#39;;</p><p>}</p><p>}</p><p>update aList;</p><p><br/></p><p>What should a developer do to correct the code so that there is no chance of hitting a govermorlimit?</p><p><br/></p>",
@@ -132,7 +137,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674998"
+      "hashCode": "1988674998",
+      "analysis": ""
     },
     {
       "describe": "<p>A lead developer creates an Apex interface called &quot;Laptop&quot;. Consider the following code snippet:</p><p><br/></p><p>public class SilverLaptop{</p><p>//code implementaticn</p><p>}</p><p><br/></p><p>How can a developer use the Laptop interface within the SilverLaptop class?</p><p><br/></p>",
@@ -154,7 +160,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674997"
+      "hashCode": "1988674997",
+      "analysis": ""
     },
     {
       "describe": "<p>Management asked for opportunities to be automatically created for accounts with annual revenue greater then $1000000. A developer created the following trigger on the Account object to satisfy this requirement.</p><p>For(Account a : Trigger.new) {</p><p>&nbsp; &nbsp; &nbsp; if(a.AnnualRevenue &gt; 1000000) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List&lt;Opportunity&gt; oppList = [SELECT Id FROM Opportunity WHERE accountId = :a.Id];</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(oppList.size() ==0) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Opportunity oppty = new Opportunity(Name = a.Name, StageName = &#39;Prospecting&#39;, CloseDate = system.today().addDays(30);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; insert oppty;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; }</p><p>}</p><p>Users are able to update the account records via the UI and can see an opportunity created for high annual revenue accounts. However, when the administrator tries to upload a list of 179 accounts using Data Loader, if fails with System.Exception errors.</p><p>Which two actions should the developer take to fix the code segment shown above? Choose 2 answers</p><p><br/></p>",
@@ -176,7 +183,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674996"
+      "hashCode": "1988674996",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer is building custom search functionality that uses SOSL to search account and contact records that match search terms provided by the end user. The feature is exposed through a Lightning web component, and the end user is able to provide a list of terms to search.</p><p>Consider the following code snippet:</p><p><br/></p><p>@AuraEnabled</p><p>public static List&lt;List&lt;sObject&gt;&gt; searchTerms(List&lt;String&gt; termlist){</p><p>List&lt;List&lt;sObject&gt;&gt; result = new List&lt;List&lt;sObject&gt;&gt;() :</p><p>for(string term: termList) {</p><p>result.addAl1([FIND :term IN ALL FIELDS RETURNING Account Name),</p><p>contact(FirstName,LastName)]};</p><p>}</p><p>return result;</p><p>}</p><p><br/></p><p>What is the maximum number of search terms the end user can provide to successfully execute the search without exceeding a governor limit?</p><p><br/></p>",
@@ -198,7 +206,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674995"
+      "hashCode": "1988674995",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer needs to implement a custom SOAP Web Service that is used by an external Web Application. The developer chooses to include helper methods that are not used by the Web Application in the implementation of the Web Service Class.\nWhich code segment shows the correct declaration of the class and methods?</p>",
@@ -220,7 +229,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674994"
+      "hashCode": "1988674994",
+      "analysis": ""
     },
     {
       "describe": "<p>Consider the following code snippet:</p><p><br/></p><p>public static List&lt;Lead&gt; obtainAllFields(Set&lt;Id&gt; 1eadIds) {</p><p>List&lt;Lead&gt; result = new List&lt;Lead&gt;();</p><p>for(Id leadId : leadIds) {</p><p>result.add([SELECT FIELDS(ALL) FROM Lead WHERE Id = :leadId];</p><p>}</p><p>return result;</p><p>}</p><p><br/></p><p>Given the multi-tenant architecture of the Salesforce platform, what is a best practice a developer should implement and ensure successful execution of the method?</p><p><br/></p>",
@@ -242,7 +252,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674972"
+      "hashCode": "1988674972",
+      "analysis": ""
     },
     {
       "describe": "<p>Given the following code snippet, that is part of a custom controller for a Visualforce page:</p><p>public void updateContact(Contact thisContact) {</p><p>&nbsp; &nbsp; &nbsp;thisContact.Is_Active__c = false;</p><p>&nbsp; &nbsp; &nbsp;try{</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; update thisContact;</p><p>&nbsp; &nbsp; &nbsp;}catch(Exception e) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String errorMessage = &#39;An error occurred while updating the Contact. &#39; + e.getMessage());</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ApexPages.addmessage(new ApexPages.message(ApexPages.severity.FATAL.errorMessage));</p><p>&nbsp; &nbsp; &nbsp;}</p><p>}</p><p>In which two ways can the try/catch be enclosed to enforce object and field-level permissions and prevent the DML statement from being executed if the&nbsp;</p><p>current logged-in user does not have the appropriate level of access?&nbsp;</p><p>Choose 2 answers</p><p><br/></p>",
@@ -264,7 +275,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674970"
+      "hashCode": "1988674970",
+      "analysis": ""
     },
     {
       "describe": "<p>What should a developer use to obtain the Id and Name of all the Leads, Accounts, and Contacts that have the company name &quot;UC&quot;?</p>",
@@ -286,7 +298,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674969"
+      "hashCode": "1988674969",
+      "analysis": ""
     },
     {
       "describe": "<p>Example 1:</p><p>AggregateResult[ ] groupedResults = [ SELECT CampaignId, AVG(Amount) FROM Opportunity GROUP BY CampaignId];</p><p>for (AggregateResult ar : groupedResults)&nbsp;</p><p>{</p><p>&nbsp; &nbsp; &nbsp; System.debug( &#39;Campaign ID&#39; + ar.get(&#39;CampaignId&#39;));</p><p>&nbsp; &nbsp; &nbsp; System.debug( &#39;Average amount&#39; + ar.get(&#39;expr0&#39;));</p><p>}</p><p><br/></p><p>Example 2:</p><p>AggregateResult[ ] groupedResults = [ SELECT CampaignId, AVG(Amount) theAverage FROM Opportunity GROUP BY CampaignId];</p><p>for (AggregateResult ar : groupedResults)&nbsp;</p><p>{</p><p>&nbsp; &nbsp; &nbsp; System.debug( &#39;Campaign ID&#39; + ar.get(&#39;CampaignId&#39;));</p><p>&nbsp; &nbsp; &nbsp; System.debug( &#39;Average amount&#39; + ar.get(&#39;theAverage&#39;));</p><p>}</p><p><br/></p><p>Example 3:</p><p>AggregateResult[ ] groupedResults = [ SELECT CampaignId, AVG(Amount) FROM Opportunity GROUP BY CampaignId];</p><p>for (AggregateResult ar : groupedResults)&nbsp;</p><p>{</p><p>&nbsp; &nbsp; &nbsp; System.debug( &#39;Campaign ID&#39; + ar.get(&#39;CampaignId&#39;));</p><p>&nbsp; &nbsp; &nbsp; System.debug( &#39;Average amount&#39; + ar.get.AVG());</p><p>}</p><p><br/></p><p>Example 4:</p><p>AggregateResult[ ] groupedResults = [ SELECT CampaignId, AVG(Amount) theAverage FROM Opportunity GROUP BY CampaignId];</p><p>for (AggregateResult ar : groupedResults)&nbsp;</p><p>{</p><p>&nbsp; &nbsp; &nbsp; System.debug( &#39;Campaign ID&#39; + ar.get(&#39;CampaignId&#39;));</p><p>&nbsp; &nbsp; &nbsp; System.debug( &#39;Average amount&#39; + ar.theAverage);</p><p>}</p><p>Which two examples above use the System.debug statements to correctly display the results from the SOQL aggregate queries?</p><p>Choose 2 answers</p><p><br/></p>",
@@ -308,7 +321,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674967"
+      "hashCode": "1988674967",
+      "analysis": ""
     },
     {
       "describe": "<p>Refer to the following code that runs in an Execute Anonymous block:</p><p>for( List&lt;Lead&gt; theseLeads : [SELECT LastName, Company, Email FROM Lead LIMIT 20000]) {</p><p>&nbsp; &nbsp; for(Lead thisLead : theseLeads) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(thisLead.Email == null)</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; thisLead.Email = assignGenericEmail(thisLead.LastName, thisLead.Company);</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp;Database.Update(theseLeads, false);</p><p>}</p><p>In an environment where the full result set is returned, what is a possible outcome of this code?</p><p><br/></p>",
@@ -330,7 +344,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674966"
+      "hashCode": "1988674966",
+      "analysis": ""
     },
     {
       "describe": "<p>Given the code below:</p><p>List&lt;Account&gt; aList = [SELECT Id FROM Account];</p><p>for(Account a : aList) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp;List&lt;Contact&gt; cList = [SELECT Id FROM Contact WHERE AccountId =:a.Id];</p><p>}</p><p>What should a developer do to correct the code so that there is no chance of hitting a governor limit?</p><p><br/></p>",
@@ -352,7 +367,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674964"
+      "hashCode": "1988674964",
+      "analysis": ""
     },
     {
       "describe": "<p>In the following example, which sharing context will myMethod execute when it is invoked?</p><p><br/></p><p>public Class myClass {</p><p>&nbsp; &nbsp; &nbsp;public void myMethod( ) { /* implementation */ }</p><p>}</p><p><br/></p>",
@@ -374,7 +390,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674963"
+      "hashCode": "1988674963",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_keywords_sharing.htm</p>"
     },
     {
       "describe": "<p>A Next Best Action strategy uses an Enhance Element that invokes an Apex method to determine a discount level for a Contact, based on a number of factors.\nWhat is the correct definition of the Apex method?</p>",
@@ -396,7 +413,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674290"
+      "hashCode": "1988674290",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_InvocableMethod.htm</p>"
     },
     {
       "describe": "<p>Refer to the following code snippet for an environment has more than 200 Accounts belonging to the &#39;Technology&#39; industry:</p><p>for(Account thisAccount : [Select Id, Industry FROM Account LIMIT 150]){</p><p>&nbsp; &nbsp; &nbsp;if(thisAccount.Industry == &#39;Technology&#39; ){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;thisAccount.Is_Tech__c = true;</p><p>&nbsp; &nbsp; &nbsp; }</p><p>update thisAccount;</p><p>}</p><p><br/></p><p>When the code executes which two events occur as a result of the Apex transaction?Choose 2 answers</p><p><br/></p>",
@@ -418,7 +436,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674288"
+      "hashCode": "1988674288",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer wants to mark each Account in a List&lt;Account&gt; as either Active or Inactive based on the LastModifiedDate field value being more than 90 days.</p><p>Which Apex technique should the developer use?</p><p><br/></p>",
@@ -440,7 +459,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674287"
+      "hashCode": "1988674287",
+      "analysis": ""
     },
     {
       "describe": "<p>What is the result of the following code?</p><p>Account a = new Account( );</p><p>Database. insert(a, false);</p><p><br/></p>",
@@ -462,7 +482,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674286"
+      "hashCode": "1988674286",
+      "analysis": ""
     },
     {
       "describe": "<p>The following Apex method is part of the ContactSertvice class that is called from a trigger:</p><p>public static void setBusinessUnitToEMEA(Contact thisContact){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; thisContact . Business_Unit__c = &#39;EMEA&#39;;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; update thisContact;</p><p>}</p><p><br/></p><p>How should the developer modify the code to ensure best practices are met?</p><p><br/></p>",
@@ -484,7 +505,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674285"
+      "hashCode": "1988674285",
+      "analysis": ""
     },
     {
       "describe": "<p>What will be the output in the debug log in the event of a QueryException duing a call to the aQuery method in the following example?</p><p><br/></p><p>class myClass {</p><p>&nbsp; &nbsp;class CustomException extends QueryException&nbsp; { }</p><p>&nbsp; &nbsp;public static Account aQuery( ) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp;Account theAccount;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;try {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;system. debug( &#39; Querying Accounts. &#39;);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;theAccount = [SELECT Id FROM Account WHERE CreatedDate &gt; TODAY] ;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; catch (CustomException eX) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; system.debug(&#39; Custom Exception. &#39;);</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; catch (QueryException eX) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; system.debug(&#39;Query Exception. &#39;);</p><p>&nbsp; &nbsp; &nbsp; }&nbsp;</p><p>&nbsp; &nbsp; &nbsp;finally {</p><p>&nbsp; &nbsp; &nbsp; &nbsp;system.debug(&#39;Done. &#39;);</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; return theAccount ;</p><p>&nbsp; }</p><p>}</p><p><br/></p>",
@@ -506,7 +528,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674284"
+      "hashCode": "1988674284",
+      "analysis": ""
     },
     {
       "describe": "<p>What is the result of the following code snippet?</p><p><br/></p><p>public void doWork(Account acct){</p><p>&nbsp; &nbsp; &nbsp; for (Integer i = 0; i &lt;= 200; i++){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; insert acct;</p><p>&nbsp; &nbsp; &nbsp; }</p><p>&nbsp;}</p><p><br/></p>",
@@ -528,7 +551,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674282"
+      "hashCode": "1988674282",
+      "analysis": ""
     },
     {
       "describe": "<p>How many Accounts will be inserted by the following block of code?</p><p><br/></p><p>for(Integer i = 0; i&lt; 500; i++){</p><p>&nbsp; &nbsp; Account a = new Account (Name= &#39;New Account &#39; +i);</p><p>&nbsp; &nbsp; insert a;</p><p>}</p><p><br/></p>",
@@ -550,7 +574,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674281"
+      "hashCode": "1988674281",
+      "analysis": ""
     },
     {
       "describe": "<p>A dveloper must implement a CheckPaymentProcessor class that povides check processing payment capabilities that adhere to what is defined for payments in the PaymentProcessor interface.&nbsp;</p><p><br/></p><p>public interface PaymentProcessor {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; void pay (Decimal amount) ;</p><p>}</p><p><br/></p><p>Which is the correct implementation to use the PaymentProcessor interface class?</p><p><br/></p>",
@@ -572,7 +597,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674259"
+      "hashCode": "1988674259",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer created a Visualforce page and custom controller to display the account type field as shown below.</p><p>Custom controller code:</p><p><br/></p><p>public with sharing class customCtrlr {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;private Account theAccount;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;public String actType;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;public customCtrlr( ) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; theAccount = [SELECT Id, Type FROM Account WHERE Id = :ApexPages.currentPage().getParameters().get(&#39;Id&#39;)];</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; actType = theAccount.Type;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p><p>}</p><p>Visualforce page snippet:</p><p>The Account Type is {!actType}</p><p><br/></p><p>The value of the account type field is not being displayed correctly on the page. Assuming the custom controller is properly&nbsp;</p><p>referenced on the Visualforce page, what should the developer do to correct the problem?</p><p><br/></p>",
@@ -594,7 +620,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674258"
+      "hashCode": "1988674258",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer is tasked to perform a security review of the ContactSearch Apex calss that exists in the system. Within the class, the developer identifies the following method as a security threat:</p><p><br/></p><p>List&lt;Contact&gt; performSearch(String lastName){</p><p>&nbsp; &nbsp;return Database.query(&#39;SELECT Id, FirstName, LastName FROM Contact WHERE LastName Like %&#39;+lastName+&#39;%&#39; );</p><p><br/></p><p>What are two ways the developer can update the method to prevent a SOQL injection attack? Choose 2 answers</p><p><br/></p>",
@@ -616,7 +643,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674256"
+      "hashCode": "1988674256",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer is debugging the following code to determine why Account are not being created.</p><p>Account a = new Account(Name=&#39;A&#39;);</p><p>Database.insert(a, false);</p><p><br/></p><p>How should the code be altered to help debug the issue?</p><p><br/></p>",
@@ -638,7 +666,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674255"
+      "hashCode": "1988674255",
+      "analysis": ""
     },
     {
       "describe": "A developer wants to retrieve the Contacts and Users with the email address 'dev@uc.com'.\nWhich SOSL statement should the developer use?",
@@ -660,7 +689,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674254"
+      "hashCode": "1988674254",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer considers the following snippet of code:</p><p><br/></p><p>Boolean isOK;</p><p>Integer x;</p><p>String theString = &#39;Hello&#39;;</p><p><br/></p><p>if(isOk == false &amp;&amp; theString == &#39;Hello&#39;){</p><p>x=1;</p><p>}else if(isOK == true &amp;&amp; theString == &#39;Hello&#39;){</p><p>x=2;</p><p>}else if(isOk == null&nbsp; &amp;&amp; theString == &#39;Hello&#39;){</p><p>x=3;</p><p>}else{</p><p>x=4;</p><p>}</p><p><br/></p><p>Based on this code, what is the value of x?</p><p><br/></p>",
@@ -682,7 +712,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674253"
+      "hashCode": "1988674253",
+      "analysis": ""
     },
     {
       "describe": "<p>Assuming that &#39;name&#39; is a Stirng obtained by an &lt;apex:inputText&gt; tag on a Visualforce page, which two SOQL queries performed are safe from SOQL injection?Choose 2 answers</p>",
@@ -704,7 +735,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674252"
+      "hashCode": "1988674252",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer must create a ShippingCalculator class that cannot be instantiated and must include a working default implementation of a calculate method, that sub-classes can overrude.\nWhat is the correct implementation of the ShippingCalculator class?</p>",
@@ -726,29 +758,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674251"
-    },
-    {
-      "describe": "<p>Given the following block of code:</p><p><br/></p><p>try{</p><p>&nbsp; List&lt;Account&gt; retrievedRecords = [SELECT Id FROM Account WHERE Website = null];</p><p>}catch(Exception e){</p><p>&nbsp; &nbsp; //manage excception logic</p><p>}</p><p><br/></p><p>What should a developer do to ensure the code execution is disrupted if the list retrievedRecords remains empty after the SOQL query?</p><p><br/></p>",
-      "answerOptions": [
-        {
-          "describe": "<p>Check the state of the retrievedRecords variable and access the first element of the list if the variable is empty.</p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>Check the state of the retrievedRecords variable and throw a custom exception if the variable is empty.</p>",
-          "isRight": true
-        },
-        {
-          "describe": "<p>Check the state of the retrievedRecords variable and use System.assert(false) if the variable is empty.</p>",
-          "isRight": false
-        },
-        {
-          "describe": "<p>Replace the retrievedRecords variable declaration from a List of Account to a single Account.</p>",
-          "isRight": false
-        }
-      ],
-      "hashCode": "1988674250"
+      "hashCode": "1988674251",
+      "analysis": ""
     },
     {
       "describe": "<p>Given the following trigger implementation:</p><p><br/></p><p>trigger leadTrigger on Lead (before update){</p><p>&nbsp; &nbsp; &nbsp; &nbsp;final ID BUSINESS_RECORDTYPEID = &#39;012500000009Qad&#39;;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;for(Lead thisLead: Trigger.new){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(thisLead.Company != null &amp;&amp; thisLead.RecordTypeId != BUSINESS_RECORDTYPEID){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;thisLead.RecordTypeId = BUSINESS_RECORDTYPEID;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>}</p><p><br/></p><p>The developer receivers deployment errors every time a deployment is attempted from Sandbox to Production.</p><p>What should the developer do to ensure a successful deployment?</p><p><br/></p>",
@@ -770,7 +781,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674227"
+      "hashCode": "1988674227",
+      "analysis": ""
     },
     {
       "describe": "<p>Given the following Anonymous Block:</p><p>List&lt;Case&gt; casesToUpdate = new List&lt;Case&gt;( );</p><p>for(Case thisCase : [Select Id, Status FROM Case LIMIT 50000]){</p><p>&nbsp; &nbsp; &nbsp;thiscase. Status = &#39;Working&#39;;</p><p>&nbsp; &nbsp; &nbsp;casesToUpdate. add(thisCase);</p><p>}</p><p>try{</p><p>&nbsp; Database. update(casesToUpdate, false);</p><p>}catch(Exception e){</p><p>&nbsp; System. debug(e. getMessage());</p><p>}</p><p><br/></p><p>What should a developer consider for an environment that has over 10,000 Case records?</p><p><br/></p>",
@@ -792,7 +804,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674225"
+      "hashCode": "1988674225",
+      "analysis": ""
     },
     {
       "describe": "<p>Which statement generates a list of Leads and Contacts that have a field with the phrase &#39;ACME&#39;?</p>",
@@ -814,7 +827,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674224"
+      "hashCode": "1988674224",
+      "analysis": ""
     },
     {
       "describe": "<p>What is the maximum number of SOQL queries used by the following code?</p><p>List&lt;Account&gt; aList = [SELECT Id from Account LIMIT 5];</p><p>for(Account a : aList){</p><p>List&lt;Contact&gt; cList = [SELECT Id FROM Contact WHERE AccountId = :a.Id];</p><p>}</p><p><br/></p>",
@@ -836,7 +850,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674223"
+      "hashCode": "1988674223",
+      "analysis": ""
     },
     {
       "describe": "A developer needs to prevent the creation of Request records when certain exist in the system. A RequestLogic class exists that checks the conditions.\nWhat is the correct implementation?",
@@ -858,7 +873,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674222"
+      "hashCode": "1988674222",
+      "analysis": ""
     },
     {
       "describe": "Given the following Apex statement:\nAccount myAccount = [SELECT Id, Name FROM Account];\nWhat occurs when more than one Account is returned by the SOQL query?",
@@ -880,7 +896,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674221"
+      "hashCode": "1988674221",
+      "analysis": ""
     },
     {
       "describe": "A developer must create a DrawList class that provides capabilities defined in the Sortable and Drawable interfaces.\nPublic interface Sortable{\nvoid sort();\n}\nPublic interface Drawable{\nvoid draw();\n}\nWhich is the correct implementation?",
@@ -902,7 +919,8 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674219"
+      "hashCode": "1988674219",
+      "analysis": ""
     },
     {
       "describe": "A developer must create a CreditCardPayment class that provides an implementation of an existing Payment class.\npublic virtual class Payment{\n           public virtual void makePayment(Decimal amount) { /*implementation*/}\n}\nWhich is the correct implementation?",
@@ -924,7 +942,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674197"
+      "hashCode": "1988674197",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_extending.htm?search_text=virtual"
     },
     {
       "describe": "The following Apex method is part of the ContactService class that is called from a trigger:\npublic static void setBusinessUnitToEMEA(Contact thisContact){\n          thisContact.Business_Unit__c = 'EMEA';\n          update thisContact;\n}\nHow should the developer modify the code to ensure best practices are met?",
@@ -946,7 +965,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674195"
+      "hashCode": "1988674195",
+      "analysis": ""
     },
     {
       "describe": "<p>A developer must modify the following code snippet to prevent the number of SOQL queries issued from exceeding the platform governor limit.</p><p>public without sharing class OpportunityService{</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; public static List&lt;OpportunityLineItem&gt; getOpportunityProducts(Set&lt;Id&gt; opportunityIds){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List&lt;OpportunityLineItem&gt; oppLineItems = new List&lt;OpportunityLineItem&gt;();</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for(Id thisOppId : opportunityIds){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; oppLineItems. addAll([Select Id FROM OppLineItem WHERE OpportunityId = :thisOppId]);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; &nbsp; return oppLineItems;</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp;}</p><p><br/></p><p>The above method might be called during a trigger execution via a Lightning component.</p><p>Which technique should be implemented to avoid reaching the governor limit?</p><p><br/></p>",
@@ -968,7 +988,8 @@
           "isRight": false
         }
       ],
-      "hashCode": "1988674194"
+      "hashCode": "1988674194",
+      "analysis": ""
     },
     {
       "describe": "<p>A Visual Flow uses an Apex Action to provide additional information about multiple Contacts, stored in a custom class, ContactInfo. \nWhich is the correct definition of the Apex method that gets the additional information?</p>",
@@ -990,7 +1011,31 @@
           "isRight": true
         }
       ],
-      "hashCode": "1988674192"
+      "hashCode": "1988674192",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Given the following block of code:</p><p><br/></p><p>try{</p><p>&nbsp; List&lt;Account&gt; retrievedRecords = [SELECT Id FROM Account WHERE Website = null];</p><p>}catch(Exception e){</p><p>&nbsp; &nbsp; //manage excception logic</p><p>}</p><p><br/></p><p>What should a developer do to ensure the code execution is disrupted if the list retrievedRecords remains empty after the SOQL query?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Check the state of the retrievedRecords variable and access the first element of the list if the variable is empty.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Check the state of the retrievedRecords variable and throw a custom exception if the variable is empty.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Check the state of the retrievedRecords variable and use System.assert(false) if the variable is empty.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Replace the retrievedRecords variable declaration from a List of Account to a single Account.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1988674250",
+      "analysis": ""
     }
   ],
   "hashCode": "-302233965"

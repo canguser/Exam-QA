@@ -1,5 +1,5 @@
 <template>
-    <div class="exam-root" v-finger:swipe="swipe">
+    <div ref="root" class="exam-root" v-finger:swipe="swipe">
         <van-nav-bar
             :title="examInfo.title"
             fixed
@@ -22,22 +22,23 @@
         </div>
         <div class="question-box" @dblclick.stop="showAcButtons = true"
              :style="`width: ${totalNum*100}%;transform:translate(${-questionNum*100/totalNum}%,0)`">
-            <div class="question-item" :style="`width: ${100/totalNum}%`" v-for="(question,i) in questionsInfo" :key="question.hashCode">
+            <div class="question-item" :style="`width: ${100/totalNum}%`" v-for="(question,i) in questionsInfo"
+                 :key="question.hashCode">
                 <van-panel>
                     <div style="padding: 10px 16px; line-height: 30px">
                         <div class="main-qa" v-for="t in getQuestionTitle(question)" v-html="t">
                         </div>
-                        <div style="font-size: 12px; color: #999">{{getQuestionDesc(question)}}</div>
+                        <div style="font-size: 12px; color: #999">{{ getQuestionDesc(question) }}</div>
                     </div>
                     <div v-if="question.isMulti">
-                        <van-checkbox-group v-model="question.answer.multi.apis"  @click.stop @dblclick.stop>
+                        <van-checkbox-group v-model="question.answer.multi.apis" @click.stop @dblclick.stop>
                             <van-cell-group>
                                 <van-cell v-for="(option, oi) in question.answerOptions"
                                           clickable @click="toggleAnswer(i, option.api)"
                                           :key="oi">
                                     <template slot="title">
                                         <div v-html="letterIndex[oi] + '. ' + option.describe"
-                                            :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}"></div>
+                                             :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}"></div>
                                     </template>
                                     <van-checkbox slot="right-icon" :name="option.api"
                                                   :checked-color="getOptionColor(question,option)"></van-checkbox>
@@ -53,13 +54,17 @@
                                           :key="oi">
                                     <template slot="title">
                                         <div v-html="letterIndex[oi] + '. ' + option.describe"
-                                            :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}"></div>
+                                             :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}"></div>
                                     </template>
                                     <van-radio slot="right-icon" :name="option.api"
                                                :checked-color="getOptionColor(question,option)"></van-radio>
                                 </van-cell>
                             </van-cell-group>
                         </van-radio-group>
+                    </div>
+                    <div class="main-qa" style="padding: 10px 16px; line-height: 30px; color: #444; font-size: 12px"
+                         v-if="isShowResult || !(isPractice&&!questionsInfo[questionNum].answer.isChecked)"
+                         v-html="'解析：<br>'+(question.analysis || '暂无解析')">
                     </div>
                 </van-panel>
             </div>
@@ -139,7 +144,9 @@ export default {
         },
         questions() {
             return (this.examInfo.questions || []).filter(
-                q => this.isReviewError ? this.historyErrorHashCodes.includes(q.hashCode) : true
+                q => {
+                    return this.isReviewError ? this.historyErrorHashCodes.includes(q.hashCode) : (this.neverDo ? (this.neverDoHashCodes.includes(q.hashCode)) : true)
+                }
             ).map((q, i) => ({...q, active: i === this.questionNum}));
         },
         questionsInfo() {
@@ -159,6 +166,9 @@ export default {
         },
         historyErrorHashCodes() {
             return this.historyExams.filter(exam => exam.errorTimes > 0).map(exam => exam.hashCode);
+        },
+        neverDoHashCodes(){
+            return this.historyExams.filter(exam => exam.totalTime > 0).map(exam => exam.hashCode);
         }
     },
     methods: {
@@ -235,6 +245,10 @@ export default {
             })
         },
         turnTo(i) {
+            const root = this.$refs.root;
+            if (root) {
+                root.scrollTop = 0;
+            }
             this.questionNum = i;
         },
         confirmSubmit() {
@@ -363,6 +377,13 @@ export default {
                     this.showAcButtons = false
                     break;
                 case 'Down':
+                    const root = this.$refs.root
+                    if (root) {
+                        const scrollTop = root.scrollTop
+                        if (scrollTop > 0) {
+                            return
+                        }
+                    }
                     this.showAcButtons = true
                     break
                 default:
@@ -377,6 +398,10 @@ export default {
             }
         },
         isReviewError: {
+            type: Boolean,
+            default: false
+        },
+        neverDo: {
             type: Boolean,
             default: false
         },
@@ -427,15 +452,15 @@ export default {
     bottom: 0
 }
 
-span.error-answer {
+div.error-answer {
     color: #cd0000;
 }
 
-span.right-answer {
+div.right-answer {
     color: #44af11;
 }
 
-span.custom-title {
+div.custom-title {
     word-break: break-word;
 }
 
@@ -510,7 +535,7 @@ span.custom-title {
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .1);
 }
 
-.ac-qn-backdrop{
+.ac-qn-backdrop {
     position: fixed;
     top: 46px;
     left: 0;
@@ -520,16 +545,16 @@ span.custom-title {
     z-index: 1;
 }
 
-.van-panel__header{
+.van-panel__header {
     display: none;
 }
 
-.van-cell, .main-qa{
+.van-cell, .main-qa {
     white-space: break-spaces;
     word-break: break-word;
 }
 
-.van-cell__title{
+.van-cell__title {
     padding-right: 10px;
 }
 </style>

@@ -72,6 +72,8 @@
         </van-popup>
         <van-popup v-model="isShowOption" position="bottom">
             <div class="">
+                <van-button block @click="doExam(optionInfo.hashCode, false, true)">未做题
+                </van-button>
                 <van-button type="primary" block @click="doExam(optionInfo.hashCode)">重新测试
                 </van-button>
                 <van-button type="info" block @click="doExam(optionInfo.hashCode,true)">复习错题
@@ -140,7 +142,7 @@ export default {
         }
     },
     methods: {
-        doExam(hashCode, isReviewError = false) {
+        doExam(hashCode, isReviewError = false, neverDo = false) {
             // let exam = utils.storage.getItem(hashCode);
             bankDao.query('hashCode').equals(hashCode).first()
                 .then(exam => {
@@ -156,7 +158,8 @@ export default {
                         name: 'DoExamPage',
                         params: {
                             examConfig: exam,
-                            isReviewError
+                            isReviewError,
+                            neverDo
                         }
                     })
                 });
