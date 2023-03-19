@@ -145,7 +145,7 @@ export default {
         questions() {
             return (this.examInfo.questions || []).filter(
                 q => {
-                    return this.isReviewError ? this.historyErrorHashCodes.includes(q.hashCode) : (this.neverDo ? (this.neverDoHashCodes.includes(q.hashCode)) : true)
+                    return this.isReviewError ? this.historyErrorHashCodes.includes(q.hashCode) : (this.neverDo ? (!this.doneHashCodes.includes(q.hashCode)) : true)
                 }
             ).map((q, i) => ({...q, active: i === this.questionNum}));
         },
@@ -167,8 +167,8 @@ export default {
         historyErrorHashCodes() {
             return this.historyExams.filter(exam => exam.errorTimes > 0).map(exam => exam.hashCode);
         },
-        neverDoHashCodes(){
-            return this.historyExams.filter(exam => exam.totalTime > 0).map(exam => exam.hashCode);
+        doneHashCodes(){
+            return this.historyExams.filter(exam => exam.errorTimes + exam.rightTimes > 0).map(exam => exam.hashCode);
         }
     },
     methods: {
@@ -230,7 +230,11 @@ export default {
                 if (i !== ai && i != null) {
                     return answer;
                 }
+                console.log([...this.questions], ai)
                 let question = this.questions[ai];
+                if (!question) {
+                    return answer;
+                }
                 let rightAnswers = question.answerOptions.filter(option => option.isRight).map(option => option.api);
                 answer.results.forEach(res => {
                     res.isMistake = !rightAnswers.includes(res.api);
@@ -280,10 +284,17 @@ export default {
                             codeInfo = {relatedQuestion: question.hashCode, errorTimes: 0};
                         }
                         if (question.answer.isPass) {
+                            if (isNaN(codeInfo.rightTimes)){
+                                codeInfo.rightTimes = 0;
+                            }
                             codeInfo.rightTimes++;
                         } else {
+                            if (isNaN(codeInfo.errorTimes)){
+                                codeInfo.errorTimes = 0;
+                            }
                             codeInfo.errorTimes++;
                         }
+                        console.log(codeInfo)
                         historyRecordDao.upsert(codeInfo)
                             .then(() => {
                                 console.log('做题信息已保存');
