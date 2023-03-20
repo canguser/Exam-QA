@@ -893,11 +893,27 @@
       "hashCode": 542607607
     },
     {
-      "describe": "<p>Which of the following regarding function is correct? Choose 3 answers.</p><p>A The default parameter in the function will always be evaluated.</p><p>B A f</p>",
+      "describe": "<p>Which of the following regarding function is correct? Choose 3 answers.</p>",
       "answerOptions": [
         {
-          "describe": "<p>function may not be accessed outer variables if the variable is declared with \"let\" keyword.</p><p>C jQuery library defines a function with \"$\" while the Lodash library defines its main core function with \"_\".</p><p>D Never add a newline between return and the value.</p><p>E If a function does not return a value, it is the same as if it returns undefined.</p>",
+          "describe": "<p>The default parameter in the function will always be evaluated.</p>",
           "isRight": false
+        },
+        {
+          "describe": "<p>One function may not be accessed outer variables if the variable is declared with \"let\" keyword.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>jQuery library defines a function with \"$\" while the Lodash library defines its main core function with \"_\".</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Never add a newline between return and the value.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>If a function does not return a value, it is the same as if it returns undefined.</p>",
+          "isRight": true
         }
       ],
       "analysis": "<p>A default parameter will be evaluated if the function is called without the respective parameter</p><p>If a function does not return a value, it is the same as if it returns undefined</p><p>An empty return is also the same as return undefined</p><p>jQuery library defines a function with “$” while the Lodash library defines its main core function with “_”.</p><p>You should not add a newline between return and the value you want to return. Reason being, JavaScript might interpret your code differently. For example, you want to return a long expression like this:</p><p>return</p><p>(some + long + expression + or + whatever * f(a) + f(b))</p><p>The code will not work as expected. JavaScript assumes there is a semicolon after return keyword, which effectively becomes an empty return. However, if you really want to do so, make sure you wrap your expression at the same line as return keyword like this:</p><p>return (</p><p>some + long + expression</p><p>+ or +</p><p>whatever * f(a) + f(b)</p><p>)</p><p>That way, JavaScript will not misinterpret your code.</p>",
@@ -1142,11 +1158,23 @@
       "hashCode": 2035832970
     },
     {
-      "describe": "<p>Which of the following can be best described modules? Choose 2 answers.</p><p>A Modules work on HTTP, HTTPS, and website document that stores locally on your computer.</p><p>B Modules can be set \"use strict\" optionally.</p><p>C A m</p>",
+      "describe": "<p>Which of the following can be best described modules? Choose 2 answers.</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>module is just a file that may contain a class or a library of functions for a specific purpose.</p><p>D Modules can load each other and special directives such as export and import can be used interchangeably.</p>",
+          "describe": "<p>Modules work on HTTP, HTTPS, and website document that stores locally on your computer.</p>",
           "isRight": false
+        },
+        {
+          "describe": "<p>Modules can be set \"use strict\" optionally.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>One module is just a file that may contain a class or a library of functions for a specific purpose.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Modules can load each other and special directives such as export and import can be used interchangeably.</p>",
+          "isRight": true
         }
       ],
       "analysis": "<p>A module is just a file. One script is one module. As simple as that. A module may contain a class or a library of functions for a specific purpose.</p><p>We must tell the browser that a script should be treated as a module by using the attribute</p>",
