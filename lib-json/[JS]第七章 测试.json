@@ -1,0 +1,356 @@
+{
+  "title": "[JS]第七章 测试",
+  "category": "JS-1",
+  "questions": [
+    {
+      "describe": "<p>The developer wants to test this code:</p><p>const toNumber = (strOrNum) => +strOrNum ;</p><p>Which two tests are most accurate for this code? Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.assert (toNumber('-3') < 0) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert (Number.isNaN (toNumber( ))) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.assert (toNumber ( )== NaN) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert (toNumber('2') === 2) ;</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>explain: +'2' will be converted to 2, which is a number</p><p>toNumber(), output: NaN</p><p>console.assert (toNumber('-3') < 0) ; is not most accurate</p>",
+      "hashCode": -1147043528
+    },
+    {
+      "describe": "<p>The developer wants to test the array shown:</p><p>const arr = Array(5). fill(0);</p><p>Which two tests are the most accurate for this array? Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>arr . forEach(elem => console . assert(elem === 0)) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console . assert(arr[0] === 0 && arr[arr . length] === 0) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console . assert (arr . length === 5) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console . assert (arr . length > 0);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>console . assert(arr[0] === 0 && arr[arr . length] === 0) ; is not most accurate</p>",
+      "hashCode": 1515758694
+    },
+    {
+      "describe": "<p>Given the code below:</p><p>function f(arr){</p><p>return arr.reduce(function(a, b){</p><p>return a + b;</p><p>});</p><p>}</p><p>let res = f([2, 3, 4]);</p><p>which of the following code lines will assert the method adds the numbers in the array passed in?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.log(res === 9);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert(res != 9);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.error(res != 9);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert(res === 9);</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>console.assert(res === 9); is the correct way of writing assertion. If the assertion is true, nothing will happen. If the assertion is false, it will show an error message on the console.</p><p>console.log(res === 9) and console.error(res != 9); are not used to assert values.</p>",
+      "hashCode": 835810537
+    },
+    {
+      "describe": "<p>Given the code below:</p><p>let res = sum3([1, 2, 3]);</p><p>console.assert(res === 6);</p><p>The sum3 method gets updated to multiply the numbers instead of adding them. Line 2 is now a false positive assertion. How can the test be changed to fix it? Choose 1 answer.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let res = sum3([1, 2, 3, 4]);</p><p>console.assert(res === 10);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let res = sum3([1, 2]);</p><p>console.assert(res === 3);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let res = sum3([1, 2, 3, 4]);</p><p>console.assert(res === 24);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let res = sum3([3, 2, 1]);</p><p>console.assert(res === 6);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct answer is:</p><p>let res = sum3([1, 2, 3, 4]);</p><p>console.assert(res === 24);</p><p>Adding another number in the sequence ensures the result is different if added or multiplied. The rest of the assertions are either wrong or no difference.</p>",
+      "hashCode": -1461975055
+    },
+    {
+      "describe": "<p>Mocha is a very popular JavaScript Testing framework running on Node.js. James is a developer who is new to this and he is asked by his manager to take care of some issues. Currently, there are over hundreds of tests but he only wants to run certain tests to test the code. What would you suggest to him in this scenario? Choose 1 answer.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Append .only() to the functions that he needs to work on.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Comment out the test cases that are irrelevant.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Append .exclude() to the functions that he doesn’t need to work on.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Append .skip() to the functions that he doesn’t need to work on.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Append .only() to the functions that he needs to work on is the correct answer. For example:</p><p>describe('Test', function () {</p><p>describe.only('Test 1', function () {</p><p>it('Test 1 Item A', function () {</p><p>// this test will not be run</p><p>});</p><p>it.only('Test 1 Item B', function () {</p><p>// this test will be run</p><p>});</p><p>});</p><p>describe('Test 2', function () {</p><p>it('Test 2 Item A', function () {</p><p>// this test will not be run</p><p>});</p><p>it.only('Test 2 Item B', function () {</p><p>// this test will also be run</p><p>});</p><p>});</p><p>});</p><p>.skip() can be appended to functions to exclude test cases, however, there are hundreds of test cases and the developer only wants to run certain tests, hence using .only() is more appropriate.</p><p>There is no function called .exclude() in Mocha testing framework.</p><p>Comment out the test cases is really unnecessary.</p>",
+      "hashCode": -1798172481
+    },
+    {
+      "describe": "<p>Which of the following is the most popular testing frameworks used by JavaScript developers? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Puppeteer</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>TestNG</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Junit</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Mocha</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Jasmine</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>Mocha is a feature-rich JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun.</p><p>Puppeteer is a Node library which provides a high-level API to control headless Chrome or Chromium over the DevTools Protocol.</p><p>Jasmine is a behavior-driven development framework for testing JavaScript code.</p><p>JUnit is a unit testing framework for the Java programming language.</p><p>TestNG is also an open-source automation testingframework specifically designed for Java Programming language.</p>",
+      "hashCode": 1566473470
+    },
+    {
+      "describe": "<p>Which of the test type descriptions is incorrect?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Integration Testing is testing the integration of different parts of the system together.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Unit Testing is a software testing method by which it tests if individual components/units of an application match the requirements.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Beta Testing is usually carried out by testers which uses both white-box and black-box testing techniques.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Functional Testing is a black-box testing technique, where the functionality of the application is tested to generate the desired output on providing a certain input.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>All of the test type descriptions are correct except that Beta Testing is usually performed by clients or end-users who are not employees of the organization and typically uses black-box testing technique only. Alpha Testing is usually carried out by testers and involves both the white-box and black-box techniques.</p>",
+      "hashCode": 1351002996
+    },
+    {
+      "describe": "<p>A developer wrote a fizzbuzz function that when passed in a number, returns the following:</p><p>'fizz' if the number is divisible by 3.</p><p>'buzz' if the number is divisible by 5.</p><p>'fizzbuzz' if the number is divisible by both 3 and 5.</p><p>empty string if the number is divisible by neither 3 or 5.Which two test cases will properly test scenarios for the fizzbuzz function? Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let res = fizzbuzz(5) ;</p><p>console.assert(res === ' ') ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let res = fizzbuzz(15) ;</p><p>console.assert(res === 'fizzbuzz') ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let res = fizzbuzz (Infinity);</p><p>console.assert(res === ' ');</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let res = fizzbuzz(3);</p><p>console.assert(res === 'buzz');</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1211075237
+    },
+    {
+      "describe": "<p>A developer wrote the following code to test a sum3 function that takes in an array of numbers and returns the sum of the first three numbers in the array, and the test passes.</p><p>01  let res = sum3([1, 4, 1]);</p><p>02  console.assert(res === 6);</p><p>0З</p><p>04  res = sum3([1, 5, 0, 5]);</p><p>05  console.assert(res === 6);</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>different developer made changes to the behavior of sum3 to instead sum only the first 2 numbers present in the array.</p><p>Which two results occur when running this test on the updated sum3 function? Choose 2 answers</p><p>A The line 02 assertion fails.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The line 05 assertion passes.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The line 02 assertion passes.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The line 05 assertion fails.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>原本的sum3函数是将求组前三项求和，因此题目中的两个assert可以通过。 将函数改成将求组前两个求和，那么第一个assert的求组就fail了，此时的res是5</p>",
+      "hashCode": 269951395
+    },
+    {
+      "describe": "<p>A test has a dependency on database.query. During the test the dependency is replaced with an object called database with the method, query, that returns an array. The developer needs to verify how many times the method was called and the arguments used each time.</p><p>Which two test approaches describe the requirement?Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Black box</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Integration</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>White box</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Mocking</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>Black Box Testing is a software testing method in which the internal structure/ design/ implementation of the item being tested is not known to the tester.</p><p>White Box Testing is a software testing method in which the internal structure/ design/ implementation of the item being tested is known to the tester</p><p>integration testing – testing your application as it connects with services inside (or outside) of your application</p>",
+      "hashCode": 1349240068
+    },
+    {
+      "describe": "<p>A developer removes the HTML class attrbuite from the checkoutbutton, so now it is simply:</p><p>Checkout  .</p><p>There is a test to verify the existence of the checkout button, however it looks for a button with class=\"blue\". The test fails because no such button is found.</p><p>Which type of test category describes this test?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>False negative</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>True positive</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>True negative</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>False positive</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1279788027
+    },
+    {
+      "describe": "<p>The developer wants to test this code:</p><p>const stringifyNumber = (num) => Number(num).toString();</p><p>Which two tests are the most accurate for this code? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.assert(stringifyNunber() === 'NaN')</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert(typeof stringifyNumber(2) === 'string')</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.assert(stringifyNumber(-2) === '-2')</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.assert(stringifyNumber(' ') == '0' )</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -2043818043
+    },
+    {
+      "describe": "<p>A test has a dependency on database.query. During the test the dependency is replaced with an object called database with the method, query, that returns an array. The developer does not need to verify how many times the method has been called. Which two test approaches describe the requirement? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Stubbing</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Black box</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Substitution</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>White box</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 115201245
+    },
+    {
+      "describe": "<p>A developer wrote the following code to test a sum3 function that takes in an array of numbers and returns the sum of the first three numbers in the array. The test passes:</p><p>01  let res = sum3([1, 2, 3]);</p><p>02  console.assert(res === 6);</p><p>0З</p><p>04  res = sum3([1, 2, 3, 4]);</p><p>05  console.assert(res === 6);</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>different developer made changes to the behavior of sum3 to instead sum all of the numbers present in the array. Which two results occur when running this test on the updated sum3 function? Choose 2 answers</p><p>A The line 02 assertion fails.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The line 05 assertion passes.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The line 02 assertion passes.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The line 05 assertion fails.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1254240553
+    },
+    {
+      "describe": "<p>A developer removes the checkout button that looked like this:</p><p><button class = 'blue'>Checkout</button></p><p>There are multiple components in the component with class ='blue'. An existing test verifies the existence of the checkout button, however it looks for a button with class='blue'. It succeeds because a button with class='blue' is found. Which type of test category describes this test?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>true positive</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>false negative</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>false positive</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>true negative</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -994254076
+    }
+  ],
+  "hashCode": -1308319513
+}

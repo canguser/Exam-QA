@@ -1,0 +1,851 @@
+{
+  "title": "[JS]第三章 浏览器和事件",
+  "category": "JS-1",
+  "questions": [
+    {
+      "describe": "<p>Refer to the HTML below：</p><p><div id = \"main\"></p><p><ul></p><p><li>Leo</li></p><p><li>Tony</li></p><p><li>Tiger</li></p><p></ul></p><p></div></p><p>Which JavaScript statement results in changing “Tony\" to \"Mr.T.\"?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>document.querySelector('#main</p><p>li : nth-child (2)').innerHTML = 'Mr.T.';</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>document.querySelectorAll('#main</p><p>#TONY').innerHTML = 'Mr.T.';</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.querySelectorAll('#main</p><p>li.Tony').innerHTML = 'Mr.T.';</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.querySelector('#main</p><p>li : second-child').innerHTML = 'Mr.T.';</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>CSS:  :nth-child() Selector   see:</p><p>https://www.w3schools.com/cssref/sel_nth-child.asp</p><p>2。how to add class: https://www.w3schools.com/howto/howto_js_add_class.asp</p><p>querySelectorAll will return a list of matched elemens.</p><p>getElementById should not have '#'</p><p>HTML DOM classList property. https://www.w3schools.com/jsref/prop_element_classlist.asp</p>",
+      "hashCode": 591770595
+    },
+    {
+      "describe": "<p>Given</p><p>the HTML below:</p><p><div></p><p><div id</p><p>=\"row-uc\">Universal Containers</div></p><p><div id</p><p>=\"row-as\">Applied Shipping</div></p><p><div id</p><p>=\"row-bt\">Burlington Textiles</div></p><p></div></p><p>Which statement adds the priority-account CSS class to the Universal</p><p>Containers row?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>document.querySelectorAll('#row-uc').classList.add('priority-account');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.querySelector('#row-uc').classes.push('priority-account');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById('#row-uc').addClass('priority-account');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.querySelector('#row-uc').classList.add('priority-account');</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1260350995
+    },
+    {
+      "describe": "<p>A developer tries to retrieve all cookies, then sets a certain key value pair in the cookie. These statements are used:</p><p>01    document.cookie;</p><p>02    document.cookie = 'Key=John Smith';</p><p>What is the behavior?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Cookies are read and the key value is set, and all cookies are wiped.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Cookies are read and the key value is set, the remaining cookies are unaffected.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Cookies are read, but the key value is not set because the value is not URL encoded.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Cookies are not read because line 01 should be document.cookies, but the key value is set and all cookies are wiped.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -2083032662
+    },
+    {
+      "describe": "<p>A developer at UC creates a new landing page based on HTML, CSS, and JavaScript.</p><p>To ensure that visitors have a good experience, a script named personalizeWebsiteContent needs to be executed when the webpage is fully loaded (HTML content and all related files), in order to do some custom initialization.</p><p>Which statement should be used to call personalizeWebsiteContent based on the above business requirement?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>document.addEventListener('onDOMContentLoaded', personalizeWebsiteContent) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>window. addEventListener('onload',  personalizeWebsiteContent);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>window. addEventListener('load',  personalizeWebsiteContent);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>document. addEventListener('DOMContentLoaded',  personalizeWebsiteContent);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>windows load event:</p><p>https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event</p>",
+      "hashCode": 1652847756
+    },
+    {
+      "describe": "<p>Which three browser specific APIs are available for developers to persist data between page loads? Choose 3 answer</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>global variables</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>IIFEs</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>indexedDB</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>localStorage</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>cookies</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The IndexedDB API (sometimes abbreviated IDB) is a complete database system available in the browser in which you can store complex related data</p><p>check client side storage:</p><p>https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage</p>",
+      "hashCode": -1052135917
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  const event = new CustomEvent (</p><p>02        //Missing code</p><p>03  );</p><p>04  obj.dispatchEvent (event) ;</p><p>A developer needs to dispatch a custom event called update to send information about recordId.</p><p>Which two options could a developer insert at the placeholder in line 02 to achieve this? Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>update', '123abc'</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>update', {</p><p>recordId : '123abc'</p><p>}</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>update', {</p><p>detail : {</p><p>recordId : '123abc'</p><p>}</p><p>}</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>{type : 'update', recordId : '123abc'}</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check customEvent：</p><p>https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent</p>",
+      "hashCode": -998090915
+    },
+    {
+      "describe": "<p>UC recently launched its new landing page to host a crowd funding campaign. The page uses an external library to display some third-party ads. Once the page is fully loaded, it creates more than 50 new HTML item placed randomly inside the DOM, like the one in the codebelow:</p><p>< img src=\" /ad- library/ad01.gif\" /></p><p>All the elements include the same ad-library-item class. They are hidden by default, and they are randomly displayed while the user navigates through the page.</p><p>Tired of all the ads, what can the developer do to temporarily and quickly remove them?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use the DOM inspector to remove all the elements containing the class ad-library-item.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the DOM inspector to prevent the load event to be fired.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the browser console to execute a script that prevents the load event to be fired.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the browser console to execute a script that removes all the elements containing the class ad-library-item.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>const el = document.querySelector('ad-library-item');</p><p>el.remove();</p>",
+      "hashCode": 396955090
+    },
+    {
+      "describe": "<p>A developer implements and calls the following code when an application state change occurs:</p><p>const onStatechange = (newPageState)=> {</p><p>window. history. pushState (newPageState, ' ', null) ;</p><p>If the back button is clicked after this method is executed, what can a developer expect?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The page reloads and all JavaScript is reinitialized .</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>A popstate event is fired with a state property that details the application's last state .</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The page is navigated away from and the previous page in the browser's history is loaded.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>A navigate event is fired with a state property that details the previous application state.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check history API:</p><p>https://developer.mozilla.org/en-US/docs/Web/API/History_API/Working_with_the_History_API</p>",
+      "hashCode": -649318349
+    },
+    {
+      "describe": "<p>Refer to the HTML below:</p><p><p> The current status of an Order: <span id=\"status\"> In Progress </span> </p ></p><p>Which JavaScript statement changes the text 'In Progress' to 'Completed' ?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>document.getElementById(\".status\").innerHTML = 'Completed' ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById(\"status\").Value = 'Completed' ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById(\"#status\").innerHTML = 'Completed' ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById(\"status\").innerHTML = 'Completed' ;</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>getElementById, 无需使用 #</p>",
+      "hashCode": 1671046131
+    },
+    {
+      "describe": "<p>A developer creates a simple webpage with an input field. When a user enters text in the input field and clicks the button, the actual value of the field must be displayed in the console.</p><p>Here is the HTML file content:</p><p><input type=\"text\" value=\"Hello\" name=\"input\"></p><p><button type=\"button\">Display</button></p><p>The developer wrote the JavaScript code below:</p><p>01  const button = document.querySelector ('button');</p><p>02  button.addEventListener('click', ( ) => {</p><p>03    const input = document.querySelector('input');</p><p>04    console.log (input.getAttribute('value'));</p><p>05  });</p><p>When the user clicks the button, the output is always \"Hello\".</p><p>What needs to be done to make this code work as expected?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Replace line 04 with console.log(input.value);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Replace line 02 with button. addCallback(\"click\", function( ) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Replace line 02 with button. addEventListener(\"onclick\", function( ) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Replace line 03 with const input = document. getElementByName('input') ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>line03 will get error: document.getElementByName is not a function</p><p>The getElementsByName() method returns a collection of all elements in the document with the specified name</p><p>check addEventListener:</p><p>https://www.w3schools.com/JSREF/met_element_addeventlistener.asp</p>",
+      "hashCode": -1653947682
+    },
+    {
+      "describe": "<p>A developer is creating a simple webpage with a button. When a user clicks this button for the first time, a message is displayed.</p><p>The developer wrote the JavaScript code below, but something is missing. The message gets displayed every time a user clicks the button, instead of just the first time.</p><p>01  function listen (event) {</p><p>02</p><p>03  alert('Hey! I am John Doe');</p><p>04</p><p>05  }</p><p>06 button. addEventListener('click', listen) ;</p><p>Which two code lines make this code work as required? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>On line 02, use event.first to test if it is the first execution.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>On line 04, use event.stopPropagation( );</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>On line 04, use button.removeEventListener('click', listen);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>On line 06. add an option called once to button.addEventListener( ).</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1471083619
+    },
+    {
+      "describe": "<p>Given two nested divs and the code below:</p><p>window.onload = (event) => {</p><p>document.querySelector('.outerDiv')</p><p>.addEventListener('click', displayOuterMessage, true);</p><p>document.querySelector('.innerDiv')</p><p>.addEventListener('click', displayInnerMessage, true);</p><p>};</p><p>What order will the event listeners be called when the innerDiv is clicked?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>displayInnerMessage, displayOuterMessage</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>displayOuterMessage, displayInnerMessage</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>displayOuterMessage only</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>displayInnerMessage only</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Events in the target phase will trigger all listeners on an element in the order they were registered. Hence, the outer message will be displayed first, then the inner message.</p>",
+      "hashCode": -1670279583
+    },
+    {
+      "describe": "<p>What happens when the following code is executed?</p><p>alert(\"There will be an error\")</p><p>[1, 2].forEach(alert)</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The browser will show 3 alerts \"There will be an error\", \"1\" and \"2\".</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The browser will show 1 alert \"There will be an error\".</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The browser will show 1 alert \"TypeError: Cannot read property '2' of undefined\".</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The browser will show 2 alerts \"There will be an error\", and \"TypeError: Cannot read property '2' of undefined\".</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct answer will be showing 2 alerts: “There will be an error” and “TypeError: Cannot read property ‘2’ of undefined”.</p><p>The first line of code is missing a semicolon(;) at the end which JavaScript does not assume a semicolon before square brackets, hence the code is treated as a single statement like this: alert(\"There will be an error\")[1, 2].forEach(alert)</p><p>By default, [1, 2].forEach(alert) will show two alerts “1” and “2”. Since the code statement is malfunction, hence the JavaScript throws an error after showing the first alert.</p><p>In most cases, a newline implies a semicolon. But “in most cases” does not mean “always”! As for best practice, always include a semicolon when you are done with the line to avoid unnecessary issues!</p><p>只会有一个alert, there will be an error. Console 会显示 Error: cannot read property '2' of undefined</p>",
+      "hashCode": 109030409
+    },
+    {
+      "describe": "<p>JavaScript automatically allocates memory when objects are created and frees it when they are not used anymore. This mechanism is often called Garbage Collection (GC). Which of the following regarding GC is correct?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Garbage collection feature can be turned off and managed manually.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>When an object is being referenced by others, it will not be garbage collected.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Garbage collection is only supported by major browsers, such as Google Chrome and Mozilla Firefox.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>When an object becomes unreachable, garbage collector will sweep the data and free the memory.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>When an object becomes unreachable, garbage collector will sweep the data and free the memory.</p><p>Being referenced is not the same as being reachable (from a root): a pack of interlinked objects can become unreachable as a whole.</p><p>Garbage collection is performed automatically. We cannot force or prevent it.</p><p>Almost all the browsers (engines) support garbage collection by default, it is just that modern engines implement advanced algorithms of garbage collection.</p>",
+      "hashCode": -300512207
+    },
+    {
+      "describe": "<p>Which of the following is a valid event when interacting with the browser? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>draganddrop</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>contextmenu</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>mousedown</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>scrollup</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>keyup</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>“contextmenu” event is fired when the right button of the mouse is clicked.</p><p>“mousedown” event is fired when a pointing device button is pressed on an element.</p><p>“keyup” event is fired when any of the keyboard’s key is released.</p><p>There is no “draganddrop” event. However, there is a “drag” event which is fired when an element or text selection is being dragged, and “drop” event which is fired when an element is dropped on a valid drop target.</p><p>There is no “scrollup” event. However, there is an event called “scroll” which is fired when the document view or an element has been scrolled.</p>",
+      "hashCode": -634315088
+    },
+    {
+      "describe": "<p><html></p><p><body></p><p><div></p><p><ul class=\"first\"></p><p><li>Item 1</li></p><p><li>Item 2</li></p><p></ul></p><p><ul class=\"second\"></p><p><li>Item 3</li></p><p><li>Item 4</li></p><p><li>Item 5</li></p><p></ul></p><p></div></p><p><script></p><p>let elements = document.querySelectorAll('div, ul > li:last-child,  * ul.first li');</p><p>console.log(elements.length);</p><p></script></p><p></body></p><p></html></p><p>Given the code above, what is the length of elements?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>6</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>7</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>4</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>5</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The length of elements is 4. The query selector selects 1 div and 3 li which are the Item 1, Item 2 and Item 5.</p>",
+      "hashCode": -1252572505
+    },
+    {
+      "describe": "<p><!DOCTYPE html></p><p><html></p><p><body></p><p><form>FORM</p><p><div>DIV</p><p><p>P</p></p><p></div></p><p></form></p><p><script></p><p>for(let elem of document.querySelectorAll('*')) {</p><p>elem.addEventListener(\"click\", e => console.log(`Bubbling: ${elem.tagName}`));            elem.addEventListener(\"click\", e => console.log(`Capturing: ${elem.tagName}`), true);</p><p>}</p><p></script></p><p></body></p><p></html></p><p>Given the code above, which one of the following will be the correct output in the console when you click on the paragraph element?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>“Capturing: P”</p><p>“Bubbling: P”</p><p>“Capturing: DIV”</p><p>“Bubbling: DIV”</p><p>“Capturing: FORM”</p><p>“Bubbling: FORM”</p><p>“Capturing: BODY”</p><p>“Bubbling: BODY”</p><p>“Capturing: HTML”</p><p>“Bubbling: HTML”</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>“Bubbling: HTML”</p><p>“Bubbling: BODY”</p><p>“Bubbling: FORM”</p><p>“Bubbling: DIV”</p><p>“Bubbling: P”</p><p>“Capturing: P”</p><p>“Capturing: DIV”</p><p>“Capturing: FORM”</p><p>“Capturing: BODY”</p><p>“Capturing: HTML”</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>“Capturing: HTML”</p><p>“Capturing: BODY”</p><p>“Capturing: FORM”</p><p>“Capturing: DIV”</p><p>“Bubbling: P”</p><p>“Capturing: P”</p><p>“Bubbling: DIV”</p><p>“Bubbling: FORM”</p><p>“Bubbling: BODY”</p><p>“Bubbling: HTML”</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>“Capturing: HTML”</p><p>“Capturing: BODY”</p><p>“Capturing: FORM”</p><p>“Capturing: DIV”</p><p>“Capturing: P”</p><p>“Bubbling: P”</p><p>“Bubbling: DIV”</p><p>“Bubbling: FORM”</p><p>“Bubbling: BODY”</p><p>“Bubbling: HTML”</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct output sequence will be the following:</p><p>“Capturing: HTML”</p><p>“Capturing: BODY”</p><p>“Capturing: FORM”</p><p>“Capturing: DIV”</p><p>“Bubbling: P”</p><p>“Capturing: P”</p><p>“Bubbling: DIV”</p><p>“Bubbling: FORM”</p><p>“Bubbling: BODY”</p><p>“Bubbling: HTML”</p><p>The standard DOM Events describes 3 phases of event propagation:</p><p>Capturing phase – the event goes down to the element.</p><p>Target phase – the event reached the target element.</p><p>Bubbling phase – the event bubbles up from the element.</p><p>In this case, the click on paragraph element captures down from the rootdown to</p><p>element, and then bubbles up all the way to the root.</p><p>Since the addEventListener for capturing events is initiated before bubbling events, hence the console prints “Bubbling: P” before “Capturing: P”.</p>",
+      "hashCode": -1595759444
+    },
+    {
+      "describe": "<p>If an application manipulates the browser history using the History API, which event should a developer use to detect when the browser’s native back or forward button is clicked? Choose 1 answer.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>popstate</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>change</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>pushstate</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>navigate</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>A popstate event is dispatched to the window each time the active history entry changes between two history entries for the same document.</p><p>The navigate() method loads a specified URL.</p><p>The pushstate() method pushes the given data onto the session history stack with the specified title.</p><p>The change event is fired for changes to element.</p>",
+      "hashCode": 760715380
+    },
+    {
+      "describe": "<p><div id=\"elem\"></div></p><p><script></p><p>// get the element</p><p>let elem = ____________;</p><p>// set background as red color</p><p>elem.style.background = 'red';</p><p></script></p><p>Given the code above, what would you write in the blank field on line 4? Choose 1 answer.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>html.getElementById('elem');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById('elem');</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Element.getElementById('elem');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>this.getElementById('elem');</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>document.getElementById('elem'); is the correct way to look for an element by its id.</p>",
+      "hashCode": 1024050894
+    },
+    {
+      "describe": "<p><form onclick=\"alert('form')\">FORM</p><p><div onclick=\"alert('div')\">DIV</p><p><p onclick=\"alert('p')\">P</p></p><p></div></p><p></form></p><p>what would happen when the div element block is clicked?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>alert('div') will show first, then alert('form').</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>alert('div') will show first, then alert('p').</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Only alert('div') will show.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>alert('p') will show first, then alert('div') , and lastly alert('form').</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>alert('div') will show first, then alert('form').</p><p>When an event happens on an element, it first runs the handlers on it, then on its parent, then all the way up on other ancestors. In this case, a click on the div element will bubble up to form element which resulting in showing two alerts.</p>",
+      "hashCode": 1905395048
+    },
+    {
+      "describe": "<p>Which of the following regarding DOM is correct? Choose 2 answers.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>DOM is a programming language that handles the whole webpage.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>DOM is a programming interface for HTML and XML documents.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>DOM stands for Document Object Model.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>DOM stands for Document Object Management.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>DOM stands for Document Object Model.</p><p>DOM is not a programming language, it is a programming interface for HTML and XML documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects. That way, programming languages like JavaScript can connect to the page.</p>",
+      "hashCode": 73646446
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  <html lang=\"en\"></p><p>02    <table onclick=\"console. log('Table log');\"></p><p>03        <tr id=\"row1\"></p><p>04         <td>Click me!</td></p><p>05        </tr></p><p>06    </table></p><p>07    <script></p><p>08        function printMessage (event) {</p><p>09              console.log('Row log') ;</p><p>10        }</p><p>11</p><p>12       let elem = document. getElementById('row1') ;</p><p>13       elem. addEventListener('click', printMessage, false) ;</p><p>14    </script></p><p>15  </html></p><p>Which code change should be made for the console to log only Row log when 'Click me!' is clicked?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add event. stopPropagation( ); to printMessage function.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add event .stopPropagation( ); to window.onLoad event handler.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add event.removeEventListener( ); to printMessage function.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add event.removeEventListener( ); to window.onLoad event handler.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -73700738
+    },
+    {
+      "describe": "<p>Universal Containers (UC) notices that its application that allows users to search for accounts makes a network request each time a key is pressed.  This results in too many requests for the server to handle.</p><p>To address this problem, UC decides to implement a debounce function on the search string change handler.</p><p>What are three key steps to implement this debounce function? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>When the search string changes, enqueue the request within a setTimeout.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Ensure that the network request has the property debounce set to true.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Store the timerId of the setTimeout last enqueued by the search string change handler.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>If there is an existing setTimeout and the search string changes, allow the existing setTimeout to finish, and do not enqueue a new setTimeout.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>If there is an existing setTimeout and the search string changes, cancel the existing setTimeout using the persisted timerId and replace it witha new setTimeout.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1101212415
+    },
+    {
+      "describe": "<p>Refer to the following code:</p><p>01  <html></p><p>02       <body></p><p>03           <div onclick=\"console.log('Outer message');\" ></p><p>04              <button id=\"myButton\">Click me!</button></p><p>05          </div></p><p>06      </body></p><p>07  <script></p><p>08        function displayMessage(ev) {</p><p>09              ev.stopPropagation( ) ;</p><p>10              console.log('Inner message.') ;</p><p>11        }</p><p>12       const elem = document. getElementById('myButton') ;</p><p>13       elem.addEventListener('click', displayMessage) ;</p><p>14    </scrípt></p><p>15  </html></p><p>What will the console show when the button is clicked?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Inner message</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Outer message</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Inner message Outer message</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Outer message Inner message</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The stopPropagation() method of the Event interface prevents further propagation of the current event in the capturing and bubbling phases.</p><p>https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation</p>",
+      "hashCode": 79169378
+    },
+    {
+      "describe": "<p>Which statement can a developer apply to increment the browser's navigation history without a page refresh?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>window.history.replaceState (newStateObject, ' ', null) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>window.history.state.push (newStateObject) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>window.history.pushState (newStateObject);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>window.history.pushState (newStateobject, ' ', null) ;</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>https://developer.mozilla.org/en-US/docs/Web/API/History/pushState</p>",
+      "hashCode": 75700286
+    },
+    {
+      "describe": "<p>Which code statement below correctly persists an object in localStorage?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>const setLocalStorage = (storageKey, jsObject) => {</p><p>window.localStorage.persist (storageKey,  jsObject) ;</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>const setLocalStorage = (storageKey, jsObject) => {    window.localStorage.setItem(storageKey, JSON. stringify(jsObject)) ;</p><p>}</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>const setLocalStorage = (jsObject) => { window·localStorage·connectObject(jsObject);</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>const setLocalStorage = (jsObject) => {</p><p>window.localStorage·setItem (jsObject);</p><p>}</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage</p>",
+      "hashCode": -615328800
+    },
+    {
+      "describe": "<p>Given the following code:</p><p>01  document.body.addEventListener('click', (event) => {</p><p>02      if (/* CODE REPLACEMENT HERE */) {</p><p>03        console.log( 'Button clicked!') ;</p><p>04      }</p><p>05  }) ;</p><p>Which replacement for the conditional statement on line 02 allows a developer to correctly determine that a button on the page is clicked?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>event.target.nodeName == 'BUTTON'</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>button.addEventListener('click')</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>e.nodeTarget == this</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>event.clicked</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 990457691
+    },
+    {
+      "describe": "<p>A developer has the function, shown below, that is called when a page loads.</p><p>function onLoad( ) {</p><p>console . log(\"Page has loaded!\") ;</p><p>Where can the developer see the log statement after loading the page in the browser?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Browser JavaScript console</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Browser performance tools</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>On the webpage</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Terminal running the web server</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -950730568
+    },
+    {
+      "describe": "<p>Refer to the HTML below:</p><p><div id=\"main\"></p><p><div id=\"card-00\">This card is smaller.</div></p><p><div id=\"card-01\">The width and height of this card is determined by its contents. </div></p><p></div></p><p>Which expression outputs the screen width of the element with the ID card-01?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>document.getElementById( 'card-01' ).style.width</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>document.getElementById( 'card-01' ).innerHTML.length*6</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById( 'card-01' ).width</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById( 'card-01' ).getBoundingClientRect( ).width</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The :nth-child() CSS pseudo-class matches elements based on their position in a group of siblings.</p><p>https://developer.mozilla.org/en-US/docs/Web/CSS/:nth-child</p>",
+      "hashCode": -587254574
+    },
+    {
+      "describe": "<p>Which three actions can be done using the JavaScript browser console? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>View, change, and debug the JavaScript code of the page.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>View and change security cookies.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>View and change the DOM of the page.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Display a report showing the performance of a page.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Run code that is not related to the page.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1569259728
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  document.body.addEventListener('click', (event) => {</p><p>02      if ( /* ANSWER HERE */) {</p><p>03          console.log('myElement clicked!');</p><p>04      }</p><p>05  });</p><p>Which replacement for the conditional statement on line 02 allows a developer to correctly determine that a specific element, myElement, on the page had been clicked?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>e.nodeTarget == myElement</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>button.addEventListener('click', 'myElement')</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>event.target.id == 'myElement'</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>myElement.clicked</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 437895865
+    },
+    {
+      "describe": "<p>Refer to the following code:</p><p>01  <html></p><p>02      <body></p><p>03          <span onclick=\"console.log('Span message');\"></p><p>04              <button id=\"myButton\">Send message!</button></p><p>05          </span></p><p>06      </body></p><p>07      <script></p><p>08        function displayMessage(ev) {</p><p>09            ev.stopPropagation();</p><p>10            console.log('Button message');</p><p>11        }</p><p>12        const elem = document.getElementById('myButton');</p><p>13        elem.addEventListener('click', displayMessage);</p><p>14        </script></p><p>15  </html></p><p>What will the console show when the button is clicked?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Span message</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Button message Span message</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Span message Button message</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Button message</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1848855696
+    },
+    {
+      "describe": "<p>Refer to the following code:</p><p>01  <html></p><p>02      <div></p><p>03          <button>Click me!</button></p><p>04      </div></p><p>05      <script></p><p>06          function displayInnerMessage(ev) {</p><p>07              console.log('Inner message.');</p><p>08          }</p><p>09          function displayOuterMessage(ev) {</p><p>10              console.log('Outer message.');</p><p>11          }</p><p>12</p><p>13          window.onload = (event) => {</p><p>14              document.querySelector('.outerDiv')</p><p>15                 .addEventListener('click', displayOuterMessage, true);</p><p>16              document.querySelector('.myButton')</p><p>17                 .addEventListener('click', displayInnerMessage, true);</p><p>18          };</p><p>19      </script></p><p>20  </html></p><p>What will the console show when the button is clicked?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>> Outer message.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>> Inner message.</p><p>> Outer message.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>> Inner message.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>> Outer message.</p><p>> Inner message.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -978870915
+    },
+    {
+      "describe": "<p>Refer to the HTML below:</p><p><div id=\"main\"></p><p><div id=\"card-00\">This card is smaller.</div></p><p><div id=\"card-01\">The width and height of this card is determined by its contents. </div></p><p></div></p><p>Which statement outputs the height of the element with the ID card-01?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>document.getElementById( 'card-01' ).style.height</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>(document.getElementById( 'card-01' ).innerHTML.length)/32)*6</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById( 'card-01' ).height</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById( 'card-01' ).getBoundingClientRect( ).height</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1734822652
+    },
+    {
+      "describe": "<p>A developer wants to create a simple image upload in the browser using the File API. The HTML is below:</p><p><imput type=\"file\" onchange=\"previewFile()\"></p><p><img src=\"\" height=\"200\" alt=\"Image preview…\"/></p><p>The JavaScript portion is:</p><p>01    function previewFile() {</p><p>02        const preview = document.querySelector('img');</p><p>03        const file = document.querySelector('input[type=file]').files[0];</p><p>04        // line 4 code</p><p>05        reader.addEventListener(\"load\", () => {</p><p>06            preview.src = reader.result;</p><p>07        }, false);</p><p>08        // line 8 code</p><p>09    }</p><p>In lines 04 and 08, which code allows the user to select an image from their local computer, and to display the image in the browser?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>04 const reader = new File();</p><p>08 if (file) reader.readAsDataURL(file);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>04 const reader = new FileReader();</p><p>08 if (file) URL.createObjectURL(file);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>04 const reader = new File();</p><p>08 if (file) URL.createObjectURL(file);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>document.getElementById( 'card-01' ).style.height</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 599621267
+    },
+    {
+      "describe": "<p>Which two actions can be done using the JavaScript browser console? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Run code that is not related to the page.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Change the DOM and the JavaScript code of the page.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Display a report showing the performance of a page.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>View the security cookies.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -981384439
+    }
+  ],
+  "hashCode": 2013466315
+}

@@ -1,0 +1,613 @@
+{
+  "title": "[JS]第六章 服务器端JavaScript",
+  "category": "JS-1",
+  "questions": [
+    {
+      "describe": "<p>A developer sets up a Node.js server and creates a script at the root of the source code, index.js, that starts the server when executed. The developer declares a variable that needs the location and name of the file that the code executes from.</p><p>Which global variable should be used in the script?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>__dirname</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>this.path</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>window.location</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>__filename</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>nodejs global object: https://nodejs.org/api/globals.html</p><p>__dirname, the directory name of the current module</p><p>use path module without require this keyword</p><p>The Window.location read-only property returns a Location object with information about the current location of the document.</p><p>__filename, the file name of the current module.</p>",
+      "hashCode": 662079527
+    },
+    {
+      "describe": "<p>A developer is leading the creation of a new web server for their team that will fulfill API requests from an existing client.</p><p>The team wants a web server that runs on Node.js, and they want to use the new web framework Minimalist.js. The lead developer wants to advocate for a more seasoned back-end framework that already has a community around it.</p><p>Which two frameworks could the lead developer advocate for?</p><p>Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Angular</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Gatsby</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Express</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Koa</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>Angular is a front end framework</p><p>Gatsby, is a  framework for building websites with React</p><p>Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications</p><p>A Koa Request object is an abstraction on top of node's vanilla request object, providing additional functionality that is useful for every day HTTP server</p>",
+      "hashCode": 2097314672
+    },
+    {
+      "describe": "<p>A developer needs to debug a Node.js web server because a runtime error keeps occurring at one of the endpoints.</p><p>The developer wants to test the endpoint on a local machine and make the request against a local server to look at the behavior. In the source code, the server.js file will start the server. The developer wants to debug the Node.js server only using the terminal.  Which command can the developer use to open the CLI debugger in their current terminal window?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>node start inspect server.js</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>node -i server.js</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>node inspect server.js</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>node server.js --inspect</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>node.js debugging guide: https://nodejs.org/en/docs/guides/debugging-getting-started/</p><p>--inspect: Enable inspector agent, and listen on default address and port (127.0.0.1:9229)</p>",
+      "hashCode": 2057600892
+    },
+    {
+      "describe": "<p>Which option is a core Node.js module?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>filestream</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>fs</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>iosfwd</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>fstream</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>some common used core node modules: fs, http, https, path, url</p>",
+      "hashCode": -1521682380
+    },
+    {
+      "describe": "<p>In the browser, the window object is often used to assign variables that require the broadest scope in an application. Node.js applications do not have access to the window object by default.</p><p>Which two methods are used to address this?  Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use the document object instead of the window object.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Assign variables to module.exports and require them as needed.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Assign variables to the global object.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Create a new window object in the root file.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>In browsers, the top-level scope is the global scope. That means that in browsers if you're in the global scope var something will define a global variable. In Node.js this is different. The top-level scope is not the global scope; var something inside an Node.js module will be local to that module.</p><p>We can access the global object in node using the global keyword:</p><p>console.log(global);</p><p>The global object exposes a variety of useful properties about the environment. Also this is the place where functions as setImmediate and clearTimeout are located.</p>",
+      "hashCode": 2020446662
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  const resolveAfterMilliseconds = (ms) => Promise.resolve(</p><p>02      setTimeout(( ) => console.log(ms), ms));</p><p>03  const aPromise = await resolveAfterMilliseconds(500) ;</p><p>04  const bPromise = await resolveAfterMilliseconds(500) ;</p><p>05  await aPromise, await bPromise ;</p><p>What is the result of running line 05?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Only aPromise runs.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>aPromise and bPromise run sequentially.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>aPromise and bPromise run in parallel.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Neither aPromise or bPromise runs.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check await keyword:</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await</p>",
+      "hashCode": 2019967301
+    },
+    {
+      "describe": "<p>A developer is setting up a new Node.js server with a client library that is built using events and callbacks.</p><p>The library:</p><p>• Will establish a web socket connection and handle receipt of messages to the server</p><p>• Will be imported with require, and made available with a variable called ws.</p><p>The developer also wants to add error logging if a connection fails.</p><p>Given this information, which code segment shows the correct way to setup a client with two events that listen at execution time?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>04 ws.on('connect', ( ) => {</p><p>05      console.log ('Connected to client') ;</p><p>06</p><p>07      ws.on('error', (error) => {</p><p>08          console.log('ERROR', error) ;</p><p>09       });</p><p>10  });</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>04  ws.on('connect', ( ) => {</p><p>05      console. log( 'Connected to client') ;</p><p>06   });</p><p>07</p><p>08  ws.on('error', (error) => {</p><p>09      console. log('ERROR', error) ;</p><p>10  });</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>04  try {</p><p>05     ws.connect ( ( ) => {</p><p>06         console.log('Connected to client') ;</p><p>07      }) ;</p><p>08  } catch(error) {</p><p>09    console.log('ERRoR', error);</p><p>10  }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>04  ws.connect(( ) => {</p><p>05       conole.log('Conneted to ellent');06  }).catch((error) => {</p><p>07     console. log('ERROR',error) ;</p><p>08  });</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>if use try…catch… block, need to use async/await with promise so that the try…catch... Block can work</p><p>Callbacks are the most basic way of delivering an error asynchronously. The user passes you a function (the callback), and you invoke it sometime later when the asynchronous operation completes. The usual pattern is that the callback is invoked as callback(err, result), where only one of err and result is non-null, depending on whether the operation succeeded or failed.</p>",
+      "hashCode": 1243459067
+    },
+    {
+      "describe": "<p>A developer is debugging a web server that uses Node.js. The server hits a runtime error every third request to an important endpoint on the web server.</p><p>The developer added a break point to the start script, that is at index.js at the root of the server's source code. The developer wants to make use of Chrome DevTools to debug.Which command can be run to access DevTools and make sure the breakpoint is hit?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>node inspect index.js</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>node -- inspect index.js</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>node -- inspect-brk index.js</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>node - i index.js</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>--inspect':</p><p>Enable inspector agent</p><p>Listen on default address and port (127.0.0.1:9229)</p><p>'--inspect-brk':</p><p>Enable inspector agent</p><p>Listen on default address and port (127.0.0.1:9229)</p><p>Break before user code starts</p><p>check node doc:</p><p>https://nodejs.org/en/docs/guides/debugging-getting-started/</p>",
+      "hashCode": 212405043
+    },
+    {
+      "describe": "<p>What are the most important items in your npm package.json file if you plan to publish a package? Choose 2 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Author</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Version</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Name</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Description</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The name and version are required if you plan to publish your package. These two together will form an identifier that is assumed to be completely unique. Changes to the package should come along with changes to the version.</p><p>If you don’t plan to publish your package, the name and version fields are optional.</p>",
+      "hashCode": 1719156876
+    },
+    {
+      "describe": "<p>Refer to this code below:</p><p>const https = require('https');</p><p>const server = https.createServer((req, res) => {</p><p>req.on('get', (chunk) => {</p><p>let reqData = JSON.parse(chunk);</p><p>console.log(reqData);</p><p>});</p><p>res.end('OK');</p><p>});</p><p>server.listen(8000);</p><p>However, the code is running as intended. As a developer, how can you fix the code to receive incoming request data?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Replace</p><p>req.on('get', (chunk) => {</p><p>from line 3 with</p><p>req.on('data', (chunk) => {</p><p>.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Replace</p><p>req.on('get', (chunk) => {</p><p>from line 3 with</p><p>req.get((chunk) => {</p><p>.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>There is nothing wrong with the code.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Replace</p><p>req.on('get', (chunk) => {</p><p>from line 3 with</p><p>req.data((chunk) => {</p><p>.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The following code snippet shows the correct way of setting up server and receive incoming request data:</p><p>const https = require('https');</p><p>const server = https.createServer((req, res) => {</p><p>req.on('data', (chunk) => {</p><p>let reqData = JSON.parse(chunk);</p><p>console.log(reqData);</p><p>});</p><p>res.end('OK');</p><p>});</p><p>server.listen(8000);</p>",
+      "hashCode": 1528369872
+    },
+    {
+      "describe": "<p>What is the advantage of using Node.js? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Open Source</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Maintained by big companies like Facebook, Google, etc.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Non-blocking</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Multi-threaded</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Asynchronous</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>Node.js is an open-source, cross-platform, JavaScript runtime environment (Framework) that executes JavaScript code outside a web browser.</p><p>Node.js has an event-driven architecture capable of asynchronous I/O.</p><p>Non-blocking I/O operations allow a single process to serve multiple requests at the same time and provide a callback function that is called when the operation is completed.</p><p>Node.js is not a multi-threaded JavaScript runtime environment. By nature, JavaScript is single-threaded. The event loop is what allows Node.js to perform non-blocking I/O operations.</p><p>Unlike Angular or React, Node.js is not maintained by big companies like Google or Facebook.</p>",
+      "hashCode": 1736283776
+    },
+    {
+      "describe": "<p>What are the two main properties of an error object that’s passed as an argument to catch in a try…catch construct?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>name and message</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>title and stack</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>title and message</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>name and stacktrace</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The main properties of an error object are:</p><p>message</p><p>name</p><p>The error object does not have a title property or stacktrace property. Stack is a non-standard Mozilla property for a stack trace.</p>",
+      "hashCode": -1005089821
+    },
+    {
+      "describe": "<p>Here is the package.json for the bar.awesome module:</p><p>{</p><p>\"name\": \"bar.awesome\",</p><p>\"version\": \"1.3.5\",</p><p>\"peerDependencies\": {</p><p>\"baz\": \"5.x\"</p><p>}</p><p>}</p><p>A particular project has the package.json definition below.</p><p>{</p><p>\"name\": \"UC Project Extra\",</p><p>\"version\": \"0.0.5\",</p><p>\"dependencies\": {</p><p>\"bar.awesome\": \"1.3.5\",</p><p>\"baz\": \"6.0.0\"</p><p>}</p><p>}</p><p>What happens when a developer executes npm install? Choose 1 answer.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The command fails because bar versions are not compatible.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The command fails because bar.awesome does not have any dependency.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The command succeeds with no errors or warnings.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The command succeeds but displays a warning about a version mismatch.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The correct answer is that the command will succeed but will display a warning about a version mismatch (5.x does not match with 6.0.0).</p><p>bar.awesome has a dependency on baz, hence the statement saying bar.awesome does not have any dependency is wrong.</p><p>The bar versions are compatible, but the baz versions are not.</p><p>The command does succeed, however, there is a warning for the mismatched baz dependency.</p>",
+      "hashCode": 1976764585
+    },
+    {
+      "describe": "<p>A developer has a web server running with Node.js. The command to start the web server is node server. js. The web server started having latency issues. Instead of a one second turnaround for web requests, the developer now sees a five second turnaround.Which command can the web developer run to see what the module is doing during the latency period?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>NODE_DEBUG=true node server.js</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>NODE_DBBUG=http, https node server.js</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>DEBUG=http, https node server. js</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>DEBUG=true node server. js</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>NODE_DEBUG enables debugging messages using the Node.js util.debuglog</p>",
+      "hashCode": -1341637357
+    },
+    {
+      "describe": "<p>Which option is true about the strict mode in imported modules?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>You can only reference notStrict ( ) functions from the imported module.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Imported modules are in strict mode whether you declare them as such or not.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add the statement use non-strict; before any other statements in the module to enable not-strict mode.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add the statement use strict-false; before any other statements in the module to enable not- strict mode.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Imported modules are in strict mode whether you declare them as such or not. The import statement cannot be used in embedded scripts unless a script has a type=”module”.</p><p>ECMAScript 2015 introduced JavaScript modules and therefore a 3rd way to enter strict mode.  The entire contents of JavaScript modules are automatically in strict mode, with no statement needed to initiate it.</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode</p>",
+      "hashCode": -807688859
+    },
+    {
+      "describe": "<p>A developer creates a new web server that uses Node.js. It imports a server library that uses events and callbacks for handling server functionality.</p><p>The server library is imported with require and is made available to the code by a variable named server. The developer wants to log any issues that the server has while booting up.</p><p>Given the code and the information the developer has, which code logs an error at boot time with an event?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>01  server.catch((error) => {</p><p>02  console.log('ERROR', error) ;</p><p>03  });</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>01  server.on('error', (error) => {</p><p>02  console.log('ERROR', error);</p><p>03  }) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>01  try {</p><p>02  server.start( );</p><p>03  } catch(error) {</p><p>04  console.log('ERROR', error);</p><p>05  }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>01 server.error(error) => {</p><p>02     console.log('ERROR', error);</p><p>03  });</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>https://nodejs.org/api/errors.html</p>",
+      "hashCode": 530949409
+    },
+    {
+      "describe": "<p>Refer to the following code that imports a module named Utils:</p><p>01 import {foo,bar} from '/path/Utils.js';</p><p>02 foo( ) ;</p><p>03 bar( ) ;</p><p>Which two implementations of Utils.js export foo and bar such that the code above runs without error? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>const foo = ( ) => { return 'foo'; }</p><p>const bar = ( ) => { return 'bar'; }</p><p>export   {foo, bar}</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>// FooUtils.js and BarUtils.js exist</p><p>import {foo} from '/path/FoUtils.js';</p><p>import {bar} from '/path/BarUtils.js';</p><p>export {foo, bar}</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>const foo = ( ) => { return 'foo'; }</p><p>const bar = ( ) => { return 'bar'; }</p><p>export default foo, bar;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>export default class {</p><p>foo( ) { return 'foo'; }</p><p>bar( ) { return 'bar'; }</p><p>}</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 108470164
+    },
+    {
+      "describe": "<p>Teams at Universal Containers (UC) work on multiple JavaScript projects at the same time. UC is thinking about reusability and how each team can benefit from the work of others.</p><p>Going open-source or public is not an option at this time.</p><p>Which option is available to UC with npm?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Private registries are not supported by npm, but packages can be installed via git.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Private packages are not supported, but they can use another package manager like yarn.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Private packages can be scoped, and scopes can be assciated to a private registries.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Pritate registries are not supported by npm, but packages can be installed via URL.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>With npm private packages, you can use the npm registry to host code that is only visible to you and chosen collaborators, allowing you to manage and use private code alongside public code in your projects.</p><p>Private packages always have a scope, and scoped packages are private by default.</p>",
+      "hashCode": -1696735636
+    },
+    {
+      "describe": "<p>A developer is trying to convince management that their team will benefit from using Node.js for a backend server that they are going to create. The server will be a web server that handles API requests from a website that the team has already built using HTML, CSS, and JavaScript. Which three benefits of Node.js can the developer use to persuade their manager? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Ensures stability with one major release every few years.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Performs a static analysis on code before execution to look for runtime errors.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Executes server-side JavaScript code to avoid learning a new language.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Uses non-blocking functionality for performant request handling.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Installs with its own package manager to install and manage third-party libraries.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>Static code analysis is a method of debugging by examining source code before a program is run. It's done by analyzing a set of code against a set (or multiple sets) of coding rules.</p>",
+      "hashCode": -1722592550
+    },
+    {
+      "describe": "<p>Which option is a core Node.js module?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>ios</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>path</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>locale</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>memory</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>some common used core node modules: fs, http, https, path, url</p>",
+      "hashCode": 72486486
+    },
+    {
+      "describe": "<p>A developer publishes a new version of a package with bug fixes but no breaking changes. The old version number was 2.1.1. What should the new package version number be based on semantic versioning?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>2.1.2</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>2.2.0</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>2.2.1</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>3.1.1</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Patch release</p>",
+      "hashCode": -177784441
+    },
+    {
+      "describe": "<p>A developer wants to set up a web server that handles HTTP/2 with Node.js. The developer created a directory locally called app-server, and the first file added is index.js (at app-server/index.js). Without using any third-party libraries, what should the developer add to line 1 of index.js?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>const https = require('http2');</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>const server = require('http-2');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>const tls = require('tls');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>const https = require('https');</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1223870664
+    },
+    {
+      "describe": "<p>A developer has an ErrorHandler module that contains multiple functions. What kind of export should be leveraged so that multiple functions can be used?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>default</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>named</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>all</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>multi</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -431566820
+    },
+    {
+      "describe": "<p>A team that works on a big project uses npm to deal with the project's dependencies.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>developer added a dependency to manipulate dates and pushed the updates to the remote repository. The rest of the team complains that the dependency does not get downloaded when they execute npm install. Which two reasons could be possible explanations for this? Choose 2 answers</p><p>A The developer missed the option --add when adding the dependency.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The developer missed the option --save when adding the dependency.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The developer added the dependency as a dev dependency, and NPM_ENV is set to production.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The developer added the dependency as a dev dependency, and NODE_ENV is set to production.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1275574661
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  const server = require('server');</p><p>02</p><p>03  //Insert code here</p><p>A developer imports a library that creates a web server. The imported library uses events and callbacks to start the server.</p><p>Which code should be inserted at line 03 to set up an event and start the web server?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>server( );</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>server.start( );</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>server.on('connect', (port) => {</p><p>console.log('Listening on', port);</p><p>});</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>server(port) => {</p><p>console.log('Listening on', port);</p><p>});</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1106298462
+    },
+    {
+      "describe": "<p>Which two options are core Node.js modules?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>iostream</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>worker</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>http</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>exception</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1498065227
+    }
+  ],
+  "hashCode": -87576049
+}

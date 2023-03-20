@@ -1,0 +1,1759 @@
+{
+  "title": "[JS]第二章 对象-函数-类",
+  "category": "JS-1",
+  "questions": [
+    {
+      "describe": "<p>Which function should a developer use to repeatedly execute code at a fixed time interval?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>setInterval</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>setTimeout</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>setPeriod</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>setInterim</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).</p><p>setTimeout execute a specified block of code once after a specified time has elapsed.</p>",
+      "hashCode": 1543270785
+    },
+    {
+      "describe": "<p>A developer creates an object where its properties should be immutable and prevent properties from being added or modified.Which method should be used to execute this business requirement?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Object.seal( )</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Object.const( )</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Object.freeze( )</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Object.lock( )</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The Object.seal() method seals an object, preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable.</p><p>The Object.freeze() method freezes an object. A frozen object can no longer be changed; freezing an object prevents new properties from being added to it, existing properties from being removed, prevents changing the enumerability, configurability, or writability of existing properties, and prevents the values of existing properties from being changed. In addition, freezing an object also prevents its prototype from being changed. freeze() returns the same object that was passed in.</p>",
+      "hashCode": -1236958766
+    },
+    {
+      "describe": "<p>Given the following code:</p><p>let x= ( '15' + 10 ) * 2;</p><p>What is the value of x?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>50</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>3020</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>35</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>1520</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1566378556
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01    const car = {</p><p>02        price: 100,</p><p>03        getPrice: function ( ) {</p><p>04            return this.price;</p><p>05         }</p><p>06    };</p><p>07    const customCar = Object.create(car);</p><p>08    customCar.price = 70;</p><p>09</p><p>10    delete customCar.price;</p><p>11    const result = customCar.getPrice( );</p><p>Considering the implications of line 10 along with prototype inheritance, what is the value of result after the code executes?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>100</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>70</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>null</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>create() The Object. create() method creates a new object, using an existing object as the prototype of the newly created object</p><p>In line 10, the price property is deleted. But in the prototype chain, therer is another price property.</p><p>{price: 70}</p><p>price: 70</p><p>__proto__:</p><p>getPrice: ƒ ( )</p><p>price: 100</p><p>__proto__: Object</p>",
+      "hashCode": 796642343
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01    function changeValue(obj) {</p><p>02        obj.value = obj.value / 2;</p><p>03    }</p><p>04    const objA = { value : 10};</p><p>05    const objB = objA;</p><p>06</p><p>07    changeValue(objB);</p><p>08    const result = objA.value;</p><p>What is the value of result after the code executes?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>NaN</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>10</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>5</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>objA and objB point to the same address in the stack. So they are same object. In line 7, the method changes the object.value, so in line8, the object.value = 5</p>",
+      "hashCode": -1558274561
+    },
+    {
+      "describe": "<p>Which three options show valid methods for creating a fat arrow function? Choose 3 answer</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[ ] => { console.log( 'executed' ); }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>( ) => { console.log( 'executed' ); }</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>( x, y, z ) => { console.log( 'executed' ); }</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>x, y, z  => { console.log( 'executed' ); }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>x  => { console.log( 'executed' ); }</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>If no parameter, the () should not be omitted,  if more than one parameter, the () should not be omitted,  if only one parameter, the () can be omitted</p>",
+      "hashCode": -710754372
+    },
+    {
+      "describe": "<p>Refer to the following code block:</p><p>01    class Student {</p><p>02        constructor(name) {</p><p>03            this.name = name;</p><p>04        }</p><p>05</p><p>06        takeTest() {</p><p>07            console.log(`${this.name} got 70% on test.`);</p><p>08        }</p><p>09    }</p><p>10</p><p>11    class BetterStudent extends Student {</p><p>12        constructor(name) {</p><p>13            super(name);</p><p>14            this.name = 'Better student ' + name;</p><p>15        }</p><p>16        takeTest() {</p><p>17            console.log(`${this.name} got 100% on the test.`);</p><p>18        }</p><p>19    }</p><p>20</p><p>21    let student = new BetterStudent('Jackie');</p><p>22    student.takeTest();</p><p>What is the console output?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>> Jackie got 70% on test.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>> Better student Jackie got 100% on test.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>> Better student Jackie got 70% on test.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>> Uncaught ReferenceError</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>line 13 super(name) will call line 3. Then in line 13, this.name will update the name.</p><p>the takeTest() method is line 16 will be called. Only if in current class there is no such a method, js will look at the parent class.</p>",
+      "hashCode": 516074974
+    },
+    {
+      "describe": "<p>A developer is required to write a function that calculates the sum of elements in an array but is getting undefined every time the code is executed. The developer needs to find what is missing in the code below.</p><p>01    const sumFunction = arr =>{</p><p>02        return arr.reduce((result, current) =>{</p><p>03            //</p><p>04            result += current;</p><p>05            //</p><p>06        },10);</p><p>07    };</p><p>Which option makes the code work as expected?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Replace line 02 with return arr.map((result, current) =>{</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Replace line 05 with return result;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Replace line 04 with result = result + current;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Replace line 03 with if(arr.length == 0) {return 0;}</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>JS Array Reduce method: https://developer.mozilla.org/en-US/docs/web/javascript/reference/global_objects/array/reduce</p><p>map method will return an array by executing the callback method for each of the element in the original array</p><p>result +=current equals to result = result + current</p>",
+      "hashCode": 2083887382
+    },
+    {
+      "describe": "<p>Given the code below:</p><p>01    function myFunction() {</p><p>02         a = 5;</p><p>03         var b = 1;</p><p>04    }</p><p>05</p><p>06    myFunction();</p><p>07</p><p>08    console.log(a);</p><p>09    console.log(b);</p><p>What is the expected output?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Line 08 outputs the variable, but line 09 throws an error.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Both lines 08 and 09 are executed, and the variables are outputted.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Line 08 throws an error, therefore line 09 is never executed.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Both lines 08 and 09 are executed, but the values outputted are undefined.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -399108392
+    },
+    {
+      "describe": "<p>Refer to the following code:</p><p>01    function Tiger() {</p><p>02          this.type = 'Cat';</p><p>03          this.size = 'large';</p><p>04     }</p><p>05</p><p>06     let tony = new Tiger();</p><p>07     tony.roar = () => {</p><p>08             console.log('They\\'re great!');</p><p>09     };</p><p>10</p><p>11     function Lion() {</p><p>12           this.type = 'Cat';</p><p>13           this.size = 'large';</p><p>14      }</p><p>15</p><p>16      let leo = new Lion();</p><p>17       // Insert code here</p><p>18      leo.roar();</p><p>Which two statements could be inserted at line 17 to enable the function call on line 18? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Object.assign(leo, tony);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Object.assign(leo, Tiger);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>leo.prototype.roar = () => {console.log('They\\'re pretty good!');};</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>leo.roar = () => {console.log('They\\'re pretty good!');};</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The Object. assign() method only copies enumerable and own properties from a source object to a target object. But Tiger is a function.</p><p>The JavaScript prototype property allows you to add new properties to object constructors. Should be Lion.prototype.roar.</p>",
+      "hashCode": 1036209143
+    },
+    {
+      "describe": "<p>Refer to the code declarations below:</p><p>let str1 = 'Java';</p><p>let str2 = 'Script';</p><p>Which three expressions return the string JavaScript? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>str1.join(str2);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>str1.concat(str2);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>`${str1}${str2}`;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>concat(str1, str2);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>str1 + str2;</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>No join method on String: join</p><p>Should be str1.concat(str2);</p>",
+      "hashCode": -656405866
+    },
+    {
+      "describe": "<p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>developer has two ways to write a function:</p><p>Option A:</p><p>01  function Monster( ) {</p><p>02        this.growl = ( ) => {</p><p>03           console.log(\"Grr!\");</p><p>04        }</p><p>05  }</p><p>Option B:</p><p>01  function Monster( ) { };</p><p>02  Monster.prototype.growl = ( ) => {</p><p>03        console.log(\"Grr!\");</p><p>04  }</p><p>After deciding on an option, the developer creates 1000 monster objects.</p><p>How many growl methods are created with Option A and Option</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>?</p><p>A 1000 growl methods are created regardless of which option is used.</p><p>B 1 growl method is created regardless of which option is used.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>1000 growl methods are created for Option A.1 growl method is created for Option B.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>1 growl method is created for Option A. 1000 growl methods are created for Option B.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>with prototype, the growl function will be existing in Monster's prototype chain. All instances initialized from Monster will share the same function reference.</p><p>In Option A, however, each instance of Monster will have their own growl function.</p>",
+      "hashCode": 0
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let first = 'Who';</p><p>02  let second = 'What';</p><p>03 try {</p><p>04    try {</p><p>05       throw new Error('Sad trombone');</p><p>06    } catch (err) {</p><p>07      first = 'Why' ;</p><p>08      throw err;</p><p>09    } finally {</p><p>10      second = 'When' ;</p><p>11    }</p><p>12  } catch (err) {</p><p>13     second = 'Where' ;</p><p>14  }</p><p>What are the values for first and second once the code executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>First is Who and second is When.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>First is Why and second is Where.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>first is Who and second is Where.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>first is Why and second is When.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 73813081
+    },
+    {
+      "describe": "<p>A developer wants to create an object from a function in the browser using the code below.</p><p>01  function Monster( ){ this.name = 'hello' };</p><p>02  const m = Monster( );</p><p>What happens due to the lack of the new keyword on line 02?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>window.name is assigned to 'hello' and the variable m remains undefined.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The m variable is assigned the correct object but this.name remains undefined.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The m variable is assigned the correct object.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>window.m is assigned the correct object.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>without new, it is like calling Monster() function, and at this time, this points to windows object. So it is like assigning a name attribtue to the window object</p>",
+      "hashCode": 1929130382
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let o = {</p><p>02    get js( ) {</p><p>03        let city1 = String('st. Louis');</p><p>04        let city2 = String('New York');</p><p>05</p><p>06        return {</p><p>07           firstCity: city1.toLowerCase( ) ,</p><p>08           secondCity: city2.toLowerCase( ) ,</p><p>09       }</p><p>10    }</p><p>11  }</p><p>What value can a developer expect when referencing o.js.secondCity?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>'new york'</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'New York'</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>An error</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 458433156
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  const objBook = {</p><p>02       title: 'JavaScript' ,</p><p>03  };</p><p>04  Object.preventExtensions (objBook) ;</p><p>05  const newObjBook = objBook;</p><p>06  newObjBook.author = 'Robert' ;</p><p>What are the values of objBook and newObjBook respectively?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>{ title: \"JavaScript\" }</p><p>{ title: \"JavaScript\" }</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>{ author: \"Robert\", title: \"JavaScript\" }</p><p>{ author: \"Robert\", title: \"JavaScript\" }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>{ author: \"Robert\", title: \"JavaScript\" }</p><p>undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>{ author: \"Robert\" }</p><p>{ author: \"Robert\", title: \"JavaScript\" }</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The Object.preventExtensions() method prevents new properties from ever being added to an object</p>",
+      "hashCode": 1760512837
+    },
+    {
+      "describe": "<p>What are two unique features of functions defined with a fat arrow as compared to normal function definition? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The function generates its own this making it useful for separating the function's scope from its enclosing scope.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The function uses the this from the enclosing scope.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>If the function has a single expression in the function body, the expression will be evaluated and implicitly returned.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The function receives an argument that is always in scope, called parentThis, which is the enclosing lexical scope.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1172379641
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  const myFunction = arr => {</p><p>02       return arr. reduce((result, current) => {</p><p>03          return result + current;</p><p>04       }, 10);</p><p>05  }</p><p>What is the output if this function when called with an empty array?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Returns 10</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Returns 0</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Throws an error</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Returns NaN</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check array reduce method</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce</p>",
+      "hashCode": -224928759
+    },
+    {
+      "describe": "<p>Refer to the code:</p><p>01  function Animal(size, type) {</p><p>02      this.type = type || 'Animal' ;</p><p>03      this.canTalk = false ;</p><p>04  }</p><p>05</p><p>06  Animal.prototype.speak = function( ) {</p><p>07       if (this.canTalk) {</p><p>08         console.log(\"It spoke!\") ;</p><p>09       }</p><p>10  } ;</p><p>11</p><p>12  let Pet = function(size, type ,name, owner) {</p><p>13     Animal.call(this, size, type);</p><p>14     this.size = size;</p><p>15     this.name = name;</p><p>16     this.owner = owner;</p><p>17  }</p><p>18</p><p>19  Pet.prototype = Object.create(Animal.prototype);</p><p>20  let pet1 = new Pet( );</p><p>Given the code above, which three properties are set for pet1? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>speak</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>canTalk</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>owner</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>name</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>type</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>speak is a function in pet1's prototype chain</p><p>size, name, owner of pet1 is undefined</p>",
+      "hashCode": 1047844977
+    },
+    {
+      "describe": "<p>Given the code below:</p><p>01  function Person (name, email) {</p><p>02      this.name = name ;</p><p>03      this.email = email ;</p><p>04  }</p><p>05</p><p>06  const john = new Person('John', 'john@email.com');</p><p>07  const jane = new Person('Jane', 'jane@email.com');</p><p>08  const emily = new Person(' Emily', 'emily@email.com');</p><p>09</p><p>10  let usersList = [john, jane, emily];</p><p>Which method can be used to provide a visual representation of the list of users and to allow sorting by the name or email attribute?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.group (usersList) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.table (usersList) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.groupCollapsed(usersList) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.info(usersList);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>This function takes one mandatory argument data, which must be an array or an object, and one additional optional parameter columns.</p><p>It logs data as a table. Each element in the array (or enumerable property if data is an object) will be a row in the table.</p><p>check console.table();</p><p>https://developer.mozilla.org/en-US/docs/Web/API/Console/table</p>",
+      "hashCode": -377381709
+    },
+    {
+      "describe": "<p>A developer wants to use a module named universalContainersLib and then call functions from it.</p><p>How should a developer import every function from the module and then call the functions foo and bar?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>import * as lib from '/path/universalContainersLib.js' ;</p><p>lib.foo( ) ;</p><p>lib.bar( ) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>import all from '/path/universalContainersLib.js' ;</p><p>universalContainersLib. foo( ) ;</p><p>universalContainersLib.bar( ) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>import * from 'path/universalContainersLib.js' ;</p><p>universalContainersLib. foo( ) ;</p><p>universalContainersLib.bar( ) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>import {foo,bar} from 'path/universalContainersLib.js' ;</p><p>foo( ) ;</p><p>bar( ) ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check named import:</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import</p><p>import {foo,bar} from 'path/universalContainersLib.js' ;</p><p>this one will only import foo and bar function, not all function, from the module</p>",
+      "hashCode": -1405888802
+    },
+    {
+      "describe": "<p>At Universal Containers, every team has its own way of copying JavaScript objects. The codesnippet shows an implementation from one team:</p><p>01  function Person( ) {</p><p>02      this.firstName = \"John\" ;</p><p>03      this.lastName = \"Doe\" ;</p><p>04      this.name = ( ) => {</p><p>05         console.log(`Hello ${this.firstName} ${this. lastName}`);</p><p>06      }</p><p>07  }</p><p>08</p><p>09  const john = new Person( ) ;</p><p>10  const dan = JSON.parse (JSON . stringify (john));</p><p>11  dan.firstName = 'Dan';</p><p>12 dan.name( ) ;</p><p>What is the output of the code execution?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>TypeError: Assignment to constant variable</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Hello Dan Doe</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>TypeError: dan.name is not a function</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Hello John Doe</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>line10 will convert john to a JSON Object and thus no such name function</p>",
+      "hashCode": -1654727508
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  console. log(0) ;</p><p>02</p><p>03  setTimeout(( ) => {</p><p>04      console.log(1) ;</p><p>05   });</p><p>06</p><p>07  console.log(2) ;</p><p>08</p><p>09  setTimeout(( ) => {</p><p>10      console.log(3) ;</p><p>11  },0) ;</p><p>12</p><p>13  console.log(4) ;</p><p>In which sequence will the numbers be logged?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>0 1 2 3 4</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>0 2 4 3 1</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>0 2 4 1 3</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>1 3 0 2 4</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -87784688
+    },
+    {
+      "describe": "<p>A class was written to represent items purchase in an online store, and a second class representing items that are on sales at a discounted price. The constructor sets the name to the first value passed in. The pseudocode is below:</p><p>class Item {</p><p>constructor (name, price) {</p><p>... // Constructor Implementation</p><p>}</p><p>}</p><p>class SaleItem extends Item {</p><p>constructor (name, price, discount) {</p><p>... // Constructor Implementation</p><p>}</p><p>}</p><p>There is a new requirement for a developer to implement a description method that will return a brief description for Item and SaleItem.</p><p>01  let regItem = new Item('Scarf', 55) ;</p><p>02  let saleItem = new SaleItem('Shirt', 80, .1) ;</p><p>03  Item.prototype.description = function( ){ return 'This is a ' + this.name; }</p><p>04  console.log (regItem.description( ));</p><p>05  console.log(saleItem.description( )) ;</p><p>06</p><p>07  SaleItem. prototype. description = function( ) { return 'This is a discounted'+ this.name; }</p><p>08  console.log(regItem. description( ));</p><p>09  console.log (saleItem. description( )) ;</p><p>What is the output when executing the code above?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>This is a Scarf</p><p>Uncaught TypeError: saleItem.description is not a function</p><p>This is a Scarf</p><p>This is a discounted Shirt</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>This is a Scarf</p><p>Uncaught TypeError: saleItem.description is not a function</p><p>This is a Shirt</p><p>This is a discounted Shirt</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>This is a Scarf</p><p>This is a Shirt</p><p>This is a discounted Scarf</p><p>This is a discounted Shirt</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>This is a Scarf</p><p>This is a Shirt</p><p>This is a Scarf</p><p>This is a discounted Shirt</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1276310888
+    },
+    {
+      "describe": "<p>A developer writes the code below to return a message to a user attempting to register a new username. If the username is available, a variable named msg is declared and assigned a value on line 03.</p><p>01  function getAvailabilityMessage (item) {</p><p>02      if (getAvailability (item)) {</p><p>03        var msg = \"Username available\" ;</p><p>04      }</p><p>05      return msg;</p><p>06  }</p><p>What is the value of msg when getAvailabilityMessage (\" newUserName\") is executed and getAvailability (\"newUserName\") returns true?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Username available</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>msg is not defined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>NewUserName</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1439546997
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  function changeValue (param) {</p><p>02      param = 5 ;</p><p>03  }</p><p>04  let a =10 ;</p><p>05  let b = a ;</p><p>06</p><p>07  changeValue (b) ;</p><p>08  const result =a+' - '+b ;</p><p>What is the value of result when the code executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>5-10</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>10-5</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>5-5</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>10-10</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1902407972
+    },
+    {
+      "describe": "<p>Given the code block below:</p><p>01  function GameConsole (name) {</p><p>02        this.name = name ;</p><p>03  }</p><p>04</p><p>05  GameConsole.prototype.load = function (gamename) {</p><p>06          console.log(`${this.name} is loading a game: $ {gamename}...`) ;</p><p>07  }</p><p>08</p><p>09  function Console16bit (name) {</p><p>10       GameConsole.call (this, name) ;</p><p>11  }</p><p>12</p><p>13  Console16bit. prototype = Object. create (GameConsole. prototype) ;</p><p>14</p><p>15  // insert code here</p><p>16      console.log( ${this.name} is loading a cartridge game: ${gamename} ...`) ;</p><p>17  }</p><p>18</p><p>19  const console16bit = new Console16bit(' SNEGeneziz') ;</p><p>20  console16bit. load('Super Monic 3x Force') ;</p><p>What should a developer insert at line 15 to output the following message using the load method?</p><p>> SNEGeneziz is loading a cartridge game: Super Monic 3x Force. . .</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Console16bit.prototype.load = function (gamename) {</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Console16bit.prototype.load (gamename) = function( ) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Console16bit = Object.create (GameConsole .prototype).load =function (gamename) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Console16bit.prototype.load (gamename) {</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -338334712
+    },
+    {
+      "describe": "<p>Refer to the following code that performs a basic mathematical operation on a provided input:</p><p>01  function calculate (num) {</p><p>02      return (num + 10) / 3;</p><p>03  }</p><p>How should line 02 be written to ensure that x evaluates to 6 in the line below?</p><p>let x = calculate(\"8\") ;</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>return Number (num + 10) / 3;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>return Integer(num + 10) / 3;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>return (Number(num) + 10) / 3;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>return Number((num + 10) / 3);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1251380895
+    },
+    {
+      "describe": "<p>A dveloper implements a fuction that adds a few values.</p><p>01  function sum (num) {</p><p>02      if (num === undefined) {</p><p>03        num = 0;</p><p>04      }</p><p>05      return function (num2, num3) {</p><p>06          if (num3 === undefined) {</p><p>07            num3=0</p><p>08          }</p><p>09      return num + num2 + num3 ;</p><p>10     }</p><p>11  }</p><p>Which three options can the developer invoke for this function to get a return value of 10?Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>sum(10) ( )</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>sum( ) (10)</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>sum( )(5, 5)</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>sum(5) (5)</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>sum(5, 5) ( )</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>sum(10) ( ) and sum(5, 5) ( ) return NaN</p>",
+      "hashCode": 1273586046
+    },
+    {
+      "describe": "<p>Given the code below:</p><p>01  setCurrentUrl( ) ;</p><p>02  console.log('The current URL is: ' + url);</p><p>03</p><p>04  function setCurrentUrl ( ) {</p><p>05      url = window. location.href ;</p><p>06  }</p><p>What happens when the code executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The url variable has global scope and line 02 executes correctly.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The url variable has local scope and line 02 throws an error.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The url variale has local scope and line 02 executes correctly.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The url variable has global scope and line 02 throws an error.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Scope of the variables declared without var keyword become global irrespective of where it is declared. Global variables can be accessed from anywhere in the web page.</p>",
+      "hashCode": 1704091411
+    },
+    {
+      "describe": "<p>A developer wants to leverage a module to print a price in pretty format, and has imported a method as shown below:</p><p>import printPrice from ' /path PricePrettyPrint.js' ;</p><p>Based on the code, what must be true about the printPrice function of the PricePrettyPrint module for this import to work?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>printPrice must be a multi export</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>printPrice must be an all export</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>printPrice must be a named export</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>printPrice must be the default export</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>check default export:</p><p>https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export</p><p>if the printPrice is a named export, it would be: import { printPrice } from xxx;</p>",
+      "hashCode": -682085488
+    },
+    {
+      "describe": "<p>Given the JavaScript below:</p><p>01  function filterDOM (searchString) {</p><p>02     const parsedSearchstring = searchString && searchString. toLowerCase( ) ;</p><p>03     document . querySelectorAll (' .account') . forEach (account => {</p><p>04         const accountName = account . innerHTML. toLowerCase( ) ;</p><p>05         account.style.display = accountName . includes(parsedSearchString)? / * Insert code here */ ;</p><p>06    });</p><p>07  }</p><p>Which code should replace the placeholder comment on line 05 to hide accounts that do not match the search string?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>'block' : 'none'</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>'none' : 'block'</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'visible' : 'hidden'</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'hidden' : 'visible'</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check HTML style dispay property:</p><p>https://www.w3schools.com/JSREF/prop_style_display.asp</p><p>no 'hidden' or 'visible' property</p>",
+      "hashCode": 977031262
+    },
+    {
+      "describe": "<p>Which of the following can best describe a callback function?</p><p>A</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>function passed into a function to be called later.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>A synchronous function that can be executed along with the main thread.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>A function that can be easily chained to another function.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>A function to be executed when there is an error.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.</p><p>Here is a quick example:</p><p>function greeting(name) {</p><p>alert('Hello ' + name);</p><p>}</p><p>function processUserInput(callback) {</p><p>var name = prompt('Please enter your name.');</p><p>callback(name);</p><p>}</p><p>processUserInput(greeting);</p><p>The above example is a synchronous callback, as it is executed immediately. However, that callbacks are often used to continue code execution after an asynchronous operation has completed — these are called asynchronous callbacks. A good example is the callback functions executed inside a .then() block chained onto the end of a promise after that promise fulfills or rejects. Another example would be the setTimeout function.</p>",
+      "hashCode": 121790993
+    },
+    {
+      "describe": "<p>A developer creates a class that represents a blog post based on the requirements that a Post should have a body, author, and view count. The code is shown below:</p><p>01  class Post {</p><p>02      // Insert code here</p><p>03        this.body = body;</p><p>04        this.author = author;</p><p>05        this. viewCount = viewCount;</p><p>06     }</p><p>07  }</p><p>Which statement should be inserted in the placeholder on line 02 to allow for a variable to be set to a new instance of a Post with the three attributes correctly populated?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>function Post (body, author, viewCount) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>super (body, author, viewCount) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>constructor() {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>constructor (body, author, viewCount) {</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 201627949
+    },
+    {
+      "describe": "<p>Which of the following is the correct use of template literals?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let str = \"Fifteen is ${a + b} and not ${2 * a + b}.\";</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let str = `Fifteen is ${a + b} and not ${2 * a + b}.`;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let str = `Fifteen is $(a + b) and not $(2 * a + b).`</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let str = ${`Fifteen is ` + ( a + b ) + ` and not ` + (2 * a + b) + `.`};</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Template literals are enclosed by the backtick (` `) and contain placeholders indicated by dollar sign and curly braces like ${expression}.</p><p>let str = `Fifteen is ${a + b} and not ${2 * a + b}.` is the right way of using template literals with placeholders.</p><p>let str = \"Fifteen is ${a + b} and not ${2 * a + b}.\" is incorrect because it is not enclosed by backticks but rather regular double quotes.</p><p>let str = ${`Fifteen is ` + ( a + b ) + ` and not ` + (2 * a + b) + `.`}; is incorrect as the dollar sign and curly braces are not inside the backticks.</p><p>let str = `Fifteen is $(a + b) and not $(2 * a + b).` is incorrect because the placeholder is enclosed by round brackets, not curly braces.</p>",
+      "hashCode": -156482148
+    },
+    {
+      "describe": "<p>A developer would like to understand the scope of functions, hence he wrote a simple script:</p><p>var p = 5;</p><p>function func() {</p><p>var p = 9;</p><p>function decl() {</p><p>console.log(p);</p><p>}</p><p>var expr = function() {</p><p>console.log(p);</p><p>};</p><p>var cons = new Function('\\tconsole.log(p);');</p><p>decl();</p><p>expr();</p><p>cons();</p><p>}</p><p>func();</p><p>What is the correct output that will be displayed on the console when the code is executed?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>9 9 5</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>9 9 9</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>9 5 9</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>5 5 9</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct output of the script is 9 9 5.</p><p>A function defined by a function expression (indicated by expr()) or by a function declaration (indicated by decl()) inherits the current scope. That is, the function forms a closure. On the other hand, a function defined by a Function constructor (indicated by cons()) does not inherit any scope other than the global scope (which all functions inherit).</p>",
+      "hashCode": -1353616245
+    },
+    {
+      "describe": "<p>const target = { a: 1, b: 2 };</p><p>const source = { b: 4, c: 5 };</p><p>const returnedTarget = Object.assign(target, source);</p><p>target.a = 6;</p><p>source.c = 12;</p><p>console.log(returnedTarget.a);</p><p>console.log(returnedTarget.b);</p><p>console.log(returnedTarget.c);</p><p>Given the code above, what would be printed out in the console?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>6 4 12</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>1 4 5</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>1 2 5</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>6 4 5</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The correct output sequence will be 6, 4 and 5.</p><p>Object.assign(dest, [src1, src2, src3…]) copies the properties of all source objects into the target destination (first parameter) which is also the target object in this scenario. Since the target object is assigned to returnedTarget, the change of properties in target object will also reflect on returnedTarget object, hence we get 6, 4, 5. The change of properties in source object does not reflect on returnedTarget because the source properties are copied by value into target object which then assigned to returnedTarget object.</p>",
+      "hashCode": 694078930
+    },
+    {
+      "describe": "<p>Which of the following statements regarding an object property is correct? Choose 2 answers.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>In order to remove an object property, we could use delete operator to remove the property.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>An object declared as const cannot be modified.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>You cannot use specific language-reserved words such as \"for\", \"let\", \"return\" and etc. for an object property.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>It is possible to use square brackets in an object literal when creating an object.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>An object property can be removed by using delete operator. Here’s an example:</p><p>let user = {      // an object</p><p>name: \"John\",  // by key \"name\" store value \"John\"</p><p>age: 30        // by key \"age\" store value 30</p><p>};</p><p>delete user.age;</p><p>When an object is declared as const, it can be modified actually. The const fixes the value of the object, not its contents. For example:</p><p>const user = {</p><p>name: \"John\"</p><p>};</p><p>user.name = \"Pete\"; // no error is thrown</p><p>user = {}; // uncaught TypeError: Assignment to constant variable</p><p>It is possible to use square brackets in an object literal when creating an object. For example:</p><p>let fruit = prompt(\"Which fruit to buy?\", \"apple\");</p><p>let bag = {</p><p>[fruit]: 5, // the name of the property is taken from the variable fruit</p><p>};</p><p>console.log( bag.apple ); // 5 if fruit=\"apple\"</p><p>a variable cannot have a name equal to one of language-reserved words like “for”, “let”, “return” etc. But for an object property, there’s no such restriction:</p><p>// these properties are all right</p><p>let obj = {</p><p>for: 1,</p><p>let: 2,</p><p>return: 3</p><p>};</p><p>console.log( obj.for + obj.let + obj.return );  // 6</p>",
+      "hashCode": 542607607
+    },
+    {
+      "describe": "<p>Which of the following regarding function is correct? Choose 3 answers.</p><p>A The default parameter in the function will always be evaluated.</p><p>B A f</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>function may not be accessed outer variables if the variable is declared with \"let\" keyword.</p><p>C jQuery library defines a function with \"$\" while the Lodash library defines its main core function with \"_\".</p><p>D Never add a newline between return and the value.</p><p>E If a function does not return a value, it is the same as if it returns undefined.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>A default parameter will be evaluated if the function is called without the respective parameter</p><p>If a function does not return a value, it is the same as if it returns undefined</p><p>An empty return is also the same as return undefined</p><p>jQuery library defines a function with “$” while the Lodash library defines its main core function with “_”.</p><p>You should not add a newline between return and the value you want to return. Reason being, JavaScript might interpret your code differently. For example, you want to return a long expression like this:</p><p>return</p><p>(some + long + expression + or + whatever * f(a) + f(b))</p><p>The code will not work as expected. JavaScript assumes there is a semicolon after return keyword, which effectively becomes an empty return. However, if you really want to do so, make sure you wrap your expression at the same line as return keyword like this:</p><p>return (</p><p>some + long + expression</p><p>+ or +</p><p>whatever * f(a) + f(b)</p><p>)</p><p>That way, JavaScript will not misinterpret your code.</p>",
+      "hashCode": 1548391267
+    },
+    {
+      "describe": "<p>A developer wants to use a module called DatePrettyPrint. This module exports one default function called printDate(). How can a developer import and use the printDate() function?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>import printDate from '/path/DatePrettyPrint.js'; DatePrettyPrint.printDate();</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>import printDate from '/path/DatePrettyPrint.js'; printDate();</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>import DatePrettyPrint from '/path/DatePrettyPrint.js'; DatePrettyPrint.printDate();</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>import printDate() from '/path/DatePrettyPrint.js'; printDate();</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>import printDate from '/path/DatePrettyPrint.js'; printDate(); is the simplest version of code for importing the default.</p><p>import printDate() from '/path/DatePrettyPrint.js'; printDate(); is incorrect. When naming the export function the parentheses are not needed.</p><p>import DatePrettyPrint from '/path/DatePrettyPrint.js'; DatePrettyPrint.printDate(); is incorrect. You must call the methods directly or use the * to import all methods.</p><p>import printDate from '/path/DatePrettyPrint.js'; DatePrettyPrint.printDate(); is incorrect. Once imported by name, you must call the imported method directly by name.</p>",
+      "hashCode": -388162408
+    },
+    {
+      "describe": "<p>Given the code below:</p><p>let x = 2;</p><p>let y = 3;</p><p>let add = x => y => x + y;</p><p>The “add” variable is an arrow function which is used to sum two numbers. What is the correct way of calling this function? Choose 1 answer.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>add(x)(y)</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>add()</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>add.x.y</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>add(x, y)</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct way of calling this add function is add(x)(y). The arrow function is equivalent to the following code:</p><p>const add = function (x) {</p><p>return function (y) {</p><p>return x + y;</p><p>}</p><p>}</p><p>This is also called “Curried Function“. Currying is a transform that makes f(a, b, c) callable as f(a)(b)(c). The advantage of currying is that it allows us to easily get the partials. For example, we might just want to call f(a) or f(a)(b), depending on our own needs.</p>",
+      "hashCode": 972403238
+    },
+    {
+      "describe": "<p>Which syntax for accessing the property of an object in JavaScript is correct? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>objectName[\"property\"] // person[\"age\"]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>objectName.property // person.age</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>${objectName(property)} // ${person(property)}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>objectName[expression] // x = \"age\"; person[x]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>objectName->property // person->age</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct syntax for accessing the property of an object is:</p><p>objectName.property</p><p>objectName[\"property\"]</p><p>objectName[expression]</p><p>objectName->property is invalid in JavaScript, though it might be valid for some other programming languages such as PHP.</p><p>There is nothing like ${person(property)} in JavaScript or any known programming languages.</p>",
+      "hashCode": -990895308
+    },
+    {
+      "describe": "<p>Which statement sorts the following number array so it is in ascending order?</p><p>const arr = [7, 3, 400, 10];</p><p>Choose 1 answer.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>arr.sort((a, b) => a < b);[/su_highlight]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>arr.sort();</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>arr.sort((a, b) => a – b);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>arr.sort((a, b) => b – a);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>By default, the sort() function sorts values as strings.</p><p>arr.sort( (a, b) => a – b); is the correct answer. The compare function passed in sort() defines an alternative sort order.</p><p>arr.sort(); is incorrect because the sort() function sorts values as strings, which will sort this as [10, 3, 400, 7].</p><p>arr.sort((a, b) => a < b); is incorrect. The compare function expects a positive, negative, or 0 to be returned, not the Boolean expression.</p><p>arr.sort((a, b) => b – a); is incorrect. The compare function will actually reverse the order of the numbers.</p>",
+      "hashCode": 577492143
+    },
+    {
+      "describe": "<p>You are given the following code:</p><p>let user = { name: \"John\"};</p><p>user.canView = false;</p><p>user.canEdit = false;</p><p>let permissions1 = { canView: true, canEdit: false };</p><p>let permissions2 = { canView: false, canEdit: true };</p><p>Object.assign(user, permissions1, permissions2);</p><p>console.log(user);</p><p>What will the output be when the code is executed? Choose 1 answer.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>{</p><p>name:\"John\",</p><p>canView:false,</p><p>canEdit:false</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>{</p><p>name:\"John\",</p><p>canView:true,</p><p>canEdit:false</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>{</p><p>name:\"John\",</p><p>canView:false,</p><p>canEdit:true</p><p>}</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>{</p><p>name:\"John\",</p><p>canView:true,</p><p>canEdit:true</p><p>}</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct answer is:</p><p>{</p><p>name:\"John\",</p><p>canView:false,</p><p>canEdit:true</p><p>}</p><p>Object.assign() method copies all enumerable own properties from one or more source objects to a target object. The properties are overwritten by other objects that have the same properties later in the order of the parameters.</p>",
+      "hashCode": -1848566150
+    },
+    {
+      "describe": "<p>Given the following Car constructor:</p><p>function Car(size, model) {</p><p>this.size= size;</p><p>this.model = model;</p><p>}</p><p>Which method creates a new instance of the object? Choose 1 answer.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>new Car('large', 'Audi');</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Object.prototype(Car);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Object.new(Car);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Object.create('Car');</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>new Car('large', 'Audi'); is the correct way of creating a new instance of object.</p><p>Object.create('Car'); is incorrect. The argument for Object.create() method should be a new object with the specified prototype object and properties.</p><p>Object.prototype(Animal); is incorrect. Prototypes are usually used to add methods to existing constructors.</p><p>Object.new(Animal); is incorrect as well. There is no Object.new() in JavaScript.</p>",
+      "hashCode": -1880423419
+    },
+    {
+      "describe": "<p>function func() {</p><p>try {</p><p>return 1;</p><p>} finally {</p><p>console.log( 'finally' );</p><p>}</p><p>}</p><p>console.log( func() );</p><p>Which of the following statement is correct when the code above is executed? Choose 1 answer.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The console output will display \"1\" first, then \"finally\".</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The console output will display \"finally\" first, then \"1\".</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The finally block will not be executed because the function is returned before the finally code block.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The code will not work because it is missing the catch block.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Finally block will be executed before the code returns to the outer code, hence the output will display “finally” first, then “1”.</p><p>Catch block is not mandatory if we are not to catch the error when executing the code.</p>",
+      "hashCode": -1140449447
+    },
+    {
+      "describe": "<p>Which of the following regarding Classes in JavaScript is correct? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Class expressions can be named or unnamed and the name given to a named class expression is local to the class's body.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>JavaScript classes are introduced in ECMAScript 2016 Edition.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Classes are the \"special functions\" which are primarily syntactical sugar over JavaScript's existing prototype-based inheritance.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>There are two ways to define a class: class declaration and class expression.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The difference between function declarations and class declarations is that class declarations are hoisted and function declarations are not.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Classes are the “special functions” which are primarily syntactical sugar over JavaScript’s existing prototype-based inheritance. The class syntax does not introduce a new object-oriented inheritance model to JavaScript.</p><p>The class syntax has two components: class expressions and class declarations.</p><p>Class declaration example:</p><p>// class declaration</p><p>class Rectangle {</p><p>constructor(height, width) {</p><p>this.height = height;</p><p>this.width = width;</p><p>}</p><p>}</p><p>Class expression examples:</p><p>// unnamed class expression</p><p>let Rectangle = class {</p><p>constructor(height, width) {</p><p>this.height = height;</p><p>this.width = width;</p><p>}</p><p>};</p><p>// named class expression</p><p>let Rectangle = class Rectangle2 {</p><p>constructor(height, width) {</p><p>this.height = height;</p><p>this.width = width;</p><p>}</p><p>};</p><p>Function declarations are hoisted but class declarations are not. The following example with throw an error:</p><p>const p = new Rectangle(); // ReferenceError</p><p>class Rectangle { }</p><p>JavaScript classes are introduced in ECMAScript 2015, also known as JavaScript ES6.</p>",
+      "hashCode": -104347577
+    },
+    {
+      "describe": "<p>Which of the following statements is correct regarding the JSON and object literal notation? Choose 2 answers.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>JSON and object literal notation are the same.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Object literal notation spec is based on JSON.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Object literal notation is a programming syntax.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>JSON is a data-interchange format.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>JSON (JavaScript Object Notation) is a data-interchange format.</p><p>Object literal notation is a programming syntax.</p><p>JSON and object literal notation resemble each other, but they’re not the same.</p><p>JSON spec is based on object-literal notation, not the other way round.</p>",
+      "hashCode": 1491692238
+    },
+    {
+      "describe": "<p>Which of the following is a feature of prototypical inheritance?</p><p>A</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>class that defines all objects of a common type.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Module code artifacts that define a single reusable feature.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Architecture that ensures data from some objects can be passed to other objects.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>An in-memory object that defines properties and functions of other objects.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>Despite not having classes as defined by classical languages, JavaScript still has an inheritance model which is called prototype inheritance. A prototype is another object that sits in memory and defines properties or functions that other objects inherit if they share the same prototype.</p>",
+      "hashCode": 2035832970
+    },
+    {
+      "describe": "<p>Which of the following can be best described modules? Choose 2 answers.</p><p>A Modules work on HTTP, HTTPS, and website document that stores locally on your computer.</p><p>B Modules can be set \"use strict\" optionally.</p><p>C A m</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>module is just a file that may contain a class or a library of functions for a specific purpose.</p><p>D Modules can load each other and special directives such as export and import can be used interchangeably.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>A module is just a file. One script is one module. As simple as that. A module may contain a class or a library of functions for a specific purpose.</p><p>We must tell the browser that a script should be treated as a module by using the attribute</p>",
+      "hashCode": -514234380
+    },
+    {
+      "describe": "<p>The developer has a function that prints \"Hello\" to an input name. To test this, the developer</p><p>created a function that returns \"World\". However, the following snippet does not print \"Hello World\".</p><p>01  const sayHello = (name) => {</p><p>02  console.log('Hello ', name) ;</p><p>03   };</p><p>04</p><p>05  const world= ( ) => {</p><p>06       return 'World' ;</p><p>07  } ;</p><p>08</p><p>09  sayHello (world) ;</p><p>What can the developer do to change the code to print \"Hello World\"?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Change line 7 to } ( ) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Change line 5 to function world( ) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Change line 2 to consololoe. log('Hello', name( ));</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Change line 9 to sayHello(world)( ) ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>world is a function, call sayHello and pass in the world function will print out the function body itself</p>",
+      "hashCode": -320362966
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  function foo( ) {</p><p>02     const a = 2;</p><p>03     function bar( ) {</p><p>04         console.log(a) ;</p><p>05     }</p><p>06     return bar;</p><p>07  }</p><p>Why does the function bar have access to variable a?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Inner function's scope</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Hoisting</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Outer function's scope</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Prototype chain</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check JavaScript Closure</p><p>a closure gives you access to an outer function's scope from an inner function.</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures</p>",
+      "hashCode": 2049249383
+    },
+    {
+      "describe": "<p>A developer uses a parsed JSON string to work with user informationas in the block below:</p><p>01  const userInformation = {</p><p>02     \"id\" : \"user-01\",</p><p>03     \"email\" : \"user01@universalcontainers . demo\" ,</p><p>04     \"age\" : 25</p><p>05  };</p><p>Which two options access the email attriuite in the object? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>userInformation[\"email\"]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>userInformation. email</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>userInformation. get (\"email\")</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>userInformation[email]</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 415077733
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>flag( ) ;</p><p>anotherFlag( ) ;</p><p>function flag( ) {</p><p>console.log('flag') ;</p><p>}</p><p>const anotherFlag = ( ) => {</p><p>console.log( 'another flag') ;</p><p>}</p><p>What is result of the code block?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>An error is thrown.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The console logs only 'flag'.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The console logs 'flag' and then an error is thrown.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The console logs 'flag' and 'another flag'.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>const declarations must be initialized</p><p>const initialization must be happening before calling</p><p>flag() is called first and output 'flag', then call anotherFlag(), get error: Cannot access 'anotherFlag' before initialization</p>",
+      "hashCode": -926091128
+    },
+    {
+      "describe": "<p>Refer to the following code:</p><p>01  function test(val) {</p><p>02      if (val === undefined) {</p><p>03         return 'Undefined value!' ;</p><p>04      }</p><p>05     if (val === null) {</p><p>06       return 'Null value!' ;</p><p>07     }</p><p>08    return val;</p><p>09  }</p><p>10</p><p>11  let x ;</p><p>12</p><p>13  test(x) ;</p><p>What is returned by the function call on line 13?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Line 13 throws an error.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'Null value!'</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'Undefined value!'</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>line 11, x is undefined</p>",
+      "hashCode": -173811572
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let first = 'Who';</p><p>02  let second = 'What';</p><p>03  try {</p><p>04     try {</p><p>05       throw new Error('Sad trombone');</p><p>06     } catch (err) {</p><p>07       first = 'Why' ;</p><p>08     } finally {</p><p>09       second = 'When';</p><p>10     }</p><p>11  } catch (err) {</p><p>12    second = 'Where' ;</p><p>13  }</p><p>What are the values for first and second once the code executes？</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>first is Why and second is Where.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>first is Who and second is When.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>first is Why and second is When.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>first is Who and second is Where.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>inner try block throws an error, so first was changed to Why</p><p>finally block will be executed next, so second will be changed to When</p><p>outter catch block is skipped</p>",
+      "hashCode": 255077162
+    },
+    {
+      "describe": "<p>Refer to the following object:</p><p>01  const cat = ｛</p><p>02       firstName: ' Fancy' ,</p><p>03       lastName: ' Whiskers' ,</p><p>04       get fullName( ) {</p><p>05              return this. firstName + ' ' + this.lastName ;</p><p>06       }</p><p>07   };</p><p>How can a developer access the fullName property for cat?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>cat.fullName</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>cat.get.fullName</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>cat.fullName( )</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>cat.function.fullName( )</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get</p>",
+      "hashCode": 206805179
+    },
+    {
+      "describe": "<p>Cloud Kicks has a class to represent items for sale in an online store, as shown belows:</p><p>01  class Item {</p><p>02      constructor (name, price) {</p><p>03           this.name = name;</p><p>04           this.price = price;</p><p>05       }</p><p>06</p><p>07      formattedPrice( ) {</p><p>08         return '$' + string (this.price) ;</p><p>09      }</p><p>10  }</p><p>A new business requirement comes in that requests a ClothingItem class, that should have all of the properties and methods of the Item class, but will also have properties that are specific to clothes.Which line of code properly declares the ClothingItem class such that it inherits from Item?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>class ClothingItem super Item {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>class ClothingItem implements Item {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>class ClothingItem extends Item {</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>class ClothingItem {</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1529418526
+    },
+    {
+      "describe": "<p>Which JavaScript methods can be used to serialize an object into a string and deserialize a JSON string into an object, respectively?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>JSON.serialize and JSON.deserialize</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>JSON.encode and JSON.decode</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>JSON.parse and JSON.deserialize</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>JSON.stringify and JSON.parse</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The JSON.parse() method parses a string and returns a JavaScript object.</p><p>The JSON.stringify() method converts a JavaScript object or value to a JSON string</p>",
+      "hashCode": 497847359
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  function myFunction(reassign) {</p><p>02      let x = 1;</p><p>03      var y = 1;</p><p>04</p><p>05      if(reassign) {</p><p>06        let x = 2 ;</p><p>07        var y = 2 ;</p><p>08        console.log(x) ;</p><p>09        console.log(y) ;</p><p>10     }</p><p>11</p><p>12    console.log(x) ;</p><p>13    console.log(y) ;</p><p>14  }</p><p>What is displayed when myFunction (true) is called?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>2 2 undefined undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>2 2 2 2</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>2 2 1 2</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>2 2 1 1</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1111513407
+    },
+    {
+      "describe": "<p>Which two code snippets show working examples of a recursive function? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>const factorial = numVar => {</p><p>if (numVar < 0) return ;</p><p>if (numVar === 0) return 1 ;</p><p>return numVar * factorial (numVar - 1);</p><p>}</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let countingDown = function(startNumber) {</p><p>if (startNumber > 0) {</p><p>console.log (startNumber) ;</p><p>return countingDown(startNumber - 1);</p><p>} else {</p><p>return startNumber;</p><p>}</p><p>} ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>function factorial (numVar) {</p><p>if (numVar < 0) return;</p><p>if (numVar === 0) return 1;</p><p>return numVar - 1;</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>const sumToTen = numVar => {</p><p>if (numVar < 0)</p><p>return ;</p><p>return sumToTen(numVar + 1);</p><p>} ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1507102128
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  x = 3.14 ;</p><p>02</p><p>03  function myFunction( ) {</p><p>04      'use strict' ;</p><p>05     y=x ;</p><p>06   }</p><p>07</p><p>08  z=x ;</p><p>09 myFunction( ) ;</p><p>Considering the implications of 'use strict' on line 04, which three statements describe the execution of the code? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>'use strict' has an effect between line 04 and the end of the file.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'use strict' has an effect only on line 05.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>z is equal to 3.14.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>'use strict' is hoisted, so it has an effect on all lines.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Line 05 throws an error.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>To invoke strict mode for an entire script, put the exact statement \"use strict\"; (or 'use strict';) before any other statements.</p><p>to invoke strict mode for a function, put the exact statement \"use strict\"; (or 'use strict';) in the function's body before any other statements.</p><p>check strict mode</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode</p>",
+      "hashCode": -1960355230
+    },
+    {
+      "describe": "<p>A developer wants to create an object from a function in the browser using the code below.</p><p>01  function Monster( ){ this.name = 'hello'  };</p><p>02  const m = Monster( );</p><p>What happens due to the lack of the new keyword on line 02?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The m variable is assigned the correct object but this.name remains undefined.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>window.name is assigned to 'hello' and the variable m remains undefined.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>window.m is assigned the correct object.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The m variable is assigned the correct object.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>without new, it is like calling Monster() function, and at this time, this points to windows object. So it is like assigning a name attribtue to the window object</p>",
+      "hashCode": 834722722
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  function Person( ) {</p><p>02      this . firstName = 'John' ;</p><p>03  }</p><p>04</p><p>05  Person. prototype = {</p><p>06       job: x =>  'Developer '</p><p>07  } ;</p><p>08</p><p>09 const myFather = new Person( ) ;</p><p>10 const result = myFather . firstName + ' ' + myFather. job( ) ;</p><p>What is the value of result after line 10 executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>John Developer</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Error: myFather.job is not a function</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>undefined Developer</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>John undefined</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -379898079
+    },
+    {
+      "describe": "<p>Refer to the following code block:</p><p>01  let array= [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11];</p><p>02  let output = 0 ;</p><p>03</p><p>04  for (let num of array) {</p><p>05      if (output > 10) {</p><p>06        break;</p><p>07      }</p><p>08      if (num % 2 == 0) {</p><p>09        continue;</p><p>10      }</p><p>11     output += num;</p><p>12  }</p><p>What is the value of output after the code executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>25</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>36</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>11</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>16</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>break will stop current loop, continue will skip to next looping item</p>",
+      "hashCode": 408011449
+    },
+    {
+      "describe": "<p>Refer to the following code:</p><p>01 class Vehicle ｛</p><p>02    constructor(plate) {</p><p>03         this. plate = plate;</p><p>04     }</p><p>05  }</p><p>06</p><p>07 class Truck extends Vehicle {</p><p>08    constructor(plate, weight) {</p><p>09         //Missing code</p><p>10         this.weight = weight;</p><p>11     }</p><p>12    displayWieght( ) {</p><p>13        console. log(`The truck ${this.plate} has a weight of ${this.weight} 1b. `);</p><p>14     }</p><p>15  }</p><p>16</p><p>17 let myTruck = new Truck('123AB', 5000);</p><p>18 myTruck. displayweight ( ) ;</p><p>Which statement should be added to line 09 for the code to display 'The truck 123AB has a weight of 5000 lb.'?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>this.plate = plate;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>super (plate);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Vehicle.plate = plate;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>super.plate = plate;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1143599746
+    },
+    {
+      "describe": "<p>A developer has the following array of hourly wages:</p><p>let arr = [8.5, 9.75, 11.25, 7.75, 13.25];</p><p>For workers making less than $10 an hour, their rate should be multiplied by 1.25 and returned in a new array. How should the developer implement the request?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let arr1 = arr.filter((val) => val < 10).map((num) => num * 1.25);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let arr1 = arr.mapArray((val) => { val < 10} ).map((num) => {num * 1.25} );</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let arr1 = arr.map( (num) => { return num * 1.25 } ).filter( (val) =>{ return val < 10} );</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let arr1 = arr.filterBy( ( val) => val < 10). mapBy ((num) => num * 1.25);</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 97594328
+    },
+    {
+      "describe": "<p>Refer to the following code:</p><p>01  let obj = {</p><p>02      foo: 1,</p><p>03      bar: 2</p><p>04  }</p><p>05  let output = [ ];</p><p>06</p><p>07  for (let something of obj) {</p><p>08      output.push(something);</p><p>09  }</p><p>10</p><p>11  console.log(output);</p><p>what is the value of output on line 11?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[1, 2]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[\"foo\", \"bar\"]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[\"foo:1\", \"bar:2\"]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>An error will occur due to the incorrect usage of the for…of statement on line 07.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 371479167
+    },
+    {
+      "describe": "<p>A developer creates a class that represents a news story based on the requirements that a Story should have a body, author, and view count. The code is shown below:</p><p>01  class Story {</p><p>02      //Insert code here</p><p>03      this.body = body;</p><p>04      this.author = author;</p><p>05      this.viewCount = viewCount;</p><p>06  }</p><p>07 }</p><p>Which statement should be inserted in the placeholder on line 02 to allow for a variable to be set to a new instance of a Story with the three attributes correctly populated?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>function Story (body, author, viewCount) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>super (body, author, viewCount) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>constructor (body, author, viewCount) {</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>constructor ( ) {</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1040595420
+    },
+    {
+      "describe": "<p>Refer to the following code block:</p><p>01  class Animal {</p><p>02      constructor(name) {</p><p>03          this.name = name;</p><p>04      }</p><p>05</p><p>06      makeSound() {</p><p>07          console.log( '${this.name} is making a sound. ');</p><p>08      }</p><p>09  }</p><p>10</p><p>11  class Dog extends Animal {</p><p>12      constructor(name) {</p><p>13          super(name);</p><p>14          this.name = name;</p><p>15      }</p><p>16      makeSound( ) {</p><p>17          console.log('${this.name} is barking.');</p><p>18      }</p><p>19  }</p><p>20</p><p>21  let myDog = new Dog('Puppy');</p><p>22  myDog.makeSound();</p><p>What is the console output?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>> Undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>> Puppy is making a sound.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>> Puppy is barking.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>> Uncaught ReferenceError</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -137451209
+    },
+    {
+      "describe": "<p>Which statement parses successfully?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>JSON.parse('foo');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>JSON.parse(\" 'foo' \");</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>JSON.parse(' \"foo\" ');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>JSON.parse(\"foo\");</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1183134338
+    },
+    {
+      "describe": "<p>A developer writes the code below to calculate the factorial of a given number.</p><p>01  function sum(number) {</p><p>02      return number + sum(number -1);</p><p>03  }</p><p>04  sum(3);</p><p>What is the result of executing line 04?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>0</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>6</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Error</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>-Infinity</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 181674848
+    },
+    {
+      "describe": "<p>myArray, can have one level, two levels, or more levels. Which statement flattens myArray when it can be arbitrarily nested?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>myArray.reduce((prev, curr) => prev.concat(curr), [ ]);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>myArray.join(\",\").split(\".\");</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>myArray.flat(Infinity);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[ ].concat(…myArray);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -933703618
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01    function Person(firstName, lastName, eyeColor) {</p><p>02        this.firstName = firstName;</p><p>03        this.lastName = lastName;</p><p>04        this.eyeColor = eyeColor;</p><p>05    }</p><p>06    Person.job = 'Developer';</p><p>07</p><p>08    const myFather = new Person('John', 'Doe');</p><p>09    console.log(myFather.job);</p><p>What is the output after the code executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>ReferenceError: eyeColor is not defined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>TypeError: invalid assignment to const variable Person</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>undefined</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Developer</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 162330172
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>flag( ) ;</p><p>function flag( ) {</p><p>console.log('flag') ;</p><p>}</p><p>const anotherFlag = ( ) => {</p><p>console.log( 'another flag') ;</p><p>}</p><p>anotherFlag( );</p><p>What is result of the code block?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>An error is thrown.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The console logs only 'flag'.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The console logs 'flag' and 'another flag'.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The console logs 'flag' and then an error is thrown.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1425998350
+    },
+    {
+      "describe": "<p>A developer copied a JavaScript object:</p><p>01    function Person() {</p><p>02        this.firstName = \"John\";</p><p>03        this.lastName = \"Doe\";</p><p>04        this.name = () => '${this.firstName}, ${this.lastName}';</p><p>05    }</p><p>06</p><p>07    const john = new Person();</p><p>08    const dan = Object.assign(john);</p><p>09    dan.firstName = 'Dan';</p><p>How does the developer access dan's firstName.lastName? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>dan.name</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>dan.name()</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>dan.firstName + dan.lastName</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>dan.firstName() + dan.lastName()</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -431743692
+    }
+  ],
+  "hashCode": 148683738
+}

@@ -1,0 +1,547 @@
+{
+  "title": "[JS]第五章 异步编程",
+  "category": "JS-1",
+  "questions": [
+    {
+      "describe": "<p>Given the code below:</p><p>const delay = async delay => {</p><p>return new Promise ( ( resolve, reject ) =></p><p>{</p><p>setTimeout ( resolve, delay );</p><p>});</p><p>};</p><p>const callDelay = async ( ) => {</p><p>const yup = await delay(1000);</p><p>console.log(1);</p><p>};</p><p>console.log(2);</p><p>callDelay( );</p><p>console.log(3);</p><p>What is logged to the console?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>1 2 3</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>1 3 2</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>2 1 3</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>2 3 1</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>callDelay( ); will be executed after 3 printed.</p>",
+      "hashCode": 2050585304
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let requestPromise = client.getRequest;</p><p>02</p><p>03  requestPromise ( ) . then( (response) => {</p><p>04      handleResponse (response) ;</p><p>05  });</p><p>A developer uses a client that makes a GET request that uses a Promise to handle the request.getRequest returns a Promise.Which code modification can the developer make to gracefully handle an error?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  try {</p><p>04     requestPromise( ) .then((response) => {</p><p>05         handleResponse (response) ;</p><p>06     }) .then((error) => {</p><p>07        throw new Error(error.name);</p><p>08     });</p><p>09  } catch(error) {</p><p>10    handleError(error);</p><p>11  }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  try {</p><p>04     requestPromise( ) .then((response) => {</p><p>05         handleResponse (response) ;</p><p>06     }) ;</p><p>07  } catch(error) {</p><p>08    handleError(error);</p><p>09  }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  requestPromise( ) .then((response) => {</p><p>04     handleResponse (response) ;</p><p>05     }) .catch((error) => {</p><p>06        handleError(error);</p><p>07  });</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  requestPromise( ) .then((response) => {</p><p>04         handleResponse (response) ;</p><p>05  }) .finally((error) => {</p><p>06     handleError(error);</p><p>07  });</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check Promise.catch();</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch</p>",
+      "hashCode": -1190035552
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  const exec = (item, delay) =></p><p>02      new Promise (resolve => setTimeout(( ) => resolve(item), delay)) ;</p><p>03</p><p>04  async function runParallel( ) {</p><p>05      const [result1, result2, result3] = await Promise.all(</p><p>06          [exec('x', '100'), exec('y', '500'), exec('z' ,'100') ]</p><p>07     );</p><p>08    return `parallel is done: ${result1}$ {}result2}${result3}` ;</p><p>09  }</p><p>Which two statements correctly execute the runParallel ( ) function? Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>runParallel( ) .then (function(data) {</p><p>return data;</p><p>});</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>runParallel( ) .done (function (data) {</p><p>return data;</p><p>});</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>async runParallel( ) .then(data);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>runParallel( ) .then(data);</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -2045125581
+    },
+    {
+      "describe": "<p>Given the following code:</p><p>01  counter = 0;</p><p>02  const logCounter = ( ) => {</p><p>03  console.log (counter) ;</p><p>04  };</p><p>05  logCounter( ) ;</p><p>06  setTimeout (logCounter, 1100) ;</p><p>07  setInterval(( ) => {</p><p>08      counter++ ;</p><p>09      logCounter( ) ;</p><p>10  }, 1000) ;</p><p>What is logged by the first four log statements?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>0 0 1 2</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>0 1 2 3</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>0 1 1 2</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>0 1 2 2</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1786270805
+    },
+    {
+      "describe": "<p>Which is not the valid state in Promise?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Resolved</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Pending</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Rejected</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Fulfilled</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>A Promise can result in one of these states:</p><p>Pending: initial state, neither fulfilled nor rejected.</p><p>Fulfilled: meaning that the operation completed successfully.</p><p>Rejected: meaning that the operation failed.</p><p>Resolved is not the state, it is more like fate. A promise will have two possible mutually exclusive fates: resolved and unresolved.</p><p>A promise whose fate is resolved can result in any of the three states: pending, fulfilled, and rejected.</p><p>A promise whose fate is unresolved is necessarily pending.</p>",
+      "hashCode": -1641176419
+    },
+    {
+      "describe": "<p>Which of the following is not a standard function name when using promises?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>try</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>finally</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>then</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>catch</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Try is not a function name when using Promise. Check out the reference link for a list of supported functions.</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise</p>",
+      "hashCode": -956349193
+    },
+    {
+      "describe": "<p>Which of the following code snippets will show alert box? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>new Promise((resolve, reject) => {</p><p>throw new Error(\"Whoops!\");</p><p>}).catch(alert);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>new Promise(function(resolve, reject) {</p><p>setTimeout(() => {</p><p>throw new Error(\"Whoops!\");</p><p>}, 1000);</p><p>}).catch(alert);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>new Promise((resolve, reject) => {</p><p>resolve(\"ok\");</p><p>}).then((result) => {</p><p>throw new Error(\"Whoops!\");</p><p>}).catch(alert);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>new Promise((resolve, reject) => {</p><p>reject(new Error(\"Whoops!\"));</p><p>}).catch(alert);</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>When an exception happens, it gets caught and treated as a rejection.</p><p>new Promise(function(resolve, reject) {</p><p>setTimeout(() => {</p><p>throw new Error(\"Whoops!\");</p><p>}, 1000);</p><p>}).catch(alert); // will not catch error</p><p>Copy</p><p>The code snippet above will not show alert box even though the error is thrown in within Promise code block. Reason being, the error is generated not while the executor is running, but later in another task. Hence, the promise cannot catch the error.</p>",
+      "hashCode": -106788969
+    },
+    {
+      "describe": "<p>const getId = new Promise((resolve, reject) => {</p><p>setTimeout(() => resolve(15), 1500);</p><p>});</p><p>const getBook = bookId => new Promise((resolve, reject) => {</p><p>setTimeout(() => resolve('${bookId}:JavaScript Algorithms'), 1500);</p><p>});</p><p>getId.then(id => getBook(id)).then(data => data);</p><p>What is the correct code to replace the last line with an async/await function?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>async function getBookInfo() {</p><p>const Id = await getId;</p><p>const result = await getBook(id);</p><p>}</p><p>await getBookInfo();</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>async function getBookInfo() {</p><p>const Id = getId;</p><p>const result = getBook(id);</p><p>}</p><p>await getBookInfo();</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>await function getBookInfo() {</p><p>const Id = getId;</p><p>const result = getBook(id);</p><p>}</p><p>async getBookInfo();</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>async function getBookInfo() {</p><p>const Id = await getId;</p><p>const result = await getBook(id);</p><p>}</p><p>getBookInfo();</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The correct use of await with an async function is the following codeasync function getBookInfo() {</p><p>const Id = await getId;</p><p>const result = await getBook(id);</p><p>}</p><p>getBookInfo();</p><p>The await expression must be used inside an async function.</p>",
+      "hashCode": 1465758323
+    },
+    {
+      "describe": "<p>Give the code as below:</p><p>let promise = new Promise(function(resolve, reject) {</p><p>resolve(1);</p><p>setTimeout(() => resolve(2), 1000);</p><p>setTimeout(() => resolve(3), 2000);</p><p>});</p><p>promise.then((res) => console.log(res));</p><p>What would be the output of this code?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>1</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>3</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>2</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>undefined</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct answer is 1. The second and third calls to resolve are ignored because only the first call of reject/resolve is taken into account. Further calls are all ignored.</p>",
+      "hashCode": -1047881134
+    },
+    {
+      "describe": "<p>Refer to this code:</p><p>const p1 = new Promise((resolve, reject) => {</p><p>setTimeout(() => {</p><p>resolve('P1 Resolved');</p><p>}, 1500);</p><p>});</p><p>const p2 = (data) => new Promise((resolve, reject) => {</p><p>setTimeout(() => resolve('${data}, P2 Resolved'), 1500, data);</p><p>});</p><p>Which of the following correctly execute p1 and p2? Choose 2 answers.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>p1</p><p>.then((data) => p2(data))</p><p>.then(result => result);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>p1().then(function() {</p><p>p2().then(function(result) {</p><p>return result;</p><p>});</p><p>});</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>async function getResult() {</p><p>const data = await p1;</p><p>return await p2(data);</p><p>}</p><p>getResult();</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>async function getResult() {</p><p>const data = p1;</p><p>const result = p2(data);</p><p>}</p><p>await getResult();</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>p1</p><p>.then((data) => p2(data))</p><p>.then(result => result);</p><p>This is correct. The method promise.then() is used to associate further action with a promise that becomes settled.</p><p>async function getResult() {</p><p>const data = await p1;</p><p>return await p2(data);</p><p>}</p><p>getResult();</p><p>This is correct. Using await inside the function causes both to execute.</p><p>p1().then(function() {</p><p>p2().then(function(result) {</p><p>return result;</p><p>});</p><p>});</p><p>This is incorrect. The syntax is wrong for calling p1 and p2.</p><p>async function getResult() {</p><p>const data = p1;</p><p>const result = p2(data);</p><p>}</p><p>await getResult();</p><p>This is incorrect. The await is outside the function calling the data.</p>",
+      "hashCode": 588378204
+    },
+    {
+      "describe": "<p>Given the following code, which one would be the correct order when executed?</p><p>setTimeout(() => console.log(\"timeout\"));</p><p>Promise.resolve().then(() => console.log(\"promise\"));</p><p>console.log(\"code\");</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>timeout — promise — code</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>code — timeout — promise</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>code — promise — timeout</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>timeout — code — promise</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct order will be:</p><p>code</p><p>promise</p><p>timeout</p><p>Code shows first, because it’s a regular synchronous call. Promise shows second, because .then passes through the microtask queue, and runs after the current code. Timeout shows last, because it’s a macrotask.</p>",
+      "hashCode": 357264864
+    },
+    {
+      "describe": "<p>Which statement accurately describes an aspect of promises?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>then( ) cannot be added after a catch.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Arguments for the callback function passed to . then( ) are optional.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>In a · then( ) function, returning results is not necessary since callbacks will catch the result of a previous promise.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>then( ) manipulates and returns the original promise.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The then() method returns a Promise. It takes up to two arguments: callback functions for the success and failure cases of the Promise.</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/then</p><p>for example:</p><p>return p.catch(...).then(...);</p><p>If a promise return a normal value or a promise that eventually resolves from the .catch() handler (thus \"handling\" the error), then the promise chain switches to the resolved state and the .then() handler after the .catch() will be called.</p>",
+      "hashCode": 1150606644
+    },
+    {
+      "describe": "<p>Which three statements are true about promises? Choose 3 answers</p><p>A The executor of a new Promise runs automatically.</p><p>B A p</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>promise has a . then( ) method.</p><p>C A settled promise can become resolved.</p><p>D A pending promise can become fulfilled, settled, or rejected.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>A Promise is in one of these states:</p><p>pending: initial state, neither fulfilled nor rejected.</p><p>fulfilled: meaning that the operation was completed successfully.</p><p>rejected: meaning that the operation failed.</p>",
+      "hashCode": 1765038670
+    },
+    {
+      "describe": "<p>A developer is wondering whether to use, Promise.then or Promise.catch, especially when a promise throws an error.Which two promises are rejected? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Promise.reject('Cool error here').catch(error => console. error(error));</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Promise.reject('Cool error here').then(error => console. error(error));</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>new Promise((resolve, reject) => {throw 'Cool error here'}). catch(error=> console.error(error));</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>new Promise(( ) => {throw 'Cool error here'}).then((null, error => console.error(error)));</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>use catch block to handle the rejected promise and error</p>",
+      "hashCode": -1763880331
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  console. log('start') ;</p><p>02  Promise. resolve('Success') . then (function (value) {</p><p>03  console. log(' success') ;</p><p>04  });</p><p>05  console.log('End') ;</p><p>What is the output after the code executes successfully?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>End Start Success</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Start Success End</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Success Start End</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Start End Success</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1594305024
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let sayHello = ( ) => {</p><p>02  console. log('Hello, World!') ;</p><p>03  } ;</p><p>Which code executes sayHello once, two minutes from now?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>setInterval(sayHello, 120000) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>delay(sayHello, 120000) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>setTimeout(sayHello( ), 120000) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>setTimeout(sayHello, 120000) ;</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1522893912
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  new Promise((resolve, reject) => {</p><p>02       const fraction = Math. random( ) ;</p><p>03       if (fraction > 0.5) reject( 'fraction > 0.5, ' + fraction) ;</p><p>04       resolve(fraction) ;</p><p>05  })</p><p>06  .then(( ) => console.log( 'resolved' ))</p><p>07  .catch((error) => console. error(error))</p><p>08  .finally(( ) => console.log 'when am I called?' )) ;</p><p>When does Promise . finally on line 08 get called?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>When rejected</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>When resolved</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>When resolved or rejected</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>When resolved and settled</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally</p>",
+      "hashCode": 1254376068
+    },
+    {
+      "describe": "<p>Which statement accurately describes the behavior of the async/await keywords?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The associated function sometimes returns a promise.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The associated function will always return a promise.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The associated function can only be called via asynchronous methods.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The associated class contains some asynchronous functions.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>async/ await is used for function, not class</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function</p>",
+      "hashCode": 1601200398
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let car1 = new Promise((_ , reject) =></p><p>02     setTimeout(reject, 2000, \"Car 1 crashed in\")) ;</p><p>03  let car2 = new Promise (resolve => setTimeout(resolve, 1500, \"Car 2 completed\")) ;</p><p>04  let car3 = new Promise (resolve => setTimeout(resolve, 3000, \"Car 3 completed\")) ;05</p><p>06  Promise. race([car1, car2, car3])</p><p>07       . then (value => {</p><p>08           let result = `${value} the race. `;</p><p>09       }) ;</p><p>10       . catch(err =>｛</p><p>11           console.log(\"Race is cancelled.\", err);</p><p>12    }) ;</p><p>What is the value of result when Promise.race executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Race is cancelled.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Car 2 completed the race.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Car1 crashed in the race.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Car 3 completed the race.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The Promise.race() method returns a promise that fulfills or rejects as soon as one of the promises in an iterable fulfills or rejects, with the value or reason from that promise.</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/race</p>",
+      "hashCode": 419951496
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let timedFunction = ( ) => {</p><p>02     console. log( 'Timer called.' ) ;</p><p>03   } ;</p><p>04</p><p>05  let timerId = setTimeout (timedFunction, 1000) ;</p><p>Which statement allows a developer to cancel the scheduled timedfunction?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>removeTimeout (timedFunction) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>removeTimeout (timerId) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>clearTimeout (timerId) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>clearTimeout (timedFunction) ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1160036129
+    },
+    {
+      "describe": "<p>A developer has an isDog function that takes one argument,pet. They want to schedule the function to run every minute. What is the correct syntax for scheduling this function?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>setTimeout(isDog('cat'), 60000);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>setInterval(isDog('cat'), 60000);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>setInterval(isDog, 60000, 'cat');</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>setTimeout(isDog, 60000, 'cat');</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1079957535
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let sayHello = ( ) => {</p><p>02      console.log('Hello, World!');</p><p>03  };</p><p>Which option executes sayHello once every two minutes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>delay(sayHello, 120000);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>setInterval(sayHello, 120000);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>setTimeout(sayHello( ), 120000);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>setTimeout(sayHello, 120000);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1935794449
+    },
+    {
+      "describe": "<p>Given the code below:</p><p>const delay = async delay => {</p><p>return new Promise ( ( resolve, reject ) =></p><p>{</p><p>console.log(1);</p><p>setTimeout ( resolve, delay );</p><p>});</p><p>};</p><p>const callDelay = async ( ) => {</p><p>console.log(2);</p><p>const yup = await delay(1000);</p><p>console.log(3);</p><p>};</p><p>console.log(4);</p><p>callDelay( );</p><p>console.log(5);</p><p>What is logged to the console?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>1 4 2 3 5</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>4 2 1 3 5</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>4 2 1 5 3</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>4 5 1 2 3</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -333748107
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01    let total = 10;</p><p>02    const interval = setInterval ( ( ) => {</p><p>03        total++;</p><p>04        clearInterval(interval);</p><p>05        total++;</p><p>06    }, 0);</p><p>07    total++;</p><p>08    console.log(total);</p><p>Considering that JavaScript is single-threaded, what is the output of line 08 after the code executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>10</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>11</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>12</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>13</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1565203812
+    }
+  ],
+  "hashCode": -819811610
+}

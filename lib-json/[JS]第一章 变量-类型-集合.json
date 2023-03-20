@@ -1,0 +1,1048 @@
+{
+  "title": "[JS]第一章 变量-类型-集合",
+  "category": "JS-1",
+  "questions": [
+    {
+      "describe": "<p>Given the code below:</p><p>let numValue - 1982;</p><p>Which three code segments result in a correct conversion from number to string? Choose 3 answer</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>et strValue = numValue.toString();</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>et strValue = ' ' + numValue;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>et strValue = numValue.toText();</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>et strValue = String(numValue);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>et strValue = (String)numValue;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -889661771
+    },
+    {
+      "describe": "<p>Refer to the following array:</p><p>let arr = [1,2,3,4,5];</p><p>Which three options result in x evaluating as [1, 2] ? Choose 3 answer</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>et x = arr.slice (2) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>et x = arr.slice (0, 2) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>et x = arr.filter((a)=> { return a<=2 });</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>et x = arr.filter((a) => { a<= 2 });</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>et x = arr.splice (0, 2) ;</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1669364450
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let country = {</p><p>02      get capital ( ) {</p><p>03          let city = Number(\"London\");</p><p>04</p><p>05          return {</p><p>06              cityString: city.toString(),</p><p>07          }</p><p>08      }</p><p>09  }</p><p>Which value can a developer expect when referencing country.capital.cityString?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>An error</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'NaN'</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'London'</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1267593409
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  const monthName = 'July';</p><p>02  const year = 2019;</p><p>03  if (monthName === 'July') {</p><p>04      year = 2020;</p><p>05  }</p><p>A developer receives feedback from the Tech Lead that the code gives an error.</p><p>Which line edit should the developer make so this code runs?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>03 if (monthName === July) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>02 const year = '2019';</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>02 let year = 2019;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>03 if (monthName == July) {</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1806192484
+    },
+    {
+      "describe": "<p>A developer uses the code below to format a date.</p><p>01  const date = new Date(2020, 11, 10);</p><p>02  const dateDisplayOptions = {</p><p>03      year: 'numeric',</p><p>04      month: 'long',</p><p>05      day: 'numeric'</p><p>06  };</p><p>07</p><p>08  const formattedDate = date.toLocaleDateString('en', dateDisplayOptions);</p><p>After executing, what is the value of formattedDate?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>December 10, 2020</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>November 11, 2020</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>October 11, 2020</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>November 10, 2020</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 152162165
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let foodMenul = ['Pizza', 'Burger', 'French fries'];</p><p>02  let finalMenu = foodMenul;</p><p>03  finalMenu.push('Garlic bread');</p><p>What is the value of foodMenul after the code executes?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>['Garlic bread', 'Pizza', 'Burger', 'French fries']</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>['Garlic bread']</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>['Pizza', 'Burger', 'French fries', 'Garlic bread']</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>['Pizza', 'Burger', 'French fries']</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 239200901
+    },
+    {
+      "describe": "<p>Considering type coercion, what does the following expression evaluate to?</p><p>true + 3 + '100' + null</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>'3100null'</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>104</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>4100</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'4100null'</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1048268711
+    },
+    {
+      "describe": "<p>Given two expressions var1 and var2, what are two valid ways to return the concatenation of the two expressions and ensure it is data type string? Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>String.concat(var1 + var2)</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>String(var1).concat(var2)</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>var1.toString() + var2.toString()</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>var1 + var2</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -739401847
+    },
+    {
+      "describe": "<p>Refer to the code snippet below:</p><p>01  let array = [1, 2, 3, 4, 4, 5, 4, 4];</p><p>02  for (let i = 0 ; i< array.length; i++) {</p><p>03      if (array[i] === 4) {</p><p>04        array.splice(i, 1) ;</p><p>05        i--;</p><p>06      }</p><p>07  }</p><p>What is the value of array after the code executes?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[1, 2, 3, 4, 4, 5, 4]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[1, 2, 3, 4, 5, 4, 4]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[1, 2, 3, 5]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[1, 2, 3, 4, 5, 4]</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 2110871203
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>const pi = 3.1415926;</p><p>What is the data type of pi:</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Float</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Decimal</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Double</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Number</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>JavaScript has only one type of numbers.</p>",
+      "hashCode": 1533642448
+    },
+    {
+      "describe": "<p>A developer has the following array of student test grades:</p><p>let arr = [7,8,5,8,9];</p><p>The teacher wants to double each score and then see an array of the students who scored more than 15 points.</p><p>How should the developer implement the request?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let arr1 = arr.map( ( num ) => num * 2 ).filter ( (val ) => val > 15);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let arr1 = arr.mapBy( (num ) => {return num * 2 } ).filterBy ( (val ) => {return val > 15 });</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let arr1 = arr.map ( (num) => {num * 2}).filterBy((val) => {val >15});</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let arr1 = arr.filter((val) => { return val > 15} ).map((num) => { return num * 2});</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Need to do double logic in the map first. Then do filter logic.</p>",
+      "hashCode": 612263382
+    },
+    {
+      "describe": "<p>Refer to the following array:</p><p>let arr = [1,2,3,4,5];</p><p>Which three options result in x evaluating as [3, 4, 5] ? Choose 3 answer</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let x = arr.filter((a)=> { return a>2 });</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let x = arr.slice (2, 3) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let x = arr.splice (2, 3) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let x = arr.filter((a) => { a< 2 });</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let x = arr.slice (2) ;</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included) where start and end represent the index of items in that array. The original array will not be modified.</p><p>The filter() method creates a new array with all elements that pass the test implemented by the provided function.</p><p>The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.</p>",
+      "hashCode": -67871647
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>const searchText = 'Yay! Salesforce is amazing!' ;</p><p>let result1 = searchText.search(/sales/i) ;</p><p>let result2 = searchText. search(/sales/) ;</p><p>console.log(result1) ;</p><p>console.log(result2) ;</p><p>After running this code, which result is displayed on the console?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>>5 > undefined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>> true > false</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>>5  >0</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>>5 >-1</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -845744855
+    },
+    {
+      "describe": "<p>Given the following code:</p><p>01  let X = null;</p><p>02  console.log(typeof x);</p><p>What is the output of line 02?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>null</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>x</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>object</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Undefined</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 324311953
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>let textValue = '1984' ;</p><p>Which code segment shows a correct way to convert this string to an integer?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let numberValue = Number (textValue) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let numberValue = Integer (textValue);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let numberValue = textValue. toInteger( );</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let numberValue = (Number) textValue;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1329801806
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let foodMenu1 = ['Pizza' , 'Burger' , 'French fries'] ;</p><p>02  let finalMenu = foodMenu1 ;</p><p>03  finalMenu.push( 'Garlic bread' ) ;</p><p>What is the value of foodMenu1 after the code executes?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>['Pizza', 'Burger', 'French fries']</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>['Garlic bread', 'Pizza', 'Burger', 'French fries']</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>['Pizza', 'Burger', 'French fries', 'Garlic bread']</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>['Garlic bread']</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check array push method:</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push</p>",
+      "hashCode": 298808660
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>let productSKU = '8675309' ;</p><p>A developer has a requirement to generate SKU numbers that are always 19 characters long, starting with 'sku', and padded with zeros.</p><p>Which statement assigns the value sk000000008675309?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>productSKU = productSKU.padStart(16, '0').padStart(19, 'sku') ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>productSKU = productSKU.padEnd(16, '0'). padStart('sku') ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>productSKU = productSKU.padEnd(19, '0').padStart('sku') ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>productSKU = productSKU.padEnd(16, '0').padStart(19, 'sku') ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>productSKU = productSKU.padEnd(16, '0').padStart(19, 'sku') ;   output: \"sku8675309000000000\"</p><p>productSKU = productSKU.padEnd(19, '0').padStart('sku') ; output: \"8675309000000000000\"</p><p>productSKU = productSKU.padEnd(16, '0'). padStart('sku') ; output: \"8675309000000000\"</p>",
+      "hashCode": 508991885
+    },
+    {
+      "describe": "<p>Refer to the expression below:</p><p>let x = ('1'+ 2) ==(6*2);</p><p>How should this expression be modified to ensure that x evaluates to false?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let x = (1+2) === (6/2);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let x = (1+2) == ('6'/2);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let x = ('1'+'2') == (6*2);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let x = ('1'+2) === (6*2);</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -582217548
+    },
+    {
+      "describe": "<p>Given the code below, what would be the output in the console?</p><p>let myArray = [1, \"5\", \"eleven\", \"11\" + 17];</p><p>let newArray = myArray.map( function(item){ return item / 2 ; } );</p><p>console.log(newArray);</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[0.5, 2.5, 0, 558.5]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[0.5, 2.5, NaN, 14]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[0.5, 2.5, NaN, 558.5]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[0.5, 2.5, undefined, 14]</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The output will be [0.5, 2.5, NaN, 558.5].</p><p>“eleven” is a string which cannot be divided by any number, resulting in NaN.</p><p>“11” + 17 will not automatically concert “11” to number, instead, it concatenates the number 17 to the “11” string, becoming a new string “1117”. When the string is divided by 2, it is converted to number 1117 automatically, resulting in 558.5.</p>",
+      "hashCode": -1523540419
+    },
+    {
+      "describe": "<p>An array is an ordered list of values that you refer to with a name and an index. Which of the following code snippets regarding the array’s method is correct? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let myArray = new Array('1', '2', '3');</p><p>myArray = myArray.concat('a', 'b', 'c');</p><p>console.log(myArray); // myArray is [\"1\", \"2\", \"3\", \"a\", \"b\", \"c\"]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let myArray = new Array('1', '2', '3');</p><p>myArray = myArray.join(' - ');</p><p>console.log(myArray);  // myArray is \"1 - 2 - 3\"</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let myArray = new Array('1', '2', '3', '4', '5');</p><p>myArray.splice(1, 3, 'a', 'b', 'c', 'd');</p><p>console.log(myArray);  // myArray is [\"1\", \"a\", \"b\", \"c\", \"d\", \"5\"]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let myArray = new Array('1', '2', '3');</p><p>myArray.unshift('4', '5');</p><p>console.log(myArray); // myArray is [\"1\", \"2\", \"3\", \"4\", \"5\"]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let myArray = new Array('102', '23', '34');</p><p>myArray.reverse();</p><p>console.log(myArray); // myArray is [\"102\", \"34\", \"23\"]</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>reverse() method reverses the element of an array. The first array element becomes the last and the last becomes the first. Do not get confused with reverse sort() method!</p><p>unshift() method adds item(s) to the beginning of the array, not the end. Do not get confused with shift() method which is used to remove an item from the beginning of an array.</p>",
+      "hashCode": 739784097
+    },
+    {
+      "describe": "<p>Which of the expressions will be treated as falsy? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>undefined</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>0</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>null</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>{}</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The following values will be coerced to false:</p><p>0</p><p>null</p><p>undefined</p><p>NaN</p><p>“” or ” (an empty string)</p><p>false</p><p>These values are referred to as falsy. Any other value of any type is coerced to true, and we call these values as truthy.</p>",
+      "hashCode": 1993482165
+    },
+    {
+      "describe": "<p>ECMAScript 2015 introduces a new data structure to map values to values. A Map object is a simple key/value map and can iterate its elements in insertion order. Let’s say the map has been initialized:</p><p>let sayings = new Map();</p><p>Which of the following is a valid operation of Map object?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>myMap.get(3, 'three');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>myMap.put(0, 'zero');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>myMap.set(1, 'one');</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>myMap.add(2, 'two');</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>myMap.set(1, 'one'); is the correct answer.</p>",
+      "hashCode": 1943730319
+    },
+    {
+      "describe": "<p>Given a string “Stringify”, which of the following method will yield a valid substring “gif” in JavaScript? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.log( \"Stringify\".slice(8,5));</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.log( \"Stringify\".substring(8, 5));</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.log( \"Stringify\".substr(5, 8));</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.log( \"Stringify\".substring(5, 8));</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.log( \"Stringify\".slice(5,8));</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The correct answers are:</p><p>console.log( \"Stringify\".substring(8, 5));   // \"gif\"</p><p>console.log( \"Stringify\".substring(5, 8));   // \"gif\"</p><p>console.log( \"Stringify\".slice(5,8));   // \"gif\"</p><p>console.log( \"Stringify\".substr(5, 8)); returns “gify” because str.substr(start [, length]) returns the part of the string from start, with the given length. Unlike str.substring(start [, end]) which returns the part of the string between start and end.</p><p>console.log( \"Stringify\".slice(8,5));  returns “” (empty string).</p><p>str.substring(start [, end]) does not allow negative values for the indexes. It will be treated as 0 if the value is negative.</p><p>str.slice(start [, end]) allows negative values which means that the position is counted from the string end. For example, console.log( \"Stringify\".slice(-4,-1)); will also return “gif”.</p>",
+      "hashCode": 550622132
+    },
+    {
+      "describe": "<p>Which of the following is a valid data type in Javascript? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>BigInt</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The \"null\" value</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Text</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Object</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Date</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The valid data types are BigInt, Object, and the “null” value.</p><p>There are eight basic data types in JavaScript (source from javascript.info):</p><p>String</p><p>Number</p><p>BigInt</p><p>Boolean</p><p>null</p><p>undefined</p><p>Object</p><p>Symbol</p>",
+      "hashCode": 2031695947
+    },
+    {
+      "describe": "<p>While of the following statements regarding primitive number type is correct? Choose 3 answers.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>0 is represented as both -0 and +0 (0 is an alias for +0).</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The number type is a double-precision 64-bit binary format value which supports ranges from -(2^53 − 1) and 2^53 − 1).</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The number type has three symbolic values: +Infinity, -Infinity, and NaN (\"Not a Number\").</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>If you divide a number by negative zero, you will end up with a value of NaN (\"Not a Number\").</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>If you divide a number by negative zero, you will end up with a value of -Infinity. For example: 42 / -0 = -Infinity</p><p>The rest of the statements are correct.</p>",
+      "hashCode": 985298809
+    },
+    {
+      "describe": "<p>Strings are useful for holding data that can be represented in text form. What are the correct ways of assigning String variables? Choose 2 answers.</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>const str = `string primitive`;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>const str = new StringBuilder('string object');</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>const str = new String['string object'];</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>const str = new String('string object');</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>String literals can be denoted by double quotes, single quotes, or backtick characters. Hence, const str = `string primitive`; is valid.</p><p>const str = new String('string object'); is the right way of creating a new String object.</p><p>NOTE: If possible, avoid creating strings as objects as it will slow down the execution speed.</p>",
+      "hashCode": -1020974899
+    },
+    {
+      "describe": "<p>Which of the following is JavaScript framework? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Node.js</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Flutter JS</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Angular</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>React</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Laravel JS</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Angular is a JavaScript based open-source front-end web framework mainly maintained by Google.</p><p>React is an open-source Javascript framework for buiding user interface mainly maintained by Facebook.</p><p>Node.js is an open-source, cross-platform,  JavaScript runtime environment (framework) that executes JavaScript code outside a web browser.</p><p>There is nothing called “Laravel JS”. However, there is a PHP web application framework called “Laravel” (no JS).</p><p>There is nothing called “Flutter JS”. However, there is an open-source UI software development kit created by Google, which is called “Flutter” (no JS).</p>",
+      "hashCode": -195928783
+    },
+    {
+      "describe": "<p>Implicit type coercion can be very confusing sometimes. Which of the following comparisons will yield the true Boolean value? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>false == \"0\"</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>false === \"\"</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>\"\" == \"0\"</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>false == \"\"</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[0] == 0</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The Boolean comparison results are displayed as below:</p><p>[0] == 0;   // true</p><p>false == \"\";   // true</p><p>false == \"0\";   // true</p><p>\"\" == \"0\";   // false</p><p>false === \"\";   // false</p><p>For Boolean comparison the best practice is to use === and !==. With these operators, primitive types are only equivalent when both type and value match, and object comparisons are only true when their respective pointers are pointing to the same memory address. For example:</p><p>false === \"\"; // false</p><p>false === \"0\"; // false</p><p>\"\" === \"0\"; // false</p><p>[0] === 0; // false</p>",
+      "hashCode": 338556065
+    },
+    {
+      "describe": "<p>Which of the following is the correct way of assigning variables? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>var strLang = javascript;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>var const strLang = 'javascript';</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let strLang = \"javascript\";</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>const strLang = 'javascript';</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let strLang = 'javascript';</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The following code syntaxes are correct:</p><p>let strLang = 'javascript';</p><p>let strLang = \"javascript\";</p><p>const strLang = 'javascript';</p><p>The var strLang = javascript; is incorrect because the javascript text is missing the quote symbol wrapping around the text.</p><p>There is no var const in Javascript. You will receive an error of Unexpected keyword ‘const’ in the console if you do so.</p>",
+      "hashCode": -1312946363
+    },
+    {
+      "describe": "<p>Under what circumstance is it acceptable to use implicit type coercion?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Always</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>To test a \"falsy\" or \"truth\" variable value in an if conditional expression. For instance, if(myVariable){…}</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>There is never a safe way to use implicit type coercion.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>When comparing two non-Boolean values with Boolean operators. For instance, 1 == \"1\"</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The correct answer is to test whether a variable is “truthy” or “falsy” in a conditional expression. For example:</p><p>if(myVariable) console.log('myVariable is truthy.');</p>",
+      "hashCode": 1928633600
+    },
+    {
+      "describe": "<p>Which of the following data type assumptions regarding typeof operator is correct? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.log( typeof [1,2,3,4] ); // returns \"array\"</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.log( typeof function () {} ); // returns \"function\"</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.log( typeof null ); // returns \"object\"</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.log( typeof NaN ); // returns \"undefined\"</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.log( typeof new Date() ); // returns \"object\"</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>Here’s a list of data types of a JavaScript variable:</p><p>typeof \"John\"   // returns \"string\"</p><p>typeof 3.14   // returns \"number\"</p><p>typeof NaN   // returns \"number\"</p><p>typeof false   // returns \"boolean\"</p><p>typeof [1,2,3,4]   // returns \"object\"</p><p>typeof {name:'John', age:34}   // returns \"object\"</p><p>typeof new Date()   // returns \"object\"</p><p>typeof function () {}   // returns \"function\"</p><p>typeof myCar   // returns \"undefined\"</p><p>typeof null   // returns \"object\"</p>",
+      "hashCode": 2118694244
+    },
+    {
+      "describe": "<p>Which of the number type conversion is correct? Choose 3 answers.</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.log( Number( \"99 88\" ) ) // returns 9988</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.log( Number( \"\" ) ) // returns 0</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.log( Number( true ) ) // returns 1</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.log( Number( \"5\" + null ) ) // returns NaN</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.log( Number( new Date() ) ) // returns Thu Jul 17 2014 15:38:19 GMT+0200</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>Number(\"99 88\") will return NaN because the string contains a space in between the numbers which cannot be automatically converted to a number.</p><p>Number( new Date() ) will return system timestamp like 1594620083661, not the human-readable date format.</p>",
+      "hashCode": 942113396
+    },
+    {
+      "describe": "<p>Refer to the code snippet below:</p><p>01  let array = [1, 2, 3, 4, 4, 5, 4, 4];</p><p>02  for (let i = 0 ; i< array.length; i++) {</p><p>03      if (array[i] === 4) {</p><p>04        array.splice(i, 1) ;</p><p>05      }</p><p>06  }</p><p>What is the value of array after the code executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[1, 2, 3, 4, 4, 5, 4]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[1, 2, 3, 4, 5, 4, 4]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[1, 2, 3, 5]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[1, 2, 3, 4, 5, 4]</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice</p>",
+      "hashCode": 1798605178
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let a = 'a';</p><p>02  let b;</p><p>03 // b = a;</p><p>04  console.log (b) ;</p><p>What is displayed when the code executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>ReferenceError: b is not defined</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>a</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>null</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Undefined</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -1726967701
+    },
+    {
+      "describe": "<p>Given a value, which two options can a developer use to detect if the value is NaN?Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>value == NaN</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Object.is(value, NaN)</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>value === Number. NaN</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>isNaN(value)</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The isNaN() function determines whether a value is NaN or not</p>",
+      "hashCode": 576060705
+    },
+    {
+      "describe": "<p>Refer to the following code:</p><p>let sampleText = 'The quick brown fox jumps ' ;</p><p>A developer needs to determine if a certain substring is part of a string.</p><p>Which three expressions return true for the given substring? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>sampleText. includes('fox') ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>sampleText. includes('fox', 3) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>sampleText. includes('quick', 4) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>sampleText. substring('fox') ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>sampleText. indexOf('quick' !== -1)</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -2040295789
+    },
+    {
+      "describe": "<p>Given two expressions var1 and var2, what are two valid ways to return the logical AND of the two expressions and ensure it is data type Boolean? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Boolean(var1) && Boolean(var2)</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>var1 && var2</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>var1.toBoolean( ) && var2. toBoolean ( )</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Boolean(var1 && var2)</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>var1 && var2 output 2</p>",
+      "hashCode": 1061090132
+    },
+    {
+      "describe": "<p>Refer to the code below.</p><p>01  let str = 'javascript' ;</p><p>02  str[0] = 'J' ;</p><p>03  str[4] = 'S' ;</p><p>After changing the string index values, the value of str is 'javascript'. What is the reason for this value?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Non-primitive values are immutable.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Non-primitive values are mutable.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Primitive values are mutable.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Primitive values are immutable.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>https://developer.mozilla.org/en-US/docs/Glossary/Mutable#:~:text=In%20JavaScript%2C%20only%20objects%20and,is%20still%20held%20in%20memory.&text=Immutables%20are%20the%20objects%20whose,Strings%20and%20Numbers%20are%20Immutable.</p>",
+      "hashCode": 1724487884
+    },
+    {
+      "describe": "<p>Given the code below:</p><p>const copy = JSON. stringify( [new String('false'), new Boolean(false) , undefined]);</p><p>What is the value of copy?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[\\\"false\\\", { }]\" \"</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[false, { }]\" \"</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[\\\"false\\\", false, null]\" \"</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[\\\"false\\\", false, undefined]\" \"</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 411571118
+    },
+    {
+      "describe": "<p>Refer to the following array:</p><p>let arr1= [1,2,3,4,5];</p><p>Which two lines of code result in a second array, arr2, being created such that arr2 is not a reference to arr1? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>let arr2 = arr1.slice(0, 5) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let arr2 = arr1 ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let arr2 = Array.from(arr1) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let arr2 = arr1.sort( ) ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The slice() method returns a shallow copy of a portion of an array into a new array object</p><p>The Array.from() method returns an Array object from any object with a length property or an iterable object.</p><p>let arr2 = arr1 ; and let arr2 = arr1.sort( ) ;  both have same reference to the original array</p>",
+      "hashCode": -285824208
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>let inArray = [ [1,2] , [3,4,5] ];</p><p>Which two statements result in the array [ 1, 2, 3, 4, 5 ] ? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[ ] . concat(...inArray) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[ ] . concat.apply (inArray,  [ ]) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[ ] . concat.apply([ ], inArray) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[ ] . concat([...inArray]) ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>check spread operator</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax</p><p>The concat() method is used to merge two or more arrays.</p><p>Apply() method: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply</p>",
+      "hashCode": -1942165035
+    },
+    {
+      "describe": "<p>Which two console logs output NaN? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.log(10 / 'five') ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.log(parseInt('two')) ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.log(10 / Number('5')) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.log(10 / 0) ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1408757534
+    },
+    {
+      "describe": "<p>Considering type coercion, what does the following expression evaluate to?</p><p>true + '13' + NaN</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>'113NaN'</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>14</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>'true13NaN'</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>'true13'</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -719271442
+    }
+  ],
+  "hashCode": 665492707
+}

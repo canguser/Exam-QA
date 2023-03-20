@@ -1,0 +1,525 @@
+{
+  "title": "[JS]第四章 调试和错误处理",
+  "category": "JS-1",
+  "questions": [
+    {
+      "describe": "<p>A developer wrote the following code:</p><p>01    let x = object.value;</p><p>02</p><p>03    try {</p><p>04        handleObjectValue(x);</p><p>05    } catch (error) {</p><p>06        handleError(error);</p><p>07    }</p><p>The developer has a getNextValue function to execute after handleObjectValue( ), but does not want to execute getNextValue ( ) if an error occurs.</p><p>How can the developer change the code to ensure this behavior?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>03    try {</p><p>04        handleObjectValue(x);</p><p>05    } catch (error) {</p><p>06        handleError(error);</p><p>07    }</p><p>08    getNextValue( );</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>03    try {</p><p>04        handleObjectValue(x);</p><p>05        getNextValue( );</p><p>06    } catch (error) {</p><p>07        handleError(error);</p><p>08    }</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>03    try {</p><p>04        handleObjectValue(x);</p><p>05    } catch (error) {</p><p>06        handleError(error);</p><p>07    } then {</p><p>08        getNextValue( );</p><p>09    }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>03    try {</p><p>04        handleObjectValue(x);</p><p>05    } catch (error) {</p><p>06        handleError(error);</p><p>07    } finally {</p><p>08        getNextValue( );</p><p>09    }</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -54695334
+    },
+    {
+      "describe": "<p>A developer needs to test this function:</p><p>01    const sum3 = (arr) => {</p><p>02        if (! arr.length) return 0;</p><p>03        if( arr.length === 1) return arr[0];</p><p>04        if(arr.length ===2) return arr[0] + arr[1];</p><p>05        return arr[0] + arr[1] + arr[2];</p><p>06    };</p><p>Which two assert statements are valid tests for this function?</p><p>Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.assert(sum3( [0] )===0);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.assert(sum3( [-3, 2] ) ===-1);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.assert(sum3( ['hello', 2,3,4] ) ===NaN);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert(sum3( [1, 2] ) ==12);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>return false, sum3( ['hello', 2,3,4] ) return hello23</p><p>return false, sum3( [1, 2]) return 3</p>",
+      "hashCode": -426455060
+    },
+    {
+      "describe": "<p>A developer creates a generic function to log custom messages in the console. To do this, the function below is implemented.</p><p>01    function logStatu(status) {</p><p>02        console./* Answer goes here */ ('Item Status is : %s', status);</p><p>03    }</p><p>Which three console logging methods allow the use of string substitution in line 02?</p><p>Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>message</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>info</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>assert</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>log</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>No such a method, console.message();</p><p>console.info(), Informative logging of information. You may use string substitution and additional arguments with this method.</p><p>https://developer.mozilla.org/en-US/docs/Web/API/console/assert</p><p>console.log(), For general output of logging information. You may use string substitution and additional arguments with this method.</p>",
+      "hashCode": -2089401711
+    },
+    {
+      "describe": "<p>A developer has the function, shown below, that is called when a page loads.</p><p>Function onLoad() {</p><p>console,log(\"Page has loaded!\");</p><p>}</p><p>Where can the developer see the log statement after loading the page in the browser?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Terminal running the web server</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Browser JavaScript console</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Browser performance tools</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>On the webpage</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 804974455
+    },
+    {
+      "describe": "<p>A developer is asked to fix some bugs reported by users. To do that, the developer adds a breakpoint for debugging.</p><p>01  function Car (maxSpeed, color) {</p><p>02      this.maxSpeed = maxSpeed;</p><p>03      this.color = color;</p><p>04  }</p><p>05  let carSpeed = document.getElementById('carSpeed') ;</p><p>06  debugger ;</p><p>07  let fourWheels = new Car (carSpeed.value, 'red') ;</p><p>When the code execution stops at the breakpoint on line 06, which two types of information are available in the browser console? Choose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The style, event listeners and other attributes applied to the carSpeed DOM element</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The values of the carSpeed and fourWheels variables</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>A variable displaying the number of instances created for the Car object</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The information stored in the window. localStorage property</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>debugger will pause the function excution. In the console, we can find carSpeed has value, while fourWheels is undefined.</p>",
+      "hashCode": 1319146909
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  async function functionUnderTest(isOK) {</p><p>02      if (isOK) return 'OK' ;</p><p>03      throw new Error('not OK') ;</p><p>04  }</p><p>Which assertion accurately tests the above code?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.assert (await (functionUnderTest(true), 'not OK') )</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert (functionUnderTest(true), 'OK')</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert (await functionUnderTest(true), 'not OK')</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.assert (await functionUnderTest(true), 'OK')</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The console.assert() method writes an error message to the console if the assertion is false. If the assertion is true, nothing happens.</p><p>check console.asset();</p><p>https://developer.mozilla.org/en-US/docs/Web/API/console/assert</p>",
+      "hashCode": 566394768
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>for (let number = 2; number <= 5; number += 1){</p><p>// Insert code statement here</p><p>}</p><p>The developer needs to insert a code statement in the location shown. The code statement has these requirements:</p><p>1 - Does not require an import</p><p>2 - Logs an error when the Boolean statement evaluates to false</p><p>3 - Works in both the browser and Node.js</p><p>Which statement meets these requirements?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>assert (number % 2 === 0) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.error (number % 2 === 0) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.debug (number % 2 === 0) ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert (number % 2 === 0) ;</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>The console.assert() method writes an error message to the console if the assertion is false. If the assertion is true, nothing happens.</p><p>https://developer.mozilla.org/en-US/docs/Web/API/console/assert</p>",
+      "hashCode": -988778999
+    },
+    {
+      "describe": "<p>As a new frontend developer at XYZ company, you have been asked to fix an issue when the function is called:</p><p>function hello(name) {</p><p>let phrase = `Hello, ${name}!`;</p><p>________;  // type your code here</p><p>say(phrase);</p><p>}</p><p>What would you type in the given blank to debug the code?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>debug</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>set breakpoint</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>pause</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>debugger</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>We can pause the code by using the debugger command. That’s very convenient when you are in a code editor and don’t want to switch to the browser and look up the script in developer tools to set the breakpoint.</p>",
+      "hashCode": -1689668624
+    },
+    {
+      "describe": "<p>Which of the following is a valid error type in JavaScript? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>ExternalError</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>EvalError</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>InternalError</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>SyntaxError</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>UnexpectedError</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The following error types are valid:</p><p>EvalError – Creates an instance representing an error that occurs regarding the global function eval().</p><p>InternalError – Creates an instance representing an error that occurs when an internal error in the JavaScript engine is thrown. E.g. “too much recursion”.</p><p>SyntaxError – Creates an instance representing a syntax error.</p><p>There is no ExternalError or UnexpectedError error types in JavaScript.</p><p>Please check out the reference link below for more error types.</p>",
+      "hashCode": 157897039
+    },
+    {
+      "describe": "<p>Universal Containers (UC) just launched a new landing page, but users complain that the website is slow. A developer found some functions that might cause this problem. To verify this, the developer decides to execute everything and log the time each of these three suspicious functions consumes.</p><p>01  console. time(' Performance') ;</p><p>02</p><p>03  maybeAHeavyFunction( ) ;</p><p>04</p><p>05  thisCouldTakeTooLong( ) ;</p><p>06</p><p>07  orMaybeThisOne( ) ;</p><p>08</p><p>09  console. endTime (' Performance') ;</p><p>Which function can the developer use to obtain the time spent by one of the three functions?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.getTime ( )</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.timeStamp( )</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.timeLog( )</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.trace ( )</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>https://developer.mozilla.org/en-US/docs/Web/API/Console/timeLog</p>",
+      "hashCode": 2135560228
+    },
+    {
+      "describe": "<p>A developer receives a comment from the Tech Lead that the code below gives an error.</p><p>01 const monthName = 'Ju1y' ;</p><p>02 const year = 2019;</p><p>03 if  (year === 2019)  {</p><p>04     monthName = 'June' ;</p><p>05  }</p><p>Which line edit should be made to make this code run?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>01 let monthName = 'July' ;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>03 if (year == 2019) {</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>02 const year = 2020 ;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>02 let year = 2019 ;</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>const variable is immutable</p>",
+      "hashCode": -1985870738
+    },
+    {
+      "describe": "<p>A developer is trying to handle an error within a function. Which code segment shows the correct approach to handle an error without propagating it elsewhere?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>try {</p><p>doSomething();</p><p>} catch(error) {</p><p>throw new Error('Error found');</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>try {</p><p>doSomething();</p><p>} catch(error) {</p><p>return error;</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>try {</p><p>doSomething();</p><p>} catch(error) {</p><p>return null;</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>try {</p><p>doSomething();</p><p>} catch(error) {</p><p>processError(error);</p><p>}</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1904477124
+    },
+    {
+      "describe": "<p>A developer creates a generic function to log custom messages in the console. To do this, the function below is implemented.</p><p>01    function logStatu(status) {</p><p>02        console./* Answer goes here */ ('Item Status is : %s', status);</p><p>03    }</p><p>Which three console logging methods allow the use of string substitution in line 02?</p><p>Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>message</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>assert</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>info</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>log</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>error</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": -2089401711
+    },
+    {
+      "describe": "<p>A developer created a generic function to log custom messages shown in the code below.</p><p>01 function myLog(message) {</p><p>02      console./*Answer goes here*/(Custom log: ' + message);</p><p>03  }</p><p>Which three options can the developer use to log custom messages in the console? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>count</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>group</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>error</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>trace</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>debug</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 661463567
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let requestPromise = client.getRequest;</p><p>02</p><p>03  requestPromise( ).then((response) => {</p><p>04      handleResponse(response);</p><p>05  });</p><p>A developer uses a client that makes a GET request that uses a Promise to handle the request. client.getRequest returns a Promise. Which code lines can the developer change to ensure the function nextStep gets called if an error occurs?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>05  }) .finally( ( ) => {</p><p>06      nextStep( );</p><p>07  });</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>03  try{</p><p>04      requestPromise( ).then((response) => {</p><p>05          handleResponse(response);</p><p>06      });</p><p>07  } catch() {</p><p>08      nextStep();</p><p>09  }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>05  }).catch( ( ) => {</p><p>06      nextStep();</p><p>07  });</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>03  requestPromise( ).then( (response) => {</p><p>04      handleResponse(response);</p><p>05  }).then(() => {</p><p>06      nextStep();</p><p>07});</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -853486224
+    },
+    {
+      "describe": "<p>A developer wants to use a try…catch statement to catch any error that countSheep() may throw and pass it to a handError() function. What is the correct implementation of the try…catch?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>setTimeout(function() {</p><p>try {</p><p>countSheep();</p><p>} catch (e) {</p><p>handleError(e);</p><p>}</p><p>},1000);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>try {</p><p>countSheep();</p><p>} finally {</p><p>handleError(e);</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>try {</p><p>countSheep();</p><p>} handleError (e) {</p><p>catch(e);</p><p>}</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>try {</p><p>setTimeout(function() {</p><p>countSheep();</p><p>}, 1000);</p><p>} catch(e) {</p><p>handleError(e);</p><p>}</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1855561702
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01    let first = 'Who';</p><p>02    let second = 'What';</p><p>03    (function() {</p><p>04        try {</p><p>05            try {</p><p>06                throw new Error('Sad trombone');</p><p>07            } catch (err) {</p><p>08                first = 'Why' ;</p><p>09                throw err;</p><p>10            } finally {</p><p>11                second = 'When' ;</p><p>12                return;</p><p>13            }</p><p>14        } catch (err) {</p><p>15            second = 'Where' ;</p><p>16        }</p><p>17    })();</p><p>What are the values for first and second once the code executes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>first is Who and second is When.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>first is Why and second is When.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>first is Who and second is Where.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>first is Why and second is Where.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": 1085254507
+    },
+    {
+      "describe": "<p>A developer wrote the following code:</p><p>01    let x = object.value;</p><p>02</p><p>03    try {</p><p>04        handleObjectValue(x);</p><p>05    } catch (error) {</p><p>06        handleError(error);</p><p>07    }</p><p>The developer has a getNextValue function to execute after handleObjectValue( ), but does not want to execute getNextValue ( ) if an error occurs. How can the developer change the code to ensure this behavior?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>03    try {</p><p>04        handleObjectValue(x);</p><p>05    } catch (error) {</p><p>06        handleError(error);</p><p>07    }</p><p>08    getNextValue( );</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>03    try {</p><p>04        handleObjectValue(x);</p><p>05        getNextValue( );</p><p>06    } catch (error) {</p><p>07        handleError(error);</p><p>08    }</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>03    try {</p><p>04        handleObjectValue(x);</p><p>05    } catch (error) {</p><p>06        handleError(error);</p><p>07    } then {</p><p>08        getNextValue( );</p><p>09    }</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>03    try {</p><p>04        handleObjectValue(x);</p><p>05    } catch (error) {</p><p>06        handleError(error);</p><p>07    } finally {</p><p>08        getNextValue( );</p><p>09    }</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>return false, sum3( ['hello', 2,3,4] ) return hello23</p><p>return false, sum3( [1, 2]) return 3</p>",
+      "hashCode": 2001090074
+    },
+    {
+      "describe": "<p>A developer needs to test this function:</p><p>01    const sum3 = (arr) => {</p><p>02        if (! arr.length) return 0;</p><p>03        if( arr.length === 1) return arr[0];</p><p>04        if(arr.length ===2) return arr[0] + arr[1];</p><p>05        return arr[0] + arr[1] + arr[2];</p><p>06    };</p><p>Which two assert statements are valid tests for this function? Choose 2 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>console.assert(sum3( [0] )===0);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.assert(sum3( [-3, 2] ) ===-1);</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>console.assert(sum3( ['hello', 2,3,4] ) ===NaN);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>console.assert(sum3( [1, 2] ) ==12);</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "",
+      "hashCode": -795960248
+    },
+    {
+      "describe": "<p>A developer creates a generic function to log custom messages in the console. To do this, the function below is implemented.</p><p>01    function logStatu(status) {</p><p>02        console./* Answer goes here */ ('Item Status is : %s', status);</p><p>03    }</p><p>Which three console logging methods allow the use of string substitution in line 02? Choose 3 answers</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>message</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>info</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>assert</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>log</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "<p>No such a method, console.message();</p><p>console.info(), Informative logging of information. You may use string substitution and additional arguments with this method.</p><p>https://developer.mozilla.org/en-US/docs/Web/API/console/assert</p><p>console.log(), For general output of logging information. You may use string substitution and additional arguments with this method.</p>",
+      "hashCode": -807698877
+    },
+    {
+      "describe": "<p>A developer has code that calculates a restaurant bill, but generates incorrect answers while testing the code.</p><p>01  function calculateBill(items) {</p><p>02      let total = 0 ;</p><p>03</p><p>04      total += findsubtotal (items) ;</p><p>05</p><p>06      total += addTax (total) ;</p><p>07      total += addTip (total) ;</p><p>08      return total ;</p><p>09  }</p><p>Which option allows the developer to step into each function execution within calculateBill?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Calling the console.trace(total) method on line 03.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Using the debugger command on line 03.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Wrapping findSubtotal in a console.log ( ) method.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Using the debugger command on line 05.</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>The debugger statement invokes any available debugging functionality, such as setting a breakpoint. If no debugging functionality is available, this statement has no effect.</p><p>https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger</p><p>The console interface's trace() method outputs a stack trace to the Web Console.</p><p>https://developer.mozilla.org/en-US/docs/Web/API/Console/trace</p>",
+      "hashCode": -394252655
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p>01  let greeting = 'Goodbye' ;</p><p>02  let salutation = 'Hello, hello, hello' ;</p><p>03  try {</p><p>04    greeting = 'Hello' ;</p><p>05    decodeURI( '%%%' ) ;   // throws error</p><p>06    salutation = 'Goodbye' ;</p><p>07  } catch(err) {</p><p>08    salutation = 'I say hello' ;</p><p>09  } finally {</p><p>10    salutation = 'Hello, Hello';</p><p>11  }</p><p>Line 05 causes an error.</p><p>What are the values of greeting and salutation once the code completes?</p><p></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>greeting is Hello and salutation is I say hello.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>greeting is Goodbye and salutation is Hello, Hello.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>greeting is Goodbye and salutation is I say hello.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>greeting is Hello and salutation is Hello, Hello.</p>",
+          "isRight": true
+        }
+      ],
+      "analysis": "",
+      "hashCode": 681073869
+    }
+  ],
+  "hashCode": 390324247
+}
