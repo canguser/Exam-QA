@@ -1,0 +1,941 @@
+{
+  "title": "[咸鱼]AppBuilder-2",
+  "category": "[咸鱼]AppBuilder",
+  "questions": [
+    {
+      "describe": "Cloud Kicks (CK) tracks the support level of its customers on the account record page. CK wants to show a text notification on a case record page when the related account is a platinum-level customer.\nHow could an app builder meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Add a rich text area to the Case Lighting page > Set the component visibility of the rich text area to show when the account support level is platinum.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a text-only Visualforce page > Drag the Visualforce component into the Case page layout > Set its visibility to show when the account support level is platinum.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a text-only Visualforce page > Clone the case page layout > Drag the Visualforce component into the page, and assign the layout to platinum cases.",
+          "isRight": false
+        },
+        {
+          "describe": "Clone the Case Lightning page > Add a rich text area to the new page, and assign this page to platinum accounts.",
+          "isRight": false
+        }
+      ],
+      "hashCode": 693700534
+    },
+    {
+      "describe": "Universal Containers is expecting impacts to operations due to increased demand. The executive team will be reaching out to current customers and want to see the number of open cases for the account and parent account.\nWhich two tools could an app builder combine to display the number of open cases on the account page?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Workflow",
+          "isRight": true
+        },
+        {
+          "describe": "Approval Process",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": true
+        }
+      ],
+      "hashCode": -699279785
+    },
+    {
+      "describe": "An app builder wants to limit the amount of fields users are required to fill out when creating a new Opportunity. Once they fill out the required fields and save, the full record page with additional fields relevant to the Opportunity type becomes available.\nHow could this be accomplished?",
+      "answerOptions": [
+        {
+          "describe": "Make the Opportunity type a required field on the initial Opportunity page layout and use automation to fill in the type field to a record type.",
+          "isRight": true
+        },
+        {
+          "describe": "Use different page layouts for Opportunity types based on the user profile.",
+          "isRight": false
+        },
+        {
+          "describe": "Once the required fields are populated, use a sharing rule to share the new fields with the user.",
+          "isRight": false
+        },
+        {
+          "describe": "Hide additional sections on the page layout and show the users how to manually expand them when they want to fill in the fields in the hidden sections.",
+          "isRight": false
+        }
+      ],
+      "hashCode": 362044864
+    },
+    {
+      "describe": "Due to the complexity of the Universal Containers sandbox release schedule and requirements, it is advised that change sets are used as often as possible to migrate from one environment to another.\nWhich three common items can an app builder move when using a change set?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Web-to-lead",
+          "isRight": false
+        },
+        {
+          "describe": "Standard fields",
+          "isRight": false
+        },
+        {
+          "describe": "Custom object",
+          "isRight": true
+        },
+        {
+          "describe": "Apex class",
+          "isRight": true
+        },
+        {
+          "describe": "Custom field",
+          "isRight": true
+        }
+      ],
+      "hashCode": 493426071
+    },
+    {
+      "describe": "An App Builder is loading the data into salesforce. To link the new records back to the legacy\n1\nsystem, a field will be used to track the legacy ID on the account object. For future data loads this ID will be used when upserting records. Which field attribute should be selected? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Unique",
+          "isRight": true
+        },
+        {
+          "describe": "Required",
+          "isRight": false
+        },
+        {
+          "describe": "External ID",
+          "isRight": true
+        },
+        {
+          "describe": "Text (encrypted)",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1949613533
+    },
+    {
+      "describe": "A sales rep at AW Computing is unable to find what they are looking for while scrolling through their Chatter feed.\nHow can a filter be utilized to show only posts from their key account and opportunity records?",
+      "answerOptions": [
+        {
+          "describe": "Create a Chatter group.",
+          "isRight": false
+        },
+        {
+          "describe": "Create Chatter bookmarks",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Chatter stream.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Chatter notification.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1654031037
+    },
+    {
+      "describe": "The VP of Sales at Universal Containers has asked the app builder to let sales reps create opportunity records directly from the account, with a number of fields pre-populated.\nWhich feature should the app builder use to allow users to create the opportunity?\nA A quick action\nB A default action\nC A custom button\nD",
+      "answerOptions": [
+        {
+          "describe": "custom link",
+          "isRight": true
+        }
+      ],
+      "hashCode": -1822838570
+    },
+    {
+      "describe": "The appraisal team at DreamHouse Realty wants to leverage Salesforce mobile app. What are three things an app builder should do to optimize mobile experience?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Use Global Actions to make it easy to perform vital functionality on mobile.",
+          "isRight": true
+        },
+        {
+          "describe": "Avoid using default field values so that the user is required to fill in all fields on the screen.",
+          "isRight": false
+        },
+        {
+          "describe": "Minimize the amount of formula fields and lookup fields to reduce page load time.",
+          "isRight": true
+        },
+        {
+          "describe": "Create individual customized layouts for different phone operating systems.",
+          "isRight": false
+        },
+        {
+          "describe": "Put the most important fields in the compact layout so they are easy to find.",
+          "isRight": true
+        }
+      ],
+      "hashCode": -1960593392
+    },
+    {
+      "describe": "Ursa Major Solar's sales team has been struggling to enter data on mobile since rollout; the team dislikes scrolling through all of the fields to input only the necessary data.\nHow could the app builder solve this with minimal impact to desktop users?",
+      "answerOptions": [
+        {
+          "describe": "Filter components by device using Form Factor.",
+          "isRight": false
+        },
+        {
+          "describe": "Reorder the fields to make sense for the reps when in the field.",
+          "isRight": true
+        },
+        {
+          "describe": "Update the training documentation with better screenshots.",
+          "isRight": false
+        },
+        {
+          "describe": "Deselect the phone radio button on the Lightning record page assignment.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1047407081
+    },
+    {
+      "describe": "Universal Containers (UC) tracks Account locations in Zip Code, a custom text field with a\n1\nvalidation rule to enforce proper formatting of the US ZIP+4 code for UC's orders.\nWhat formula should the app builder create on Order to display only the first five digits of Zip Code from the parent Account?",
+      "answerOptions": [
+        {
+          "describe": "BEGINS(Account.Zip_Code_r, 5)",
+          "isRight": false
+        },
+        {
+          "describe": "TEXT(Account.Zip_Code_c, 5)",
+          "isRight": false
+        },
+        {
+          "describe": "LEFT(Account.Zip_Code_c, 5)",
+          "isRight": true
+        },
+        {
+          "describe": "LPAD(Account.Zip_Code__r, 5)",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1596688933
+    },
+    {
+      "describe": "DreamHouse Realty (DR) has many properties for sale and wants to identify the highest value of all Offer__c records on each Property__c record.\nWhat solution should the app builder use to meet DreamHouse Realty's needs?",
+      "answerOptions": [
+        {
+          "describe": "Master-Detail Child Object",
+          "isRight": true
+        },
+        {
+          "describe": "Text Area (Long)",
+          "isRight": false
+        },
+        {
+          "describe": "Multi-select Pickllst",
+          "isRight": false
+        },
+        {
+          "describe": "Lookup Object",
+          "isRight": false
+        }
+      ],
+      "hashCode": 614310120
+    },
+    {
+      "describe": "Cloud Kicks (CK) wants to set up a custom child object to track gift cards issued to a customer. A key requirement is to track the total number of gift cards opened and gift cards issued on an Account. CK wants to permanently ensure the gift cards are unable to be moved across any other Account once it is created.\nOn the gift card object, what type of field should be created to support this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Master-detail relationship",
+          "isRight": true
+        },
+        {
+          "describe": "Roll-up summary",
+          "isRight": false
+        },
+        {
+          "describe": "Formula",
+          "isRight": false
+        },
+        {
+          "describe": "Lookup relationship",
+          "isRight": false
+        }
+      ],
+      "hashCode": -627518291
+    },
+    {
+      "describe": "Cloud Kicks (CK) wants to track orders against inventory, ensuring its ability to fulfill order requests. CK created a junction object called Request Inventory to enable many-to-many relationships with the Inventory and Order objects.\nWhat does the app builder need to provide to ensure users can view Request Inventory records?",
+      "answerOptions": [
+        {
+          "describe": "Read access to both master objects.",
+          "isRight": true
+        },
+        {
+          "describe": "Apex-based sharing on the first master object.",
+          "isRight": false
+        },
+        {
+          "describe": "Sharing rules on Request Inventory object.",
+          "isRight": false
+        },
+        {
+          "describe": "Read access to the first master object.\n1",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1680470722
+    },
+    {
+      "describe": "Ursa Major Solar (UMS) is looking to hire some new employees. UMS wants to allow the same applicant to apply for multiple open positions using a single application.\nWhat should an app builder recommend to meet these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Create a master-detail relationship on Open_Position__c to Application__c",
+          "isRight": true
+        },
+        {
+          "describe": "Create a master-detail relationship held on Applicant__c to Application__c",
+          "isRight": false
+        },
+        {
+          "describe": "Create a master-detail relationship field on Application__c to Open.Position__c",
+          "isRight": false
+        },
+        {
+          "describe": "Create a master-detail relationship field on Applicant__c to Apphcabon_c",
+          "isRight": false
+        }
+      ],
+      "hashCode": 137691617
+    },
+    {
+      "describe": "Cloud Kicks (CK) wants to quickly insert a list of over 60,000 net new Accounts. The template based on CK's data model was used to populate the list.\nWhich tool should be used?\nA Data Loader\nB",
+      "answerOptions": [
+        {
+          "describe": "Lightning Object Creator\nC Import Wizard\nD Schema Builder",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1934288248
+    },
+    {
+      "describe": "An app builder is creating a custom object called Testimonial__c and wants to connect Testimonial__c records with both the submitter's Contact record and Account record. If the Account is deleted, the Testimonial__c should also be deleted. If the Contact is deleted, but the Account remains, the Testimonial__c should remain.\nHow should this be accomplished?",
+      "answerOptions": [
+        {
+          "describe": "Make both the Contact and Account fields required on the Testimonial__c object and create lookup relationships from Testimonial__c to Contact and to Account.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a master-detail relationship from Testimonial__c to Account and a lookup relationship from Testimonial__c to Contact.",
+          "isRight": true
+        },
+        {
+          "describe": "Make Testimonial__c a junction object between Account and Contact using master-detail relationships.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a lookup relationship from Testimonial__c to Account and a master-detail relationship from Testimonial__c to Contact.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1842168394
+    },
+    {
+      "describe": "The services manager wants to make sure the team enters case priority consistently. What feature can an app builder use to accomplish this?",
+      "answerOptions": [
+        {
+          "describe": "Path",
+          "isRight": false
+        },
+        {
+          "describe": "Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Next Best Action",
+          "isRight": false
+        },
+        {
+          "describe": "In-App Guidance",
+          "isRight": true
+        }
+      ],
+      "hashCode": 259071894
+    },
+    {
+      "describe": "An App Builder at UVC would like to prevent users from creating new records on an Account related list by overriding standard buttons. Which two should the App Builder consider before overriding standard buttons?\n1",
+      "answerOptions": [
+        {
+          "describe": "Standard buttons can be changed on lookup dialogs, list views, and search result layouts",
+          "isRight": false
+        },
+        {
+          "describe": "Standard buttons can be overridden with a Visualforce page",
+          "isRight": true
+        },
+        {
+          "describe": "Standard buttons that are not available for overrides can still be hidden on page layouts",
+          "isRight": true
+        },
+        {
+          "describe": "Standard buttons can be overridden, relocated on the detail page, and relabeled",
+          "isRight": false
+        }
+      ],
+      "hashCode": 2071661089
+    },
+    {
+      "describe": "Universal Containers generates leads from three different sources: web, trade shows, and partners. Some of the information collected is applicable to all sources, there is also information that is unique to each type of lead.\nWhat should an app builder configure to meet these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Create three lead record types each with its own page layout containing the relevant fields",
+          "isRight": false
+        },
+        {
+          "describe": "Create a partner community and a record type for web and trade show leads",
+          "isRight": false
+        },
+        {
+          "describe": "Create three sections on the lead layout and instruct users to collapse the non-relevant fields",
+          "isRight": true
+        },
+        {
+          "describe": "Create custom page payouts for each type of lead only containing the relevant fields",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1520249599
+    },
+    {
+      "describe": "Universal Containers wants to deliver purchased containers to remote construction address. In these cases the customers will supply UC with the coordinates to the location.\nWhat type of field should the app builder use to capture this information?",
+      "answerOptions": [
+        {
+          "describe": "Number",
+          "isRight": false
+        },
+        {
+          "describe": "Goelocation",
+          "isRight": true
+        },
+        {
+          "describe": "Text",
+          "isRight": false
+        },
+        {
+          "describe": "External Lookup",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1603333487
+    },
+    {
+      "describe": "What option is available to an App Builder when defining an object-specific Create Record custom action?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Pre-Defining field values on the target object.",
+          "isRight": true
+        },
+        {
+          "describe": "Redirecting the end user to the detail page of the target object",
+          "isRight": false
+        },
+        {
+          "describe": "Specifying the fields and layout of the action.",
+          "isRight": false
+        },
+        {
+          "describe": "Allowing the end user to choose the record type",
+          "isRight": true
+        }
+      ],
+      "hashCode": -351052672
+    },
+    {
+      "describe": "Managers at Universal Containers want a quick way to create additional accounts to form a\n1\nhierarchy from a Parent Account record They want to auto-populate five fieids based on the parent to make it easier for users to create the child accounts quickly.\nWhat should the app builder recommend?\nA Add Path on Account hierarchy\nB Add a custom link on Account\nC Customize a Global Quick Action\nD",
+      "answerOptions": [
+        {
+          "describe": "Create a custom action",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1596365716
+    },
+    {
+      "describe": "Cloud Kicks (CK) wants to simultaneously delete a Suppliere record and all Supplierltem__c records if a partnership ends with a supplier.\nWhat solution could an app builder use to meet the requirement?",
+      "answerOptions": [
+        {
+          "describe": "Many-to-many",
+          "isRight": true
+        },
+        {
+          "describe": "Indirect lookup",
+          "isRight": false
+        },
+        {
+          "describe": "Hierarchical",
+          "isRight": false
+        },
+        {
+          "describe": "Master-detail",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1237787014
+    },
+    {
+      "describe": "Containers have the Account object's Organization-Wide Default set to Private. The marketing team owns Accounts; however, they also need to be able to see the sales team's Accounts. Both the sales and marketing teams are in completely different branches of the rote hierarchy.\nWhat feature should be used to enable marketing to see sales-owned accounts.",
+      "answerOptions": [
+        {
+          "describe": "Public Group",
+          "isRight": false
+        },
+        {
+          "describe": "Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Workflow",
+          "isRight": false
+        },
+        {
+          "describe": "Sharing Rules",
+          "isRight": true
+        }
+      ],
+      "hashCode": -329094542
+    },
+    {
+      "describe": "An app builder wants to create a formula field on an Account to include data from related Contacts but is unable to find the relationship in the formula editor.\nWhat is a limitation of formulas that could be causing the issue?\nA Unable to reference the child records.\nB",
+      "answerOptions": [
+        {
+          "describe": "master-detail relationship should be created.\nC Formula field limit reached on the Account object.\nD More than 5,000 characters in the formula.",
+          "isRight": false
+        }
+      ],
+      "hashCode": 845386004
+    },
+    {
+      "describe": "Cloud Kicks wants to set up a new opportunity approval process and execute various action items based on the initial submission.\nWhich three action types should an app builder use in the approval process?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Email Alert",
+          "isRight": true
+        },
+        {
+          "describe": "Outbound Message",
+          "isRight": true
+        },
+        {
+          "describe": "Task",
+          "isRight": true
+        },
+        {
+          "describe": "Invocable Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Invocable Process Builder\n1",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1574082235
+    },
+    {
+      "describe": "Cloud Kicks has a shipment date on each shipment that is sent out. Dispatchers need more details on the day and time the shipment was sent out. The app builder needs to change the current field type that is used from Date to Date/Time.\nWhat should the app builder be aware of when it comes to data already in the system?",
+      "answerOptions": [
+        {
+          "describe": "The change will be instant",
+          "isRight": false
+        },
+        {
+          "describe": "Historical data will be updated to 12:00 timestamp.",
+          "isRight": false
+        },
+        {
+          "describe": "The field name will change.",
+          "isRight": false
+        },
+        {
+          "describe": "Data loss will be experienced.",
+          "isRight": true
+        }
+      ],
+      "hashCode": -401419202
+    },
+    {
+      "describe": "Universal Containers (UC) has a custom Invoice object and a custom Invoice Line Item object. TTie Invoice Line Item object has a lookup relationship to the Invoice. UC would like to convert the lookup relationship to a master-detail relationship but is unable to do so.\nWhich two reasons could be preventing this relationship conversion?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Custom objects are unable to be on the detail side of a master-detail relationship.",
+          "isRight": false
+        },
+        {
+          "describe": "There are already two master-detail relationships on the Invoice Line Item.",
+          "isRight": true
+        },
+        {
+          "describe": "Invoice Line Item records exist without having the Invoice lookup field populated.",
+          "isRight": true
+        },
+        {
+          "describe": "There is a roll-up summary field on the Invoice object.",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1286893486
+    },
+    {
+      "describe": "The app builder needs to change the data types of new custom fields. The app builder is not able to delete and recreate any of the fields, nor modify any apex code. Which data type change will require the app builder to perform the additional steps in order to retain existing functionalities?",
+      "answerOptions": [
+        {
+          "describe": "Changing the data type of a field used in an apex class from number to text.",
+          "isRight": false
+        },
+        {
+          "describe": "Changing the data type of a field used in a report from a text to an encrypted field",
+          "isRight": false
+        },
+        {
+          "describe": "Changing the data type of a field used as an external id from number to text.",
+          "isRight": true
+        },
+        {
+          "describe": "Changing the data type of a field used in lead conversion from number to text",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1015570785
+    },
+    {
+      "describe": "Cloud Kicks Is redefining its entire business process to convert the Manager Notes field from a long text area files. The goal is to encourage managers to be more concise In their comments and stay at 255 characters or less. There is preexisting information In the Manager Notes field that often is well beyond the character limit.\nWhat would happen to any existing information if the app builder tries to convert a preexisting long\n1\ntext area field to text area'",
+      "answerOptions": [
+        {
+          "describe": "Preexisting information will truncate to the first 255 characters.",
+          "isRight": true
+        },
+        {
+          "describe": "Preexisting Information in the field will be completely lost.",
+          "isRight": false
+        },
+        {
+          "describe": "Preexisting information will remain even if it was over 255 characters.",
+          "isRight": false
+        },
+        {
+          "describe": "Preexisting information will cause an error message to pop up.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1827484967
+    },
+    {
+      "describe": "Ursa Major Solar wants to create a relationship between the standard Contact object and a custom Solar Project object Contacts potentially be related to multiple Solar Project objects, and a Solar Project can have multiple Contacts associated with it.\nHow should an app builder configure the data model?",
+      "answerOptions": [
+        {
+          "describe": "One Master-detail relationship on Conuct and one Master-detail relationship on Solar Project",
+          "isRight": true
+        },
+        {
+          "describe": "Two Lookup relationships on a new custom object",
+          "isRight": false
+        },
+        {
+          "describe": "One Lookup relationship on Contact and one Lookup relationship on Solar Project",
+          "isRight": false
+        },
+        {
+          "describe": "Two Master-detail relationships on a new custom object",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1539916059
+    },
+    {
+      "describe": "Sales manager at universal containers would like to standardize what information sales rep are gathering. Sales rep want recommendations, sales strategies and to know what key fields need to be completed at each step of the sales process on the opportunity record. What feature should an app builder use to provide this functionally?",
+      "answerOptions": [
+        {
+          "describe": "Workflow",
+          "isRight": false
+        },
+        {
+          "describe": "Path",
+          "isRight": true
+        },
+        {
+          "describe": "Chatter feed",
+          "isRight": false
+        },
+        {
+          "describe": "Global Action",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1690841077
+    },
+    {
+      "describe": "UVC's CFO has asked that all deals with more than a 40% discount get automatically sent to the VP of Finance. He will review these deals without the sales rep needing to take action. Which two ways can this be accomplished without building code? Choose two answer",
+      "answerOptions": [
+        {
+          "describe": "Launch a new approval process that has automatic submission enabled as an initial submission action",
+          "isRight": true
+        },
+        {
+          "describe": "Create a new process with a submit for approval action to automatically submit deals for approval",
+          "isRight": true
+        },
+        {
+          "describe": "Create a new approval process that has automatic submission enabled in the entry criteria",
+          "isRight": false
+        },
+        {
+          "describe": "Launch a flow that uses the submit for approval action to submit deals for approval",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1232287126
+    },
+    {
+      "describe": "The developer at Universal Containers wants to test code in a sandbox environment. In order to ensure the code works properly, the sandbox needs to have at least half a gigabyte of data. The sandbox will need to be refreshed after each three-day sprint.\nWhat type of sandbox should the App Builder provision to the developer?",
+      "answerOptions": [
+        {
+          "describe": "Developer",
+          "isRight": false
+        },
+        {
+          "describe": "Full Copy",
+          "isRight": false
+        },
+        {
+          "describe": "Developer Pro",
+          "isRight": true
+        },
+        {
+          "describe": "Partial Data\n2",
+          "isRight": false
+        }
+      ],
+      "hashCode": -603593531
+    },
+    {
+      "describe": "Cloud Kicks wants to display 10 key fields at once in a separate section at the top of opportunity records on the desktop.\nWhich component should an app builder add to the record page to enable this functionality?",
+      "answerOptions": [
+        {
+          "describe": "Path",
+          "isRight": false
+        },
+        {
+          "describe": "Highlights Panel",
+          "isRight": true
+        },
+        {
+          "describe": "Custom Lightning Web Component",
+          "isRight": false
+        },
+        {
+          "describe": "Accordion",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1347288587
+    },
+    {
+      "describe": "DreamHouse Realty wants to make sure an Opportunity has a field Expected_Close_Date_c populated before it is allowed to enter the qualified stage.\nHow should an app builder solution this request?",
+      "answerOptions": [
+        {
+          "describe": "Record Type",
+          "isRight": false
+        },
+        {
+          "describe": "Validation Rule",
+          "isRight": true
+        },
+        {
+          "describe": "Activity History",
+          "isRight": false
+        },
+        {
+          "describe": "Page Layout",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1659304306
+    },
+    {
+      "describe": "When a deal is closed- won, it has to be approved by the owner's manager prior to being added to the leaderboard for a quarterly sales competition. An opportunity is won on the last day of the quarter and the manager is on vacation.\nWhat is recommended to ensure all of the appropriate deals are reviewed and the leaderboard is up to date?",
+      "answerOptions": [
+        {
+          "describe": "Forward the approval request to the manager's assistant.",
+          "isRight": false
+        },
+        {
+          "describe": "Set up a delegated approver for the manager",
+          "isRight": true
+        },
+        {
+          "describe": "Have the manager log on and reassign the approval request",
+          "isRight": false
+        },
+        {
+          "describe": "Use Process Builder to assign a delegated approver.",
+          "isRight": false
+        }
+      ],
+      "hashCode": 373410560
+    },
+    {
+      "describe": "DreamHouse Realty (DR) has a policy that requires the phone number on Contact to be deleted when the DoNotCall checkbox is checked.\nWhat automation tool should the app builder recommend?",
+      "answerOptions": [
+        {
+          "describe": "Quick action",
+          "isRight": false
+        },
+        {
+          "describe": "Approval process",
+          "isRight": false
+        },
+        {
+          "describe": "Validation rule",
+          "isRight": true
+        },
+        {
+          "describe": "Workflow rule\n2",
+          "isRight": false
+        }
+      ],
+      "hashCode": -940397741
+    },
+    {
+      "describe": "Cloud Kicks has a sales rep who is stating that their Contact is unavailable for other users to see within Salesforce.\nIn which three ways can an app builder troubleshoot this issue?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Create an Account Sharing Rule to give the users access to all records.",
+          "isRight": false
+        },
+        {
+          "describe": "Confirm whether Default Organization-Wide Sharing Settings provide access to the Account.",
+          "isRight": true
+        },
+        {
+          "describe": "Review the Contact record and ensure it is linked to an Account.",
+          "isRight": true
+        },
+        {
+          "describe": "Verify the users with the issue have access to the Contact object.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a new Contact and have the users try again.",
+          "isRight": false
+        }
+      ],
+      "hashCode": 950901734
+    },
+    {
+      "describe": "An app builder wants to create a custom Sync button on Account that will call a Lightning Web Component that connects with an external system. This action should only be available If the custom Status field is set to Ready to Sync.\nWhat should an app builder use to add this functionality to an Account record page?",
+      "answerOptions": [
+        {
+          "describe": "Formula field",
+          "isRight": false
+        },
+        {
+          "describe": "Dynamic action",
+          "isRight": true
+        },
+        {
+          "describe": "AppExchange product",
+          "isRight": false
+        },
+        {
+          "describe": "Custom link",
+          "isRight": false
+        }
+      ],
+      "hashCode": -994766385
+    },
+    {
+      "describe": "Universal Containers wants users to have access to the pricing guidelines document when viewing a Contract related to an Account.\nWhat feature should an app builder use to create easy access to the document?\nA Quick Action on the Contracts object\nB Quick Action on the Account object\nC A custom detail page link on the Account object\nD",
+      "answerOptions": [
+        {
+          "describe": "custom detail page link on the Contract object",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1260699853
+    },
+    {
+      "describe": "When a sales rep submits an account for approval, Universal Containers wants the user to answer additional questions via a popup window to populate additional record fields.\nWhat should an app builder use to achieve the desired result?",
+      "answerOptions": [
+        {
+          "describe": "Process Builder and Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning component and Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Custom picklist field and Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Custom button and Flow",
+          "isRight": true
+        }
+      ],
+      "hashCode": 26720068
+    },
+    {
+      "describe": "An App Builder has been asked to integrate Salesforce with an external web service. The web service must be notified every time an Opportunity is Won. Which two can satisfy this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Use a workflow rule and an outbound message",
+          "isRight": true
+        },
+        {
+          "describe": "Use a flow and an outbound message",
+          "isRight": false
+        },
+        {
+          "describe": "Use a process and Apex Code\n2",
+          "isRight": true
+        },
+        {
+          "describe": "Use a process and an outbound message",
+          "isRight": false
+        }
+      ],
+      "hashCode": -940529457
+    },
+    {
+      "describe": "Ursa Major Solar wants to provide sales console users with an Incredible experience, with the most-used components easily accessible at all times.\nWhat solution can enable reps to see and access these components from anywhere within the app without leaving the pagere where the team is working?",
+      "answerOptions": [
+        {
+          "describe": "Favorites",
+          "isRight": false
+        },
+        {
+          "describe": "Home page",
+          "isRight": false
+        },
+        {
+          "describe": "Global actions",
+          "isRight": false
+        },
+        {
+          "describe": "Utility bar",
+          "isRight": true
+        }
+      ],
+      "hashCode": 1155860631
+    },
+    {
+      "describe": "What should an app builder consider when choosing a template for a new Lightning record page?\nA The template is unable to be changed after the initial save.\nB To view the record page, users need \"View All Data\" permissions for the object.\nC",
+      "answerOptions": [
+        {
+          "describe": "Page structure will automatically adapt to the device being used to view the record page.\nD Select a new template for each type of device users use to view the record page.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1701974777
+    }
+  ],
+  "hashCode": 328385629
+}

@@ -1,0 +1,771 @@
+{
+  "title": "[咸鱼]AppBuilder-5",
+  "category": "[咸鱼]AppBuilder",
+  "questions": [
+    {
+      "describe": "Ursa Major Solar is ramping up the sales team to meet increased demand. As part of the short ramp up for these new reps, the manager wants to provide a help guide to enable reps to easily get help where needed during the different sales processes.\nWhich solution should an app builder recommend?",
+      "answerOptions": [
+        {
+          "describe": "Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Journey Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Chatter Publisher",
+          "isRight": false
+        },
+        {
+          "describe": "Path",
+          "isRight": true
+        }
+      ],
+      "hashCode": 150280054
+    },
+    {
+      "describe": "The DreamHouse Realty (DR) service manager has asked for some improvements in case management to enforce process compliance so that cases are unable to be reverted to an earlier\n4\ncase status, and to ensure that certain fields are required when specific case criteria are met. What solution should an app builder implement to meet these requirements?\nA Workflow Rules\nB Process Builder\nC",
+      "answerOptions": [
+        {
+          "describe": "Validation Rules\nD Activities Component",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1209833042
+    },
+    {
+      "describe": "DreamHouse Realty is rethinking its sandbox utilization strategy after acquiring Cloud Kicks. The Salesforce COE already utilizes a partial and a full sandbox, which it refreshes on their own regular schedules. Teams are expanding and have to begin each of their small projects in a sandbox before committing to the larger pool for collaborative testing while still keeping costs down.\nWhat type of sandbox should each team member use?",
+      "answerOptions": [
+        {
+          "describe": "Full sandbox",
+          "isRight": false
+        },
+        {
+          "describe": "Developer sandbox",
+          "isRight": true
+        },
+        {
+          "describe": "Developer pro sandbox",
+          "isRight": false
+        },
+        {
+          "describe": "Partial sandbox",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1533792315
+    },
+    {
+      "describe": "Northern Trail Outfitters wants the field sales team to only see the accounts that they own Separate North American and European marketing teams should only see accounts m their respective regions. The inside sales team needs to see all accounts in Salesforce.\nMow can this be accomplished?",
+      "answerOptions": [
+        {
+          "describe": "Set the Organization-Wide Default to Public for accounts. Create criteria- based sharing rules for each marketing team, and create an Inside Sales Team permission set with the \"View Air setting for accounts,",
+          "isRight": false
+        },
+        {
+          "describe": "Set the Organization-Wide Default to Public for accounts. Create profiles for each marketing team, and create an Inside Sales Team role that is at the top of the Role Hteran",
+          "isRight": false
+        },
+        {
+          "describe": "Set the Organization-Wide Default to Private for accounts. Create criteria- based sharing rules for each marketing team, and create an Inside Sales Team profile with the \"View All\" setting for accounts.",
+          "isRight": true
+        },
+        {
+          "describe": "Set the Organization-Wide Default to Private for accounts. Create permission sets for each marketing team, and create an Inside Sales Team profile with the \"View All\" setting for accounts.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -827259613
+    },
+    {
+      "describe": "Ursa Major Solar wants to see the Type field from the parent object Galaxy listed on the child record Star. The app builder is receiving an error stating \"Picklist values are only supported in\n4\ncertain functions\".\nWhat formula should an app builder use to achieve the desired result?",
+      "answerOptions": [
+        {
+          "describe": "ISPICKVAL(Galaxy__r.Type__c)",
+          "isRight": false
+        },
+        {
+          "describe": "VALUE(Galaxy_r.Type__c)",
+          "isRight": false
+        },
+        {
+          "describe": "TEXT(Galaxy_r.Type_c)",
+          "isRight": true
+        },
+        {
+          "describe": "FIND(Galaxy__r.Type__c)",
+          "isRight": false
+        }
+      ],
+      "hashCode": -981742329
+    },
+    {
+      "describe": "An app builder has modified a Lightning record page for a case and has added an email button item to the page layout; however, users are unable to see the new item on the layout. What are two potential reasons why users are unable to view the item on the Case Lightning record page?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "The page layout includes the case feed component.",
+          "isRight": false
+        },
+        {
+          "describe": "The email button contains JavaScript.",
+          "isRight": true
+        },
+        {
+          "describe": "The case page layout also contains custom buttons.",
+          "isRight": false
+        },
+        {
+          "describe": "The page layout excludes the case feed component.",
+          "isRight": true
+        }
+      ],
+      "hashCode": -588522680
+    },
+    {
+      "describe": "Accounts at Universal Containers are currently readable by all users but editable only by their owners.\nManagement wants to designate some Accounts as VIP Accounts. Only Account owners should have read access to these VIP accounts.\nWhich two actions should an app builder take to meet the requirements?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Implement a sharing rule.",
+          "isRight": true
+        },
+        {
+          "describe": "Configure a permission set.",
+          "isRight": false
+        },
+        {
+          "describe": "Set up an Account Team.",
+          "isRight": true
+        },
+        {
+          "describe": "Change organization-wide defaults.",
+          "isRight": false
+        }
+      ],
+      "hashCode": 321447349
+    },
+    {
+      "describe": "Universal Containers utilizes opportunities and a custom object called Detaited.Sales__c. The company would like to roll sales metrics up to an opportunity for only Detailed.Sales__c records that have their picklist status set to Active.\nWhat is the recommended method for the app bunder to achieve this request?",
+      "answerOptions": [
+        {
+          "describe": "Utilize the AppExchange to download a third-party application that can roH up the sales dollars with the appropriate filter.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a master-detail relationship between the parent and child object with a roll-up summary field that fitters on the status held.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a lookup relationship between the parent and child object with a roll-up summary held that filters on the status field.",
+          "isRight": false
+        },
+        {
+          "describe": "Utilize Apex code to roll up the desired amounts.",
+          "isRight": false
+        }
+      ],
+      "hashCode": 710148481
+    },
+    {
+      "describe": "Cloud Kicks wants to make sure that users without the Marketing role are unable to update the Contact Retail Opt In picklist field to Yes.\n4\nWhat validation rule would an app builder use to prevent other users from making this update?",
+      "answerOptions": [
+        {
+          "describe": "AND( $UserRole.Name != 'Marketing', ISCHANGED(Retail_Opt_In__c), ISPICKVAL(Retail_0pt_In_c,\"Yes\") )",
+          "isRight": true
+        },
+        {
+          "describe": "AND( $UserRole.Name != 'Marketing', Retail_Opt_In_c = \"Yes\" )",
+          "isRight": false
+        },
+        {
+          "describe": "AND( $UserRole.Name = 'Marketing', ISPICKVAL(Retail_Opt_In_c,\"Yes\") )",
+          "isRight": false
+        },
+        {
+          "describe": "AND( $UserRole.Name = 'Marketing', Retail_Opt_In__c = \"Yes\" )",
+          "isRight": false
+        }
+      ],
+      "hashCode": -910849156
+    },
+    {
+      "describe": "The Recruiting ream at AW Computing captures the job acceptance and date of hire of a candidate on the Job Application custom object. Once the candidate accepts the recruiter s job offer, the date of hire should be entered and not be changed on subsequent cecord edit.\nWhich validation formula should the app builder use?",
+      "answerOptions": [
+        {
+          "describe": "NOT(ISCLANK(Job_Accepted_c)) && ISCHANGED(Hire_Date_c)",
+          "isRight": true
+        },
+        {
+          "describe": "(ISBLANK(Job_Accepted_c) II NOT(lSCMANGED(Mire_Daie_c))",
+          "isRight": false
+        },
+        {
+          "describe": "NOT{IS&lANK(Job_Accepted_c)) II ISCHANGED(Hire_Date_c)",
+          "isRight": false
+        },
+        {
+          "describe": "(lSBLANK(Job_Accepted_c) && NOT(lSCHANGED(Hire_Date_c))",
+          "isRight": false
+        }
+      ],
+      "hashCode": 467305167
+    },
+    {
+      "describe": "An app builder has created a custom Lightning App and wants to make it available to the internal users at Universal Containers.\nWhich two steps are necessary to accomplish this task?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Add the app to a Visualforce page.",
+          "isRight": true
+        },
+        {
+          "describe": "Upload the app to Static Resources.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a subdomain using My Domain.",
+          "isRight": false
+        },
+        {
+          "describe": "Build a Custom Tab for the app.",
+          "isRight": true
+        }
+      ],
+      "hashCode": -1002180686
+    },
+    {
+      "describe": "DreamHouse Realty wants to import its property records from an external system into Salesforce. The app builder will use an external ID field to house the property ID from the external system.\nWhich two details should the app builder know when using external ID fields?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "An external ID field can be a number field.",
+          "isRight": true
+        },
+        {
+          "describe": "An external ID field can be a URL field.",
+          "isRight": false
+        },
+        {
+          "describe": "An external ID field can be a phone field.",
+          "isRight": false
+        },
+        {
+          "describe": "An external ID field can be a text field.",
+          "isRight": true
+        }
+      ],
+      "hashCode": 1414273358
+    },
+    {
+      "describe": "Cloud Kicks (CK) switched to Lightning Experience and started using Chatter across its global workforce to support its fast-paced sales cycle. CK loves Chatter but struggle with gathering feedback from core team members, including understanding who is available to respond.\nWhich two ways could CK use Chatter to solve this problem?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Streams",
+          "isRight": false
+        },
+        {
+          "describe": "Polls",
+          "isRight": true
+        },
+        {
+          "describe": "Out of Office",
+          "isRight": true
+        },
+        {
+          "describe": "Topics",
+          "isRight": false
+        }
+      ],
+      "hashCode": 1685554524
+    },
+    {
+      "describe": "Cloud Kicks (CK) keeps track of its shoe inventory in Salesforce. When an order's status is changed to Activated, the inventory for the ordered shoe is reduced. At that point, a SOAP web service on the CK website must be called so that the website is updated to display the correct inventory amount for the shoe.\nWhat should an app builder use to communicate to the CK web service when a shoe's inventory has changed?",
+      "answerOptions": [
+        {
+          "describe": "After-Save Record-Triggered flow",
+          "isRight": false
+        },
+        {
+          "describe": "Before-Save Record-Triggered flow",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Workflow rule",
+          "isRight": true
+        }
+      ],
+      "hashCode": -1910384827
+    },
+    {
+      "describe": "Universal Containers allows all employees to submit reviews for leadership using a custom object called Review. These Reviews should only be visible to the HR department and the employee who submitted the record.\nWhich three steps should an app builder take to properly control access to Reviews?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Disable Grant Access Using Hierarchies.",
+          "isRight": true
+        },
+        {
+          "describe": "Add a Master-Detail(User; field on the Review object.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a criteria-based Sharing Rule for the HR Department.",
+          "isRight": true
+        },
+        {
+          "describe": "Remove Review Read permission from non-HR Department user Profiles.",
+          "isRight": false
+        },
+        {
+          "describe": "Set organization-wide default to Private.",
+          "isRight": true
+        }
+      ],
+      "hashCode": -523123007
+    },
+    {
+      "describe": "An app builder wants to update a field on the parent record when a child record connected via lookup is deleted.\n4\nWhat automation should the app builder use?",
+      "answerOptions": [
+        {
+          "describe": "Screen flow",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Apex code",
+          "isRight": true
+        },
+        {
+          "describe": "Workflow rule",
+          "isRight": false
+        }
+      ],
+      "hashCode": -775715467
+    },
+    {
+      "describe": "Universal Containers is setting up salesforce for the first time. Management wants the sales and marketing teams to have different navigation names in the salesforce1 mobile app. Which option is available to an app builder to satisfy the requirement?",
+      "answerOptions": [
+        {
+          "describe": "Create sales and marketing profiles to ensure read access to different objects",
+          "isRight": false
+        },
+        {
+          "describe": "Create roles for sales and marketing and assign a custom homepage layout for each role.",
+          "isRight": false
+        },
+        {
+          "describe": "Create mobile navigation menus for both the sales and marketing profiles.",
+          "isRight": true
+        },
+        {
+          "describe": "Create public groups for sales and marketing and create mobile navigation menus for each group .",
+          "isRight": false
+        }
+      ],
+      "hashCode": -118303124
+    },
+    {
+      "describe": "An app builder created multiple custom fields, page layouts, and reports in the sandbox and added them to a change set set was deployed to production, the reports were NOT deployed.\nWhat should the app builder do?",
+      "answerOptions": [
+        {
+          "describe": "Move the reports to the Untried Public Reports folder and add them to a new change set.",
+          "isRight": true
+        },
+        {
+          "describe": "Move the reports from the Unfiled Public Reports folder and add them to a new change set",
+          "isRight": false
+        },
+        {
+          "describe": "Recreate the reports in production. Reports are not supported in change sets",
+          "isRight": false
+        },
+        {
+          "describe": "Add the reports to an unmanaged package and install the unmanaged package into production.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -358983186
+    },
+    {
+      "describe": "SERVICE AGENTS ARE REQUIRED TO CONFIRM A USER IDENTITY BEFORE PROVIDING SUPPORT INFORMATION OVER THE PHONE. WHAT FEATURE CAN AN APP BUILDER USE TO HELP AGENTS MEET THIS REQUIREMENT?",
+      "answerOptions": [
+        {
+          "describe": "Include Surveys as a Case related list",
+          "isRight": false
+        },
+        {
+          "describe": "Case Validation Rules",
+          "isRight": false
+        },
+        {
+          "describe": "Add Path to the top of the Case layout",
+          "isRight": false
+        },
+        {
+          "describe": "Guided Action Flows on the record page",
+          "isRight": true
+        }
+      ],
+      "hashCode": -1508983994
+    },
+    {
+      "describe": "An app builder has downloaded a component from the AppExchange successfully; however, they are unable to add it to the Lightning home page.\nWhich two reasons can be preventing the app builder from being able to add the custom component?\nChoose 2 answers\nA My Domain must be deployed to add custom components to the page with the App Builder.\nB",
+      "answerOptions": [
+        {
+          "describe": "custom tab must be created to add custom components to the page with the App Builder.\nC The component requires a developer permission to add it to the page with the App Builder.\nD The component is tagged for record pages instead of home pages and is not showing up in the App Builder.\n5",
+          "isRight": true
+        }
+      ],
+      "hashCode": -1711754862
+    },
+    {
+      "describe": "Universal Containers's app builder has been tasked with replacing workflow rules and Apex triggers with Process Builders where possible.\nWhat are two important considerations an app builder should know before the project is started? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Avoid generating infinite loops.",
+          "isRight": true
+        },
+        {
+          "describe": "Apex has a different SOQL query limit than Flow.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a process for each workflow rule.",
+          "isRight": false
+        },
+        {
+          "describe": "Combine actions when possible.",
+          "isRight": true
+        }
+      ],
+      "hashCode": -2002185607
+    },
+    {
+      "describe": "Universal Containers wants to track installation information once it container has been purchased on a custom object. Sales reps should have visibility of all the installation with their opportunities.\nvisibility of all the installations associated with their opportunities.\nWhat kind of relationship should this new object have to the Opportunity?",
+      "answerOptions": [
+        {
+          "describe": "Lookup",
+          "isRight": false
+        },
+        {
+          "describe": "Hierarchical",
+          "isRight": false
+        },
+        {
+          "describe": "Master-Detail",
+          "isRight": false
+        },
+        {
+          "describe": "Many to Many",
+          "isRight": true
+        }
+      ],
+      "hashCode": -1304558473
+    },
+    {
+      "describe": "Ursa Major Solar wants to convert the relationship between Galaxy and Star from a lookup relationship to a master-detail relationship so each Galaxy record can be equipped with a roll-up summary count of Star records.\nWhich two considerations should be made?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "The Star records are all required to have an existing value in their Galaxy field.",
+          "isRight": true
+        },
+        {
+          "describe": "The Galaxy object has fewer than two existing master-detail relationships.",
+          "isRight": false
+        },
+        {
+          "describe": "The Galaxy object is required to contain existing roll-up summary fields.",
+          "isRight": false
+        },
+        {
+          "describe": "The Star object has fewer than two existing master-detail relationships.",
+          "isRight": true
+        }
+      ],
+      "hashCode": 438531646
+    },
+    {
+      "describe": "Northern Trail Outfitters wants to broadcast an email to 7,000 contacts m Salesforce on a regular basis but realizes Salesforce is mass functionality has a limitation on the number erf emails that can be sent each day.\n5\nWhat action should the app builder take?",
+      "answerOptions": [
+        {
+          "describe": "Request Salesforce increase the number of maximum daily emails.",
+          "isRight": false
+        },
+        {
+          "describe": "Develop Apex code and bghtnrrvg web component to send dairy emails",
+          "isRight": false
+        },
+        {
+          "describe": "Research and evaluate products available on AppExchange to send mass emails.",
+          "isRight": true
+        },
+        {
+          "describe": "Export Contacts to a CSV file and use an email client to send tha emails.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -165089578
+    },
+    {
+      "describe": "The convert button on leads should NOT appear until the lead status picklist is set to a qualified. What should an app builder suggest to meet these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Picklist dependency, page layouts, record types",
+          "isRight": false
+        },
+        {
+          "describe": "Custom button, validation rule, record types",
+          "isRight": false
+        },
+        {
+          "describe": "Process builder field update, quick action, record type",
+          "isRight": false
+        },
+        {
+          "describe": "Page layout, record types, process builder field update",
+          "isRight": true
+        }
+      ],
+      "hashCode": 609407796
+    },
+    {
+      "describe": "An app builder needs a custom solution and is considering using community. Ease of updates is the primary consideration.\nWhat should the app builder consider?\nA",
+      "answerOptions": [
+        {
+          "describe": "managed package from AppExchange",
+          "isRight": true
+        },
+        {
+          "describe": "An unmanaged package from AppExchange",
+          "isRight": false
+        },
+        {
+          "describe": "An open-source unmanaged package",
+          "isRight": false
+        },
+        {
+          "describe": "An open-source custom development",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1806024963
+    },
+    {
+      "describe": "The sales Operations team at AWS Computing deletes accounts for a variety of a reasons. The sales ops director is worried that the Sales team may delete accounts that sales reps are actively selling into.\nMow should the app builder keep accounts with open opportunities from being delected?",
+      "answerOptions": [
+        {
+          "describe": "Create an Apex Trigger on the Account object",
+          "isRight": true
+        },
+        {
+          "describe": "Create a validation rule on the Account object.",
+          "isRight": false
+        },
+        {
+          "describe": "Remove the delete button on the account layout",
+          "isRight": false
+        },
+        {
+          "describe": "Remove the Delete permission from the Sales Rep profile.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1480304611
+    },
+    {
+      "describe": "Universal Containers require different fields to be filled out at each stage of the Opportunity sates process.\nWhat configuration steps can an app builder use to meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Set page layout required fields based on the current stage.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Process Builder to prompt the User for field information.",
+          "isRight": false
+        },
+        {
+          "describe": "Define record types and page layouts for each stage.",
+          "isRight": false
+        },
+        {
+          "describe": "Add the Path component to the Lightning record page.",
+          "isRight": true
+        }
+      ],
+      "hashCode": 720141189
+    },
+    {
+      "describe": "Cloud Kicks has five years of sales data and would like to track when customers made their first purchase.\nHow should an app builder use a roll-up summary to meet the requirements?\n5",
+      "answerOptions": [
+        {
+          "describe": "Create a new roll-up summary field called First Order Date, using Type MIN on the Opportunity Close Date with a filter where IsWon = TRUE.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a new date field called First Order Date, create a new Workflow to set the date, and roll up the value with a filter where IsWon = TRUE.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a new roll-up summary field called First Order Date, using Type SUM on Opportunity Close Date.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a new date field called First Order Date, then create a roll-up summary to update the field using Type MIN.",
+          "isRight": false
+        }
+      ],
+      "hashCode": -639740226
+    },
+    {
+      "describe": "DreamHouse Realty (DR) is expanding into subsidized housing by partnering with local government entitles.\nDR uses Sales Cloud and has enabled field history tracking on the Opportunity object. Due to increased Information requirements, the App Dev team is changing Text Area (Long) fields to Rich Text fields to allow for up to 1,000 characters and better descriptions.\nWhich two considerations should be made by the team?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Rich text field values of all lengths are displayed fully in reports.",
+          "isRight": false
+        },
+        {
+          "describe": "Data loss may occur when changing custom field types.",
+          "isRight": true
+        },
+        {
+          "describe": "Field History Tracking records value changes of 255 characters or less.",
+          "isRight": true
+        },
+        {
+          "describe": "Audit Trail is available through REST API extracts.",
+          "isRight": false
+        }
+      ],
+      "hashCode": 517296169
+    },
+    {
+      "describe": "",
+      "answerOptions": [
+        {
+          "describe": "Service Coordinator (SC) for Ursa Major Solar (UMS) does a final review of work orders owned by a technician for a specific region before the records are submitted for an invoice. Before closing out the work order, the SC needs to modify data or remove attachments that were added by mistake. The SC also needs access to any other related records owned by the technician.\nWhat solution would provide the required access, given a private data model?",
+          "isRight": false
+        }
+      ],
+      "hashCode": -1483431938
+    },
+    {
+      "describe": "Cloud Kicks wants to efficiently Increase the company's adoption of Salesforce while simultaneously moving away from their reliance on spreadsheets. An app builder is given a spreadsheet everyone is sharing that needs to be added to Salesforce. The object with fields needs to be created and the data inserted simultaneously.\nWhich tool should be used?",
+      "answerOptions": [
+        {
+          "describe": "Import Wizard",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning Object Creator",
+          "isRight": true
+        },
+        {
+          "describe": "Data Loader",
+          "isRight": false
+        },
+        {
+          "describe": "Schema Builder",
+          "isRight": false
+        }
+      ],
+      "hashCode": -88800096
+    },
+    {
+      "describe": "Cloud Kicks wants to know the total value of all won Opportunities for Accounts and display\n5\nit on the record.\nWhat type of summary should the app builder use in the roll-up summary field?",
+      "answerOptions": [
+        {
+          "describe": "Count",
+          "isRight": false
+        },
+        {
+          "describe": "Q Max",
+          "isRight": false
+        },
+        {
+          "describe": "Sum",
+          "isRight": true
+        },
+        {
+          "describe": "Min",
+          "isRight": false
+        }
+      ],
+      "hashCode": -346868483
+    },
+    {
+      "describe": "Sales reps at Cloud Kicks (CK) forget to submit for approval when CK needs orders reviewed before close won. CK wants to automatically submit opportunities into the Secure Commitment Stage to eliminate manual submission.\nWhich three features would meet the business requirements?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Workflow",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Apex",
+          "isRight": true
+        },
+        {
+          "describe": "Chatter action",
+          "isRight": false
+        },
+        {
+          "describe": "Flow",
+          "isRight": true
+        }
+      ],
+      "hashCode": 1006248736
+    },
+    {
+      "describe": "UC has a requirement that an opportunity should have a field showing the value of its associated account's billing state. This value should not change after the opportunity has been created. Is there a recommended solution to configure this automated behavior?",
+      "answerOptions": [
+        {
+          "describe": "Formula field",
+          "isRight": false
+        },
+        {
+          "describe": "Apex",
+          "isRight": false
+        },
+        {
+          "describe": "Workflow",
+          "isRight": true
+        },
+        {
+          "describe": "Roll-up summary field",
+          "isRight": false
+        }
+      ],
+      "hashCode": -18538208
+    },
+    {
+      "describe": "Cloud Kicks recently implemented the application lifecycle management process to its release management strategy.\nWhich category handles bug fixes and simple changes?",
+      "answerOptions": [
+        {
+          "describe": "Patch",
+          "isRight": true
+        },
+        {
+          "describe": "Minor",
+          "isRight": false
+        },
+        {
+          "describe": "Major",
+          "isRight": false
+        },
+        {
+          "describe": "Rollback",
+          "isRight": false
+        }
+      ],
+      "hashCode": 2132780982
+    }
+  ],
+  "hashCode": 328385632
+}
