@@ -118,7 +118,7 @@
       "hashCode": 2020446662
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  const resolveAfterMilliseconds = (ms) => Promise.resolve(</p><p>02      setTimeout(( ) => console.log(ms), ms));</p><p>03  const aPromise = await resolveAfterMilliseconds(500) ;</p><p>04  const bPromise = await resolveAfterMilliseconds(500) ;</p><p>05  await aPromise, await bPromise ;</p><p>What is the result of running line 05?</p>",
+      "describe": "<p>Refer to the code below:</p><p>01  const resolveAfterMilliseconds = (ms) =&gt; Promise.resolve(</p><p>02      setTimeout(( ) =&gt; console.log(ms), ms));</p><p>03  const aPromise = await resolveAfterMilliseconds(500) ;</p><p>04  const bPromise = await resolveAfterMilliseconds(500) ;</p><p>05  await aPromise, await bPromise ;</p><p>What is the result of running line 05?</p>",
       "answerOptions": [
         {
           "describe": "<p>Only aPromise runs.</p>",
@@ -144,19 +144,19 @@
       "describe": "<p>A developer is setting up a new Node.js server with a client library that is built using events and callbacks.</p><p>The library:</p><p>• Will establish a web socket connection and handle receipt of messages to the server</p><p>• Will be imported with require, and made available with a variable called ws.</p><p>The developer also wants to add error logging if a connection fails.</p><p>Given this information, which code segment shows the correct way to setup a client with two events that listen at execution time?</p>",
       "answerOptions": [
         {
-          "describe": "<p>04 ws.on('connect', ( ) => {</p><p>05      console.log ('Connected to client') ;</p><p>06</p><p>07      ws.on('error', (error) => {</p><p>08          console.log('ERROR', error) ;</p><p>09       });</p><p>10  });</p>",
+          "describe": "<p>04 ws.on('connect', ( ) =&gt; {</p><p>05      console.log ('Connected to client') ;</p><p>06</p><p>07      ws.on('error', (error) =&gt; {</p><p>08          console.log('ERROR', error) ;</p><p>09       });</p><p>10  });</p>",
           "isRight": false
         },
         {
-          "describe": "<p>04  ws.on('connect', ( ) => {</p><p>05      console. log( 'Connected to client') ;</p><p>06   });</p><p>07</p><p>08  ws.on('error', (error) => {</p><p>09      console. log('ERROR', error) ;</p><p>10  });</p>",
+          "describe": "<p>04  ws.on('connect', ( ) =&gt; {</p><p>05      console. log( 'Connected to client') ;</p><p>06   });</p><p>07</p><p>08  ws.on('error', (error) =&gt; {</p><p>09      console. log('ERROR', error) ;</p><p>10  });</p>",
           "isRight": true
         },
         {
-          "describe": "<p>04  try {</p><p>05     ws.connect ( ( ) => {</p><p>06         console.log('Connected to client') ;</p><p>07      }) ;</p><p>08  } catch(error) {</p><p>09    console.log('ERRoR', error);</p><p>10  }</p>",
+          "describe": "<p>04  try {</p><p>05     ws.connect ( ( ) =&gt; {</p><p>06         console.log('Connected to client') ;</p><p>07      }) ;</p><p>08  } catch(error) {</p><p>09    console.log('ERRoR', error);</p><p>10  }</p>",
           "isRight": false
         },
         {
-          "describe": "<p>04  ws.connect(( ) => {</p><p>05       conole.log('Conneted to ellent');06  }).catch((error) => {</p><p>07     console. log('ERROR',error) ;</p><p>08  });</p>",
+          "describe": "<p>04  ws.connect(( ) =&gt; {</p><p>05       conole.log('Conneted to ellent');06  }).catch((error) =&gt; {</p><p>07     console. log('ERROR',error) ;</p><p>08  });</p>",
           "isRight": false
         }
       ],
@@ -210,14 +210,14 @@
       "hashCode": 1719156876
     },
     {
-      "describe": "<p>Refer to this code below:</p><p>const https = require('https');</p><p>const server = https.createServer((req, res) => {</p><p>req.on('get', (chunk) => {</p><p>let reqData = JSON.parse(chunk);</p><p>console.log(reqData);</p><p>});</p><p>res.end('OK');</p><p>});</p><p>server.listen(8000);</p><p>However, the code is running as intended. As a developer, how can you fix the code to receive incoming request data?</p><p></p>",
+      "describe": "<p>Refer to this code below:</p><p>const https = require('https');</p><p>const server = https.createServer((req, res) =&gt; {</p><p>req.on('get', (chunk) =&gt; {</p><p>let reqData = JSON.parse(chunk);</p><p>console.log(reqData);</p><p>});</p><p>res.end('OK');</p><p>});</p><p>server.listen(8000);</p><p>However, the code is running as intended. As a developer, how can you fix the code to receive incoming request data?</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>Replace</p><p>req.on('get', (chunk) => {</p><p>from line 3 with</p><p>req.on('data', (chunk) => {</p><p>.</p>",
+          "describe": "<p>Replace</p><p>req.on('get', (chunk) =&gt; {</p><p>from line 3 with</p><p>req.on('data', (chunk) =&gt; {</p><p>.</p>",
           "isRight": true
         },
         {
-          "describe": "<p>Replace</p><p>req.on('get', (chunk) => {</p><p>from line 3 with</p><p>req.get((chunk) => {</p><p>.</p>",
+          "describe": "<p>Replace</p><p>req.on('get', (chunk) =&gt; {</p><p>from line 3 with</p><p>req.get((chunk) =&gt; {</p><p>.</p>",
           "isRight": false
         },
         {
@@ -225,11 +225,11 @@
           "isRight": false
         },
         {
-          "describe": "<p>Replace</p><p>req.on('get', (chunk) => {</p><p>from line 3 with</p><p>req.data((chunk) => {</p><p>.</p>",
+          "describe": "<p>Replace</p><p>req.on('get', (chunk) =&gt; {</p><p>from line 3 with</p><p>req.data((chunk) =&gt; {</p><p>.</p>",
           "isRight": false
         }
       ],
-      "analysis": "<p>The following code snippet shows the correct way of setting up server and receive incoming request data:</p><p>const https = require('https');</p><p>const server = https.createServer((req, res) => {</p><p>req.on('data', (chunk) => {</p><p>let reqData = JSON.parse(chunk);</p><p>console.log(reqData);</p><p>});</p><p>res.end('OK');</p><p>});</p><p>server.listen(8000);</p>",
+      "analysis": "<p>The following code snippet shows the correct way of setting up server and receive incoming request data:</p><p>const https = require('https');</p><p>const server = https.createServer((req, res) =&gt; {</p><p>req.on('data', (chunk) =&gt; {</p><p>let reqData = JSON.parse(chunk);</p><p>console.log(reqData);</p><p>});</p><p>res.end('OK');</p><p>});</p><p>server.listen(8000);</p>",
       "hashCode": 1528369872
     },
     {
@@ -355,11 +355,11 @@
       "describe": "<p>A developer creates a new web server that uses Node.js. It imports a server library that uses events and callbacks for handling server functionality.</p><p>The server library is imported with require and is made available to the code by a variable named server. The developer wants to log any issues that the server has while booting up.</p><p>Given the code and the information the developer has, which code logs an error at boot time with an event?</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>01  server.catch((error) => {</p><p>02  console.log('ERROR', error) ;</p><p>03  });</p>",
+          "describe": "<p>01  server.catch((error) =&gt; {</p><p>02  console.log('ERROR', error) ;</p><p>03  });</p>",
           "isRight": false
         },
         {
-          "describe": "<p>01  server.on('error', (error) => {</p><p>02  console.log('ERROR', error);</p><p>03  }) ;</p>",
+          "describe": "<p>01  server.on('error', (error) =&gt; {</p><p>02  console.log('ERROR', error);</p><p>03  }) ;</p>",
           "isRight": true
         },
         {
@@ -367,7 +367,7 @@
           "isRight": false
         },
         {
-          "describe": "<p>01 server.error(error) => {</p><p>02     console.log('ERROR', error);</p><p>03  });</p>",
+          "describe": "<p>01 server.error(error) =&gt; {</p><p>02     console.log('ERROR', error);</p><p>03  });</p>",
           "isRight": false
         }
       ],
@@ -378,7 +378,7 @@
       "describe": "<p>Refer to the following code that imports a module named Utils:</p><p>01 import {foo,bar} from '/path/Utils.js';</p><p>02 foo( ) ;</p><p>03 bar( ) ;</p><p>Which two implementations of Utils.js export foo and bar such that the code above runs without error? Choose 2 answers</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>const foo = ( ) => { return 'foo'; }</p><p>const bar = ( ) => { return 'bar'; }</p><p>export   {foo, bar}</p>",
+          "describe": "<p>const foo = ( ) =&gt; { return 'foo'; }</p><p>const bar = ( ) =&gt; { return 'bar'; }</p><p>export   {foo, bar}</p>",
           "isRight": true
         },
         {
@@ -386,7 +386,7 @@
           "isRight": true
         },
         {
-          "describe": "<p>const foo = ( ) => { return 'foo'; }</p><p>const bar = ( ) => { return 'bar'; }</p><p>export default foo, bar;</p>",
+          "describe": "<p>const foo = ( ) =&gt; { return 'foo'; }</p><p>const bar = ( ) =&gt; { return 'bar'; }</p><p>export default foo, bar;</p>",
           "isRight": false
         },
         {
@@ -574,11 +574,11 @@
           "isRight": false
         },
         {
-          "describe": "<p>server.on('connect', (port) => {</p><p>console.log('Listening on', port);</p><p>});</p>",
+          "describe": "<p>server.on('connect', (port) =&gt; {</p><p>console.log('Listening on', port);</p><p>});</p>",
           "isRight": true
         },
         {
-          "describe": "<p>server(port) => {</p><p>console.log('Listening on', port);</p><p>});</p>",
+          "describe": "<p>server(port) =&gt; {</p><p>console.log('Listening on', port);</p><p>});</p>",
           "isRight": false
         }
       ],

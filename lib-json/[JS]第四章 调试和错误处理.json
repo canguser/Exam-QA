@@ -26,7 +26,7 @@
       "hashCode": -54695334
     },
     {
-      "describe": "<p>A developer needs to test this function:</p><p>01    const sum3 = (arr) => {</p><p>02        if (! arr.length) return 0;</p><p>03        if( arr.length === 1) return arr[0];</p><p>04        if(arr.length ===2) return arr[0] + arr[1];</p><p>05        return arr[0] + arr[1] + arr[2];</p><p>06    };</p><p>Which two assert statements are valid tests for this function?</p><p>Choose 2 answers</p>",
+      "describe": "<p>A developer needs to test this function:</p><p>01    const sum3 = (arr) =&gt; {</p><p>02        if (! arr.length) return 0;</p><p>03        if( arr.length === 1) return arr[0];</p><p>04        if(arr.length ===2) return arr[0] + arr[1];</p><p>05        return arr[0] + arr[1] + arr[2];</p><p>06    };</p><p>Which two assert statements are valid tests for this function?</p><p>Choose 2 answers</p>",
       "answerOptions": [
         {
           "describe": "<p>console.assert(sum3( [0] )===0);</p>",
@@ -141,7 +141,7 @@
       "hashCode": 566394768
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>for (let number = 2; number <= 5; number += 1){</p><p>// Insert code statement here</p><p>}</p><p>The developer needs to insert a code statement in the location shown. The code statement has these requirements:</p><p>1 - Does not require an import</p><p>2 - Logs an error when the Boolean statement evaluates to false</p><p>3 - Works in both the browser and Node.js</p><p>Which statement meets these requirements?</p>",
+      "describe": "<p>Refer to the code below:</p><p>for (let number = 2; number &lt;= 5; number += 1){</p><p>// Insert code statement here</p><p>}</p><p>The developer needs to insert a code statement in the location shown. The code statement has these requirements:</p><p>1 - Does not require an import</p><p>2 - Logs an error when the Boolean statement evaluates to false</p><p>3 - Works in both the browser and Node.js</p><p>Which statement meets these requirements?</p>",
       "answerOptions": [
         {
           "describe": "<p>assert (number % 2 === 0) ;</p>",
@@ -337,22 +337,22 @@
       "hashCode": 661463567
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  let requestPromise = client.getRequest;</p><p>02</p><p>03  requestPromise( ).then((response) => {</p><p>04      handleResponse(response);</p><p>05  });</p><p>A developer uses a client that makes a GET request that uses a Promise to handle the request. client.getRequest returns a Promise. Which code lines can the developer change to ensure the function nextStep gets called if an error occurs?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01  let requestPromise = client.getRequest;</p><p>02</p><p>03  requestPromise( ).then((response) =&gt; {</p><p>04      handleResponse(response);</p><p>05  });</p><p>A developer uses a client that makes a GET request that uses a Promise to handle the request. client.getRequest returns a Promise. Which code lines can the developer change to ensure the function nextStep gets called if an error occurs?</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>05  }) .finally( ( ) => {</p><p>06      nextStep( );</p><p>07  });</p>",
+          "describe": "<p>05  }) .finally( ( ) =&gt; {</p><p>06      nextStep( );</p><p>07  });</p>",
           "isRight": false
         },
         {
-          "describe": "<p>03  try{</p><p>04      requestPromise( ).then((response) => {</p><p>05          handleResponse(response);</p><p>06      });</p><p>07  } catch() {</p><p>08      nextStep();</p><p>09  }</p>",
+          "describe": "<p>03  try{</p><p>04      requestPromise( ).then((response) =&gt; {</p><p>05          handleResponse(response);</p><p>06      });</p><p>07  } catch() {</p><p>08      nextStep();</p><p>09  }</p>",
           "isRight": false
         },
         {
-          "describe": "<p>05  }).catch( ( ) => {</p><p>06      nextStep();</p><p>07  });</p>",
+          "describe": "<p>05  }).catch( ( ) =&gt; {</p><p>06      nextStep();</p><p>07  });</p>",
           "isRight": true
         },
         {
-          "describe": "<p>03  requestPromise( ).then( (response) => {</p><p>04      handleResponse(response);</p><p>05  }).then(() => {</p><p>06      nextStep();</p><p>07});</p>",
+          "describe": "<p>03  requestPromise( ).then( (response) =&gt; {</p><p>04      handleResponse(response);</p><p>05  }).then(() =&gt; {</p><p>06      nextStep();</p><p>07});</p>",
           "isRight": false
         }
       ],
@@ -429,7 +429,7 @@
       "hashCode": 2001090074
     },
     {
-      "describe": "<p>A developer needs to test this function:</p><p>01    const sum3 = (arr) => {</p><p>02        if (! arr.length) return 0;</p><p>03        if( arr.length === 1) return arr[0];</p><p>04        if(arr.length ===2) return arr[0] + arr[1];</p><p>05        return arr[0] + arr[1] + arr[2];</p><p>06    };</p><p>Which two assert statements are valid tests for this function? Choose 2 answers</p><p></p>",
+      "describe": "<p>A developer needs to test this function:</p><p>01    const sum3 = (arr) =&gt; {</p><p>02        if (! arr.length) return 0;</p><p>03        if( arr.length === 1) return arr[0];</p><p>04        if(arr.length ===2) return arr[0] + arr[1];</p><p>05        return arr[0] + arr[1] + arr[2];</p><p>06    };</p><p>Which two assert statements are valid tests for this function? Choose 2 answers</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>console.assert(sum3( [0] )===0);</p>",

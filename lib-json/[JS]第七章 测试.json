@@ -3,10 +3,10 @@
   "category": "JS-1",
   "questions": [
     {
-      "describe": "<p>The developer wants to test this code:</p><p>const toNumber = (strOrNum) => +strOrNum ;</p><p>Which two tests are most accurate for this code? Choose 2 answers</p>",
+      "describe": "<p>The developer wants to test this code:</p><p>const toNumber = (strOrNum) =&gt; +strOrNum ;</p><p>Which two tests are most accurate for this code? Choose 2 answers</p>",
       "answerOptions": [
         {
-          "describe": "<p>console.assert (toNumber('-3') < 0) ;</p>",
+          "describe": "<p>console.assert (toNumber('-3') &lt; 0) ;</p>",
           "isRight": false
         },
         {
@@ -22,18 +22,18 @@
           "isRight": true
         }
       ],
-      "analysis": "<p>explain: +'2' will be converted to 2, which is a number</p><p>toNumber(), output: NaN</p><p>console.assert (toNumber('-3') < 0) ; is not most accurate</p>",
+      "analysis": "<p>explain: +'2' will be converted to 2, which is a number</p><p>toNumber(), output: NaN</p><p>console.assert (toNumber('-3') &lt; 0) ; is not most accurate</p>",
       "hashCode": -1147043528
     },
     {
       "describe": "<p>The developer wants to test the array shown:</p><p>const arr = Array(5). fill(0);</p><p>Which two tests are the most accurate for this array? Choose 2 answers</p>",
       "answerOptions": [
         {
-          "describe": "<p>arr . forEach(elem => console . assert(elem === 0)) ;</p>",
+          "describe": "<p>arr . forEach(elem =&gt; console . assert(elem === 0)) ;</p>",
           "isRight": true
         },
         {
-          "describe": "<p>console . assert(arr[0] === 0 && arr[arr . length] === 0) ;</p>",
+          "describe": "<p>console . assert(arr[0] === 0 &amp;&amp; arr[arr . length] === 0) ;</p>",
           "isRight": false
         },
         {
@@ -41,11 +41,11 @@
           "isRight": true
         },
         {
-          "describe": "<p>console . assert (arr . length > 0);</p>",
+          "describe": "<p>console . assert (arr . length &gt; 0);</p>",
           "isRight": false
         }
       ],
-      "analysis": "<p>console . assert(arr[0] === 0 && arr[arr . length] === 0) ; is not most accurate</p>",
+      "analysis": "<p>console . assert(arr[0] === 0 &amp;&amp; arr[arr . length] === 0) ; is not most accurate</p>",
       "hashCode": 1515758694
     },
     {
@@ -260,7 +260,7 @@
       "hashCode": 1279788027
     },
     {
-      "describe": "<p>The developer wants to test this code:</p><p>const stringifyNumber = (num) => Number(num).toString();</p><p>Which two tests are the most accurate for this code? Choose 2 answers</p><p></p>",
+      "describe": "<p>The developer wants to test this code:</p><p>const stringifyNumber = (num) =&gt; Number(num).toString();</p><p>Which two tests are the most accurate for this code? Choose 2 answers</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>console.assert(stringifyNunber() === 'NaN')</p>",
@@ -329,7 +329,7 @@
       "hashCode": 1254240553
     },
     {
-      "describe": "<p>A developer removes the checkout button that looked like this:</p><p><button class = 'blue'>Checkout</button></p><p>There are multiple components in the component with class ='blue'. An existing test verifies the existence of the checkout button, however it looks for a button with class='blue'. It succeeds because a button with class='blue' is found. Which type of test category describes this test?</p><p></p>",
+      "describe": "<p>A developer removes the checkout button that looked like this:</p><p>&lt;button class = 'blue'&gt;Checkout&lt;/button&gt;</p><p>There are multiple components in the component with class ='blue'. An existing test verifies the existence of the checkout button, however it looks for a button with class='blue'. It succeeds because a button with class='blue' is found. Which type of test category describes this test?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>true positive</p>",

@@ -3,7 +3,7 @@
   "category": "JS-1",
   "questions": [
     {
-      "describe": "<p>Given the code below:</p><p>const delay = async delay => {</p><p>return new Promise ( ( resolve, reject ) =></p><p>{</p><p>setTimeout ( resolve, delay );</p><p>});</p><p>};</p><p>const callDelay = async ( ) => {</p><p>const yup = await delay(1000);</p><p>console.log(1);</p><p>};</p><p>console.log(2);</p><p>callDelay( );</p><p>console.log(3);</p><p>What is logged to the console?</p>",
+      "describe": "<p>Given the code below:</p><p>const delay = async delay =&gt; {</p><p>return new Promise ( ( resolve, reject ) =&gt;</p><p>{</p><p>setTimeout ( resolve, delay );</p><p>});</p><p>};</p><p>const callDelay = async ( ) =&gt; {</p><p>const yup = await delay(1000);</p><p>console.log(1);</p><p>};</p><p>console.log(2);</p><p>callDelay( );</p><p>console.log(3);</p><p>What is logged to the console?</p>",
       "answerOptions": [
         {
           "describe": "<p>1 2 3</p>",
@@ -26,22 +26,22 @@
       "hashCode": 2050585304
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  let requestPromise = client.getRequest;</p><p>02</p><p>03  requestPromise ( ) . then( (response) => {</p><p>04      handleResponse (response) ;</p><p>05  });</p><p>A developer uses a client that makes a GET request that uses a Promise to handle the request.getRequest returns a Promise.Which code modification can the developer make to gracefully handle an error?</p>",
+      "describe": "<p>Refer to the code below:</p><p>01  let requestPromise = client.getRequest;</p><p>02</p><p>03  requestPromise ( ) . then( (response) =&gt; {</p><p>04      handleResponse (response) ;</p><p>05  });</p><p>A developer uses a client that makes a GET request that uses a Promise to handle the request.getRequest returns a Promise.Which code modification can the developer make to gracefully handle an error?</p>",
       "answerOptions": [
         {
-          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  try {</p><p>04     requestPromise( ) .then((response) => {</p><p>05         handleResponse (response) ;</p><p>06     }) .then((error) => {</p><p>07        throw new Error(error.name);</p><p>08     });</p><p>09  } catch(error) {</p><p>10    handleError(error);</p><p>11  }</p>",
+          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  try {</p><p>04     requestPromise( ) .then((response) =&gt; {</p><p>05         handleResponse (response) ;</p><p>06     }) .then((error) =&gt; {</p><p>07        throw new Error(error.name);</p><p>08     });</p><p>09  } catch(error) {</p><p>10    handleError(error);</p><p>11  }</p>",
           "isRight": false
         },
         {
-          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  try {</p><p>04     requestPromise( ) .then((response) => {</p><p>05         handleResponse (response) ;</p><p>06     }) ;</p><p>07  } catch(error) {</p><p>08    handleError(error);</p><p>09  }</p>",
+          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  try {</p><p>04     requestPromise( ) .then((response) =&gt; {</p><p>05         handleResponse (response) ;</p><p>06     }) ;</p><p>07  } catch(error) {</p><p>08    handleError(error);</p><p>09  }</p>",
           "isRight": false
         },
         {
-          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  requestPromise( ) .then((response) => {</p><p>04     handleResponse (response) ;</p><p>05     }) .catch((error) => {</p><p>06        handleError(error);</p><p>07  });</p>",
+          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  requestPromise( ) .then((response) =&gt; {</p><p>04     handleResponse (response) ;</p><p>05     }) .catch((error) =&gt; {</p><p>06        handleError(error);</p><p>07  });</p>",
           "isRight": true
         },
         {
-          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  requestPromise( ) .then((response) => {</p><p>04         handleResponse (response) ;</p><p>05  }) .finally((error) => {</p><p>06     handleError(error);</p><p>07  });</p>",
+          "describe": "<p>01  let requestPromise = client. getRequest;</p><p>02</p><p>03  requestPromise( ) .then((response) =&gt; {</p><p>04         handleResponse (response) ;</p><p>05  }) .finally((error) =&gt; {</p><p>06     handleError(error);</p><p>07  });</p>",
           "isRight": false
         }
       ],
@@ -49,7 +49,7 @@
       "hashCode": -1190035552
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  const exec = (item, delay) =></p><p>02      new Promise (resolve => setTimeout(( ) => resolve(item), delay)) ;</p><p>03</p><p>04  async function runParallel( ) {</p><p>05      const [result1, result2, result3] = await Promise.all(</p><p>06          [exec('x', '100'), exec('y', '500'), exec('z' ,'100') ]</p><p>07     );</p><p>08    return `parallel is done: ${result1}$ {}result2}${result3}` ;</p><p>09  }</p><p>Which two statements correctly execute the runParallel ( ) function? Choose 2 answers</p>",
+      "describe": "<p>Refer to the code below:</p><p>01  const exec = (item, delay) =&gt;</p><p>02      new Promise (resolve =&gt; setTimeout(( ) =&gt; resolve(item), delay)) ;</p><p>03</p><p>04  async function runParallel( ) {</p><p>05      const [result1, result2, result3] = await Promise.all(</p><p>06          [exec('x', '100'), exec('y', '500'), exec('z' ,'100') ]</p><p>07     );</p><p>08    return `parallel is done: ${result1}$ {}result2}${result3}` ;</p><p>09  }</p><p>Which two statements correctly execute the runParallel ( ) function? Choose 2 answers</p>",
       "answerOptions": [
         {
           "describe": "<p>runParallel( ) .then (function(data) {</p><p>return data;</p><p>});</p>",
@@ -72,7 +72,7 @@
       "hashCode": -2045125581
     },
     {
-      "describe": "<p>Given the following code:</p><p>01  counter = 0;</p><p>02  const logCounter = ( ) => {</p><p>03  console.log (counter) ;</p><p>04  };</p><p>05  logCounter( ) ;</p><p>06  setTimeout (logCounter, 1100) ;</p><p>07  setInterval(( ) => {</p><p>08      counter++ ;</p><p>09      logCounter( ) ;</p><p>10  }, 1000) ;</p><p>What is logged by the first four log statements?</p>",
+      "describe": "<p>Given the following code:</p><p>01  counter = 0;</p><p>02  const logCounter = ( ) =&gt; {</p><p>03  console.log (counter) ;</p><p>04  };</p><p>05  logCounter( ) ;</p><p>06  setTimeout (logCounter, 1100) ;</p><p>07  setInterval(( ) =&gt; {</p><p>08      counter++ ;</p><p>09      logCounter( ) ;</p><p>10  }, 1000) ;</p><p>What is logged by the first four log statements?</p>",
       "answerOptions": [
         {
           "describe": "<p>0 0 1 2</p>",
@@ -144,27 +144,27 @@
       "describe": "<p>Which of the following code snippets will show alert box? Choose 3 answers.</p>",
       "answerOptions": [
         {
-          "describe": "<p>new Promise((resolve, reject) => {</p><p>throw new Error(\"Whoops!\");</p><p>}).catch(alert);</p>",
+          "describe": "<p>new Promise((resolve, reject) =&gt; {</p><p>throw new Error(\"Whoops!\");</p><p>}).catch(alert);</p>",
           "isRight": true
         },
         {
-          "describe": "<p>new Promise(function(resolve, reject) {</p><p>setTimeout(() => {</p><p>throw new Error(\"Whoops!\");</p><p>}, 1000);</p><p>}).catch(alert);</p>",
+          "describe": "<p>new Promise(function(resolve, reject) {</p><p>setTimeout(() =&gt; {</p><p>throw new Error(\"Whoops!\");</p><p>}, 1000);</p><p>}).catch(alert);</p>",
           "isRight": false
         },
         {
-          "describe": "<p>new Promise((resolve, reject) => {</p><p>resolve(\"ok\");</p><p>}).then((result) => {</p><p>throw new Error(\"Whoops!\");</p><p>}).catch(alert);</p>",
+          "describe": "<p>new Promise((resolve, reject) =&gt; {</p><p>resolve(\"ok\");</p><p>}).then((result) =&gt; {</p><p>throw new Error(\"Whoops!\");</p><p>}).catch(alert);</p>",
           "isRight": true
         },
         {
-          "describe": "<p>new Promise((resolve, reject) => {</p><p>reject(new Error(\"Whoops!\"));</p><p>}).catch(alert);</p>",
+          "describe": "<p>new Promise((resolve, reject) =&gt; {</p><p>reject(new Error(\"Whoops!\"));</p><p>}).catch(alert);</p>",
           "isRight": true
         }
       ],
-      "analysis": "<p>When an exception happens, it gets caught and treated as a rejection.</p><p>new Promise(function(resolve, reject) {</p><p>setTimeout(() => {</p><p>throw new Error(\"Whoops!\");</p><p>}, 1000);</p><p>}).catch(alert); // will not catch error</p><p>Copy</p><p>The code snippet above will not show alert box even though the error is thrown in within Promise code block. Reason being, the error is generated not while the executor is running, but later in another task. Hence, the promise cannot catch the error.</p>",
+      "analysis": "<p>When an exception happens, it gets caught and treated as a rejection.</p><p>new Promise(function(resolve, reject) {</p><p>setTimeout(() =&gt; {</p><p>throw new Error(\"Whoops!\");</p><p>}, 1000);</p><p>}).catch(alert); // will not catch error</p><p>Copy</p><p>The code snippet above will not show alert box even though the error is thrown in within Promise code block. Reason being, the error is generated not while the executor is running, but later in another task. Hence, the promise cannot catch the error.</p>",
       "hashCode": -106788969
     },
     {
-      "describe": "<p>const getId = new Promise((resolve, reject) => {</p><p>setTimeout(() => resolve(15), 1500);</p><p>});</p><p>const getBook = bookId => new Promise((resolve, reject) => {</p><p>setTimeout(() => resolve('${bookId}:JavaScript Algorithms'), 1500);</p><p>});</p><p>getId.then(id => getBook(id)).then(data => data);</p><p>What is the correct code to replace the last line with an async/await function?</p>",
+      "describe": "<p>const getId = new Promise((resolve, reject) =&gt; {</p><p>setTimeout(() =&gt; resolve(15), 1500);</p><p>});</p><p>const getBook = bookId =&gt; new Promise((resolve, reject) =&gt; {</p><p>setTimeout(() =&gt; resolve('${bookId}:JavaScript Algorithms'), 1500);</p><p>});</p><p>getId.then(id =&gt; getBook(id)).then(data =&gt; data);</p><p>What is the correct code to replace the last line with an async/await function?</p>",
       "answerOptions": [
         {
           "describe": "<p>async function getBookInfo() {</p><p>const Id = await getId;</p><p>const result = await getBook(id);</p><p>}</p><p>await getBookInfo();</p>",
@@ -187,7 +187,7 @@
       "hashCode": 1465758323
     },
     {
-      "describe": "<p>Give the code as below:</p><p>let promise = new Promise(function(resolve, reject) {</p><p>resolve(1);</p><p>setTimeout(() => resolve(2), 1000);</p><p>setTimeout(() => resolve(3), 2000);</p><p>});</p><p>promise.then((res) => console.log(res));</p><p>What would be the output of this code?</p>",
+      "describe": "<p>Give the code as below:</p><p>let promise = new Promise(function(resolve, reject) {</p><p>resolve(1);</p><p>setTimeout(() =&gt; resolve(2), 1000);</p><p>setTimeout(() =&gt; resolve(3), 2000);</p><p>});</p><p>promise.then((res) =&gt; console.log(res));</p><p>What would be the output of this code?</p>",
       "answerOptions": [
         {
           "describe": "<p>1</p>",
@@ -210,10 +210,10 @@
       "hashCode": -1047881134
     },
     {
-      "describe": "<p>Refer to this code:</p><p>const p1 = new Promise((resolve, reject) => {</p><p>setTimeout(() => {</p><p>resolve('P1 Resolved');</p><p>}, 1500);</p><p>});</p><p>const p2 = (data) => new Promise((resolve, reject) => {</p><p>setTimeout(() => resolve('${data}, P2 Resolved'), 1500, data);</p><p>});</p><p>Which of the following correctly execute p1 and p2? Choose 2 answers.</p><p></p>",
+      "describe": "<p>Refer to this code:</p><p>const p1 = new Promise((resolve, reject) =&gt; {</p><p>setTimeout(() =&gt; {</p><p>resolve('P1 Resolved');</p><p>}, 1500);</p><p>});</p><p>const p2 = (data) =&gt; new Promise((resolve, reject) =&gt; {</p><p>setTimeout(() =&gt; resolve('${data}, P2 Resolved'), 1500, data);</p><p>});</p><p>Which of the following correctly execute p1 and p2? Choose 2 answers.</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>p1</p><p>.then((data) => p2(data))</p><p>.then(result => result);</p>",
+          "describe": "<p>p1</p><p>.then((data) =&gt; p2(data))</p><p>.then(result =&gt; result);</p>",
           "isRight": true
         },
         {
@@ -229,11 +229,11 @@
           "isRight": false
         }
       ],
-      "analysis": "<p>p1</p><p>.then((data) => p2(data))</p><p>.then(result => result);</p><p>This is correct. The method promise.then() is used to associate further action with a promise that becomes settled.</p><p>async function getResult() {</p><p>const data = await p1;</p><p>return await p2(data);</p><p>}</p><p>getResult();</p><p>This is correct. Using await inside the function causes both to execute.</p><p>p1().then(function() {</p><p>p2().then(function(result) {</p><p>return result;</p><p>});</p><p>});</p><p>This is incorrect. The syntax is wrong for calling p1 and p2.</p><p>async function getResult() {</p><p>const data = p1;</p><p>const result = p2(data);</p><p>}</p><p>await getResult();</p><p>This is incorrect. The await is outside the function calling the data.</p>",
+      "analysis": "<p>p1</p><p>.then((data) =&gt; p2(data))</p><p>.then(result =&gt; result);</p><p>This is correct. The method promise.then() is used to associate further action with a promise that becomes settled.</p><p>async function getResult() {</p><p>const data = await p1;</p><p>return await p2(data);</p><p>}</p><p>getResult();</p><p>This is correct. Using await inside the function causes both to execute.</p><p>p1().then(function() {</p><p>p2().then(function(result) {</p><p>return result;</p><p>});</p><p>});</p><p>This is incorrect. The syntax is wrong for calling p1 and p2.</p><p>async function getResult() {</p><p>const data = p1;</p><p>const result = p2(data);</p><p>}</p><p>await getResult();</p><p>This is incorrect. The await is outside the function calling the data.</p>",
       "hashCode": 588378204
     },
     {
-      "describe": "<p>Given the following code, which one would be the correct order when executed?</p><p>setTimeout(() => console.log(\"timeout\"));</p><p>Promise.resolve().then(() => console.log(\"promise\"));</p><p>console.log(\"code\");</p><p></p>",
+      "describe": "<p>Given the following code, which one would be the correct order when executed?</p><p>setTimeout(() =&gt; console.log(\"timeout\"));</p><p>Promise.resolve().then(() =&gt; console.log(\"promise\"));</p><p>console.log(\"code\");</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>timeout — promise — code</p>",
@@ -293,19 +293,19 @@
       "describe": "<p>A developer is wondering whether to use, Promise.then or Promise.catch, especially when a promise throws an error.Which two promises are rejected? Choose 2 answers</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>Promise.reject('Cool error here').catch(error => console. error(error));</p>",
+          "describe": "<p>Promise.reject('Cool error here').catch(error =&gt; console. error(error));</p>",
           "isRight": true
         },
         {
-          "describe": "<p>Promise.reject('Cool error here').then(error => console. error(error));</p>",
+          "describe": "<p>Promise.reject('Cool error here').then(error =&gt; console. error(error));</p>",
           "isRight": false
         },
         {
-          "describe": "<p>new Promise((resolve, reject) => {throw 'Cool error here'}). catch(error=> console.error(error));</p>",
+          "describe": "<p>new Promise((resolve, reject) =&gt; {throw 'Cool error here'}). catch(error=&gt; console.error(error));</p>",
           "isRight": true
         },
         {
-          "describe": "<p>new Promise(( ) => {throw 'Cool error here'}).then((null, error => console.error(error)));</p>",
+          "describe": "<p>new Promise(( ) =&gt; {throw 'Cool error here'}).then((null, error =&gt; console.error(error)));</p>",
           "isRight": false
         }
       ],
@@ -336,7 +336,7 @@
       "hashCode": 1594305024
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  let sayHello = ( ) => {</p><p>02  console. log('Hello, World!') ;</p><p>03  } ;</p><p>Which code executes sayHello once, two minutes from now?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01  let sayHello = ( ) =&gt; {</p><p>02  console. log('Hello, World!') ;</p><p>03  } ;</p><p>Which code executes sayHello once, two minutes from now?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>setInterval(sayHello, 120000) ;</p>",
@@ -359,7 +359,7 @@
       "hashCode": -1522893912
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  new Promise((resolve, reject) => {</p><p>02       const fraction = Math. random( ) ;</p><p>03       if (fraction > 0.5) reject( 'fraction > 0.5, ' + fraction) ;</p><p>04       resolve(fraction) ;</p><p>05  })</p><p>06  .then(( ) => console.log( 'resolved' ))</p><p>07  .catch((error) => console. error(error))</p><p>08  .finally(( ) => console.log 'when am I called?' )) ;</p><p>When does Promise . finally on line 08 get called?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01  new Promise((resolve, reject) =&gt; {</p><p>02       const fraction = Math. random( ) ;</p><p>03       if (fraction &gt; 0.5) reject( 'fraction &gt; 0.5, ' + fraction) ;</p><p>04       resolve(fraction) ;</p><p>05  })</p><p>06  .then(( ) =&gt; console.log( 'resolved' ))</p><p>07  .catch((error) =&gt; console. error(error))</p><p>08  .finally(( ) =&gt; console.log 'when am I called?' )) ;</p><p>When does Promise . finally on line 08 get called?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>When rejected</p>",
@@ -405,7 +405,7 @@
       "hashCode": 1601200398
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  let car1 = new Promise((_ , reject) =></p><p>02     setTimeout(reject, 2000, \"Car 1 crashed in\")) ;</p><p>03  let car2 = new Promise (resolve => setTimeout(resolve, 1500, \"Car 2 completed\")) ;</p><p>04  let car3 = new Promise (resolve => setTimeout(resolve, 3000, \"Car 3 completed\")) ;05</p><p>06  Promise. race([car1, car2, car3])</p><p>07       . then (value => {</p><p>08           let result = `${value} the race. `;</p><p>09       }) ;</p><p>10       . catch(err =>｛</p><p>11           console.log(\"Race is cancelled.\", err);</p><p>12    }) ;</p><p>What is the value of result when Promise.race executes?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01  let car1 = new Promise((_ , reject) =&gt;</p><p>02     setTimeout(reject, 2000, \"Car 1 crashed in\")) ;</p><p>03  let car2 = new Promise (resolve =&gt; setTimeout(resolve, 1500, \"Car 2 completed\")) ;</p><p>04  let car3 = new Promise (resolve =&gt; setTimeout(resolve, 3000, \"Car 3 completed\")) ;05</p><p>06  Promise. race([car1, car2, car3])</p><p>07       . then (value =&gt; {</p><p>08           let result = `${value} the race. `;</p><p>09       }) ;</p><p>10       . catch(err =&gt;｛</p><p>11           console.log(\"Race is cancelled.\", err);</p><p>12    }) ;</p><p>What is the value of result when Promise.race executes?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>Race is cancelled.</p>",
@@ -428,7 +428,7 @@
       "hashCode": 419951496
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  let timedFunction = ( ) => {</p><p>02     console. log( 'Timer called.' ) ;</p><p>03   } ;</p><p>04</p><p>05  let timerId = setTimeout (timedFunction, 1000) ;</p><p>Which statement allows a developer to cancel the scheduled timedfunction?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01  let timedFunction = ( ) =&gt; {</p><p>02     console. log( 'Timer called.' ) ;</p><p>03   } ;</p><p>04</p><p>05  let timerId = setTimeout (timedFunction, 1000) ;</p><p>Which statement allows a developer to cancel the scheduled timedfunction?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>removeTimeout (timedFunction) ;</p>",
@@ -474,7 +474,7 @@
       "hashCode": 1079957535
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  let sayHello = ( ) => {</p><p>02      console.log('Hello, World!');</p><p>03  };</p><p>Which option executes sayHello once every two minutes?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01  let sayHello = ( ) =&gt; {</p><p>02      console.log('Hello, World!');</p><p>03  };</p><p>Which option executes sayHello once every two minutes?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>delay(sayHello, 120000);</p>",
@@ -497,7 +497,7 @@
       "hashCode": -1935794449
     },
     {
-      "describe": "<p>Given the code below:</p><p>const delay = async delay => {</p><p>return new Promise ( ( resolve, reject ) =></p><p>{</p><p>console.log(1);</p><p>setTimeout ( resolve, delay );</p><p>});</p><p>};</p><p>const callDelay = async ( ) => {</p><p>console.log(2);</p><p>const yup = await delay(1000);</p><p>console.log(3);</p><p>};</p><p>console.log(4);</p><p>callDelay( );</p><p>console.log(5);</p><p>What is logged to the console?</p><p></p>",
+      "describe": "<p>Given the code below:</p><p>const delay = async delay =&gt; {</p><p>return new Promise ( ( resolve, reject ) =&gt;</p><p>{</p><p>console.log(1);</p><p>setTimeout ( resolve, delay );</p><p>});</p><p>};</p><p>const callDelay = async ( ) =&gt; {</p><p>console.log(2);</p><p>const yup = await delay(1000);</p><p>console.log(3);</p><p>};</p><p>console.log(4);</p><p>callDelay( );</p><p>console.log(5);</p><p>What is logged to the console?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>1 4 2 3 5</p>",
@@ -520,7 +520,7 @@
       "hashCode": -333748107
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01    let total = 10;</p><p>02    const interval = setInterval ( ( ) => {</p><p>03        total++;</p><p>04        clearInterval(interval);</p><p>05        total++;</p><p>06    }, 0);</p><p>07    total++;</p><p>08    console.log(total);</p><p>Considering that JavaScript is single-threaded, what is the output of line 08 after the code executes?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01    let total = 10;</p><p>02    const interval = setInterval ( ( ) =&gt; {</p><p>03        total++;</p><p>04        clearInterval(interval);</p><p>05        total++;</p><p>06    }, 0);</p><p>07    total++;</p><p>08    console.log(total);</p><p>Considering that JavaScript is single-threaded, what is the output of line 08 after the code executes?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>10</p>",

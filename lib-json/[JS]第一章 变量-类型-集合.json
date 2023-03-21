@@ -41,11 +41,11 @@
           "isRight": true
         },
         {
-          "describe": "<p>et x = arr.filter((a)=> { return a<=2 });</p>",
+          "describe": "<p>et x = arr.filter((a)=&gt; { return a&lt;=2 });</p>",
           "isRight": true
         },
         {
-          "describe": "<p>et x = arr.filter((a) => { a<= 2 });</p>",
+          "describe": "<p>et x = arr.filter((a) =&gt; { a&lt;= 2 });</p>",
           "isRight": false
         },
         {
@@ -195,7 +195,7 @@
       "hashCode": -739401847
     },
     {
-      "describe": "<p>Refer to the code snippet below:</p><p>01  let array = [1, 2, 3, 4, 4, 5, 4, 4];</p><p>02  for (let i = 0 ; i< array.length; i++) {</p><p>03      if (array[i] === 4) {</p><p>04        array.splice(i, 1) ;</p><p>05        i--;</p><p>06      }</p><p>07  }</p><p>What is the value of array after the code executes?</p>",
+      "describe": "<p>Refer to the code snippet below:</p><p>01  let array = [1, 2, 3, 4, 4, 5, 4, 4];</p><p>02  for (let i = 0 ; i&lt; array.length; i++) {</p><p>03      if (array[i] === 4) {</p><p>04        array.splice(i, 1) ;</p><p>05        i--;</p><p>06      }</p><p>07  }</p><p>What is the value of array after the code executes?</p>",
       "answerOptions": [
         {
           "describe": "<p>[1, 2, 3, 4, 4, 5, 4]</p>",
@@ -244,19 +244,19 @@
       "describe": "<p>A developer has the following array of student test grades:</p><p>let arr = [7,8,5,8,9];</p><p>The teacher wants to double each score and then see an array of the students who scored more than 15 points.</p><p>How should the developer implement the request?</p>",
       "answerOptions": [
         {
-          "describe": "<p>let arr1 = arr.map( ( num ) => num * 2 ).filter ( (val ) => val > 15);</p>",
+          "describe": "<p>let arr1 = arr.map( ( num ) =&gt; num * 2 ).filter ( (val ) =&gt; val &gt; 15);</p>",
           "isRight": true
         },
         {
-          "describe": "<p>let arr1 = arr.mapBy( (num ) => {return num * 2 } ).filterBy ( (val ) => {return val > 15 });</p>",
+          "describe": "<p>let arr1 = arr.mapBy( (num ) =&gt; {return num * 2 } ).filterBy ( (val ) =&gt; {return val &gt; 15 });</p>",
           "isRight": false
         },
         {
-          "describe": "<p>let arr1 = arr.map ( (num) => {num * 2}).filterBy((val) => {val >15});</p>",
+          "describe": "<p>let arr1 = arr.map ( (num) =&gt; {num * 2}).filterBy((val) =&gt; {val &gt;15});</p>",
           "isRight": false
         },
         {
-          "describe": "<p>let arr1 = arr.filter((val) => { return val > 15} ).map((num) => { return num * 2});</p>",
+          "describe": "<p>let arr1 = arr.filter((val) =&gt; { return val &gt; 15} ).map((num) =&gt; { return num * 2});</p>",
           "isRight": false
         }
       ],
@@ -267,7 +267,7 @@
       "describe": "<p>Refer to the following array:</p><p>let arr = [1,2,3,4,5];</p><p>Which three options result in x evaluating as [3, 4, 5] ? Choose 3 answer</p>",
       "answerOptions": [
         {
-          "describe": "<p>let x = arr.filter((a)=> { return a>2 });</p>",
+          "describe": "<p>let x = arr.filter((a)=&gt; { return a&gt;2 });</p>",
           "isRight": true
         },
         {
@@ -279,7 +279,7 @@
           "isRight": true
         },
         {
-          "describe": "<p>let x = arr.filter((a) => { a< 2 });</p>",
+          "describe": "<p>let x = arr.filter((a) =&gt; { a&lt; 2 });</p>",
           "isRight": false
         },
         {
@@ -294,19 +294,19 @@
       "describe": "<p>Refer to the code below:</p><p>const searchText = 'Yay! Salesforce is amazing!' ;</p><p>let result1 = searchText.search(/sales/i) ;</p><p>let result2 = searchText. search(/sales/) ;</p><p>console.log(result1) ;</p><p>console.log(result2) ;</p><p>After running this code, which result is displayed on the console?</p>",
       "answerOptions": [
         {
-          "describe": "<p>>5 > undefined</p>",
+          "describe": "<p>&gt;5 &gt; undefined</p>",
           "isRight": false
         },
         {
-          "describe": "<p>> true > false</p>",
+          "describe": "<p>&gt; true &gt; false</p>",
           "isRight": false
         },
         {
-          "describe": "<p>>5  >0</p>",
+          "describe": "<p>&gt;5  &gt;0</p>",
           "isRight": false
         },
         {
-          "describe": "<p>>5 >-1</p>",
+          "describe": "<p>&gt;5 &gt;-1</p>",
           "isRight": true
         }
       ],
@@ -787,7 +787,7 @@
       "hashCode": 942113396
     },
     {
-      "describe": "<p>Refer to the code snippet below:</p><p>01  let array = [1, 2, 3, 4, 4, 5, 4, 4];</p><p>02  for (let i = 0 ; i< array.length; i++) {</p><p>03      if (array[i] === 4) {</p><p>04        array.splice(i, 1) ;</p><p>05      }</p><p>06  }</p><p>What is the value of array after the code executes?</p><p></p>",
+      "describe": "<p>Refer to the code snippet below:</p><p>01  let array = [1, 2, 3, 4, 4, 5, 4, 4];</p><p>02  for (let i = 0 ; i&lt; array.length; i++) {</p><p>03      if (array[i] === 4) {</p><p>04        array.splice(i, 1) ;</p><p>05      }</p><p>06  }</p><p>What is the value of array after the code executes?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>[1, 2, 3, 4, 4, 5, 4]</p>",
@@ -886,23 +886,23 @@
       "describe": "<p>Given two expressions var1 and var2, what are two valid ways to return the logical AND of the two expressions and ensure it is data type Boolean? Choose 2 answers</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>Boolean(var1) && Boolean(var2)</p>",
+          "describe": "<p>Boolean(var1) &amp;&amp; Boolean(var2)</p>",
           "isRight": true
         },
         {
-          "describe": "<p>var1 && var2</p>",
+          "describe": "<p>var1 &amp;&amp; var2</p>",
           "isRight": false
         },
         {
-          "describe": "<p>var1.toBoolean( ) && var2. toBoolean ( )</p>",
+          "describe": "<p>var1.toBoolean( ) &amp;&amp; var2. toBoolean ( )</p>",
           "isRight": false
         },
         {
-          "describe": "<p>Boolean(var1 && var2)</p>",
+          "describe": "<p>Boolean(var1 &amp;&amp; var2)</p>",
           "isRight": true
         }
       ],
-      "analysis": "<p>var1 && var2 output 2</p>",
+      "analysis": "<p>var1 &amp;&amp; var2 output 2</p>",
       "hashCode": 1061090132
     },
     {
@@ -925,7 +925,7 @@
           "isRight": true
         }
       ],
-      "analysis": "<p>https://developer.mozilla.org/en-US/docs/Glossary/Mutable#:~:text=In%20JavaScript%2C%20only%20objects%20and,is%20still%20held%20in%20memory.&text=Immutables%20are%20the%20objects%20whose,Strings%20and%20Numbers%20are%20Immutable.</p>",
+      "analysis": "<p>https://developer.mozilla.org/en-US/docs/Glossary/Mutable#:~:text=In%20JavaScript%2C%20only%20objects%20and,is%20still%20held%20in%20memory.&amp;text=Immutables%20are%20the%20objects%20whose,Strings%20and%20Numbers%20are%20Immutable.</p>",
       "hashCode": 1724487884
     },
     {

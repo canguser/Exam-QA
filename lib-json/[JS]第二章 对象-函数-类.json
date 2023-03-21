@@ -121,23 +121,23 @@
       "describe": "<p>Which three options show valid methods for creating a fat arrow function? Choose 3 answer</p>",
       "answerOptions": [
         {
-          "describe": "<p>[ ] => { console.log( 'executed' ); }</p>",
+          "describe": "<p>[ ] =&gt; { console.log( 'executed' ); }</p>",
           "isRight": false
         },
         {
-          "describe": "<p>( ) => { console.log( 'executed' ); }</p>",
+          "describe": "<p>( ) =&gt; { console.log( 'executed' ); }</p>",
           "isRight": true
         },
         {
-          "describe": "<p>( x, y, z ) => { console.log( 'executed' ); }</p>",
+          "describe": "<p>( x, y, z ) =&gt; { console.log( 'executed' ); }</p>",
           "isRight": true
         },
         {
-          "describe": "<p>x, y, z  => { console.log( 'executed' ); }</p>",
+          "describe": "<p>x, y, z  =&gt; { console.log( 'executed' ); }</p>",
           "isRight": false
         },
         {
-          "describe": "<p>x  => { console.log( 'executed' ); }</p>",
+          "describe": "<p>x  =&gt; { console.log( 'executed' ); }</p>",
           "isRight": true
         }
       ],
@@ -148,19 +148,19 @@
       "describe": "<p>Refer to the following code block:</p><p>01    class Student {</p><p>02        constructor(name) {</p><p>03            this.name = name;</p><p>04        }</p><p>05</p><p>06        takeTest() {</p><p>07            console.log(`${this.name} got 70% on test.`);</p><p>08        }</p><p>09    }</p><p>10</p><p>11    class BetterStudent extends Student {</p><p>12        constructor(name) {</p><p>13            super(name);</p><p>14            this.name = 'Better student ' + name;</p><p>15        }</p><p>16        takeTest() {</p><p>17            console.log(`${this.name} got 100% on the test.`);</p><p>18        }</p><p>19    }</p><p>20</p><p>21    let student = new BetterStudent('Jackie');</p><p>22    student.takeTest();</p><p>What is the console output?</p>",
       "answerOptions": [
         {
-          "describe": "<p>> Jackie got 70% on test.</p>",
+          "describe": "<p>&gt; Jackie got 70% on test.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>> Better student Jackie got 100% on test.</p>",
+          "describe": "<p>&gt; Better student Jackie got 100% on test.</p>",
           "isRight": true
         },
         {
-          "describe": "<p>> Better student Jackie got 70% on test.</p>",
+          "describe": "<p>&gt; Better student Jackie got 70% on test.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>> Uncaught ReferenceError</p>",
+          "describe": "<p>&gt; Uncaught ReferenceError</p>",
           "isRight": false
         }
       ],
@@ -168,10 +168,10 @@
       "hashCode": 516074974
     },
     {
-      "describe": "<p>A developer is required to write a function that calculates the sum of elements in an array but is getting undefined every time the code is executed. The developer needs to find what is missing in the code below.</p><p>01    const sumFunction = arr =>{</p><p>02        return arr.reduce((result, current) =>{</p><p>03            //</p><p>04            result += current;</p><p>05            //</p><p>06        },10);</p><p>07    };</p><p>Which option makes the code work as expected?</p>",
+      "describe": "<p>A developer is required to write a function that calculates the sum of elements in an array but is getting undefined every time the code is executed. The developer needs to find what is missing in the code below.</p><p>01    const sumFunction = arr =&gt;{</p><p>02        return arr.reduce((result, current) =&gt;{</p><p>03            //</p><p>04            result += current;</p><p>05            //</p><p>06        },10);</p><p>07    };</p><p>Which option makes the code work as expected?</p>",
       "answerOptions": [
         {
-          "describe": "<p>Replace line 02 with return arr.map((result, current) =>{</p>",
+          "describe": "<p>Replace line 02 with return arr.map((result, current) =&gt;{</p>",
           "isRight": false
         },
         {
@@ -214,7 +214,7 @@
       "hashCode": -399108392
     },
     {
-      "describe": "<p>Refer to the following code:</p><p>01    function Tiger() {</p><p>02          this.type = 'Cat';</p><p>03          this.size = 'large';</p><p>04     }</p><p>05</p><p>06     let tony = new Tiger();</p><p>07     tony.roar = () => {</p><p>08             console.log('They\\'re great!');</p><p>09     };</p><p>10</p><p>11     function Lion() {</p><p>12           this.type = 'Cat';</p><p>13           this.size = 'large';</p><p>14      }</p><p>15</p><p>16      let leo = new Lion();</p><p>17       // Insert code here</p><p>18      leo.roar();</p><p>Which two statements could be inserted at line 17 to enable the function call on line 18? Choose 2 answers</p><p></p>",
+      "describe": "<p>Refer to the following code:</p><p>01    function Tiger() {</p><p>02          this.type = 'Cat';</p><p>03          this.size = 'large';</p><p>04     }</p><p>05</p><p>06     let tony = new Tiger();</p><p>07     tony.roar = () =&gt; {</p><p>08             console.log('They\\'re great!');</p><p>09     };</p><p>10</p><p>11     function Lion() {</p><p>12           this.type = 'Cat';</p><p>13           this.size = 'large';</p><p>14      }</p><p>15</p><p>16      let leo = new Lion();</p><p>17       // Insert code here</p><p>18      leo.roar();</p><p>Which two statements could be inserted at line 17 to enable the function call on line 18? Choose 2 answers</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>Object.assign(leo, tony);</p>",
@@ -225,11 +225,11 @@
           "isRight": false
         },
         {
-          "describe": "<p>leo.prototype.roar = () => {console.log('They\\'re pretty good!');};</p>",
+          "describe": "<p>leo.prototype.roar = () =&gt; {console.log('They\\'re pretty good!');};</p>",
           "isRight": false
         },
         {
-          "describe": "<p>leo.roar = () => {console.log('They\\'re pretty good!');};</p>",
+          "describe": "<p>leo.roar = () =&gt; {console.log('They\\'re pretty good!');};</p>",
           "isRight": true
         }
       ],
@@ -267,7 +267,7 @@
       "describe": "<p></p>",
       "answerOptions": [
         {
-          "describe": "<p>developer has two ways to write a function:</p><p>Option A:</p><p>01  function Monster( ) {</p><p>02        this.growl = ( ) => {</p><p>03           console.log(\"Grr!\");</p><p>04        }</p><p>05  }</p><p>Option B:</p><p>01  function Monster( ) { };</p><p>02  Monster.prototype.growl = ( ) => {</p><p>03        console.log(\"Grr!\");</p><p>04  }</p><p>After deciding on an option, the developer creates 1000 monster objects.</p><p>How many growl methods are created with Option A and Option</p>",
+          "describe": "<p>developer has two ways to write a function:</p><p>Option A:</p><p>01  function Monster( ) {</p><p>02        this.growl = ( ) =&gt; {</p><p>03           console.log(\"Grr!\");</p><p>04        }</p><p>05  }</p><p>Option B:</p><p>01  function Monster( ) { };</p><p>02  Monster.prototype.growl = ( ) =&gt; {</p><p>03        console.log(\"Grr!\");</p><p>04  }</p><p>After deciding on an option, the developer creates 1000 monster objects.</p><p>How many growl methods are created with Option A and Option</p>",
           "isRight": false
         },
         {
@@ -402,7 +402,7 @@
       "hashCode": 1172379641
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  const myFunction = arr => {</p><p>02       return arr. reduce((result, current) => {</p><p>03          return result + current;</p><p>04       }, 10);</p><p>05  }</p><p>What is the output if this function when called with an empty array?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01  const myFunction = arr =&gt; {</p><p>02       return arr. reduce((result, current) =&gt; {</p><p>03          return result + current;</p><p>04       }, 10);</p><p>05  }</p><p>What is the output if this function when called with an empty array?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>Returns 10</p>",
@@ -498,7 +498,7 @@
       "hashCode": -1405888802
     },
     {
-      "describe": "<p>At Universal Containers, every team has its own way of copying JavaScript objects. The codesnippet shows an implementation from one team:</p><p>01  function Person( ) {</p><p>02      this.firstName = \"John\" ;</p><p>03      this.lastName = \"Doe\" ;</p><p>04      this.name = ( ) => {</p><p>05         console.log(`Hello ${this.firstName} ${this. lastName}`);</p><p>06      }</p><p>07  }</p><p>08</p><p>09  const john = new Person( ) ;</p><p>10  const dan = JSON.parse (JSON . stringify (john));</p><p>11  dan.firstName = 'Dan';</p><p>12 dan.name( ) ;</p><p>What is the output of the code execution?</p><p></p>",
+      "describe": "<p>At Universal Containers, every team has its own way of copying JavaScript objects. The codesnippet shows an implementation from one team:</p><p>01  function Person( ) {</p><p>02      this.firstName = \"John\" ;</p><p>03      this.lastName = \"Doe\" ;</p><p>04      this.name = ( ) =&gt; {</p><p>05         console.log(`Hello ${this.firstName} ${this. lastName}`);</p><p>06      }</p><p>07  }</p><p>08</p><p>09  const john = new Person( ) ;</p><p>10  const dan = JSON.parse (JSON . stringify (john));</p><p>11  dan.firstName = 'Dan';</p><p>12 dan.name( ) ;</p><p>What is the output of the code execution?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>TypeError: Assignment to constant variable</p>",
@@ -521,7 +521,7 @@
       "hashCode": -1654727508
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  console. log(0) ;</p><p>02</p><p>03  setTimeout(( ) => {</p><p>04      console.log(1) ;</p><p>05   });</p><p>06</p><p>07  console.log(2) ;</p><p>08</p><p>09  setTimeout(( ) => {</p><p>10      console.log(3) ;</p><p>11  },0) ;</p><p>12</p><p>13  console.log(4) ;</p><p>In which sequence will the numbers be logged?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01  console. log(0) ;</p><p>02</p><p>03  setTimeout(( ) =&gt; {</p><p>04      console.log(1) ;</p><p>05   });</p><p>06</p><p>07  console.log(2) ;</p><p>08</p><p>09  setTimeout(( ) =&gt; {</p><p>10      console.log(3) ;</p><p>11  },0) ;</p><p>12</p><p>13  console.log(4) ;</p><p>In which sequence will the numbers be logged?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>0 1 2 3 4</p>",
@@ -613,7 +613,7 @@
       "hashCode": 1902407972
     },
     {
-      "describe": "<p>Given the code block below:</p><p>01  function GameConsole (name) {</p><p>02        this.name = name ;</p><p>03  }</p><p>04</p><p>05  GameConsole.prototype.load = function (gamename) {</p><p>06          console.log(`${this.name} is loading a game: $ {gamename}...`) ;</p><p>07  }</p><p>08</p><p>09  function Console16bit (name) {</p><p>10       GameConsole.call (this, name) ;</p><p>11  }</p><p>12</p><p>13  Console16bit. prototype = Object. create (GameConsole. prototype) ;</p><p>14</p><p>15  // insert code here</p><p>16      console.log( ${this.name} is loading a cartridge game: ${gamename} ...`) ;</p><p>17  }</p><p>18</p><p>19  const console16bit = new Console16bit(' SNEGeneziz') ;</p><p>20  console16bit. load('Super Monic 3x Force') ;</p><p>What should a developer insert at line 15 to output the following message using the load method?</p><p>> SNEGeneziz is loading a cartridge game: Super Monic 3x Force. . .</p><p></p>",
+      "describe": "<p>Given the code block below:</p><p>01  function GameConsole (name) {</p><p>02        this.name = name ;</p><p>03  }</p><p>04</p><p>05  GameConsole.prototype.load = function (gamename) {</p><p>06          console.log(`${this.name} is loading a game: $ {gamename}...`) ;</p><p>07  }</p><p>08</p><p>09  function Console16bit (name) {</p><p>10       GameConsole.call (this, name) ;</p><p>11  }</p><p>12</p><p>13  Console16bit. prototype = Object. create (GameConsole. prototype) ;</p><p>14</p><p>15  // insert code here</p><p>16      console.log( ${this.name} is loading a cartridge game: ${gamename} ...`) ;</p><p>17  }</p><p>18</p><p>19  const console16bit = new Console16bit(' SNEGeneziz') ;</p><p>20  console16bit. load('Super Monic 3x Force') ;</p><p>What should a developer insert at line 15 to output the following message using the load method?</p><p>&gt; SNEGeneziz is loading a cartridge game: Super Monic 3x Force. . .</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>Console16bit.prototype.load = function (gamename) {</p>",
@@ -732,7 +732,7 @@
       "hashCode": -682085488
     },
     {
-      "describe": "<p>Given the JavaScript below:</p><p>01  function filterDOM (searchString) {</p><p>02     const parsedSearchstring = searchString && searchString. toLowerCase( ) ;</p><p>03     document . querySelectorAll (' .account') . forEach (account => {</p><p>04         const accountName = account . innerHTML. toLowerCase( ) ;</p><p>05         account.style.display = accountName . includes(parsedSearchString)? / * Insert code here */ ;</p><p>06    });</p><p>07  }</p><p>Which code should replace the placeholder comment on line 05 to hide accounts that do not match the search string?</p><p></p>",
+      "describe": "<p>Given the JavaScript below:</p><p>01  function filterDOM (searchString) {</p><p>02     const parsedSearchstring = searchString &amp;&amp; searchString. toLowerCase( ) ;</p><p>03     document . querySelectorAll (' .account') . forEach (account =&gt; {</p><p>04         const accountName = account . innerHTML. toLowerCase( ) ;</p><p>05         account.style.display = accountName . includes(parsedSearchString)? / * Insert code here */ ;</p><p>06    });</p><p>07  }</p><p>Which code should replace the placeholder comment on line 05 to hide accounts that do not match the search string?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>'block' : 'none'</p>",
@@ -943,7 +943,7 @@
       "hashCode": -388162408
     },
     {
-      "describe": "<p>Given the code below:</p><p>let x = 2;</p><p>let y = 3;</p><p>let add = x => y => x + y;</p><p>The “add” variable is an arrow function which is used to sum two numbers. What is the correct way of calling this function? Choose 1 answer.</p><p></p>",
+      "describe": "<p>Given the code below:</p><p>let x = 2;</p><p>let y = 3;</p><p>let add = x =&gt; y =&gt; x + y;</p><p>The “add” variable is an arrow function which is used to sum two numbers. What is the correct way of calling this function? Choose 1 answer.</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>add(x)(y)</p>",
@@ -985,18 +985,18 @@
           "isRight": true
         },
         {
-          "describe": "<p>objectName->property // person->age</p>",
+          "describe": "<p>objectName-&gt;property // person-&gt;age</p>",
           "isRight": false
         }
       ],
-      "analysis": "<p>The correct syntax for accessing the property of an object is:</p><p>objectName.property</p><p>objectName[\"property\"]</p><p>objectName[expression]</p><p>objectName->property is invalid in JavaScript, though it might be valid for some other programming languages such as PHP.</p><p>There is nothing like ${person(property)} in JavaScript or any known programming languages.</p>",
+      "analysis": "<p>The correct syntax for accessing the property of an object is:</p><p>objectName.property</p><p>objectName[\"property\"]</p><p>objectName[expression]</p><p>objectName-&gt;property is invalid in JavaScript, though it might be valid for some other programming languages such as PHP.</p><p>There is nothing like ${person(property)} in JavaScript or any known programming languages.</p>",
       "hashCode": -990895308
     },
     {
       "describe": "<p>Which statement sorts the following number array so it is in ascending order?</p><p>const arr = [7, 3, 400, 10];</p><p>Choose 1 answer.</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>arr.sort((a, b) => a < b);[/su_highlight]</p>",
+          "describe": "<p>arr.sort((a, b) =&gt; a &lt; b);[/su_highlight]</p>",
           "isRight": false
         },
         {
@@ -1004,15 +1004,15 @@
           "isRight": false
         },
         {
-          "describe": "<p>arr.sort((a, b) => a – b);</p>",
+          "describe": "<p>arr.sort((a, b) =&gt; a – b);</p>",
           "isRight": true
         },
         {
-          "describe": "<p>arr.sort((a, b) => b – a);</p>",
+          "describe": "<p>arr.sort((a, b) =&gt; b – a);</p>",
           "isRight": false
         }
       ],
-      "analysis": "<p>By default, the sort() function sorts values as strings.</p><p>arr.sort( (a, b) => a – b); is the correct answer. The compare function passed in sort() defines an alternative sort order.</p><p>arr.sort(); is incorrect because the sort() function sorts values as strings, which will sort this as [10, 3, 400, 7].</p><p>arr.sort((a, b) => a < b); is incorrect. The compare function expects a positive, negative, or 0 to be returned, not the Boolean expression.</p><p>arr.sort((a, b) => b – a); is incorrect. The compare function will actually reverse the order of the numbers.</p>",
+      "analysis": "<p>By default, the sort() function sorts values as strings.</p><p>arr.sort( (a, b) =&gt; a – b); is the correct answer. The compare function passed in sort() defines an alternative sort order.</p><p>arr.sort(); is incorrect because the sort() function sorts values as strings, which will sort this as [10, 3, 400, 7].</p><p>arr.sort((a, b) =&gt; a &lt; b); is incorrect. The compare function expects a positive, negative, or 0 to be returned, not the Boolean expression.</p><p>arr.sort((a, b) =&gt; b – a); is incorrect. The compare function will actually reverse the order of the numbers.</p>",
       "hashCode": 577492143
     },
     {
@@ -1181,7 +1181,7 @@
       "hashCode": -514234380
     },
     {
-      "describe": "<p>The developer has a function that prints \"Hello\" to an input name. To test this, the developer</p><p>created a function that returns \"World\". However, the following snippet does not print \"Hello World\".</p><p>01  const sayHello = (name) => {</p><p>02  console.log('Hello ', name) ;</p><p>03   };</p><p>04</p><p>05  const world= ( ) => {</p><p>06       return 'World' ;</p><p>07  } ;</p><p>08</p><p>09  sayHello (world) ;</p><p>What can the developer do to change the code to print \"Hello World\"?</p><p></p>",
+      "describe": "<p>The developer has a function that prints \"Hello\" to an input name. To test this, the developer</p><p>created a function that returns \"World\". However, the following snippet does not print \"Hello World\".</p><p>01  const sayHello = (name) =&gt; {</p><p>02  console.log('Hello ', name) ;</p><p>03   };</p><p>04</p><p>05  const world= ( ) =&gt; {</p><p>06       return 'World' ;</p><p>07  } ;</p><p>08</p><p>09  sayHello (world) ;</p><p>What can the developer do to change the code to print \"Hello World\"?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>Change line 7 to } ( ) ;</p>",
@@ -1250,7 +1250,7 @@
       "hashCode": 415077733
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>flag( ) ;</p><p>anotherFlag( ) ;</p><p>function flag( ) {</p><p>console.log('flag') ;</p><p>}</p><p>const anotherFlag = ( ) => {</p><p>console.log( 'another flag') ;</p><p>}</p><p>What is result of the code block?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>flag( ) ;</p><p>anotherFlag( ) ;</p><p>function flag( ) {</p><p>console.log('flag') ;</p><p>}</p><p>const anotherFlag = ( ) =&gt; {</p><p>console.log( 'another flag') ;</p><p>}</p><p>What is result of the code block?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>An error is thrown.</p>",
@@ -1414,19 +1414,19 @@
       "describe": "<p>Which two code snippets show working examples of a recursive function? Choose 2 answers</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>const factorial = numVar => {</p><p>if (numVar < 0) return ;</p><p>if (numVar === 0) return 1 ;</p><p>return numVar * factorial (numVar - 1);</p><p>}</p>",
+          "describe": "<p>const factorial = numVar =&gt; {</p><p>if (numVar &lt; 0) return ;</p><p>if (numVar === 0) return 1 ;</p><p>return numVar * factorial (numVar - 1);</p><p>}</p>",
           "isRight": true
         },
         {
-          "describe": "<p>let countingDown = function(startNumber) {</p><p>if (startNumber > 0) {</p><p>console.log (startNumber) ;</p><p>return countingDown(startNumber - 1);</p><p>} else {</p><p>return startNumber;</p><p>}</p><p>} ;</p>",
+          "describe": "<p>let countingDown = function(startNumber) {</p><p>if (startNumber &gt; 0) {</p><p>console.log (startNumber) ;</p><p>return countingDown(startNumber - 1);</p><p>} else {</p><p>return startNumber;</p><p>}</p><p>} ;</p>",
           "isRight": true
         },
         {
-          "describe": "<p>function factorial (numVar) {</p><p>if (numVar < 0) return;</p><p>if (numVar === 0) return 1;</p><p>return numVar - 1;</p><p>}</p>",
+          "describe": "<p>function factorial (numVar) {</p><p>if (numVar &lt; 0) return;</p><p>if (numVar === 0) return 1;</p><p>return numVar - 1;</p><p>}</p>",
           "isRight": false
         },
         {
-          "describe": "<p>const sumToTen = numVar => {</p><p>if (numVar < 0)</p><p>return ;</p><p>return sumToTen(numVar + 1);</p><p>} ;</p>",
+          "describe": "<p>const sumToTen = numVar =&gt; {</p><p>if (numVar &lt; 0)</p><p>return ;</p><p>return sumToTen(numVar + 1);</p><p>} ;</p>",
           "isRight": false
         }
       ],
@@ -1484,7 +1484,7 @@
       "hashCode": 834722722
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>01  function Person( ) {</p><p>02      this . firstName = 'John' ;</p><p>03  }</p><p>04</p><p>05  Person. prototype = {</p><p>06       job: x =>  'Developer '</p><p>07  } ;</p><p>08</p><p>09 const myFather = new Person( ) ;</p><p>10 const result = myFather . firstName + ' ' + myFather. job( ) ;</p><p>What is the value of result after line 10 executes?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>01  function Person( ) {</p><p>02      this . firstName = 'John' ;</p><p>03  }</p><p>04</p><p>05  Person. prototype = {</p><p>06       job: x =&gt;  'Developer '</p><p>07  } ;</p><p>08</p><p>09 const myFather = new Person( ) ;</p><p>10 const result = myFather . firstName + ' ' + myFather. job( ) ;</p><p>What is the value of result after line 10 executes?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>John Developer</p>",
@@ -1507,7 +1507,7 @@
       "hashCode": -379898079
     },
     {
-      "describe": "<p>Refer to the following code block:</p><p>01  let array= [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11];</p><p>02  let output = 0 ;</p><p>03</p><p>04  for (let num of array) {</p><p>05      if (output > 10) {</p><p>06        break;</p><p>07      }</p><p>08      if (num % 2 == 0) {</p><p>09        continue;</p><p>10      }</p><p>11     output += num;</p><p>12  }</p><p>What is the value of output after the code executes?</p><p></p>",
+      "describe": "<p>Refer to the following code block:</p><p>01  let array= [1, 2, 3, 4, 5, 6,7, 8, 9, 10, 11];</p><p>02  let output = 0 ;</p><p>03</p><p>04  for (let num of array) {</p><p>05      if (output &gt; 10) {</p><p>06        break;</p><p>07      }</p><p>08      if (num % 2 == 0) {</p><p>09        continue;</p><p>10      }</p><p>11     output += num;</p><p>12  }</p><p>What is the value of output after the code executes?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>25</p>",
@@ -1556,19 +1556,19 @@
       "describe": "<p>A developer has the following array of hourly wages:</p><p>let arr = [8.5, 9.75, 11.25, 7.75, 13.25];</p><p>For workers making less than $10 an hour, their rate should be multiplied by 1.25 and returned in a new array. How should the developer implement the request?</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>let arr1 = arr.filter((val) => val < 10).map((num) => num * 1.25);</p>",
+          "describe": "<p>let arr1 = arr.filter((val) =&gt; val &lt; 10).map((num) =&gt; num * 1.25);</p>",
           "isRight": false
         },
         {
-          "describe": "<p>let arr1 = arr.mapArray((val) => { val < 10} ).map((num) => {num * 1.25} );</p>",
+          "describe": "<p>let arr1 = arr.mapArray((val) =&gt; { val &lt; 10} ).map((num) =&gt; {num * 1.25} );</p>",
           "isRight": false
         },
         {
-          "describe": "<p>let arr1 = arr.map( (num) => { return num * 1.25 } ).filter( (val) =>{ return val < 10} );</p>",
+          "describe": "<p>let arr1 = arr.map( (num) =&gt; { return num * 1.25 } ).filter( (val) =&gt;{ return val &lt; 10} );</p>",
           "isRight": false
         },
         {
-          "describe": "<p>let arr1 = arr.filterBy( ( val) => val < 10). mapBy ((num) => num * 1.25);</p>",
+          "describe": "<p>let arr1 = arr.filterBy( ( val) =&gt; val &lt; 10). mapBy ((num) =&gt; num * 1.25);</p>",
           "isRight": true
         }
       ],
@@ -1625,19 +1625,19 @@
       "describe": "<p>Refer to the following code block:</p><p>01  class Animal {</p><p>02      constructor(name) {</p><p>03          this.name = name;</p><p>04      }</p><p>05</p><p>06      makeSound() {</p><p>07          console.log( '${this.name} is making a sound. ');</p><p>08      }</p><p>09  }</p><p>10</p><p>11  class Dog extends Animal {</p><p>12      constructor(name) {</p><p>13          super(name);</p><p>14          this.name = name;</p><p>15      }</p><p>16      makeSound( ) {</p><p>17          console.log('${this.name} is barking.');</p><p>18      }</p><p>19  }</p><p>20</p><p>21  let myDog = new Dog('Puppy');</p><p>22  myDog.makeSound();</p><p>What is the console output?</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>> Undefined</p>",
+          "describe": "<p>&gt; Undefined</p>",
           "isRight": false
         },
         {
-          "describe": "<p>> Puppy is making a sound.</p>",
+          "describe": "<p>&gt; Puppy is making a sound.</p>",
           "isRight": false
         },
         {
-          "describe": "<p>> Puppy is barking.</p>",
+          "describe": "<p>&gt; Puppy is barking.</p>",
           "isRight": true
         },
         {
-          "describe": "<p>> Uncaught ReferenceError</p>",
+          "describe": "<p>&gt; Uncaught ReferenceError</p>",
           "isRight": false
         }
       ],
@@ -1694,7 +1694,7 @@
       "describe": "<p>myArray, can have one level, two levels, or more levels. Which statement flattens myArray when it can be arbitrarily nested?</p><p></p>",
       "answerOptions": [
         {
-          "describe": "<p>myArray.reduce((prev, curr) => prev.concat(curr), [ ]);</p>",
+          "describe": "<p>myArray.reduce((prev, curr) =&gt; prev.concat(curr), [ ]);</p>",
           "isRight": false
         },
         {
@@ -1737,7 +1737,7 @@
       "hashCode": 162330172
     },
     {
-      "describe": "<p>Refer to the code below:</p><p>flag( ) ;</p><p>function flag( ) {</p><p>console.log('flag') ;</p><p>}</p><p>const anotherFlag = ( ) => {</p><p>console.log( 'another flag') ;</p><p>}</p><p>anotherFlag( );</p><p>What is result of the code block?</p><p></p>",
+      "describe": "<p>Refer to the code below:</p><p>flag( ) ;</p><p>function flag( ) {</p><p>console.log('flag') ;</p><p>}</p><p>const anotherFlag = ( ) =&gt; {</p><p>console.log( 'another flag') ;</p><p>}</p><p>anotherFlag( );</p><p>What is result of the code block?</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>An error is thrown.</p>",
@@ -1760,7 +1760,7 @@
       "hashCode": 1425998350
     },
     {
-      "describe": "<p>A developer copied a JavaScript object:</p><p>01    function Person() {</p><p>02        this.firstName = \"John\";</p><p>03        this.lastName = \"Doe\";</p><p>04        this.name = () => '${this.firstName}, ${this.lastName}';</p><p>05    }</p><p>06</p><p>07    const john = new Person();</p><p>08    const dan = Object.assign(john);</p><p>09    dan.firstName = 'Dan';</p><p>How does the developer access dan's firstName.lastName? Choose 2 answers</p><p></p>",
+      "describe": "<p>A developer copied a JavaScript object:</p><p>01    function Person() {</p><p>02        this.firstName = \"John\";</p><p>03        this.lastName = \"Doe\";</p><p>04        this.name = () =&gt; '${this.firstName}, ${this.lastName}';</p><p>05    }</p><p>06</p><p>07    const john = new Person();</p><p>08    const dan = Object.assign(john);</p><p>09    dan.firstName = 'Dan';</p><p>How does the developer access dan's firstName.lastName? Choose 2 answers</p><p></p>",
       "answerOptions": [
         {
           "describe": "<p>dan.name</p>",
