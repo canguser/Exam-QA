@@ -1,12 +1,13 @@
 {
   "name": "@palerock/exam-qa",
-  "version": "1.0.6-patch19",
+  "version": "1.0.6-patch21",
   "description": "A Vue.js project",
   "author": "ryan <1184518756@qq.com>",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "build": "node build/build.js",
+    "gen-map": "node gen-map.js",
     "publish-pacakge": "npm run build && node gen-map.js && npm publish --access public --tag latest",
     "publish-pacakge-no-map": "npm run build && npm publish --access public --tag latest"
   },
