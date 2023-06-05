@@ -1,0 +1,375 @@
+{
+  "title": "Salesforce基础",
+  "category": "Dev2-自由部落侠",
+  "questions": [
+    {
+      "describe": "UC has enabled the translation workbench and has translated picklist values. UC has a custom multi-select picklist field, Products__c. on the Account object that allows sales reps to specify which of UC's products an Account already has. A developer is tasked with writing an Apex method that retrieves Account records, including the Products__c field.\nWhat should the developer do to ensure the value of Products__c is in the current user's language?",
+      "answerOptions": [
+        {
+          "describe": "Set the locale on each record in the SOQL result list.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the locale clause in the SOQL query.",
+          "isRight": false
+        },
+        {
+          "describe": "Use toLabel(Products__c) in the fields list of the SOQL query.",
+          "isRight": true
+        },
+        {
+          "describe": "Call the translate() method on each record in the SOQL result list.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147345",
+      "analysis": ""
+    },
+    {
+      "describe": "An org records customer order information in a custom object, Order__c, that has fields for the shipping address. A developer is tasked with adding code to calculate shipping changes on an order, based on a flat percentage rate associated with the region of the shipping address.\nWhat should the developer use to store the rates by region, so that when the changes are deployed to production no additional steps are needed for the calculation to work?",
+      "answerOptions": [
+        {
+          "describe": "Custom object",
+          "isRight": false
+        },
+        {
+          "describe": "Custom metadata type",
+          "isRight": true
+        },
+        {
+          "describe": "Custom list setting",
+          "isRight": false
+        },
+        {
+          "describe": "Custom hierarchy setting",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147315",
+      "analysis": ""
+    },
+    {
+      "describe": "A software company uses a custom object, Defect__c, to track defects in their software. Defect__c has organization-wide defaults set to private. Each Defect__c has a related list of Reviewer__c records, each with a lookup field to User that is used to indicate that the User will review the Defect__c.\nWhat should be used to give the User on the Reviewer__c record read only access to the Defect__c record on the Reviewer__c record?",
+      "answerOptions": [
+        {
+          "describe": "Apex managed sharing",
+          "isRight": true
+        },
+        {
+          "describe": "View All on Defect__c",
+          "isRight": false
+        },
+        {
+          "describe": "Criteria-based sharing",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning web component",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147313",
+      "analysis": ""
+    },
+    {
+      "describe": "\nA developer is asked to develop a new AppExchange application. A feature of the program creates Survey records when a Case reaches a certain stage and is of a certain Record Type. This feature needs to be configurable, as different Salesforce instances require Survets at different times. Additionally, the out-of-the-box AppExchange app needs to come with a set of best practice settings that apply to most customers.\nWhat should the developer use to store and package the custom configuration settings for the app?\n",
+      "answerOptions": [
+        {
+          "describe": "Custom metadata",
+          "isRight": true
+        },
+        {
+          "describe": "Custom settings",
+          "isRight": false
+        },
+        {
+          "describe": "Custom objects",
+          "isRight": false
+        },
+        {
+          "describe": "Custom labels",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146634",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer used custom settings to store some configuration data that changes occasionally. However, tests are now failing in some of the sandboxes that were recently refreshed.\nWhat should be done to eliminate this issue going forward?",
+      "answerOptions": [
+        {
+          "describe": "Set the setting type on the custom setting to Hierarchy.",
+          "isRight": false
+        },
+        {
+          "describe": "Set the setting type on the custom setting to List.",
+          "isRight": false
+        },
+        {
+          "describe": "Replace custom settings with static resources.",
+          "isRight": false
+        },
+        {
+          "describe": "Replace custom settings with custom metadata.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146604",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer needs to store variables to control the style and behavior of a Lightning Web Component.\nWhich feature should be used to ensure that the variables are testable in both Production and all Sandboxes?",
+      "answerOptions": [
+        {
+          "describe": "Custom variable",
+          "isRight": false
+        },
+        {
+          "describe": "Custom object",
+          "isRight": false
+        },
+        {
+          "describe": "Custom metadata",
+          "isRight": true
+        },
+        {
+          "describe": "Custom setting",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146601",
+      "analysis": ""
+    },
+    {
+      "describe": "Which method should be used to convert a Date to a String in the current user's locale?",
+      "answerOptions": [
+        {
+          "describe": "Date.parse",
+          "isRight": false
+        },
+        {
+          "describe": "Date.format",
+          "isRight": true
+        },
+        {
+          "describe": "String.format",
+          "isRight": false
+        },
+        {
+          "describe": "String.valueOf",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146570",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexref.meta/apexref/apex_methods_system_date.htm#apex_System_Date_format"
+    },
+    {
+      "describe": "A developer is creating a Lightning web component to display a calendar. The component will be used in multiple countries. In some locales, the first day of the week is a Monday, or a Saturday, or a Sunday.\nWhat should the developer do to ensure the calendar displays accurately for users in every locale?",
+      "answerOptions": [
+        {
+          "describe": "Use a custom metadata type to store key/value pairs.",
+          "isRight": false
+        },
+        {
+          "describe": "Query the FirstDayofweek field from the Locale for the current user.",
+          "isRight": false
+        },
+        {
+          "describe": "Use UerInfo.getLocale() in the component.",
+          "isRight": true
+        },
+        {
+          "describe": "Import the firstDayofweek property in the component.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146541",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers decided to use Salesforce to manage a new hire interview process. A custom object called Candidate was created with organization-wide defaults set to Private A lookup on the Candidate object sets an employee as an Interviewer.\nWhat should be used to automatically give Read access to the record when the lookup field is set to the Interviewer user?",
+      "answerOptions": [
+        {
+          "describe": "The record can be shared using a sharing rule.",
+          "isRight": false
+        },
+        {
+          "describe": "The record can be shared using a permission set.",
+          "isRight": false
+        },
+        {
+          "describe": "The record cannot be shared with the current setup.",
+          "isRight": false
+        },
+        {
+          "describe": "The record can be shared using an Apex class.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146476",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is asked to find a way to store secret data with an ability to specify which profiles and users can access which secrets.\nWhat should be used to store this data?",
+      "answerOptions": [
+        {
+          "describe": "Static resources",
+          "isRight": false
+        },
+        {
+          "describe": "Custom settings",
+          "isRight": true
+        },
+        {
+          "describe": "Custom metadata",
+          "isRight": false
+        },
+        {
+          "describe": "System.Cookie class",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146453",
+      "analysis": ""
+    },
+    {
+      "describe": "UC wants to use a Cutomer Community with Customer Community Plus licenses so their customers can track how many containers they are renting and when they are due back. Many of their customers are global companies with complex Account hierarchies, representing various departments within the same organization. One of the requirements is that certain community users within the same Account hierarchy be able to see several departments' containers, based on a junction object that relates the Contact to the  various Account records that represent the departments.\n\nWhich solution solves these requirements?",
+      "answerOptions": [
+        {
+          "describe": "A Custom Report Type and a report Lightning Component on the Community Home Page",
+          "isRight": false
+        },
+        {
+          "describe": "A Visualforce page that uses a Custom Controller that specifies without sharing to expose the records",
+          "isRight": false
+        },
+        {
+          "describe": "A Custom List View on the junction object with filters that will show the proper records based on owner",
+          "isRight": false
+        },
+        {
+          "describe": "An Apex Trigger that Creates Apex Managed Sharing records based on the junction object's relatonships",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146390",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers implements a private sharing model for the Convention_Attendee__c custom object. As part of a new quality assurance\neffort, the company created an Event_Reviewer__c user lookup field on the object. Management wants the event reviewer to automatically\ngain Read/Write access to every record they are assigned to\n\nWhat is the best approach to ensure the assigned reviewer obtains Read/Write access to the record?",
+      "answerOptions": [
+        {
+          "describe": "Create a criteria-based sharing rule on the Convention Attendee custom object to share the records the a group of Event Reviewers.",
+          "isRight": false
+        },
+        {
+          "describe": "Create criteria-based sharing rules on the Convention Attendee custom object to share the records with the Event Reviewers.",
+          "isRight": false
+        },
+        {
+          "describe": "Create an After Insert trigger on the Convention Attendee custom object, and use Apex Sharing Reasons and Apex Managed Sharing.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Before Insert trigger on the Convention Attendee custom object, and use Apex Sharing Reasons and Apex Managed Sharing.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145673",
+      "analysis": ""
+    },
+    {
+      "describe": "UC wants to develop a customer community to help their customers log issues with their containers. The community needs to function for their German- and Spanish-speaking customers also. UC heard that it's easy to create an international community using Salesforce, and hired a developer to build out the site.\n\nWhat should the developer use to ensure the site is multilingual?",
+      "answerOptions": [
+        {
+          "describe": "Use Custom Metadata to translate custom picklist values.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Custom Objects to translate custom picklist values.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Custom Settings to ensure custom messages are translated properly. ",
+          "isRight": false
+        },
+        {
+          "describe": "Use Custom Labels to ensure custom messages are translated properly.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145642",
+      "analysis": ""
+    },
+    {
+      "describe": "For compliance purposes, a company is required to track long-term product usage in their org. The information that they need to log will be collected from more than one object and, over time, they predict they will have hundreds of millions of records.\n\nWhat should a developer use to implement this?",
+      "answerOptions": [
+        {
+          "describe": "Big Objects",
+          "isRight": true
+        },
+        {
+          "describe": "Field History Tracking",
+          "isRight": false
+        },
+        {
+          "describe": "Setup Audit Trail",
+          "isRight": false
+        },
+        {
+          "describe": "Field Audit Trail",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145616",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.bigobjects.meta/bigobjects/big_object.htm"
+    },
+    {
+      "describe": "An Apex Trigger creates a Contract record every time an Opportunity record is marked as Closed and Won. This trigger is working great, except (due to a recent acquisition) historical Opportunity records need to be loaded into the Salesforce instance.\n\nWhen a test batch of records are loaded, the Apex Trigger creates Contract records. A developer is tasked with preventing Contract records from being created when mass loading the Opportunities, but the daily users still need to have the Contract records created.\n\nWhat is the most extendable way to update the Apex Trigger to accomplish this?",
+      "answerOptions": [
+        {
+          "describe": "Add the Profile Id of the user who does the data loading to the Trigger so the Trigger won't fire for this user. ",
+          "isRight": false
+        },
+        {
+          "describe": "Use a List Custom Setting to disable the Trigger for the user who does the data loading.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a Hierarchy Custom Setting to disable the Trigger for the user who does the data loading.",
+          "isRight": true
+        },
+        {
+          "describe": "Add a Validation Rule to the Contract to prevent Contract creation by the user who does the data loading.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145615",
+      "analysis": ""
+    },
+    {
+      "describe": "A managed package uses a list of country ISO codes and country names as reference data in many different places from within the\nmanaged package Apex code.\n\nWhat is the optimal way to store and retrieve the list?",
+      "answerOptions": [
+        {
+          "describe": "Store the information in a List Custom Setting and access it with the getAll() method.",
+          "isRight": false
+        },
+        {
+          "describe": "Store the information in Custom Metadata and query it with SOQL.",
+          "isRight": true
+        },
+        {
+          "describe": "Store the information in a List Custom Setting and query it with SOQL.",
+          "isRight": false
+        },
+        {
+          "describe": "Store the information in Custom Metadata and access it with the getAll() method.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145582",
+      "analysis": ""
+    }
+  ],
+  "hashCode": "-1990904807"
+}

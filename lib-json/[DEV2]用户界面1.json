@@ -1,0 +1,977 @@
+{
+  "title": "用户界面1",
+  "category": "Dev2-自由部落侠",
+  "questions": [
+    {
+      "describe": "<p>A developer created a Lightning web component for the Account record page that displays the five recently contacted Contacts for an Account. The Apex method, getRecentContacts, returns a list of Contacts and will be wired to a property in the component.</p><p><br/></p><p>01:</p><p>02:&nbsp; &nbsp; public class ContactFetcher&nbsp; {</p><p>03:</p><p>04:&nbsp; &nbsp; &nbsp; &nbsp; static List&lt;Contact&gt; getRecentContacts(Id accountId) {</p><p>05:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List&lt;Contact&gt; contacts = getFiveMostRecent(accountId) ;</p><p>06:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return contacts;</p><p>07:&nbsp; &nbsp; &nbsp; &nbsp; }</p><p>08:</p><p>09:&nbsp; &nbsp; &nbsp; &nbsp; private static List&lt;Contact&gt; getFiveMostRecent(Id accountId) {</p><p>10:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // ...impletation...</p><p>11:&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>12:&nbsp; &nbsp; }</p><p><br/></p><p>Which two lines must change in the above code to make the Apex method able to be wired? Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add public to line 04.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add @AuraEnabled(cacheable=true) to line 03.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Remove private from line 09.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add @AuraEnabled(cacheable=true) to line 08.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145547",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>The Account object has a field, Audit_Code__c, that is used to specify what type of auditing the Account needs and a Lookup to User, Auditor__c, that is the assigned auditor.</p><p>When an Account is initially created, the user specifies the Audit_Code__c. Each User in the org has a unique text field, Audit_Code__c, that is used to automatically assign the correct user to the Account&#39;s Auditor__c field.</p><p><br/></p><p>trigger AccountTrigger on Account(before insert) {</p><p>&nbsp; &nbsp; AuditAssigner.setAuditor(Trigger.new);</p><p>}</p><p><br/></p><p>public class AuditAssigner{</p><p>&nbsp; &nbsp; public static void setAuditor(List&lt;Account&gt; accounts) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; for(User u : [SELECT Id, Audit_Code__c FROM User]) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for(Account a : accounts) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(u.Audit_Code__c == a.Audit_Code__c) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;a.Auditor__c = u.Id;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; &nbsp; }</p><p>&nbsp; &nbsp; &nbsp;}</p><p>}</p><p>What should be changed to most optimize the code&#39;s efficiency? Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Build a Map&lt;String, List&lt;Account&gt;&gt; of audit code to accounts.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add an initial SOQL query to get all distinct audit codes.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Build a Map&lt;Id, List&lt;String&gt;&gt; of Account Id to audit codes.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add a WHERE clause to the SOQL query to filter on audit codes.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145545",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Given the following code:</p><p><br/></p><p>for ( Contact c : SELECT Id, LastNaze FROM Contact WHERE CreatedDate = TODAY] )</p><p>{</p><p>Account a = [SELECT Id，Name FROM Account WHERE CreatedDate = TODAY LIMIT 5]；</p><p>c.AccountId = a.Id;</p><p>update c;</p><p>}</p><p><br/></p><p>Assuming there were 10 Contacts and five Accounts created today, what is the expected result?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>System.QueryException: List has more than one row for Assignment on Account</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>System.LimitException: Too many SOQL Queries on Contact</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>System.QueryException: Too many DML Statement errors on Contact</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>System.LimitException: Too many SOQL Queries on Account</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145519",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer created an Apex class that updates an Account based on input from a Lightning web component that is used to register an Account.The update to the Account should only be made if it has not already been registered.</p><p><br/></p><p>Account = [SELECT Id,Is_Registered_c FROM Account WHERE Id= : accountId]:</p><p>if (!account.Is_Registered_c){</p><p>Account.Is_Registered_c = true</p><p>//...set other account fields...&nbsp;&nbsp;</p><p>update account;</p><p>}</p><p><br/></p><p>What should the developer do to ensure that users do not overwrite each other&#39;s updates to the same Account if they make updates at the same time?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use Database. update (account, false)</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add a try/catch block around the update.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use upsert instead of update.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use FOR UPDATE in a SOQL query.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145490",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p><br/></p><p>List&lt;opportunity&gt; opportunities = [ELECT Id, Amount from opportunity ];</p><p>tor (opportunity opp: opportunities) {</p><p>// perform operation here</p><p>}</p><p><br/></p><p>When the code runs, it results in a System Limit Exception with the error message: Apex heap size too large.</p><p>What should be done to fox this error?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use a SOQL for loop to process the data.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Convert the List into a set.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use Limits.getLimitHeapSize().</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use a try/catch block to catch the error.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145488",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A company wants to run different logic based on an Opportunity&#39;s record type.\nWhich code segment handles this request and follows best practices?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>RecordType recType_New = [SELECT Id, Name FROM RecordType WHERE SObjectType = &#39;Opportunity&#39; AND IsActive = TRUE and Name = &#39;New&#39; LIMIT 1];</p><p>RecordType recType_Renewal = [SELECT Id, Name FROM RecordType WHERE SObjectType = &#39;Opportunity&#39; AND IsActive = TRUE and Name = &#39;Renewal&#39; LIMIT 1];</p><p>for( Opportunity o: Trigger.new) {</p><p>&nbsp; &nbsp; &nbsp;if(o.RecordTypeId == recType_New) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic Record Type 1",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Id recType_New = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(&#39;New&#39;).getRecordTypeId();</p><p>RecordType recType_Renewal = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(&#39;Renewal&#39;).getRecordTypeId();</p><p>for( Opportunity o: Trigger.new) {</p><p>&nbsp; &nbsp; &nbsp;if(o.RecordTypeId == recType_New) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic Record Type 1</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp;else if(o.RecordTypeI",
+          "isRight": true
+        },
+        {
+          "describe": "<p>for( Opportunity o: Trigger.new) {</p><p>&nbsp; &nbsp; &nbsp;if(o.RecordTypeId == &#39;012500000009WAr&#39;) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic Record Type 1</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp;else if(o.RecordTypeId == &#39;012500000009WBe&#39;) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic for Record Type 2</p><p>&nbsp; &nbsp; &nbsp;}</p><p>}</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>List&lt;RecordType&gt; recTypes = [SELECT Id, Name FROM RecordType WHERE SObjectType = &#39;Opportunity&#39; AND IsActive = True];</p><p>Map&lt;String, Id&gt; recTypeMap = new Map&lt;String, Id&gt;();</p><p>for( RecordType rt: recTypes) {</p><p>&nbsp; &nbsp; recTypeMap.put(rt.Name, rt.Id);</p><p>}</p><p>for( Opportunity o: Trigger.new) {</p><p>&nbsp; &nbsp; &nbsp;if(o.RecordTypeId == recTypeMap.get(&#39;New&#39;)) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic Record Type 1</p><p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145430",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Line&nbsp; 1&nbsp; trigger ContactTrigger on Contact (before insert, before update)&nbsp;</p><p>Line&nbsp; 2&nbsp; {</p><p>Line&nbsp; 3&nbsp; &nbsp; &nbsp; &nbsp; Map&lt;Id, Account&gt; accountMap = new Map&lt;Id, Account&gt;();</p><p>Line&nbsp; 4&nbsp; &nbsp; &nbsp; &nbsp; for(Contact c : Trigger.new)</p><p>Line&nbsp; 5&nbsp; &nbsp; &nbsp; &nbsp; {</p><p>Line&nbsp; 6&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Account a = [SELECT Id, Name, BillingCountry FROM Account WHERE Id := c.AccountId];</p><p>Line&nbsp; 7&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; accountMap.put(a.Id, a);</p><p>Line&nbsp; 8&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>line&nbsp; &nbsp;9</p><p>Line 10&nbsp; &nbsp; &nbsp; &nbsp; //Do stuff with accountMap</p><p>Line 11&nbsp; &nbsp; &nbsp; &nbsp; for(Contact c : Trigger.new)</p><p>Line 12&nbsp; &nbsp; &nbsp; &nbsp; {</p><p>Line 13&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Account a = accountMap.get(c.AccountId);</p><p>Line 14&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(a != null)&nbsp;</p><p>Line 15&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p><p>Line 16&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;c.BillingCountry = a.BillingCountry;</p><p>Line 17&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>Line 18&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p><p>Line 19</p><p>Line 20&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; update Trigger.new;</p><p>Line 21&nbsp; }</p><p>Refer to the code segment above</p><p>When following best practices for writing Apex triggers, which two lines are wrong or cause for concern?Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Line 6</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Line 11</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Line 16</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Line 20</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145428",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the code snippet below:</p><p><br/></p><p>public static void updateCreditMemo(String customerId, Decimal newAmount) {</p><p>&nbsp; &nbsp; &nbsp;List&lt;Credit_Memo__c&gt; toUpdate = new List&lt;Credit_Memo__c&gt;( ) ;</p><p>&nbsp; &nbsp; &nbsp;for (Credit_Memo__c creditMemo : [Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = : customerId LIMIT 50]) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;creditMemo.Amount__c = newAmount;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;toUpdate.add(creditMemo) ;</p><p>&nbsp; &nbsp; &nbsp; }</p><p>Database.update(toUpdate, false);</p><p>}</p><p><br/></p><p>A custom object called Credit_Memo__c exists in a Salesforce environment. As part of a new feature development that retrieves and manipulates this type of record, the developer needs to ensure race conditions are prevented when a set of records are modified within an Apex transaction.</p><p><br/></p><p>In the preceding Apex code, how can the developer alter the query statement to use SOQL features to prevent race conditions within a transaction?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = :customerId LIMIT 50 FOR UPDATE]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = :customerId FOR REFERENCE LIMIT 50]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = :customerId LIMIT 50 FOR PREFERENCE]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The executeBatch must fall within test.startTest() and test.stopTest().</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145425",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_for_update.htm</p>"
+    },
+    {
+      "describe": "<p>Refer to the code snippet below:</p><p>01&nbsp; public void createChildRecord(String externalIdenifier) {</p><p>02&nbsp; &nbsp; &nbsp; Account parentAccount;</p><p>03</p><p>04&nbsp; &nbsp; &nbsp; Contact newContact = new contact();</p><p>05&nbsp; &nbsp; &nbsp; newContact.Account = parentAccount;</p><p>06</p><p>07&nbsp; &nbsp; &nbsp; &nbsp;insert(newContact);</p><p>08&nbsp; }</p><p>As part of an integration development effort, a developer is tasked to create an Apex method that solely relies on the use of foreign&nbsp;</p><p>identifiers in order to relate new contact records to existing Accounts in Salesforce. The account object contains a field marked as&nbsp;</p><p>an external ID, the API Name of this field is Legacy_Id__c.</p><p>What is the most efficient way to instantiate the parentAccount variable on line 02 to ensure the newly created contact is properly&nbsp;</p><p>related to the Account?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Account parentAccount = [SELECT Id FROM Account WHERE Legacy_Id__c =:externalIdentifier].Id;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Account parentAccount = new Account (Legacy_Id__c =externalIdentifier);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Account parentAccount = [SELECT Id FROM Account WHERE Legacy_Id__c =:externalIdentifier];</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Account parentAccount = new Account();</p><p>parentAccount.Id =externalIdentifier;</p><p><br/></p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145424",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>trigger AssignOwnerByRegion on Account(before insert, before update)</p><p>{</p><p>&nbsp; &nbsp;List&lt;Account&gt; accountList = new List&lt;Account&gt;();</p><p>&nbsp; &nbsp;for(Account anAccount : trigger.new )</p><p>&nbsp; &nbsp;{</p><p>&nbsp; &nbsp; &nbsp; Region__c theRegion = [SELECT Id, Name, Region_Manager__c FROM Region__c WHERE Name= :anAccount.Region_Name__c];</p><p>&nbsp; &nbsp; &nbsp; anAccount.OwnerId = theRegion.Region_Manager__c;</p><p>&nbsp; &nbsp; &nbsp; accountList.add(anAccount);</p><p>&nbsp; &nbsp;}</p><p>&nbsp; &nbsp;update accountList;</p><p>}</p><p><br/></p><p>Consider the above trigger intended to assign the Account to the manager of the Account&#39;s region.</p><p>Which two changes should a developer make in this trigger to adhere to best practices? Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Remove the last line updating accountList as it is not needed.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Move the Region__c query to outside the loop.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use a Map accountMap instead of List accountList.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use a Map to cache the results of the Region__c query by Id.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145392",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A company has code to update a Request and Request Lines and make a callout to their external ERP system&#39;s REST endpoint with the updated records.</p><p><br/></p><p>public void updateAndMakeCallout(Map&lt;Id, Request__c&gt; reqs,</p><p>Map&lt;Id, Request_Line__c&gt; reqLines) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Savepoint sp = Database.setSavepoint( );</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;try {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;insert reqs.values( );</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;insert reqLines.values( );</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HttpResponse response = CalloutUtil.makeRestCallout(reqs.keySet( ), reqLines.keySet( ));</p><p>&nbsp; &nbsp; &nbsp; &nbsp;} catch (Exception e) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Database.rollback (sp) ;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.debug(e) ;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>}</p><p><br/></p><p>The CalloutUtil.makeRestCallout fails with a &#39;You have uncommitted work pending. Please commit or rollback before calling out&#39; error.</p><p><br/></p><p>What should be done to address the problem?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Remove the Database.setSavepoint and Database.rollback.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Change the CalloutUtil.makeRestCallout to an @future method.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Change the CalloutUtil.makeRestCallout to an @InvocableMethod method.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Move the CalloutUtil.makeRestCallout method call below the catch block.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145391",
+      "analysis": ""
+    },
+    {
+      "describe": "How should a developer reference a third-party JavaScript library from a Lightning component?",
+      "answerOptions": [
+        {
+          "describe": "From an asset file",
+          "isRight": false
+        },
+        {
+          "describe": "From a document",
+          "isRight": false
+        },
+        {
+          "describe": "From a static resource",
+          "isRight": true
+        },
+        {
+          "describe": "From a third-party URL",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147317",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer created a Lightning web component that uses a lightning-record-edit-form to collect information about Leads. Users complain that they only see one error message at a time when they save a Lead record.\n\n Which best practice should the developer use to perform the validations, and allow more than one error message to be displayed simultaneously?",
+      "answerOptions": [
+        {
+          "describe": "Try/catch/finally block",
+          "isRight": false
+        },
+        {
+          "describe": "Apex trigger",
+          "isRight": false
+        },
+        {
+          "describe": "Validation rules",
+          "isRight": false
+        },
+        {
+          "describe": "External JavaScript library",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019147316",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is working on a set of custom Aura components that can be individually added to a home page. One of the components, c:searchAccounts, allows users to search for an Account and then select a specific found Account. Once selected, the other components should get other information related to the selected Account and display it.\nWhich event should the c:searchAccounts component fire to make it known that an Account is selected?",
+      "answerOptions": [
+        {
+          "describe": "An application event",
+          "isRight": false
+        },
+        {
+          "describe": "A refreshView event",
+          "isRight": false
+        },
+        {
+          "describe": "A publish event",
+          "isRight": false
+        },
+        {
+          "describe": "A component event",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019147314",
+      "analysis": ""
+    },
+    {
+      "describe": "GetCloudy Consulting(GCC) has a multitude of servers that host its customers' websites. GCC wants to provide a servers status page that is always on display in its call center. It should update in real time with any changes made to any servers. To accommodate this on the server side, a developer created a Server Update platform event.\nThe developeer is working on a Lightning web component to display the information.\nWhat should be added to the Lightning web component to allow the developer to interact with the Server Update platform event?",
+      "answerOptions": [
+        {
+          "describe": "import { subscribe, unsubscribe, onError } from 'lightning/pubsub'",
+          "isRight": false
+        },
+        {
+          "describe": "import { subscribe, unsubscribe, onError } from 'lightning/empApi'",
+          "isRight": true
+        },
+        {
+          "describe": "import { subscribe, unsubscribe, onError } from 'lightning/ServerUpdate'",
+          "isRight": false
+        },
+        {
+          "describe": "import { subscribe, unsubscribe, onError } from 'lightning/MessageChannel'",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146638",
+      "analysis": "https://developer.salesforce.com/docs/component-library/bundle/lightning-emp-api/documentation"
+    },
+    {
+      "describe": "Which annotation should a developer use on an Apex method to make it available to be wired to a property in a Lightning web component?",
+      "answerOptions": [
+        {
+          "describe": "@RemoteAction",
+          "isRight": false
+        },
+        {
+          "describe": "@AuraEnabled(cacheable=true)",
+          "isRight": true
+        },
+        {
+          "describe": "@RemoteAction (cacheable=true)",
+          "isRight": false
+        },
+        {
+          "describe": "@AuraEnabled",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146576",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is tasked with creating a Lightning web component that allows users to create a Case for a selected product, directly from a custom Lightning page. The input fields in the component are displayed in a non-linear fashion on top of an image of the product to help the user better understand the meaning of the fields.\nWhich two components should a developer use to implement the creation of the Case from the Lightning web component?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "lightning-record-edit-form",
+          "isRight": true
+        },
+        {
+          "describe": "lightning-input",
+          "isRight": false
+        },
+        {
+          "describe": "lightning-record-form",
+          "isRight": true
+        },
+        {
+          "describe": "lightning-input-field",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146571",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is building a Lightning web component that searches for Contacts and must communicate the search results to other Lightning web components when the search completes.\nWhat should the developer do to implement the communication?",
+      "answerOptions": [
+        {
+          "describe": "Publish an event on an event channel.",
+          "isRight": false
+        },
+        {
+          "describe": "Fire an application event.",
+          "isRight": false
+        },
+        {
+          "describe": "Publish a message on a message channel",
+          "isRight": true
+        },
+        {
+          "describe": "Fire a custom component event.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146568",
+      "analysis": ""
+    },
+    {
+      "describe": "A custom Aura component, AddressValidation.cmp,exists in the system. The Salesforce admin for the organization is unable to find and select the component while creating a quick action for the Account sObject.\nWhat should the developer do to ensure the AddressValidation.cmp can be selected when creating a quick action?",
+      "answerOptions": [
+        {
+          "describe": "Ensure the component implements the force:lightningQuickAction interface.",
+          "isRight": true
+        },
+        {
+          "describe": "Ensure the component implements the lightning:acticnoverride interface.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure the component implements the force:hasReoordId interface.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure the access attribute of the aura:component tag is set to Global.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146546",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is tasked with creating an application-centric feature on which end-users can access and update information. This feature must be available in Lightning Experience while working seamlessly in multiple device form factors, such as desktops, phones, and tablets. Additionally, the feature must support Addressable URL Tabsand interact with the Salesforce Console APIs.\nWhat are two approaches a developer can take to build the application and support the business requirements?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Create the application using Aura Components.",
+          "isRight": true
+        },
+        {
+          "describe": "Create the application using Lightning web Components wrapped in Aura Components.",
+          "isRight": true
+        },
+        {
+          "describe": "Create the application using Lightning Experience Builder.",
+          "isRight": false
+        },
+        {
+          "describe": "Create the application using Aura Components wrapped in Lightning web Components.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146545",
+      "analysis": ""
+    },
+    {
+      "describe": "When the sales team views an individual customer record, they need to see recent interactions for the customer.\nThese interactions can be sales orders, phone calls, or Cases. The date range for recent interactions will be different for every customer record type.\nHow can this be accomplished?",
+      "answerOptions": [
+        {
+          "describe": "Use Lightning Flow to read the customer's record type, and then do a dynamic query for recent interactions and display on the View page.",
+          "isRight": true
+        },
+        {
+          "describe": "Use a Lightning component to query and display interactions based on record type that is passed in using a design : attribute from the Lightning page.",
+          "isRight": false
+        },
+        {
+          "describe": "Use batch Apex to query for the most recent interactions when the customer view screen is loaded.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a dynamic form on the customer record page to display recent interactions.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146539",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer wrote an Apex method to update a list of Contacts and wants to make it available for use by Lightning web components.\nWhich annotation should the developer add to the Apex method to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "@AuraEnabled",
+          "isRight": true
+        },
+        {
+          "describe": "@RemoteAction",
+          "isRight": false
+        },
+        {
+          "describe": "@RemoteAction(cacheable = true)",
+          "isRight": false
+        },
+        {
+          "describe": "@AuraEnabled(cacheable = true)",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146513",
+      "analysis": ""
+    },
+    {
+      "describe": "The Account edit button must be overridden in an org where a subset of users still use Salesforce Classic. The org already has a Lightning Component that will do the work necessary for the override, and the client wants to be able to reuse it.\nHow should a developer implement this?",
+      "answerOptions": [
+        {
+          "describe": "Override the edit button for Lightning with a Lightning Component; and for Classic, override the edit button with a Visualforce page that contains the Lightning Component.",
+          "isRight": true
+        },
+        {
+          "describe": "Override the edit button for both Lightning and Classic with a Lightning Component.",
+          "isRight": false
+        },
+        {
+          "describe": "Override the edit button for Lightning with a Lightning Page; and for Classic, override the edit button with a Visualforce page that contains the Lightning Component.",
+          "isRight": false
+        },
+        {
+          "describe": "Override the edit button for both Lightning and Classic with a new Visualforce page.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146512",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is tasked with creating a Lightning web component that is responsive on various devices.\nWhich two components should help accomplish this goal?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Lightnig-Input-location",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning-navigation",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning-layout",
+          "isRight": true
+        },
+        {
+          "describe": "Lightning-layout-item",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146484",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is asked to create a Lightning web component that will be invoked via a button on a record page. The component must be displayed in a modal dialog.\nWhich three steps should the developer take to achieve this?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Add a targetConfig and set targets to lightning_ RecordAction.",
+          "isRight": true
+        },
+        {
+          "describe": "In tagetConfigs, add lightning_ AppPage as a target.",
+          "isRight": false
+        },
+        {
+          "describe": "Set actionType to ScreenAction.",
+          "isRight": true
+        },
+        {
+          "describe": "In targets, add lightning RecordAction as a target.",
+          "isRight": true
+        },
+        {
+          "describe": "Set eventType to Action.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146480",
+      "analysis": ""
+    },
+    {
+      "describe": "How can a developer efficiently incorporate multiple JavaScript libraries, such as JQuery and MomentJS, in a Lightning component?",
+      "answerOptions": [
+        {
+          "describe": "Use JavaScript remoting and script tags.",
+          "isRight": false
+        },
+        {
+          "describe": "Implement the libraries in separate helper files.",
+          "isRight": false
+        },
+        {
+          "describe": "Join multiple assets from a static resource.",
+          "isRight": true
+        },
+        {
+          "describe": "Do Use CDNs with script attributes.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146450",
+      "analysis": ""
+    },
+    {
+      "describe": "A Lightning web component exists in the system and displays information about the record in context as a modal. Salesforce \nadministrators need to use this component within the Lightning App Builder.\nWhich two settings should the developer configure within the xml resource file? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Set the IsVisible attribute to True.",
+          "isRight": false
+        },
+        {
+          "describe": "Set the IsExposed attribute to True.",
+          "isRight": true
+        },
+        {
+          "describe": "Sprcify the target to be lightning__AppPage.",
+          "isRight": false
+        },
+        {
+          "describe": "Specify the target to be lightning__RecordPage.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146416",
+      "analysis": "https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.reference_configuration_tags"
+    },
+    {
+      "describe": "A company has a lightning Page with many Lightning Components, some that cache reference data. It Is reported that the page does not \nalways show the most current reference data.\n\nWhat can a developer use to analyze and diagnose the problem In the Lightning Page?",
+      "answerOptions": [
+        {
+          "describe": "Salesforce Lightning Inspector Event Log Tab",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce Lightning Inspector Transactions Tab",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce Lightning Inspector Storage Tab",
+          "isRight": true
+        },
+        {
+          "describe": "Salesforce Lightning Inspector Actions Tab",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146415",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is writing a Visualforce page that queries accounts in the system and presents a data table with the results. The users want to be \nable to filter the results based on up to five fields. However, the users want to pick the five fields to use as filter fields when they run the page. \n\nWhich Apex code feature is required to facilitate this solution?",
+      "answerOptions": [
+        {
+          "describe": "Streaming API",
+          "isRight": false
+        },
+        {
+          "describe": "Dynamic SOQL",
+          "isRight": true
+        },
+        {
+          "describe": "Report API",
+          "isRight": false
+        },
+        {
+          "describe": "Dynamic variable binding",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146391",
+      "analysis": ""
+    },
+    {
+      "describe": "Which code statement includes an Apex method named updateAccounts in the class AccountController for use in a Lightning web \ncomponent?",
+      "answerOptions": [
+        {
+          "describe": "import updateAccounts from '@salesforce/apex/AccountController';",
+          "isRight": false
+        },
+        {
+          "describe": "import updateAccounts from 'AccountController';",
+          "isRight": false
+        },
+        {
+          "describe": "import updateAccounts from 'AccountController.updateAccounts';",
+          "isRight": false
+        },
+        {
+          "describe": "import updateAccounts from '@salesforce/apex/AccountController.updateAccounts';",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146385",
+      "analysis": "https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.apex_import_method"
+    },
+    {
+      "describe": "A lead developer for a Salesforce organization needs to develop a page-centric application that allows the user to interact with multiple objects related to a Contact. The application needs to implement a third-party JavaScript framework such as Angular, and must be made available in both Classic and Lightning Experience.\nGiven these requirements, what is the recommended solution to develop the application?",
+      "answerOptions": [
+        {
+          "describe": "Aura Components",
+          "isRight": true
+        },
+        {
+          "describe": "Lightning Web Components",
+          "isRight": false
+        },
+        {
+          "describe": "Visualforce",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning Experience Builder",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146383",
+      "analysis": ""
+    },
+    {
+      "describe": "A Visualforce Page throws an 'Attempt to dereference a null object' error for a Contact, \nWhat change in the controller will fix the error?",
+      "answerOptions": [
+        {
+          "describe": "Declare a static final Contact at the top of the controller.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a condition in the getter to return a new Contact if it is null.",
+          "isRight": true
+        },
+        {
+          "describe": "Change the getter's signature to be static Contact.",
+          "isRight": false
+        },
+        {
+          "describe": "Change the setter's signature to return a Contact",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146358",
+      "analysis": ""
+    },
+    {
+      "describe": "An Aura component functions in preview mode and needs to be used inside a Lightning App Builder page, but itis not available.\nWhat change should be applied to the component?",
+      "answerOptions": [
+        {
+          "describe": "Refresh the sandbox and upgrade it to the latest API version.",
+          "isRight": false
+        },
+        {
+          "describe": "Delete the component, metadata, and Apex controller and recreate them.",
+          "isRight": false
+        },
+        {
+          "describe": "Look for errors in the logic in the JavaScript controller.",
+          "isRight": false
+        },
+        {
+          "describe": "Expose it in the markup using the implements and access attributes.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146356",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer wants to use an Aura component with a custom action.\nWhat should be considered in order to do this?",
+      "answerOptions": [
+        {
+          "describe": "The class \"slds-modal__container\" must be added to the top-level element of the component.",
+          "isRight": false
+        },
+        {
+          "describe": "The component's JavaScript controller must handle a method on initialization.",
+          "isRight": false
+        },
+        {
+          "describe": "A default value must be provided for each component attribute marked as required.",
+          "isRight": true
+        },
+        {
+          "describe": "The component must implement the flexipage: availableForRecordHome interface. ",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146355",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/components_using_lex_s1_config_action.htm"
+    },
+    {
+      "describe": "A developer created a Lightning web component that uses a lightning-record-edit-form to collect information about Leads. Users complain that they only see one error message at a time when they save a Lead record.\n\n Which best practice should the developer use to perform the validations, and allow more than one error message to be displayed simultaneously?",
+      "answerOptions": [
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Custom validation rules",
+          "isRight": false
+        },
+        {
+          "describe": "Client-side validation",
+          "isRight": true
+        },
+        {
+          "describe": "Apex REST",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146351",
+      "analysis": ""
+    },
+    {
+      "describe": "Which technique can run custom logic when an Aura Component is loaded?",
+      "answerOptions": [
+        {
+          "describe": "Use the standard doInit function in the controller.",
+          "isRight": false
+        },
+        {
+          "describe": "Use an aura:handler \"init\" event to call a function.",
+          "isRight": true
+        },
+        {
+          "describe": "Call $A.enqueueAction passing in the method to call.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the connectedCallback() method.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145676",
+      "analysis": ""
+    },
+    {
+      "describe": "A lead developer is creating tests for a Lightning web component. The component re-renders when a property called bypassSelection changes its value.\n\nWhat should the developer use to test that the component re-renders successfully when the property changes?",
+      "answerOptions": [
+        {
+          "describe": "Promise.resolve()",
+          "isRight": true
+        },
+        {
+          "describe": "Window.setInterval()",
+          "isRight": false
+        },
+        {
+          "describe": "Window.setState()",
+          "isRight": false
+        },
+        {
+          "describe": "dispatchEvent (new CustomEvent ('bypassSelection'))",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145675",
+      "analysis": ""
+    },
+    {
+      "describe": "What is a benefit of JavaScript remoting over Visualforce Remote Objects?",
+      "answerOptions": [
+        {
+          "describe": "Does not require any JavaScript code",
+          "isRight": false
+        },
+        {
+          "describe": "Supports complex server-side application logic",
+          "isRight": true
+        },
+        {
+          "describe": "Does not require any Apex code",
+          "isRight": false
+        },
+        {
+          "describe": "Allows for specified re-render targets",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145645",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_js_remoting_compare_remote_objects.htm"
+    },
+    {
+      "describe": "Part of a custom Lightning Component displays the total number of Opportunities in the org, which is in the millions. The Lightning\nComponent uses an Apex Controller to get the data it needs. \n\nWhat is the optimal way for a developer to get the total number of Opportunities for the Lightning Component? ",
+      "answerOptions": [
+        {
+          "describe": "SUM() SOQL aggregate query on the Opportunity object ",
+          "isRight": false
+        },
+        {
+          "describe": "SOQL for loop that counts the number of Opportunities records ",
+          "isRight": false
+        },
+        {
+          "describe": "COUNT() SOQL aggregate query on the Opportunity object ",
+          "isRight": true
+        },
+        {
+          "describe": "Apex Batch job that counts the number of Opportunity records ",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145644",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer created and tested a Visualforce page in their developer sandbox, but now receives reports that user encounter ViewState errors when using it in Production.\nWhat should the developer ensure to correct these errors?",
+      "answerOptions": [
+        {
+          "describe": "Ensure queries do not exceed governor limits.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure profiles have access to the Visualforce page.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure properties are marked as private.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure variables are marked as Transient.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145640",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_keywords_transient.htm"
+    },
+    {
+      "describe": "A developer must perform a complex SOQL query that joins two objects in a Lightning component.\nHow can the Lightning component execute the query?",
+      "answerOptions": [
+        {
+          "describe": "Write the query in a custom Lightning web component wrapper and invoke from the Lightning component.",
+          "isRight": false
+        },
+        {
+          "describe": "Invoke an Apex class with the method annotated as @AuraEnabled to perform the query.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Process Builder to execute the query and invoke from the Lightning component.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Salesforce Streaming API to perform the SOQL query.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145584",
+      "analysis": ""
+    },
+    {
+      "describe": "The head of recruiting at UC wants to provide all internal users the ability to search for open positions by role, department, and location via a new recruiting app. In addition to search, users of the app should be able to refer a friend, apply for a position, and review the status of their crrert submissions. The app should be made available in Salesforce Mobile, but offline access is not required.\n\nGiven these requirements, what is the recommended approach to develop the app?",
+      "answerOptions": [
+        {
+          "describe": "Lightning Experience Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning Web Components",
+          "isRight": true
+        },
+        {
+          "describe": "Visualforce",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce SDK",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145578",
+      "analysis": ""
+    }
+  ],
+  "hashCode": "-283339520"
+}

@@ -1,0 +1,260 @@
+{
+  "title": "逻辑、流程自动化和集成2",
+  "category": "Dev2-自由部落侠",
+  "questions": [
+    {
+      "describe": "<p>A developer created a Lightning web component for the Account record page that displays the five recently contacted Contacts for an Account. The Apex method, getRecentContacts, returns a list of Contacts and will be wired to a property in the component.</p><p><br/></p><p>01:</p><p>02:&nbsp; &nbsp; public class ContactFetcher&nbsp; {</p><p>03:</p><p>04:&nbsp; &nbsp; &nbsp; &nbsp; static List&lt;Contact&gt; getRecentContacts(Id accountId) {</p><p>05:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; List&lt;Contact&gt; contacts = getFiveMostRecent(accountId) ;</p><p>06:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return contacts;</p><p>07:&nbsp; &nbsp; &nbsp; &nbsp; }</p><p>08:</p><p>09:&nbsp; &nbsp; &nbsp; &nbsp; private static List&lt;Contact&gt; getFiveMostRecent(Id accountId) {</p><p>10:&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // ...impletation...</p><p>11:&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>12:&nbsp; &nbsp; }</p><p><br/></p><p>Which two lines must change in the above code to make the Apex method able to be wired? Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add public to line 04.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add @AuraEnabled(cacheable=true) to line 03.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Remove private from line 09.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add @AuraEnabled(cacheable=true) to line 08.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145547",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>The Account object has a field, Audit_Code__c, that is used to specify what type of auditing the Account needs and a Lookup to User, Auditor__c, that is the assigned auditor.</p><p>When an Account is initially created, the user specifies the Audit_Code__c. Each User in the org has a unique text field, Audit_Code__c, that is used to automatically assign the correct user to the Account&#39;s Auditor__c field.</p><p><br/></p><p>trigger AccountTrigger on Account(before insert) {</p><p>&nbsp; &nbsp; AuditAssigner.setAuditor(Trigger.new);</p><p>}</p><p><br/></p><p>public class AuditAssigner{</p><p>&nbsp; &nbsp; public static void setAuditor(List&lt;Account&gt; accounts) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; for(User u : [SELECT Id, Audit_Code__c FROM User]) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;for(Account a : accounts) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(u.Audit_Code__c == a.Audit_Code__c) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;a.Auditor__c = u.Id;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp; &nbsp; }</p><p>&nbsp; &nbsp; &nbsp;}</p><p>}</p><p>What should be changed to most optimize the code&#39;s efficiency? Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Build a Map&lt;String, List&lt;Account&gt;&gt; of audit code to accounts.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add an initial SOQL query to get all distinct audit codes.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Build a Map&lt;Id, List&lt;String&gt;&gt; of Account Id to audit codes.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add a WHERE clause to the SOQL query to filter on audit codes.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145545",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Given the following code:</p><p><br/></p><p>for ( Contact c : SELECT Id, LastNaze FROM Contact WHERE CreatedDate = TODAY] )</p><p>{</p><p>Account a = [SELECT Id，Name FROM Account WHERE CreatedDate = TODAY LIMIT 5]；</p><p>c.AccountId = a.Id;</p><p>update c;</p><p>}</p><p><br/></p><p>Assuming there were 10 Contacts and five Accounts created today, what is the expected result?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>System.QueryException: List has more than one row for Assignment on Account</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>System.LimitException: Too many SOQL Queries on Contact</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>System.QueryException: Too many DML Statement errors on Contact</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>System.LimitException: Too many SOQL Queries on Account</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145519",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer created an Apex class that updates an Account based on input from a Lightning web component that is used to register an Account.The update to the Account should only be made if it has not already been registered.</p><p><br/></p><p>Account = [SELECT Id,Is_Registered_c FROM Account WHERE Id= : accountId]:</p><p>if (!account.Is_Registered_c){</p><p>Account.Is_Registered_c = true</p><p>//...set other account fields...&nbsp;&nbsp;</p><p>update account;</p><p>}</p><p><br/></p><p>What should the developer do to ensure that users do not overwrite each other&#39;s updates to the same Account if they make updates at the same time?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use Database. update (account, false)</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add a try/catch block around the update.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use upsert instead of update.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use FOR UPDATE in a SOQL query.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145490",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the code below:</p><p><br/></p><p>List&lt;opportunity&gt; opportunities = [ELECT Id, Amount from opportunity ];</p><p>tor (opportunity opp: opportunities) {</p><p>// perform operation here</p><p>}</p><p><br/></p><p>When the code runs, it results in a System Limit Exception with the error message: Apex heap size too large.</p><p>What should be done to fox this error?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use a SOQL for loop to process the data.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Convert the List into a set.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use Limits.getLimitHeapSize().</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use a try/catch block to catch the error.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145488",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A company wants to run different logic based on an Opportunity&#39;s record type.\nWhich code segment handles this request and follows best practices?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>RecordType recType_New = [SELECT Id, Name FROM RecordType WHERE SObjectType = &#39;Opportunity&#39; AND IsActive = TRUE and Name = &#39;New&#39; LIMIT 1];</p><p>RecordType recType_Renewal = [SELECT Id, Name FROM RecordType WHERE SObjectType = &#39;Opportunity&#39; AND IsActive = TRUE and Name = &#39;Renewal&#39; LIMIT 1];</p><p>for( Opportunity o: Trigger.new) {</p><p>&nbsp; &nbsp; &nbsp;if(o.RecordTypeId == recType_New) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic Record Type 1",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Id recType_New = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(&#39;New&#39;).getRecordTypeId();</p><p>RecordType recType_Renewal = Schema.SObjectType.Opportunity.getRecordTypeInfosByName().get(&#39;Renewal&#39;).getRecordTypeId();</p><p>for( Opportunity o: Trigger.new) {</p><p>&nbsp; &nbsp; &nbsp;if(o.RecordTypeId == recType_New) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic Record Type 1</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp;else if(o.RecordTypeI",
+          "isRight": true
+        },
+        {
+          "describe": "<p>for( Opportunity o: Trigger.new) {</p><p>&nbsp; &nbsp; &nbsp;if(o.RecordTypeId == &#39;012500000009WAr&#39;) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic Record Type 1</p><p>&nbsp; &nbsp; &nbsp;}</p><p>&nbsp; &nbsp; &nbsp;else if(o.RecordTypeId == &#39;012500000009WBe&#39;) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic for Record Type 2</p><p>&nbsp; &nbsp; &nbsp;}</p><p>}</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>List&lt;RecordType&gt; recTypes = [SELECT Id, Name FROM RecordType WHERE SObjectType = &#39;Opportunity&#39; AND IsActive = True];</p><p>Map&lt;String, Id&gt; recTypeMap = new Map&lt;String, Id&gt;();</p><p>for( RecordType rt: recTypes) {</p><p>&nbsp; &nbsp; recTypeMap.put(rt.Name, rt.Id);</p><p>}</p><p>for( Opportunity o: Trigger.new) {</p><p>&nbsp; &nbsp; &nbsp;if(o.RecordTypeId == recTypeMap.get(&#39;New&#39;)) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; //do some logic Record Type 1</p><p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145430",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Line&nbsp; 1&nbsp; trigger ContactTrigger on Contact (before insert, before update)&nbsp;</p><p>Line&nbsp; 2&nbsp; {</p><p>Line&nbsp; 3&nbsp; &nbsp; &nbsp; &nbsp; Map&lt;Id, Account&gt; accountMap = new Map&lt;Id, Account&gt;();</p><p>Line&nbsp; 4&nbsp; &nbsp; &nbsp; &nbsp; for(Contact c : Trigger.new)</p><p>Line&nbsp; 5&nbsp; &nbsp; &nbsp; &nbsp; {</p><p>Line&nbsp; 6&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Account a = [SELECT Id, Name, BillingCountry FROM Account WHERE Id := c.AccountId];</p><p>Line&nbsp; 7&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; accountMap.put(a.Id, a);</p><p>Line&nbsp; 8&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>line&nbsp; &nbsp;9</p><p>Line 10&nbsp; &nbsp; &nbsp; &nbsp; //Do stuff with accountMap</p><p>Line 11&nbsp; &nbsp; &nbsp; &nbsp; for(Contact c : Trigger.new)</p><p>Line 12&nbsp; &nbsp; &nbsp; &nbsp; {</p><p>Line 13&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Account a = accountMap.get(c.AccountId);</p><p>Line 14&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(a != null)&nbsp;</p><p>Line 15&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {</p><p>Line 16&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;c.BillingCountry = a.BillingCountry;</p><p>Line 17&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}</p><p>Line 18&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p><p>Line 19</p><p>Line 20&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; update Trigger.new;</p><p>Line 21&nbsp; }</p><p>Refer to the code segment above</p><p>When following best practices for writing Apex triggers, which two lines are wrong or cause for concern?Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Line 6</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Line 11</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Line 16</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Line 20</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145428",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the code snippet below:</p><p><br/></p><p>public static void updateCreditMemo(String customerId, Decimal newAmount) {</p><p>&nbsp; &nbsp; &nbsp;List&lt;Credit_Memo__c&gt; toUpdate = new List&lt;Credit_Memo__c&gt;( ) ;</p><p>&nbsp; &nbsp; &nbsp;for (Credit_Memo__c creditMemo : [Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = : customerId LIMIT 50]) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;creditMemo.Amount__c = newAmount;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;toUpdate.add(creditMemo) ;</p><p>&nbsp; &nbsp; &nbsp; }</p><p>Database.update(toUpdate, false);</p><p>}</p><p><br/></p><p>A custom object called Credit_Memo__c exists in a Salesforce environment. As part of a new feature development that retrieves and manipulates this type of record, the developer needs to ensure race conditions are prevented when a set of records are modified within an Apex transaction.</p><p><br/></p><p>In the preceding Apex code, how can the developer alter the query statement to use SOQL features to prevent race conditions within a transaction?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = :customerId LIMIT 50 FOR UPDATE]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = :customerId FOR REFERENCE LIMIT 50]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = :customerId LIMIT 50 FOR PREFERENCE]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The executeBatch must fall within test.startTest() and test.stopTest().</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145425",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_for_update.htm</p>"
+    },
+    {
+      "describe": "<p>Refer to the code snippet below:</p><p>01&nbsp; public void createChildRecord(String externalIdenifier) {</p><p>02&nbsp; &nbsp; &nbsp; Account parentAccount;</p><p>03</p><p>04&nbsp; &nbsp; &nbsp; Contact newContact = new contact();</p><p>05&nbsp; &nbsp; &nbsp; newContact.Account = parentAccount;</p><p>06</p><p>07&nbsp; &nbsp; &nbsp; &nbsp;insert(newContact);</p><p>08&nbsp; }</p><p>As part of an integration development effort, a developer is tasked to create an Apex method that solely relies on the use of foreign&nbsp;</p><p>identifiers in order to relate new contact records to existing Accounts in Salesforce. The account object contains a field marked as&nbsp;</p><p>an external ID, the API Name of this field is Legacy_Id__c.</p><p>What is the most efficient way to instantiate the parentAccount variable on line 02 to ensure the newly created contact is properly&nbsp;</p><p>related to the Account?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Account parentAccount = [SELECT Id FROM Account WHERE Legacy_Id__c =:externalIdentifier].Id;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Account parentAccount = new Account (Legacy_Id__c =externalIdentifier);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Account parentAccount = [SELECT Id FROM Account WHERE Legacy_Id__c =:externalIdentifier];</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Account parentAccount = new Account();</p><p>parentAccount.Id =externalIdentifier;</p><p><br/></p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145424",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>trigger AssignOwnerByRegion on Account(before insert, before update)</p><p>{</p><p>&nbsp; &nbsp;List&lt;Account&gt; accountList = new List&lt;Account&gt;();</p><p>&nbsp; &nbsp;for(Account anAccount : trigger.new )</p><p>&nbsp; &nbsp;{</p><p>&nbsp; &nbsp; &nbsp; Region__c theRegion = [SELECT Id, Name, Region_Manager__c FROM Region__c WHERE Name= :anAccount.Region_Name__c];</p><p>&nbsp; &nbsp; &nbsp; anAccount.OwnerId = theRegion.Region_Manager__c;</p><p>&nbsp; &nbsp; &nbsp; accountList.add(anAccount);</p><p>&nbsp; &nbsp;}</p><p>&nbsp; &nbsp;update accountList;</p><p>}</p><p><br/></p><p>Consider the above trigger intended to assign the Account to the manager of the Account&#39;s region.</p><p>Which two changes should a developer make in this trigger to adhere to best practices? Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Remove the last line updating accountList as it is not needed.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Move the Region__c query to outside the loop.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use a Map accountMap instead of List accountList.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use a Map to cache the results of the Region__c query by Id.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145392",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A company has code to update a Request and Request Lines and make a callout to their external ERP system&#39;s REST endpoint with the updated records.</p><p><br/></p><p>public void updateAndMakeCallout(Map&lt;Id, Request__c&gt; reqs,</p><p>Map&lt;Id, Request_Line__c&gt; reqLines) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Savepoint sp = Database.setSavepoint( );</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;try {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;insert reqs.values( );</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;insert reqLines.values( );</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;HttpResponse response = CalloutUtil.makeRestCallout(reqs.keySet( ), reqLines.keySet( ));</p><p>&nbsp; &nbsp; &nbsp; &nbsp;} catch (Exception e) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Database.rollback (sp) ;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.debug(e) ;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>}</p><p><br/></p><p>The CalloutUtil.makeRestCallout fails with a &#39;You have uncommitted work pending. Please commit or rollback before calling out&#39; error.</p><p><br/></p><p>What should be done to address the problem?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Remove the Database.setSavepoint and Database.rollback.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Change the CalloutUtil.makeRestCallout to an @future method.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Change the CalloutUtil.makeRestCallout to an @InvocableMethod method.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Move the CalloutUtil.makeRestCallout method call below the catch block.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145391",
+      "analysis": ""
+    }
+  ],
+  "hashCode": "443919539"
+}

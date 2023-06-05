@@ -406,11 +406,11 @@
         },
         {
           "describe": "Add static to the server-side method signature.",
-          "isRight": false
+          "isRight": true
         },
         {
           "describe": "Decorate the server-side method with (static=true).",
-          "isRight": true
+          "isRight": false
         },
         {
           "describe": "Decorate the server-side method with (static=false).",

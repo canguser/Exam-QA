@@ -1,0 +1,667 @@
+{
+  "title": "用户界面2",
+  "category": "Dev2-自由部落侠",
+  "questions": [
+    {
+      "describe": "<p>A developer created a JavaScript library that simplifies the development of repetitive tasks and features and uploaded the library as a static resource called jsUtils in Salesforce. Another developer is coding a new Lightning web component(LWC) and wants to leverage the library.</p><p>Which statement properly loads the static resource within the LWC?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>const jsUtility = $A.get(&#39;$Resource.jsUtils&#39;);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>import jsUtilities from &#39;@salesforce/resourceUrl/jsUtils&#39;;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>import {jsUtilities} from &#39;@salesforce/resourceUrl/jsUtils&#39;;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning-require scripts=&quot;{!$Resource.jsUtils}&quot;/&gt;</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145554",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer is developing a reusable Aura component that will reside on an sObject Lightning page with the following HTML snippet:</p><p>&lt;aura:component implements=&quot;force:hasRecordId, flexipage:availableForAllPageTypes&quot;&gt;</p><p>&lt;div&gt;Hello!&lt;/div&gt;</p><p>&lt;/aura:component&gt;</p><p>How can the component&#39;s controller get the context of the Lightning page that the sObject is on without requiring additional test coverage?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add force:hasSobjectName to the implements attribute.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use the getSobjectType() method in an Apex class.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Create a design attribute and configure via App Builder.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Set the sObject type as a component attribute.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145553",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the Aura component below:</p><p>Component markup:</p><p>&lt;aura:component&gt;</p><p>&nbsp; &nbsp; &lt;aura:attribute name=&quot;contactInfo&quot; type=&quot;Object&quot;/&gt;</p><p>&nbsp; &nbsp; &lt;aura:attribute name=&quot;showContactInfo&quot; type=&quot;boolean&quot; default=&quot;true&quot;/&gt;</p><p>&nbsp; &nbsp; &lt;aura:handler name=&quot;init&quot; value=&quot;{!this}&quot; action=&quot;{!c.init}&quot;/&gt;</p><p><br/></p><p>&nbsp; &nbsp; &lt;!--- ...other code... ---&gt;</p><p>&nbsp; &nbsp; &lt;aura:if isTrue=&quot;{!v.showContactInfo}&quot;&gt;&nbsp;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;c:contactInfo value=&quot;{!v.contactInfo}&quot;/&gt;</p><p>&nbsp; &nbsp; &lt;/aura:if&gt;</p><p>&lt;/aura:component&gt;</p><p>Controller JS:</p><p>({</p><p>&nbsp; &nbsp; init: function(cmp, helper) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; //...other code...</p><p>&nbsp; &nbsp; &nbsp; &nbsp; var show = helper.getShowContactInfo();</p><p>&nbsp; &nbsp; &nbsp; &nbsp; cmp.set(&quot;v.showContactInfo&quot;, show);</p><p>&nbsp; &nbsp; },</p><p>&nbsp; &nbsp; //other code...</p><p>})</p><p>A developer receives complaints that the component loads slowly.</p><p>Which change can the developer implement to make the component perform faster?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Change the type of contactInfo to &quot;Map&quot;.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add a change event handler for showContactInfo.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Change the default for showContactInfo to &quot;false&quot;.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Move the contents of &lt;c:contactInfo&gt; into the component.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145552",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the Apex class below that defines a RemoteAction used on a Visualforce search page.</p><p>Global with sharing class MyRemoter {</p><p>&nbsp; &nbsp; public String accountName {get; set;}</p><p>&nbsp; &nbsp; public static Account account {get; set;}</p><p>&nbsp; &nbsp; public MyRemoter() {}</p><p>&nbsp; &nbsp;&nbsp;</p><p>&nbsp; &nbsp; @RemoteAction</p><p>&nbsp; &nbsp; global static Account getAccount(String accountName) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; account = [SELECT Id, Name, NumberOfEmployees FROM Account WHERE Name = :accountName];</p><p>&nbsp; &nbsp; &nbsp; &nbsp; return account;</p><p>&nbsp; &nbsp; }</p><p>}</p><p>Which code snippet will assert that the remote action returned the correct Account?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Account a = MyRemoter.getAccount(&#39;TestAccount&#39;);</p><p>System.assertEquals( &#39;TestAccount&#39;, a.Name);</p><p><br/></p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Account A = controller.getAccount(&#39;TestAccount&#39;);</p><p>System.assertEquals(&#39;TestAccount&#39;, a.Name);</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>MyRemoter remote = new MyRemoter();</p><p>Account a = remote.getAccount(&#39;TestAccount&#39;);</p><p>System.assertEquals(&#39;TestAccount&#39;, a.Name);</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>MyRemoter remote = new MyRemoter(&#39;TestAccount&#39;);</p><p>Account a = remote.getAccount();</p><p><br/></p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145550",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the following code snippets:</p><p>MyOpportunities.js</p><p>import { LightningElement, api, wire } from &#39;lwc&#39;;</p><p>import getOpportunities from &#39;@salesforce/apex/OpportunityController.findMyOpportunities&#39;;</p><p><br/></p><p>export default class MyOpportunities extends LightningElement {</p><p>&nbsp; &nbsp; @api userId;</p><p>&nbsp; &nbsp; @wire(getOpportunities, {oppOwner: &#39;$userId&#39;})</p><p>&nbsp; &nbsp; opportunities;</p><p>}</p><p><br/></p><p>OpportunityController.cls</p><p>public with sharing class OpportunityController {</p><p>&nbsp; &nbsp; @AuraEnabled</p><p>&nbsp; &nbsp; public static List&lt;Opportunity&gt; findMyOpportunities(Id oppOwner) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; return [</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SELECT Id, Name, Amount</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM Opportunity</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WHERE OwnerId =: oppOwner</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; WITH SECURITY_ENFORCED</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; LIMIT 10</p><p>&nbsp; &nbsp; &nbsp; &nbsp; ];</p><p>&nbsp; &nbsp; }</p><p>}</p><p>A developer is experiencing issues with a Lightning web component. The component must surface information about Opportunities owned by the currently logged-in user.</p><p>When the component is rendered, the following message is displayed: &quot;Error retrieving data&quot;.</p><p>Which modification should be implemented to the Apex class to overcome the issue?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use the Continuation=true attribute in the Apex method.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Edit the code to use the without sharing keyword in the Apex class.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Ensure the OWD for the Opportunity object is Public.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the Cacheable=true attribute in the Apex method.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145549",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Which three Visualforce components can be used to initiate Ajax behavior to perform partial page updates?Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;apex:form&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:commandButton&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:actionSupport&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:actionStatus&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:commandLink&gt;</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145548",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the component code and requirements below:</p><p><br/></p><p>&lt;lightning:layout multipleRows=&quot;true&quot;&gt;</p><p>&lt;lightning:layoutItem size=&quot;12&quot;&gt;(!v. account.name)&nbsp;</p><p>&lt;/lighting:layoutItem&gt;</p><p><br/></p><p>&lt;lightning:layoutItem size=&quot;12&quot;&gt; {!v.account .AccountNumber}</p><p>&lt;/lighting:layoutItem&gt;</p><p><br/></p><p>&lt;lightning:layoutItem size=&quot;12&quot;&gt; {!v.account .Industry}</p><p>&lt;/1ighting:layoutItem&gt;</p><p>&lt;/lightning:layout&gt;</p><p><br/></p><p>Requirements:</p><p>1. For mobile devices, the information should display in three rows.</p><p>2. For desktops and tablets, the information should display in a single row.</p><p>Requirement 2 is not displaying as desired.</p><p>Which option has the correct component code to meet the requirements for desktops and and tablets?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;lightning:layout multipleRows=&quot;true&quot;&gt;</p><p>&lt;lightning:layoutItem size=&quot;12&quot; largeDeviceSize=&quot;4&quot;&gt;{!v.account .Name}</p><p>&lt;/lighting:layoutItem&gt;</p><p><br/></p><p>&lt;1ightning:layoutItem size=&quot;12&quot; largeDeviceSize=&quot;4&quot;&gt;{!v.account .AccountNumber}</p><p>&lt;/lighting:layoutItem&gt;</p><p><br/></p><p>&lt;1ightning:IayoutItem size=&quot;12&quot; largeDeviceSize&quot;4&quot;&gt;{!v.account .Name}</p><p>&lt;/1ighting:layoutItem&",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning:layout multipleRows=&quot;true&quot;&gt;</p><p>&lt;lightning:layoutItem size=&quot;12&quot; mediumDeviceSize largeDeviceSize=&quot;4&quot;&gt;{!v.account .Name}</p><p>&lt;/1ighting:layoutItem&gt;</p><p><br/></p><p>&lt;lightning:layoutItem size=&quot;12&quot; mediumDeviceSize&nbsp;</p><p>largeDeviceSize=&quot;4&quot;&gt;{!v.account .AccountNumber}</p><p>&lt;/1ighting:layoutItem&gt;</p><p><br/></p><p>&lt;lightning:layoutItem size=&quot;12&quot; mediumDeviceSize largeDeviceSize=&qu",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning:layout multipleRows=&quot;true&quot;&gt;</p><p>&lt;lightning:layoutItem size=&quot;12&quot; mediumDeviceSize=&quot;6&quot;&gt;{!v.account .Name}</p><p>&lt;/1ighting:layoutItem&gt;</p><p><br/></p><p>&lt;lightning:layoutItem size=&quot;12&quot; mediumDeviceSize=&quot;6&quot;&gt;{!v.account .AccountNumber}</p><p>&lt;/1ighting:layoutItem&gt;</p><p><br/></p><p><br/></p><p>&lt;lightning:layoutItem size=&quot;12&quot; mediumDeviceSize=&quot;6&quot;&gt;{!v.account.Industry}</p><p>&lt;/1",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning:layout multipleRows=&quot;true&quot;&gt;</p><p>&lt;lightning:layoutItem size=&quot;12&quot; mediumDeviceSize=&quot;4&quot;&gt;{!v.account .Name}</p><p>&lt;/1ighting:layoutItem&gt;</p><p><br/></p><p>&lt;lightning:layoutItem size=&quot;12&quot; mediumDeviceSize=&quot;4&quot;&gt;{!v.account .AccountNumber}</p><p>&lt;/1ighting:layoutItem&gt;</p><p><br/></p><p>&lt;lightning:layoutItem size=&quot;12&quot; mediumDeviceSize=&quot;4&quot;&gt;{!v.account.Industry}</p><p>&lt;/1ighting:layo",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145523",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A company has a custom component that allows users to search for records of a certain object type by invoking an Apex Controller that returns a list of results based on the user&#39;s input. When the search is completed, a searchComplete event is fired, with the results put in a results attribute of the event. The component is designed to be used within other components and may appear on a single page more than once.</p><p>What is the optimal code that should be added to fire the event when the search has completed?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>var evt = component .getEvent (&quot;seacchcomplete&quot;);</p><p>evt.getParams (( results: results ));</p><p>evt.fire();</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>var evt = A.get(&quot;e.c.searchComplete&quot;);</p><p>evt.set (&quot;v.results&quot; , results);&nbsp;</p><p>evt.fire();</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>var evt = A.get(&quot;e.c.searchComplete&quot;);</p><p>evt.getParams (( results: results ));</p><p>evt.fire();</p><p><br/></p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>var evt = component .getEvent (&quot;seacchcomplete&quot;);</p><p>evt.set (&quot;v.results&quot; , results);&nbsp;</p><p>evt.fire();</p><p><br/></p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145520",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Universal Containers requested the addition of a third-party Map widget to an existing Lightning web component.\nWhich two actions should the developer take to implement this requirement?\nChoose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Import the third-party JavaScript module directly into the component.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use a content distribution network and include &lt;script&gt; &lt;/script&gt; tags in the component.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Import 1oadscript from lightning/platformResourceLoader.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Upload the third-party JavaScript library as a static resource that imports into the component.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145518",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer is creating a Lightning web component that displays a list of records in a lightning-datatable. After saving a new record to the database, the list is not updating.</p><p><br/></p><p>data;</p><p>@wire (recordList , { recordId : &#39;recordId&#39; } )</p><p>records (result) {</p><p>If (result.data){</p><p>this.data = result.data;</p><p>}else if(result.error) {</p><p>this. showToast (result.error);</p><p>&nbsp; &nbsp;}</p><p>}</p><p>What should the developer change in the code above for this to happen?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add the track decorator to the data variable.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Create a new variable to store the result and annotate it with @track.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Call refreshApex() on this.data.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Create a variable to store the result and call refreshApex().</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145516",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the following code snippet:</p><p><br/></p><p>import ( Lightning Element 1 from &#39;lwc’;</p><p>import getorders from &#39;@apex/OrderController. getAvailableorders&#39;;</p><p><br/></p><p>export default class OrderManagement extends LightningElement (</p><p>orders;</p><p>error;</p><p><br/></p><p>@wire (getOrders)</p><p>wiredOrders(( error, data )) {</p><p>if (data) {</p><p>this.orders = data;</p><p>this.error = undefined;</p><p>} else it (error) {</p><p>this.orders = data;</p><p>this.error = undefined;&nbsp; &nbsp;&nbsp;</p><p>}</p><p>}</p><p>}</p><p><br/></p><p>When the component is deployed, an error is reported.</p><p>Which two changes should the developer implement in the code to ensure the component deploys successfully?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>import getorders from &#39;@salesforce/apex/OrderController.getAvailab1eOrders&#39;;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>import { LightningElement, api } from &#39;lwc&#39;;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>import getOrders from &#39;@salesforce/apex/c.OrderController .getAvailableOrders&#39;;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>import { LightningElement, wire ) from &#39;lwc&#39;;</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145514",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Given the following containment hierarchy:</p><p>&lt;1-- myP acentComponent .html --&gt;</p><p>&lt;template&gt;</p><p>&lt;c-my-child-component&gt;&lt;/c-my-child-component&gt;</p><p>&lt;/template&gt;</p><p>What is the correct way to communicate the new value of a property named &quot;passthrough&quot; to my-parent-component If the property is defined within my-child-component?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>1et cEvent =new CustomEvent (Spassthrough);</p><p>this .dispatchEvent (cEvent);</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let cEvent = new customEvent (&#39;passthrough&#39; , {detail: &#39; this.passthrough&#39; });</p><p>this.dispatchEvent (cEvent) ;</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>let cEvent = new customEvent (&#39;passthrough&#39; , {detail: this.passthrough});</p><p>this.dispatchEvent (cEvent) ;</p><p><br/></p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>let cEvent = new customEvent (‘passthrough&#39;) ;</p><p>this.dispatchEvent (cEvent) ;</p><p><br/></p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145492",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the code snippet below:</p><p><br/></p><p>import fetchOpps from &#39;@salesforce/apex/OpportunitySearch.fetchopporunities&#39;;</p><p>@wire(fetchOpps)</p><p>Opportunities;</p><p><br/></p><p>When a Lightning web component is rendered, a list of opportunities that match certain criteria should be retrieved from the database and displayed to the end-user.</p><p>Which three considerations must the developer implement to make the fetchOpportunities method available within the Lightning web component?</p><p>Choose 3 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The method must specify the(cacheable=true)attribute.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The method must be annotated with the @AuraEnabled annotation.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The method must specify the(continuation=true) attribute.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The method must be annotated with the @InvocableMethod annotation.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The method cannot mutate the result set retrieved from the database.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145491",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer is building a Lightning web component that displays quantity, unit price, and the total for an order line item. The total is calculated dynamically as the quantity multiplied by the unit price.</p><p><br/></p><p>JavaScript:</p><p>Import { LightningElement ，from &#39;lwc&#39;;</p><p>export default class OrderLineItem extends LightningElement {</p><p>@api quantity;</p><p>@api unitPrice;</p><p>}</p><p><br/></p><p>Template Markup:</p><p>&lt;template&gt;</p><p>&lt;div&gt;</p><p>Quantity: (quantity) &lt;br /&gt;</p><p>Unit Price: {unitPrice} &lt;br /&gt;</p><p>&lt;/div&gt;</p><p>&lt;template&gt;</p><p><br/></p><p>What must be added to display the total?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add calculateTota1() ( Return quantity * unitPrice;) to the JavaScript and Tota1;</p><p>{calculateTota1() } in the template.</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add Tota1: {multiply(quantity * unitPrice)} in the template.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add Tota1: (quantity * unitPrice) in the template.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add get total()&nbsp; ( Return quantity * unitPrice;) to the JavaScript and Tota1: (total) in the template.</p><p><br/></p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145489",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Which technique can run custom logic when a Lightning web component is loaded?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Call enqueueAction and pass in the method to call.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the connectedcallback() method.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use an &lt;aura : handler&gt; init event to call a function.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the renderedcallback() method.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145487",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the following code snippet:</p><p><br/></p><p>&lt;c-selected-order&gt;</p><p>&lt;template for:each ={ orders .data } for:item=&quot;order&quot;&gt;</p><p>&lt;c-order orderId = (order.Id)&gt;&lt;/c-order&gt;</p><p>&lt;/template&gt;</p><p>&lt;c-selected-order&gt;</p><p><br/></p><p>How should the &lt;c-order&gt; component communicate to the &lt;c-selected-order&gt;</p><p>component that an order has been selected by the user?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Create and fire an application event.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Create and fire a standard DOM event.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Create and fire a component event.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Create and dispatch a custom event.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145483",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the following code snippet:</p><p><br/></p><p>&lt;apex:page docType=&quot;html-5.0&quot; controller=&quot;FindOpportunities”&gt;</p><p>&lt;apex:form &gt;</p><p>&lt;apex:pageBlock &gt;</p><p>&lt;apex:pageBlockSection title=&quot;find opportunity&quot;&gt;</p><p>&lt;apex:input label=&quot;opportunity name”/&gt;</p><p>&lt;apex:commandButton value=&quot;search&quot; action={ !search}&quot;/&gt;</p><p>&lt;apex:pageBlockSection&gt;</p><p>&lt;apex:pageBlockSection title=&quot;Opportunity List&quot; id=&quot;OpportunityList&quot;&gt;</p><p>&lt;!--DATA Table --&gt;</p><p>&lt;apex:pageBlockSection&gt;</p><p>&lt;apex:pageBlock &gt;</p><p>&lt;/apex:form&gt;</p><p>&lt;/apex:page&gt;</p><p><br/></p><p>Users of this Visualforce page complain that the page does a full refresh every time the Search button is pressed.</p><p>What should the developer do to ensure that a partial refresh is made so that only the section identified with opportunityList is re-drawn on the screen?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Ensure the action method search returns null.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement the reRender attribute on the &lt;apex:commandButton&gt; tag.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Enclose the DATA table within the &lt;apex:actionRegicn&gt; tag.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement the &lt;apex:actionFunction&gt; tag with immediate= true.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145458",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer created a Lightning web component that allows users to input a text value that is used to search for Accounts by calling&nbsp; an Apex method.The Apex method returns a list of Accountwrappers and is called imperatively from a Javascript event handler.</p><p><br/></p><p>public class AccountSearcher{</p><p>public static List&lt;Accountwrapper&gt; search (String term){</p><p>List&lt;Accountwrapper&gt; wrappers = getMatchingaccountWrappers(term);</p><p>return wrappers;</p><p>&nbsp; &nbsp; }</p><p><br/></p><p>public class Accountwrapper {</p><p>public account(get; set;)</p><p>public Decimal matchProbability(get;set;)</p><p>}</p><p>// ...other methods,including getMatchingAccountWrappers implementation...</p><p>}&nbsp;</p><p><br/></p><p>Which two changes should the developer make so the Apex method functions correctly?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add @AuraEnabled to line 09.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add @AuraEnabled to line 03.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add @AuraEnabled to lines 11 and l2.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add @AaraEnabled to line 01.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145457",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer creates a Lightning web component to allow a Contact to be quickly entered. However, error messages are not displayed.</p><p>&lt;template&gt;</p><p>&lt;lightning-record-edit-form</p><p>object-api-name=&quot;Contact&quot;&gt;</p><p>&lt;lightning-Input-field field-name=&quot;FirstName&quot;&gt;&lt;/lightning-input-field&gt;</p><p>&lt;lightning-input-field field-name=&quot;LastName&quot;&gt;&lt;/lightning-input-field&gt;</p><p>&lt;lightning-input-field field-name=&quot;Email&quot;&gt;&lt;/lightning-input-field&gt;</p><p>&lt;lightning-button type=&quot;submit&quot;</p><p>name=&quot;submit&quot;</p><p>label=&quot;Create Contact&quot;&gt;</p><p>&lt;/lightning-button&gt;</p><p>&lt;/lightning-record-edit-form)</p><p>&lt;/template&gt;</p><p><br/></p><p>Which component should the developer add to the form to display error messages?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>apex:messages</p>",
+          "isRight": false
+        },
+        {
+          "describe": "aura:messages",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Lightning-messages</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>lightning-error</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145456",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer is creating a Lightning web component that contains a child component. The property stage is being passed from the parent to the child. The public property is changing, but the getOppList function is not being invoked.</p><p><br/></p><p>@api stage;</p><p>opps:&nbsp;</p><p>connetedCallback() {</p><p>this.opps=this.getOppList (thig.stage);</p><p>}</p><p>}</p><p><br/></p><p>What should the developer change to allow this?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Move the logic from connectedcallback() to constructor().</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Create a custom event from the parent component to set the property,</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Move the logic from connectedCallback() to renderedcallback().</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Move the logic to a getter/setter pair.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145455",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Users report that a button on a custom Lightning web component is not working. However, there are no other details provided.\nWhat should the developer use to ensure error messages are properly displayed?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add a Try/Catch block surrounding the DML statement.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add JavaScript and HTML to display an error message.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use the Database method with allOrNone set to false.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add the &lt;apex:messages/&gt; tag to the component.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145454",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the following code snippet:</p><p>public class LeadController {</p><p>&nbsp; &nbsp; &nbsp; &nbsp;public static List&lt;Lead&gt; getFetchLeadList (String searchTerm, Decimal aRevenue) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; String safeTerm = &#39;%&#39;+searchTerm. escapeSingleQuote( )+&#39;%&#39;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return [</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; SELECT Name, Company, AnnualRevenue</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; FROM Lead</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;WHERE AnnualRevenue &gt;= :aRevenue</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;AND Company LIKE : safeTerm;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;LIMIT 20</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;];</p><p>&nbsp; &nbsp; &nbsp; &nbsp; }</p><p>}</p><p>A developer created a JavaScript function as part of a Lightning web component (LWC) that surfaces information about Leads by imperatively calling getFetchLeadList when certain criteria are met.</p><p>&nbsp;What are three changes the developer implement in the Apex class ensure the LWC can display data efficiently while preserving security?&nbsp; Choose 3 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Annotate the Apex method with @AuraEnabled.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement the with sharing keyword in the class declaration.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use the WITH SECURITY_ENFORCED clause within the SOQL query.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Implement the without sharing keyword in the class declaration.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Annotate the Apex method with @AuraEnabled (Cacheable=true).</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145453",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A Visualforce page contains an industry select list and displays a table of Accounts that have a matching value in their Industry field.</p><p><br/></p><p>&lt;apex:selectList value=&quot; {!selectedIndustry}&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &lt;apex:selectOptions values=&quot;{!industries}&quot;/&gt;</p><p>&lt;/apex:selectList&gt;</p><p><br/></p><p>When a user changes the value in the industry select list, the table of Accounts should be automatically updated to show the Accounts associated with the selected industry.</p><p><br/></p><p>What is the optimal way to implement this?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add an &lt;apex:actionSupport&gt; within the &lt;apex:selectList&gt;.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add an &lt;apex:actionSupport&gt; within the &lt;apex:selectOptions&gt;.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add an &lt;apex:actionFunction&gt; within the &lt;apex:selectList&gt;.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add an &lt;apex:actionFunction&gt; within the &lt;apex:selectOptions&gt;.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145426",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Which three actions must be completed in a Lightning web component for a JavaScript file in a static resource to be loaded? Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Import the static resource.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Reference the Static resource in a &lt;script&gt; tag.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the getSobjectType() method in an Apex class.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Import a method from the platformResourceLoader.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Call loadScript.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145422",
+      "analysis": "<p>https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.js_third_party_library</p>"
+    },
+    {
+      "describe": "<p>Lightning Aura Component</p><p><br/></p><p>&nbsp;&lt;aura:component controller=&quot;SimpleServerSidecontroller&quot;&gt;</p><p>&nbsp; &lt;aura:attribute name=&quot;firstName&quot; type=&quot;String&quot; default=&quot;world&quot;/&gt;</p><p>&nbsp; &lt;lightning:button label=&quot;Call server&quot; onclick=&quot;{!c.echo}&quot;/&gt;</p><p>&nbsp;&lt;/aura:component&gt;</p><p><br/></p><p>Lightning Aura Controller</p><p><br/></p><p><br/></p><p>01 ({</p><p>02 &quot;echo&quot; : function(cmp) {</p><p>03 //create a one-time use instance of the serverEcho action</p><p>04 //in the server-side controller</p><p>05 var action = cmp.get(&quot;c.serverEcho&quot;);</p><p>06 action.setParams({ firstName : cmp.get(&quot;v.firstName&quot;) });</p><p>07</p><p>08 //Create a callback that is executed after</p><p>09 //the server-side action returns</p><p>10 action.setCallback(this, function(response) {</p><p>11&nbsp; var state = response.getState();</p><p>12&nbsp; if (state === &quot;SUCCESS&quot;) {</p><p>13&nbsp; &nbsp;//Alert the user with the value returned</p><p>14&nbsp; &nbsp;// from the server</p><p>15&nbsp; &nbsp;alert(&quot;From server: &quot; +response.getReturnValue() ) ;</p><p>16</p><p>17&nbsp; &nbsp;//You would typically fire an event here to trigger</p><p>18&nbsp; &nbsp;// client-side notification that the server-side</p><p>19&nbsp; &nbsp;// action is complete</p><p>20&nbsp; }</p><p>21&nbsp; else if(state === &quot;INCOMPLETE&quot;){</p><p>22&nbsp; &nbsp;//do something</p><p>23&nbsp; }</p><p>24&nbsp; else if (state === &quot;ERROR&quot;) {</p><p>25&nbsp; &nbsp;var errors = response.getError();</p><p>26&nbsp; &nbsp;if (errors) {</p><p>27&nbsp; &nbsp; if (errors [0] &amp;&amp; errors[0].message) {</p><p>28&nbsp; &nbsp; &nbsp;console.log(&quot;Error message: &quot; +</p><p>29&nbsp; &nbsp; &nbsp; errors[0] .message );</p><p>30&nbsp; &nbsp; }</p><p>31&nbsp; &nbsp;} else {</p><p>32&nbsp; &nbsp; console.log(&quot;Unknoown error&quot;);</p><p>33&nbsp; &nbsp;}</p><p>34&nbsp; }</p><p>35 });</p><p>36</p><p>37 //A client-side action could cause multiple events,</p><p>38 //which could trigger other events and</p><p>39 //other server-side action calls.</p><p>40 // $A.enqueueAction adds the server-side action to the queue.</p><p>41 $A.enqueueAction(action);</p><p>42 }</p><p>43})</p><p><br/></p><p>Apex Controller</p><p><br/></p><p>01 public with sharing class SimpleServerSideController {</p><p>02</p><p>03&nbsp; //Use @AuaEnabled to enable client- and server-side access to the method</p><p>04&nbsp; @AuraEnabled</p><p>05&nbsp; public static String serverEcho(JSONObject firstName) {</p><p>06&nbsp; &nbsp;String firstNameStr = (String)JSON.deserialize(firstName, String,class);</p><p>07&nbsp; &nbsp;return (&#39;Hello from the server. &#39; + firstNameStr);</p><p>08&nbsp; }</p><p>09 }</p><p><br/></p><p>Given the code above, which two changes need to be made in the Apex Controller for the code to work?Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Annotate the entire class &nbsp;as @AuraEnabled instead of just the simgle method.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Remove line 06 form the Apex Controller and use firstName in the return.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Change the method signature to be global static, not public static.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Change the arguument from JSONObject to String.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145398",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A company wants to build a custom Lightning Component that will display a specified Account Field Set and that can only be added to the</p><p>Account record page.</p><p><br/></p><p>Which design resource configuration should be used?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;design:component label=&quot;Account FS Component&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;aura:attribute name=&quot;fieldSetName&quot; labels=&quot;Field Set Name&quot; /&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;sfdc:objects&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sfdc:object&gt;Account&lt;/sfdc:object&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/sfdc:objects&gt;</p><p>&lt;/design:component&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;design:component label=&quot;Account FS Component&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;aura:attribute name=&quot;fieldSetName&quot; label= &quot;Field Set Name&quot; /&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;sfdc:objects&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;sfdc:object&gt;FieldSet&lt;/sfdc:object&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/sfdc:objects&gt;</p><p>&lt;/design:component&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;design:component label=&quot;Account FS Component&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;design:attribute name=&quot;fieldSetName&quot; label=&quot;Field Set Name&quot; /&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sfdc:objects&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sfdc:object&gt;FieldSet&lt;/sfdc:object&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/sfdc:objects&gt;</p><p>&lt;/design:component&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;design:component label=&quot;Account FS Component&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;design:attribute name=&quot;fieldSetName&quot; label=&quot;Field Set Name&quot; /&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sfdc:objects&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;sfdc:object&gt;Account&lt;/sfdc:object&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/sfdc:objects&gt;</p><p>&lt;/design:component&gt;</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145397",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>An Aura component has a section that displays some information about an Account and it works well on the desktop, but users have to scroll horizontally to see the description field output on their mobile devices and tablets.</p><p><br/></p><p>&lt;lightning: layout multipleRows=&quot;false&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &lt;lightning: layoutItem size&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &lt;/lightning: layoutItem&gt;</p><p>&lt;/lightning: layout&gt;</p><p><br/></p><p>Which option has the changes to make the component responsive for mobile and tablet devices?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;lightning: layout multipleRows=&quot;false&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem smallDeviceSize =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem smallDeviceSize =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p>&lt;/lig",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning: layout multipleRows=&quot;false&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size=&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p>&lt;/lightning: layout&gt;&nbsp",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning: layout multipleRows=&quot;true&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size=&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p>&lt;/lightning: layout&gt;&nbsp;",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;lightning: layout multipleRows=&quot;true&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem smallDeviceSize =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem smallDeviceSize =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p>&lt;/ligh",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145395",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Which tag should a developer use to display different text while an &lt;apex:commandButton&gt; is executing versus not executing?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;apex:pageMessages&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:actionStatus&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:actionSupport&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:actionPoller&gt;</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145393",
+      "analysis": ""
+    }
+  ],
+  "hashCode": "-2080290879"
+}

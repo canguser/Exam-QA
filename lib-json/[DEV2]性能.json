@@ -1,0 +1,728 @@
+{
+  "title": "性能",
+  "category": "Dev2-自由部落侠",
+  "questions": [
+    {
+      "describe": "Universal Containers (UC) calculates commissions on their Opportunities in different ways based on complex rules that vary depending on the line of business of the Opportunity.\nWhenever a new line of business is added to Salesforce at UC, it is likely that a different calculation will need to be added too. When an Opportunity's stage is changed to Closed/Won, its commission should be calculated in real time.\nWhat should a developer use so that different implementations of the commission calculation can be invoked on the stage change?",
+      "answerOptions": [
+        {
+          "describe": "A final class with multiple methods",
+          "isRight": false
+        },
+        {
+          "describe": "Apex Describe Schema methods",
+          "isRight": false
+        },
+        {
+          "describe": "An Apex class with a custom enum",
+          "isRight": true
+        },
+        {
+          "describe": "An Interface and implementing classes.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147321",
+      "analysis": ""
+    },
+    {
+      "describe": "In an organization that has multi-currency enabled, a developer is tasked with building a Lightning component that displays the top ten Opportunities most recently accessed by the logged in user. The developer must ensure tha Amount and LastModifiedDate field values are displayed according to the user's locale.\nWhat is the most effective approach to ensure values displayed respect the user's locale settings?",
+      "answerOptions": [
+        {
+          "describe": "Use the FORMAT() function in the SOQL query.",
+          "isRight": true
+        },
+        {
+          "describe": "Use REGEX expressions to format the values retrieved via SOQL.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a wrapper class to format the values retrieved via SOQL.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the FOR VIEN clause in the SOQL query.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147318",
+      "analysis": ""
+    },
+    {
+      "describe": "A company uses Opportunities to track sales to their customers and their org has millions of Opportunities. They want to begin to track revenue over time through a related Revenue object.\nAs part of their initial implementation, they want to perform a one-time seeding of their data by automatically creating and populating Revenue records for Opportunities, based on complex logic.\nThey estimate that roughly 100,000 Opportunities will have Revenue records created and populated.\nWhat is the optimal way to automate this?",
+      "answerOptions": [
+        {
+          "describe": "Use Database.executeBatch() to invoke a Database.Batchable class.",
+          "isRight": true
+        },
+        {
+          "describe": "Use System.scheduleJob() to schedule a Database.Scheduleable class.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Database.executeBatch() to invoke a Queueable class.",
+          "isRight": false
+        },
+        {
+          "describe": "Use System.enqueueJob() to invoke a Queueable class.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146639",
+      "analysis": ""
+    },
+    {
+      "describe": "A company manages information about their product offerings in custom objects named Catalog and Catalog Item. Catalog Item has a master-detail field to Catalog, and each Catalog may have as many as 100,000 Catalog Items.\nBoth custom objects have a CurrencyIsoCode text field that contains the currency code they should use. If a Catalog's CurrencyIsoCode changes, all of its Catalog Items' CurrencyIsoCodes should be changes as well.\nWhat should a developer use to update the CurrencyIsoCodes on the Catalog Items when the Catalog's CurrencyIsoCode changes?",
+      "answerOptions": [
+        {
+          "describe": "An after insert trigger on Catalog that updates the Catalog Items if the Catalog's CurrencyIsoCode is different",
+          "isRight": false
+        },
+        {
+          "describe": "A Database.Schedulable and Database.Batchable class that queries the Catalog object and updates the Catalog Items if the Catalog CurrencyIsoCode is different.",
+          "isRight": false
+        },
+        {
+          "describe": "An after insert trigger on Catalog Item that updates the Catalog Items if the Catalog's CurrencyIsoCode is different",
+          "isRight": false
+        },
+        {
+          "describe": "A Database.Schedulable and Database.Batchable class that queries the Catalog Item object and updates the Catalog Items if the Catalog CurrencyIsoCode is different.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146637",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is creating a page in App Builder that will be used in the Salesforce mobile app.\nWhich two practices should the developer follow to ensure the page operates with optimal performance?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Limit five visible components on the page.",
+          "isRight": false
+        },
+        {
+          "describe": "Limit 25 fields on the record detail page.",
+          "isRight": true
+        },
+        {
+          "describe": "Limit the number of Tabs and Accordion components.",
+          "isRight": false
+        },
+        {
+          "describe": "Analyze the page with Performance Analysis for App Builder.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146632",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.lightning_page_performance.htm&type=5"
+    },
+    {
+      "describe": "There is an Apex controller and a Visualforce page in an org that displays records with a custom filter consisting of a combination of picklist values selected by the user.\nThe page takes too long to display results for some of the input combinations, while for other input choices it throws the exception, \"Maximum view state size limit exceeded\".\nWhat step should the developer take to resolve this issue?",
+      "answerOptions": [
+        {
+          "describe": "Adjust any code that filters by picklist values since they are not indexed.",
+          "isRight": false
+        },
+        {
+          "describe": "Split the layout to filter records in one Visualforce page and display the list of records in a second page using the same Apex controller.",
+          "isRight": false
+        },
+        {
+          "describe": "Remove instances of the transient keyword from the Apex controller to avoid the view state error.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a StandardSetController or SOQL LIMIT In the Apex controller to limit the number of records displayed at a time.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146631",
+      "analysis": ""
+    },
+    {
+      "describe": "A Salesforce org has more than 50,000 contacts. A new business process requires a calculation that aggregates data from all of these contact records. This calculation needs to run once a day after business hours.\nWhich two steps should a developer take to accomplish this?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Use the @future annotation on the method that performs the aggregate calculation.",
+          "isRight": false
+        },
+        {
+          "describe": "Implement the schedulable interface in the class that contains the aggregate calculation method.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the @readonly annotation on the method that performs the aggregate calculation.",
+          "isRight": true
+        },
+        {
+          "describe": "Implement the Queuable interface In the class that contains the aggregate calculation method.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146608",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_annotation_ReadOnly.htm"
+    },
+    {
+      "describe": "A developer created an Opportunity trigger that updates the account rating when an associated opportunity is considered high value. Current criteria for an opportunity to be considered high value is an amount greater than or equal to $1,000,000. However, this criteria value can change over time.\nThere is a new requirement to also display high value opportunities In a Lightning web component.\nWhich two actions should the developer take to prevent the business logic that obtains the high value opportunities from being repeated In more than one place?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Use custom metadata to hold the high value amount.",
+          "isRight": true
+        },
+        {
+          "describe": "Call the trigger from the Lightning web component.",
+          "isRight": false
+        },
+        {
+          "describe": "Leave the business logic code inside the trigger for efficiency.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a helper class that fetches the high value opportunities.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146607",
+      "analysis": ""
+    },
+    {
+      "describe": "A business currently has a process to manually upload orders from its external Order Management System (OMS) into Salesforce.\nThis is a labor intensive process since accounts must be exported out of Salesforce to get the IDs. The upload file must be updated with the correct account IDs to relate the orders to the corresponding accounts.\nWhich two recommendations should make this process more efficient?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Ensure the data in the file is sorted by the order ID.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the upsert wizard in the Data Loader to import the data.",
+          "isRight": true
+        },
+        {
+          "describe": "Identify unique fields on Order and Account and set them as External IDs.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the insert wizard in the Data Loader to import the data.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146602",
+      "analysis": ""
+    },
+    {
+      "describe": "Ursa Major Solar has a custom object, serviceJob_c. with an optional Lookup field to Account called Partner_ service. Provider_ c.\nThe TotalJobs_c field on Account tracks the total number of serviceJob_c records to which a partner service provider Account Is related.\nWhat is the most efficient way to ensure that the Total_Jobs_c field is kept up to date?",
+      "answerOptions": [
+        {
+          "describe": "Create a record-triggered flow on service_Job_c.",
+          "isRight": true
+        },
+        {
+          "describe": "Change TotalJobs_ c to a roll-up summary field.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a schedule -triggered flow on Service_Job__ c.",
+          "isRight": false
+        },
+        {
+          "describe": "Create an Apex trigger on service_Job_ c",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146572",
+      "analysis": ""
+    },
+    {
+      "describe": "Which three approaches should a developer implement to obtain the best performance for data retrieval when building a Lightning web component?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Use the Lightning Data Service.",
+          "isRight": true
+        },
+        {
+          "describe": "Use layoutTypes: [‘Fu11'] to display a set of fields.",
+          "isRight": false
+        },
+        {
+          "describe": "Use (cacheable=true) whenever possible.",
+          "isRight": true
+        },
+        {
+          "describe": "Use getRecordUi to obtain metadata.",
+          "isRight": false
+        },
+        {
+          "describe": "Use lazy load for occasionally accessed data.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146537",
+      "analysis": ""
+    },
+    {
+      "describe": "As part of a new integration, a developer is asked to implement a new custom search Functionality that is capable of performing unrestricted queries and can account for all values within a custom picklist field, Type_c, on the Opportunity object. The search feature must also account for NULL values.\nThe organization-wide default for the Opportunity object is set to Public Read-Only, and a new custom index has been created for the Type_ c field. There are more than 5 million Opportunity records within the environment, and a considerable amount of the existing records have NULL values for the picklist.\nWhich technique should the developer implement to maximize performance when querying NULL values?",
+      "answerOptions": [
+        {
+          "describe": "Create a formula field that substitutes NULL values for a string of text, create an index for the formula field, then use the formula within the HERE clause.",
+          "isRight": false
+        },
+        {
+          "describe": "Perform two SOQL queries; one to query Opportunities where Type_c !=NULL, and another to query where Type_c = NULL, then join the result set using Apex.",
+          "isRight": true
+        },
+        {
+          "describe": "Use a SOSL query to return ALL opportunities that have a value of NULL in any field.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the OR operator to combine HERE clauses to strictly search for each value within the picklist, including Type_ c = NULL.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146511",
+      "analysis": ""
+    },
+    {
+      "describe": "Which two queries are selective SOQL queries and can be used for a large data set of 200,000 Account records?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "SELECT Id FROM Account WHERE Name LIKE 'Partner'",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Id FROM Account WHERE Name !=''",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Id FROM Account WHERE Id IN (List of Account Ids)",
+          "isRight": true
+        },
+        {
+          "describe": "SELECT Id FROM Account WHERE Name In (List of Name) AND Customer_Number_ c=",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146509",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer implemented a custom data table in a Lightning web component with filter functionality. However, users are submitting support tickets about long load times when the filters are changed. The component uses an Apex method that is called to query for records based on the selected filters.\nWhat should the developer do to improve performance of the component?",
+      "answerOptions": [
+        {
+          "describe": "Use setStorable() in the Apex method to store the response in the client-side cache.",
+          "isRight": true
+        },
+        {
+          "describe": "Return all records into a list when the component is created and filter the array in JavaScript.",
+          "isRight": false
+        },
+        {
+          "describe": "Use SOSL to query the records on filter change.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a selective SOQL query with a custom index.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146482",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is asked to look into an issue where a scheduled Apex is running into DML its. Upon investigation, the developer finds that the number of records processed by the scheduled Apex has recently increased to more than 10,000.\nWhat should the developer do to eliminate the limit exception error?",
+      "answerOptions": [
+        {
+          "describe": "Use the @future annotation.",
+          "isRight": false
+        },
+        {
+          "describe": "Implement the Batchable interface.",
+          "isRight": true
+        },
+        {
+          "describe": "Use platform events.",
+          "isRight": false
+        },
+        {
+          "describe": "Implement the Queueable interface.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146481",
+      "analysis": ""
+    },
+    {
+      "describe": "Users complain that a page is very slow to respond. Upon investigation, the query below is found to perform slowly.\nSELECT Id, Name FROM Contact WHERE CustomField__c = null;\nWhich two actions can a developer take to improve performance? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Add a LIMIT clause to the query to reduce the number of records returned.",
+          "isRight": true
+        },
+        {
+          "describe": "Contact Salesforce customer support to create a custom index to include null values.",
+          "isRight": false
+        },
+        {
+          "describe": "Make the CustomField__c field an External ID.",
+          "isRight": false
+        },
+        {
+          "describe": "Make the field CustomField__c required because Salesforce field indexes do not include nulls.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146444",
+      "analysis": ""
+    },
+    {
+      "describe": "As part of a custom development, a developer creates a Lightning Component to show how a particular opportunity progresses over time. The component must display the date stamp when any of the following fields change:\n\n• Amount, Probability, Stage, or Close Date\n\nWhat is the most efficient way to query such information?",
+      "answerOptions": [
+        {
+          "describe": "[Select Amont, CloseDate, StageName, Probability FROM Opportunity__History WHERE OpportunityId = : oppId];",
+          "isRight": false
+        },
+        {
+          "describe": "[Select Amount, CloseDate, StageName, Probability FROM OpportunityHistory WHERE OpportunityId = : oppId] ;",
+          "isRight": true
+        },
+        {
+          "describe": "[Select NewWalue, OldValue FROM OpportunityField__History WHERE OpportunityId = : oppId AND Field IN ('StageName', 'Probability', 'Amount', 'CloseDate')];",
+          "isRight": false
+        },
+        {
+          "describe": "[Select NewWalue, OldValue FROM OpportunityField__History WHERE OpportunityId = : oppId AND Field IN ('StageName', 'Probability', 'Amount', 'CloseDate')];",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146419",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_objects_opportunityfieldhistory.htm"
+    },
+    {
+      "describe": "The use of the transient keyword in Visualforce Page Controllers helps with which common performance issue?",
+      "answerOptions": [
+        {
+          "describe": "Improves Query Performance",
+          "isRight": false
+        },
+        {
+          "describe": "Improves Page Transfers",
+          "isRight": false
+        },
+        {
+          "describe": "Reduces Load Times",
+          "isRight": false
+        },
+        {
+          "describe": "Reduces View State",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146413",
+      "analysis": ""
+    },
+    {
+      "describe": "There are user complaints about slow render times of a custom data table within a Visualforce page that loads thousands of Account records at once.\nWhat can a developer do to help alleviate such issues?",
+      "answerOptions": [
+        {
+          "describe": "Use the transient keyword in the Apex code when querying the Account records. ",
+          "isRight": false
+        },
+        {
+          "describe": "Upload a third-party data table library as a static resource.",
+          "isRight": false
+        },
+        {
+          "describe": "Use JavaScript remoting to query the accounts.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the standard Account List controller and implement pagination.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145647",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer wishes to improve runtime performance of Apex calls by caching results on the client.\nWhat is the best way to implement this?",
+      "answerOptions": [
+        {
+          "describe": "Decorate the server-side method with @AuraEnabled(storable=true).",
+          "isRight": false
+        },
+        {
+          "describe": "Decorate the server-side method with @AuraEnabled(cacheable=true).",
+          "isRight": true
+        },
+        {
+          "describe": "Call the setStorable( ) method on the action in the JavaScript client-side code.",
+          "isRight": false
+        },
+        {
+          "describe": "Set a cookie in the browser for use upon return to the page.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145641",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/controllers_server_apex_auraenabled_annotation.htm"
+    },
+    {
+      "describe": "A company recently deployed a Visualforce page with a custom controller that has a data grid of information about Opportunities in the org. \nUsers report that they receive a \"Maximum view state size limit\" error message under certain conditions.\n\nAccording to Visualforce best practice, which three actions should the developer take to reduce the view state?Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Use the transient keyword in the Apex controller for variables that do not maintain state.",
+          "isRight": true
+        },
+        {
+          "describe": "Refine any SOQL queries to return only data relevant to the page.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the final keyword in the controller for variables that will not change.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the private keyword in the controller for variables.",
+          "isRight": false
+        },
+        {
+          "describe": "Use filters and pagination to reduce the amount of data.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145613",
+      "analysis": ""
+    },
+    {
+      "describe": "Customer billing data must be added and updated into Salesforce from a remote system on a weekly basis. Additionally, customer activity information must be extracted from Salesforce and put it into an on-premises data warehouse on a weekly basis.\n\nWhich approach should be used to import data into Salesforce and export data out of Salesforce, taking into consideration that these imports and exports can interfere with end-user operations during business hours and involve large amounts of data?",
+      "answerOptions": [
+        {
+          "describe": "Salesforce Connect to push data to and pull data from the remote systems",
+          "isRight": false
+        },
+        {
+          "describe": "Batch Apex, where Salesforce pushes data to and pulls data from the remote systems",
+          "isRight": false
+        },
+        {
+          "describe": "Call-in directly from each remote system to Salesforce APIs to push and pull the data",
+          "isRight": false
+        },
+        {
+          "describe": "Replication via third-party ETL to push data into Salesforce and pull data out in batches",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145611",
+      "analysis": ""
+    },
+    {
+      "describe": "A company needs to automatically delete sensitive information after seven years. This could delete almost a million records everyday.\nHow can this be achieved?",
+      "answerOptions": [
+        {
+          "describe": "Schedule a batch Apex process to run every day that queries and deletes records older than seven years.",
+          "isRight": true
+        },
+        {
+          "describe": "Use aggregate functions to query for records older than seven years, and then delete the AggregateResult objects.",
+          "isRight": false
+        },
+        {
+          "describe": "Perform a SOSL statement to find records older than 7 years, and then delete the entire result set.",
+          "isRight": false
+        },
+        {
+          "describe": "Schedule an future process to query records older than seven years, and then recursively invoke itself in 1,000 record batches to delete them.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145609",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the markup below:</p><p>&lt;template&gt;</p><p>&nbsp; &nbsp; &lt;!-- …other code … --&gt;</p><p>&nbsp; &nbsp; &lt;lightning-record-form record-id={recordId} object-api-name=&quot;Account&quot; layout-type=&quot;Full&quot;&gt;</p><p>&nbsp; &nbsp; &lt;/lightning-record-form&gt;</p><p>&lt;/template&gt;</p><p><br/></p><p>A Lightning web component displays the Account name and two custom fields out of 275 that exist on the object. The custom fields are correctly declared and populated. However, the developer receives complaints that the component performs slowly.</p><p>What can the developer do to improve the performance?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Replace layout-type=&quot;Full&quot; with layout-type=&quot;Partial&quot;.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add cache=&quot;true&quot; to the component.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add density=&quot;compact&quot; to the component.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Replace layout-type=&quot;Full&quot; with fields-{fields}.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145546",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>As part of a custom interface, a developer team creates various new Lightning web components. Each of the components handles errors using toast messages. When the development is complete, all the components are added to the same Lightning page.\nDuring acceptance testing, users complain about the long chain of toast messages that display when errors occur loading the components.\nWhich two techniques should the developer implement to improve the user experience?\nChoose 2 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use a &lt;template&gt; tag to display in-place error messages.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use a Lightning web component to aggregate and display all errors.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the window.alert() method to display the error messages.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use public properties on each component to display the error messages.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145522",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the following code snippet:</p><p><br/></p><p>public static List&lt;Account&gt; getAccounts (Date thisDate, Id goldenRT) {</p><p>List&lt;Account&gt; accountList = [select Id，Name, Industry FROM Account WHERE CreatedDate = :thisDate OR RecordTypeId = :goldenRT];&nbsp;</p><p>return accountList；</p><p>}</p><p><br/></p><p>The Apex method is executed in an environment with a large data volume count for Accounts, and the query Is performing poorly.</p><p>Which technique should the developer implement to ensure the query performs optimally, while preserving the entire result set?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Annotate the method with the @Future annotation.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Create a formula field to combine the createdDate and RecordType value, then filter based on the formula.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the Database. queryLocator method to retrieve the accounts.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Break down the query into two individual queries and join the two result sets.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145521",
+      "analysis": ""
+    },
+    {
+      "describe": "<p><br/></p><p>Consider the following code snippet:</p><p><br/></p><p>trigger opportunitytrigger = an opportunity (before insert , before update) {</p><p>for (opportunity opp : trigger .new) {</p><p>opportunityHandler.setPricingstructure (Opp)</p><p>&nbsp; }</p><p>}</p><p><br/></p><p>public class OpportunityHandler {</p><p>public static void setPricingStructure ( opportunity thisOpp) {</p><p>pricing_structure_c ps = [select Type_c FROM Pricing_structure_c WHERE industry_c = :this Opp.Account_ Industry_ c];</p><p>thisOpp.pricing_ structure_c = ps.Type_c;</p><p>update thisOpp;</p><p><br/></p><p>Which two best practices should the developer implement to optimize this code?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use a collection for the DML statement.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Query the Pricing_structure_ c records outside of the loop.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Change the trigger context to after update, after insert.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Remove the DML statement.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145515",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the following Apex method that uses the opportunity object.</p><p><br/></p><p>public class opportunityController{|</p><p>@AuraEnabled</p><p>public static List&lt;opportunity&gt;&nbsp; searchoppByCaseId&lt;string caseId) {</p><p>List&lt;opportunity&gt; oppList = [select Id FROM opportunity where External_Case_ c = : caseId];</p><p>return oppList;</p><p>}</p><p>}</p><p><br/></p><p>In a previous data audit, it was determined that close to 5 million Opportunity records are stored within the Salesforce environment. The organization-wide defaults for the object are set to Public Read-Only and most opportunities are related to an external case.</p><p>The method is called from a Lightning web component. Some end users do not provide a caseId value and experience low performance while running the query.</p><p>Which two techniques should the developer implement to avoid low performance queries from executing?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Implement a LIMIT clause within the SOQL query to restrict the result set.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Ensure the user provided input is not null before executing the SOQL query.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Implement the with sharing keyword on the Apex class.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use SOSL instead of SOQL queries to perform text based searches.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145484",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>The following code segment is called from a trigger handler class from the Opportunity trigger:</p><p><br/></p><p>for (opportunity opp: Trigger.new){</p><p>if (opp . amount &gt;= 1000000)</p><p>Account acct = [SELECT Id, status FROM Account WHERE id = ：opp .accountId LIMIT 1);</p><p>acct.status. = &#39;High Potential&#39;;</p><p>Update. Act；</p><p>}</p><p>}</p><p><br/></p><p>Which two changes should improve this code and make it more efficient?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The method must be annotated with the @InvocableMethod annotation.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Move the SOQL to fetch the account record outside of the tor loop.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>System.LimitException: Too many SOQL Queries on Account</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use Trigger.old instead of Trigger .new.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145460",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A Visualforce page loads slowly due to the large amount of data it displays.\nWhich strategy can a developer use to improve the performance?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use the transient keyword for the List variables used in the custom controller.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "Use Javascript to move data processing to the browser instead of the controller.",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use an &lt;apex:actionPoller&gt; in the page to load all of the data asynchronously.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "Use lazy loading to load the data on demand, instead of in the controller's constructor.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145423",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.salesforce_visualforce_best_practices.meta/salesforce_visualforce_best_practices/pages_best_practices_perf_design_lazy_loading.htm</p>"
+    },
+    {
+      "describe": "<p>Given a list of Opportunity records named opportunityList, which code snippet is best for querying all Contacts of the Opportunity&#39;s Account?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>List &lt;Contact&gt; contactList = new List &lt;Contact&gt;();</p><p>Set &lt;Id&gt; accountIds = new Set &lt;Id&gt; ();</p><p>for (opportunity o : opportunityList){</p><p>&nbsp; &nbsp; &nbsp; accountIds.add(o.AccountId);</p><p>}</p><p><br/></p><p>for(Account a : [SELECT Id, (SELECT Id FROM Contacts) FROM Account WHERE Id&nbsp; &nbsp;IN :accountIds]) {</p><p>&nbsp; &nbsp; &nbsp; contactList.addAll (a.Contacts) ;</p><p>}</p><p><br/></p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>List &lt;Contact&gt; contactList = new List &lt;Contact&gt;();</p><p>for ( Contact c : [SELECT Id FROM Contact WHERE AccountId IN : opportunityList.Accountld]){</p><p>&nbsp; &nbsp; &nbsp; contactList.add (c) ;</p><p>}</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>List&lt;Contact&gt; contactList = new List&lt;Contact&gt;();</p><p>for (opportunity o : opportunityList){</p><p>&nbsp; &nbsp; &nbsp; Account a = [SELECT Id, (SELECT Id FROM Contacts) FROM Account WHERE Id = : o.AccountId];</p><p>&nbsp; &nbsp; &nbsp; contactList.addAll (a.Contacts) ;</p><p>}</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>List&lt;Contact&gt; contactList = new List&lt;Contact&gt;();</p><p>Set&lt;Id&gt; accountIds = new Set&lt;Id&gt;() ;</p><p>for (Opportunity o : opportunityList){</p><p>&nbsp; &nbsp; &nbsp; contactIds.add (o.Contacts) ;</p><p>}</p><p><br/></p><p>for (Contact c : [SELECT Id FROM Contact WHERE Id IN :contactIds]){</p><p>&nbsp; &nbsp; &nbsp; &nbsp; contactList.add (c) ;</p><p>}</p><p><br/></p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145421",
+      "analysis": ""
+    }
+  ],
+  "hashCode": "-1917411510"
+}

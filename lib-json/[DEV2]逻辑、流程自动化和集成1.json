@@ -1,0 +1,1387 @@
+{
+  "title": "逻辑、流程自动化和集成1",
+  "category": "Dev2-自由部落侠",
+  "questions": [
+    {
+      "describe": "A company represents their customers as Accounts that have an External ID field called Customer_Number__c. They have a custom object, Order__c, with a Lookup to Account to represent Orders that are placed in their external order management system(OMS).\nWhen an order is fulfilled in the OMS, a REST call to Salesforce should be made that creates an Order record in Salesforce and relates it to the proper Account.\nWhat is the optimal way to implement this?",
+      "answerOptions": [
+        {
+          "describe": "Perform a REST PATCH to upsert the Order__c and specify the Account's Customer_Number__c in it.",
+          "isRight": true
+        },
+        {
+          "describe": "Perform a REST GET on the Account and a REST POST to update the Order__c with the Account's record ID.",
+          "isRight": false
+        },
+        {
+          "describe": "Perform a REST POST to update the Order__c and specify the Account's Customer_Number__c in it.",
+          "isRight": false
+        },
+        {
+          "describe": "Perform a REST GET on the Account and a REST PATCH to upsert the Order__c with the Account's record ID.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147343",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/dome_upsert.htm\nIf you have an object that references another object using a relationship, you can use REST API to both insert or update a record and reference another object using an external ID."
+    },
+    {
+      "describe": "UC uses Salesforce to manage its product offerings to customers.\nA developer is building a custom mobile app that must allow app users to view product information, in real time, that is stored in Salesforce.\nWhat should the developer use to get the product information from Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "SOAP API",
+          "isRight": false
+        },
+        {
+          "describe": "User Interface API",
+          "isRight": false
+        },
+        {
+          "describe": "Streaming API",
+          "isRight": false
+        },
+        {
+          "describe": "REST API",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019147319",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is writing a Listener for implementing outbound messaging.\nWhich three considerations must the developer keep in mind in this case? Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Messages can be delivered out of order.",
+          "isRight": true
+        },
+        {
+          "describe": "Messages are retried independent of their order in the queue.",
+          "isRight": true
+        },
+        {
+          "describe": "The sessionId in an outbound message is scoped for both API requests and UI requests.",
+          "isRight": false
+        },
+        {
+          "describe": "The Organization ID is included only in the first outbound message.",
+          "isRight": false
+        },
+        {
+          "describe": "The Listener must be reachable from the public Internet.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019147312",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_om_outboundmessaging_notifications.htm\nhttps://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_om_outboundmessaging_security.htm\nhttps://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_om_outboundmessaging_listener.htm"
+    },
+    {
+      "describe": "An org has an existing process, built using Process Builder, on Opportunity that sets a custom field, CommissionBaseAmount__c, when an Opportunity is edited and the Opportunity's Amount changes.\nA developer recently deployed an Opportunity before update trigger that uses the CommissionBaseAmount__c and complex logic to calculate a value for a custom field, CommissionAmount__c, when an Opportunity stage changes to Closed/Won.\nUsers report that when they change the Opportunity to Closed/Won and also change the Amount during the same save, the CommissionAmount__c is incorrect.\nWhich action should the developer take to correct this problem?",
+      "answerOptions": [
+        {
+          "describe": "Call the trigger from the process.",
+          "isRight": false
+        },
+        {
+          "describe": "Replace the process with a Fast Field Update record-trigger flow.",
+          "isRight": true
+        },
+        {
+          "describe": "Call the process from the trigger.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146636",
+      "analysis": ""
+    },
+    {
+      "describe": "Which use case can be performed only by using asynchronous Apex?",
+      "answerOptions": [
+        {
+          "describe": "Updating a record after the completion of an insert",
+          "isRight": false
+        },
+        {
+          "describe": "Querying tens of thousands of records",
+          "isRight": false
+        },
+        {
+          "describe": "Calling a web service from an Apex trigger",
+          "isRight": true
+        },
+        {
+          "describe": "Making a call to schedule a batch process to complete in the future",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146635",
+      "analysis": ""
+    },
+    {
+      "describe": "A company uses Salesforce to sell products to customers. They also have an external product information management (PIM) system that is the system of record for products.\nA developer received these requirements:\n--Whenever a product is created or updated in the PIM, a product must be created or updated as a Product2 record in Salesforce and   a PricebookEntry record must be created or updated automatically by Salesforce.\n--The PricebookEntry should be created In a Pricebook2 that Is specified In a custom setting.\nWhat should the developer use to satisfy these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Apex REST",
+          "isRight": true
+        },
+        {
+          "describe": "Event Monitoring",
+          "isRight": false
+        },
+        {
+          "describe": "Invocable Action",
+          "isRight": false
+        },
+        {
+          "describe": "SObject Tree",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146630",
+      "analysis": ""
+    },
+    {
+      "describe": "As part of point-to-point integration, a developer must call an external web service which, due to high demand, takes a long time to provide a response. As part of the request, the developer must collect key inputs from the end user before making the callout.\nWhich two elements should the developer use to implement these business requirements?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Screen Flow",
+          "isRight": true
+        },
+        {
+          "describe": "Lightning web component",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Apex method that returns a Continuation object",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146606",
+      "analysis": ""
+    },
+    {
+      "describe": "Consider the following code snippet:\nHttpRequest req = NEW HttpRequest();\nreq. setEndpoint ('htps://TestEndpoint.example.com/some_path');\nreq. setMethod('GET');\nBlob headervalue = Blob.valueof ('myUserName' + : + 'strongPassword'); .\nstring authorizationHeader = 'BASIC” + EncodingUtil.base64Encode (headerValue);\nreq. setHeader('Authorization', authorizationHeader);\nHttp http = new Http();\nHTTPResponse res = http.send(req);\n\nWhich two steps should the developer take to add flexibility to change the endpoint and credentials without needing to modify code?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Store the URL of the endpoint in a custom Label named endPointURL.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Named Credential, endpoint_NC,to store the endpoint and credentials.",
+          "isRight": true
+        },
+        {
+          "describe": "Use req. setEndpoint('callout : endPoint_NC'); within the callout request.",
+          "isRight": true
+        },
+        {
+          "describe": "Use req. setEndpoint (Label.endPointURL);.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146605",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_callouts_named_credentials.htm"
+    },
+    {
+      "describe": "Salesforce users consistently receive a \"Maximum trigger depth exceeded\" error when saving an Account.\nHow can a developer fix this error?",
+      "answerOptions": [
+        {
+          "describe": "Split the trigger logic into two separate triggers.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a helper class to set a Boolean to TRUE the first time a trigger Is fired, and then modify the trigger to only fire when the Boolean is FALSE.",
+          "isRight": true
+        },
+        {
+          "describe": "Convert the trigger to use the @future annotation, and chain any subsequent trigger invocations to the Account object.",
+          "isRight": false
+        },
+        {
+          "describe": "Modify the trigger to use the isMultiThread=true annotation.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146599",
+      "analysis": ""
+    },
+    {
+      "describe": "What is a benefit of using a WSDL with Apex?",
+      "answerOptions": [
+        {
+          "describe": "Enables the user to not pass a Session ID where it is not necessary",
+          "isRight": false
+        },
+        {
+          "describe": "Reduces the number of callouts to third-party web services",
+          "isRight": false
+        },
+        {
+          "describe": "Allows for web services to be tested and achieve code coverage",
+          "isRight": false
+        },
+        {
+          "describe": "Allows for classes to be generated from WSDL and imported into Salesforce",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146600",
+      "analysis": ""
+    },
+    {
+      "describe": "Users upload .csv files in an external system to create account and contact records in Salesforce. Up to 2000 records can be created at a time.\nThe users need to wait for a response from Salesforce in the external system, but the data does not need to synchronize between the two systems.\nBased on these requirements, which method should a developer use to create the records in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "REST API request using coapouite/batch/",
+          "isRight": false
+        },
+        {
+          "describe": "REST API request using composite/tree/",
+          "isRight": false
+        },
+        {
+          "describe": "Apex web services",
+          "isRight": false
+        },
+        {
+          "describe": "Bulk API 2.0 !",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146577",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is inserting, updating, and deleting multiple lists of records in a single transaction and wants to ensure that any error prevents all execution.\nHow should the developer implement error exception handling in their code to handle this?",
+      "answerOptions": [
+        {
+          "describe": "Use Database methods to obtain lists of Database .saveResults.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Database. setsavepoint() and Database. rollBack() with a try-catch statement.",
+          "isRight": true
+        },
+        {
+          "describe": "Use a try-catch statement and handle DML cleanup in the catch statement.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a try-catch and use sobject. addError() on any failures.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146575",
+      "analysis": ""
+    },
+    {
+      "describe": "As part of a custom development, a developer creates a Lightning component to show how a particular opportunity progresses over time. The component must display the date stamp when any of the following fields change:\n    Amount, Probability, Stage, or Close Date\nHow should the developer access the data that must be displayed?",
+      "answerOptions": [
+        {
+          "describe": "Create a custom date field on Opportunity for each field to track the previous date and execute a SOQL query for date fields.",
+          "isRight": false
+        },
+        {
+          "describe": "Execute a SOQL query for Amount, Probability, Stage, and Close Date on the OpportunityHistory object.",
+          "isRight": true
+        },
+        {
+          "describe": "Subscribe to the OpportunityHistory Change Data Capture event in the Lightning component.",
+          "isRight": false
+        },
+        {
+          "describe": "Subscribe to the Opportunity Change Data Capture event in the Lightning component.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146574",
+      "analysis": ""
+    },
+    {
+      "describe": "A company has a custom object, order__c, that has a required, unique external ID field called Order_Number_ c.\nWhich statement should be used to perform the DML necessary to insert new records and update existing records in a list of order_.\nrecords using the external ID field?",
+      "answerOptions": [
+        {
+          "describe": "upsert orders Order_Number_c;",
+          "isRight": true
+        },
+        {
+          "describe": "upsert orders;",
+          "isRight": false
+        },
+        {
+          "describe": "merge orders;",
+          "isRight": false
+        },
+        {
+          "describe": "merge orders Order_Number_c;",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146569",
+      "analysis": ""
+    },
+    {
+      "describe": "A company accepts orders for customers in their enterprise resource planning (ERP) system that must be integrated into Salesforce as order__c records with a lookup field to Account. The Account object has an external ID field,ERP_Customer_ID__c.\nWhat should the integration use to create new Order_c records that will automatically be related to the correct Account?",
+      "answerOptions": [
+        {
+          "describe": "Insert on the Order_c object followed by an update on the order_c object.",
+          "isRight": false
+        },
+        {
+          "describe": "Upsert on the Account and specify the ERP_Customer_ID_c for the relationship.",
+          "isRight": false
+        },
+        {
+          "describe": "Merge on the order_c object and specify the ERP_Customer_ID_c for the Account relationship.",
+          "isRight": false
+        },
+        {
+          "describe": "Upsert on the order_e object and specify the ERP_Customer_ID_c for the Account relationship.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146544",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers (UC) has custom Order and Order Line objects that represent orders placed by its customers.\nA developer has a new requirement that UC's external enterprise resource planning(ERP) system must be able to integrate with Salesforce to create orders for existing customers in Salesforce whenever an order is placed in the ERP system.\nWhat should the developer use to create the orders in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "Connect API",
+          "isRight": true
+        },
+        {
+          "describe": "Change Data Capture API",
+          "isRight": false
+        },
+        {
+          "describe": "SObject Tree API",
+          "isRight": false
+        },
+        {
+          "describe": "Event Monitoring API",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146543",
+      "analysis": ""
+    },
+    {
+      "describe": "A company uses an external system to manage its custom account territory assignments. Every quarter , millions of Accounts may be updated in Salesforce with new Owners when the territory assignments are completed in the external system.\nWhat is the optimal way to update the Accounts from the external system?",
+      "answerOptions": [
+        {
+          "describe": "Apex REST web Service",
+          "isRight": false
+        },
+        {
+          "describe": "Composite REST API",
+          "isRight": false
+        },
+        {
+          "describe": "SOAP API",
+          "isRight": false
+        },
+        {
+          "describe": "Bulk API",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146540",
+      "analysis": ""
+    },
+    {
+      "describe": "An org has a process Builder process on Opportunity that sets a custom field,commnissionBaseAccount_c, when an Opportunity is edited and the Opportunity's Amount changes.\nA developer recently deployed an Opportunity before update trigger that uses the commnissionBaseAccount_c and complex logic to calculate a value for a custom field,commnissionBaseAccount_c when an Opportunity stage changes to Closed/Won.\nUsers report that when they change the Opportunity to Closed/Won and also change the Amount during the same save,the commnissionBaseAccount_c is incorrect.\nWhich two actions should the developer take to correct this problem?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Call the trigger from the process.",
+          "isRight": true
+        },
+        {
+          "describe": "Uncheck the recursion checkbox on the process.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a static Boolean variable in the trigger.",
+          "isRight": true
+        },
+        {
+          "describe": "Call the process from the trigger.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146538",
+      "analysis": ""
+    },
+    {
+      "describe": "A company's support process dictates that any time a Case is closed with a Status of 'Could not fix ,' an Engineering Review custom object record should be created and populated with information from the Case, the Contact, and any of the Products associated with the Case.\nWhat is the correct way to automate this using an Apex trigger?",
+      "answerOptions": [
+        {
+          "describe": "A before upsert trigger that creates the Engineering Review record and inserts it",
+          "isRight": false
+        },
+        {
+          "describe": "An after update trigger that creates the Engineering Review record and inserts it.",
+          "isRight": true
+        },
+        {
+          "describe": "A before update trigger that creates the Engineering Review record and inserts it.",
+          "isRight": false
+        },
+        {
+          "describe": "An after upsert trigger that creates the Engineering Review record and inserts it.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146514",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers needs to integrate with an external system. The process is initiated when a record is created in Salesforce. The remote system does not require Salesforce to wait for a response before continuing.\nWhat should the developer use to accomplish this?",
+      "answerOptions": [
+        {
+          "describe": "Trigger with HTTP callout",
+          "isRight": false
+        },
+        {
+          "describe": "PushTopic event",
+          "isRight": false
+        },
+        {
+          "describe": "Outbound message",
+          "isRight": true
+        },
+        {
+          "describe": "Platform event",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146510",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers needs to integrate with their own, existing, internal custom web application. The web application accepts JSON payloads, resizes product images, and sends the resized images back to Salesforce.\nWhat should the developer use to implement this integration?",
+      "answerOptions": [
+        {
+          "describe": "An Apex trigger that calls an @future method that allows callouts.",
+          "isRight": false
+        },
+        {
+          "describe": "A flow that calls an @future method that allows callouts.",
+          "isRight": false
+        },
+        {
+          "describe": "A platform event that makes a callout to the web application.",
+          "isRight": true
+        },
+        {
+          "describe": "A workflow rule with an outbound message that contains a session ID.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146508",
+      "analysis": ""
+    },
+    {
+      "describe": "A company wants to incorporate a third-party web service to set the Address fields when an Account is inserted, if they have not already been set.\nWhat is the optimal way to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "Create a Workflow Rule, execute a Queueable job from it, and make a callout from the Queueable job.",
+          "isRight": false
+        },
+        {
+          "describe": "Create an Apex trigger, execute a Queueable job from it, and make a callout from the Queueable job.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Before Save Flow, execute a Queueable job from it, and make a callout from the Queueable job.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Process, execute a Queueable job from it, and make a callout from the Queueable job.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146506",
+      "analysis": ""
+    },
+    {
+      "describe": "What should a developer use to query all Account fields for the Acme account in their sandbox?",
+      "answerOptions": [
+        {
+          "describe": "SELECT . FROM Account WHERE Name = 'Acme' LIMIT 1",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT ALL FROM Account WHERE Name = 'Acme' LIMIT 1",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT FIELDS FROM Account WHERE Name = 'Acme' LIMIT 1",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT FIELDS(ALL) FROM Account WHERE Name = 'Acme' LIMIT 1",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146479",
+      "analysis": ""
+    },
+    {
+      "describe": "A business requires that ever parent record must have a child record. A developer writes an Apex method with two DML statements to insert a parent record and a child record.\nA validation rule blocks child records from being created. The method uses a try/catch block to handle the DML exception.\nWhat should the developer do to ensure the parent always has a child record?",
+      "answerOptions": [
+        {
+          "describe": "Use Database.inert() and set the allOrNone parameter to true.",
+          "isRight": false
+        },
+        {
+          "describe": "Use addError{} on the parent record i an error occurs on the child record.",
+          "isRight": false
+        },
+        {
+          "describe": "Set a database savepoint to rollback it there are errors.",
+          "isRight": true
+        },
+        {
+          "describe": "Delete the parent record in the catch statement when an error occurs on the child record DML operaton.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146478",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is working with existing functionality that tracks how many times a stage has changed for an Opportunity. When the Opportunity's stage is changed，a workflow rule is fired to increase the valve of a field by one. The developer wrote an after trigger to create a child record when the field Changes from 4 to 5.\nA user changes the stage of an Opportunity and manually sets the count field to 4. The count field updates to 5, but the child record s not created.\nWhat is the reason this happening?",
+      "answerOptions": [
+        {
+          "describe": "After triggers fire before workflow rules.",
+          "isRight": false
+        },
+        {
+          "describe": "After triggers are not fired after field updates.",
+          "isRight": false
+        },
+        {
+          "describe": "Trigger .new does not change after a field update.",
+          "isRight": true
+        },
+        {
+          "describe": "Trigger.old does not contain the updated value of the count field.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146475",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer writes a Lightning web component that displays a dropdown list of all custom objects in the org from which a user will select. An Apex method prepares and returns data to the component.\nWhat should the developer do to determine which objects to include in the response?",
+      "answerOptions": [
+        {
+          "describe": "Check the isCustom() value on the sObject describe result.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the getCustomObject() method from the Schema class.",
+          "isRight": false
+        },
+        {
+          "describe": "Import the list of all custom objects from salesforce/schema.",
+          "isRight": false
+        },
+        {
+          "describe": "Check the getObjectType() value for 'Custom' or 'Standard' on the sObject describe result.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146452",
+      "analysis": ""
+    },
+    {
+      "describe": "UC needs to integrate with a Heroku service that resizes product images submitted by users.\nWhat are two alternatives to implement the integration and protect against maliclous calls to the Heroku app's endpoint? \nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Create a Workflow Rule with an Outbound Message allowing the Heroku app to automatically store the resized images in Salesforce.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a trigger that uses an @future Apex HTTP callout passing JSON serialized data; therefore the Heroku app can automatically reply back to the callout \nwith the resized images in Salesforce.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Workflow Rule with an Outbound Message and select Send Session ID so that the Heroku app can use it to send the resized images back to Salesforce.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a trigger that uses an @future Apex HTTP callout passing JSON serialized data and some form of pre-shared secret key, so that the Heroku app can \nauhenticate requests and store the resized images in Salesforce.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146449",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is writing code that requires making callouts to an external web service.      \nWhich scenario necessitates that the callout be made in an @future method?",
+      "answerOptions": [
+        {
+          "describe": "Over 10 callouts will be made in a single transaction.",
+          "isRight": false
+        },
+        {
+          "describe": "The callouts will be made in an Apex Trigger.",
+          "isRight": true
+        },
+        {
+          "describe": "The callouts will be made in an Apex Test class.",
+          "isRight": false
+        },
+        {
+          "describe": "The callout could take longer than 60 seconds to complete.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146448",
+      "analysis": ""
+    },
+    {
+      "describe": "A Visualforce page needs to make a callout to get billing information and tax information from two different REST endpoints. The information \nneeds to be displayed to the user at the same time and the return value of the billing information contains the input for the tax information \ncallout. Each endpoint might take up to two minutes to process.\n\nHow should a developer implement the callouts?",
+      "answerOptions": [
+        {
+          "describe": "An HTTP REST callout for the billing callout and a Continuation for the tax callout",
+          "isRight": true
+        },
+        {
+          "describe": "A Continuation for the biliing callout and an HTTP REST callout for the tax callout",
+          "isRight": false
+        },
+        {
+          "describe": "A Continuation for both the billing callout and the tax callout",
+          "isRight": false
+        },
+        {
+          "describe": "An HTTP REST callout for both the billing callout and the tax callout",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146447",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is tasked with ensuring that email addresses entered into the system for Contacts and for a Custom Object called \nSurvey_Response__c do not belong to a list of blocked domains. The list of blocked domains will be stored in a custom object for ease of \nmaintenance by users. Note that the Survey_Response__c object is populated via a custom Visualforce page.\n\nWhat is the optimal way to implement this?",
+      "answerOptions": [
+        {
+          "describe": "Implement the logic in a Validation Rule on the Contact and a Validation Rule on the Survey_Response__c  object.",
+          "isRight": false
+        },
+        {
+          "describe": "Implement the logic in an Apex trigger on Contact and also implement the logic within the Custom Visualforce page controller.",
+          "isRight": false
+        },
+        {
+          "describe": "Implement the logic in a helper class that is called by an Apex trigger on Contact and from the Custom Visualforte page controller.",
+          "isRight": true
+        },
+        {
+          "describe": "Implement the logic in the Custom Visualforce page controller and call that method from an Apex trigger on Contact.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146445",
+      "analysis": ""
+    },
+    {
+      "describe": "UC stores user preferences in a Hierarchy Custom Setting, User_Prefs__c, with a Checkbox field, Show_Help__c. Company-level defaults are stored at the organizational level, but may be overridden at the user level. If a user has not overridden preferences, then the defaults should be used.\n\nHow should the Show_Help__c preference be retrieved for the current user?",
+      "answerOptions": [
+        {
+          "describe": "Boolean show = User_Prefs__c.Show_Help__c;",
+          "isRight": false
+        },
+        {
+          "describe": "Boolean show = User_Prefs__c.getValues(UserInfo.getUserId( )).Show_Help__c;",
+          "isRight": false
+        },
+        {
+          "describe": "Boolean show = User_Prefs__c.getInstance( ).Show_Help__c;",
+          "isRight": true
+        },
+        {
+          "describe": "Boolean show = User_Prefs__c.getValues( ).Show_Help__c;",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146422",
+      "analysis": ""
+    },
+    {
+      "describe": "A company uses a custom-built enterprise resource planning (ERP) system to handle order management. The company wants Sales Reps to \nknow the status of orders so that if a customer calls to ask about their shipment, the Sales Rep can advise the customer about the order's \nstatus and tracking number if it is already shipped.\n\nWhich two methods can make this ERP order data visible in Salesforce? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Use Salesforce Connect to view real-time Order data in the ERP system.",
+          "isRight": true
+        },
+        {
+          "describe": "Write a cron job in Salesforce to poll the ERP system for order updates.",
+          "isRight": false
+        },
+        {
+          "describe": "Have the ERP system push the data into Salesforce using the SOAP API.",
+          "isRight": true
+        },
+        {
+          "describe": "Ensure real-time order data is in Salesforce using the Streaming API.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146421",
+      "analysis": ""
+    },
+    {
+      "describe": "UC uses Big Objects to store almost a billion customer transactions called Customer_Transaction__b.\nThese are the fields on Customer_Transaction__b.\nAccount__c\nProgram__c\nPoints_Earned__c\nLocation__c\nTransaction_Date__c\nThe following fields have been identified as Index Fields for the Customer_Transaction__b object: Account__c, Program__c, and Transaction_Date__c.\nWhich SOQL query is valid on the Customer_Transaction__b Big object?",
+      "answerOptions": [
+        {
+          "describe": "SELECT Account__c, Program__c, Transaction_Date__c FROM Customer_Transaction__b WHERE Account__c = '001R000000302D3' AND Program__c = 'Shoppers' AND \nTransaction_Date__c = 2019-05-31T00:00Z",
+          "isRight": true
+        },
+        {
+          "describe": "SELECT Account__c, Program__c, Transaction_Date__c FROM Customer_Transaction__b WHERE Account__c = '001R000000302D3' AND Program__c LIKE  'Shop%' AND \nTransaction_Date__c = 2019-05-31T00:00Z",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Account__c, Program__c, Transaction_Date__c FROM Customer_Transaction__b WHERE Account__c = '001R000000302D3' AND Program__c INCLUDES ( 'Shoppers', 'Womens') AND Transaction_Date__c = 2019-05-31T00:00Z",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Account__c, Program__c, Transaction_Date__c FROM Customer_Transaction__b WHERE Account__c = '001R000000302D3' AND Program__c EXCLUDES ( 'Shoppers', 'Womens') AND Transaction_Date__c = 2019-05-31T00:00Z",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146418",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/big_object_querying.htm"
+    },
+    {
+      "describe": "A developer wrote an Apex class to make several callouts to an external system.\nIf the URLs used in these callouts will change often, which feature should the developer use to minimize changes needed to the Apex class?",
+      "answerOptions": [
+        {
+          "describe": "Remote Site Settings",
+          "isRight": false
+        },
+        {
+          "describe": "Connected Apps",
+          "isRight": false
+        },
+        {
+          "describe": "Named Credentials",
+          "isRight": true
+        },
+        {
+          "describe": "Session Id",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146414",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_callouts_named_credentials.htm"
+    },
+    {
+      "describe": "A company has a custom object, Order__C, that has a custom picklist field, Status__c, with values of 'New,' 'In Progress,' or 'Fulfilled' and a lookup field, Contact__c, to Contact.\nWhich SOQL query will return a unique list of all the Contact records that have no 'Fulfilled' Orders?",
+      "answerOptions": [
+        {
+          "describe": "SELECT Contact__c FROM Order__c WHERE Status__c <> 'Fulfilled'",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Id FROM Contact WHERE Id NOT IN (SELECT Contact__c FROM Order__c WHERE Status__c = 'Fulfilled')",
+          "isRight": true
+        },
+        {
+          "describe": "SELECT Id FROM Contact WHERE Id NOT IN (SELECT Id FROM Order__c WHERE Status__c = 'Fulfilled')",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Contact__c FROM Order__c WHERE Id NOT IN (SELECT Id FROM Order__c Where Status__c = 'Fulfilled')",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146389",
+      "analysis": ""
+    },
+    {
+      "describe": "UC has an existing automation where a custom record called Account Plan is created upon an Account being marked as a Customer. \nRecently, a Workflow Rule was added so that whenever an Account is marked as a Customer, a 'Customer Since' date field is updated \nwith today's date.\nNow, since the addition of the Workflow Rule, two Account Plan records are created whenever the Account is marked as a Customer.\nWhat might cause this to happen?",
+      "answerOptions": [
+        {
+          "describe": "The Apex Trigger responsible for the record creation does not use a static variable to ensure it only fires once.",
+          "isRight": true
+        },
+        {
+          "describe": "The Process Builder responsible for the record creation fires before and after the Workflow rule.",
+          "isRight": false
+        },
+        {
+          "describe": "The Workflow Rule responsible for the record creation fires twice because the 'Customer Since' field Update is marked as 'Re-evaloate \nWorkflow Rules After Field Change.'",
+          "isRight": false
+        },
+        {
+          "describe": "The Apex Trigger responsible for the record creation is not bulk safe and calls insert inside of a for loop.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146387",
+      "analysis": ""
+    },
+    {
+      "describe": "Which statement is considered a best practice for writing bulk safe Apex Triggers?",
+      "answerOptions": [
+        {
+          "describe": "Add records to collections and perform DML operations against these collections.",
+          "isRight": true
+        },
+        {
+          "describe": "Perform all DML operations from within a Future Method.",
+          "isRight": false
+        },
+        {
+          "describe": "Instead of DML statements, use the Database methods with allOrNone set to False.",
+          "isRight": false
+        },
+        {
+          "describe": "Add LIMIT 50000 to every SOQL statement.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146386",
+      "analysis": ""
+    },
+    {
+      "describe": "UC wants to use an external Web Service provided by a third-party vendor to validate that shipping and billing addresses are correct.\nThe current vendor uses basic password authentication, but UC might switch to a different vendor who uses Oauth.\nWhich approach follows best practices and allows UC to switch vendors without updating the code to handle authentication?",
+      "answerOptions": [
+        {
+          "describe": "Custom Setting(List)",
+          "isRight": false
+        },
+        {
+          "describe": "Named Credential",
+          "isRight": true
+        },
+        {
+          "describe": "Custom Metadata",
+          "isRight": false
+        },
+        {
+          "describe": "Dynamic Endpoint",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146384",
+      "analysis": "https://help.salesforce.com/articleView?id=external_authentication.htm&type=5"
+    },
+    {
+      "describe": "After a Platform Event is defined in a Salesforce org, events can be published via which two mechanisms? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Internal Apps can use Outbound Messages.",
+          "isRight": false
+        },
+        {
+          "describe": "Internal Apps can use Process Builder.",
+          "isRight": true
+        },
+        {
+          "describe": "External Apps require the standard Streaming API.",
+          "isRight": true
+        },
+        {
+          "describe": "External Apps use an API to publish event messages.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146382",
+      "analysis": ""
+    },
+    {
+      "describe": "A company has a native iOS app for placing orders that needs to connect to Salesforce to retrieve consolidated information from many different objects in a JSON format.\n Which is the optimal method to implement this in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "Apex REST Callout",
+          "isRight": false
+        },
+        {
+          "describe": "Apex REST Web Service",
+          "isRight": true
+        },
+        {
+          "describe": "Apex SOAP Web Service",
+          "isRight": false
+        },
+        {
+          "describe": "Apex SOAP Callout",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146360",
+      "analysis": ""
+    },
+    {
+      "describe": "A company represents their customers as Accounts in Salesforce. All customers have a unique Customer_Number__c that is unique across all of \nthe company's systems. They also have a custom Invoice__c object, with a Lookup to Account, to represent invoices that are sent out from\ntheir external system. This company wants to integrate invoice data back into Salesforce so Sales Reps can see when a customer is paying their bills on time.\n\nWhat is the optimal way to implement this?",
+      "answerOptions": [
+        {
+          "describe": "Use Salesforce Connect and external data objects to seamlessly import the invoice data into Salesforce without custom code.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure Customer_Number__c is an External ID and that a custom field Invoice_Number__c is an External ID and Upsert invoice data nightly.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a cross-reference table in the custom invoicing system with the Salesforce Account ID of each Customer and insert invoice data nightly.",
+          "isRight": false
+        },
+        {
+          "describe": "Query the Account Object upon each call to insert invoice data to fetch the Salesforce ID corresponding to the Customer Number on the invoice.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146359",
+      "analysis": ""
+    },
+    {
+      "describe": "A business process requires sending new Account records to an external system. The Account Name, Id, CreatedDate, and CreatedByld must \nbe passed to the external system in near real-time when an Account is inserted without error.\n\nHow should a developer achieve this?",
+      "answerOptions": [
+        {
+          "describe": "Use a before insert trigger and an @future method.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a before insert trigger and a Queueable class.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a Process Builder that calls an @InvocableMethod method.",
+          "isRight": true
+        },
+        {
+          "describe": "Use a Workflow rule that calls an @InvocableMethod method.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146357",
+      "analysis": ""
+    },
+    {
+      "describe": "What is the optimal technique a developer should use to programmatically retrieve Global Picklist options in a Test Method?",
+      "answerOptions": [
+        {
+          "describe": "Perform a SOQL Query.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Schema namespace,",
+          "isRight": true
+        },
+        {
+          "describe": "Perform a callout to the Metadata API,",
+          "isRight": false
+        },
+        {
+          "describe": "Use a static resource.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146354",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer wants to write a generic Apex method that will compare the Salesforce Name field between any two object records. For example, to compare the Name field of an Account and an Opportunity; or the Name of an Account and a Contact.\nHow should the developer do this?",
+      "answerOptions": [
+        {
+          "describe": "Use a String.replace( ) method to parse the contents of each Name field.",
+          "isRight": false
+        },
+        {
+          "describe": "Invoke a Schema.describe( ) function to compare the values of each Name field.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Salesforce Metadata API to extract the value of each object and compare the Name fields. ",
+          "isRight": false
+        },
+        {
+          "describe": "Cast each object into an sObject and use sObject.get(`Name`) to compare the Name fields.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146353",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer needs to send Account records to an external system for backup purposes. The process must take a snapshot of Accounts as they\nare saved and then make a callout to a RESTful web service. The web service can only receive, at most, one record per call.\n\nWhich feature should be used to implememt these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Queueable",
+          "isRight": false
+        },
+        {
+          "describe": "Workflow",
+          "isRight": false
+        },
+        {
+          "describe": "@future",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145674",
+      "analysis": ""
+    },
+    {
+      "describe": "A company has an Apex process that makes multiple extensive database operations and web service callouts. The database processes and web services can take a long time to run and must be run sequentially.\nHow should the developer write this Apex code without running into governor limits and system limitations?",
+      "answerOptions": [
+        {
+          "describe": "Use Limits class to stop entire process once governor limits are reached.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Queueable Apex to chain the jobs to run sequentially.",
+          "isRight": true
+        },
+        {
+          "describe": "Use Apex Scheduler to schedule each process.",
+          "isRight": false
+        },
+        {
+          "describe": "Use multiple @future methods for each process and callout.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146352",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is asked to build a solution that will automatically send an email to the Customer when an Opportunity stage changes. The solution \nmust scale to allow for 10,000 emails per day. The criteria to send the email should be evaluated after all Workflow Rules have fired.\n\nWhat is the optimal way to accomplish this?",
+      "answerOptions": [
+        {
+          "describe": "Use a MassEmailMessage() with an Apex Trigger.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a SingleEmailMessage() with an Apex Trigger.",
+          "isRight": false
+        },
+        {
+          "describe": "Use an Email Alert with Process Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Use a Workflow Email Alert.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145671",
+      "analysis": ""
+    },
+    {
+      "describe": "Business rules require a Contact to always be create when a new Account is created.\nWhat can be used when developing a custom screen to ensure an Account is not created if the creation of the Contact fails?",
+      "answerOptions": [
+        {
+          "describe": "Use setSavePoint( ) and rollback( ) with a try/catch block.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the Database.Delete method if the Contact insertion fails.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Database.Insert method with allOrNone set to False.",
+          "isRight": false
+        },
+        {
+          "describe": "Disable Validation rules on Contacts and set default values witha Trigger.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145670",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_transaction_control.htm"
+    },
+    {
+      "describe": "A developer creates an application event that has triggered an infinite loop. \nWhat may have caused this problem?",
+      "answerOptions": [
+        {
+          "describe": "The event is fired from a custom renderer.",
+          "isRight": true
+        },
+        {
+          "describe": "The event handler calls a trigger.",
+          "isRight": false
+        },
+        {
+          "describe": "An event is fired 'ontouchend' and is unhandled.",
+          "isRight": false
+        },
+        {
+          "describe": "The event has multiple handlers registered in the project.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145669",
+      "analysis": ""
+    },
+    {
+      "describe": "Which two relationship queries use the proper syntax? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "SELECT Name, (SELECT LastName FROM Contacts) FROM Account",
+          "isRight": true
+        },
+        {
+          "describe": "SELECT Id, Name, Account__r.Name FROM Contact WHERE Account__r.Industry = 'Media'",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Name, (SELECT LastName FROM Contacts__r) FROM Account",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Id, Name, Account.Name FROM Contact WHERE Account.Industry = 'Media'",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145643",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer gets an error saying 'Maximum Trigger Depth Exceeded.'\nWhat is a possible reason to get this error message?",
+      "answerOptions": [
+        {
+          "describe": "The SOQL governor limits are being hit.",
+          "isRight": false
+        },
+        {
+          "describe": "There are numerous DML operations in the trigger logic.",
+          "isRight": false
+        },
+        {
+          "describe": "A trigger is recursively invoked more than 16 times.",
+          "isRight": true
+        },
+        {
+          "describe": "A Process Builder is running that sends mass emails.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145639",
+      "analysis": "https://developer.salesforce.com/forums/?id=9060G000000UXiMQAW"
+    },
+    {
+      "describe": "Which scenario requires a developer to use an Apex callout instead of Outbound Messaging?",
+      "answerOptions": [
+        {
+          "describe": "The target system uses a SOAP API.",
+          "isRight": false
+        },
+        {
+          "describe": "The target system uses a REST API.",
+          "isRight": true
+        },
+        {
+          "describe": "The callout needs to be invoked from a Workflow Rule.",
+          "isRight": false
+        },
+        {
+          "describe": "The callout needs to be asynchronous.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145638",
+      "analysis": ""
+    },
+    {
+      "describe": "The salesforce instance at UC currently integrates with a third-party company to validate mailing addresses via REST services. The third-party address verification system recently changed endpoint URLs for all their services from https://th-address-service.3pc.com to https://plc1- mallservice.3pc.com. Everything else remained the same. The developer updated code to reflect this endpoint change, but the mailing address validation service stopped working after the change.\n\n What else should be done to complete this web service endpoint change?",
+      "answerOptions": [
+        {
+          "describe": "Create a new Remote Site for the new endpoint URL.",
+          "isRight": true
+        },
+        {
+          "describe": "Add web service IP addresses to Trusted IP Ranges in the Network Access security controls settings.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a custom Setting with the new endpoint instead of hard coding the URL.",
+          "isRight": false
+        },
+        {
+          "describe": "Test the callout properly using HttpCalloutMock.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145614",
+      "analysis": ""
+    },
+    {
+      "describe": "A corporation has many different Salesforce orgs, with some different objects and some common objects, and wants to build a single Java application that can create, retrieve, and update common object records in all of the different orgs.\n\nWhich method of integration should the application use?",
+      "answerOptions": [
+        {
+          "describe": "Metadata API",
+          "isRight": false
+        },
+        {
+          "describe": "Apex REST Web Service",
+          "isRight": false
+        },
+        {
+          "describe": "SOAP API with the Partner WSDL",
+          "isRight": true
+        },
+        {
+          "describe": "SOAP API with the Enterprise WSDL",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145610",
+      "analysis": ""
+    },
+    {
+      "describe": "A company wants to implement a new call center process for handling customer service calls. It requires service reps to ask for the caller's account number before proceeding with the rest of their call script.\n\n Following best practices, what should a developer use to meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Approvals",
+          "isRight": false
+        },
+        {
+          "describe": "Flow Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Apex Trigger",
+          "isRight": false
+        },
+        {
+          "describe": "Process Builder",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145608",
+      "analysis": ""
+    },
+    {
+      "describe": "An org has a requirement that an Account must always have one and only one Contact listed as Primary. So selecting one Contact will de-select any others. The client wants a checkbox on the Contact called 'Is Primary' to control this feature. The client also wants to ensure that the last name of every Contact is stored entirely in uppercase characters.\n\n What is the optimal way to implement these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Write an after update trigger on Contact for the Is Prlmary logic and a separate before update trigger on Contact for the last name logic.",
+          "isRight": false
+        },
+        {
+          "describe": "Write an after update trigger on Account for the Is Primary logic and a before update trigger on Contact for the last name logic.",
+          "isRight": false
+        },
+        {
+          "describe": "Write a Validation Rule on the Contact for the Is Primary logic and a before update trigger on Contact for the last name logic.",
+          "isRight": false
+        },
+        {
+          "describe": "Write a single trigger on Contact for both after update and before update and callout to helper classes to handle each set of logic.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145607",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer has a requirement to query three fields (Id, Name, Type) from an Account and First and Last names for all Contacts associated with the Account.\n Which option is the preferred optimized method to achieve this for the Account named 'Ozone Electronics'?",
+      "answerOptions": [
+        {
+          "describe": "Account a= [SELECT ID, Name, Type FROM Account WHERE name='Ozone Electronics'];\nList lcontacts = [SELECT firstname, lastname FROM Contact WHERE accountid=:a.ID];",
+          "isRight": false
+        },
+        {
+          "describe": "List lAccounts = [SELECT ID, Name, Type FROM Account JOIN(SELECT ID, firstname, lastname FROM Contact \nWHERE contact.account.name = 'ozone electronics)];",
+          "isRight": false
+        },
+        {
+          "describe": "List lcontacts = new list();\n for (Contact c :[SELEcT firstname, lastname, Account.Name,Account.ID,Account.Type FROM Contact WHERE Account.Name='ozone electronics']) { lContacts.add(c);}",
+          "isRight": false
+        },
+        {
+          "describe": "Account a= [SELECT ID, Name,Type,(SELECT FirstName, LastName FROM Contacts) FROM Account WHERE name='Ozone Electronics' LIMIT 1];",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145583",
+      "analysis": ""
+    },
+    {
+      "describe": "An environment has two Apex Triggers: an after-update trigger on Account and an after-update trigger on Contact. The Account after-update trigger fires whenever an Account's address is updated, and it updates every associated Contact with that address. The Contact after-update trigger fires on every edit, and it updates every Campaign Member record related to the Contact with the Contact's state.\nConsider the following: A mass update of 200 Account records' addresses, where each Account has 50 Contacts. Each Contact has 1 Campaign Member. This means there are 10,000 Contact records across the Accounts and 10,000 Campaign Member records across the contacts.\nWhat will happen when the mass update occurs?",
+      "answerOptions": [
+        {
+          "describe": "There will be no error, since each trigger fires within its own context and each trigger does not exceed the limit of the number of records \nprocessed by DML statements.",
+          "isRight": false
+        },
+        {
+          "describe": "The mass update will fail, since the two triggers fire in the same context, thus exceeding the number of records processed by DML \nstatements.",
+          "isRight": true
+        },
+        {
+          "describe": "The mass update of Account address will succeed, but the Contact address updates will fail due to exceeding number of records  \nprocessed by DML statements.",
+          "isRight": false
+        },
+        {
+          "describe": "There will be no error, since the limit on the number of records processed by DML statements is 50,000.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145580",
+      "analysis": ""
+    },
+    {
+      "describe": "A company has a web page that needs to get Account record information, given its Salesforce record ID, from JavaScript on the page and then display it.\n\nWhich method of integration is optimal?",
+      "answerOptions": [
+        {
+          "describe": "SOAP API",
+          "isRight": false
+        },
+        {
+          "describe": "REST API",
+          "isRight": false
+        },
+        {
+          "describe": "Apex SOAP Web Service",
+          "isRight": false
+        },
+        {
+          "describe": "Apex REST Web Service",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145579",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is integrating with a legacy on-premise SQL database.\nWhat should the developer use to ensure the data being integrated is matched to the right records in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "Formula field",
+          "isRight": false
+        },
+        {
+          "describe": "External Id field",
+          "isRight": true
+        },
+        {
+          "describe": "Lookup field",
+          "isRight": false
+        },
+        {
+          "describe": "External Object",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145577",
+      "analysis": ""
+    }
+  ],
+  "hashCode": "-2054096398"
+}

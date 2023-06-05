@@ -1,0 +1,1403 @@
+{
+  "title": "模拟卷A",
+  "category": "Dev2-自由部落侠",
+  "questions": [
+    {
+      "describe": "Universal Containers implements a private sharing model for the Convention_Attendee__c custom object. As part of a new quality assurance\neffort, the company created an Event_Reviewer__c user lookup field on the object. Management wants the event reviewer to automatically\ngain Read/Write access to every record they are assigned to\n\nWhat is the best approach to ensure the assigned reviewer obtains Read/Write access to the record?",
+      "answerOptions": [
+        {
+          "describe": "Create a criteria-based sharing rule on the Convention Attendee custom object to share the records the a group of Event Reviewers.",
+          "isRight": false
+        },
+        {
+          "describe": "Create criteria-based sharing rules on the Convention Attendee custom object to share the records with the Event Reviewers.",
+          "isRight": false
+        },
+        {
+          "describe": "Create an After Insert trigger on the Convention Attendee custom object, and use Apex Sharing Reasons and Apex Managed Sharing.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Before Insert trigger on the Convention Attendee custom object, and use Apex Sharing Reasons and Apex Managed Sharing.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145673",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers decided to use Salesforce to manage a new hire interview process. A custom object called Candidate was created with organization-wide defaults set to Private A lookup on the Candidate object sets an employee as an Interviewer.\nWhat should be used to automatically give Read access to the record when the lookup field is set to the Interviewer user?",
+      "answerOptions": [
+        {
+          "describe": "The record can be shared using a sharing rule.",
+          "isRight": false
+        },
+        {
+          "describe": "The record can be shared using a permission set.",
+          "isRight": false
+        },
+        {
+          "describe": "The record cannot be shared with the current setup.",
+          "isRight": false
+        },
+        {
+          "describe": "The record can be shared using an Apex class.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146476",
+      "analysis": ""
+    },
+    {
+      "describe": "An org records customer order information in a custom object, Order__c, that has fields for the shipping address. A developer is tasked with adding code to calculate shipping changes on an order, based on a flat percentage rate associated with the region of the shipping address.\nWhat should the developer use to store the rates by region, so that when the changes are deployed to production no additional steps are needed for the calculation to work?",
+      "answerOptions": [
+        {
+          "describe": "Custom object",
+          "isRight": false
+        },
+        {
+          "describe": "Custom metadata type",
+          "isRight": true
+        },
+        {
+          "describe": "Custom list setting",
+          "isRight": false
+        },
+        {
+          "describe": "Custom hierarchy setting",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147315",
+      "analysis": ""
+    },
+    {
+      "describe": "A managed package uses a list of country ISO codes and country names as reference data in many different places from within the\nmanaged package Apex code.\n\nWhat is the optimal way to store and retrieve the list?",
+      "answerOptions": [
+        {
+          "describe": "Store the information in a List Custom Setting and access it with the getAll() method.",
+          "isRight": false
+        },
+        {
+          "describe": "Store the information in Custom Metadata and query it with SOQL.",
+          "isRight": true
+        },
+        {
+          "describe": "Store the information in a List Custom Setting and query it with SOQL.",
+          "isRight": false
+        },
+        {
+          "describe": "Store the information in Custom Metadata and access it with the getAll() method.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145582",
+      "analysis": ""
+    },
+    {
+      "describe": "A software company uses a custom object, Defect__c, to track defects in their software. Defect__c has organization-wide defaults set to private. Each Defect__c has a related list of Reviewer__c records, each with a lookup field to User that is used to indicate that the User will review the Defect__c.\nWhat should be used to give the User on the Reviewer__c record read only access to the Defect__c record on the Reviewer__c record?",
+      "answerOptions": [
+        {
+          "describe": "Apex managed sharing",
+          "isRight": true
+        },
+        {
+          "describe": "View All on Defect__c",
+          "isRight": false
+        },
+        {
+          "describe": "Criteria-based sharing",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning web component",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147313",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is asked to find a way to store secret data with an ability to specify which profiles and users can access which secrets.\nWhat should be used to store this data?",
+      "answerOptions": [
+        {
+          "describe": "Static resources",
+          "isRight": false
+        },
+        {
+          "describe": "Custom settings",
+          "isRight": true
+        },
+        {
+          "describe": "Custom metadata",
+          "isRight": false
+        },
+        {
+          "describe": "System.Cookie class",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146453",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer used custom settings to store some configuration data that changes occasionally. However, tests are now failing in some of the sandboxes that were recently refreshed.\nWhat should be done to eliminate this issue going forward?",
+      "answerOptions": [
+        {
+          "describe": "Set the setting type on the custom setting to Hierarchy.",
+          "isRight": false
+        },
+        {
+          "describe": "Set the setting type on the custom setting to List.",
+          "isRight": false
+        },
+        {
+          "describe": "Replace custom settings with static resources.",
+          "isRight": false
+        },
+        {
+          "describe": "Replace custom settings with custom metadata.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146604",
+      "analysis": ""
+    },
+    {
+      "describe": "UC wants to develop a customer community to help their customers log issues with their containers. The community needs to function for their German- and Spanish-speaking customers also. UC heard that it's easy to create an international community using Salesforce, and hired a developer to build out the site.\n\nWhat should the developer use to ensure the site is multilingual?",
+      "answerOptions": [
+        {
+          "describe": "Use Custom Metadata to translate custom picklist values.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Custom Objects to translate custom picklist values.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Custom Settings to ensure custom messages are translated properly. ",
+          "isRight": false
+        },
+        {
+          "describe": "Use Custom Labels to ensure custom messages are translated properly.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145642",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is creating a Lightning web component to display a calendar. The component will be used in multiple countries. In some locales, the first day of the week is a Monday, or a Saturday, or a Sunday.\nWhat should the developer do to ensure the calendar displays accurately for users in every locale?",
+      "answerOptions": [
+        {
+          "describe": "Use a custom metadata type to store key/value pairs.",
+          "isRight": false
+        },
+        {
+          "describe": "Query the FirstDayofweek field from the Locale for the current user.",
+          "isRight": false
+        },
+        {
+          "describe": "Use UerInfo.getLocale() in the component.",
+          "isRight": true
+        },
+        {
+          "describe": "Import the firstDayofweek property in the component.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146541",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer has a requirement to query three fields (Id, Name, Type) from an Account and First and Last names for all Contacts associated with the Account.\n Which option is the preferred optimized method to achieve this for the Account named 'Ozone Electronics'?",
+      "answerOptions": [
+        {
+          "describe": "Account a= [SELECT ID, Name, Type FROM Account WHERE name='Ozone Electronics'];\nList lcontacts = [SELECT firstname, lastname FROM Contact WHERE accountid=:a.ID];",
+          "isRight": false
+        },
+        {
+          "describe": "List lAccounts = [SELECT ID, Name, Type FROM Account JOIN(SELECT ID, firstname, lastname FROM Contact \nWHERE contact.account.name = 'ozone electronics)];",
+          "isRight": false
+        },
+        {
+          "describe": "List lcontacts = new list();\n for (Contact c :[SELEcT firstname, lastname, Account.Name,Account.ID,Account.Type FROM Contact WHERE Account.Name='ozone electronics']) { lContacts.add(c);}",
+          "isRight": false
+        },
+        {
+          "describe": "Account a= [SELECT ID, Name,Type,(SELECT FirstName, LastName FROM Contacts) FROM Account WHERE name='Ozone Electronics' LIMIT 1];",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145583",
+      "analysis": ""
+    },
+    {
+      "describe": "Which scenario requires a developer to use an Apex callout instead of Outbound Messaging?",
+      "answerOptions": [
+        {
+          "describe": "The target system uses a SOAP API.",
+          "isRight": false
+        },
+        {
+          "describe": "The target system uses a REST API.",
+          "isRight": true
+        },
+        {
+          "describe": "The callout needs to be invoked from a Workflow Rule.",
+          "isRight": false
+        },
+        {
+          "describe": "The callout needs to be asynchronous.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145638",
+      "analysis": ""
+    },
+    {
+      "describe": "A company's support process dictates that any time a Case is closed with a Status of 'Could not fix ,' an Engineering Review custom object record should be created and populated with information from the Case, the Contact, and any of the Products associated with the Case.\nWhat is the correct way to automate this using an Apex trigger?",
+      "answerOptions": [
+        {
+          "describe": "A before upsert trigger that creates the Engineering Review record and inserts it",
+          "isRight": false
+        },
+        {
+          "describe": "An after update trigger that creates the Engineering Review record and inserts it.",
+          "isRight": true
+        },
+        {
+          "describe": "A before update trigger that creates the Engineering Review record and inserts it.",
+          "isRight": false
+        },
+        {
+          "describe": "An after upsert trigger that creates the Engineering Review record and inserts it.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146514",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is integrating with a legacy on-premise SQL database.\nWhat should the developer use to ensure the data being integrated is matched to the right records in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "Formula field",
+          "isRight": false
+        },
+        {
+          "describe": "External Id field",
+          "isRight": true
+        },
+        {
+          "describe": "Lookup field",
+          "isRight": false
+        },
+        {
+          "describe": "External Object",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145577",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is inserting, updating, and deleting multiple lists of records in a single transaction and wants to ensure that any error prevents all execution.\nHow should the developer implement error exception handling in their code to handle this?",
+      "answerOptions": [
+        {
+          "describe": "Use Database methods to obtain lists of Database .saveResults.",
+          "isRight": false
+        },
+        {
+          "describe": "Use Database. setsavepoint() and Database. rollBack() with a try-catch statement.",
+          "isRight": true
+        },
+        {
+          "describe": "Use a try-catch statement and handle DML cleanup in the catch statement.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a try-catch and use sobject. addError() on any failures.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146575",
+      "analysis": ""
+    },
+    {
+      "describe": "A company wants to incorporate a third-party web service to set the Address fields when an Account is inserted, if they have not already been set.\nWhat is the optimal way to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "Create a Workflow Rule, execute a Queueable job from it, and make a callout from the Queueable job.",
+          "isRight": false
+        },
+        {
+          "describe": "Create an Apex trigger, execute a Queueable job from it, and make a callout from the Queueable job.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Before Save Flow, execute a Queueable job from it, and make a callout from the Queueable job.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Process, execute a Queueable job from it, and make a callout from the Queueable job.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146506",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is working with existing functionality that tracks how many times a stage has changed for an Opportunity. When the Opportunity's stage is changed，a workflow rule is fired to increase the valve of a field by one. The developer wrote an after trigger to create a child record when the field Changes from 4 to 5.\nA user changes the stage of an Opportunity and manually sets the count field to 4. The count field updates to 5, but the child record s not created.\nWhat is the reason this happening?",
+      "answerOptions": [
+        {
+          "describe": "After triggers fire before workflow rules.",
+          "isRight": false
+        },
+        {
+          "describe": "After triggers are not fired after field updates.",
+          "isRight": false
+        },
+        {
+          "describe": "Trigger .new does not change after a field update.",
+          "isRight": true
+        },
+        {
+          "describe": "Trigger.old does not contain the updated value of the count field.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146475",
+      "analysis": ""
+    },
+    {
+      "describe": "UC uses Big Objects to store almost a billion customer transactions called Customer_Transaction__b.\nThese are the fields on Customer_Transaction__b.\nAccount__c\nProgram__c\nPoints_Earned__c\nLocation__c\nTransaction_Date__c\nThe following fields have been identified as Index Fields for the Customer_Transaction__b object: Account__c, Program__c, and Transaction_Date__c.\nWhich SOQL query is valid on the Customer_Transaction__b Big object?",
+      "answerOptions": [
+        {
+          "describe": "SELECT Account__c, Program__c, Transaction_Date__c FROM Customer_Transaction__b WHERE Account__c = '001R000000302D3' AND Program__c = 'Shoppers' AND \nTransaction_Date__c = 2019-05-31T00:00Z",
+          "isRight": true
+        },
+        {
+          "describe": "SELECT Account__c, Program__c, Transaction_Date__c FROM Customer_Transaction__b WHERE Account__c = '001R000000302D3' AND Program__c LIKE  'Shop%' AND \nTransaction_Date__c = 2019-05-31T00:00Z",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Account__c, Program__c, Transaction_Date__c FROM Customer_Transaction__b WHERE Account__c = '001R000000302D3' AND Program__c INCLUDES ( 'Shoppers', 'Womens') AND Transaction_Date__c = 2019-05-31T00:00Z",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Account__c, Program__c, Transaction_Date__c FROM Customer_Transaction__b WHERE Account__c = '001R000000302D3' AND Program__c EXCLUDES ( 'Shoppers', 'Womens') AND Transaction_Date__c = 2019-05-31T00:00Z",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146418",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/big_object_querying.htm"
+    },
+    {
+      "describe": "A company represents their customers as Accounts in Salesforce. All customers have a unique Customer_Number__c that is unique across all of \nthe company's systems. They also have a custom Invoice__c object, with a Lookup to Account, to represent invoices that are sent out from\ntheir external system. This company wants to integrate invoice data back into Salesforce so Sales Reps can see when a customer is paying their bills on time.\n\nWhat is the optimal way to implement this?",
+      "answerOptions": [
+        {
+          "describe": "Use Salesforce Connect and external data objects to seamlessly import the invoice data into Salesforce without custom code.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure Customer_Number__c is an External ID and that a custom field Invoice_Number__c is an External ID and Upsert invoice data nightly.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a cross-reference table in the custom invoicing system with the Salesforce Account ID of each Customer and insert invoice data nightly.",
+          "isRight": false
+        },
+        {
+          "describe": "Query the Account Object upon each call to insert invoice data to fetch the Salesforce ID corresponding to the Customer Number on the invoice.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146359",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer wants to write a generic Apex method that will compare the Salesforce Name field between any two object records. For example, to compare the Name field of an Account and an Opportunity; or the Name of an Account and a Contact.\nHow should the developer do this?",
+      "answerOptions": [
+        {
+          "describe": "Use a String.replace( ) method to parse the contents of each Name field.",
+          "isRight": false
+        },
+        {
+          "describe": "Invoke a Schema.describe( ) function to compare the values of each Name field.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Salesforce Metadata API to extract the value of each object and compare the Name fields. ",
+          "isRight": false
+        },
+        {
+          "describe": "Cast each object into an sObject and use sObject.get(`Name`) to compare the Name fields.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146353",
+      "analysis": ""
+    },
+    {
+      "describe": "As part of a custom development, a developer creates a Lightning component to show how a particular opportunity progresses over time. The component must display the date stamp when any of the following fields change:\n    Amount, Probability, Stage, or Close Date\nHow should the developer access the data that must be displayed?",
+      "answerOptions": [
+        {
+          "describe": "Create a custom date field on Opportunity for each field to track the previous date and execute a SOQL query for date fields.",
+          "isRight": false
+        },
+        {
+          "describe": "Execute a SOQL query for Amount, Probability, Stage, and Close Date on the OpportunityHistory object.",
+          "isRight": true
+        },
+        {
+          "describe": "Subscribe to the OpportunityHistory Change Data Capture event in the Lightning component.",
+          "isRight": false
+        },
+        {
+          "describe": "Subscribe to the Opportunity Change Data Capture event in the Lightning component.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146574",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers needs to integrate with their own, existing, internal custom web application. The web application accepts JSON payloads, resizes product images, and sends the resized images back to Salesforce.\nWhat should the developer use to implement this integration?",
+      "answerOptions": [
+        {
+          "describe": "An Apex trigger that calls an @future method that allows callouts.",
+          "isRight": false
+        },
+        {
+          "describe": "A flow that calls an @future method that allows callouts.",
+          "isRight": false
+        },
+        {
+          "describe": "A platform event that makes a callout to the web application.",
+          "isRight": true
+        },
+        {
+          "describe": "A workflow rule with an outbound message that contains a session ID.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146508",
+      "analysis": ""
+    },
+    {
+      "describe": "A company uses a custom-built enterprise resource planning (ERP) system to handle order management. The company wants Sales Reps to \nknow the status of orders so that if a customer calls to ask about their shipment, the Sales Rep can advise the customer about the order's \nstatus and tracking number if it is already shipped.\n\nWhich two methods can make this ERP order data visible in Salesforce? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Use Salesforce Connect to view real-time Order data in the ERP system.",
+          "isRight": true
+        },
+        {
+          "describe": "Write a cron job in Salesforce to poll the ERP system for order updates.",
+          "isRight": false
+        },
+        {
+          "describe": "Have the ERP system push the data into Salesforce using the SOAP API.",
+          "isRight": true
+        },
+        {
+          "describe": "Ensure real-time order data is in Salesforce using the Streaming API.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146421",
+      "analysis": ""
+    },
+    {
+      "describe": "UC needs to integrate with a Heroku service that resizes product images submitted by users.\nWhat are two alternatives to implement the integration and protect against maliclous calls to the Heroku app's endpoint? \nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Create a Workflow Rule with an Outbound Message allowing the Heroku app to automatically store the resized images in Salesforce.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a trigger that uses an @future Apex HTTP callout passing JSON serialized data; therefore the Heroku app can automatically reply back to the callout \nwith the resized images in Salesforce.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Workflow Rule with an Outbound Message and select Send Session ID so that the Heroku app can use it to send the resized images back to Salesforce.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a trigger that uses an @future Apex HTTP callout passing JSON serialized data and some form of pre-shared secret key, so that the Heroku app can \nauhenticate requests and store the resized images in Salesforce.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146449",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the code snippet below:</p><p><br/></p><p>public static void updateCreditMemo(String customerId, Decimal newAmount) {</p><p>&nbsp; &nbsp; &nbsp;List&lt;Credit_Memo__c&gt; toUpdate = new List&lt;Credit_Memo__c&gt;( ) ;</p><p>&nbsp; &nbsp; &nbsp;for (Credit_Memo__c creditMemo : [Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = : customerId LIMIT 50]) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;creditMemo.Amount__c = newAmount;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;toUpdate.add(creditMemo) ;</p><p>&nbsp; &nbsp; &nbsp; }</p><p>Database.update(toUpdate, false);</p><p>}</p><p><br/></p><p>A custom object called Credit_Memo__c exists in a Salesforce environment. As part of a new feature development that retrieves and manipulates this type of record, the developer needs to ensure race conditions are prevented when a set of records are modified within an Apex transaction.</p><p><br/></p><p>In the preceding Apex code, how can the developer alter the query statement to use SOQL features to prevent race conditions within a transaction?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>[Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = :customerId LIMIT 50 FOR UPDATE]</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>[Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = :customerId FOR REFERENCE LIMIT 50]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>[Select Id, Name, Amount__c FROM Credit_Memo__c WHERE Customer_Id__c = :customerId LIMIT 50 FOR PREFERENCE]</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The executeBatch must fall within test.startTest() and test.stopTest().</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145425",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_for_update.htm</p>"
+    },
+    {
+      "describe": "<p>trigger AssignOwnerByRegion on Account(before insert, before update)</p><p>{</p><p>&nbsp; &nbsp;List&lt;Account&gt; accountList = new List&lt;Account&gt;();</p><p>&nbsp; &nbsp;for(Account anAccount : trigger.new )</p><p>&nbsp; &nbsp;{</p><p>&nbsp; &nbsp; &nbsp; Region__c theRegion = [SELECT Id, Name, Region_Manager__c FROM Region__c WHERE Name= :anAccount.Region_Name__c];</p><p>&nbsp; &nbsp; &nbsp; anAccount.OwnerId = theRegion.Region_Manager__c;</p><p>&nbsp; &nbsp; &nbsp; accountList.add(anAccount);</p><p>&nbsp; &nbsp;}</p><p>&nbsp; &nbsp;update accountList;</p><p>}</p><p><br/></p><p>Consider the above trigger intended to assign the Account to the manager of the Account&#39;s region.</p><p>Which two changes should a developer make in this trigger to adhere to best practices? Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Remove the last line updating accountList as it is not needed.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Move the Region__c query to outside the loop.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use a Map accountMap instead of List accountList.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use a Map to cache the results of the Region__c query by Id.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145392",
+      "analysis": ""
+    },
+    {
+      "describe": "An Aura component functions in preview mode and needs to be used inside a Lightning App Builder page, but itis not available.\nWhat change should be applied to the component?",
+      "answerOptions": [
+        {
+          "describe": "Refresh the sandbox and upgrade it to the latest API version.",
+          "isRight": false
+        },
+        {
+          "describe": "Delete the component, metadata, and Apex controller and recreate them.",
+          "isRight": false
+        },
+        {
+          "describe": "Look for errors in the logic in the JavaScript controller.",
+          "isRight": false
+        },
+        {
+          "describe": "Expose it in the markup using the implements and access attributes.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146356",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer wrote an Apex method to update a list of Contacts and wants to make it available for use by Lightning web components.\nWhich annotation should the developer add to the Apex method to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "@AuraEnabled",
+          "isRight": true
+        },
+        {
+          "describe": "@RemoteAction",
+          "isRight": false
+        },
+        {
+          "describe": "@RemoteAction(cacheable = true)",
+          "isRight": false
+        },
+        {
+          "describe": "@AuraEnabled(cacheable = true)",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146513",
+      "analysis": ""
+    },
+    {
+      "describe": "The head of recruiting at UC wants to provide all internal users the ability to search for open positions by role, department, and location via a new recruiting app. In addition to search, users of the app should be able to refer a friend, apply for a position, and review the status of their crrert submissions. The app should be made available in Salesforce Mobile, but offline access is not required.\n\nGiven these requirements, what is the recommended approach to develop the app?",
+      "answerOptions": [
+        {
+          "describe": "Lightning Experience Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning Web Components",
+          "isRight": true
+        },
+        {
+          "describe": "Visualforce",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce SDK",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145578",
+      "analysis": ""
+    },
+    {
+      "describe": "A lead developer is creating tests for a Lightning web component. The component re-renders when a property called bypassSelection changes its value.\n\nWhat should the developer use to test that the component re-renders successfully when the property changes?",
+      "answerOptions": [
+        {
+          "describe": "Promise.resolve()",
+          "isRight": true
+        },
+        {
+          "describe": "Window.setInterval()",
+          "isRight": false
+        },
+        {
+          "describe": "Window.setState()",
+          "isRight": false
+        },
+        {
+          "describe": "dispatchEvent (new CustomEvent ('bypassSelection'))",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145675",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer created and tested a Visualforce page in their developer sandbox, but now receives reports that user encounter ViewState errors when using it in Production.\nWhat should the developer ensure to correct these errors?",
+      "answerOptions": [
+        {
+          "describe": "Ensure queries do not exceed governor limits.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure profiles have access to the Visualforce page.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure properties are marked as private.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure variables are marked as Transient.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145640",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_keywords_transient.htm"
+    },
+    {
+      "describe": "A developer is tasked with creating a Lightning web component that is responsive on various devices.\nWhich two components should help accomplish this goal?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Lightnig-Input-location",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning-navigation",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning-layout",
+          "isRight": true
+        },
+        {
+          "describe": "Lightning-layout-item",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146484",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Which technique can run custom logic when a Lightning web component is loaded?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Call enqueueAction and pass in the method to call.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the connectedcallback() method.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use an &lt;aura : handler&gt; init event to call a function.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the renderedcallback() method.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145487",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer created a JavaScript library that simplifies the development of repetitive tasks and features and uploaded the library as a static resource called jsUtils in Salesforce. Another developer is coding a new Lightning web component(LWC) and wants to leverage the library.</p><p>Which statement properly loads the static resource within the LWC?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>const jsUtility = $A.get(&#39;$Resource.jsUtils&#39;);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>import jsUtilities from &#39;@salesforce/resourceUrl/jsUtils&#39;;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>import {jsUtilities} from &#39;@salesforce/resourceUrl/jsUtils&#39;;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning-require scripts=&quot;{!$Resource.jsUtils}&quot;/&gt;</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145554",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>An Aura component has a section that displays some information about an Account and it works well on the desktop, but users have to scroll horizontally to see the description field output on their mobile devices and tablets.</p><p><br/></p><p>&lt;lightning: layout multipleRows=&quot;false&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &lt;lightning: layoutItem size&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &lt;/lightning: layoutItem&gt;</p><p>&lt;/lightning: layout&gt;</p><p><br/></p><p>Which option has the changes to make the component responsive for mobile and tablet devices?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;lightning: layout multipleRows=&quot;false&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem smallDeviceSize =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem smallDeviceSize =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p>&lt;/lig",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning: layout multipleRows=&quot;false&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size=&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p>&lt;/lightning: layout&gt;&nbsp",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;lightning: layout multipleRows=&quot;true&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size=&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem size =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p>&lt;/lightning: layout&gt;&nbsp;",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;lightning: layout multipleRows=&quot;true&quot;&gt;</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem smallDeviceSize =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Name}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;lightning: layoutItem smallDeviceSize =&quot;12&quot; largeDeviceSize=&quot;6&quot;&gt;{!v.rec.Description__c}</p><p>&nbsp; &nbsp; &nbsp; &nbsp;&lt;/lightning: layoutItem&gt;</p><p>&lt;/ligh",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145395",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the following code snippet:</p><p><br/></p><p>&lt;apex:page docType=&quot;html-5.0&quot; controller=&quot;FindOpportunities”&gt;</p><p>&lt;apex:form &gt;</p><p>&lt;apex:pageBlock &gt;</p><p>&lt;apex:pageBlockSection title=&quot;find opportunity&quot;&gt;</p><p>&lt;apex:input label=&quot;opportunity name”/&gt;</p><p>&lt;apex:commandButton value=&quot;search&quot; action={ !search}&quot;/&gt;</p><p>&lt;apex:pageBlockSection&gt;</p><p>&lt;apex:pageBlockSection title=&quot;Opportunity List&quot; id=&quot;OpportunityList&quot;&gt;</p><p>&lt;!--DATA Table --&gt;</p><p>&lt;apex:pageBlockSection&gt;</p><p>&lt;apex:pageBlock &gt;</p><p>&lt;/apex:form&gt;</p><p>&lt;/apex:page&gt;</p><p><br/></p><p>Users of this Visualforce page complain that the page does a full refresh every time the Search button is pressed.</p><p>What should the developer do to ensure that a partial refresh is made so that only the section identified with opportunityList is re-drawn on the screen?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Ensure the action method search returns null.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement the reRender attribute on the &lt;apex:commandButton&gt; tag.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Enclose the DATA table within the &lt;apex:actionRegicn&gt; tag.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement the &lt;apex:actionFunction&gt; tag with immediate= true.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145458",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer created a Lightning web component that allows users to input a text value that is used to search for Accounts by calling&nbsp; an Apex method.The Apex method returns a list of Accountwrappers and is called imperatively from a Javascript event handler.</p><p><br/></p><p>public class AccountSearcher{</p><p>public static List&lt;Accountwrapper&gt; search (String term){</p><p>List&lt;Accountwrapper&gt; wrappers = getMatchingaccountWrappers(term);</p><p>return wrappers;</p><p>&nbsp; &nbsp; }</p><p><br/></p><p>public class Accountwrapper {</p><p>public account(get; set;)</p><p>public Decimal matchProbability(get;set;)</p><p>}</p><p>// ...other methods,including getMatchingAccountWrappers implementation...</p><p>}&nbsp;</p><p><br/></p><p>Which two changes should the developer make so the Apex method functions correctly?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add @AuraEnabled to line 09.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add @AuraEnabled to line 03.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add @AuraEnabled to lines 11 and l2.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add @AaraEnabled to line 01.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145457",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Which three Visualforce components can be used to initiate Ajax behavior to perform partial page updates?Choose 3 answers</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>&lt;apex:form&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:commandButton&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:actionSupport&gt;</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>&lt;apex:actionStatus&gt;</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>&lt;apex:commandLink&gt;</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145548",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is trying to access org data from within a test class.\nWhich sObject type requires the test class to have the (seeAllData=true) annotation?",
+      "answerOptions": [
+        {
+          "describe": "RecordType",
+          "isRight": false
+        },
+        {
+          "describe": "Report",
+          "isRight": true
+        },
+        {
+          "describe": "User",
+          "isRight": false
+        },
+        {
+          "describe": "Profile",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145677",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_data_access.htm"
+    },
+    {
+      "describe": "How should a developer assert that a trigger with an asynchronous process has successfully run?",
+      "answerOptions": [
+        {
+          "describe": "Create all test data, use @future in the test class, then perform assertions.",
+          "isRight": false
+        },
+        {
+          "describe": "Create all test data in the test class, invoke Test.startTest() and Test.stopTest() and then perform assertions,",
+          "isRight": true
+        },
+        {
+          "describe": "Insert records Into Salesforce, use seeAllData=true, then perform assertions.",
+          "isRight": false
+        },
+        {
+          "describe": "Create all test data in the test class, use system.runAs() to invoke the trigger, then perform assertions.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146633",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is writing a lest test for a Lightning web component that conditionally displays child components based on a user's checkbox selections.\nWhat should the developer do to properly test that the correct components display and hide for each scenario?",
+      "answerOptions": [
+        {
+          "describe": "Reset the DOM after each test with the afterEach{} method.",
+          "isRight": false
+        },
+        {
+          "describe": "Add a teardown block to reset the DOM after each test.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a new describe block for each test.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a new ladom instance for each test.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146477",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer has working business logic code, but sees the following error in the test class:\nYou have uncommitted work pending. Please commit or rollback before calling out.\nWhat is a possible solution?",
+      "answerOptions": [
+        {
+          "describe": "Call support for help with the target endpoint, as it is likely an external code error.",
+          "isRight": false
+        },
+        {
+          "describe": "Use test.IsRunningTest( ) before making the callout to bypass it in test execution.",
+          "isRight": true
+        },
+        {
+          "describe": "Set seeAllData to \"true\" at the top of the test class, since the code does not fail in practice. ",
+          "isRight": false
+        },
+        {
+          "describe": "Rewrite the business logic and test classes with @TestVisible set on the callout.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145581",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer has a Visualforce page that automatically assigns ownership of an Account to a queue upon save.The page appears to correctly assign ownership, but an assertion validating the correct ownership fails.\nWhat can cause this problem?",
+      "answerOptions": [
+        {
+          "describe": "The test class does not retrieve the updated value from the database.",
+          "isRight": true
+        },
+        {
+          "describe": "The test class does not use the seeAllData=true annotation.",
+          "isRight": false
+        },
+        {
+          "describe": "The test class does not use the Bulk API for loading test data.",
+          "isRight": false
+        },
+        {
+          "describe": "The test class does not implement the Queueable interface.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146515",
+      "analysis": ""
+    },
+    {
+      "describe": "Just prior to a new deployment, the Salesforce Administrator who configured a new order fulfillment process in a developer sandbox\nsuddenly left the company. The users had fully tested all of the changes in the sandbox and signed off on them.\n\nUnfortunately, although a Change Set was started, it was not complete. A developer is brought in to help finish the deployment.\n\nWhat should the developer do to identify the configuration changes that need to be moved into production?",
+      "answerOptions": [
+        {
+          "describe": "In Salesforce setup, look at the last modified date for every object to determine which should be added to the Change Set.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Metadata API and a supported development IDE to push all of the configuration from the sandbox into production to ensure no changes are lost.",
+          "isRight": false
+        },
+        {
+          "describe": "Set up Continuous Integration and a Git repository to automatically merge all changes from the sandbox metadata with the production metadata.",
+          "isRight": false
+        },
+        {
+          "describe": "Leveage the Setup Audit Trail to review the changes made by the departed Administrator and identify which changes should be added to the Change Set.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145672",
+      "analysis": ""
+    },
+    {
+      "describe": "What are three reasons that a developer should write Jest tests for Lightning web components?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "To verify that events fire when expected",
+          "isRight": true
+        },
+        {
+          "describe": "To test basic user interaction",
+          "isRight": true
+        },
+        {
+          "describe": "To verify the DOM output of a component",
+          "isRight": true
+        },
+        {
+          "describe": "To test how multiple components work together",
+          "isRight": false
+        },
+        {
+          "describe": "To test a component's non public properties",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146573",
+      "analysis": "https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.testing"
+    },
+    {
+      "describe": "Universal Containers (UC) currently does all development in its full copy sandbox.\nRecently, UC has projects that require multiple developers to develop concurrently. UC is running into issues with developers making changes that cause errors in work done by other developers.\nAdditionally, when they are ready to deploy, many unit tests fail which prevents the deployment.\nWhich three types of orgs should be recommended to UC to eliminate these problems?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Data Migration org",
+          "isRight": true
+        },
+        {
+          "describe": "Development org",
+          "isRight": true
+        },
+        {
+          "describe": "Staging org",
+          "isRight": true
+        },
+        {
+          "describe": "Systems Integration org",
+          "isRight": false
+        },
+        {
+          "describe": "Continuous Integration (CI) Org",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146507",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer wrote the following method to find all the test accounts in the org:</p><p><br/></p><p>public static Account[] searchTestAccounts() {</p><p>List&lt;List&lt;Sobject&gt;&gt; searchList = [ FIND &#39;test&#39; IN ALL FIELDS RETURNING Account (Name)];</p><p>return (Account[]) searchList[0];</p><p>}</p><p><br/></p><p>However, the test method below fails.</p><p><br/></p><p>@isTest .</p><p>public static void testSearchTestAccounts() {</p><p>Account a = new Account (name=&#39;test&#39;);</p><p>insert a;</p><p>Account [] accounts = TestAccountFinder.searchTestAccounts();</p><p>system.assert (accounts.size() == 1 );</p><p>&nbsp;}</p><p><br/></p><p>What should be used to fix this failing test?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Test.loadData to set up expected data</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Test.fixedsearchResults() method to set up expected data</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>@isTest (SeeAllData=true) to access org data for the test</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>@testsetup method to set up expected data</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145517",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_SOSL.htm</p>"
+    },
+    {
+      "describe": "<p>&#39;@isTest</p><p>static void testAccountUpdate() {</p><p>&nbsp; &nbsp; &nbsp; Account acct = new Account (Name = &#39;Test&#39;);</p><p>&nbsp; &nbsp; &nbsp; acct.Integration_Updated_c = false;</p><p>&nbsp; &nbsp; &nbsp; insert acct;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp;CalloutUtil.sendAccountUpdate(acct.Id);</p><p>&nbsp; &nbsp; &nbsp;Account acctAfter = [SELECT Id, Integration_Updated_c FROM Account WHERE Id = :acct.Id][0];</p><p>&nbsp; &nbsp; &nbsp;System.assert(true, acctAfter.Integration_Updated_c );</p><p>}</p><p><br/></p><p>The test method above calls a web service that updates an external system with Account Information and sets the Account&#39;s</p><p>Integration_Updated_c checkbox to True when It completes. The test falls to execute and exits with an error: &quot;Methods defined as TestMethod</p><p>do not support Web service callouts.&quot;</p><p><br/></p><p>What is the optimal way to fix this?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add Test.startTest() before and Test.stopTest() after CalloutUtil.sendAccountUpdate.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add Test.startTest() before and Test.setMock and Test.stopTest() after CalloutUtil.sendAccountUpdate.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add if (!Test.IsRunningTest()) around CalloutUtil.sendAccountUpdate.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add Test.startTest() and Test.setMock before and Test.stopTest() after CalloutUtil.sendAccountUpdate.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145394",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer has a Batch Apex process, Batch_Account_Sales, that updates the sales amount for 10,000 Accounts on a nightly basis. The&nbsp;</p><p>Batch Apex works as designed in the sandbox. However, the developer cannot get code coverage on the Batch Apex class.</p><p>The test class is below:</p><p>@IsTest private Batch_Account_Update_Test() {</p><p>&nbsp; &nbsp; &nbsp; @IsTest static void UnitTest() {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Account a = new Account(Name=&#39;test&#39;, Type=&#39;Customer&#39;,Sales_Amount__c=0);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; insert a;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Batch_Account_Sales bas = new Batch_Account_Sales();</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ID jobid = database.executebatch(bas);</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>}</p><p>What is causing the code coverage problem?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The &nbsp;batch process will not recognize new accounts created in the same session.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The account creation a already sets the sales amount to 0.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The executeBatch must fall within test.startTest() and test.stopTest().</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The batch needs more than one account record created.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145452",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer created a class that implements the Queueable Interface, as follows：&nbsp;&nbsp;</p><p><br/></p><p>Public class without sharing OrderQueueableJob implements Queueable {</p><p>Public void execute (QueueableContext context) {</p><p>//implementation logic</p><p>System. enqueueJob {new FollowUpJob()};</p><p>}</p><p>}</p><p><br/></p><p>As part of the deployment process, the developer is asked to create a corresponding test class.</p><p>Which two actions should the developer take to successfully execute the test class?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Ensure the running user of the test class has, at least, the View All permission on the Order object.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Enclose System. enqueueJob (new OrderQueueableJob()} within Test.startTest and Test. stopTest().</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Implement seeAllData=true to ensure the Queueable job is able to run in bulk mode.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement Test.isRunningTest to prevent chaining jobs during test execution.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145461",
+      "analysis": ""
+    },
+    {
+      "describe": "A company manages information about their product offerings in custom objects named Catalog and Catalog Item. Catalog Item has a master-detail field to Catalog, and each Catalog may have as many as 100,000 Catalog Items.\nBoth custom objects have a CurrencyIsoCode text field that contains the currency code they should use. If a Catalog's CurrencyIsoCode changes, all of its Catalog Items' CurrencyIsoCodes should be changes as well.\nWhat should a developer use to update the CurrencyIsoCodes on the Catalog Items when the Catalog's CurrencyIsoCode changes?",
+      "answerOptions": [
+        {
+          "describe": "An after insert trigger on Catalog that updates the Catalog Items if the Catalog's CurrencyIsoCode is different",
+          "isRight": false
+        },
+        {
+          "describe": "A Database.Schedulable and Database.Batchable class that queries the Catalog object and updates the Catalog Items if the Catalog CurrencyIsoCode is different.",
+          "isRight": false
+        },
+        {
+          "describe": "An after insert trigger on Catalog Item that updates the Catalog Items if the Catalog's CurrencyIsoCode is different",
+          "isRight": false
+        },
+        {
+          "describe": "A Database.Schedulable and Database.Batchable class that queries the Catalog Item object and updates the Catalog Items if the Catalog CurrencyIsoCode is different.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146637",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer wishes to improve runtime performance of Apex calls by caching results on the client.\nWhat is the best way to implement this?",
+      "answerOptions": [
+        {
+          "describe": "Decorate the server-side method with @AuraEnabled(storable=true).",
+          "isRight": false
+        },
+        {
+          "describe": "Decorate the server-side method with @AuraEnabled(cacheable=true).",
+          "isRight": true
+        },
+        {
+          "describe": "Call the setStorable( ) method on the action in the JavaScript client-side code.",
+          "isRight": false
+        },
+        {
+          "describe": "Set a cookie in the browser for use upon return to the page.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145641",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.lightning.meta/lightning/controllers_server_apex_auraenabled_annotation.htm"
+    },
+    {
+      "describe": "As part of a new integration, a developer is asked to implement a new custom search Functionality that is capable of performing unrestricted queries and can account for all values within a custom picklist field, Type_c, on the Opportunity object. The search feature must also account for NULL values.\nThe organization-wide default for the Opportunity object is set to Public Read-Only, and a new custom index has been created for the Type_ c field. There are more than 5 million Opportunity records within the environment, and a considerable amount of the existing records have NULL values for the picklist.\nWhich technique should the developer implement to maximize performance when querying NULL values?",
+      "answerOptions": [
+        {
+          "describe": "Create a formula field that substitutes NULL values for a string of text, create an index for the formula field, then use the formula within the HERE clause.",
+          "isRight": false
+        },
+        {
+          "describe": "Perform two SOQL queries; one to query Opportunities where Type_c !=NULL, and another to query where Type_c = NULL, then join the result set using Apex.",
+          "isRight": true
+        },
+        {
+          "describe": "Use a SOSL query to return ALL opportunities that have a value of NULL in any field.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the OR operator to combine HERE clauses to strictly search for each value within the picklist, including Type_ c = NULL.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146511",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer implemented a custom data table in a Lightning web component with filter functionality. However, users are submitting support tickets about long load times when the filters are changed. The component uses an Apex method that is called to query for records based on the selected filters.\nWhat should the developer do to improve performance of the component?",
+      "answerOptions": [
+        {
+          "describe": "Use setStorable() in the Apex method to store the response in the client-side cache.",
+          "isRight": true
+        },
+        {
+          "describe": "Return all records into a list when the component is created and filter the array in JavaScript.",
+          "isRight": false
+        },
+        {
+          "describe": "Use SOSL to query the records on filter change.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a selective SOQL query with a custom index.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146482",
+      "analysis": ""
+    },
+    {
+      "describe": "In an organization that has multi-currency enabled, a developer is tasked with building a Lightning component that displays the top ten Opportunities most recently accessed by the logged in user. The developer must ensure tha Amount and LastModifiedDate field values are displayed according to the user's locale.\nWhat is the most effective approach to ensure values displayed respect the user's locale settings?",
+      "answerOptions": [
+        {
+          "describe": "Use the FORMAT() function in the SOQL query.",
+          "isRight": true
+        },
+        {
+          "describe": "Use REGEX expressions to format the values retrieved via SOQL.",
+          "isRight": false
+        },
+        {
+          "describe": "Use a wrapper class to format the values retrieved via SOQL.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the FOR VIEN clause in the SOQL query.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147318",
+      "analysis": ""
+    },
+    {
+      "describe": "Users complain that a page is very slow to respond. Upon investigation, the query below is found to perform slowly.\nSELECT Id, Name FROM Contact WHERE CustomField__c = null;\nWhich two actions can a developer take to improve performance? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Add a LIMIT clause to the query to reduce the number of records returned.",
+          "isRight": true
+        },
+        {
+          "describe": "Contact Salesforce customer support to create a custom index to include null values.",
+          "isRight": false
+        },
+        {
+          "describe": "Make the CustomField__c field an External ID.",
+          "isRight": false
+        },
+        {
+          "describe": "Make the field CustomField__c required because Salesforce field indexes do not include nulls.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146444",
+      "analysis": ""
+    },
+    {
+      "describe": "A company recently deployed a Visualforce page with a custom controller that has a data grid of information about Opportunities in the org. \nUsers report that they receive a \"Maximum view state size limit\" error message under certain conditions.\n\nAccording to Visualforce best practice, which three actions should the developer take to reduce the view state?Choose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Use the transient keyword in the Apex controller for variables that do not maintain state.",
+          "isRight": true
+        },
+        {
+          "describe": "Refine any SOQL queries to return only data relevant to the page.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the final keyword in the controller for variables that will not change.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the private keyword in the controller for variables.",
+          "isRight": false
+        },
+        {
+          "describe": "Use filters and pagination to reduce the amount of data.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145613",
+      "analysis": ""
+    },
+    {
+      "describe": "Which two queries are selective SOQL queries and can be used for a large data set of 200,000 Account records?\nChoose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "SELECT Id FROM Account WHERE Name LIKE 'Partner'",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Id FROM Account WHERE Name !=''",
+          "isRight": false
+        },
+        {
+          "describe": "SELECT Id FROM Account WHERE Id IN (List of Account Ids)",
+          "isRight": true
+        },
+        {
+          "describe": "SELECT Id FROM Account WHERE Name In (List of Name) AND Customer_Number_ c=",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146509",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the markup below:</p><p>&lt;template&gt;</p><p>&nbsp; &nbsp; &lt;!-- …other code … --&gt;</p><p>&nbsp; &nbsp; &lt;lightning-record-form record-id={recordId} object-api-name=&quot;Account&quot; layout-type=&quot;Full&quot;&gt;</p><p>&nbsp; &nbsp; &lt;/lightning-record-form&gt;</p><p>&lt;/template&gt;</p><p><br/></p><p>A Lightning web component displays the Account name and two custom fields out of 275 that exist on the object. The custom fields are correctly declared and populated. However, the developer receives complaints that the component performs slowly.</p><p>What can the developer do to improve the performance?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Replace layout-type=&quot;Full&quot; with layout-type=&quot;Partial&quot;.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add cache=&quot;true&quot; to the component.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add density=&quot;compact&quot; to the component.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Replace layout-type=&quot;Full&quot; with fields-{fields}.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145546",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>The following code segment is called from a trigger handler class from the Opportunity trigger:</p><p><br/></p><p>for (opportunity opp: Trigger.new){</p><p>if (opp . amount &gt;= 1000000)</p><p>Account acct = [SELECT Id, status FROM Account WHERE id = ：opp .accountId LIMIT 1);</p><p>acct.status. = &#39;High Potential&#39;;</p><p>Update. Act；</p><p>}</p><p>}</p><p><br/></p><p>Which two changes should improve this code and make it more efficient?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The method must be annotated with the @InvocableMethod annotation.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Move the SOQL to fetch the account record outside of the tor loop.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>System.LimitException: Too many SOQL Queries on Account</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use Trigger.old instead of Trigger .new.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145460",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the following Apex method that uses the opportunity object.</p><p><br/></p><p>public class opportunityController{|</p><p>@AuraEnabled</p><p>public static List&lt;opportunity&gt;&nbsp; searchoppByCaseId&lt;string caseId) {</p><p>List&lt;opportunity&gt; oppList = [select Id FROM opportunity where External_Case_ c = : caseId];</p><p>return oppList;</p><p>}</p><p>}</p><p><br/></p><p>In a previous data audit, it was determined that close to 5 million Opportunity records are stored within the Salesforce environment. The organization-wide defaults for the object are set to Public Read-Only and most opportunities are related to an external case.</p><p>The method is called from a Lightning web component. Some end users do not provide a caseId value and experience low performance while running the query.</p><p>Which two techniques should the developer implement to avoid low performance queries from executing?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Implement a LIMIT clause within the SOQL query to restrict the result set.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Ensure the user provided input is not null before executing the SOQL query.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Implement the with sharing keyword on the Apex class.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use SOSL instead of SOQL queries to perform text based searches.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145484",
+      "analysis": ""
+    }
+  ],
+  "hashCode": "506696732"
+}

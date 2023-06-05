@@ -1,0 +1,828 @@
+{
+  "title": "测试与部署",
+  "category": "Dev2-自由部落侠",
+  "questions": [
+    {
+      "describe": "An end user reports that a Lightning component is performing poorly.\nWhich two steps should be taken in production to investigate? Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "Enable Debug Mode for Lightning components.",
+          "isRight": false
+        },
+        {
+          "describe": "Print console.log() statements to identify where actions are deplayed.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the Salesforce Lightning Inspector Chrome extension.",
+          "isRight": true
+        },
+        {
+          "describe": "Add a trace flag to the user who reported the issue.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147344",
+      "analysis": ""
+    },
+    {
+      "describe": "UC allows customers to log into a Salesforce Community and update their orders via a custom Visualforce page. Universal Containers' sales representatives can edit the orders on the same Visualforce page.\nWhat should a developer use in an Apex test class to test that record sharing is enforced on the Visualforce page?",
+      "answerOptions": [
+        {
+          "describe": "Use System.profileIs() to test as an administrator and a community user.",
+          "isRight": false
+        },
+        {
+          "describe": "Use System.runAs() to test as a sales rep and a community user.",
+          "isRight": true
+        },
+        {
+          "describe": "Use System.profileIs() to test as a sales rep and a community user.",
+          "isRight": false
+        },
+        {
+          "describe": "Use System.runAs() to test as an administrator and a community user.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019147320",
+      "analysis": ""
+    },
+    {
+      "describe": "How should a developer assert that a trigger with an asynchronous process has successfully run?",
+      "answerOptions": [
+        {
+          "describe": "Create all test data, use @future in the test class, then perform assertions.",
+          "isRight": false
+        },
+        {
+          "describe": "Create all test data in the test class, invoke Test.startTest() and Test.stopTest() and then perform assertions,",
+          "isRight": true
+        },
+        {
+          "describe": "Insert records Into Salesforce, use seeAllData=true, then perform assertions.",
+          "isRight": false
+        },
+        {
+          "describe": "Create all test data in the test class, use system.runAs() to invoke the trigger, then perform assertions.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146633",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer wrote an Apex method that makes an HTTP callout to an external system to get specialized data when a button is clicked from a custom Lightning web component on the Account record page.\nRecently, users have complained that it takes longer than desired for the data to appear on the page after clicking the button.\nWhat should the developer use to troubleshoot this Issue?",
+      "answerOptions": [
+        {
+          "describe": "Lightning Inspector",
+          "isRight": true
+        },
+        {
+          "describe": "Developer Console",
+          "isRight": false
+        },
+        {
+          "describe": "Salesforce CLI",
+          "isRight": false
+        },
+        {
+          "describe": "Event Logs",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146603",
+      "analysis": ""
+    },
+    {
+      "describe": "What are three reasons that a developer should write Jest tests for Lightning web components?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "To verify that events fire when expected",
+          "isRight": true
+        },
+        {
+          "describe": "To test basic user interaction",
+          "isRight": true
+        },
+        {
+          "describe": "To verify the DOM output of a component",
+          "isRight": true
+        },
+        {
+          "describe": "To test how multiple components work together",
+          "isRight": false
+        },
+        {
+          "describe": "To test a component's non public properties",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146573",
+      "analysis": "https://developer.salesforce.com/docs/component-library/documentation/en/lwc/lwc.testing"
+    },
+    {
+      "describe": "A developer recently released functionality to production that performs complex commission calculations in Apex code called from an Opportunity trigger . Users report that the calculations seem incorrect because the values they see for commissions are wrong.\nThe developer has representative test data in their developer sandbox.\nWhich three tools or techniques should the developer use to execute the code and pause it at key lines to visually inspect values of various Apex variables?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Developer Console",
+          "isRight": true
+        },
+        {
+          "describe": "Visual Studio Code",
+          "isRight": true
+        },
+        {
+          "describe": "Breakpoints",
+          "isRight": false
+        },
+        {
+          "describe": "Apex Replay Debugger",
+          "isRight": true
+        },
+        {
+          "describe": "Workbench",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146542",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer has a Visualforce page that automatically assigns ownership of an Account to a queue upon save.The page appears to correctly assign ownership, but an assertion validating the correct ownership fails.\nWhat can cause this problem?",
+      "answerOptions": [
+        {
+          "describe": "The test class does not retrieve the updated value from the database.",
+          "isRight": true
+        },
+        {
+          "describe": "The test class does not use the seeAllData=true annotation.",
+          "isRight": false
+        },
+        {
+          "describe": "The test class does not use the Bulk API for loading test data.",
+          "isRight": false
+        },
+        {
+          "describe": "The test class does not implement the Queueable interface.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146515",
+      "analysis": ""
+    },
+    {
+      "describe": "Universal Containers (UC) currently does all development in its full copy sandbox.\nRecently, UC has projects that require multiple developers to develop concurrently. UC is running into issues with developers making changes that cause errors in work done by other developers.\nAdditionally, when they are ready to deploy, many unit tests fail which prevents the deployment.\nWhich three types of orgs should be recommended to UC to eliminate these problems?\nChoose 3 answers",
+      "answerOptions": [
+        {
+          "describe": "Data Migration org",
+          "isRight": true
+        },
+        {
+          "describe": "Development org",
+          "isRight": true
+        },
+        {
+          "describe": "Staging org",
+          "isRight": true
+        },
+        {
+          "describe": "Systems Integration org",
+          "isRight": false
+        },
+        {
+          "describe": "Continuous Integration (CI) Org",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146507",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is debugging an Apex-based order creation process that has a requirement to have three savepoints, SP1, SP2, and SP3 (created in order, before the final execution of the process.\nDuring the final execution process, the developer has a routine to roll back to SP1 for a given condition. Once the condition is fixed, the code then calls a roll back to SP3 to continue with final execution. However, when the roll back to SP3 is called, a runtime error occurs.\nWhy does the developer receive a runtime error?",
+      "answerOptions": [
+        {
+          "describe": "The developer used too many savepoints in one trigger session.",
+          "isRight": false
+        },
+        {
+          "describe": "The developer has too many DML statements between the savepoints.",
+          "isRight": false
+        },
+        {
+          "describe": "SP3 became invalid when SP1 was rolled back.",
+          "isRight": true
+        },
+        {
+          "describe": "The developer should have called SP2 before calling SP3.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146483",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is writing a lest test for a Lightning web component that conditionally displays child components based on a user's checkbox selections.\nWhat should the developer do to properly test that the correct components display and hide for each scenario?",
+      "answerOptions": [
+        {
+          "describe": "Reset the DOM after each test with the afterEach{} method.",
+          "isRight": false
+        },
+        {
+          "describe": "Add a teardown block to reset the DOM after each test.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a new describe block for each test.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a new ladom instance for each test.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146477",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer wrote a trigger on Opportunity that will update a custom Last Sold Date field on the Opportunity's Account whenever an \nOpportunity is closed. In the test class for the trigger, the assertion to validate the Last Sold Date field fails.\n\nWhat might be causing the failed assertion?",
+      "answerOptions": [
+        {
+          "describe": "The test dass has not defined an Account owner when inserting the test data.",
+          "isRight": false
+        },
+        {
+          "describe": "The test class has not re-queried the Account record after updating the Opportunity.",
+          "isRight": true
+        },
+        {
+          "describe": "The test class has not implemented seeAllData=true in the test method.",
+          "isRight": false
+        },
+        {
+          "describe": "The test class is not using System.runAs() to run tests as a Salesforce administrator.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146451",
+      "analysis": ""
+    },
+    {
+      "describe": "How should a devloper verify that a specific Account record is being tested in a test class for a Visualforce controller?",
+      "answerOptions": [
+        {
+          "describe": "Instantiate the page reference in the test class, insert the Account in the test class, then use seeAllData=true to view the Account.",
+          "isRight": false
+        },
+        {
+          "describe": "Instantiate the page reference in the test class, insert the Account in the test class, then use System.setParentRecordId( ).get( ) to set the Account ID. ",
+          "isRight": false
+        },
+        {
+          "describe": "Insert the Account into Salesforce, instantiate the page reference inthe test class, then use System.setParentRecordId( ).get( ) to set the Account ID.",
+          "isRight": false
+        },
+        {
+          "describe": "Insert the Account in the test class, instantiate the page reference in the test class, then use System.currentPageReference( ).getParameters( ).put( ) to set the Account ID.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146446",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_methods_system_system.htm\nhttps://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_System_PageReference_getParameters.htm"
+    },
+    {
+      "describe": "A large company uses Salesforce across several departments. Each department has its own Salesforce Administrator. It was agreed that each \nAdministrator would have their own sandbox in which to test changes.\n\nRecently, users notice that fields that were recently added for one department suddenly disappear without warning. Also, Workflows that \nonce sent emails and created tasks no longer do so.\n\nWhich two statements are true regarding these issues and resolution?Choose 2 answers",
+      "answerOptions": [
+        {
+          "describe": "The administrators are deploying their own Change Sets, thus deleting each other's fields from the objects in production.",
+          "isRight": false
+        },
+        {
+          "describe": "A sandbox should be created to use as a unified testing environment instead of deploying Change Sets directly to production.",
+          "isRight": true
+        },
+        {
+          "describe": "The administrators are deploying their own Change Sets over each other, thus replacing entire Page Layouts and Workflows in Production.",
+          "isRight": true
+        },
+        {
+          "describe": "Page Layouts should never be deployed via Change Sets, as this causes Workflows and Field-level Security to be reset and fields to disappear.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146420",
+      "analysis": ""
+    },
+    {
+      "describe": "Which statement is true regarding savepoints?",
+      "answerOptions": [
+        {
+          "describe": "You can roll back to any savepoint variable created in any order.",
+          "isRight": false
+        },
+        {
+          "describe": "Reference to savepoints can cross trigger invocations.",
+          "isRight": false
+        },
+        {
+          "describe": "Savepoints are not limited by DML statement governor limits.",
+          "isRight": false
+        },
+        {
+          "describe": "Static variables are not reverted during a rollback.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019146417",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.234.0.apexcode.meta/apexcode/langCon_apex_transaction_control.htm"
+    },
+    {
+      "describe": "What is the best practice to initialize a Visualforce page in a test class?",
+      "answerOptions": [
+        {
+          "describe": "Use Test.currentPage.getParameters.put(MyTestPage);",
+          "isRight": false
+        },
+        {
+          "describe": "Use Test.setCurrentPage(Page.MyTestPage);",
+          "isRight": true
+        },
+        {
+          "describe": "Use Test.setCurrentPage.MyTestPage;",
+          "isRight": false
+        },
+        {
+          "describe": "Use controller.currentPage.setPage(MyTestPage);",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019146388",
+      "analysis": ""
+    },
+    {
+      "describe": "An Apex class does not achieve expected code coverage. The testSetup method explicitly calls a method in the Apex class. \nHow can the developer generate the code coverage?",
+      "answerOptions": [
+        {
+          "describe": "Call the Apex class method from a testMethod instead of the testSetup method.",
+          "isRight": true
+        },
+        {
+          "describe": "Add @testVisible to the method in the class the developer is testing.",
+          "isRight": false
+        },
+        {
+          "describe": "Use system.assert() in testSetup to verify the values are being returned.",
+          "isRight": false
+        },
+        {
+          "describe": "Verify the user has permissions passing a user into System.runAs().",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145678",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer is trying to access org data from within a test class.\nWhich sObject type requires the test class to have the (seeAllData=true) annotation?",
+      "answerOptions": [
+        {
+          "describe": "RecordType",
+          "isRight": false
+        },
+        {
+          "describe": "Report",
+          "isRight": true
+        },
+        {
+          "describe": "User",
+          "isRight": false
+        },
+        {
+          "describe": "Profile",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145677",
+      "analysis": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_data_access.htm"
+    },
+    {
+      "describe": "Just prior to a new deployment, the Salesforce Administrator who configured a new order fulfillment process in a developer sandbox\nsuddenly left the company. The users had fully tested all of the changes in the sandbox and signed off on them.\n\nUnfortunately, although a Change Set was started, it was not complete. A developer is brought in to help finish the deployment.\n\nWhat should the developer do to identify the configuration changes that need to be moved into production?",
+      "answerOptions": [
+        {
+          "describe": "In Salesforce setup, look at the last modified date for every object to determine which should be added to the Change Set.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the Metadata API and a supported development IDE to push all of the configuration from the sandbox into production to ensure no changes are lost.",
+          "isRight": false
+        },
+        {
+          "describe": "Set up Continuous Integration and a Git repository to automatically merge all changes from the sandbox metadata with the production metadata.",
+          "isRight": false
+        },
+        {
+          "describe": "Leveage the Setup Audit Trail to review the changes made by the departed Administrator and identify which changes should be added to the Change Set.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145672",
+      "analysis": ""
+    },
+    {
+      "describe": "The Contact object in an org is configured with workflow rules that trigger field updates. The fields are not updating, even though the end user expects them to. The developer creates a debug log to troubleshoot the problem.\n\nWhat should the developer specify in the debug log to see the values workflow rule conditions and debug the problem?",
+      "answerOptions": [
+        {
+          "describe": "ERROR level for the Database log category",
+          "isRight": false
+        },
+        {
+          "describe": "INFO level for the Workflow log category",
+          "isRight": true
+        },
+        {
+          "describe": "ERROR level for the Workflow log category",
+          "isRight": false
+        },
+        {
+          "describe": "INFO level for the Database log Category",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145646",
+      "analysis": "https://help.salesforce.com/articleView?id=sf.code_setting_debug_log_levels.htm&type=5"
+    },
+    {
+      "describe": "A company notices that their unit tests in a test class with many methods to create many records for prerequisite reference data are slow. \nWhat can a developer to do address the issue?",
+      "answerOptions": [
+        {
+          "describe": "Move the prerequisite reference data setup to a TestDataFactory and call that from each test method.",
+          "isRight": false
+        },
+        {
+          "describe": "Move the prerequisite reference data setup to a @testSetup method in the test class.",
+          "isRight": true
+        },
+        {
+          "describe": "Move the prerequisite reference data setup to a static method in the test class and call that from each test method.",
+          "isRight": false
+        },
+        {
+          "describe": "Move the prerequisite reference data setup to the constructor for the test class.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145612",
+      "analysis": ""
+    },
+    {
+      "describe": "A company has many different unit test methods that create Account records as part of their data setup. A new required field was added to the Account and now all of the unit tests fail.\nWhat is the optimal way for a developer to fix the issue?",
+      "answerOptions": [
+        {
+          "describe": "Add a before insert trigger on Account to set the value of the required field.",
+          "isRight": false
+        },
+        {
+          "describe": "Add the required field to the data setup for all of the unit tests.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a TestDataFactory class that serves as the single place to create Accounts for unit tests and set the required field there.",
+          "isRight": true
+        },
+        {
+          "describe": "Change the required field to be a validation rule that excludes the System Administrator profile.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145585",
+      "analysis": ""
+    },
+    {
+      "describe": "A developer has working business logic code, but sees the following error in the test class:\nYou have uncommitted work pending. Please commit or rollback before calling out.\nWhat is a possible solution?",
+      "answerOptions": [
+        {
+          "describe": "Call support for help with the target endpoint, as it is likely an external code error.",
+          "isRight": false
+        },
+        {
+          "describe": "Use test.IsRunningTest( ) before making the callout to bypass it in test execution.",
+          "isRight": true
+        },
+        {
+          "describe": "Set seeAllData to \"true\" at the top of the test class, since the code does not fail in practice. ",
+          "isRight": false
+        },
+        {
+          "describe": "Rewrite the business logic and test classes with @TestVisible set on the callout.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145581",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the following code snippet:</p><p>01 public class with sharing AccountsController{</p><p>02&nbsp;</p><p>03&nbsp; &nbsp; &nbsp;@AuraEnabled</p><p>04&nbsp; &nbsp; &nbsp;public List&lt;Accounts&gt; getAllAccounts() {</p><p>05&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;return [SELECT Id, Name, Industry FROM Account];</p><p>06&nbsp; &nbsp; &nbsp;}</p><p>07</p><p>08 }</p><p><br/></p><p>As part of the deployment cycle, a developer creates the following test class:</p><p>01 private class with sharing AccountsController_Test{</p><p>02</p><p>03&nbsp; &nbsp; &nbsp;@TestSetup</p><p>04&nbsp; &nbsp; &nbsp;private sstatic void makeData() {</p><p>05&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;User user1 = [SELECT Id FROM User WHERE Profile.Name = &#39;System Administrator&#39; and isActive = true LIMIT 1];</p><p>06&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;User user2 = [SELECT Id FROM User WHERE Profile.Name = &#39;Standard User&#39; and userName = &#39;test@test.com&#39; and isActive = true LIMIT 1];</p><p>07</p><p>08&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TestUtils.insertAccounts(10, user1.Id);</p><p>09&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;TestUtils.insertAccounts(20, user2.Id);</p><p>10&nbsp; &nbsp; &nbsp;}</p><p>11</p><p>12&nbsp; &nbsp; &nbsp;@IsTest</p><p>13&nbsp; &nbsp; &nbsp;private static void getAllAccounts_StandardUser_Test() {</p><p>14</p><p>15&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;List&lt;Account&gt; result = AccountsController.getAllAccounts();</p><p>16&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;System.assertEquals(20, result.size() );</p><p>17</p><p>18&nbsp; &nbsp; &nbsp;}</p><p>19</p><p>20 }</p><p>When the test class runs, the assertion fails.</p><p>Which change should the developer implement in the Apex test method to ensure the test method executes successfully?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Query the Standard User info memory and enclose lines 14 and 15 within the System.runAs(user) method.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Add System.runAs(User) to line 14 and enclose line 14 within Test.startTest() and Test.stopTest().</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Query the Administrator user into memory and enclose lines 14 and 15 within the System.runAs(user) method.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add @IsTest(seeAllData=true) to line 12 and enclose lines 14 and 15 within Test.startTest() and Test.stopTest().</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145576",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Refer to the test method below:</p><p>Line 1: @isTest</p><p>Line 2: static void testMyTrigger ( )</p><p>Line 3: {</p><p>Line 4:&nbsp; &nbsp; &nbsp;//Do a bunch of data setup</p><p>Line 5:&nbsp; &nbsp; &nbsp;DataFactory.setupDataForMyTriggerTest ();</p><p>Line 6:</p><p>Line 7:&nbsp; &nbsp; &nbsp;List&lt;Account&gt; acctsBefore = [SELECT Is_Customer__c FROM Account WHERE Id IN :DataFactory.accounts];</p><p>Line 8:</p><p>Line 9:&nbsp; &nbsp; &nbsp;//Utility to assert all accounts are not customers before the update</p><p>Line 10:&nbsp; &nbsp; AssertUtil.assertNotCustomers(acctsBefore);</p><p>Line 11:</p><p>Line 12:&nbsp; &nbsp; //Set accounts to be customers</p><p>Line 13:&nbsp; &nbsp; for(Account a : DataFactory.accounts)</p><p>Line 14:&nbsp; &nbsp; {</p><p>Line 15:&nbsp; &nbsp; &nbsp; &nbsp; a.Is_Customer__c = true;</p><p>Line 16:&nbsp; &nbsp; }</p><p>Line 17:</p><p>Line 18:&nbsp; &nbsp; update DataFactory.accounts;</p><p>Line 19:</p><p>Line 20:&nbsp; &nbsp; List&lt;Account&gt; acctsAfter = [SELECT Number_Of_Transfers__c FROM Account WHERE Id IN :DataFactory.accounts];</p><p>Line 21:</p><p>Line 22:&nbsp; &nbsp; //Utility to assert Number_Of_Transfers__c is correct based on test data</p><p>Line 23:&nbsp; &nbsp; AssertUtil.assertNumberOfTransfers(acctsAfter);</p><p>Line 14: }</p><p>The test method tests an Apex trigger that the developer knows will make a lot of queries when a lot of Accounts are simultaneously updated to be customers.</p><p>The test method fails at the Line 20 because of too many SOQL queries.</p><p>What is the correct way to fix this?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add Test.startTest( ) before and add Test.stopTest( ) after Line 18 of the code.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use Limits.getLimitQueries( ) to find the total number of queries that can be issued.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add Test.startTest( ) before and add Test.stopTest( ) after both Line 7 and Line 20 of the code.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Change the DataFactory class to create fewer Accounts so that the number of queries in the trigger is reduced.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145551",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer wrote the following method to find all the test accounts in the org:</p><p><br/></p><p>public static Account[] searchTestAccounts() {</p><p>List&lt;List&lt;Sobject&gt;&gt; searchList = [ FIND &#39;test&#39; IN ALL FIELDS RETURNING Account (Name)];</p><p>return (Account[]) searchList[0];</p><p>}</p><p><br/></p><p>However, the test method below fails.</p><p><br/></p><p>@isTest .</p><p>public static void testSearchTestAccounts() {</p><p>Account a = new Account (name=&#39;test&#39;);</p><p>insert a;</p><p>Account [] accounts = TestAccountFinder.searchTestAccounts();</p><p>system.assert (accounts.size() == 1 );</p><p>&nbsp;}</p><p><br/></p><p>What should be used to fix this failing test?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Test.loadData to set up expected data</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Test.fixedsearchResults() method to set up expected data</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>@isTest (SeeAllData=true) to access org data for the test</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>@testsetup method to set up expected data</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145517",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_SOSL.htm</p>"
+    },
+    {
+      "describe": "<p>A developer created the following test method:</p><p><br/></p><p>@isTest (SeeAllData= true)</p><p>public static void testDeleteTrigger(){</p><p><br/></p><p>Account testAccount = new Account (name = &#39; Test1&#39;);</p><p>Insert testAccount;</p><p><br/></p><p>List&lt;Account&gt; testAccounts = [SELECT Id, Name from Account WHERE Name like &#39; Test &#39;];</p><p>System.assert (testAccounts.size() &gt; 0);&nbsp;</p><p><br/></p><p>delece testAccounts;</p><p>testAccounts = [SELECT Id, Name from Account WHERE Name like &#39; Test &#39;];</p><p>System.assert (testAccounts.size() == 0);</p><p>}</p><p><br/></p><p>The developer org has five accounts where the name starts with &quot;Test&quot;. The developer executes this test in the Developer Console.</p><p>After the test code runs, which statement is true?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The test will fail.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>There will be no accounts where the name starts with &quot;Test&quot;.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>There will be five accounts where the name starts with &quot;Test&quot;.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>There will be six accounts where the name starts with &quot;Test&quot;.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145486",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer wrote a class named AccounthistoryManager that relies on field history tracking. The class has a static method called getAccountHistory that takes in an Account as a parameter and returns a list of associated AccountHistory object records.</p><p>The following test fails:</p><p><br/></p><p>@isTest</p><p>public static void testAccountHistory() {&nbsp;</p><p>Account a= new Account (Name = &quot;test&quot;);</p><p>insert a;</p><p>a.name =&nbsp; a.name = *1</p><p>Update a;</p><p>List&lt;AccountHistory&gt; ahList = AccounthistoryManager. GetAccounthistory(a);</p><p>System.assert ( ahList.size() &gt; 0 )</p><p><br/></p><p>What should be done to make this test pass?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use Test.isRunningTest() in getAccountHistory() to conditionally return fake AccountHistory records.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use @isTest(SeeAllData=true) to see historical data from the org and query for AccountHistory records.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Create AccountHistory records manually in the test setup and write a query to get them.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The test method should be deleted since this code cannot be tested.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145485",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer created a class that implements the Queueable Interface, as follows：&nbsp;&nbsp;</p><p><br/></p><p>Public class without sharing OrderQueueableJob implements Queueable {</p><p>Public void execute (QueueableContext context) {</p><p>//implementation logic</p><p>System. enqueueJob {new FollowUpJob()};</p><p>}</p><p>}</p><p><br/></p><p>As part of the deployment process, the developer is asked to create a corresponding test class.</p><p>Which two actions should the developer take to successfully execute the test class?</p><p>Choose 2 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Ensure the running user of the test class has, at least, the View All permission on the Order object.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Enclose System. enqueueJob (new OrderQueueableJob()} within Test.startTest and Test. stopTest().</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Implement seeAllData=true to ensure the Queueable job is able to run in bulk mode.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement Test.isRunningTest to prevent chaining jobs during test execution.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145461",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>Consider the following code snippet:</p><p><br/></p><p>public class searchFeature{</p><p>public sratic List&lt;List&lt;sObject&gt;&gt; searchRecords(string searchquery){</p><p>return[FIND searchquery IN ALL FIELDS RETURNTMNG Account，Opporcunity,Lead];</p><p>}</p><p>}</p><p>A developer created the following test class to provide the proper code coverage for the snippet above:</p><p>@isTest</p><p>private class searchFeature_Test{</p><p><br/></p><p>@TestSetup</p><p>private static void makeData(){</p><p>//insert opportunities, accounts and lead</p><p>}</p><p><br/></p><p>@isTest</p><p>private static searchRecords_Test(){</p><p>List&lt;List&lt;sObjeot&gt;&gt; records=searchFeature,searchReords (&#39;Test &#39;);</p><p>System.assertNotEquals(records .size(),0);</p><p>}</p><p>}</p><p>However,when the test runs,no data is returned and the assertion fails.</p><p>private static void makeData() {</p><p>/ /insert opportunities, accounts and lead</p><p>&nbsp; &nbsp; }</p><p><br/></p><p>@isTest</p><p>private static searchRecords_Test(){</p><p>List&lt;List&lt;sObjeot&gt;&gt; records=searchFeature,searchReords (&#39;Test &#39;);</p><p>System.assertNotEquals(records.size(),0);</p><p>}</p><p>}</p><p>However, when the test runs, no data is returned and the assertion fails.</p><p><br/></p><p>Which edit should the developer make to ensure the test class runs successfully?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Enclose the method call within Test.startTest() and test.stopTest ().</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement the seeAllData=true attribute in the @Islest annotation.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement the without sharing keyword in the searchFeature Apex class.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Implement the setFixedSearchResults method in the test class.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145459",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_testing_SOSL.htm</p>"
+    },
+    {
+      "describe": "<p>A developer has a Batch Apex process, Batch_Account_Sales, that updates the sales amount for 10,000 Accounts on a nightly basis. The&nbsp;</p><p>Batch Apex works as designed in the sandbox. However, the developer cannot get code coverage on the Batch Apex class.</p><p>The test class is below:</p><p>@IsTest private Batch_Account_Update_Test() {</p><p>&nbsp; &nbsp; &nbsp; @IsTest static void UnitTest() {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Account a = new Account(Name=&#39;test&#39;, Type=&#39;Customer&#39;,Sales_Amount__c=0);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; insert a;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Batch_Account_Sales bas = new Batch_Account_Sales();</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ID jobid = database.executebatch(bas);</p><p>&nbsp; &nbsp; &nbsp; &nbsp;}</p><p>}</p><p>What is causing the code coverage problem?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>The &nbsp;batch process will not recognize new accounts created in the same session.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The account creation a already sets the sales amount to 0.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>The executeBatch must fall within test.startTest() and test.stopTest().</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>The batch needs more than one account record created.</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145452",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>A developer created an Apex class that makes an outbound RESTful callout. The following class was created to send a fake response in Apex test methods.</p><p><br/></p><p>@isTest</p><p>public class TestHttpCalloutMock implements</p><p>HttpCalloutMock {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; public HTTPResponse respond (HTTPRequest request) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; HttpResponse response = new HttpResponse( ) ;</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; response.setHeader (&#39;Content-Type &#39; ,</p><p>&#39;application/json&#39;);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; response.setBody(&#39; {&quot;colors&quot;: [&quot;red&quot;, &quot;blue&quot;, &quot;yellow&quot;, &quot;green&quot;, &quot;pink&quot;]}&#39;);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; response.setStatusCode (200);</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return response;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }</p><p><br/></p><p>}</p><p><br/></p><p>Which method can be called to return this fake response in the test methods?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "Test.setTestData",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Test.setMock</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Test.createStub</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>testSetup</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145429",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_classes_restful_http_testing_httpcalloutmock.htm</p>"
+    },
+    {
+      "describe": "<p>Assuming the CreateOneAccount class creates one account and implements the Queueable interface, which syntax properly tests the \nApex code?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>List&lt;Account&gt; accts;</p><p>System.enqueueJob( new CreateOneAccount() );</p><p>Test.getFlexQueueOrder();</p><p>System.assertEquals(1, accts.size() );</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>List&lt;Account&gt; accts;</p><p>System.enqueueJob( new CreateOneAccount() );</p><p>accts = [SELECT Id FROM Account];</p><p>System.assertEquals(1, accts.size() );</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>List&lt;Account&gt; accts;</p><p>System.enqueueJob( new CreateOneAccount() );</p><p>Test.startTest();</p><p>System.assertEquals(1, accts.size() );</p><p>Test.stopTest();</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>List&lt;Account&gt; accts;</p><p>Test.startTest();</p><p>System.enqueueJob( new CreateOneAccount() );</p><p>Test.stopTest();</p><p>accts = [SELECT Id FROM Account];</p><p>System.assertEquals(1, accts.size() );</p><p><br/></p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145427",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>&nbsp;@isTest</p><p>static void testUpdateSuccess( ) {</p><p>&nbsp; &nbsp; &nbsp; Account acct = new Account (Name = &#39;test&#39;) ;</p><p>&nbsp; &nbsp; &nbsp; insert acct;</p><p><br/></p><p>// Add code here</p><p><br/></p><p>extension.inputValue = &#39;test&#39;;</p><p>PageReference pageRef = extension.update( );&nbsp;</p><p>System.assertNotEquals(null, pageRef) ;</p><p>}</p><p><br/></p><p>What should be added to the setup, in the location indicated, for the unit test above to create the controller extension for the test?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>ApexPages.StandardController sc = new ApexPages.StandardController(acct.Id);</p><p>AccountControllerExt extension = new AccountControllerExt(sc);</p><p><br/></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>AccountControllerExt extension = new AccountControllerExt(acct.Id);</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>ApexPages.Standardcontroller sc = new ApexPages.standardController(acct) ;</p><p>AccountControllerExt extension = new AccountControllerExt(sc) ;</p><p><br/></p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>AccountControllerExt extension = new AccountControllerExt(acct);</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2019145399",
+      "analysis": "<p>https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_controller_extension.htm</p>"
+    },
+    {
+      "describe": "<p>&lt;lightning:button label=&quot;Save&quot; onclick=&quot;{!c.handleSave}&quot; /&gt;</p><p><br/></p><p>({</p><p>&nbsp; &nbsp; &nbsp; &nbsp;handleSave : function (component, event, helper) {</p><p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;helper.saveAndRedirect (component) ;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp; }</p><p><br/></p><p>})</p><p><br/></p><p>A company has the Lightning Component above that allows users to click a button to save their changes and redirects them to a different page. Currently, when the user hits the Save button the recorrds are getting saved, but they are not redirected.</p><p><br/></p><p>Which three techiques can a developer use to debug the JavaScript? Choose 3 answers</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Use console.log( ) messages in the JavaScript.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Use Developer Console to view the debug log.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use Developer Console to view checkpoints.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Use the browser&#39;s dev tools to debug the JavaScript.</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Enable Debug Mode for Lightning components for the user.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145396",
+      "analysis": ""
+    },
+    {
+      "describe": "<p>&#39;@isTest</p><p>static void testAccountUpdate() {</p><p>&nbsp; &nbsp; &nbsp; Account acct = new Account (Name = &#39;Test&#39;);</p><p>&nbsp; &nbsp; &nbsp; acct.Integration_Updated_c = false;</p><p>&nbsp; &nbsp; &nbsp; insert acct;</p><p><br/></p><p>&nbsp; &nbsp; &nbsp;CalloutUtil.sendAccountUpdate(acct.Id);</p><p>&nbsp; &nbsp; &nbsp;Account acctAfter = [SELECT Id, Integration_Updated_c FROM Account WHERE Id = :acct.Id][0];</p><p>&nbsp; &nbsp; &nbsp;System.assert(true, acctAfter.Integration_Updated_c );</p><p>}</p><p><br/></p><p>The test method above calls a web service that updates an external system with Account Information and sets the Account&#39;s</p><p>Integration_Updated_c checkbox to True when It completes. The test falls to execute and exits with an error: &quot;Methods defined as TestMethod</p><p>do not support Web service callouts.&quot;</p><p><br/></p><p>What is the optimal way to fix this?</p><p><br/></p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Add Test.startTest() before and Test.stopTest() after CalloutUtil.sendAccountUpdate.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add Test.startTest() before and Test.setMock and Test.stopTest() after CalloutUtil.sendAccountUpdate.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add if (!Test.IsRunningTest()) around CalloutUtil.sendAccountUpdate.</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Add Test.startTest() and Test.setMock before and Test.stopTest() after CalloutUtil.sendAccountUpdate.</p>",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2019145394",
+      "analysis": ""
+    }
+  ],
+  "hashCode": "-42739326"
+}
