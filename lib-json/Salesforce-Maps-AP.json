@@ -1,0 +1,1667 @@
+{
+  "title": "Salesforce Maps AP",
+  "category": "Free Dumps",
+  "questions": [
+    {
+      "describe": "What is the way of plotting accounts, Opps, Retail Stores or visits on a map?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "By triggering a batch Geocoding process that takes text addresses and plots their coordinates.",
+          "isRight": false
+        },
+        {
+          "describe": "By manually placing the marker on the map.",
+          "isRight": false
+        },
+        {
+          "describe": "Both",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1413389608"
+    },
+    {
+      "describe": "Can tasks, events, etc... be generated directly from a Maps view of Visits, or Accounts?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-684131082"
+    },
+    {
+      "describe": "Can a handpicked area of the map be selected to get a report of records displayed in territories?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": true
+        },
+        {
+          "describe": "Yes",
+          "isRight": false
+        }
+      ],
+      "hashCode": "902478734"
+    },
+    {
+      "describe": "Can specific users be assigned to a Visit Plan?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Yes",
+          "isRight": true
+        },
+        {
+          "describe": "No",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1630230065"
+    },
+    {
+      "describe": "Once a given set of Accounts, Opps or Visits are added to a Route will the system automatically calculate the most efficient route?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "405138839"
+    },
+    {
+      "describe": "Is chatter integrated in SF Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1481395715"
+    },
+    {
+      "describe": "Can live tracking of maps be used to automatically update the status of a WO or a Visit?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1809921246"
+    },
+    {
+      "describe": "What does Salesforce Maps use to place markers on a map?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "The latitude and longitude coordinates",
+          "isRight": true
+        },
+        {
+          "describe": "The account billing address fields",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1792693213"
+    },
+    {
+      "describe": "Can Mass actions be performed over plotted records in a Map? For example drag an area to select several Retail Stores or Accounts plotted over a Map and perform a mass action over all of them like Addto Route or Change Owner?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Yes",
+          "isRight": true
+        },
+        {
+          "describe": "No",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1952099881"
+    },
+    {
+      "describe": "When creating a Dataset in the process of building Territories, what is the root object that must be selected?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Accounts",
+          "isRight": false
+        },
+        {
+          "describe": "Report",
+          "isRight": true
+        },
+        {
+          "describe": "Base Object",
+          "isRight": false
+        },
+        {
+          "describe": "Layer",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2003183600"
+    },
+    {
+      "describe": "Which of the following Territory Planning Features will allow users to view territories geographically.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Access Advanced Territory Management and Optimization",
+          "isRight": false
+        },
+        {
+          "describe": "Import optimized territories into Salesforce Maps",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1551836726"
+    },
+    {
+      "describe": "Only one dataset per visit plan is allowed by advanced SF Maps.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": true
+        },
+        {
+          "describe": "TRUE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-396497186"
+    },
+    {
+      "describe": "When selecting the optimization preferences for a Territory Plan which one will cause this optimization sequence: Provides the minimum distance between Units and Containers within Territory Areas.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Continuity",
+          "isRight": false
+        },
+        {
+          "describe": "Compactness",
+          "isRight": true
+        },
+        {
+          "describe": "Balance",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1833710005"
+    },
+    {
+      "describe": "Can users automatically set routes to plot on load of a given Layer?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": true
+        },
+        {
+          "describe": "Yes",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1378376600"
+    },
+    {
+      "describe": "Can multiple records be reassigned to a different territory manually from the SF Maps interface?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "881371624"
+    },
+    {
+      "describe": "Maps Advanced Visit Plans does not require you to create Data Sets to indicate which records need to be routed, instead it will derive this information from the associated Layers.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": false
+        },
+        {
+          "describe": "TRUE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1067224845"
+    },
+    {
+      "describe": "What type of folder contains layers that will be available to every user of SF Maps in an org?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Corporate Folder",
+          "isRight": true
+        },
+        {
+          "describe": "User Folder",
+          "isRight": false
+        },
+        {
+          "describe": "Corporate Folder",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-359753418"
+    },
+    {
+      "describe": "Custom New Territories cannot be created directly from the SF Interface and must be generated by modifying the Dataset.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": true
+        },
+        {
+          "describe": "TRUE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2134092838"
+    },
+    {
+      "describe": "Can a handpicked area of the map be selected to get a list of records displayed in territories even if it crosses across many territories?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "597483718"
+    },
+    {
+      "describe": "How is SF Maps distributed?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Lightning Web Component",
+          "isRight": false
+        },
+        {
+          "describe": "Lightning Solution",
+          "isRight": false
+        },
+        {
+          "describe": "Package",
+          "isRight": true
+        },
+        {
+          "describe": "Custom Element",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-941838689"
+    },
+    {
+      "describe": "Optionally, SOQL Custom Query Builder can be used to circumvent creating a report when designing a Territory in SF Maps.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": false
+        },
+        {
+          "describe": "TRUE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-475650283"
+    },
+    {
+      "describe": "What are Shapes in Layers?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "They define specific layers based on geographical locations of business significance, like adding the mid-western states together in a single territory in a layer.",
+          "isRight": true
+        },
+        {
+          "describe": "They are filtered representations of the plotted records that Maps can present in a Map.",
+          "isRight": false
+        },
+        {
+          "describe": "Shapes define which standard or custom sf objects can be plotted in a SF Map.",
+          "isRight": false
+        },
+        {
+          "describe": "It is a custom object in Maps that regulates how data is presented in SF Maps and cna gather information from up to 6 objects",
+          "isRight": false
+        }
+      ],
+      "hashCode": "252222514"
+    },
+    {
+      "describe": "In SF Maps, the most common use of folder permissions is by controlling access to subfolders in the corporate folder. True or false?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": true
+        },
+        {
+          "describe": "FALSE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-42906482"
+    },
+    {
+      "describe": "Only geocoded records can be used in Territory Planning.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": true
+        },
+        {
+          "describe": "FALSE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "865621248"
+    },
+    {
+      "describe": "Also records that are not geocoded will be able to be used in Territory Planning.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": false
+        },
+        {
+          "describe": "FALSE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-852646041"
+    },
+    {
+      "describe": "When selecting the optimization preferences for a Territory Plan which one will cause this optimization sequence: Provides the minimum amount of Unit/Container reassignments across territory areas.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Compactness",
+          "isRight": true
+        },
+        {
+          "describe": "Balance",
+          "isRight": false
+        },
+        {
+          "describe": "Continuity",
+          "isRight": false
+        }
+      ],
+      "hashCode": "259484480"
+    },
+    {
+      "describe": "What does the Check in/ out feature allow users to do?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Allows Field Service Reps to check into meetings online beforehand",
+          "isRight": false
+        },
+        {
+          "describe": "To create tasks directly from the Maps mobile interface.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-688003430"
+    },
+    {
+      "describe": "What must be done by the admin setting up Salesforce Maps so as to allow users to change the SF Maps permission sets defaults assigned to them?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "This cannot be done.",
+          "isRight": false
+        },
+        {
+          "describe": "Click the Allow User Override Checkbox in the SF Maps permission Groups page.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "657713411"
+    },
+    {
+      "describe": "What tool must admins use to ensure that field service reps are sticking to their determined territories by enforcing Geofencing?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "User self-reporting in the mobile app",
+          "isRight": false
+        },
+        {
+          "describe": "Live Tracking data from Maps",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1648736263"
+    },
+    {
+      "describe": "Can live tracking data of field service reps be reviewed in a phone or tablet?",
+      "analysis": "Yes, SF Maps is absolutely compatible with mobile devices.",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "622320660"
+    },
+    {
+      "describe": "What action should users take when searching for nearby accounts using Salesforce Maps on a mobile device?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Set Proximity Center",
+          "isRight": false
+        },
+        {
+          "describe": "Plot and Market Layer",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-157444379"
+    },
+    {
+      "describe": "Which of the following Territory Planning Features will allow users to manage and communicate territory configurations with leaders and field reps.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Manage territories inside Salesforce",
+          "isRight": true
+        },
+        {
+          "describe": "Access Advanced Territory Management and Optimization",
+          "isRight": false
+        },
+        {
+          "describe": "Import optimized territories into Salesforce Maps",
+          "isRight": false
+        }
+      ],
+      "hashCode": "688426799"
+    },
+    {
+      "describe": "What other tool besides standard salesforce reports can be used to circumvent report creation when creating a Territory in Salesforce Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "SOQL Custom Query Builder Dashboards",
+          "isRight": true
+        },
+        {
+          "describe": "List Views",
+          "isRight": false
+        },
+        {
+          "describe": "None, it is a required step",
+          "isRight": false
+        }
+      ],
+      "hashCode": "170210314"
+    },
+    {
+      "describe": "After setting the Base Object root for Maps (for example Opps) what must be done?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Set the field that stores the latitude and longitude fields to store in that new Base Object.",
+          "isRight": true
+        },
+        {
+          "describe": "Selecting the Custom or Standard object with an address field to plot.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "368347977"
+    },
+    {
+      "describe": "Must a click2create button be added to the SF Maps interface and assigned to users in order to access the functionality of creating records directly from the SF Maps interface?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "310081962"
+    },
+    {
+      "describe": "Can the limit of each shift be set as an option for users assigned to a visit plan in SF Maps Advanced?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1406988337"
+    },
+    {
+      "describe": "The first step when building a Territory via Territory Planning is creating a Report.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": false
+        },
+        {
+          "describe": "TRUE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1917416021"
+    },
+    {
+      "describe": "Which of the following Territory Planning Features will allow users to plan travel by using drive-timeand road networks for optimal routes and schedules.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Import optimized territories into Salesforce Maps",
+          "isRight": true
+        },
+        {
+          "describe": "Access Advanced Territory Management and Optimization",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-53825808"
+    },
+    {
+      "describe": "If records are not geocoded with latitude and longitude coordinates in your environment, they will not appear in SF Maps and hence not be of use when building a Report.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": false
+        },
+        {
+          "describe": "TRUE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "638321224"
+    },
+    {
+      "describe": "Which fields uses SF Maps to automatically link each record in a Dataset to the predefined Territories?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Base Object ID",
+          "isRight": false
+        },
+        {
+          "describe": "Territory Id",
+          "isRight": false
+        },
+        {
+          "describe": "Geocode Fields",
+          "isRight": true
+        },
+        {
+          "describe": "Billing Address",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-580933097"
+    },
+    {
+      "describe": "What concept in Territory Planning for SF Maps match the following official definition: \"The proposed territory model for the group of records defined.\"",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Layers",
+          "isRight": false
+        },
+        {
+          "describe": "Root Report",
+          "isRight": false
+        },
+        {
+          "describe": "Territory Allignment",
+          "isRight": true
+        },
+        {
+          "describe": "Data Sets",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-467015217"
+    },
+    {
+      "describe": "What Permission Set must the user have that is setting up Advanced Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "External User",
+          "isRight": false
+        },
+        {
+          "describe": "Service Cloud Manager",
+          "isRight": false
+        },
+        {
+          "describe": "Maps User",
+          "isRight": false
+        },
+        {
+          "describe": "Maps Admin",
+          "isRight": true
+        }
+      ],
+      "hashCode": "415670257"
+    },
+    {
+      "describe": "Is Territory Planning included in the standard Salesforce Maps package?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": true
+        },
+        {
+          "describe": "Yes",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1181882212"
+    },
+    {
+      "describe": "How many datasets can be related to the same Visit Plan in Advanced Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Only One",
+          "isRight": false
+        },
+        {
+          "describe": "None",
+          "isRight": false
+        },
+        {
+          "describe": "Multiple",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1910142964"
+    },
+    {
+      "describe": "Territory Planning can be directly integrated with Salesforce reports.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": true
+        },
+        {
+          "describe": "FALSE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1271054049"
+    },
+    {
+      "describe": "How can an admin regulate the amount of buttons available for a given set of SF Maps users?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "This cannot be done.",
+          "isRight": false
+        },
+        {
+          "describe": "Set the assigned button sets per SF Maps permission set groups.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1573894761"
+    },
+    {
+      "describe": "A Maps Base Object must be configured for the Routable Object to be used within the Data Set before creating a Data Set in the Maps Advanced Visit Plan.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": true
+        },
+        {
+          "describe": "FALSE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1450489768"
+    },
+    {
+      "describe": "At what two levels can specific users be assigned to a given Visit Plan in Advanced SF Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Only at User Level",
+          "isRight": false
+        },
+        {
+          "describe": "Record Type and User Level",
+          "isRight": false
+        },
+        {
+          "describe": "Profile and User levels",
+          "isRight": true
+        },
+        {
+          "describe": "Role and User Level",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1110354443"
+    },
+    {
+      "describe": "When creating a Dataset with faulty data: missing zip codes/postal codes are automatically assigned to nearby accounts based on their proximity to each territory.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": true
+        },
+        {
+          "describe": "FALSE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1986099460"
+    },
+    {
+      "describe": "Can the latitude and longitude field be stored in a different object from the root object selected when defining a Base Object? For example: Root Object = Opps, but the Lat/Long field is in Account Address.",
+      "analysis": "Yes, related objects to the root object can be queried to detect Lat/long fields to use to plot each record.",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-816191008"
+    },
+    {
+      "describe": "With the Click2Create SF Maps option what kind of records can be created?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Standard Objects only",
+          "isRight": false
+        },
+        {
+          "describe": "Custom Objects only",
+          "isRight": false
+        },
+        {
+          "describe": "Both",
+          "isRight": true
+        }
+      ],
+      "hashCode": "282041117"
+    },
+    {
+      "describe": "Can SF Maps users set a given default view that loads every time they open the app?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Yes",
+          "isRight": true
+        },
+        {
+          "describe": "No",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-125684748"
+    },
+    {
+      "describe": ".What can be used to limit the amount of records that are plotted in a Layer in Salesforce Maps?",
+      "analysis": "Filters, like in Reports, only the records that satisfy those filters and are stored in Base Objects will be displayed on that layer.",
+      "answerOptions": [
+        {
+          "describe": "SOQL queries",
+          "isRight": false
+        },
+        {
+          "describe": "Other Base Objects",
+          "isRight": false
+        },
+        {
+          "describe": "Filters",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1185998702"
+    },
+    {
+      "describe": "Which user must use the Lightning App Builder to customize record pages and components?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Sales Manager",
+          "isRight": false
+        },
+        {
+          "describe": "Administrator",
+          "isRight": true
+        },
+        {
+          "describe": "Field Reps",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1370082571"
+    },
+    {
+      "describe": "Which of the following Territory Planning Features will allow users to maximize geographic coverage without affecting current assignments.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Import optimized territories into Salesforce Maps",
+          "isRight": false
+        },
+        {
+          "describe": "Access Advanced Territory Management and Optimization",
+          "isRight": true
+        },
+        {
+          "describe": "Manage territories inside Salesforce",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-2107027113"
+    },
+    {
+      "describe": "When using SOQL Custom Query Builder to create a Territory in SF Maps, the Object ID field is not required as it is when creating the Territory via a Report.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": false
+        },
+        {
+          "describe": "FALSE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1075533097"
+    },
+    {
+      "describe": "Can route destinations, and the duration of such visits be plotted in a schedule from SF Maps?",
+      "analysis": "Yes, from SF Maps the location, and duration of a visit will be plotted in the Schedule of a given user. They are displayed in the Schedule tab",
+      "answerOptions": [
+        {
+          "describe": "Yes",
+          "isRight": true
+        },
+        {
+          "describe": "No",
+          "isRight": false
+        }
+      ],
+      "hashCode": "974716174"
+    },
+    {
+      "describe": "Which of the following is not a required field when mapping a given object onto the Territoy Planning via a Report?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Longitude Field",
+          "isRight": false
+        },
+        {
+          "describe": "Object ID",
+          "isRight": false
+        },
+        {
+          "describe": "Latitude field",
+          "isRight": false
+        },
+        {
+          "describe": "They are all required",
+          "isRight": true
+        },
+        {
+          "describe": "Territory Name",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1216311408"
+    },
+    {
+      "describe": "You can select one or more reports when configuring a data set.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": true
+        },
+        {
+          "describe": "FALSE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "40701870"
+    },
+    {
+      "describe": "Can the SF Maps style be customized?",
+      "analysis": "Yes, in the Display Options section of the Marker Layer creation process, different Marker styles can be selected.",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-136449830"
+    },
+    {
+      "describe": "Users can't be assigned in bulk to a given Service Visit plan in Advanced SF Mamps.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": true
+        },
+        {
+          "describe": "TRUE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "3052377"
+    },
+    {
+      "describe": "Only layers inside of subfolders in the corporate folder are subject to permission setting. If a layer sits directly under the corporate folder it will be visible to all users. True or False?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": true
+        },
+        {
+          "describe": "FALSE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1917688312"
+    },
+    {
+      "describe": "Which of the following Territory Planning Features will allow users to visualize complete territory designs.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Import optimized territories into Salesforce Maps",
+          "isRight": false
+        },
+        {
+          "describe": "Manage territories inside Salesforce",
+          "isRight": true
+        },
+        {
+          "describe": "Access Advanced Territory Management and Optimization",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1362772030"
+    },
+    {
+      "describe": "Up to how many objects can be selected as output object per visit plan?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Three",
+          "isRight": false
+        },
+        {
+          "describe": "One",
+          "isRight": true
+        },
+        {
+          "describe": "As many as required",
+          "isRight": false
+        },
+        {
+          "describe": "Upto 10",
+          "isRight": false
+        }
+      ],
+      "hashCode": "989945888"
+    },
+    {
+      "describe": "You can select only one root report when configuring a data set.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": true
+        },
+        {
+          "describe": "TRUE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-2146971303"
+    },
+    {
+      "describe": "What tool can be used with Maps to track the location of all field service reps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Live Tracking",
+          "isRight": true
+        },
+        {
+          "describe": "Layers",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1585495493"
+    },
+    {
+      "describe": "Reports are directly linked to data sets, so any changes in the underlying report will be automatically be brought into the data set.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": false
+        },
+        {
+          "describe": "FALSE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1173580801"
+    },
+    {
+      "describe": "Can Salesforce Maps be used to track the location of a Field service operative and send a message to a customer or retailer automatically when the rep is under 1 km to their house or a Retail Store?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1062363937"
+    },
+    {
+      "describe": "Reports are not directly linked to data sets. Instead, a snapshot of your report is taken when you create a data set.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": false
+        },
+        {
+          "describe": "TRUE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "381325821"
+    },
+    {
+      "describe": "Can custom Latitude and Longitude fields be created?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-736632425"
+    },
+    {
+      "describe": "What must be assigned to users that will employ Salesforce Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "The Consumer Goods Cloud License",
+          "isRight": false
+        },
+        {
+          "describe": "The Salesforce Lightning Plus license",
+          "isRight": false
+        },
+        {
+          "describe": "The Salesforce Maps permission Set license.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "194406563"
+    },
+    {
+      "describe": "What is Geocoding in the context of SF Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "The process of converting a standard salesforce object into a Maps Base Object",
+          "isRight": false
+        },
+        {
+          "describe": "The process by which SF Maps turns Physical (Text) addresses in fields in the Account, Retail Store or Location objects into Latitud and Longitud coordinates and plot them in a map.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "963552140"
+    },
+    {
+      "describe": "Will the SF Maps layers contained in the User folder of SF Maps, be accessible up the hierarchy of roles?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Yes",
+          "isRight": true
+        },
+        {
+          "describe": "No",
+          "isRight": false
+        }
+      ],
+      "hashCode": "279027580"
+    },
+    {
+      "describe": "What is the first step in creating a Base Object in SF Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Selecting the Custom or Standard object with an address field to plot.",
+          "isRight": true
+        },
+        {
+          "describe": "Set the field that stores the latitude and longitude fields to store in that new Base Object.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "715769249"
+    },
+    {
+      "describe": "Can Territory Planning be added to Salesforce Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Yes",
+          "isRight": true
+        },
+        {
+          "describe": "No",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-659327299"
+    },
+    {
+      "describe": "How can multiple Retail Stores or Accounts be added to a route in SF Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "By dragging an area over them in SF Maps, defining how much time to remain on each location (or when exactly the field sales rep must be there) and then using the Mass Action add to Route.",
+          "isRight": true
+        },
+        {
+          "describe": "By performing a SOQL query in the context of an active layer",
+          "isRight": false
+        }
+      ],
+      "hashCode": "364878154"
+    },
+    {
+      "describe": "Must OAuth be set in order to be able to use Advanced Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1795321223"
+    },
+    {
+      "describe": "To reassign records from one territory to another, it is necessary to edit the underlying Root Report of the Dataset.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": false
+        },
+        {
+          "describe": "FALSE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-1362225590"
+    },
+    {
+      "describe": "When creating a Territory design the use of Territory Boundaries is optional.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": true
+        },
+        {
+          "describe": "FALSE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1616776709"
+    },
+    {
+      "describe": "What are Salesforce Maps Marker Layers?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "They are filtered representations of the plotted records that Maps can present in a Map.",
+          "isRight": true
+        },
+        {
+          "describe": "It is a custom object in Maps that regulates how data is presented in SF Maps and cna gather information from up to 6 objects",
+          "isRight": false
+        },
+        {
+          "describe": "Layers define which standard or custom sf objects can be plotted in a SF Map.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1939808086"
+    },
+    {
+      "describe": "When creating a dataset in the process of building Territories, what is the point of including Attribute Fields?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "These Fields are optional added information about the Layer used to display this Territory in SF Maps.",
+          "isRight": false
+        },
+        {
+          "describe": "These Fields are optional added information to be displayed about records in a Territory",
+          "isRight": true
+        },
+        {
+          "describe": "These fields are mandatory fields that inform of metadata customizations related to the creation of the Data Set",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1799466536"
+    },
+    {
+      "describe": "Can a SF Maps admin regulate the fields that a group of SF Maps users will have access to?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-550094494"
+    },
+    {
+      "describe": "The buttons check in and check out in the SF Maps mobile app allow users to...",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Create a visit and conclude one as they arrive to a client destination and conclude their tasks.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Retail Store and review at a glance their open promotions and active orders.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1371903216"
+    },
+    {
+      "describe": "Can users report on Live Tracking data?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Yes",
+          "isRight": true
+        },
+        {
+          "describe": "No",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-443374122"
+    },
+    {
+      "describe": "What tool can be used to create a record like a lead, or account or Order directly from the Salesforce Map interface?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Clik2Create",
+          "isRight": true
+        },
+        {
+          "describe": "Check in/Out",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1457605944"
+    },
+    {
+      "describe": "What are Base Objects in Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "It is a custom object in Maps that regulates how data is presented in SF Maps and cna gather information from up to 6 objects",
+          "isRight": false
+        },
+        {
+          "describe": "Base objects define which standard or custom st objects can be plotted in a SF Map.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "772928952"
+    },
+    {
+      "describe": "Latitude and Longitude fields are automatically pre-selected when creating a Report that is going to be used Territory Planning.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": false
+        },
+        {
+          "describe": "FALSE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "98790452"
+    },
+    {
+      "describe": "The Report created to segment the accounts that belong to a given territory design must be selectedas the Data Set during Territory Planning.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "FALSE",
+          "isRight": false
+        },
+        {
+          "describe": "TRUE",
+          "isRight": true
+        }
+      ],
+      "hashCode": "1202779"
+    },
+    {
+      "describe": "What permission must users of Salesforce Maps have to be able to inline edit Accounts, Visits, etc, from the Maps view?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Edit Details Tab Field",
+          "isRight": true
+        },
+        {
+          "describe": "This cannot be done.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1977595263"
+    },
+    {
+      "describe": "Which of the following Territory Planning Features will allow users to build and implement optimized territory alignments.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Import optimized territories into Salesforce Maps",
+          "isRight": false
+        },
+        {
+          "describe": "Manage territories in side Salesforce",
+          "isRight": false
+        },
+        {
+          "describe": "Access Advanced Territory Management and Optimization",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-900530695"
+    },
+    {
+      "describe": "What concept in Territory Planning for SF Maps match the following official definition: \"A collection of records that define your Territory models\"",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Data Sets",
+          "isRight": true
+        },
+        {
+          "describe": "Root Report",
+          "isRight": false
+        },
+        {
+          "describe": "Territory Allignment",
+          "isRight": false
+        },
+        {
+          "describe": "Layers",
+          "isRight": false
+        }
+      ],
+      "hashCode": "1885649219"
+    },
+    {
+      "describe": "Maps Advanced Visit Plans require you to create at least one Data Set to indicate which records need to be routed.",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "TRUE",
+          "isRight": true
+        },
+        {
+          "describe": "FALSE",
+          "isRight": false
+        }
+      ],
+      "hashCode": "517470021"
+    },
+    {
+      "describe": "Can Salesforce Maps display current and forecasted weather conditions?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Yes",
+          "isRight": true
+        },
+        {
+          "describe": "No",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-2015495586"
+    },
+    {
+      "describe": "How can users futher filter a plotted layer in Maps, say for example by Opportunity Stage?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Create a filtered report, identify it as a Base object from the Report object and then use it as a basis for the Layer",
+          "isRight": false
+        },
+        {
+          "describe": "First create the Layer by gathering Opps, group them by Stage and once the Layer is generated the user will be able to click certain checkboxes to only plot the markers of the stages desired.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "295350995"
+    },
+    {
+      "describe": "Where are layers stored in SF Maps?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "As reports",
+          "isRight": false
+        },
+        {
+          "describe": "As records",
+          "isRight": false
+        },
+        {
+          "describe": "Apps",
+          "isRight": false
+        },
+        {
+          "describe": "Folders",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-694627874"
+    },
+    {
+      "describe": "What must be selected to restrict visibility of routes to respect the role hierarchy?",
+      "analysis": "Routing role security, without setting this up the standard visibility model is that any user can view and create routes for other users.",
+      "answerOptions": [
+        {
+          "describe": "Routing role security",
+          "isRight": true
+        },
+        {
+          "describe": "Nothing, this is a standard feature independent of the OWDs present in Salesforce",
+          "isRight": false
+        }
+      ],
+      "hashCode": "157283296"
+    },
+    {
+      "describe": "Once territories are dessigned will SF Maps automatically place each record within the dataset in the correct territory based on their Geocode fields?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": false
+        },
+        {
+          "describe": "Yes",
+          "isRight": true
+        }
+      ],
+      "hashCode": "733944132"
+    },
+    {
+      "describe": "When selecting the optimization preferences for a Territory Plan which one will cause this optimization sequence: Provides an equal distribution of the selected attribute across territory areas",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "Balance",
+          "isRight": true
+        },
+        {
+          "describe": "Compactness",
+          "isRight": false
+        },
+        {
+          "describe": "Continuity",
+          "isRight": false
+        }
+      ],
+      "hashCode": "765609969"
+    },
+    {
+      "describe": "All things being equal, will an address that is changed manually in an Account or Retail store record have their geocode updated in Maps?",
+      "analysis": "No. This must be done via automation, for example using Flow to update the base object record or via a batch automation.",
+      "answerOptions": [
+        {
+          "describe": "Yes",
+          "isRight": false
+        },
+        {
+          "describe": "No",
+          "isRight": true
+        }
+      ],
+      "hashCode": "-807755254"
+    },
+    {
+      "describe": "Is it good practice to create Data Sets for Territories based on reports whose data change between seasons?",
+      "analysis": "",
+      "answerOptions": [
+        {
+          "describe": "No",
+          "isRight": true
+        },
+        {
+          "describe": "Yes",
+          "isRight": false
+        }
+      ],
+      "hashCode": "-1843623187"
+    }
+  ],
+  "hashCode": "-31071168"
+}
