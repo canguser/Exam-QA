@@ -1,0 +1,463 @@
+{
+  "title": "Agentforce和销售云",
+  "category": "Agentforce Specialist",
+  "questions": [
+    {
+      "describe": "An account manager is preparing for an upcoming customer call and wishes to get a snapshot of key data points from accounts, contacts, leads, and opportunities in Salesforce.\n\nWhich feature provides this?",
+      "answerOptions": [
+        {
+          "describe": "Sales Summaries",
+          "isRight": true
+        },
+        {
+          "describe": "Work Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Sales Insight Summary",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987365",
+      "analysis": "https://help.salesforce.com/s/articleView?id=ind.einstein_summary.htm&type=5"
+    },
+    {
+      "describe": "An AI Specialist needs to enable the use of Sales Email prompt templates for the sales team. The AI Specialist has already created the templates in Prompt Builder.\n\nAccording to best practices, which steps should the AI Specialist take to ensure the sales team can use these templates?",
+      "answerOptions": [
+        {
+          "describe": "Assign the Prompt Template User permission set and enable Sales Emails in Setup.",
+          "isRight": true
+        },
+        {
+          "describe": "Assign the Prompt Template Manager permission set and enable Sales Emails in Setup.",
+          "isRight": false
+        },
+        {
+          "describe": "Assign the Data Cloud Admin permission set and enable Sales Emails in Setup.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987342",
+      "analysis": "销售团队只需使用已创建的提示模板，不需要管理权限。根据最小权限原则，Prompt Template User权限集提供了他们所需的访问权限，再启用Sales Emails功能即可让团队使用这些模板。"
+    },
+    {
+      "describe": "In addition to Recipient and Sender, which object should an AI Specialist utilize for inserting merge fields into a Sales email template prompt?",
+      "answerOptions": [
+        {
+          "describe": "User Organization",
+          "isRight": false
+        },
+        {
+          "describe": "Recipient Opportunities",
+          "isRight": true
+        },
+        {
+          "describe": "Recipient Account",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987338",
+      "analysis": "销售邮件通常需要引用特定商机信息（如交易规模、阶段、产品）才能使沟通更有针对性。Recipient Opportunities对象提供了这些关键销售上下文，使AI能生成更相关且个性化的邮件内容。"
+    },
+    {
+      "describe": "What is an appropriate use case for leveraging Agentforce Sales Agent in a sales context?",
+      "answerOptions": [
+        {
+          "describe": "Instantly review and read incoming messages or emails that are then logged to the correct opportunity, contact, and account records to provide a full view of customer interactions and communications.",
+          "isRight": false
+        },
+        {
+          "describe": "Enable a sales team by providing them with an interactive step-by-step guide based on business rules to ensure accurate data entry into Salesforce and help close deals faster.",
+          "isRight": false
+        },
+        {
+          "describe": "Enable a sales team to use natural language to invoke defined sales tasks grounded in relevant data and be able to ensure company policies are applied, conversationally and in the flow of work.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987334",
+      "analysis": "Agentforce Sales Agent的核心价值在于让销售团队通过自然语言对话方式执行销售任务，同时确保基于相关数据和公司政策。这种方式使销售人员能在工作流程中自然地获取帮助，提高效率。"
+    },
+    {
+      "describe": "A sales rep at Universal Containers is extremely busy and sometimes will have very long sales calls on voice and video calls and might miss key details. They are just starting to adopt new generative AI features.\n\nWhich Einstein Generative AI feature should an AI Specialist recommend to help the rep get the details they might have missed during a conversation?",
+      "answerOptions": [
+        {
+          "describe": "Call Explorer",
+          "isRight": false
+        },
+        {
+          "describe": "Sales Summary",
+          "isRight": false
+        },
+        {
+          "describe": "Call Summary",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987274",
+      "analysis": "Call Summaries Powered by Einstein Generative AI：https://help.salesforce.com/s/articleView?id=sales.eci_call_summaries.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers wants to utilize Agentforce for Sales to help sales reps reach their sales quotas by providing AI-generated plans containing guidance and steps for closing deals.\n\nWhich feature should the AI Specialist recommend to the sales team?",
+      "answerOptions": [
+        {
+          "describe": "Create Close Plan",
+          "isRight": true
+        },
+        {
+          "describe": "Find Similar Deals",
+          "isRight": false
+        },
+        {
+          "describe": "Create Account Plan",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987212",
+      "analysis": "Create Close Plan功能可为销售代表生成AI驱动的交易关闭计划，提供具体指导和步骤帮助完成交易，直接对应题目中\"提供AI生成的计划包含关闭交易的指导和步骤\"的需求。"
+    },
+    {
+      "describe": "Amid their busy schedules, sales reps at Universal Containers dedicate time to follow up with prospects and existing clients via email regarding renewals or new deals. They spend many hours throughout the week reviewing past communications and details about their customers before performing their outreach.\n\nWhich standard Agent action helps sales reps draft personalized emails to prospects by generating text based on previous successful communications?",
+      "answerOptions": [
+        {
+          "describe": "Agent Action: Find Similar Opportunities",
+          "isRight": false
+        },
+        {
+          "describe": "Agent Action: Draft or Revise Sales Email",
+          "isRight": true
+        },
+        {
+          "describe": "Agent Action: Summarize Record",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987209",
+      "analysis": "Agent Action: Draft or Revise Sales Email功能可以基于以往成功的沟通记录自动生成个性化邮件，帮助销售代表节省撰写邮件的时间，提高沟通效率，适合销售云场景下的客户跟进工作。"
+    },
+    {
+      "describe": "An AI Specialist implements Einstein Sales Emails for a sales team. The team wants to send personalized follow-up emails to leads based on their interactions and data stored in Salesforce. The AI Specialist needs to configure the system to use the most accurate and up-to-date information for email generation.\n\nWhich grounding technique should the AI Specialist use?",
+      "answerOptions": [
+        {
+          "describe": "Automatic grounding using Draft with Einstein feature",
+          "isRight": false
+        },
+        {
+          "describe": "Ground with Apex Merge Fields",
+          "isRight": false
+        },
+        {
+          "describe": "Ground with Record Merge Fields",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987150",
+      "analysis": "在Einstein Sales Emails中，要发送基于Salesforce中存储的交互和数据的个性化跟进邮件，Record Merge Fields是最合适的选择，因为它可以直接访问记录中的特定字段数据，确保邮件内容准确且最新。"
+    },
+    {
+      "describe": "Universal Containers is interested in improving the sales operation efficiency by analyzing their data using AI-powered predictions in Einstein Studio.\n\nWhich use case works for this scenario?",
+      "answerOptions": [
+        {
+          "describe": "Predict customer sentiment toward a promotion message.",
+          "isRight": false
+        },
+        {
+          "describe": "Predict customer lifetime value of an account.",
+          "isRight": true
+        },
+        {
+          "describe": "Predict most popular products from new product catalog.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987149",
+      "analysis": "预测账户的客户终身价值可以帮助销售团队确定哪些客户最有价值，从而优先分配资源、制定策略并实现销售运营效率的最大化。"
+    },
+    {
+      "describe": "Universal Containers needs a tool that can analyze voice and video call records to provide insights on competitor mentions, coaching opportunities, and other key information. The goal is to enhance the team's performance by identifying areas for improvement and competitive intelligence.\n\nWhich feature provides insights about competitor mentions and coaching opportunities?",
+      "answerOptions": [
+        {
+          "describe": "Call Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Sales Insights",
+          "isRight": true
+        },
+        {
+          "describe": "Call Explorer",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987148",
+      "analysis": "Einstein Conversation Insights是专为分析销售互动设计的AI工具，能够自动识别通话中的竞争对手提及和辅导机会，提供可行的见解来改善销售团队绩效"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to use the Draft with Einstein feature in Sales Cloud to create a personalized introduction email.\n\nAfter creating a proposed draft email, which predefined adjustment should UC choose to revise the draft with a more casual tone?",
+      "answerOptions": [
+        {
+          "describe": "Make Less Formal",
+          "isRight": true
+        },
+        {
+          "describe": "Enhance Friendliness",
+          "isRight": false
+        },
+        {
+          "describe": "Optimize for Clarity",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986408",
+      "analysis": "直接解决了使邮件语气更加随意的需求。在这种情况下，\"不那么正式\"本质上就是\"更随意\"的同义词，该调整会减少正式用语，使写作风格更加对话化。"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to enable its sales reps to explore opportunities that are similar to previously won opportunities by entering the utterance, \"Show me other opportunities like this one.\"\n\nHow should UC achieve this in Einstein Copilot?",
+      "answerOptions": [
+        {
+          "describe": "Create a custom Copilot action calling an Apex class.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the standard Copilot action.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a custom Copilot action calling a flow.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986405",
+      "analysis": "Einstein副驾驶已内置查找相似机会的能力，无需自定义开发。标准操作可理解机会相似性(如行业、产品、交易规模等)并提供现成功能，是最高效的实现方式"
+    },
+    {
+      "describe": "Universal Containers is using Einstein Copilot for Sales to find similar opportunities to help close deals faster. The team wants to understand the criteria used by the copilot to match opportunities.\n\nWhat is one criteria that Einstein Copilot for Sales uses to match similar opportunities?",
+      "answerOptions": [
+        {
+          "describe": "Matched opportunities were created in the last 12 months.",
+          "isRight": false
+        },
+        {
+          "describe": "Matched opportunities have a status of Closed Won from last 12 months.",
+          "isRight": true
+        },
+        {
+          "describe": "Matched opportunities are limited to the same account.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986381",
+      "analysis": "考虑过去12个月内已成功关闭(Closed Won)的机会，这样能确保提供的建议基于实际成功的交易，帮助销售团队借鉴已证实有效的策略和模式"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to enable its sales team to get insights into product and competitor names mentioned during calls.\n\nHow should UC meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Enable Einstein Conversation Insights, assign permission sets, define recording managers, and customize insights with up to 50 competitor names.",
+          "isRight": true
+        },
+        {
+          "describe": "Enable Einstein Conversation Insights, enable sales recording, assign permission sets, and customize insights with up to 50 products.",
+          "isRight": false
+        },
+        {
+          "describe": "Enable Einstein Conversation Insights, connect a recording provider, assign permission sets, and customize insights with up to 25 products.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986379",
+      "analysis": "此选项专门解决了分析竞争对手名称的需求，这是原始要求的关键部分"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to improve the productivity of its sales team with generative AI technology. However, UC is concerned that public AI virtual assistants lack adequate company data to generate useful responses.\n\nWhich solution should UC consider?",
+      "answerOptions": [
+        {
+          "describe": "Build AI model with Einstein Discovery and deploy to sales users.",
+          "isRight": false
+        },
+        {
+          "describe": "Enable Agentforce and deploy to sales users.",
+          "isRight": true
+        },
+        {
+          "describe": "Fine-tune the Einstein AI model with CRM data.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986372",
+      "analysis": "Agentforce是专为创建能访问公司数据的智能代理而设计的，这直接解决了公共AI助手缺乏公司数据的问题。"
+    },
+    {
+      "describe": "Universal Containers (UC) is looking to improve its sales team’s productivity by providing real-time insights and recommendations during customer interactions.\n\nWhy should UC consider using Agentforce Sales Agent?",
+      "answerOptions": [
+        {
+          "describe": "To track customer interactions for future analysis",
+          "isRight": false
+        },
+        {
+          "describe": "To automate the entire sales process for maximum efficiency",
+          "isRight": false
+        },
+        {
+          "describe": "To streamline the sales process and increase conversion rates",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986345",
+      "analysis": "Agentforce销售代理的主要价值在于通过在客户互动中提供实时洞察和建议，简化销售流程并提高转化率。它是一种辅助工具，帮助销售代表更高效地完成工作，而非完全自动化整个流程。"
+    },
+    {
+      "describe": "Universal Containers’ sales team engages in numerous video sales calls with prospects across the nation. Sales management wants an easy way to understand key information such as deal terms or customer sentiments.\n\nWhich Einstein Generative AI feature should an AI Specialist recommend for this request?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Conversation Insights",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Call Summaries",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Video KPI",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986288",
+      "analysis": "Einstein通话摘要专门设计用于生成销售通话和会议的摘要，提取关键信息如交易条款、后续步骤和客户情绪，完全符合销售管理团队需要轻松了解销售视频通话关键信息的需求"
+    },
+    {
+      "describe": "Universal Containers is interested in using Call Explorer to quickly gain insights from meetings recorded by its sales team.\n\nWhat should the AI Specialist be aware of before enabling this feature?",
+      "answerOptions": [
+        {
+          "describe": "Custom Call Explorer actions need to be built before it can be configured.",
+          "isRight": false
+        },
+        {
+          "describe": "Call Explorer operates independently of Salesforce Knowledge, requiring no prior setup.",
+          "isRight": false
+        },
+        {
+          "describe": "Call Explorer requires the Einstein Conversation Insights permission set to be enabled.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986287",
+      "analysis": "通话探索器是Einstein对话洞察(ECI)的组成部分，使用前需要启用相应的权限集。"
+    },
+    {
+      "describe": "Universal Containers (UC) currently tracks Leads with a custom object. UC is preparing to implement the Sales Development Representative (SDR) Agent.\n\nWhich consideration should UC keep in mind?",
+      "answerOptions": [
+        {
+          "describe": "Agentforce SDR only works on Opportunities.",
+          "isRight": false
+        },
+        {
+          "describe": "Agentforce SDR only works with the standard Lead object.",
+          "isRight": true
+        },
+        {
+          "describe": "Agentforce SDR only support custom objects associated with Accounts.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986253",
+      "analysis": "Agentforce销售开发代表(SDR)代理只能与Salesforce标准Lead对象配合使用，不支持自定义对象追踪潜在客户"
+    },
+    {
+      "describe": "Universal Containers (UC) would like to implement Sales Development Representative (SDR) Agent. Which channel consideration should UC be aware of while implementing it?",
+      "answerOptions": [
+        {
+          "describe": "SDR Agent only works in Email channel.",
+          "isRight": true
+        },
+        {
+          "describe": "SDR Agent must be deployed in Messaging channel.",
+          "isRight": false
+        },
+        {
+          "describe": "SDR Agent must also be deployed in the company website.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986193",
+      "analysis": "在实现销售开发代表(SDR)代理时，Universal Containers需要注意SDR代理仅在电子邮件渠道工作。这种限制与SDR功能一致，因为电子邮件是进行销售前景开发和潜在客户资格审查的主要渠道。"
+    },
+    {
+      "describe": "A sales manager is using Agent Assistant to streamline their daily tasks. They ask the agent to \"Show me a list of my open opportunities.\"\n\nHow does the large language model (LLM) in Agentforce identify and execute the action to show the sales manager a list of open opportunities?",
+      "answerOptions": [
+        {
+          "describe": "The LLM interprets the user's request, generates a plan by identifying the appropriate topics and actions, and executes the actions to retrieve and display the open opportunities.",
+          "isRight": true
+        },
+        {
+          "describe": "Using a dialog pattern, the LLM matches the user query to the available topic, action and steps then performs the steps for each action, such as retrieving a list of open opportunities.",
+          "isRight": false
+        },
+        {
+          "describe": "The LLM uses a static set of rules to match the user's request with predefined topics and actions, bypassing the need for dynamic interpretation and planning.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986160",
+      "analysis": "Agentforce中的LLM解释用户需求，计划匹配到可用的主题、操作"
+    },
+    {
+      "describe": "Universal Containers deployed the new Agentforce Sales Development Representative (SDR) into production, but sales reps are saying they can't find it. What is causing this issue?",
+      "answerOptions": [
+        {
+          "describe": "Sales rep users do not have access to the SDR Agent object.",
+          "isRight": false
+        },
+        {
+          "describe": "Sales rep users profiles are missing the Allow SDR Agent permission.",
+          "isRight": false
+        },
+        {
+          "describe": "Sales rep users are missing the Use SDR Agent permission set.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105985473",
+      "analysis": "在Salesforce中，要使用Agentforce销售开发代表(SDR)代理，用户需要被分配适当的权限集。问题原因是销售代表用户缺少\"Use SDR Agent\"权限集，这是访问和使用该代理所必须的。"
+    },
+    {
+      "describe": "A sales manager needs to contact leads at scale with hyper-relevant solutions and customized communications in the most efficient manner possible.\n\nWhich Salesforce solution best suits this need?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Sales Assistant",
+          "isRight": true
+        },
+        {
+          "describe": "Prompt Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Lead follow-up",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985450",
+      "analysis": "Einstein Sales Assistant专为销售经理提供大规模联系潜在客户的功能，能够基于AI生成超相关的解决方案和个性化沟通，比其他选项更高效，完美匹配销售场景需求"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to enable its sales team with automatic post-call visibility into mention of competitors, products, and other custom phrases.\n\nWhich feature should the company use to enable the sales team?",
+      "answerOptions": [
+        {
+          "describe": "Call Insights",
+          "isRight": true
+        },
+        {
+          "describe": "Call Explorer",
+          "isRight": false
+        },
+        {
+          "describe": "Call Summaries",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985447",
+      "analysis": "Call Insights是Salesforce Einstein Conversation Insights的功能，能够自动识别竞争对手提及、产品提及和自定义短语，让销售团队无需听完整个通话即可获取关键信息。它可以根据公司设置的产品和竞争对手信息，在通话中标记这些关键词出现的时刻"
+    }
+  ],
+  "hashCode": "-767442040"
+}

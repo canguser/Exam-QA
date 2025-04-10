@@ -1,0 +1,596 @@
+{
+  "title": "Agentforce和数据云",
+  "category": "Agentforce Specialist",
+  "questions": [
+    {
+      "describe": "An AI Specialist at Universal Containers (UC) is building with no-code tools only. They have many small accounts that are only touched periodically by a specialized sales team, and UC wants to maximize the sales operations team’s time. UC wants to help prep the sales team for the calls by summarizing past purchases, interests in products shown by the Contact captured via Data Cloud, and a recap of past email and phone conversations for which there are transcripts.\n\nWhich approach should the AI Specialist recommend to achieve this use case?",
+      "answerOptions": [
+        {
+          "describe": "Use a prompt template grounded on CNN and Data Cloud data using standard foundation models.",
+          "isRight": true
+        },
+        {
+          "describe": "Fine-tune the standard foundational model due to the complexity of the data.",
+          "isRight": false
+        },
+        {
+          "describe": "Deploy UC's own custom foundational model on this data first.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987340",
+      "analysis": "目要求\"仅使用无代码工具\"构建解决方案。使用标准基础模型的提示模板是唯一符合无代码约束的选项，通过Data Cloud数据进行接地可以获取所需的账户历史购买、联系人兴趣和对话记录信息。"
+    },
+    {
+      "describe": "Universal Containers wants to incorporate the current order fulfillment status into a prompt for a large language model (LLM). The order status is stored in the external enterprise resource planning (ERP) system.\n\nWhich data grounding technique should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "External Object Record Merge Fields",
+          "isRight": false
+        },
+        {
+          "describe": "Apex Merge Fields",
+          "isRight": true
+        },
+        {
+          "describe": "External Services Merge Fields",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987311",
+      "analysis": "Ground with Apex Merge Fields：https://help.salesforce.com/s/articleView?id=ai.prompt_builder_ground_apex.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to use Flow to bring data from unified Data Cloud objects to prompt templates.\n\nWhich type of flow should UC use?",
+      "answerOptions": [
+        {
+          "describe": "Data Cloud-triggered flow",
+          "isRight": false
+        },
+        {
+          "describe": "Unified-object linking flow",
+          "isRight": false
+        },
+        {
+          "describe": "Template-triggered prompt flow",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987308",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_add_flows_flex.htm&type=5"
+    },
+    {
+      "describe": "An AI specialist wants to leverage Record Snapshots grounding feature in a prompt template.\n\nWhat preparations are required?",
+      "answerOptions": [
+        {
+          "describe": "Enable and configure dynamic form for the object",
+          "isRight": false
+        },
+        {
+          "describe": "Configure page layout of the master record type",
+          "isRight": false
+        },
+        {
+          "describe": "Create a field set for all the fields to be grounded",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987303",
+      "analysis": "要在提示模板中使用记录快照(Record Snapshots)基础化功能，必须创建字段集(field set)来指定需要基础化的所有字段。字段集定义了哪些数据将被包含在AI提示中，确保AI能访问相关信息。"
+    },
+    {
+      "describe": "A data science team has trained an XGBoost classification model for product recommendations on Databricks. The AI Specialist is tasked with bringing inferences for product recommendations from this model into Data Cloud as a stand-alone data model object (DMO).\n\nHow should the AI Specialist set this up?",
+      "answerOptions": [
+        {
+          "describe": "Create the serving endpoint in Databricks, then configure the model using a Python SKD connector.",
+          "isRight": false
+        },
+        {
+          "describe": "Create the serving endpoint in Einstein Studio, then configure the model using Model Builder.",
+          "isRight": false
+        },
+        {
+          "describe": "Create the serving endpoint in Databricks, then configure the model using Model Builder.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987279",
+      "analysis": "由于模型已在Databricks上训练，最佳做法是在Databricks创建服务端点，然后使用Salesforce的Model Builder将其配置为数据模型对象。这样可以保持模型在原平台运行，同时实现与Data Cloud的集成。"
+    },
+    {
+      "describe": "An administrator is responsible for ensuring the security and reliability of Universal Containers' (UC) CRM data. UC needs enhanced data protection and up-to-date AI capabilities. UC also needs to include relevant information from a Salesforce record to be merged with the prompt.\n\nWhich feature in the Einstein Trust Layer best supports UC's need?",
+      "answerOptions": [
+        {
+          "describe": "Data masking",
+          "isRight": false
+        },
+        {
+          "describe": "Zero-data retention policy",
+          "isRight": false
+        },
+        {
+          "describe": "Dynamic grounding with secure data retrieval",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987179",
+      "analysis": "动态接地与安全数据检索功能允许系统安全地从Salesforce记录中检索并包含相关信息到提示中，同时确保数据保护。这正好满足了UC需要将Salesforce记录信息与提示合并的需求，同时保持数据安全性。"
+    },
+    {
+      "describe": "Universal Containers (UC) is implementing Einstein Generative AI to improve customer insights and interactions. UC needs audit and feedback data to be accessible for reporting purposes.\n\nWhat is a consideration for this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Storing this data requires a custom object for data to be configured.",
+          "isRight": false
+        },
+        {
+          "describe": "Storing this data requires Salesforce big objects.",
+          "isRight": false
+        },
+        {
+          "describe": "Storing this data requires Data Cloud to be provisioned.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987121",
+      "analysis": "Einstein生成式AI的审计和反馈数据需要Data Cloud来存储和处理。Data Cloud专为大规模数据管理而设计，能够处理AI交互产生的大量数据，并提供必要的报告功能，是实现这一需求的关键考虑因素。"
+    },
+    {
+      "describe": "How should an organization use the Einstein Trust layer to audit, track, and view masked data?",
+      "answerOptions": [
+        {
+          "describe": "Access the audit trail in Setup and export all user-generated prompts.",
+          "isRight": false
+        },
+        {
+          "describe": "In Setup, use Prompt Builder to send a prompt to the LLM requesting for the masked data.",
+          "isRight": false
+        },
+        {
+          "describe": "Utilize the audit trail that captures and stores all LLM submitted prompts in Data Cloud.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987118",
+      "analysis": "Einstein Trust层通过Data Cloud中的审计跟踪功能来捕获和存储所有提交给LLM的提示，包括掩码数据"
+    },
+    {
+      "describe": "Northern Trail Outfitters (NTO) wants to configure Einstein Trust Layer in its production org but is unable to see the option on the Setup page.\n\nAfter provisioning Data Cloud, which step must an AI Specialist take to make this option available to NTO?",
+      "answerOptions": [
+        {
+          "describe": "Turn on Einstein Generative AI.",
+          "isRight": true
+        },
+        {
+          "describe": "Turn on Prompt Builder.",
+          "isRight": false
+        },
+        {
+          "describe": "Turn on Einstein Copilot.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987116",
+      "analysis": "要在配置了Data Cloud的生产环境中启用Einstein Trust Layer，必须首先开启Einstein Generative AI功能。"
+    },
+    {
+      "describe": "Universal Containers (UC) is tracking web activities in Data Cloud for a unified contact, and wants to use that in a prompt template to help extract insights from the data.\n\nAssuming that the Contact object is one of the objects associated with the prompt template, what is a valid way for UC to do this?",
+      "answerOptions": [
+        {
+          "describe": "Add the activity records as an enrichment related list to the Contact, then pass the Contact into a prompt template workspace using related list grounding.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a prompt template that takes a list of all Data Cloud activity records as input to pass to the large language model (LLM).",
+          "isRight": false
+        },
+        {
+          "describe": "Call the prompt directly from Data Cloud with a web tracking activity included in the prompt definition.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986343",
+      "analysis": "将活动记录作为丰富相关列表添加到联系人，然后将联系人传递到使用相关列表接地的提示模板工作区，是整合Data Cloud数据的标准模式。"
+    },
+    {
+      "describe": "Which scenario best demonstrates when an Agentforce Data Library is most useful for improving an AI agent's response accuracy?",
+      "answerOptions": [
+        {
+          "describe": "When data is being retrieved from Snowflake using zero-copy for vectorization and retrieval.",
+          "isRight": false
+        },
+        {
+          "describe": "When the AI agent must provide answers based on a curated set of policy documents that are stored, regularly updated, and indexed in the data library.",
+          "isRight": true
+        },
+        {
+          "describe": "When the AI agent needs to combine data from disparate sources based on mutually common data, such as Customer Id and Product Id for grounding.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986284",
+      "analysis": "当AI代理需要基于存储在数据库中的策略文档提供答案时，数据库最有价值。通过存储、更新和索引这些文档，数据库使代理能够访问权威信息，从而提高回答准确性。"
+    },
+    {
+      "describe": "Universal Containers (UC) uses a file upload-based data library and custom prompt to support AI-driven training content. However, users report that the AI frequently returns outdated documents.\n\nWhich corrective action should UC implement to improve content relevancy?",
+      "answerOptions": [
+        {
+          "describe": "Continue using the default retriever without filters, because periodic re-uploads will eventually phase out outdated documents without further configuration or the need for custom retrievers.",
+          "isRight": false
+        },
+        {
+          "describe": "Switch the data library source from file uploads to a Knowledge-based data library, because Salesforce Knowledge bases automatically manage document recency, ensuring current documents are returned.",
+          "isRight": false
+        },
+        {
+          "describe": "Configure a custom retriever that includes a filter condition limiting retrieval to documents updated within a defined recent period, ensuring that only current content is used for AI responses.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986283",
+      "analysis": "配置包含时间过滤条件的自定义检索器是解决过时文档问题的最佳方法，可以确保AI只使用在指定时间段内更新的文档，直接解决了当前系统返回过时内容的问题"
+    },
+    {
+      "describe": "In a knowledge-based data library configuration, what is the primary difference between the identifying fields and the content fields?",
+      "answerOptions": [
+        {
+          "describe": "Identifying fields highlight key terms for relevance scoring, while content fields store the full text of the article for retrieval.",
+          "isRight": false
+        },
+        {
+          "describe": "Identifying fields help locate the correct knowledge article, while content fields enrich AI responses with detailed information.",
+          "isRight": true
+        },
+        {
+          "describe": "Identifying fields categorize articles for indexing purposes, while content fields provide a brief summary for display.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986281",
+      "analysis": "在知识库数据库配置中，标识字段(如标题、文章编号、URL等)用于定位和引用特定知识文章，而内容字段(如摘要、正文等)包含用于提供详细回复的实际信息内容"
+    },
+    {
+      "describe": "For an Agentforce Data Library that contains uploaded files, what occurs once it is created and configured?",
+      "answerOptions": [
+        {
+          "describe": "Indexes the uploaded files into Data Cloud",
+          "isRight": true
+        },
+        {
+          "describe": "Indexes the uploaded files in a location specified by the user",
+          "isRight": false
+        },
+        {
+          "describe": "Indexes the uploaded files in Salesforce File Storage",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986280",
+      "analysis": "当文件上传到Agentforce数据库后，系统将这些文件索引到Data Cloud中。这一过程使文件内容可被AI代理搜索和检索，Data Cloud作为Salesforce的数据平台，支持AI功能访问和利用这些信息。"
+    },
+    {
+      "describe": "What is a valid use case for Data Cloud retrievers?",
+      "answerOptions": [
+        {
+          "describe": "Returning relevant data from the vector database to augment a prompt",
+          "isRight": true
+        },
+        {
+          "describe": "Modifying and updating data within the source systems connected to Data Cloud",
+          "isRight": false
+        },
+        {
+          "describe": "Grounding data from external websites to augment a prompt with RAG",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986279",
+      "analysis": "Data Cloud检索器的核心功能是从向量数据库中检索相关数据来增强提示。这是检索增强生成(RAG)方法的一部分，通过特定数据来为AI响应提供基础，而非修改数据或从外部网站获取信息。"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to implement an AI-powered customer service agent that can:\n\n•Retrieve proprietary policy documents that are stored as PDFs.\n•Ensure responses are grounded in approved company data, not generic LLM knowledge.\n\nWhat should UC do first?",
+      "answerOptions": [
+        {
+          "describe": "Add the files to the content, and then select the data library option.",
+          "isRight": false
+        },
+        {
+          "describe": "Expand the AI agent’s scope to search all Salesforce records.",
+          "isRight": false
+        },
+        {
+          "describe": "Set up an Agentforce Data Library for AI retrieval of policy documents.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986225",
+      "analysis": ""
+    },
+    {
+      "describe": "How does the AI retriever function within Data Cloud?",
+      "answerOptions": [
+        {
+          "describe": "It monitors and aggregates data quality metrics across various data pipelines to ensure only high-integrity data is used for strategic decision-making.",
+          "isRight": false
+        },
+        {
+          "describe": "It automatically extracts and reformats raw data from diverse sources into standardized datasets for use in historical trend analysis and forecasting.",
+          "isRight": false
+        },
+        {
+          "describe": "It performs contextual searches over an indexed repository to quickly fetch the most relevant documents, enabling grounding AI responses with trustworthy, verifiable information.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986221",
+      "analysis": "在Data Cloud中，AI检索器的主要功能是对索引数据库执行上下文搜索，快速获取最相关的文档，从而使AI响应能够基于可信、可验证的信息进行接地，提高回答准确性。"
+    },
+    {
+      "describe": "Universal Containers (UC) implements a custom retriever to improve the accuracy of AI-generated responses. UC notices that the retriever is returning too many irrelevant results, making the responses less useful.\n\nWhat should UC do to ensure only relevant data is retrieved?",
+      "answerOptions": [
+        {
+          "describe": "Change the search index to a different data model object (DMO).",
+          "isRight": false
+        },
+        {
+          "describe": "Increase the maximum number of results returned to capture a broader dataset.",
+          "isRight": false
+        },
+        {
+          "describe": "Define filters to narrow the search results based on specific conditions.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986217",
+      "analysis": "当检索器返回过多不相关结果时，添加过滤条件是最直接的解决方案。过滤器可以根据特定条件缩小搜索范围，提高检索相关性，使AI响应更加准确和有用"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to build an Agentforce Service Agent that provides the latest, active, and relevant policy and compliance information to customers. The agent must:\n\n•Semantically search HR policies, compliance guidelines, and company procedures.\n•Ensure responses are grounded on published Knowledge.\n•Allow Knowledge updates to be reflected immediately without manual reconfiguration.\n\nWhat should UC do to ensure the agent retrieves the right information?",
+      "answerOptions": [
+        {
+          "describe": "Enable the agent to search all internal records and past customer inquiries.",
+          "isRight": false
+        },
+        {
+          "describe": "Set up an Agentforce Data Library to store and index policy documents for AI retrieval.",
+          "isRight": true
+        },
+        {
+          "describe": "Manually add policy responses into the AI model to prevent hallucinations.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986195",
+      "analysis": "设置Agentforce数据库是最佳解决方案，因为它允许语义搜索政策文档，确保回应基于已发布的知识，并且当知识文章更新时，数据库会立即反映这些变化，无需手动重新配置代理。"
+    },
+    {
+      "describe": "What is automatically created when a custom search index is created in Data Cloud?",
+      "answerOptions": [
+        {
+          "describe": "A predefined Apex retriever class that can be edited by a developer to meet specific needs",
+          "isRight": false
+        },
+        {
+          "describe": "A dynamic retriever to allow runtime selection of retriever parameters without manual configuration",
+          "isRight": false
+        },
+        {
+          "describe": "A retriever that shares the name of the custom search index",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986194",
+      "analysis": "在数据云中创建自定义搜索索引时，系统会自动创建一个与该索引同名的检索器。这种设计保持了搜索索引和检索器之间的清晰连接，使搜索索引立即可用于数据检索操作。"
+    },
+    {
+      "describe": "When creating a custom retriever in Einstein Studio, which step is considered essential?",
+      "answerOptions": [
+        {
+          "describe": "Select the search index, specify the associated data model object (DMO) and data space, and optionally define filters to narrow search results.",
+          "isRight": true
+        },
+        {
+          "describe": "Define the output configuration by specifying the maximum number of results to return, and map the output fields that will ground the prompt.",
+          "isRight": false
+        },
+        {
+          "describe": "Configure the search index, choose vector or hybrid search, choose the fields for filtering, the data space and model, then define the ranking method.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986190",
+      "analysis": "在Einstein Studio创建自定义检索器时，选择搜索索引、指定关联的数据模型对象和数据空间是基本且必要的步骤。"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to limit an agent's access to Knowledge articles, while deploying Answer Questions with Knowledge action. How should UC achieve this?",
+      "answerOptions": [
+        {
+          "describe": "Assign Data Categories to Knowledge articles, and define Data Category filters in the Agentforce Data Library.",
+          "isRight": true
+        },
+        {
+          "describe": "Update the Data Library Retriever to filter on a custom field on the Knowledge article.",
+          "isRight": false
+        },
+        {
+          "describe": "Define scope instructions to the agent specifying a list of allowed article titles or IDs.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986188",
+      "analysis": "在Salesforce中，数据类别是控制知识文章访问的标准方法。通过为文章分配类别并在Agentforce数据库中设置相应的过滤器，可以精确控制代理可访问的文章"
+    },
+    {
+      "describe": "Universal Containers (UC) has configured Agentforce Data Library using Knowledge articles. When testing in Agent Builder and the Experience Cloud site, the agent is not responding with grounded Knowledge article information. However, when tested in Prompt Builder, the response returns correctly.\n\nWhat should UC do to troubleshoot the issue?",
+      "answerOptions": [
+        {
+          "describe": "Create a new permission set that assigns \"Manage Knowledge\" and assign it to the Agentforce Service Agent User.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure the Data Cloud User permission set has been assigned to the Agentforce Service Agent User.",
+          "isRight": true
+        },
+        {
+          "describe": "Ensure the assigned User permission set includes access to the prompt template used to access the Knowledge articles.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986187",
+      "analysis": "由于知识文章通过数据库使用，且数据库由数据云提供支持，因此确保Agentforce服务代理用户拥有数据云用户权限至关重要。没有适当的数据云权限，"
+    },
+    {
+      "describe": "After configuring and saving a Salesforce\nAgentforce Data Library (regardless of the data source), which components are automatically created and available in Data Cloud?",
+      "answerOptions": [
+        {
+          "describe": "A data pipeline, an indexing engine, and a query processor",
+          "isRight": false
+        },
+        {
+          "describe": "A data connector, an analytics dashboard, and a workflow rule",
+          "isRight": false
+        },
+        {
+          "describe": "A data stream, a search index, and a retriever",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986156",
+      "analysis": "在配置和保存Salesforce Agentforce数据库后，系统会自动在数据云中创建数据流、搜索索引和检索器这三个组件。"
+    },
+    {
+      "describe": "In the context of retriever and search indexes, what best describes the data preparation process in Data Cloud?",
+      "answerOptions": [
+        {
+          "describe": "Data preparation entails aggregating, normalizing, and encoding structured datasets to ensure compliance with data governance and security protocols.",
+          "isRight": false
+        },
+        {
+          "describe": "Data preparation involves loading, chunking, vectorizing, and storing content in a search-optimized manner to support retrieval from the vector database.",
+          "isRight": true
+        },
+        {
+          "describe": "Data preparation focuses on real-time data ingestion and dynamic indexing to generate dynamic grounding reference data without preprocessing steps.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986155",
+      "analysis": "在数据云的检索器和搜索索引背景下，数据准备过程需要加载数据、分块处理、向量化并以搜索优化方式存储，这是向量数据库检索的基础流程。"
+    },
+    {
+      "describe": "Universal Containers wants its AI agent to answer customer questions with precise and up-to-date information.\n\nHow does an Agentforce Data Library simplify and enable this?",
+      "answerOptions": [
+        {
+          "describe": "It automates the ingestion and optical character recognition (OCR) processing of any PDF, and indexes them to enable regular SQL query retrieval to ground prompts and agents with relevant information.",
+          "isRight": false
+        },
+        {
+          "describe": "It automates the ingestion, indexing of data, and creates a default retriever to be used in prompts and agents for grounding with relevant information.",
+          "isRight": true
+        },
+        {
+          "describe": "It automates the ingestion, taxonomical classification and storage of knowledge in Data cloud for precision keyword search retrieval to ground prompts and agents with relevant information.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985481",
+      "analysis": "Agentforce数据库通过自动化数据摄取和索引过程，并创建默认检索器来简化AI代理的实现。该检索器可用于提示和代理中，确保客户问题能基于最新、精确的信息得到回答。"
+    },
+    {
+      "describe": "Once a data source is chosen for an Agentforce Data Library, what is true about changing that data source later?",
+      "answerOptions": [
+        {
+          "describe": "The Data Retriever can be reconfigured to use a different data source.",
+          "isRight": false
+        },
+        {
+          "describe": "The data source can be changed through the Data Cloud settings.",
+          "isRight": false
+        },
+        {
+          "describe": "The data source cannot be changed after it is selected.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105985477",
+      "analysis": "在Agentforce数据库中，一旦选择了数据源，就无法更改。这是因为数据库的结构和索引是基于最初选择的数据源构建的，更改源会破坏已建立的检索机制。"
+    },
+    {
+      "describe": "How is Data Cloud leveraged by the Answer Questions with Knowledge action in Agentforce?",
+      "answerOptions": [
+        {
+          "describe": "Data Cloud stores and manages the indexed Knowledge articles.",
+          "isRight": true
+        },
+        {
+          "describe": "Data Cloud is not required; the articles can be accessed directly from the CRM by the agent.",
+          "isRight": false
+        },
+        {
+          "describe": "Data Cloud provides the real-time data streams that update the Knowledge articles.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985449",
+      "analysis": "Data Cloud存储和管理为Answer Questions with Knowledge动作建立索引的知识文章 。当创建搜索索引时，Data Cloud会自动创建默认检索器，该检索器能够搜索并返回知识库中的相关信息，从而使AI代理能够利用这些信息提供准确的回答。而不是直接从CRM访问或仅依赖实时数据流。"
+    },
+    {
+      "describe": "Universal Containers (UC) wants its AI agent to return responses quickly. UC needs to optimize the retriever’s configuration to ensure minimal latency when grounding AI responses.\n\nWhich configuration aspect should UC prioritize?",
+      "answerOptions": [
+        {
+          "describe": "Increase the recency bias setting for the retriever limiting scope to more recent data.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure the retriever’s filters are defined to limit the scope of each search efficiently.",
+          "isRight": true
+        },
+        {
+          "describe": "Configure the retriever to operate in dynamic mode so that it modifies the search index structure at runtime.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985448",
+      "analysis": "检索器配置中，高效的过滤器定义是减少延迟的关键。高效的过滤器可以使Agentforce通过特定用例（如特定类别的文章）进行精准查询，避免处理不必要的数据 Salesforce。限制搜索范围到数据子集能显著提高检索速度"
+    },
+    {
+      "describe": "Universal Containers (UC) users are complaining that agent answers are not satisfactory. The agent is using PDF files as a knowledge source.\n\nHow should UC troubleshoot this issue?",
+      "answerOptions": [
+        {
+          "describe": "Verify the retriever's filter criteria and data source connection.",
+          "isRight": true
+        },
+        {
+          "describe": "Check that the agent has the PDF file field permission access for the data library.",
+          "isRight": false
+        },
+        {
+          "describe": "Analyze the data mapping between source fields and Data Cloud object fields.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985446",
+      "analysis": "当AI代理使用PDF文件作为知识源时，如果答案不理想，应首先检查检索器的过滤条件和数据源连接。权限问题会完全阻止访问，而映射问题主要影响结构化数据而非PDF文档。"
+    },
+    {
+      "describe": "Universal Containers (UC) configured a new PDF file ingestion in Data Cloud with all the required fields, and also created the mapping and the search index. UC is now setting up the retriever and notices a required field is missing.\n\nHow should UC resolve this?",
+      "answerOptions": [
+        {
+          "describe": "Update the search index to include the desired field.",
+          "isRight": true
+        },
+        {
+          "describe": "Modify the retriever's configuration to include the desired field.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a new custom Data Cloud object that includes the desired field.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985445",
+      "analysis": "在Data Cloud中配置PDF文件摄取后，搜索索引（Search Index）控制了哪些字段可被检索和使用。当为PDF文件摄取配置检索器时，所有必要字段必须包含在搜索索引中。如果缺少必需字段，正确的做法是更新搜索索引以确保该字段可用于检索。 Salesforcexamdumps 修改检索器配置无法添加未被索引的字段，创建新的自定义Data Cloud对象也是不必要的，因为问题不在于数据模型结构，而是索引配置。数据云的检索过程依赖于正确配置的搜索索引，该索引决定了哪些字段可用于AI代理的检索和响应生成。"
+    }
+  ],
+  "hashCode": "-779030088"
+}

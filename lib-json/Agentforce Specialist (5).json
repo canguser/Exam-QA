@@ -1,0 +1,1147 @@
+{
+  "title": "模拟卷A",
+  "category": "Agentforce Specialist",
+  "questions": [
+    {
+      "describe": "Universal Containers (UC) is experimenting with using public Generative AI models and is familiar with the language required to get the information it needs. However, it can be time consuming for both UC’s sales and service reps to type in the prompt to get the information they need, and ensure prompt consistency.\n\nWhich Salesforce feature should the company use to address these concerns?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Prompt Builder and Prompt Templates",
+          "isRight": true
+        },
+        {
+          "describe": "Agent Builder and Action: Query Records",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Recommendation Builder",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986252",
+      "analysis": "Einstein提示构建器和提示模板专为创建和标准化生成式AI提示而设计，允许组织创建可重复使用的模板，确保一致性并节省时间，直接解决了问题中提到的两个关键问题"
+    },
+    {
+      "describe": "Universal Containers aims to streamline the sales team's daily tasks by using AI.\n\nWhen considering these new workflows, which improvement requires the use of Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "Populate an AI-generated summary field for sales contracts.",
+          "isRight": true
+        },
+        {
+          "describe": "Populate an AI-generated time-to-close estimation to opportunities.",
+          "isRight": false
+        },
+        {
+          "describe": "Populate an AI-generated lead score for new leads.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987336",
+      "analysis": "合同总结需要理解复杂文档内容并提取关键信息，这需要定制化的提示来指导AI分析文本并生成摘要，正是Prompt Builder的核心功能。而其他选项主要依赖预测分析或预定义算法。"
+    },
+    {
+      "describe": "Universal Containers plans to enhance the customer support team's productivity using AI.\n\nWhich specific use case necessitates the use of Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "Creating a draft of a support bulletin post for new product patches",
+          "isRight": true
+        },
+        {
+          "describe": "Estimating support ticket volume based on historical data and seasonal trends",
+          "isRight": false
+        },
+        {
+          "describe": "Creating an AI-generated customer support agent performance score",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986161",
+      "analysis": "Prompt Builder专为引导AI文本生成而设计，最适合创建支持公告草稿这类内容生成任务。"
+    },
+    {
+      "describe": "The sales team at a hotel resort would like to generate a guest summary about the guests' interests and provide recommendations based on their activity preferences captured in each guest profile. They want the summary to be available only on the contact record page.\n\nWhich AI capability should the team use?",
+      "answerOptions": [
+        {
+          "describe": "Model Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Prompt Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Copilot",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986439",
+      "analysis": "Prompt Builder最适合此场景，因为它能创建特定于联系人记录页面的生成式AI提示模板，将客人兴趣与活动偏好相结合生成个性化摘要和推荐。Model Builder和Einstein Copilot不能提供此类特定记录页面上的定制化内容生成功能。"
+    },
+    {
+      "describe": "Universal Containers plans to enhance its sales team's productivity using AI.\n\nWhich specific requirement necessitates the use of Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "Creating an estimated Customer Lifetime Value (CLV) with historical purchase data",
+          "isRight": false
+        },
+        {
+          "describe": "Predicting the likelihood of customers churning or discontinuing their relationship with the company",
+          "isRight": false
+        },
+        {
+          "describe": "Creating a draft newsletter for an upcoming tradeshow",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986346",
+      "analysis": "创建贸易展会简报草稿是提示构建器的理想用例，因为它需要生成基于特定输入的文本内容。提示构建器擅长创意文本生成任务，而客户终身价值计算和客户流失预测更适合预测分析工具。"
+    },
+    {
+      "describe": "An AI Specialist wants to ground a new prompt template with the User related list.\n\nWhat should the AI Specialist consider?",
+      "answerOptions": [
+        {
+          "describe": "The User related list should have View All access.",
+          "isRight": false
+        },
+        {
+          "describe": "The User related list is not supported in prompt templates.",
+          "isRight": false
+        },
+        {
+          "describe": "The User related list needs to be included on the record page.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987184",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_ground_related_list.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers has grounded a prompt template with a related list.\nDuring user acceptance testing (UAT), users are not getting the correct responses.\n\nWhat is causing this issue?",
+      "answerOptions": [
+        {
+          "describe": "The related list is Read Only.",
+          "isRight": false
+        },
+        {
+          "describe": "The related list is not on the parent object’s page layout.",
+          "isRight": true
+        },
+        {
+          "describe": "The related list prompt template option is not enabled.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986220",
+      "analysis": "在Salesforce中，要使相关列表数据可用于提示模板的接地，该相关列表必须添加到父对象的页面布局中"
+    },
+    {
+      "describe": "What considerations should an Agentforce Specialist be aware of when using Record Snapshots grounding in a prompt template?",
+      "answerOptions": [
+        {
+          "describe": "Email addresses associated with the object are excluded.",
+          "isRight": false
+        },
+        {
+          "describe": "Empty data, such as fields without values or sections without limits, is filtered out.",
+          "isRight": true
+        },
+        {
+          "describe": "Activities such as tasks and events are excluded.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986249",
+      "analysis": "使用Record Snapshots接地时，空字段或没有数据的部分会被自动过滤掉，以避免在提示中包含不必要的空白信息"
+    },
+    {
+      "describe": "An AI Specialist needs to create a Sales Email with a custom prompt template. They need to ground on the following data.\n•Opportunity Products\n•Events near the customer\n•Tone and voice examples\nHow should the AI Specialist obtain related items?",
+      "answerOptions": [
+        {
+          "describe": "Utilize a standard email template and manually insert the required data fields.",
+          "isRight": false
+        },
+        {
+          "describe": "Call a prompt initiated flow to fetch and ground the required data.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a flex template that takes the records in question as inputs.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987242",
+      "analysis": "Flex模板是处理此类需求的最佳选择，因为它允许将特定记录（机会产品、客户附近的活动等）作为输入参数，从而实现个性化的销售邮件内容，同时保持提示模板的结构化。"
+    },
+    {
+      "describe": "Universal Containers wants to incorporate CRM data as well-formatted JSON in a prompt to a large language model (LLM).\n\nWhat is an important consideration for this requirement?",
+      "answerOptions": [
+        {
+          "describe": "“CRM data to JSON” checkbox must be selected when creating a prompt template.",
+          "isRight": false
+        },
+        {
+          "describe": "Apex code can be used to return a JSON formatted merge field.",
+          "isRight": true
+        },
+        {
+          "describe": "JSON format should be enabled in Prompt Builder Settings.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986374",
+      "analysis": "使用Apex代码可以查询CRM数据并将其格式化为JSON结构，然后用于提示模板。这是处理需要以JSON格式提供给LLM的复杂数据结构的有效方法"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to enable its sales team to use AI to suggest recommended products from its catalog.\n\nWhich type of prompt template should UC use?",
+      "answerOptions": [
+        {
+          "describe": "Flex prompt template",
+          "isRight": true
+        },
+        {
+          "describe": "Record summary prompt template",
+          "isRight": false
+        },
+        {
+          "describe": "Email generation prompt template",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987243",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_create_flex_prompt_template.htm&type=5"
+    },
+    {
+      "describe": "What should an AI Specialist consider when using related list merge fields in a prompt template associated with an Account object in Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "The Activities related list on the Account object is not supported because it is a polymorphic field.",
+          "isRight": true
+        },
+        {
+          "describe": "If person accounts have been enabled, merge fields will not be available for the Account object.",
+          "isRight": false
+        },
+        {
+          "describe": "Prompt generation will yield no response when there is no related list associated with an Account in runtime.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987155",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_ground_related_list.htm&type=5"
+    },
+    {
+      "describe": "An AI Specialist wants to include data from the response of external service invocation (REST API callout) into the prompt template.\n\nHow should the AI Specialist meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Use \"Add Prompt Instructions\" flow element.",
+          "isRight": false
+        },
+        {
+          "describe": "Convert the JSON to an XML merge field.",
+          "isRight": false
+        },
+        {
+          "describe": "Use External Service Record merge fields.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987156",
+      "analysis": "https://help.salesforce.com/s/articleView?id=release-notes.generative_ai_prompt_builder_field_generation.htm&release=246&type=5"
+    },
+    {
+      "describe": "Universal Containers wants to make a marketing newsletter and to directly use data from five unrelated objects (two standard and three custom) in a prompt template.\n\nWhat should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Create a prompt template passing in special custom object that connects the records temporarily.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a prompt template-triggered flow to access the data from five objects.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a flex template and use the five objects as inputs.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986349",
+      "analysis": "Flex模板专为处理复杂场景而设计，特别适合需要使用多个不相关对象数据的情况。它允许将多个对象作为输入，比标准提示模板更容易处理不相关对象之间的复杂关系。"
+    },
+    {
+      "describe": "An AI Specialist at Universal Containers is trying to set up a new Field Generation prompt template. They take the following steps.\n1. Create a new Field Generation prompt template.\n2. Choose Case as the object type.\n3. Select the custom field AL_Analysis__c as the target field.\nAfter creating the prompt template, the AI Specialist saves, tests, and activates it. However, when they go to a case record, the AI Analysis field does not show the * (Sparkle) icon on the Edit pencil. When the AI Specialist was editing the field, it was behaving as a normal field.\n\nWhich critical step did the AI Specialist miss?",
+      "answerOptions": [
+        {
+          "describe": "They forgot that the Case object is not supported for field generation as Einstein Service Replies should be used instead.",
+          "isRight": false
+        },
+        {
+          "describe": "They forgot to reactivate the Lightning page layout for the Case object after activating their Field Generation prompt template.",
+          "isRight": false
+        },
+        {
+          "describe": "They forgot to edit the Lightning page layout and associate the field to a prompt template.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987309",
+      "analysis": "Field Generation需要两个步骤：创建prompt template和在Lightning页面布局中将字段与该模板关联。AI专家完成了第一步但忘记了第二步，所以字段上没有出现星标图标。这是配置Field Generation的关键步骤。"
+    },
+    {
+      "describe": "Universal Containers is rolling out a new generative AI initiative.\n\nWhich Prompt Builder limitations should the AI Specialist be aware of?",
+      "answerOptions": [
+        {
+          "describe": "Custom objects are supported only for Flex template types.",
+          "isRight": false
+        },
+        {
+          "describe": "Rich text area fields are only supported in Flex template types.",
+          "isRight": true
+        },
+        {
+          "describe": "Creations or updates to the prompt templates are not recorded in the Setup Audit Trail.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986319",
+      "analysis": "提示构建器的一个重要限制是富文本区域字段只在Flex模板类型中受支持"
+    },
+    {
+      "describe": "<p>A data scientist needs to view and manage models in Einstein Studio. The data scientist also needs to create prompt templates in Prompt Builder.\n\nWhich permission sets should an AI Specialist assign to the data scientist?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Data Cloud Admin and Prompt Template Manager</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Prompt Template User and Data Cloud Admin</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Prompt Template Manager and Prompt Template User</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987248",
+      "analysis": "<p>https://help.salesforce.com/s/articleView?id=sf.c360_a_userpermissions.htm&amp;type=5</p>"
+    },
+    {
+      "describe": "In Model Playground, which hyperparameters of an existing Salesforce-enabled foundational model can an AI Specialist change?",
+      "answerOptions": [
+        {
+          "describe": "Temperature, Frequency Penalty, Presence Penalty",
+          "isRight": true
+        },
+        {
+          "describe": "Temperature, Top-k sampling, Presence Penalty",
+          "isRight": false
+        },
+        {
+          "describe": "Temperature, Frequency Penalty, Output Tokens",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986441",
+      "analysis": "在Model Playground中，AI专家可以调整的Salesforce基础模型超参数包括Temperature（控制创造性），Frequency Penalty（减少重复词汇）和Presence Penalty（增加主题多样性）。这三个参数可以微调LLM输出的特性"
+    },
+    {
+      "describe": "Universal Containers is very concerned about security compliance and wants to understand:\n•Which prompt text is sent to the large language model (LLM)\n•How it is masked\n•The masked response\nWhat should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Enable audit trail in the Einstein Trust Layer.",
+          "isRight": true
+        },
+        {
+          "describe": "Digest the Einstein Shield Event logs into CRM Analytics.",
+          "isRight": false
+        },
+        {
+          "describe": "Review the debug logs of the running user.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987278",
+      "analysis": "Einstein Trust Layer的审计跟踪功能专为监控AI交互而设计，能够记录发送给LLM的提示文本、数据屏蔽方式以及屏蔽后的响应，是满足Universal Containers安全合规要求的最直接解决方案。"
+    },
+    {
+      "describe": "Universal Containers (UC) plans to send one of three different emails to its customers based on the customer's lifetime value score and their market segment.\n\nConsidering that UC are required to explain why an e-mail was selected, which AI model should UC use to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "Predictive model",
+          "isRight": false
+        },
+        {
+          "describe": "Predictive model and generative model",
+          "isRight": true
+        },
+        {
+          "describe": "Generative model",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987185",
+      "analysis": "需要结合预测模型和生成模型：预测模型基于客户终身价值分数和市场细分确定发送哪封邮件，而生成模型则提供自然语言解释说明为什么选择该邮件，满足解释需求"
+    },
+    {
+      "describe": "What is a Salesforce AI Specialist able to configure in Data Masking within the Einstein Trust Layer?",
+      "answerOptions": [
+        {
+          "describe": "The encryption keys for masking",
+          "isRight": false
+        },
+        {
+          "describe": "The profiles exempt from masking",
+          "isRight": false
+        },
+        {
+          "describe": "The privacy data entities to be masked",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986318",
+      "analysis": "Salesforce AI专家可以在Einstein信任层的数据掩码设置中配置\"需要掩码的隐私数据实体\""
+    },
+    {
+      "describe": "An AI Specialist is tasked with analyzing Agent interactions looking into user inputs, requests, and queries to identify patterns and trends.\n\nWhat functionality allows the AI Specialist to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "AI Audit & Feedback Data dashboard",
+          "isRight": false
+        },
+        {
+          "describe": "Agent Event Logs dashboard",
+          "isRight": false
+        },
+        {
+          "describe": "User Utterances dashboard",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987214",
+      "analysis": "Utterance Analysis：https://help.salesforce.com/s/articleView?id=ai.copilot_utterance_analysis.htm&type=5"
+    },
+    {
+      "describe": "How does Secure Data Retrieval ensure that only authorized users can access necessary Salesforce data for dynamic grounding?",
+      "answerOptions": [
+        {
+          "describe": "Retrieves Salesforce data based on the user’s permissions executing the prompt",
+          "isRight": true
+        },
+        {
+          "describe": "Retrieves Salesforce data based on the “Run As” user’s permissions",
+          "isRight": false
+        },
+        {
+          "describe": "Retrieves Salesforce data based on the Prompt template’s object permissions",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987335",
+      "analysis": "Einstein Trust Layer：https://help.salesforce.com/s/articleView?id=ai.generative_ai_trust_layer.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers wants to implement a solution in Salesforce with a custom UX that allows users to enter a sales order number. Subsequently, the system will invoke a custom prompt template to create and display a summary of the sales order header and sales order details.\n\nWhich solution should an AI Specialist implement to meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Create an autolaunched flow and invoke the prompt template using the standard \"Prompt Template\" flow action.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a template-triggered prompt flow and invoke the prompt template using the standard \"Prompt Template\" flow action.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a screen flow to collect sales order number and invoke the prompt template using the standard \"Prompt Template\" flow action.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987151",
+      "analysis": "该需求要求提供自定义用户界面让用户输入销售订单号，并显示相关摘要。屏幕流程(Screen flow)是唯一能提供用户界面收集输入并使用\"Prompt Template\"流程操作调用提示模板的选项"
+    },
+    {
+      "describe": "How does an Agent respond when it can’t understand the request or find any requested information?",
+      "answerOptions": [
+        {
+          "describe": "With a preconfigured message, based on the action type",
+          "isRight": true
+        },
+        {
+          "describe": "With a general message asking the user to rephrase the request",
+          "isRight": false
+        },
+        {
+          "describe": "With a generated error message",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986348",
+      "analysis": "当代理无法理解请求或找不到信息时，会根据操作类型返回预配置的消息。这种方法提供了更具针对性的错误处理，为用户提供与特定失败操作相关的有用反馈。"
+    },
+    {
+      "describe": "An AI Specialist wants to troubleshoot their Agent’s performance.\n\nWhere should the AI Specialist go to access all user interactions with the Agent, including Agent errors, incorrectly triggered actions, and incomplete plans?",
+      "answerOptions": [
+        {
+          "describe": "Agent Settings",
+          "isRight": false
+        },
+        {
+          "describe": "Event Logs",
+          "isRight": true
+        },
+        {
+          "describe": "Plan Canvas",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987280",
+      "analysis": "Event Logs是查看Agent所有交互历史的中心位置，包含用户交互、错误信息、错误触发的操作和未完成的计划等全面数据，是排查Agent性能问题的最佳工具。"
+    },
+    {
+      "describe": "Universal Containers has seen a high adoption rate of a new feature that uses generative AI to populate a summary field of a custom object, Competitor Analysis. All sales users have the same profile but one user cannot see the generative AI-enabled field icon next to the summary field.\n\nWhat is the most likely cause of the issue?",
+      "answerOptions": [
+        {
+          "describe": "The user does not have the field Generative AI User permission set assigned.",
+          "isRight": true
+        },
+        {
+          "describe": "The user does not have the Prompt Template User permission set assigned.",
+          "isRight": false
+        },
+        {
+          "describe": "The prompt template associated with summary field is not activated for that user.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987122",
+      "analysis": "生成式AI功能需要\"Generative AI User\"权限集才能访问。缺少此权限集会导致用户无法看到生成式AI启用的字段图标，这是最可能的原因。"
+    },
+    {
+      "describe": "Universal Containers recently added a custom flow for processing returns and created a new Agent Action.\n\nWhich action should the company take to ensure the Agentforce Service Agent can run this new flow as part of the new Agent Action?",
+      "answerOptions": [
+        {
+          "describe": "Assign the Run Flows permission to the Agentforce Agent user.",
+          "isRight": true
+        },
+        {
+          "describe": "Recreate the flow using the Agentforce Agent user.",
+          "isRight": false
+        },
+        {
+          "describe": "Assign the Manage Users permission to the Agentforce Agent user.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986257",
+      "analysis": "Agentforce代理用户需要\"Run Flows\"权限才能执行流程"
+    },
+    {
+      "describe": "What is an AI Specialist able to do when the \"Enrich event logs with conversation data\" setting in Einstein Copilot is enabled?",
+      "answerOptions": [
+        {
+          "describe": "Generate detailed reports on all Copilot conversations over any time period.",
+          "isRight": false
+        },
+        {
+          "describe": "View the user click path that led to each copilot action.",
+          "isRight": false
+        },
+        {
+          "describe": "View session data including user input and copilot responses for sessions over the past 7 days.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987125",
+      "analysis": "启用\"Enrich event logs with conversation data\"设置后，AI专家可以查看过去7天内的会话数据，包括用户输入和copilot响应"
+    },
+    {
+      "describe": "Universal Containers has implemented an agent that answers questions based on Knowledge articles.\n\nWhich topic and Agent Action will be shown in the Agent Builder?",
+      "answerOptions": [
+        {
+          "describe": "General CRM topic and Answers Questions with LLM Action",
+          "isRight": false
+        },
+        {
+          "describe": "General Q&A topic and Knowledge Article Answers action",
+          "isRight": false
+        },
+        {
+          "describe": "General FAQ topic and Answers Questions with Knowledge Action",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986192",
+      "analysis": "在Agent Builder中，基于知识文章回答问题的代理会显示\"General FAQ topic\"作为主题和\"Answers Questions with Knowledge Action\"作为操作。"
+    },
+    {
+      "describe": "Before activating a custom Agent action, an AI Specialist would like to understand multiple real-world user utterances to ensure the action is being selected appropriately.\n\nWhich tool should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Agent Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Agentforce",
+          "isRight": false
+        },
+        {
+          "describe": "Model Playground",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987213",
+      "analysis": "Agentforce Model Playground是测试环境，允许AI专家输入各种真实用户表述并观察系统如何识别和选择相应操作，从而验证自定义Agent操作在激活前是否能正确响应不同的用户请求。"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to ensure the effectiveness, reliability, and trust of its agents prior to deploying them in production. UC would like to efficiently test a large and repeatable number of utterances.\n\nWhat should the Agentforce Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Deploy the agent in a Q/A sandbox environment and review the Utterance Analysis reports to review effectiveness.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a CSV file with UC’s test cases in Agentforce Testing Center using the testing template.",
+          "isRight": true
+        },
+        {
+          "describe": "Leverage the Agent Large Language Model (LLM) UI and test UC’s agents with different utterances prior to activating the agent.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986251",
+      "analysis": "Agentforce测试中心的CSV模板功能专为批量测试代理响应而设计，可高效处理大量可重复的话语测试用例，允许结构化测试，并可在开发周期中重复使用和版本控制"
+    },
+    {
+      "describe": "Universal Containers needs to provide insights on the usability of Agents to drive adoption in the organization.\n\nWhat should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Agent Analytics",
+          "isRight": false
+        },
+        {
+          "describe": "Agent Studio Analytics",
+          "isRight": false
+        },
+        {
+          "describe": "Agentforce Analytics",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986350",
+      "analysis": "Agentforce Analytics是专门设计用于监控Agentforce代理使用情况、有效性和操作分配的工具，可提供全面的分析仪表板和报告，帮助组织了解代理性能和使用情况"
+    },
+    {
+      "describe": "What is true of Agentforce Testing Center?",
+      "answerOptions": [
+        {
+          "describe": "Running tests does not consume Einstein Requests.",
+          "isRight": true
+        },
+        {
+          "describe": "Agentforce Testing Center can only be used in a production environment.",
+          "isRight": false
+        },
+        {
+          "describe": "Running tests risks modifying CRM data in a production environment.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986282",
+      "analysis": "Agentforce测试中心的一个重要特点是运行测试不会消耗Einstein请求配额，这允许开发人员和管理员在不影响组织API使用限制的情况下进行充分测试，确保代理功能正常"
+    },
+    {
+      "describe": "Universal Containers (UC) is using Einstein Generative AI to generate an account summary. UC aims to ensure the content is safe and inclusive, utilizing the Einstein Trust Layer's toxicity scoring to assess the content's safety level.\n\nWhat does a safety category score of 1 indicate in the Einstein Generative AI Toxicity Score?",
+      "answerOptions": [
+        {
+          "describe": "Moderately safe",
+          "isRight": false
+        },
+        {
+          "describe": "Not safe",
+          "isRight": true
+        },
+        {
+          "describe": "Safe",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987124",
+      "analysis": "Review Toxicity Scores ：https://help.salesforce.com/s/articleView?id=ai.generative_ai_audit_toxicity.htm&type=5"
+    },
+    {
+      "describe": "Based on the user utterance, \"Show me all the customers in New York\", which standard Einstein Copilot action will the planner service use?",
+      "answerOptions": [
+        {
+          "describe": "Query Records",
+          "isRight": true
+        },
+        {
+          "describe": "Fetch Records",
+          "isRight": false
+        },
+        {
+          "describe": "Select Records",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987154",
+      "analysis": "用户要求\"显示所有纽约的客户\"需要在数据库中根据地理位置条件(New York)查询符合条件的客户记录。Query Records是执行基于条件查询的标准操作，而不是获取已知记录(Fetch)或从用户界面选择记录(Select)"
+    },
+    {
+      "describe": "Universal Containers (UC) has configured Agentforce Data Library using Knowledge articles. When testing in Agent Builder and the Experience Cloud site, the agent is not responding with grounded Knowledge article information. However, when tested in Prompt Builder, the response returns correctly.\n\nWhat should UC do to troubleshoot the issue?",
+      "answerOptions": [
+        {
+          "describe": "Create a new permission set that assigns \"Manage Knowledge\" and assign it to the Agentforce Service Agent User.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure the Data Cloud User permission set has been assigned to the Agentforce Service Agent User.",
+          "isRight": true
+        },
+        {
+          "describe": "Ensure the assigned User permission set includes access to the prompt template used to access the Knowledge articles.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986187",
+      "analysis": "由于知识文章通过数据库使用，且数据库由数据云提供支持，因此确保Agentforce服务代理用户拥有数据云用户权限至关重要。没有适当的数据云权限，"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to use Flow to bring data from unified Data Cloud objects to prompt templates.\n\nWhich type of flow should UC use?",
+      "answerOptions": [
+        {
+          "describe": "Data Cloud-triggered flow",
+          "isRight": false
+        },
+        {
+          "describe": "Unified-object linking flow",
+          "isRight": false
+        },
+        {
+          "describe": "Template-triggered prompt flow",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987308",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_add_flows_flex.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to implement an AI-powered customer service agent that can:\n\n•Retrieve proprietary policy documents that are stored as PDFs.\n•Ensure responses are grounded in approved company data, not generic LLM knowledge.\n\nWhat should UC do first?",
+      "answerOptions": [
+        {
+          "describe": "Add the files to the content, and then select the data library option.",
+          "isRight": false
+        },
+        {
+          "describe": "Expand the AI agent’s scope to search all Salesforce records.",
+          "isRight": false
+        },
+        {
+          "describe": "Set up an Agentforce Data Library for AI retrieval of policy documents.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986225",
+      "analysis": ""
+    },
+    {
+      "describe": "An AI Specialist at Universal Containers (UC) is building with no-code tools only. They have many small accounts that are only touched periodically by a specialized sales team, and UC wants to maximize the sales operations team’s time. UC wants to help prep the sales team for the calls by summarizing past purchases, interests in products shown by the Contact captured via Data Cloud, and a recap of past email and phone conversations for which there are transcripts.\n\nWhich approach should the AI Specialist recommend to achieve this use case?",
+      "answerOptions": [
+        {
+          "describe": "Use a prompt template grounded on CNN and Data Cloud data using standard foundation models.",
+          "isRight": true
+        },
+        {
+          "describe": "Fine-tune the standard foundational model due to the complexity of the data.",
+          "isRight": false
+        },
+        {
+          "describe": "Deploy UC's own custom foundational model on this data first.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987340",
+      "analysis": "目要求\"仅使用无代码工具\"构建解决方案。使用标准基础模型的提示模板是唯一符合无代码约束的选项，通过Data Cloud数据进行接地可以获取所需的账户历史购买、联系人兴趣和对话记录信息。"
+    },
+    {
+      "describe": "Universal Containers (UC) configured a new PDF file ingestion in Data Cloud with all the required fields, and also created the mapping and the search index. UC is now setting up the retriever and notices a required field is missing.\n\nHow should UC resolve this?",
+      "answerOptions": [
+        {
+          "describe": "Update the search index to include the desired field.",
+          "isRight": true
+        },
+        {
+          "describe": "Modify the retriever's configuration to include the desired field.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a new custom Data Cloud object that includes the desired field.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985445",
+      "analysis": "在Data Cloud中配置PDF文件摄取后，搜索索引（Search Index）控制了哪些字段可被检索和使用。当为PDF文件摄取配置检索器时，所有必要字段必须包含在搜索索引中。如果缺少必需字段，正确的做法是更新搜索索引以确保该字段可用于检索。 Salesforcexamdumps 修改检索器配置无法添加未被索引的字段，创建新的自定义Data Cloud对象也是不必要的，因为问题不在于数据模型结构，而是索引配置。数据云的检索过程依赖于正确配置的搜索索引，该索引决定了哪些字段可用于AI代理的检索和响应生成。"
+    },
+    {
+      "describe": "What is a valid use case for Data Cloud retrievers?",
+      "answerOptions": [
+        {
+          "describe": "Returning relevant data from the vector database to augment a prompt",
+          "isRight": true
+        },
+        {
+          "describe": "Modifying and updating data within the source systems connected to Data Cloud",
+          "isRight": false
+        },
+        {
+          "describe": "Grounding data from external websites to augment a prompt with RAG",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986279",
+      "analysis": "Data Cloud检索器的核心功能是从向量数据库中检索相关数据来增强提示。这是检索增强生成(RAG)方法的一部分，通过特定数据来为AI响应提供基础，而非修改数据或从外部网站获取信息。"
+    },
+    {
+      "describe": "Which scenario best demonstrates when an Agentforce Data Library is most useful for improving an AI agent's response accuracy?",
+      "answerOptions": [
+        {
+          "describe": "When data is being retrieved from Snowflake using zero-copy for vectorization and retrieval.",
+          "isRight": false
+        },
+        {
+          "describe": "When the AI agent must provide answers based on a curated set of policy documents that are stored, regularly updated, and indexed in the data library.",
+          "isRight": true
+        },
+        {
+          "describe": "When the AI agent needs to combine data from disparate sources based on mutually common data, such as Customer Id and Product Id for grounding.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986284",
+      "analysis": "当AI代理需要基于存储在数据库中的策略文档提供答案时，数据库最有价值。通过存储、更新和索引这些文档，数据库使代理能够访问权威信息，从而提高回答准确性。"
+    },
+    {
+      "describe": "Universal Containers wants to incorporate the current order fulfillment status into a prompt for a large language model (LLM). The order status is stored in the external enterprise resource planning (ERP) system.\n\nWhich data grounding technique should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "External Object Record Merge Fields",
+          "isRight": false
+        },
+        {
+          "describe": "Apex Merge Fields",
+          "isRight": true
+        },
+        {
+          "describe": "External Services Merge Fields",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987311",
+      "analysis": "Ground with Apex Merge Fields：https://help.salesforce.com/s/articleView?id=ai.prompt_builder_ground_apex.htm&type=5"
+    },
+    {
+      "describe": "Once a data source is chosen for an Agentforce Data Library, what is true about changing that data source later?",
+      "answerOptions": [
+        {
+          "describe": "The Data Retriever can be reconfigured to use a different data source.",
+          "isRight": false
+        },
+        {
+          "describe": "The data source can be changed through the Data Cloud settings.",
+          "isRight": false
+        },
+        {
+          "describe": "The data source cannot be changed after it is selected.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105985477",
+      "analysis": "在Agentforce数据库中，一旦选择了数据源，就无法更改。这是因为数据库的结构和索引是基于最初选择的数据源构建的，更改源会破坏已建立的检索机制。"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to limit an agent's access to Knowledge articles, while deploying Answer Questions with Knowledge action. How should UC achieve this?",
+      "answerOptions": [
+        {
+          "describe": "Assign Data Categories to Knowledge articles, and define Data Category filters in the Agentforce Data Library.",
+          "isRight": true
+        },
+        {
+          "describe": "Update the Data Library Retriever to filter on a custom field on the Knowledge article.",
+          "isRight": false
+        },
+        {
+          "describe": "Define scope instructions to the agent specifying a list of allowed article titles or IDs.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986188",
+      "analysis": "在Salesforce中，数据类别是控制知识文章访问的标准方法。通过为文章分配类别并在Agentforce数据库中设置相应的过滤器，可以精确控制代理可访问的文章"
+    },
+    {
+      "describe": "In a knowledge-based data library configuration, what is the primary difference between the identifying fields and the content fields?",
+      "answerOptions": [
+        {
+          "describe": "Identifying fields highlight key terms for relevance scoring, while content fields store the full text of the article for retrieval.",
+          "isRight": false
+        },
+        {
+          "describe": "Identifying fields help locate the correct knowledge article, while content fields enrich AI responses with detailed information.",
+          "isRight": true
+        },
+        {
+          "describe": "Identifying fields categorize articles for indexing purposes, while content fields provide a brief summary for display.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986281",
+      "analysis": "在知识库数据库配置中，标识字段(如标题、文章编号、URL等)用于定位和引用特定知识文章，而内容字段(如摘要、正文等)包含用于提供详细回复的实际信息内容"
+    },
+    {
+      "describe": "How should an organization use the Einstein Trust layer to audit, track, and view masked data?",
+      "answerOptions": [
+        {
+          "describe": "Access the audit trail in Setup and export all user-generated prompts.",
+          "isRight": false
+        },
+        {
+          "describe": "In Setup, use Prompt Builder to send a prompt to the LLM requesting for the masked data.",
+          "isRight": false
+        },
+        {
+          "describe": "Utilize the audit trail that captures and stores all LLM submitted prompts in Data Cloud.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987118",
+      "analysis": "Einstein Trust层通过Data Cloud中的审计跟踪功能来捕获和存储所有提交给LLM的提示，包括掩码数据"
+    },
+    {
+      "describe": "Universal Containers (UC) needs to save agents time with AI-generated case summaries. UC has implemented the Work Summary feature.\n\nWhat does Einstein consider when generating a summary?",
+      "answerOptions": [
+        {
+          "describe": "Generation is grounded with existing conversation context only.",
+          "isRight": false
+        },
+        {
+          "describe": "Generation is grounded with conversation context and Knowledge articles.",
+          "isRight": false
+        },
+        {
+          "describe": "Generation is grounded with conversation context, Knowledge articles, and cases.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986311",
+      "analysis": "Einstein在生成工作摘要时，会考虑最全面的信息集：对话上下文、知识文章和相关案例"
+    },
+    {
+      "describe": "What is the main benefit of using a Knowledge article in an Agentforce Data Library?",
+      "answerOptions": [
+        {
+          "describe": "It provides a structured, searchable repository of approved documents so the agent can retrieve reliable information for each inquiry.",
+          "isRight": true
+        },
+        {
+          "describe": "Only the retriever for Knowledge articles allows for agents to access Knowledge from both inside the platform and on a customer’s website.",
+          "isRight": false
+        },
+        {
+          "describe": "The retriever for Knowledge articles has better accuracy and performance than the default retriever.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986157",
+      "analysis": "Agentforce数据库中使用知识文章的主要优势在于它提供了一个结构化、可搜索的已批准文档库，使代理能够为每个查询检索可靠信息。这确保了服务代理提供的回答基于经过验证的官方知识。"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to offer personalized service experiences and reduce agent handling time with AI-generated email responses, grounded in Knowledge base.\n\nWhich AI capability should UC use?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Service Replies for Email",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Generative Service Replies for Email",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Email Replies",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986403",
+      "analysis": "Einstein生成式服务电子邮件回复功能专为客服场景设计，使用生成式AI创建基于知识库的个性化回复，而非简单选择模板，能有效提高回复质量并减少处理时间"
+    },
+    {
+      "describe": "Universal Containers wants to reduce overall agent handling time by minimizing the time spent typing routine answers for common questions in-chat, and reducing the post-chat analysis by suggesting values for case fields.\n\nWhich combination of Einstein for Service features enables this effort?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Reply Recommendations and Case Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Reply Recommendations and Case Classification",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Service Replies and Work Summaries",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987147",
+      "analysis": "Einstein Reply Recommendations可以在聊天中为客服提供常见问题的回复建议，减少手动输入时间；而Case Classification能够自动为案例字段提供值建议，减少后续分析工作。"
+    },
+    {
+      "describe": "Universal Containers' service team wants to customize the standard case summary response from Agentforce.\n\nWhat should the AI Specialist do to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "Summarize the Case with a standard Agent action.",
+          "isRight": false
+        },
+        {
+          "describe": "Customize the standard Record Summary template for the Case object.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a custom Record Summary prompt template for the Case object.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987240",
+      "analysis": "要定制Agentforce的案例摘要响应，创建自定义Record Summary提示模板是最佳选择，它提供最大的灵活性，允许服务团队完全控制AI如何解释和总结案例数据。"
+    },
+    {
+      "describe": "Universal Containers deploys a new Agentforce Service Agent into the company’s website but is getting feedback that the Agentforce Service Agent is not providing answers to customer questions that are found in the company’s Salesforce Knowledge articles.\n\nWhat is the likely issue?",
+      "answerOptions": [
+        {
+          "describe": "The Agentforce Service Agent user needs to be created under the standard Agent Knowledge profile.",
+          "isRight": false
+        },
+        {
+          "describe": "The Agentforce Service Agent user is not assigned the correct Agent Type License.",
+          "isRight": false
+        },
+        {
+          "describe": "The Agentforce Service Agent user was not given the Allow View Knowledge permission set.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986226",
+      "analysis": "在Salesforce中，访问Knowledge文章受权限控制。Agentforce代理用户需要\"Allow View Knowledge\"权限才能访问和检索Knowledge文章中的信息来回答客户问题"
+    },
+    {
+      "describe": "Amid their busy schedules, sales reps at Universal Containers dedicate time to follow up with prospects and existing clients via email regarding renewals or new deals. They spend many hours throughout the week reviewing past communications and details about their customers before performing their outreach.\n\nWhich standard Agent action helps sales reps draft personalized emails to prospects by generating text based on previous successful communications?",
+      "answerOptions": [
+        {
+          "describe": "Agent Action: Find Similar Opportunities",
+          "isRight": false
+        },
+        {
+          "describe": "Agent Action: Draft or Revise Sales Email",
+          "isRight": true
+        },
+        {
+          "describe": "Agent Action: Summarize Record",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987209",
+      "analysis": "Agent Action: Draft or Revise Sales Email功能可以基于以往成功的沟通记录自动生成个性化邮件，帮助销售代表节省撰写邮件的时间，提高沟通效率，适合销售云场景下的客户跟进工作。"
+    },
+    {
+      "describe": "A sales manager needs to contact leads at scale with hyper-relevant solutions and customized communications in the most efficient manner possible.\n\nWhich Salesforce solution best suits this need?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Sales Assistant",
+          "isRight": true
+        },
+        {
+          "describe": "Prompt Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Lead follow-up",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985450",
+      "analysis": "Einstein Sales Assistant专为销售经理提供大规模联系潜在客户的功能，能够基于AI生成超相关的解决方案和个性化沟通，比其他选项更高效，完美匹配销售场景需求"
+    },
+    {
+      "describe": "Universal Containers deployed the new Agentforce Sales Development Representative (SDR) into production, but sales reps are saying they can't find it. What is causing this issue?",
+      "answerOptions": [
+        {
+          "describe": "Sales rep users do not have access to the SDR Agent object.",
+          "isRight": false
+        },
+        {
+          "describe": "Sales rep users profiles are missing the Allow SDR Agent permission.",
+          "isRight": false
+        },
+        {
+          "describe": "Sales rep users are missing the Use SDR Agent permission set.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105985473",
+      "analysis": "在Salesforce中，要使用Agentforce销售开发代表(SDR)代理，用户需要被分配适当的权限集。问题原因是销售代表用户缺少\"Use SDR Agent\"权限集，这是访问和使用该代理所必须的。"
+    },
+    {
+      "describe": "A sales rep at Universal Containers is extremely busy and sometimes will have very long sales calls on voice and video calls and might miss key details. They are just starting to adopt new generative AI features.\n\nWhich Einstein Generative AI feature should an AI Specialist recommend to help the rep get the details they might have missed during a conversation?",
+      "answerOptions": [
+        {
+          "describe": "Call Explorer",
+          "isRight": false
+        },
+        {
+          "describe": "Sales Summary",
+          "isRight": false
+        },
+        {
+          "describe": "Call Summary",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987274",
+      "analysis": "Call Summaries Powered by Einstein Generative AI：https://help.salesforce.com/s/articleView?id=sales.eci_call_summaries.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers wants to utilize Agentforce for Sales to help sales reps reach their sales quotas by providing AI-generated plans containing guidance and steps for closing deals.\n\nWhich feature should the AI Specialist recommend to the sales team?",
+      "answerOptions": [
+        {
+          "describe": "Create Close Plan",
+          "isRight": true
+        },
+        {
+          "describe": "Find Similar Deals",
+          "isRight": false
+        },
+        {
+          "describe": "Create Account Plan",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987212",
+      "analysis": "Create Close Plan功能可为销售代表生成AI驱动的交易关闭计划，提供具体指导和步骤帮助完成交易，直接对应题目中\"提供AI生成的计划包含关闭交易的指导和步骤\"的需求。"
+    },
+    {
+      "describe": "Universal Containers is using Einstein Copilot for Sales to find similar opportunities to help close deals faster. The team wants to understand the criteria used by the copilot to match opportunities.\n\nWhat is one criteria that Einstein Copilot for Sales uses to match similar opportunities?",
+      "answerOptions": [
+        {
+          "describe": "Matched opportunities were created in the last 12 months.",
+          "isRight": false
+        },
+        {
+          "describe": "Matched opportunities have a status of Closed Won from last 12 months.",
+          "isRight": true
+        },
+        {
+          "describe": "Matched opportunities are limited to the same account.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986381",
+      "analysis": "考虑过去12个月内已成功关闭(Closed Won)的机会，这样能确保提供的建议基于实际成功的交易，帮助销售团队借鉴已证实有效的策略和模式"
+    }
+  ],
+  "hashCode": "1020325395"
+}

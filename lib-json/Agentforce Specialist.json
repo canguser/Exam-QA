@@ -1,0 +1,1033 @@
+{
+  "title": "Prompt工程",
+  "category": "Agentforce Specialist",
+  "questions": [
+    {
+      "describe": "Universal Containers (UC) is implementing generative AI and wants to leverage a prompt template to provide responses to customers that gives personalized product recommendations to website visitors based on their browsing history.\n\nWhich initial step should UC take to ensure the chatbot can deliver accurate recommendations?",
+      "answerOptions": [
+        {
+          "describe": "Write a response script for the chatbot.",
+          "isRight": false
+        },
+        {
+          "describe": "Design universal product recommendations.",
+          "isRight": false
+        },
+        {
+          "describe": "Collect and analyze browsing data.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987341",
+      "analysis": "要提供基于浏览历史的个性化产品推荐，首先必须收集和分析用户的浏览数据。这些数据是AI模型进行个性化推荐的基础，没有这些数据，AI就无法了解客户兴趣并提供相关推荐。"
+    },
+    {
+      "describe": "After creating a foundation model in Einstein Studio, which hyperparameter should an AI Specialist use to adjust the balance between consistency and randomness of a response?",
+      "answerOptions": [
+        {
+          "describe": "Presence Penalty",
+          "isRight": false
+        },
+        {
+          "describe": "Temperature",
+          "isRight": true
+        },
+        {
+          "describe": "Variability",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987337",
+      "analysis": "Temperature参数直接控制AI模型响应的随机性程度。较低的温度值会使响应更加一致和可预测，而较高的温度值则会增加随机性和创造性，这正是平衡一致性和随机性的关键参数。"
+    },
+    {
+      "describe": "Universal Containers aims to streamline the sales team's daily tasks by using AI.\n\nWhen considering these new workflows, which improvement requires the use of Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "Populate an AI-generated summary field for sales contracts.",
+          "isRight": true
+        },
+        {
+          "describe": "Populate an AI-generated time-to-close estimation to opportunities.",
+          "isRight": false
+        },
+        {
+          "describe": "Populate an AI-generated lead score for new leads.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987336",
+      "analysis": "合同总结需要理解复杂文档内容并提取关键信息，这需要定制化的提示来指导AI分析文本并生成摘要，正是Prompt Builder的核心功能。而其他选项主要依赖预测分析或预定义算法。"
+    },
+    {
+      "describe": "What does it mean when a prompt template version is described as immutable?",
+      "answerOptions": [
+        {
+          "describe": "After a prompt template version is activated, no further changes can be saved to that version.",
+          "isRight": true
+        },
+        {
+          "describe": "Every modification on a template will be saved as a new version automatically.",
+          "isRight": false
+        },
+        {
+          "describe": "Only the latest version of a template can be activated.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987310",
+      "analysis": "\"immutable\"（不可变）指的是一旦prompt template版本被激活后，该特定版本无法再被修改。如果需要更改，必须创建新版本。这确保了已激活模板的稳定性和一致性。"
+    },
+    {
+      "describe": "An AI Specialist at Universal Containers is trying to set up a new Field Generation prompt template. They take the following steps.\n1. Create a new Field Generation prompt template.\n2. Choose Case as the object type.\n3. Select the custom field AL_Analysis__c as the target field.\nAfter creating the prompt template, the AI Specialist saves, tests, and activates it. However, when they go to a case record, the AI Analysis field does not show the * (Sparkle) icon on the Edit pencil. When the AI Specialist was editing the field, it was behaving as a normal field.\n\nWhich critical step did the AI Specialist miss?",
+      "answerOptions": [
+        {
+          "describe": "They forgot that the Case object is not supported for field generation as Einstein Service Replies should be used instead.",
+          "isRight": false
+        },
+        {
+          "describe": "They forgot to reactivate the Lightning page layout for the Case object after activating their Field Generation prompt template.",
+          "isRight": false
+        },
+        {
+          "describe": "They forgot to edit the Lightning page layout and associate the field to a prompt template.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987309",
+      "analysis": "Field Generation需要两个步骤：创建prompt template和在Lightning页面布局中将字段与该模板关联。AI专家完成了第一步但忘记了第二步，所以字段上没有出现星标图标。这是配置Field Generation的关键步骤。"
+    },
+    {
+      "describe": "A Salesforce AI Specialist is reviewing the feedback from a customer about the ineffectiveness of the prompt template.\n\nWhat should the AI Specialist do to ensure the prompt template's effectiveness?",
+      "answerOptions": [
+        {
+          "describe": "Periodically change the template's grounding object.",
+          "isRight": false
+        },
+        {
+          "describe": "Monitor and refine the template based on user feedback.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the Prompt Builder Scorecard to help monitor.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987305",
+      "analysis": "基于用户反馈监控和优化模板是最有效的方法，它建立了一个持续改进的循环，确保提示模板能够根据实际使用情况和用户需求进行有针对性的调整，直接解决客户发现的问题。"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to create a new Sales Email prompt template in Prompt Builder using the \"Save As\" function. However, UC notices that the new template produces different results compared to the standard Sales Email prompt due to missing hyperparameters.\n\nWhat should UC do to ensure the new prompt template produces results comparable to the standard Sales Email prompts?",
+      "answerOptions": [
+        {
+          "describe": "Use Model Playground to create a model configuration with the specified parameters.",
+          "isRight": true
+        },
+        {
+          "describe": "Revert to using the standard template without modifications.",
+          "isRight": false
+        },
+        {
+          "describe": "Manually add the hyperparameters to the new template.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987277",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_standard_prompt_templates.htm&type=5"
+    },
+    {
+      "describe": "<p>A data scientist needs to view and manage models in Einstein Studio. The data scientist also needs to create prompt templates in Prompt Builder.\n\nWhich permission sets should an AI Specialist assign to the data scientist?</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>Data Cloud Admin and Prompt Template Manager</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>Prompt Template User and Data Cloud Admin</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>Prompt Template Manager and Prompt Template User</p>",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987248",
+      "analysis": "<p>https://help.salesforce.com/s/articleView?id=sf.c360_a_userpermissions.htm&amp;type=5</p>"
+    },
+    {
+      "describe": "An AI Specialist is tasked with creating a prompt template for a sales team. The template needs to generate a summary of all related opportunities for a given Account.\n\nWhich grounding technique should the AI Specialist use to include data from the related list of opportunities in the prompt template?",
+      "answerOptions": [
+        {
+          "describe": "Use formula fields to reference the Einstein related list of opportunities.",
+          "isRight": false
+        },
+        {
+          "describe": "Use merge fields to reference the default related list of opportunities.",
+          "isRight": true
+        },
+        {
+          "describe": "Use the merge fields to reference a custom related list of opportunities.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987247",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_create_field_gen_prompt_template.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers (UC) has implemented Generative AI within Salesforce to enable summarization of a custom object called Guest. Users have reported mismatches in the generated information.\n\nIn refining its prompt design strategy, which key practices should UC prioritize?",
+      "answerOptions": [
+        {
+          "describe": "Create concise, clear, and consistent prompt templates with effective grounding, contextual role-playing, clear instructions, and iterative feedback.",
+          "isRight": true
+        },
+        {
+          "describe": "Submit a prompt review case to Salesforce and conduct thorough testing in the playground to refine outputs until they meet user expectations.",
+          "isRight": false
+        },
+        {
+          "describe": "Enable prompt test mode, allocate different prompt variations to a subset of users for evaluation, and standardize the most effective model based on performance feedback.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987246",
+      "analysis": "优化提示设计策略的关键是创建简洁、清晰、一致的提示模板，结合有效的基础数据、情境角色扮演、明确指令和迭代反馈，这是解决生成信息不匹配问题的最佳实践。"
+    },
+    {
+      "describe": "An AI Specialist turned on Einstein Generative AI in Setup. Now, the AI Specialist would like to create custom prompt templates in Prompt Builder. However, they cannot access Prompt Builder in the Setup menu.\n\nWhat is causing the problem?",
+      "answerOptions": [
+        {
+          "describe": "The large language model (LLM) was not configured correctly in Data Cloud.",
+          "isRight": false
+        },
+        {
+          "describe": "The Prompt Template User permission set was not assigned correctly.",
+          "isRight": false
+        },
+        {
+          "describe": "The Prompt Template Manager permission set was not assigned correctly.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987245",
+      "analysis": "要在Prompt Builder中创建自定义提示模板，用户需要被分配Prompt Template Manager权限集。缺少此权限集是无法在设置菜单中访问Prompt Builder的原因"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to enable its sales team to use AI to suggest recommended products from its catalog.\n\nWhich type of prompt template should UC use?",
+      "answerOptions": [
+        {
+          "describe": "Flex prompt template",
+          "isRight": true
+        },
+        {
+          "describe": "Record summary prompt template",
+          "isRight": false
+        },
+        {
+          "describe": "Email generation prompt template",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987243",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_create_flex_prompt_template.htm&type=5"
+    },
+    {
+      "describe": "An AI Specialist needs to create a Sales Email with a custom prompt template. They need to ground on the following data.\n•Opportunity Products\n•Events near the customer\n•Tone and voice examples\nHow should the AI Specialist obtain related items?",
+      "answerOptions": [
+        {
+          "describe": "Utilize a standard email template and manually insert the required data fields.",
+          "isRight": false
+        },
+        {
+          "describe": "Call a prompt initiated flow to fetch and ground the required data.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a flex template that takes the records in question as inputs.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987242",
+      "analysis": "Flex模板是处理此类需求的最佳选择，因为它允许将特定记录（机会产品、客户附近的活动等）作为输入参数，从而实现个性化的销售邮件内容，同时保持提示模板的结构化。"
+    },
+    {
+      "describe": "When configuring a prompt template, an AI Specialist previews the results of the prompt template they've written. They see two distinct text outputs: Resolution and Response.\n\nWhich information does the Resolution text provide?",
+      "answerOptions": [
+        {
+          "describe": "It shows which sensitive data is masked before it is sent to the LLM.",
+          "isRight": false
+        },
+        {
+          "describe": "It shows the response from the LLM based on the sample record.",
+          "isRight": false
+        },
+        {
+          "describe": "It shows the full text that is sent to the Trust Layer.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987211",
+      "analysis": "在提示模板预览中，Resolution文本显示的是所有变量和合并字段替换为实际数据后发送到Trust Layer的完整文本，这是模板处理的重要环节，让用户了解实际发送到AI模型的内容"
+    },
+    {
+      "describe": "An AI Specialist is considering using a Field Generation prompt template type.\n\nWhat should the AI Specialist check before creating the Field Generation prompt to ensure it is possible for the field to be enabled for generative AI?",
+      "answerOptions": [
+        {
+          "describe": "That the field chosen must be a rich text field with 255 characters or more",
+          "isRight": false
+        },
+        {
+          "describe": "That the org is set to API version 59 or higher",
+          "isRight": false
+        },
+        {
+          "describe": "That the Lightning page layout where the field will reside has been upgraded to Dynamic Forms",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987210",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_create_field_gen_prompt_template.htm&type=5"
+    },
+    {
+      "describe": "An AI Specialist wants to ground a new prompt template with the User related list.\n\nWhat should the AI Specialist consider?",
+      "answerOptions": [
+        {
+          "describe": "The User related list should have View All access.",
+          "isRight": false
+        },
+        {
+          "describe": "The User related list is not supported in prompt templates.",
+          "isRight": false
+        },
+        {
+          "describe": "The User related list needs to be included on the record page.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987184",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_ground_related_list.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers plans to implement prompt templates that utilize the standard foundation models.\n\nWhat should the AI Specialist consider when building prompt templates in Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "Include multiple-choice questions within the prompt to test the LLM’s understanding of the context.",
+          "isRight": false
+        },
+        {
+          "describe": "Ask it to role-play as a character in the prompt template to provide more context to the LLM.",
+          "isRight": true
+        },
+        {
+          "describe": "Train LLM with data using different writing styles including word choice, intensifiers, emojis, and punctuation.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987183",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_best_practices.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers has an active standard email prompt template that does not fully deliver on the business requirements.\n\nWhich steps should an AI Specialist take to use the content of the standard prompt email template in question and customize it to fully meet the business requirements?",
+      "answerOptions": [
+        {
+          "describe": "Clone the existing template and modify as needed.",
+          "isRight": true
+        },
+        {
+          "describe": "Save as New Version and edit as needed.",
+          "isRight": false
+        },
+        {
+          "describe": "Save as New Template and edit as needed.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987180",
+      "analysis": "对于已有的标准提示模板，最适合的做法是克隆(Clone)现有模板然后进行必要的修改。这样可以保留原始模板内容作为基础，同时创建一个可以完全自定义以满足业务需求的独立新模板。"
+    },
+    {
+      "describe": "An AI Specialist wants to include data from the response of external service invocation (REST API callout) into the prompt template.\n\nHow should the AI Specialist meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Use \"Add Prompt Instructions\" flow element.",
+          "isRight": false
+        },
+        {
+          "describe": "Convert the JSON to an XML merge field.",
+          "isRight": false
+        },
+        {
+          "describe": "Use External Service Record merge fields.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987156",
+      "analysis": "https://help.salesforce.com/s/articleView?id=release-notes.generative_ai_prompt_builder_field_generation.htm&release=246&type=5"
+    },
+    {
+      "describe": "What should an AI Specialist consider when using related list merge fields in a prompt template associated with an Account object in Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "The Activities related list on the Account object is not supported because it is a polymorphic field.",
+          "isRight": true
+        },
+        {
+          "describe": "If person accounts have been enabled, merge fields will not be available for the Account object.",
+          "isRight": false
+        },
+        {
+          "describe": "Prompt generation will yield no response when there is no related list associated with an Account in runtime.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987155",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.prompt_builder_ground_related_list.htm&type=5"
+    },
+    {
+      "describe": "An AI Specialist built a Field Generation prompt template that worked for many records, but users are reporting random failures with token limit errors.\n\nWhat is the cause of the random nature of this error?",
+      "answerOptions": [
+        {
+          "describe": "The number of tokens that can be processed by the LLM varies with total user demand.",
+          "isRight": false
+        },
+        {
+          "describe": "The number of tokens generated by the dynamic nature of the prompt template will vary by record.",
+          "isRight": true
+        },
+        {
+          "describe": "The template type needs to be switched to Flex to accommodate the variable amount of tokens generated by the prompt grounding.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987119",
+      "analysis": "在Field Generation提示模板中，每条记录的字段内容长度不同，导致生成的令牌数量各异。某些记录可能包含较长的文本内容，超过了LLM的令牌限制，因此出现随机性的令牌限制错误。"
+    },
+    {
+      "describe": "An AI Specialist is tasked with configuring a generative model to create personalized sales emails using customer data stored in Salesforce. The AI Specialist has already fine-tuned a large language model (LLM) on the OpenAI platform. Security and data privacy are critical concerns for the client.\n\nHow should the AI Specialist integrate the custom LLM into Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "Create an application of the custom LLM and embed it in Sales Cloud via iFrame.",
+          "isRight": false
+        },
+        {
+          "describe": "Enable model endpoint on OpenAI and make callouts to the model to generate emails.",
+          "isRight": false
+        },
+        {
+          "describe": "Add the fine-tuned LLM in Einstein Studio Model Builder.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986443",
+      "analysis": "将已微调的OpenAI模型添加到Einstein Studio Model Builder是最佳方案。这种方法保持数据在Salesforce生态系统内，符合安全和隐私要求，避免了外部API调用的风险，同时能充分利用Salesforce的安全架构和数据保护机制。"
+    },
+    {
+      "describe": "In Model Playground, which hyperparameters of an existing Salesforce-enabled foundational model can an AI Specialist change?",
+      "answerOptions": [
+        {
+          "describe": "Temperature, Frequency Penalty, Presence Penalty",
+          "isRight": true
+        },
+        {
+          "describe": "Temperature, Top-k sampling, Presence Penalty",
+          "isRight": false
+        },
+        {
+          "describe": "Temperature, Frequency Penalty, Output Tokens",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986441",
+      "analysis": "在Model Playground中，AI专家可以调整的Salesforce基础模型超参数包括Temperature（控制创造性），Frequency Penalty（减少重复词汇）和Presence Penalty（增加主题多样性）。这三个参数可以微调LLM输出的特性"
+    },
+    {
+      "describe": "An AI Specialist wants to use the related lists from an account in a custom prompt template.\n\nWhat should the AI Specialist consider when configuring the prompt template?",
+      "answerOptions": [
+        {
+          "describe": "The maximum number of related list merge fields",
+          "isRight": true
+        },
+        {
+          "describe": "The text encoding (for example, UTF-8, ASCII) option",
+          "isRight": false
+        },
+        {
+          "describe": "The choice between XML and JSON rendering formats for the list",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986440",
+      "analysis": "在配置使用账户相关列表的自定义提示模板时，AI专家需要考虑相关列表合并字段的最大数量限制。这是因为过多的字段可能会超出提示的长度限制，影响性能和结果。文"
+    },
+    {
+      "describe": "The sales team at a hotel resort would like to generate a guest summary about the guests' interests and provide recommendations based on their activity preferences captured in each guest profile. They want the summary to be available only on the contact record page.\n\nWhich AI capability should the team use?",
+      "answerOptions": [
+        {
+          "describe": "Model Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Prompt Builder",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Copilot",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986439",
+      "analysis": "Prompt Builder最适合此场景，因为它能创建特定于联系人记录页面的生成式AI提示模板，将客人兴趣与活动偏好相结合生成个性化摘要和推荐。Model Builder和Einstein Copilot不能提供此类特定记录页面上的定制化内容生成功能。"
+    },
+    {
+      "describe": "What is the main purpose of Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "A tool that enables companies to create reusable prompts for large language models (LLMs), bringing generative AI responses to their flow of work",
+          "isRight": true
+        },
+        {
+          "describe": "A tool within Salesforce offering real-time AI-powered suggestions and guidance to users, improving productivity and decision-making.",
+          "isRight": false
+        },
+        {
+          "describe": "A tool for developers to use in Visual Studio Code that creates prompts for Apex programming, assisting developers in writing code more efficiently.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986437",
+      "analysis": "允许企业创建可重用的LLM提示的工具，它将生成式AI响应集成到工作流程中。这使企业能够设计和管理标准化的提示模板，确保AI生成的内容满足业务需求"
+    },
+    {
+      "describe": "Universal Containers is planning a marketing email about products that most closely match a customer's expressed interests.\n\nWhat should an AI Specialist recommend to generate this email?",
+      "answerOptions": [
+        {
+          "describe": "Standard email marketing template using Apex or flows for matching interest in products",
+          "isRight": false
+        },
+        {
+          "describe": "Standard email draft with Einstein and choose standard email template",
+          "isRight": false
+        },
+        {
+          "describe": "Custom sales email template which is grounded with interest and product information",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986435",
+      "analysis": "为根据客户兴趣匹配产品生成营销邮件，最佳选择是使用基于客户兴趣和产品信息进行接地(grounding)的自定义销售邮件模板。这种方法能够确保邮件内容与客户兴趣高度相关，实现个性化营销，比标准模板更有效。"
+    },
+    {
+      "describe": "An AI Specialist at Universal Containers (UC) is tasked with creating a new custom prompt template to populate a field with generated output. UC enabled the Einstein Trust Layer to ensure AI Audit data is captured and monitored for adoption and possible enhancements.\n\nWhich prompt template type should the AI Specialist use and which consideration should they review?",
+      "answerOptions": [
+        {
+          "describe": "Flex, and that Dynamic Fields is enabled",
+          "isRight": false
+        },
+        {
+          "describe": "Field Generation, and that Dynamic Fields is enabled",
+          "isRight": false
+        },
+        {
+          "describe": "Field Generation, and that Dynamic Forms is enabled",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986434",
+      "analysis": "在创建用于填充字段的自定义提示模板时，应选择\"Field Generation\"模板类型，这专为生成字段内容而设计。同时需确保启用了Dynamic Forms功能，以允许模板动态访问和填充字段值"
+    },
+    {
+      "describe": "Universal Containers wants to use an external large language model (LLM) in Prompt Builder.\n\nWhat should an AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Use Apex to connect to an external LLM and ground the prompt.",
+          "isRight": false
+        },
+        {
+          "describe": "Use BYO-LLM functionality in Einstein Studio.",
+          "isRight": true
+        },
+        {
+          "describe": "Use Flow and External Services to bring data from an external LLM.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986412",
+      "analysis": "Einstein Studio提供了BYO-LLM(Bring Your Own LLM)功能，允许企业在Prompt Builder中集成外部大语言模型"
+    },
+    {
+      "describe": "An administrator wants to check the response of the Flex prompt template they've built, but the preview button is greyed out.\n\nWhat is the reason for this?",
+      "answerOptions": [
+        {
+          "describe": "A merge field has not been inserted in the prompt.",
+          "isRight": false
+        },
+        {
+          "describe": "The prompt has not been saved and activated.",
+          "isRight": false
+        },
+        {
+          "describe": "The records related to the prompt have not been selected.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986411",
+      "analysis": "Flex提示模板设计用于处理多个对象的数据，因此预览功能需要指定使用哪些记录来生成预览。如果没有选择相关记录，预览按钮将被禁用"
+    },
+    {
+      "describe": "An AI Specialist at Universal Containers is working on a prompt template to generate personalized emails for product demonstration requests from customers. It is important for the AI-generated email to adhere strictly to the guidelines, using only associated opportunity information, and to encourage the recipient to take the desired action.\n\nHow should the AI Specialist include these instructions on a new line in the prompt template?",
+      "answerOptions": [
+        {
+          "describe": "Use curly brackets { } to encapsulate instructions.",
+          "isRight": false
+        },
+        {
+          "describe": "Surround them with triple quotes (\"\"\").",
+          "isRight": true
+        },
+        {
+          "describe": "Make sure merged fields are defined.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986410",
+      "analysis": "在提示模板中，使用三重引号(\"\"\")围绕指令是标准做法。这种约定清晰地将指令与模板其余内容分开，在AI提示工程中被广泛认可为系统消息或指令的标记方式。"
+    },
+    {
+      "describe": "Universal Containers wants to make a sales proposal and directly use data from multiple unrelated objects (standard and custom) in a prompt template.\n\nWhat should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Create a Flex template to add resources with standard and custom objects as inputs.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a prompt template passing in a special custom object that connects the records temporarily.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a prompt template-triggered flow to access the data from standard and custom objects.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986404",
+      "analysis": "Flex模板专为处理复杂场景而设计，特别适合需要使用多个不相关对象数据的情况。它允许将标准和自定义对象作为输入，比其他方法更简单高效地处理不相关对象之间的复杂关系"
+    },
+    {
+      "describe": "Universal Containers wants to incorporate CRM data as well-formatted JSON in a prompt to a large language model (LLM).\n\nWhat is an important consideration for this requirement?",
+      "answerOptions": [
+        {
+          "describe": "“CRM data to JSON” checkbox must be selected when creating a prompt template.",
+          "isRight": false
+        },
+        {
+          "describe": "Apex code can be used to return a JSON formatted merge field.",
+          "isRight": true
+        },
+        {
+          "describe": "JSON format should be enabled in Prompt Builder Settings.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986374",
+      "analysis": "使用Apex代码可以查询CRM数据并将其格式化为JSON结构，然后用于提示模板。这是处理需要以JSON格式提供给LLM的复杂数据结构的有效方法"
+    },
+    {
+      "describe": "Universal Containers wants to make a marketing newsletter and to directly use data from five unrelated objects (two standard and three custom) in a prompt template.\n\nWhat should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Create a prompt template passing in special custom object that connects the records temporarily.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a prompt template-triggered flow to access the data from five objects.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a flex template and use the five objects as inputs.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986349",
+      "analysis": "Flex模板专为处理复杂场景而设计，特别适合需要使用多个不相关对象数据的情况。它允许将多个对象作为输入，比标准提示模板更容易处理不相关对象之间的复杂关系。"
+    },
+    {
+      "describe": "Universal Containers (UC) is building a Flex prompt template. UC needs to use data returned by the flow in the prompt template.\n\nWhich flow element should UC use?",
+      "answerOptions": [
+        {
+          "describe": "Add Prompt Instructions",
+          "isRight": false
+        },
+        {
+          "describe": "Add Flow Instructions",
+          "isRight": false
+        },
+        {
+          "describe": "Add Flex Instructions",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986347",
+      "analysis": "在构建Flex提示模板时，\"Add Flex Instructions\"元素是正确的选择，用于指定如何在提示模板中使用从流程返回的数据。这个元素专门设计用于Flex模板与流程数据的集成。"
+    },
+    {
+      "describe": "Universal Containers plans to enhance its sales team's productivity using AI.\n\nWhich specific requirement necessitates the use of Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "Creating an estimated Customer Lifetime Value (CLV) with historical purchase data",
+          "isRight": false
+        },
+        {
+          "describe": "Predicting the likelihood of customers churning or discontinuing their relationship with the company",
+          "isRight": false
+        },
+        {
+          "describe": "Creating a draft newsletter for an upcoming tradeshow",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986346",
+      "analysis": "创建贸易展会简报草稿是提示构建器的理想用例，因为它需要生成基于特定输入的文本内容。提示构建器擅长创意文本生成任务，而客户终身价值计算和客户流失预测更适合预测分析工具。"
+    },
+    {
+      "describe": "An AI Specialist is setting up a new org and needs to ensure that users can create and execute prompt templates. The AI Specialist is unsure which roles are necessary for these tasks.\n\nWhich permission sets should the AI Specialist assign to users who need to create and execute prompt templates?",
+      "answerOptions": [
+        {
+          "describe": "Data Cloud Admin for creating templates and Prompt Template User for executing templates",
+          "isRight": false
+        },
+        {
+          "describe": "Prompt Template Manager for creating templates and Prompt Template User for executing templates",
+          "isRight": true
+        },
+        {
+          "describe": "Prompt Template Manager for creating templates and Data Cloud Admin for executing templates",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986344",
+      "analysis": "提示模板管理员权限集负责创建和管理提示模板，而提示模板用户权限集负责执行模板。这种权限划分符合职责分离原则，每个权限集的名称直接对应其功能。"
+    },
+    {
+      "describe": "Universal Containers is rolling out a new generative AI initiative.\n\nWhich Prompt Builder limitations should the AI Specialist be aware of?",
+      "answerOptions": [
+        {
+          "describe": "Custom objects are supported only for Flex template types.",
+          "isRight": false
+        },
+        {
+          "describe": "Rich text area fields are only supported in Flex template types.",
+          "isRight": true
+        },
+        {
+          "describe": "Creations or updates to the prompt templates are not recorded in the Setup Audit Trail.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986319",
+      "analysis": "提示构建器的一个重要限制是富文本区域字段只在Flex模板类型中受支持"
+    },
+    {
+      "describe": "Universal Containers has a new AI project.\n\nWhat should an AI Specialist consider when adding a related list on the Account object to be used in the prompt template?",
+      "answerOptions": [
+        {
+          "describe": "The fields for the related list are based on the default page layout of the Account for the current user.",
+          "isRight": true
+        },
+        {
+          "describe": "Prompt Builder must be used to assign the fields from the related list as a JSON format.",
+          "isRight": false
+        },
+        {
+          "describe": "After selecting a related list from the Account, use the field picker to choose merge fields in Prompt Builder.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986317",
+      "analysis": "在提示模板中使用相关列表时，可用字段取决于当前用户的账户对象默认页面布局。如果某些字段不在页面布局上，它们将无法在提示模板中使用，这是配置相关列表时的重要考虑因素"
+    },
+    {
+      "describe": "Universal Container (UC) has effectively utilized prompt templates to update summary fields on Lightning record pages. An admin now wishes to incorporate similar functionality into UC’s automation processes using Flow.\n\nHow can the admin get a response from this prompt template from within a flow to use as part of UC’s automation?",
+      "answerOptions": [
+        {
+          "describe": "Flow Action",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein for Flow",
+          "isRight": true
+        },
+        {
+          "describe": "Invocable Apex",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986315",
+      "analysis": "Einstein for Flow是在Flow中使用提示模板的专用组件，允许管理员在自动化流程中调用提示模板并使用响应结果，无需编写自定义代码，是更直接高效的解决方案"
+    },
+    {
+      "describe": "Which business requirement presents a good use case for leveraging Einstein Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "Forecast future sales trends based on historical data.",
+          "isRight": false
+        },
+        {
+          "describe": "Send reply to a request for proposal via a personalized email.",
+          "isRight": true
+        },
+        {
+          "describe": "Identify potential high-value leads for targeted marketing campaigns.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986286",
+      "analysis": "Einstein提示构建器最适合生成个性化文本内容的场景，如根据客户信息和提案要求创建定制电子邮件回复。这比预测销售趋势或识别高价值潜在客户更符合提示工程的应用场景。"
+    },
+    {
+      "describe": "An Agentforce Specialist needs to create a prompt template to fill a custom field named Latest Opportunities Summary on the Account object with information from the three most recently opened opportunities.\n\nHow should the Agentforce Specialist gather the necessary data for the prompt template?",
+      "answerOptions": [
+        {
+          "describe": "Select the latest Opportunities related list as a merge field.",
+          "isRight": false
+        },
+        {
+          "describe": "Select the Account Opportunity object as a resource when creating the prompt template.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a flow to retrieve the opportunity information.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986256",
+      "analysis": "创建流程是获取最近打开的三个机会信息的最佳方式，因为流程允许精确查询和过滤，可以按照最近打开时间排序并仅获取前三条记录，然后将这些数据传递给提示模板"
+    },
+    {
+      "describe": "Universal Containers (UC) is experimenting with using public Generative AI models and is familiar with the language required to get the information it needs. However, it can be time consuming for both UC’s sales and service reps to type in the prompt to get the information they need, and ensure prompt consistency.\n\nWhich Salesforce feature should the company use to address these concerns?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Prompt Builder and Prompt Templates",
+          "isRight": true
+        },
+        {
+          "describe": "Agent Builder and Action: Query Records",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Recommendation Builder",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986252",
+      "analysis": "Einstein提示构建器和提示模板专为创建和标准化生成式AI提示而设计，允许组织创建可重复使用的模板，确保一致性并节省时间，直接解决了问题中提到的两个关键问题"
+    },
+    {
+      "describe": "When configuring a prompt template, an Agentforce Specialist previews the results of the prompt template they’ve written. They see two distinct text outputs: Resolution and Response.\n\nWhich information does the Resolution text provide?",
+      "answerOptions": [
+        {
+          "describe": "It shows which sensitive data is masked before it is sent to the LLM.",
+          "isRight": false
+        },
+        {
+          "describe": "It shows the response from the LLM based on the sample record.",
+          "isRight": false
+        },
+        {
+          "describe": "It shows the full text that is sent to the Trust Layer.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986250",
+      "analysis": "在预览提示模板结果时，\"Resolution\"文本显示了经过变量替换、接地和其他提示解析步骤后发送给信任层的完整文本，帮助调试模板问题，而\"Response\"显示LLM的回复"
+    },
+    {
+      "describe": "What considerations should an Agentforce Specialist be aware of when using Record Snapshots grounding in a prompt template?",
+      "answerOptions": [
+        {
+          "describe": "Email addresses associated with the object are excluded.",
+          "isRight": false
+        },
+        {
+          "describe": "Empty data, such as fields without values or sections without limits, is filtered out.",
+          "isRight": true
+        },
+        {
+          "describe": "Activities such as tasks and events are excluded.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986249",
+      "analysis": "使用Record Snapshots接地时，空字段或没有数据的部分会被自动过滤掉，以避免在提示中包含不必要的空白信息"
+    },
+    {
+      "describe": "Universal Containers (UC) is rolling out an AI-powered support assistant to help customer service agents quickly retrieve relevant troubleshooting steps and policy guidelines. The assistant relies on a search index in Data Cloud that contains product manuals, policy documents, and past case resolutions. During testing, UC notices that agents are receiving too many irrelevant results from older product versions that no longer apply.\n\nHow should UC address this issue?",
+      "answerOptions": [
+        {
+          "describe": "Create a custom retriever in Einstein Studio, and apply filters for publication date and product line.",
+          "isRight": true
+        },
+        {
+          "describe": "Modify the search index to only store documents from the last year and remove older records.",
+          "isRight": false
+        },
+        {
+          "describe": "Use the default retriever, as it already searches the entire search index and provides broad coverage.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986248",
+      "analysis": " 创建自定义检索器并应用日期和产品线过滤器是最佳方案，既能保留所有历史数据，又能确保只返回相关、最新的信息，避免了完全删除旧数据的极端做法"
+    },
+    {
+      "describe": "Universal Containers has grounded a prompt template with a related list.\nDuring user acceptance testing (UAT), users are not getting the correct responses.\n\nWhat is causing this issue?",
+      "answerOptions": [
+        {
+          "describe": "The related list is Read Only.",
+          "isRight": false
+        },
+        {
+          "describe": "The related list is not on the parent object’s page layout.",
+          "isRight": true
+        },
+        {
+          "describe": "The related list prompt template option is not enabled.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986220",
+      "analysis": "在Salesforce中，要使相关列表数据可用于提示模板的接地，该相关列表必须添加到父对象的页面布局中"
+    },
+    {
+      "describe": "Universal Containers wants to leverage the Record Snapshots grounding feature in a prompt template.\n\nWhat preparations are required?",
+      "answerOptions": [
+        {
+          "describe": "Enable and configure dynamic form for the object",
+          "isRight": false
+        },
+        {
+          "describe": "Create a field set for all the fields to be grounded",
+          "isRight": true
+        },
+        {
+          "describe": "Configure page layout of the master record type",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986191",
+      "analysis": "在提示模板中使用记录快照(Record Snapshots)接地功能需要创建字段集来定义哪些字段应当被包含。"
+    },
+    {
+      "describe": "A Salesforce Administrator wants to generate personalized, targeted emails that incorporate customer interaction data. The admin wants to leverage large language models (LLMs) to write the emails, and wants to reuse templates for different products and customers.\n\nWhich solution approach should the admin leverage?",
+      "answerOptions": [
+        {
+          "describe": "Create a Sales Email prompt template type.",
+          "isRight": true
+        },
+        {
+          "describe": "Use Sales Email standard templates.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Field Generation prompt template type.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986162",
+      "analysis": "创建销售电子邮件提示模板类型是最佳选择，因为它允许管理员设计专门用于生成销售电子邮件的自定义提示模板，该模板可以针对不同产品和客户进行重用和个性化，同时充分利用LLM的功能。"
+    },
+    {
+      "describe": "Universal Containers plans to enhance the customer support team's productivity using AI.\n\nWhich specific use case necessitates the use of Prompt Builder?",
+      "answerOptions": [
+        {
+          "describe": "Creating a draft of a support bulletin post for new product patches",
+          "isRight": true
+        },
+        {
+          "describe": "Estimating support ticket volume based on historical data and seasonal trends",
+          "isRight": false
+        },
+        {
+          "describe": "Creating an AI-generated customer support agent performance score",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986161",
+      "analysis": "Prompt Builder专为引导AI文本生成而设计，最适合创建支持公告草稿这类内容生成任务。"
+    },
+    {
+      "describe": "Leadership needs to populate a dynamic form field with a summary or description created by a large language model (LLM) to facilitate more productive conversations with customers. Leadership also wants to keep a human in the loop to be considered in their AI strategy.\n\nWhich prompt template type should the Agentforce Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Field Generation",
+          "isRight": false
+        },
+        {
+          "describe": "Record Summary",
+          "isRight": true
+        },
+        {
+          "describe": "Sales Email",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985480",
+      "analysis": "Record Summary模板类型最适合此需求，它可利用LLM生成动态表单字段中的摘要或描述，同时保持\"人在环中\"的AI策略，帮助客户服务人员进行更高效的对话。"
+    },
+    {
+      "describe": "Before activating a custom Agent action, an Agentforce Specialist would like to understand multiple real-world user utterances to ensure the action is being selected appropriately.\n\nWhich tool should the Agentforce Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Agent Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Model Playground",
+          "isRight": true
+        },
+        {
+          "describe": "Agentforce",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985478",
+      "analysis": "Model Playground是专为测试用户话语设计的工具，允许Agentforce专家输入各种真实用户表达，检验代理是否正确理解并选择适当的自定义操作，从而在激活前优化配置。"
+    },
+    {
+      "describe": "An Agentforce Specialist is creating a custom action for Agentforce.\n\nWhich setting should the Agentforce Specialist test and iterate on to ensure the action performs as expected?",
+      "answerOptions": [
+        {
+          "describe": "Action Instructions",
+          "isRight": true
+        },
+        {
+          "describe": "Action Name",
+          "isRight": false
+        },
+        {
+          "describe": "Action Input",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985474",
+      "analysis": "Action Instructions是自定义操作中至关重要的部分，它定义了代理如何执行操作。Agentforce专家需要测试和迭代这些指令，以确保操作按预期执行，实现正确的功能输出。"
+    },
+    {
+      "describe": "What is the correct process to leverage Prompt Builder in a Salesforce org?",
+      "answerOptions": [
+        {
+          "describe": "Select the appropriate prompt template type to use, select one of Salesforce’s standard prompts, determine the object to associate the prompt, select a record to validate against, and associate the prompt to an action.",
+          "isRight": false
+        },
+        {
+          "describe": "Select the appropriate prompt template type to use, develop the prompt within the prompt workspace, select resources to dynamically insert CRM-derived grounding data, pick the model to use, and test and validate the generated responses.",
+          "isRight": true
+        },
+        {
+          "describe": "Enable the target object for generative prompting, develop the prompt within the prompt workspace, select records to fine-tune and ground the response, enable the Trust Layer, and associate the prompt to an action.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985443",
+      "analysis": "这个答案准确描述了在Salesforce中使用Prompt Builder的正确流程。首先需要选择适当的提示模板类型，然后在提示工作区中开发提示内容，选择资源来动态插入CRM衍生的基础数据，选择要使用的模型，最后测试和验证生成的响应。其他选项包含不准确的步骤，如\"微调\"记录（这不是Prompt Builder的功能）或选择标准提示（而通常是为特定需求创建自定义提示）。Prompt Builder是Agentforce中用于创建和管理AI提示的核心工具，它允许用户创建自定义提示模板并将其与Salesforce数据集成。"
+    }
+  ],
+  "hashCode": "-275995435"
+}

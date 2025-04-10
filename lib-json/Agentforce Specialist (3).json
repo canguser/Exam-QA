@@ -1,0 +1,558 @@
+{
+  "title": "Agentforce和服务云",
+  "category": "Agentforce Specialist",
+  "questions": [
+    {
+      "describe": "After a successful implementation of Agentforce Sales Agent with sales users, Universal Containers now aims to deploy it to the service team.\n\nWhich key consideration should the AI Specialist keep in mind for this deployment?",
+      "answerOptions": [
+        {
+          "describe": "Assign the Agentforce for Service permission to the Service Cloud users.",
+          "isRight": false
+        },
+        {
+          "describe": "Assign the standard service actions to Agentforce Service Agent.",
+          "isRight": false
+        },
+        {
+          "describe": "Review and test standard and custom Agent topics and actions for Service Center use cases.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987307",
+      "analysis": "将Agentforce从销售团队扩展到服务团队时，最关键的考虑因素是审查和测试代理主题和操作是否适合服务中心场景。服务用例与销售用例有显著差异，需要确保代理能正确处理服务团队的特定需求。"
+    },
+    {
+      "describe": "Universal Containers, dealing with a high volume of chat inquiries, implements Einstein Work Summaries to boost productivity.\n\nAfter an agent-customer conversation, which additional information does Einstein generate and fill, apart from the \"summary\"?",
+      "answerOptions": [
+        {
+          "describe": "Sentiment Analysis and Emotion Detection",
+          "isRight": false
+        },
+        {
+          "describe": "Draft Survey Request Email",
+          "isRight": false
+        },
+        {
+          "describe": "Issue and Resolution",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987306",
+      "analysis": "Einstein工作摘要(Work Summaries)除了生成对话摘要外，还会自动识别并填写客户的具体问题及其解决方案"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to improve the efficiency of addressing customer questions and reduce agent handling time with AI-generated responses. The agents should be able to leverage their existing knowledge base and identify whether the responses are coming from the large language model (LLM) or from Salesforce Knowledge.\n\nWhich step should UC take to meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Turn on Service AI Grounding and Grounding with Knowledge.",
+          "isRight": false
+        },
+        {
+          "describe": "Turn on Service AI Grounding, Grounding with Case, and Service Replies.",
+          "isRight": false
+        },
+        {
+          "describe": "Turn on Service Replies, Service AI Grounding, and Grounding with Knowledge.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987275",
+      "analysis": "要实现AI生成的客户响应并利用现有知识库，UC需要启用三个功能：Service Replies提供AI生成的回复，Service AI Grounding确保回复的准确性，Grounding with Knowledge将回复与知识库文章关联。"
+    },
+    {
+      "describe": "Universal Containers is evaluating Einstein Generative AI features to improve the productivity of the service center operation.\n\nWhich features should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Service Replies and Work Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Service Replies and Case Summaries",
+          "isRight": true
+        },
+        {
+          "describe": "Reply Recommendations and Sales Summaries",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987273",
+      "analysis": "对于服务中心运营，Service Replies(服务回复)可自动生成客户回复，而Case Summaries(案例摘要)能快速总结案例要点，这两个功能组合最能提高服务中心的工作效率和客户响应质量。"
+    },
+    {
+      "describe": "Universal Containers' service team wants to customize the standard case summary response from Agentforce.\n\nWhat should the AI Specialist do to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "Summarize the Case with a standard Agent action.",
+          "isRight": false
+        },
+        {
+          "describe": "Customize the standard Record Summary template for the Case object.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a custom Record Summary prompt template for the Case object.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987240",
+      "analysis": "要定制Agentforce的案例摘要响应，创建自定义Record Summary提示模板是最佳选择，它提供最大的灵活性，允许服务团队完全控制AI如何解释和总结案例数据。"
+    },
+    {
+      "describe": "Universal Containers (UC) uses Salesforce Service Cloud to support its customers and agents handling cases. UC is considering implementing Agentforce and extending Service Cloud to mobile users.\n\nWhen would Agentforce implementation be most advantageous?",
+      "answerOptions": [
+        {
+          "describe": "When the main objective is to enhance data security and compliance measures",
+          "isRight": false
+        },
+        {
+          "describe": "When the goal is to streamline customer support processes and improve response times",
+          "isRight": true
+        },
+        {
+          "describe": "When the focus is on optimizing marketing campaigns and strategies",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987218",
+      "analysis": "Agentforce在服务云环境中最大的优势是通过AI辅助来简化客户支持流程、提高响应速度。它能自动处理常见问题、为代理提供智能建议，特别适合移动用户场景下提升服务效率。"
+    },
+    {
+      "describe": "Universal Containers (UC) has recently received an increased number of support cases. As a result, UC has hired more customer support reps and has started to assign some of the ongoing cases to newer reps.\n\nWhich generative AI solution should the new support reps use to understand the details of a case without reading through each case comment?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Sales Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Generative Conversation Insights",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Work Summaries",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987187",
+      "analysis": "Einstein Work Summaries专为服务云设计，能自动总结案例历史和评论，让新客服代表无需阅读每条评论即可快速了解案例详情，提高处理效率。"
+    },
+    {
+      "describe": "Universal Containers wants to reduce overall agent handling time by minimizing the time spent typing routine answers for common questions in-chat, and reducing the post-chat analysis by suggesting values for case fields.\n\nWhich combination of Einstein for Service features enables this effort?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Reply Recommendations and Case Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Reply Recommendations and Case Classification",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Service Replies and Work Summaries",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987147",
+      "analysis": "Einstein Reply Recommendations可以在聊天中为客服提供常见问题的回复建议，减少手动输入时间；而Case Classification能够自动为案例字段提供值建议，减少后续分析工作。"
+    },
+    {
+      "describe": "Universal Containers (UC) has a mature Salesforce org with a lot of data in cases and Knowledge articles. UC is concerned that there are many legacy fields, with data that might not be applicable for Einstein AI to draft accurate email responses.\n\nWhich solution should UC use to ensure Einstein AI can draft responses from a defined data source?",
+      "answerOptions": [
+        {
+          "describe": "Service Replies",
+          "isRight": false
+        },
+        {
+          "describe": "Work Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Service AI Grounding",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986407",
+      "analysis": "用于控制Einstein AI生成内容时使用的数据源。它允许组织指定哪些字段、对象和知识文章应作为AI生成响应的基础"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to offer personalized service experiences and reduce agent handling time with AI-generated email responses, grounded in Knowledge base.\n\nWhich AI capability should UC use?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Service Replies for Email",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Generative Service Replies for Email",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Email Replies",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986403",
+      "analysis": "Einstein生成式服务电子邮件回复功能专为客服场景设计，使用生成式AI创建基于知识库的个性化回复，而非简单选择模板，能有效提高回复质量并减少处理时间"
+    },
+    {
+      "describe": "A service agent is looking at a custom object that stores travel information. They recently received a weather alert and now need to cancel flights for the customers that are related with this itinerary. The service agent needs to review the Knowledge articles about canceling and rebooking the customer flights.\n\nWhich Einstein Copilot capability helps the agent accomplish this?",
+      "answerOptions": [
+        {
+          "describe": "Generate a Knowledge article based off the prompts that the agent enters to create steps to cancel flights.",
+          "isRight": false
+        },
+        {
+          "describe": "Invoke a flow which makes a call to external data to create a Knowledge article.",
+          "isRight": false
+        },
+        {
+          "describe": "Execute tasks based on available actions, answering questions using information from accessible Knowledge articles.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986380",
+      "analysis": "服务代理需要查看关于取消和重新预订航班的知识文章，而不是创建新文章。\"执行任务并回答问题\"功能允许代理使用现有知识文章中的信息"
+    },
+    {
+      "describe": "Universal Containers (UC) is implementing Service AI Grounding to enhance its customer service operations. UC wants to ensure that its AI-generated responses are grounded in the most relevant data sources. The team needs to configure the system to include all supported objects for grounding.\n\nWhich objects should UC select to configure Service AI Grounding?",
+      "answerOptions": [
+        {
+          "describe": "Case, Case Emails, and Knowledge",
+          "isRight": true
+        },
+        {
+          "describe": "Case and Knowledge",
+          "isRight": false
+        },
+        {
+          "describe": "Case, Knowledge, and Case Notes",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986377",
+      "analysis": "配置Service AI接地时，案例、案例电子邮件和知识文章是最全面的对象组合。这使AI能够基于案例详情、案例相关通信和知识库文章提供接地响应，提供最相关的客户服务信息"
+    },
+    {
+      "describe": "A support team handles a high volume of chat interactions and needs a solution to provide quick, relevant responses to customer inquiries. Responses must be grounded in the organization's knowledge base to maintain consistency and accuracy.\n\nWhich feature in Einstein for Service should the support team use?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Knowledge Recommendations",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Service Replies",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Reply Recommendations",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986376",
+      "analysis": "Einstein回复推荐功能基于对话上下文向座席提供预先编写的回复建议，这些建议可以基于组织知识库，帮助座席快速、一致地回应常见查询"
+    },
+    {
+      "describe": "Universal Containers (UC) is using standard Service AI Grounding, UC created a custom rich text field to be used with Service AI Grounding.\n\nWhat should UC consider when using standard Service AI Grounding?",
+      "answerOptions": [
+        {
+          "describe": "Service AI Grounding only supports String and Text Area type fields.",
+          "isRight": true
+        },
+        {
+          "describe": "Service AI Grounding only works with Case and Knowledge objects.",
+          "isRight": false
+        },
+        {
+          "describe": "Service AI Grounding visibility works in system mode.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986342",
+      "analysis": "在系统模式下工作，这意味着它可以访问用户可能没有直接查看权限的字段数据。这是一个重要的安全考虑因素，因为敏感数据可能通过AI接地暴露，即使用户没有查看这些字段的权限。"
+    },
+    {
+      "describe": "Universal Containers (UC) needs to improve the agent productivity in replying to customer chats.\n\nWhich generative AI feature should help UC address this issue?",
+      "answerOptions": [
+        {
+          "describe": "Case Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Case Escalation",
+          "isRight": false
+        },
+        {
+          "describe": "Service Replies",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986314",
+      "analysis": "服务回复功能能够根据对话上下文生成建议回复，代理可以直接使用或修改这些回复，从而直接提高在客户聊天中的回复效率，比案例摘要或案例升级更能解决回复效率问题"
+    },
+    {
+      "describe": "Universal Containers wants support agents to use Agentforce to ask questions about its product tutorials and product guides.\n\nWhat should the AI Specialist do to meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Add an Answer Questions custom field in the product object for tutorial instructions.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a prompt template for product tutorials and guides.",
+          "isRight": false
+        },
+        {
+          "describe": "Publish product tutorials and guides as Knowledge articles.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986312",
+      "analysis": "将产品教程和指南发布为知识文章是最佳方法，使这些内容可被Agentforce访问。知识文章是提供Agentforce可用于回答问题的信息的标准方式，可建立AI可搜索的知识库"
+    },
+    {
+      "describe": "Universal Containers (UC) needs to save agents time with AI-generated case summaries. UC has implemented the Work Summary feature.\n\nWhat does Einstein consider when generating a summary?",
+      "answerOptions": [
+        {
+          "describe": "Generation is grounded with existing conversation context only.",
+          "isRight": false
+        },
+        {
+          "describe": "Generation is grounded with conversation context and Knowledge articles.",
+          "isRight": false
+        },
+        {
+          "describe": "Generation is grounded with conversation context, Knowledge articles, and cases.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986311",
+      "analysis": "Einstein在生成工作摘要时，会考虑最全面的信息集：对话上下文、知识文章和相关案例"
+    },
+    {
+      "describe": "Universal Containers has a strict change management process that requires all possible configuration to be completed in a sandbox which will be deployed to production. The AI Specialist is tasked with setting up Work Summaries for Enhanced Messaging. Einstein Generative AI is already enabled in production, and the Einstein Work Summaries permission set is already available in production.\n\nWhich other configuration steps should the AI Specialist take in the sandbox that can be deployed to the production org?",
+      "answerOptions": [
+        {
+          "describe": "Create custom fields to store Issue, Resolution, and Summary; create a Quick Action that updates these fields; and add the Wrap Up component to the Messaging Session record page layout.",
+          "isRight": true
+        },
+        {
+          "describe": "From the Einstein setup menu, select Turn on Einstein; create custom fields to store Issue, Resolution, and Summary; create a Quick Action that updates these fields; and add the Wrap Up component to the Messaging Session record page layout.",
+          "isRight": false
+        },
+        {
+          "describe": "Create custom fields to store Issue, Resolution, and Summary; create a Quick Action that updates these fields; add the Wrap Up component to the Messaging Session record page layout; and create Permission Set Assignments for the Intended Agents.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986285",
+      "analysis": "此选项包含可从沙盒部署到生产环境的配置步骤：创建自定义字段、快速操作和页面布局更新。其他选项包含了环境特定的设置，如激活Einstein或创建权限集分配，这些通常需要在每个环境中单独配置。"
+    },
+    {
+      "describe": "Universal Containers deploys a new Agentforce Service Agent into the company’s website but is getting feedback that the Agentforce Service Agent is not providing answers to customer questions that are found in the company’s Salesforce Knowledge articles.\n\nWhat is the likely issue?",
+      "answerOptions": [
+        {
+          "describe": "The Agentforce Service Agent user needs to be created under the standard Agent Knowledge profile.",
+          "isRight": false
+        },
+        {
+          "describe": "The Agentforce Service Agent user is not assigned the correct Agent Type License.",
+          "isRight": false
+        },
+        {
+          "describe": "The Agentforce Service Agent user was not given the Allow View Knowledge permission set.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986226",
+      "analysis": "在Salesforce中，访问Knowledge文章受权限控制。Agentforce代理用户需要\"Allow View Knowledge\"权限才能访问和检索Knowledge文章中的信息来回答客户问题"
+    },
+    {
+      "describe": "Universal Containers wants to reduce overall customer support handling time by minimizing the time spent typing routine answers for common questions in-chat, and reducing the post-chat analysis by suggesting values for case fields.\n\nWhich combination of Agentforce for Service features enables this effort?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Reply Recommendations and Case Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Service Replies and Work Summaries",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Reply Recommendations and Case Classification",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986224",
+      "analysis": "Einstein回复推荐可以减少客服在聊天中输入常规答案的时间，而案例分类能够自动为案例字段提供建议值，减少后续分析时间，这两项功能正好满足题目要求。"
+    },
+    {
+      "describe": "Which element in the Omni-Channel flow should be used to connect the flow with the agent?",
+      "answerOptions": [
+        {
+          "describe": "Decision",
+          "isRight": false
+        },
+        {
+          "describe": "Assignment",
+          "isRight": false
+        },
+        {
+          "describe": "Route Work Action",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986219",
+      "analysis": "Omni-Channel流程中，Route Work元素专门用于将工作项(如案例、潜在客户等)通过Omni-Channel路由给队列或座席。"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to leverage Generative AI Salesforce functionality to reduce Service Agent handling time by providing recommended replies based on the existing Knowledge articles.\n\nOn which AI capability should UC train the service agents?",
+      "answerOptions": [
+        {
+          "describe": "Case Replies",
+          "isRight": false
+        },
+        {
+          "describe": "Service Replies",
+          "isRight": true
+        },
+        {
+          "describe": "Knowledge Replies",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986189",
+      "analysis": "Service Replies功能专门设计用于基于现有知识文章生成推荐回复。"
+    },
+    {
+      "describe": "Universal Containers would like to route SMS text messages to a service rep from an Agentforce Service Agent.\n\nWhich Service Channel should the company use in the flow to ensure it’s routed properly?",
+      "answerOptions": [
+        {
+          "describe": "Live Agent",
+          "isRight": false
+        },
+        {
+          "describe": "Route Work Action",
+          "isRight": false
+        },
+        {
+          "describe": "Messaging",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986164",
+      "analysis": "Messaging是处理SMS文本消息的专用服务渠道，它专门设计用于处理来自各种来源的基于文本的消息传递。"
+    },
+    {
+      "describe": "Universal Containers would like to route a service agent conversation to a human agent queue.\n\nWhich tool connects the service agent to the human agent queue for escalation?",
+      "answerOptions": [
+        {
+          "describe": "Screen Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Prompt Flow",
+          "isRight": false
+        },
+        {
+          "describe": "Outbound Omni-Channel Flow",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986159",
+      "analysis": "Outbound Omni-Channel Flow是连接服务代理与人工代理队列的工具，它专门设计用于将工作项目路由到人工代理队列。"
+    },
+    {
+      "describe": "A Universal Containers administrator is setting up Einstein Data Libraries. After creating a new library, the administrator notices that only the file upload option is available; there is no option to configure the library using a Salesforce Knowledge base.\n\nWhat is the most likely cause of this issue?",
+      "answerOptions": [
+        {
+          "describe": "Salesforce Knowledge is not enabled in the organization; without Salesforce Knowledge enabled, the Knowledge-based data source option will not be available in Einstein Data Libraries.",
+          "isRight": true
+        },
+        {
+          "describe": "The current Salesforce org lacks the necessary Einstein for Service permissions that support the Knowledge-based Data Library option, so only the file upload option is presented.",
+          "isRight": false
+        },
+        {
+          "describe": "The administrator is not using Lightning Experience, which is required to display all data source options, including the Knowledge base option, when configuring Einstein Data Libraries.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986158",
+      "analysis": "当管理员在创建Einstein数据库时只能看到文件上传选项而没有Knowledge基础选项，最可能的原因是组织中未启用Salesforce Knowledge。"
+    },
+    {
+      "describe": "What is the main benefit of using a Knowledge article in an Agentforce Data Library?",
+      "answerOptions": [
+        {
+          "describe": "It provides a structured, searchable repository of approved documents so the agent can retrieve reliable information for each inquiry.",
+          "isRight": true
+        },
+        {
+          "describe": "Only the retriever for Knowledge articles allows for agents to access Knowledge from both inside the platform and on a customer’s website.",
+          "isRight": false
+        },
+        {
+          "describe": "The retriever for Knowledge articles has better accuracy and performance than the default retriever.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986157",
+      "analysis": "Agentforce数据库中使用知识文章的主要优势在于它提供了一个结构化、可搜索的已批准文档库，使代理能够为每个查询检索可靠信息。这确保了服务代理提供的回答基于经过验证的官方知识。"
+    },
+    {
+      "describe": "Which object stores the conversation transcript between the customer and the agent?",
+      "answerOptions": [
+        {
+          "describe": "Case",
+          "isRight": false
+        },
+        {
+          "describe": "Messaging End User",
+          "isRight": false
+        },
+        {
+          "describe": "Messaging Session",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105985479",
+      "analysis": "在Salesforce中，Messaging Session对象专门用于存储客户与代理之间的对话记录。它包含了完整的会话内容、时间戳和参与者信息，使服务团队能够查看和分析客户互动历史。"
+    },
+    {
+      "describe": "When a customer chat is initiated, which functionality in Salesforce provides generative AI replies or draft emails based on recommended Knowledge articles?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Reply Recommendations",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Service Replies",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Grounding",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985475",
+      "analysis": "Einstein Reply Recommendations功能专门用于在客户聊天启动时基于知识库文章提供生成式AI回复或草稿邮件，帮助服务代理快速响应客户查询，提高客户服务效率。"
+    },
+    {
+      "describe": "An Agentforce Service Agent, who has been successfully assisting customers with service requests in Salesforce, is now unable to help customers with issues related to a new product replacement process. The company recently implemented a custom Product Replacement object in Salesforce to track and manage these replacements.\n\nWhich Agentforce Agent User change must be implemented to address this issue?",
+      "answerOptions": [
+        {
+          "describe": "The profile assigned to the Agentforce Agent User needs AI training permission to the custom Product Replacement object.",
+          "isRight": false
+        },
+        {
+          "describe": "The permission set assigned to the Agent User needs Read access to the custom Product Replacement object.",
+          "isRight": true
+        },
+        {
+          "describe": "The permission set group assigned to the Agent User needs to grant access to the Product Replacement flow.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985451",
+      "analysis": "Agentforce服务代理需要正确的权限才能访问新创建的自定义对象。为了处理产品更换流程，代理用户的权限集需要至少具有对自定义产品更换对象的\"读取\"访问权限，这样才能查询相关信息。"
+    }
+  ],
+  "hashCode": "-778766526"
+}

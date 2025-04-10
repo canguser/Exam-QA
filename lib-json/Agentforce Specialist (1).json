@@ -1,0 +1,1223 @@
+{
+  "title": "Agentforce概念",
+  "category": "Agentforce Specialist",
+  "questions": [
+    {
+      "describe": "A Salesforce Administrator is exploring the capabilities of Agentforce to enhance user interaction within their organization. They are particularly interested in how Agentforce processes user requests and the mechanism it employs to deliver responses. The administrator is evaluating whether Agentforce directly interfaces with a large language model (LLM) to fetch and display responses to user inquiries, facilitating a broad range of requests from users.\n\nHow does Agentforce handle user requests in Salesforce?",
+      "answerOptions": [
+        {
+          "describe": "Agentforce will perform an HTTP callout to an LLM provider.",
+          "isRight": false
+        },
+        {
+          "describe": "Agentforce will trigger a flow that utilises a prompt template to generate the message.",
+          "isRight": false
+        },
+        {
+          "describe": "Agentforce analyzes the user’s request and LLM technology in used to generate and display the appropriate response.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987366",
+      "analysis": "Agentforce通过分析用户请求并利用大语言模型技术来生成和显示适当的响应。这种方法结合了理解请求意图和上下文的能力，以及利用LLM生成相关回答的功能，代表了Agentforce处理请求的综合机制。\nhttps://help.salesforce.com/s/articleView?id=sf.copilot_how_copilot_works.htm&type=5"
+    },
+    {
+      "describe": "Universal Container’s internal auditing team asks an AI Specialist to verify that address information is properly masked in the prompt being generated.\n\nHow should the AI Specialist verify the privacy of the masked data in the Einstein Trust Layer?",
+      "answerOptions": [
+        {
+          "describe": "Review the platform event logs",
+          "isRight": false
+        },
+        {
+          "describe": "Inspect the AI audit trail",
+          "isRight": true
+        },
+        {
+          "describe": "Enable data encryption on the address field",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987364",
+      "analysis": "Einstein Trust Layer中的AI审计跟踪专门用于监控AI活动，包括数据如何被处理和掩码。通过检查审计跟踪，AI专家可以验证地址信息是否在生成提示前被正确掩码，确保数据隐私。"
+    },
+    {
+      "describe": "Universal Containers has a custom Agent action calling a flow to retrieve the real-time status of an order from the order fulfillment system.\n\nFor the given flow, what should the AI Specialist consider about the running user’s data access?",
+      "answerOptions": [
+        {
+          "describe": "The Agent will always run flows in system mode so the running user’s data access will not affect the data returned.",
+          "isRight": false
+        },
+        {
+          "describe": "The flow must have the “with sharing” permission selected in the advanced settings for the permissions, field-level security, and sharing settings to be respected.",
+          "isRight": false
+        },
+        {
+          "describe": "The custom action adheres to the permissions, field-level security, and sharing settings configured in the flow.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987339",
+      "analysis": "自定义Agent操作调用流程时，数据访问权限由流程中配置的安全设置决定"
+    },
+    {
+      "describe": "How does Secure Data Retrieval ensure that only authorized users can access necessary Salesforce data for dynamic grounding?",
+      "answerOptions": [
+        {
+          "describe": "Retrieves Salesforce data based on the user’s permissions executing the prompt",
+          "isRight": true
+        },
+        {
+          "describe": "Retrieves Salesforce data based on the “Run As” user’s permissions",
+          "isRight": false
+        },
+        {
+          "describe": "Retrieves Salesforce data based on the Prompt template’s object permissions",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987335",
+      "analysis": "Einstein Trust Layer：https://help.salesforce.com/s/articleView?id=ai.generative_ai_trust_layer.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers (UC) is using Einstein Generative AI to generate an account summary. UC aims to ensure the content is safe and inclusive, utilizing the Einstein Trust Layer’s toxicity scoring to assess the content’s safety level.\n\nIn the Einstein Generative AI Toxicity Scoring system, what does a toxicity category score of 1 indicate?",
+      "answerOptions": [
+        {
+          "describe": "The response is the least toxic.",
+          "isRight": false
+        },
+        {
+          "describe": "The response is not toxic.",
+          "isRight": false
+        },
+        {
+          "describe": "The response is the most toxic.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987333",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.generative_ai_audit_toxicity.htm&type=5"
+    },
+    {
+      "describe": "An AI Specialist created a custom Agent action, but it is not being picked up by the planner service in the correct order.\n\nWhich adjustment should the AI Specialist make in the custom Agent action instructions for the planner service to work as expected?",
+      "answerOptions": [
+        {
+          "describe": "Specify the profiles or custom permissions allowed to invoke the action.",
+          "isRight": false
+        },
+        {
+          "describe": "Specify the LLM model provider and version to be used to invoke the action.",
+          "isRight": false
+        },
+        {
+          "describe": "Specify the dependent actions with the reference to the action API name.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987304",
+      "analysis": "要让计划服务按正确顺序执行自定义Agent操作，必须通过引用操作API名称来指定依赖操作。这样可以建立明确的执行顺序，确保操作按预期的序列执行"
+    },
+    {
+      "describe": "Which part of the Einstein Trust Layer architecture leverages an organization’s own data within a large language model (LLM) prompt to confidently return relevant and accurate responses?",
+      "answerOptions": [
+        {
+          "describe": "Prompt Defense",
+          "isRight": false
+        },
+        {
+          "describe": "Data Masking",
+          "isRight": false
+        },
+        {
+          "describe": "Dynamic Grounding",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987302",
+      "analysis": "动态基础化(Dynamic Grounding)是Einstein Trust Layer架构中专门负责将组织自有数据整合到LLM提示中的组件，确保生成的回复与组织特定上下文相关并准确，而不是仅依赖模型的通用训练知识。"
+    },
+    {
+      "describe": "An AI Specialist wants to troubleshoot their Agent’s performance.\n\nWhere should the AI Specialist go to access all user interactions with the Agent, including Agent errors, incorrectly triggered actions, and incomplete plans?",
+      "answerOptions": [
+        {
+          "describe": "Agent Settings",
+          "isRight": false
+        },
+        {
+          "describe": "Event Logs",
+          "isRight": true
+        },
+        {
+          "describe": "Plan Canvas",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987280",
+      "analysis": "Event Logs是查看Agent所有交互历史的中心位置，包含用户交互、错误信息、错误触发的操作和未完成的计划等全面数据，是排查Agent性能问题的最佳工具。"
+    },
+    {
+      "describe": "Universal Containers is very concerned about security compliance and wants to understand:\n•Which prompt text is sent to the large language model (LLM)\n•How it is masked\n•The masked response\nWhat should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Enable audit trail in the Einstein Trust Layer.",
+          "isRight": true
+        },
+        {
+          "describe": "Digest the Einstein Shield Event logs into CRM Analytics.",
+          "isRight": false
+        },
+        {
+          "describe": "Review the debug logs of the running user.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987278",
+      "analysis": "Einstein Trust Layer的审计跟踪功能专为监控AI交互而设计，能够记录发送给LLM的提示文本、数据屏蔽方式以及屏蔽后的响应，是满足Universal Containers安全合规要求的最直接解决方案。"
+    },
+    {
+      "describe": "The AI Specialist of Northern Trail Outfitters reviewed the organization's data masking settings within the Configure Data Masking menu within Setup. Upon assessing all of the fields, a few additional fields were deemed sensitive and have been masked within Einstein's Trust Layer.\n\nWhich steps should the AI Specialist take upon modifying the masked fields?",
+      "answerOptions": [
+        {
+          "describe": "Test and confirm that the responses generated from prompts that utilize the data and masked data do not adversely affect the quality of the generated response",
+          "isRight": true
+        },
+        {
+          "describe": "Turn off the Einstein Trust Layer and turn it on again.",
+          "isRight": false
+        },
+        {
+          "describe": "Turn on Einstein Feedback so that end users can report if there are any negative side effects on AI features.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987276",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.generative_ai_mask_select.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers tests out a new Einstein Generative AI feature for its sales team to create personalized and contextualized emails for its customers. Sometimes, users find that the draft email contains placeholders for attributes that could have been derived from the recipient's contact record.\n\nWhat is the most likely explanation for why the draft email shows these placeholders?",
+      "answerOptions": [
+        {
+          "describe": "The user does not have Einstein Sales Emails permission assigned.",
+          "isRight": false
+        },
+        {
+          "describe": "The user does not have permission to access the fields.",
+          "isRight": true
+        },
+        {
+          "describe": "The user's locale language is not supported by Prompt Builder.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987272",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.access_sharing_merge_fields.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers wants to be able to detect with a high level of confidence if content generated by a large language model (LLM) contains toxic language.\n\nWhich action should an AI Specialist take in the Trust Layer to confirm toxicity is being appropriately managed?",
+      "answerOptions": [
+        {
+          "describe": "Access the Toxicity Detection log in Setup and export all entries where IsToxicityDetected is true.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a Trust Layer audit report within Data Cloud that uses a toxicity detector type filter to display toxic responses and their respective scores.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a flow that sends an email to a specified address each time the toxicity score from the response exceeds a predefined threshold.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987271",
+      "analysis": "在Trust Layer中确认毒性管理最有效的方法是创建使用毒性检测器类型过滤器的审计报告，这样可以显示所有毒性响应及其分数，便于监控和分析有问题的内容。"
+    },
+    {
+      "describe": "Universal Containers (UC) noticed an increase in customer contract cancellations in the last few months. UC is seeking ways to address this issue by implementing a proactive outreach program to customers before they cancel their contracts and is asking the Salesforce team to provide suggestions.\n\nWhich use case functionality of Model Builder aligns with UC’s request?",
+      "answerOptions": [
+        {
+          "describe": "Contract Renewal Date prediction",
+          "isRight": false
+        },
+        {
+          "describe": "Product recommendation prediction",
+          "isRight": false
+        },
+        {
+          "describe": "Customer churn prediction",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987249",
+      "analysis": "https://www.salesforce.com/sales/analytics/customer-churn/"
+    },
+    {
+      "describe": "Universal Containers (UC) recently rolled out Einstein Generative AI capabilities and has created a custom prompt to summarize case records. Users have reported that the case summaries generated are not returning the appropriate information.\n\nWhat is a possible explanation for the poor prompt performance?",
+      "answerOptions": [
+        {
+          "describe": "The Einstein Trust Layer is incorrectly configured.",
+          "isRight": false
+        },
+        {
+          "describe": "The data being used for grounding is incorrect or incomplete.",
+          "isRight": true
+        },
+        {
+          "describe": "The prompt template version is incompatible with the chosen LLM.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987244",
+      "analysis": "当生成式AI摘要无法返回适当信息时，最常见的原因是用于基础(grounding)的数据不正确或不完整。良好的基础数据对于AI生成准确、相关的案例摘要至关重要。"
+    },
+    {
+      "describe": "An AI Specialist configured Data Masking within the Einstein Trust Layer.\n\nHow should the AI Specialist begin validating that the correct fields are being masked?",
+      "answerOptions": [
+        {
+          "describe": "Enable the collection and storage of Einstein Generative AI Audit Data on the Einstein Feedback setup page.",
+          "isRight": true
+        },
+        {
+          "describe": "Use a Flow-based resource in Prompt Builder to debug the fields' merge values using Flow Debugger.",
+          "isRight": false
+        },
+        {
+          "describe": "Request the Einstein Generative AI Audit Data from the Security section of the Setup menu.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987241",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.generative_ai_audit_trail.htm&type=5"
+    },
+    {
+      "describe": "What is best practice when refining Agentforce custom action instructions?",
+      "answerOptions": [
+        {
+          "describe": "Use consistent introductory phrases and verbs across multiple action instructions.",
+          "isRight": false
+        },
+        {
+          "describe": "Provide examples of user messages that are expected to trigger the action.",
+          "isRight": true
+        },
+        {
+          "describe": "Specify the persona who will request the action.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987217",
+      "analysis": "提供预期触发自定义操作的用户消息示例是最佳实践，因为这能帮助AI模型更准确地识别用户意图，提高触发准确性，减少误触发，使代理更好地理解用户的各种表达方式。"
+    },
+    {
+      "describe": "Which feature in the Einstein Trust Layer helps to minimize the risks of jailbreaking and prompt injection attacks?",
+      "answerOptions": [
+        {
+          "describe": "Prompt Defense",
+          "isRight": true
+        },
+        {
+          "describe": "Data Masking",
+          "isRight": false
+        },
+        {
+          "describe": "Secure Data Retrieval and Grounding",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987216",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.generative_ai_trust_layer.htm&type=5"
+    },
+    {
+      "describe": "What is the primary function of the reasoning engine in Agentforce?",
+      "answerOptions": [
+        {
+          "describe": "Generating record queries based on conversation history",
+          "isRight": false
+        },
+        {
+          "describe": "Identifying agent topics and actions to respond to user utterances",
+          "isRight": true
+        },
+        {
+          "describe": "Offering real-time natural language response during conversations",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987215",
+      "analysis": "推理引擎的主要功能是识别用户表述中的主题并确定适当的代理操作，它是系统智能核心，能理解用户意图并决定如何响应，是代理决策过程的关键组件。"
+    },
+    {
+      "describe": "An AI Specialist is tasked with analyzing Agent interactions looking into user inputs, requests, and queries to identify patterns and trends.\n\nWhat functionality allows the AI Specialist to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "AI Audit & Feedback Data dashboard",
+          "isRight": false
+        },
+        {
+          "describe": "Agent Event Logs dashboard",
+          "isRight": false
+        },
+        {
+          "describe": "User Utterances dashboard",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987214",
+      "analysis": "Utterance Analysis：https://help.salesforce.com/s/articleView?id=ai.copilot_utterance_analysis.htm&type=5"
+    },
+    {
+      "describe": "Before activating a custom Agent action, an AI Specialist would like to understand multiple real-world user utterances to ensure the action is being selected appropriately.\n\nWhich tool should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Agent Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Agentforce",
+          "isRight": false
+        },
+        {
+          "describe": "Model Playground",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987213",
+      "analysis": "Agentforce Model Playground是测试环境，允许AI专家输入各种真实用户表述并观察系统如何识别和选择相应操作，从而验证自定义Agent操作在激活前是否能正确响应不同的用户请求。"
+    },
+    {
+      "describe": "What is the role of the large language model (LLM) in understanding intent and executing an Agent Action?",
+      "answerOptions": [
+        {
+          "describe": "Identify the best matching topic and actions and correct order of execution",
+          "isRight": true
+        },
+        {
+          "describe": "Determine a user’s topic access and sort actions by priority to be executed",
+          "isRight": false
+        },
+        {
+          "describe": "Find similar requested topics and provide the actions that need to be executed",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987186",
+      "analysis": "LLM的核心角色是理解用户意图，识别最匹配的操作，并确定正确的执行顺序。它通过理解自然语言请求，将其转化为有序的操作序列，以满足用户需求。"
+    },
+    {
+      "describe": "Universal Containers (UC) plans to send one of three different emails to its customers based on the customer's lifetime value score and their market segment.\n\nConsidering that UC are required to explain why an e-mail was selected, which AI model should UC use to achieve this?",
+      "answerOptions": [
+        {
+          "describe": "Predictive model",
+          "isRight": false
+        },
+        {
+          "describe": "Predictive model and generative model",
+          "isRight": true
+        },
+        {
+          "describe": "Generative model",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987185",
+      "analysis": "需要结合预测模型和生成模型：预测模型基于客户终身价值分数和市场细分确定发送哪封邮件，而生成模型则提供自然语言解释说明为什么选择该邮件，满足解释需求"
+    },
+    {
+      "describe": "Universal Containers' current AI data masking rules do not align with organizational privacy and security policies and requirements.\n\nWhat should an AI Specialist recommend to resolve the issue?",
+      "answerOptions": [
+        {
+          "describe": "Configure data masking in the Einstein Trust Layer setup.",
+          "isRight": true
+        },
+        {
+          "describe": "Enable data masking for sandbox refreshes.",
+          "isRight": false
+        },
+        {
+          "describe": "Add new data masking rules in LLM setup.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987182",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.generative_ai_mask_data.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers is considering leveraging the Einstein Trust Layer in conjunction with Einstein Generative AI Audit Data.\n\nWhich audit data is available using the Einstein Trust Layer?",
+      "answerOptions": [
+        {
+          "describe": "Response accuracy and offensiveness score",
+          "isRight": false
+        },
+        {
+          "describe": "Masked data and toxicity score",
+          "isRight": true
+        },
+        {
+          "describe": "Hallucination score and bias score",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987181",
+      "analysis": "https://help.salesforce.com/s/articleView?id=sf.generative_ai_trust_layer.htm&type=5"
+    },
+    {
+      "describe": "What is the role of the large language model (LLM) in executing an Einstein Copilot Action?",
+      "answerOptions": [
+        {
+          "describe": "Find similar requests and provide the actions that need to be executed",
+          "isRight": false
+        },
+        {
+          "describe": "Determine a user’s access and sort actions by priority to be executed",
+          "isRight": false
+        },
+        {
+          "describe": "Identify the best matching actions and correct order of execution",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987178",
+      "analysis": "LLM的核心角色是理解用户意图，识别最匹配的操作，并确定正确的执行顺序。它通过理解自然语言请求，将其转化为有序的操作序列，以满足用户需求。"
+    },
+    {
+      "describe": "Based on the user utterance, \"Show me all the customers in New York\", which standard Einstein Copilot action will the planner service use?",
+      "answerOptions": [
+        {
+          "describe": "Query Records",
+          "isRight": true
+        },
+        {
+          "describe": "Fetch Records",
+          "isRight": false
+        },
+        {
+          "describe": "Select Records",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987154",
+      "analysis": "用户要求\"显示所有纽约的客户\"需要在数据库中根据地理位置条件(New York)查询符合条件的客户记录。Query Records是执行基于条件查询的标准操作，而不是获取已知记录(Fetch)或从用户界面选择记录(Select)"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to assess Salesforce's generative AI features but has concerns over its company data being exposed to third-party large language models (LLMs). Specifically, UC wants the following capabilities to be part of Einstein's generative AI service.\n•No data is used for LLM training or product improvements by third-party LLMs.\n•No data is retained outside of UC's Salesforce org.\n•The data sent cannot be accessed by the LLM provider.\n\nWhich property of the Einstein Trust Layer should the AI Specialist highlight to UC that addresses these requirements?",
+      "answerOptions": [
+        {
+          "describe": "Data Masking",
+          "isRight": false
+        },
+        {
+          "describe": "Zero-Data Retention Policy",
+          "isRight": true
+        },
+        {
+          "describe": "Prompt Defense",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987153",
+      "analysis": "零数据保留政策(Zero-Data Retention Policy)直接满足UC的所有要求，确保数据不会被第三方LLM用于训练，不会在Salesforce组织外保留，且LLM提供商无法访问这些数据。该政策是Einstein信任层中专门解决数据隐私问题的关键特性。"
+    },
+    {
+      "describe": "The marketing team at Universal Containers is looking for a way to personalize emails based on customer behavior, preferences, and purchase history.\n\nWhy should the team use Einstein Copilot as the solution?",
+      "answerOptions": [
+        {
+          "describe": "To generate relevant content when engaging with each customer",
+          "isRight": true
+        },
+        {
+          "describe": "To analyze past campaign performance",
+          "isRight": false
+        },
+        {
+          "describe": "To send automated emails to all customers",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987152",
+      "analysis": "Einstein Copilot能够基于客户行为、偏好和购买历史生成个性化内容，这正是营销团队需要的电子邮件个性化功能。它不仅分析数据，还能根据每位客户的具体情况生成相关内容，实现真正的个性化互动。"
+    },
+    {
+      "describe": "Universal Containers wants to implement a solution in Salesforce with a custom UX that allows users to enter a sales order number. Subsequently, the system will invoke a custom prompt template to create and display a summary of the sales order header and sales order details.\n\nWhich solution should an AI Specialist implement to meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Create an autolaunched flow and invoke the prompt template using the standard \"Prompt Template\" flow action.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a template-triggered prompt flow and invoke the prompt template using the standard \"Prompt Template\" flow action.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a screen flow to collect sales order number and invoke the prompt template using the standard \"Prompt Template\" flow action.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987151",
+      "analysis": "该需求要求提供自定义用户界面让用户输入销售订单号，并显示相关摘要。屏幕流程(Screen flow)是唯一能提供用户界面收集输入并使用\"Prompt Template\"流程操作调用提示模板的选项"
+    },
+    {
+      "describe": "What is an AI Specialist able to do when the \"Enrich event logs with conversation data\" setting in Einstein Copilot is enabled?",
+      "answerOptions": [
+        {
+          "describe": "Generate detailed reports on all Copilot conversations over any time period.",
+          "isRight": false
+        },
+        {
+          "describe": "View the user click path that led to each copilot action.",
+          "isRight": false
+        },
+        {
+          "describe": "View session data including user input and copilot responses for sessions over the past 7 days.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987125",
+      "analysis": "启用\"Enrich event logs with conversation data\"设置后，AI专家可以查看过去7天内的会话数据，包括用户输入和copilot响应"
+    },
+    {
+      "describe": "Universal Containers (UC) is using Einstein Generative AI to generate an account summary. UC aims to ensure the content is safe and inclusive, utilizing the Einstein Trust Layer's toxicity scoring to assess the content's safety level.\n\nWhat does a safety category score of 1 indicate in the Einstein Generative AI Toxicity Score?",
+      "answerOptions": [
+        {
+          "describe": "Moderately safe",
+          "isRight": false
+        },
+        {
+          "describe": "Not safe",
+          "isRight": true
+        },
+        {
+          "describe": "Safe",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987124",
+      "analysis": "Review Toxicity Scores ：https://help.salesforce.com/s/articleView?id=ai.generative_ai_audit_toxicity.htm&type=5"
+    },
+    {
+      "describe": "Universal Containers needs its sales reps to be able to only execute prompt templates.\n\nWhat should an AI Specialist recommend to achieve this requirement?",
+      "answerOptions": [
+        {
+          "describe": "Prompt Template User permission set",
+          "isRight": true
+        },
+        {
+          "describe": "Prompt Template Manager permission set",
+          "isRight": false
+        },
+        {
+          "describe": "Prompt Execute Template permission set",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987123",
+      "analysis": "\"Prompt Template User\"权限集是专为只需执行提示模板的用户设计的，为销售代表提供使用现有模板的权限，而不包括创建或管理模板的权限，正好满足Universal Containers的需求"
+    },
+    {
+      "describe": "Universal Containers has seen a high adoption rate of a new feature that uses generative AI to populate a summary field of a custom object, Competitor Analysis. All sales users have the same profile but one user cannot see the generative AI-enabled field icon next to the summary field.\n\nWhat is the most likely cause of the issue?",
+      "answerOptions": [
+        {
+          "describe": "The user does not have the field Generative AI User permission set assigned.",
+          "isRight": true
+        },
+        {
+          "describe": "The user does not have the Prompt Template User permission set assigned.",
+          "isRight": false
+        },
+        {
+          "describe": "The prompt template associated with summary field is not activated for that user.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105987122",
+      "analysis": "生成式AI功能需要\"Generative AI User\"权限集才能访问。缺少此权限集会导致用户无法看到生成式AI启用的字段图标，这是最可能的原因。"
+    },
+    {
+      "describe": "Universal Containers' data science team is hosting a generative large language model (LLM) on Amazon Web Services (AWS).\n\nWhat should the team use to access externally-hosted models in the Salesforce Platform?",
+      "answerOptions": [
+        {
+          "describe": "App Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Copilot Builder",
+          "isRight": false
+        },
+        {
+          "describe": "Model Builder",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987120",
+      "analysis": "Model Builder是Salesforce平台中专门用于连接外部托管的AI模型的工具。对于Universal Containers的数据科学团队来说，它是访问AWS上托管的LLM的正确选择，可以配置必要的连接参数和身份验证"
+    },
+    {
+      "describe": "Where should the AI Specialist go to add/update actions assigned to a copilot?",
+      "answerOptions": [
+        {
+          "describe": "Copilot Actions page or Global Actions",
+          "isRight": false
+        },
+        {
+          "describe": "Copilot Detail page, Global Actions, or the record page for the copilot action",
+          "isRight": false
+        },
+        {
+          "describe": "Copilot Actions page, the record page for the copilot action, or the Copilot Action Library tab",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105987117",
+      "analysis": "可以通过Copilot Actions页面、copilot action的记录页面以及Copilot Action Library选项卡来添加或更新分配给copilot的操作，这三个位置提供了完整的action管理功能。"
+    },
+    {
+      "describe": "How does the Einstein Trust Layer ensure that sensitive data is protected while generating useful and meaningful responses?",
+      "answerOptions": [
+        {
+          "describe": "Masked data will be de-masked during request journey.",
+          "isRight": false
+        },
+        {
+          "describe": "Responses that do not meet the relevance threshold will be automatically rejected.",
+          "isRight": false
+        },
+        {
+          "describe": "Masked data will be de-masked during response journey.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986442",
+      "analysis": "Einstein Trust Layer通过确保敏感数据在请求过程中保持屏蔽状态，仅在生成响应时才解除屏蔽，从而保护隐私数据"
+    },
+    {
+      "describe": "Which use case is best supported by Salesforce Einstein Copilot's capabilities?",
+      "answerOptions": [
+        {
+          "describe": "Enable Salesforce admin users to create and train custom large language models (LLMs) using CRM data.",
+          "isRight": false
+        },
+        {
+          "describe": "Bring together a conversational interface for interacting with AI for all Salesforce users, such as developers and ecommerce retailers.",
+          "isRight": true
+        },
+        {
+          "describe": "Enable data scientists to train predictive AI models with historical CRM data using built-in machine learning capabilities.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986438",
+      "analysis": "Einstein Copilot提供统一的会话式AI界面，让各类Salesforce用户能与AI交互，不需要专业知识。它不是用于创建自定义LLM或训练预测模型的工具，而是简化所有用户与AI沟通的中央平台。"
+    },
+    {
+      "describe": "Universal Containers (UC) has a legacy system that needs to integrate with Salesforce. UC wishes to create a digest of account action plans using the generative API feature.\n\nWhich API service should UC use to meet this requirement?",
+      "answerOptions": [
+        {
+          "describe": "SOAP API",
+          "isRight": false
+        },
+        {
+          "describe": "Metadata API",
+          "isRight": false
+        },
+        {
+          "describe": "REST API",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986436",
+      "analysis": "REST API是访问Salesforce生成式AI功能的推荐API，它提供了与生成式API功能交互所需的端点。相比SOAP API更轻量，比Metadata API更适合此类数据操作任务，能有效地创建账户行动计划的摘要"
+    },
+    {
+      "describe": "Universal Containers implemented Einstein Copilot for its users. One user complains that Einstein Copilot is not deleting activities from the past 7 days.\n\nWhat is the reason for this issue?",
+      "answerOptions": [
+        {
+          "describe": "Einstein Copilot does not have the permission to delete the user’s records.",
+          "isRight": true
+        },
+        {
+          "describe": "Einstein Copilot Delete Record Action permission is not associated to the user.",
+          "isRight": false
+        },
+        {
+          "describe": "Einstein Copilot does not support the Delete Record action.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986409",
+      "analysis": "Einstein副驾驶没有删除权限"
+    },
+    {
+      "describe": "An AI Specialist is creating a custom action in Einstein Copilot.\n\nWhich option is available for the AI Specialist to choose for the custom copilot action?",
+      "answerOptions": [
+        {
+          "describe": "Flows",
+          "isRight": true
+        },
+        {
+          "describe": "Apex trigger",
+          "isRight": false
+        },
+        {
+          "describe": "SOQL",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986406",
+      "analysis": "Flows是一种点击式工具，可用于定义副驾驶可以执行的操作，如创建记录、更新字段或执行复杂的业务逻辑"
+    },
+    {
+      "describe": "Universal Containers (UC) is looking to enhance its operational efficiency. UC has recently adopted Salesforce and is considering implementing Einstein Copilot to improve its processes.\n\nWhat is a key reason for implementing Einstein Copilot?",
+      "answerOptions": [
+        {
+          "describe": "Streamlining workflows and automating repetitive tasks",
+          "isRight": true
+        },
+        {
+          "describe": "Improving data entry and data cleansing",
+          "isRight": false
+        },
+        {
+          "describe": "Allowing AI to perform tasks without user interaction",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986378",
+      "analysis": "Einstein Copilot的主要目的是提高用户工作效率，通过简化工作流程和自动化重复任务来实现。\"副驾驶\"概念意味着AI与用户协同工作，提供辅助而非替代人工"
+    },
+    {
+      "describe": "An AI Specialist has created a copilot custom action using flow as the reference action type. However, it is not delivering the expected results to the conversation preview, and therefore needs troubleshooting.\n\nWhat should the AI Specialist do to identify the root cause of the problem?",
+      "answerOptions": [
+        {
+          "describe": "In Copilot Builder within the Dynamic Panel, confirm selected action and observe the values in Input and Output sections.",
+          "isRight": true
+        },
+        {
+          "describe": "In Copilot Builder, verify the utterance entered by the user and review session event logs for debug information.",
+          "isRight": false
+        },
+        {
+          "describe": "In Copilot Builder within the Dynamic Panel, turn on dynamic debugging to show the inputs and outputs.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986375",
+      "analysis": "在Dynamic Panel中检查输入和输出值是排查自定义操作问题的直接方法。通过观察传入和传出操作的实际数据，可以确定问题是出在输入数据、操作处理还是输出数据上"
+    },
+    {
+      "describe": "Universal Containers (UC) is discussing its AI strategy in an agile Scrum meeting.\n\nWhich business requirement would lead an AI Specialist to recommend connecting to an external foundational model via Einstein Studio (Model Builder)?",
+      "answerOptions": [
+        {
+          "describe": "UC wants to fine-tune model temperature.",
+          "isRight": false
+        },
+        {
+          "describe": "UC wants a model fine-tuned using company data.",
+          "isRight": true
+        },
+        {
+          "describe": "UC wants to change frequency penalty of the model.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986373",
+      "analysis": "使用公司数据对模型进行微调是使用Einstein Studio连接外部基础模型的有力理由。这种深度定制需要Einstein Studio的高级功能，以改进模型在公司特定任务上的表现"
+    },
+    {
+      "describe": "Universal Containers needs to provide insights on the usability of Agents to drive adoption in the organization.\n\nWhat should the AI Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Agent Analytics",
+          "isRight": false
+        },
+        {
+          "describe": "Agent Studio Analytics",
+          "isRight": false
+        },
+        {
+          "describe": "Agentforce Analytics",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986350",
+      "analysis": "Agentforce Analytics是专门设计用于监控Agentforce代理使用情况、有效性和操作分配的工具，可提供全面的分析仪表板和报告，帮助组织了解代理性能和使用情况"
+    },
+    {
+      "describe": "How does an Agent respond when it can’t understand the request or find any requested information?",
+      "answerOptions": [
+        {
+          "describe": "With a preconfigured message, based on the action type",
+          "isRight": true
+        },
+        {
+          "describe": "With a general message asking the user to rephrase the request",
+          "isRight": false
+        },
+        {
+          "describe": "With a generated error message",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986348",
+      "analysis": "当代理无法理解请求或找不到信息时，会根据操作类型返回预配置的消息。这种方法提供了更具针对性的错误处理，为用户提供与特定失败操作相关的有用反馈。"
+    },
+    {
+      "describe": "Universal Containers implements three custom actions to get three distinct types of sales summaries for its users. Users are complaining that they are not getting the right summary based on their utterances.\n\nWhat should the AI Specialist investigate as the root cause?",
+      "answerOptions": [
+        {
+          "describe": "Ensure the input and output types are correctly chosen.",
+          "isRight": false
+        },
+        {
+          "describe": "Review the Action Instructions to ensure they are unique.",
+          "isRight": true
+        },
+        {
+          "describe": "Review that the custom action is assigned to an Agent.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986341",
+      "analysis": "当用户没有根据其表述获得正确的摘要时，问题很可能出在操作指令上。如果三种不同销售摘要的指令过于相似或不够独特，AI可能难以确定应使用哪个操作。确保指令清晰明确且彼此不同。"
+    },
+    {
+      "describe": "What is a Salesforce AI Specialist able to configure in Data Masking within the Einstein Trust Layer?",
+      "answerOptions": [
+        {
+          "describe": "The encryption keys for masking",
+          "isRight": false
+        },
+        {
+          "describe": "The profiles exempt from masking",
+          "isRight": false
+        },
+        {
+          "describe": "The privacy data entities to be masked",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986318",
+      "analysis": "Salesforce AI专家可以在Einstein信任层的数据掩码设置中配置\"需要掩码的隐私数据实体\""
+    },
+    {
+      "describe": "An AI Specialist is creating a custom action for Agentforce.\n\nWhich setting should the AI Specialist test and iterate on to ensure the action performs as expected?",
+      "answerOptions": [
+        {
+          "describe": "Action Name",
+          "isRight": false
+        },
+        {
+          "describe": "Action Input",
+          "isRight": false
+        },
+        {
+          "describe": "Action Instructions",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986316",
+      "analysis": "操作指令直接影响AI如何解释和执行操作，是确保自定义操作按预期执行的关键设置。通过测试和迭代指令，可以优化AI对任务的理解和执行方式。"
+    },
+    {
+      "describe": "Which mechanism within the Einstein Trust Layer helps to ensure that personal data is handled in compliance with data protection regulations like GDPR?",
+      "answerOptions": [
+        {
+          "describe": "Toxicity Scoring",
+          "isRight": false
+        },
+        {
+          "describe": "Data Masking",
+          "isRight": true
+        },
+        {
+          "describe": "Prompt Defense",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986313",
+      "analysis": ""
+    },
+    {
+      "describe": "Which configuration must an AI Specialist complete for users to access generative AI-enabled fields in the Salesforce mobile app?",
+      "answerOptions": [
+        {
+          "describe": "Enable Mobile Generative AI.",
+          "isRight": false
+        },
+        {
+          "describe": "Enable Mobile Prompt Responses.",
+          "isRight": false
+        },
+        {
+          "describe": "Enable Dynamic Forms on Mobile.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986310",
+      "analysis": "其他两个选项并不存在"
+    },
+    {
+      "describe": "What is true of Agentforce Testing Center?",
+      "answerOptions": [
+        {
+          "describe": "Running tests does not consume Einstein Requests.",
+          "isRight": true
+        },
+        {
+          "describe": "Agentforce Testing Center can only be used in a production environment.",
+          "isRight": false
+        },
+        {
+          "describe": "Running tests risks modifying CRM data in a production environment.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986282",
+      "analysis": "Agentforce测试中心的一个重要特点是运行测试不会消耗Einstein请求配额，这允许开发人员和管理员在不影响组织API使用限制的情况下进行充分测试，确保代理功能正常"
+    },
+    {
+      "describe": "Universal Containers recently added a custom flow for processing returns and created a new Agent Action.\n\nWhich action should the company take to ensure the Agentforce Service Agent can run this new flow as part of the new Agent Action?",
+      "answerOptions": [
+        {
+          "describe": "Assign the Run Flows permission to the Agentforce Agent user.",
+          "isRight": true
+        },
+        {
+          "describe": "Recreate the flow using the Agentforce Agent user.",
+          "isRight": false
+        },
+        {
+          "describe": "Assign the Manage Users permission to the Agentforce Agent user.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986257",
+      "analysis": "Agentforce代理用户需要\"Run Flows\"权限才能执行流程"
+    },
+    {
+      "describe": "Universal Containers implements Custom Agent Actions to enhance its customer service operations. The development team needs to understand the core components of a Custom Agent Action to ensure proper configuration and functionality.\n\nWhat should the development team review in the Custom Agent Action configuration to identify one of the core components of a Custom Agent Action?",
+      "answerOptions": [
+        {
+          "describe": "Action Triggers",
+          "isRight": false
+        },
+        {
+          "describe": "Output Types",
+          "isRight": false
+        },
+        {
+          "describe": "Instructions",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986255",
+      "analysis": "指令(Instructions)是自定义代理操作的核心组件之一，它定义了代理应该如何执行操作以及如何解释结果。"
+    },
+    {
+      "describe": "An Agentforce Specialist is creating a custom action in Agentforce.\n\nWhich option is available for the Agentforce Specialist to choose for the custom Agent action?",
+      "answerOptions": [
+        {
+          "describe": "Apex trigger",
+          "isRight": false
+        },
+        {
+          "describe": "Flows",
+          "isRight": true
+        },
+        {
+          "describe": "SOQL",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986254",
+      "analysis": "在Agentforce中创建自定义代理操作时，Flows是可用选项"
+    },
+    {
+      "describe": "Universal Containers (UC) wants to ensure the effectiveness, reliability, and trust of its agents prior to deploying them in production. UC would like to efficiently test a large and repeatable number of utterances.\n\nWhat should the Agentforce Specialist recommend?",
+      "answerOptions": [
+        {
+          "describe": "Deploy the agent in a Q/A sandbox environment and review the Utterance Analysis reports to review effectiveness.",
+          "isRight": false
+        },
+        {
+          "describe": "Create a CSV file with UC’s test cases in Agentforce Testing Center using the testing template.",
+          "isRight": true
+        },
+        {
+          "describe": "Leverage the Agent Large Language Model (LLM) UI and test UC’s agents with different utterances prior to activating the agent.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986251",
+      "analysis": "Agentforce测试中心的CSV模板功能专为批量测试代理响应而设计，可高效处理大量可重复的话语测试用例，允许结构化测试，并可在开发周期中重复使用和版本控制"
+    },
+    {
+      "describe": "What should Universal Containers consider when deploying an Agentforce Service Agent with multiple topics and Agent Actions to production?",
+      "answerOptions": [
+        {
+          "describe": "Deploy agent components without a test run in staging, relying on production data for reliable results. Sandbox configuration alone ensures seamless production deployment.",
+          "isRight": false
+        },
+        {
+          "describe": "Deploy flows or Apex after agents, topics, and Agent Actions to avoid deployment failures and potential production agent issues requiring complete redeployment.",
+          "isRight": false
+        },
+        {
+          "describe": "Ensure all dependencies are included, Apex classes meet 75% test coverage, and configuration settings are aligned with production. Plan for version management and post-deployment activation.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986223",
+      "analysis": "部署Agentforce Agent时，必须确保包含所有依赖项，Apex类达到75%测试覆盖率，配置设置与生产环境一致，并规划版本管理和部署后激活，这是成功部署的全面方法。"
+    },
+    {
+      "describe": "Universal Containers recently launched a pilot program to integrate conversational AI into its CRM business operations with Agentforce Agents.\n\nHow should the Agentforce Specialist monitor Agents’ usability and the assignment of actions?",
+      "answerOptions": [
+        {
+          "describe": "Run Agentforce Analytics.",
+          "isRight": true
+        },
+        {
+          "describe": "Run a report on the Platform Debug Logs.",
+          "isRight": false
+        },
+        {
+          "describe": "Query the Agent log data using the metadata API.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986222",
+      "analysis": "Agentforce Analytics是专门设计用于监控Agentforce代理使用情况、有效性和操作分配的工具，可提供全面的分析仪表板和报告，帮助组织了解代理性能和使用情况"
+    },
+    {
+      "describe": "Universal Containers’ Agent Action includes several Apex classes for the new Agentforce Agent.\n\nWhat is an important consideration when deploying Apex that is invoked by an Agent Action?",
+      "answerOptions": [
+        {
+          "describe": "The Apex classes must have at least 75% code coverage from unit tests, and all dependencies must be in the deployment package.",
+          "isRight": true
+        },
+        {
+          "describe": "The Apex classes may bypass the 75% code coverage requirement as long as they are only used by the agent.",
+          "isRight": false
+        },
+        {
+          "describe": "Apex classes invoked by an Agent Action may be deployed with less than 75% test coverage as long as the agent is not activated in production.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105986218",
+      "analysis": "Salesforce要求所有部署到生产环境的Apex代码都必须有至少75%的测试覆盖率，这一规则适用于所有Apex代码，包括被Agent Action调用的代码。"
+    },
+    {
+      "describe": "Universal Containers has implemented an agent that answers questions based on Knowledge articles.\n\nWhich topic and Agent Action will be shown in the Agent Builder?",
+      "answerOptions": [
+        {
+          "describe": "General CRM topic and Answers Questions with LLM Action",
+          "isRight": false
+        },
+        {
+          "describe": "General Q&A topic and Knowledge Article Answers action",
+          "isRight": false
+        },
+        {
+          "describe": "General FAQ topic and Answers Questions with Knowledge Action",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986192",
+      "analysis": "在Agent Builder中，基于知识文章回答问题的代理会显示\"General FAQ topic\"作为主题和\"Answers Questions with Knowledge Action\"作为操作。"
+    },
+    {
+      "describe": "An Agentforce Specialist wants to troubleshoot their Agent's performance.\nWhere should the Agentforce Specialist go to access all user interactions with the Agent, including Agent errors, incorrectly triggered actions, and incomplete plans?",
+      "answerOptions": [
+        {
+          "describe": "Plan Canvas",
+          "isRight": false
+        },
+        {
+          "describe": "Agent Settings",
+          "isRight": false
+        },
+        {
+          "describe": "Event Logs",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986186",
+      "analysis": "事件日志(Event Logs)是访问所有用户与代理交互信息的正确位置，包括代理错误、错误触发的操作和不完整的计划。"
+    },
+    {
+      "describe": "What is the importance of Action Instructions when creating a custom Agent action?",
+      "answerOptions": [
+        {
+          "describe": "Action Instructions tell the large language model (LLM) which action to use.",
+          "isRight": false
+        },
+        {
+          "describe": "Action Instructions tell the user how to call this action in a conversation.",
+          "isRight": false
+        },
+        {
+          "describe": " Action Instructions define the expected user experience of an action.",
+          "isRight": true
+        }
+      ],
+      "hashCode": "2105986163",
+      "analysis": "指令(Instructions)是自定义代理操作的核心组件之一，它定义了代理应该如何执行操作以及如何解释结果。"
+    },
+    {
+      "describe": "An Agentforce Specialist is tasked to optimize a business process flow by assigning actions to agents within the Salesforce Agentforce Platform.\n\nWhat is the correct method for the Agentforce Specialist to assign actions to an Agent?",
+      "answerOptions": [
+        {
+          "describe": "Assign the action to a Topic first on Action Builder.",
+          "isRight": false
+        },
+        {
+          "describe": "Assign the action to a Topic first in Agent Builder.",
+          "isRight": true
+        },
+        {
+          "describe": "Assign the action to a Topic first on the Agent Actions detail page.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985482",
+      "analysis": "在Salesforce Agentforce平台中，正确的操作流程是首先在Agent Builder中将操作分配给主题（Topic）。"
+    },
+    {
+      "describe": "Universal Containers wants to allow its service agents to query the current fulfillment status of an order with natural language. There is an existing autolaunched flow to query the information from Oracle ERP, which is the system of record for the order fulfillment process.\n\nHow should an Agentforce Specialist apply the power of conversational AI to this use case?",
+      "answerOptions": [
+        {
+          "describe": "Create a custom Agent action which calls a flow.",
+          "isRight": true
+        },
+        {
+          "describe": "Create a Flex prompt template in Prompt Builder.",
+          "isRight": false
+        },
+        {
+          "describe": "Configure the Integration Flow Standard Action in Agent Builder.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985476",
+      "analysis": "创建调用已有自动启动流的自定义代理操作是最佳选择，能够将会话式AI与现有Oracle ERP集成流程无缝连接，允许服务代理使用自然语言查询订单履行状态。"
+    },
+    {
+      "describe": "An Agentforce Agent has been developed with multiple topics and Agent Actions that use flows and Apex.\n\nWhich options are available for deploying these to production?",
+      "answerOptions": [
+        {
+          "describe": "Use only change sets because the Salesforce CLI does not currently support the deployment of agent-related metadata.",
+          "isRight": false
+        },
+        {
+          "describe": "Deploy flows, Apex, and all agent-related items using either change sets or the Salesforce CLI/Metadata API.",
+          "isRight": true
+        },
+        {
+          "describe": "Deploy the flows and Apex using normal deployment tools and manually create the agent-related items in production.",
+          "isRight": false
+        }
+      ],
+      "hashCode": "2105985444",
+      "analysis": "Salesforce支持通过变更集和Salesforce CLI/Metadata API部署与代理相关的元数据。Agentforce Agent的所有组件，包括代理配置、主题、操作、流程和Apex代码，都可以使用标准Salesforce部署工具进行部署。不需要在生产环境中手动创建与代理相关的项目，也不存在CLI不支持部署代理相关元数据的限制。"
+    }
+  ],
+  "hashCode": "437341796"
+}
