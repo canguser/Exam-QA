@@ -5,79 +5,126 @@
             fixed
             left-arrow
             right-text="目录"
-            @click-left="$router.back()"
+            @click-left="handleBack"
             @click-right="showAcButtons = !showAcButtons"
+            class="exam-nav-bar"
         ></van-nav-bar>
-        <div class="ac-qn-backdrop" v-show="showAcButtons" @click.stop="showAcButtons = false">
-            <div class="exam-p-around-small ac-qn" @click.stop>
-                <van-row>
-                    <van-col span="4" v-for="(question,i) in questionsInfo" :key="i">
-                        <div class="exam-circle exam-done" @click="turnTo(i)"
-                             :class="{'exam-right':question.answer.isPass&&(isShowResult||(question.answer.isChecked&&isPractice)),'exam-error':question.answer.isMistake&&(isShowResult||(question.answer.isChecked&&isPractice)),'exam-current': questionNum === i}">
-                            {{ i + 1 }}
-                        </div>
-                    </van-col>
-                </van-row>
+        <transition name="fade">
+            <div class="ac-qn-backdrop" v-show="showAcButtons" @click.stop="showAcButtons = false">
+                <div class="exam-p-around-small ac-qn theme-card" @click.stop>
+                    <div class="qn-header">
+                        <h3>题目导航</h3>
+                        <span class="qn-progress">{{ questionNum + 1 }} / {{ totalNum }}</span>
+                    </div>
+                    <van-row class="question-nav-grid">
+                        <van-col span="4" v-for="(question,i) in questionsInfo" :key="i">
+                            <div class="exam-circle exam-done theme-button" @click="turnTo(i)"
+                                 :class="{'exam-right':question.answer.isPass&&(isShowResult||(question.answer.isChecked&&isPractice)),'exam-error':question.answer.isMistake&&(isShowResult||(question.answer.isChecked&&isPractice)),'exam-current': questionNum === i}">
+                                {{ i + 1 }}
+                            </div>
+                        </van-col>
+                    </van-row>
+                </div>
             </div>
-        </div>
-        <div class="question-box" @dblclick.stop="showAcButtons = true"
-             :style="`width: ${totalNum*100}%;transform:translate(${-questionNum*100/totalNum}%,0)`">
-            <div class="question-item" :style="`width: ${100/totalNum}%`" v-for="(question,i) in questionsInfo"
-                 :key="question.hashCode">
-                <van-panel>
-                    <div style="padding: 10px 16px; line-height: 30px">
-                        <div class="main-qa" v-for="t in getQuestionTitle(question)" v-html="t">
+        </transition>
+        <div class="question-container" @dblclick.stop="showAcButtons = true">
+            <transition :name="transitionName" mode="out-in">
+                <div class="question-item" 
+                     :key="questionNum">
+                    <div class="question-card theme-card">
+                        <div class="question-header">
+                            <div class="question-title" v-for="t in getQuestionTitle(questionsInfo[questionNum])" v-html="t">
+                            </div>
+                            <div class="question-desc">{{ getQuestionDesc(questionsInfo[questionNum]) }}</div>
                         </div>
-                        <div style="font-size: 12px; color: #999">{{ getQuestionDesc(question) }}</div>
+                        <div v-if="questionsInfo[questionNum].isMulti" class="options-container">
+                            <van-checkbox-group v-model="questionsInfo[questionNum].answer.multi.apis" @click.stop @dblclick.stop>
+                                <div class="option-list">
+                                    <div v-for="(option, oi) in questionsInfo[questionNum].answerOptions"
+                                              class="option-item theme-card"
+                                              @click="toggleAnswer(questionNum, option.api)"
+                                              :key="oi"
+                                              :class="{'option-selected': questionsInfo[questionNum].answer.multi.apis.includes(option.api), 'option-correct': option.isRight&&(isShowResult||(questionsInfo[questionNum].answer.isChecked&&isPractice)), 'option-incorrect': !option.isRight&&(isShowResult||(!option.isRight&&questionsInfo[questionNum].answer.isAnswered&&isPractice)) && questionsInfo[questionNum].answer.multi.apis.includes(option.api)}">
+                                        <div class="option-content">
+                                            <div class="option-label">{{ letterIndex[oi] }}</div>
+                                            <div class="option-text" v-html="option.describe"></div>
+                                            <van-checkbox :name="option.api" :checked-color="getOptionColor(questionsInfo[questionNum],option)" class="option-checkbox"></van-checkbox>
+                                        </div>
+                                    </div>
+                                </div>
+                            </van-checkbox-group>
+                        </div>
+                        <div v-if="!questionsInfo[questionNum].isMulti" class="options-container">
+                            <van-radio-group v-model="questionsInfo[questionNum].answer.single.api">
+                                <div class="option-list">
+                                    <div v-for="(option, oi) in questionsInfo[questionNum].answerOptions"
+                                              class="option-item theme-card"
+                                              @click="setAnswer(questionNum, [option.api])"
+                                              :key="oi"
+                                              :class="{'option-selected': questionsInfo[questionNum].answer.single.api === option.api, 'option-correct': option.isRight&&(isShowResult||(questionsInfo[questionNum].answer.isChecked&&isPractice)), 'option-incorrect': !option.isRight&&(isShowResult||(!option.isRight&&questionsInfo[questionNum].answer.isAnswered&&isPractice)) && questionsInfo[questionNum].answer.single.api === option.api}">
+                                        <div class="option-content">
+                                            <div class="option-label">{{ letterIndex[oi] }}</div>
+                                            <div class="option-text" v-html="option.describe"></div>
+                                            <van-radio :name="option.api" :checked-color="getOptionColor(questionsInfo[questionNum],option)" class="option-radio"></van-radio>
+                                        </div>
+                                    </div>
+                                </div>
+                            </van-radio-group>
+                        </div>
+                        <div class="question-analysis" 
+                             v-if="isShowResult || !(isPractice&&!questionsInfo[questionNum].answer.isChecked)">
+                            <div class="analysis-header">
+                                <van-icon name="info-o" />
+                                <span>题目解析</span>
+                            </div>
+                            <div class="analysis-content" v-html="questionsInfo[questionNum].analysis || '暂无解析'"></div>
+                        </div>
                     </div>
-                    <div v-if="question.isMulti">
-                        <van-checkbox-group v-model="question.answer.multi.apis" @click.stop @dblclick.stop>
-                            <van-cell-group>
-                                <van-cell v-for="(option, oi) in question.answerOptions"
-                                          clickable @click="toggleAnswer(i, option.api)"
-                                          :key="oi">
-                                    <template slot="title">
-                                        <div v-html="letterIndex[oi] + '. ' + option.describe"
-                                             :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}"></div>
-                                    </template>
-                                    <van-checkbox slot="right-icon" :name="option.api"
-                                                  :checked-color="getOptionColor(question,option)"></van-checkbox>
-                                </van-cell>
-                            </van-cell-group>
-                        </van-checkbox-group>
-                    </div>
-                    <div v-if="!question.isMulti">
-                        <van-radio-group v-model="question.answer.single.api">
-                            <van-cell-group>
-                                <van-cell v-for="(option, oi) in question.answerOptions"
-                                          clickable @click="setAnswer(i, [option.api])"
-                                          :key="oi">
-                                    <template slot="title">
-                                        <div v-html="letterIndex[oi] + '. ' + option.describe"
-                                             :class="{'right-answer':option.isRight&&isShowResult||(option.isRight&&question.answer.isChecked&&isPractice),'error-answer':!option.isRight&&isShowResult||(!option.isRight&&question.answer.isAnswered&&isPractice),'custom-title':true}"></div>
-                                    </template>
-                                    <van-radio slot="right-icon" :name="option.api"
-                                               :checked-color="getOptionColor(question,option)"></van-radio>
-                                </van-cell>
-                            </van-cell-group>
-                        </van-radio-group>
-                    </div>
-                    <div class="main-qa" style="padding: 10px 16px; line-height: 30px; color: #444; font-size: 12px"
-                         v-if="isShowResult || !(isPractice&&!questionsInfo[questionNum].answer.isChecked)"
-                         v-html="'解析：<br>'+(question.analysis || '暂无解析')">
-                    </div>
-                </van-panel>
-            </div>
+                </div>
+            </transition>
         </div>
-        <div class="text-align-center ac-buttons" v-if="questionsInfo[questionNum]">
-            <van-button size="small" v-if="questionNum>0" @click="turnTo(questionNum-1)">上一题</van-button>
-            <van-button size="small" type="info" v-if="questionNum<totalNum-1" @click="turnTo(questionNum+1)">下一题
-            </van-button>
-            <van-button size="small" type="warning" v-if="isPractice&&!questionsInfo[questionNum].answer.isChecked"
-                        @click="checkResult(questionNum)">检查该题答案
-            </van-button>
-            <van-button size="small" type="primary" v-if="!hasSubmit" @click="confirmSubmit">提交
-            </van-button>
+        <div class="ac-buttons theme-card" v-if="questionsInfo[questionNum]">
+            <div class="button-row">
+                <van-button 
+                    round 
+                    v-if="questionNum>0" 
+                    @click="turnTo(questionNum-1)"
+                    class="nav-button theme-button">
+                    <van-icon name="arrow-left" />
+                    上一题
+                </van-button>
+                <van-button 
+                    type="info" 
+                    round 
+                    v-if="questionNum<totalNum-1" 
+                    @click="turnTo(questionNum+1)"
+                    class="nav-button theme-button">
+                    下一题
+                    <van-icon name="arrow" />
+                </van-button>
+            </div>
+            <div class="button-row">
+                <van-button 
+                    type="warning" 
+                    round 
+                    block
+                    v-if="isPractice&&!questionsInfo[questionNum].answer.isChecked"
+                    @click="checkResult(questionNum)"
+                    class="action-button theme-button">
+                    <van-icon name="eye-o" />
+                    检查答案
+                </van-button>
+                <van-button 
+                    type="primary" 
+                    round 
+                    block
+                    v-if="!hasSubmit" 
+                    @click="confirmSubmit"
+                    class="submit-button theme-button pulse">
+                    <van-icon name="success" />
+                    提交答案
+                </van-button>
+            </div>
         </div>
 
     </div>
@@ -135,7 +182,9 @@ export default {
             hasSubmit: false,
             examHashCode: 0,
             historyExams: [],
-            showAcButtons: false
+            showAcButtons: false,
+            transitionName: 'question-slide-right',
+            previousQuestionNum: 0
         }
     },
     computed: {
@@ -172,6 +221,10 @@ export default {
         }
     },
     methods: {
+        handleBack() {
+            // 永远返回到上一级
+            this.$router.back();
+        },
         getQuestionTitle(question) {
             return [`(${this.questionNum + 1}/${this.totalNum})`, question.describe].join(' ').split('\n');
         },
@@ -253,6 +306,15 @@ export default {
             if (root) {
                 root.scrollTop = 0;
             }
+            
+            // 设置过渡动画方向
+            if (i > this.questionNum) {
+                this.transitionName = 'question-slide-left';
+            } else {
+                this.transitionName = 'question-slide-right';
+            }
+            
+            this.previousQuestionNum = this.questionNum;
             this.questionNum = i;
         },
         confirmSubmit() {
@@ -460,112 +522,499 @@ export default {
 .exam-root {
     overflow-x: hidden;
     top: 0;
-    bottom: 0
-}
-
-div.error-answer {
-    color: #cd0000;
-}
-
-div.right-answer {
-    color: #44af11;
-}
-
-div.custom-title {
-    word-break: break-word;
-}
-
-.exam-circle {
-    height: 2rem;
-    width: 2rem;
-    border: 1px solid #1989fa;
-    border-radius: 50%;
-    line-height: 2rem;
-    text-align: center;
-    color: #1989fa;
-    cursor: pointer;
-    margin-bottom: .5rem;
-}
-
-.exam-circle.exam-error {
-    color: #cd0000;
-    border-color: #cd0000;
-}
-
-.exam-circle.exam-right {
-    color: #44af11;
-    border-color: #44af11;
-}
-
-.exam-circle.exam-current {
-    background-color: #1989fa;
-    color: white;
-}
-
-.exam-circle.exam-error.exam-current {
-    background-color: #cd0000;
-    color: white;
-}
-
-.exam-circle.exam-right.exam-current {
-    background-color: #44af11;
-    color: white;
-}
-
-.question-box {
-    position: relative;
-    width: 100%;
-    display: flex;
-    transition: transform .35s;
-    padding-bottom: 70px;
-    padding-top: 46px;
-}
-
-.question-item {
-    flex-shrink: 0;
-}
-
-.question-enter, .question-leave-to {
-    opacity: 0;
-}
-
-.ac-buttons {
-    position: fixed;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    background: #fff;
-    box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, .1);
+    background: var(--bg-primary);
+    min-height: 100vh;
 }
 
-.ac-qn {
-    z-index: 100;
-    background: #fff;
-    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .1);
+/* 导航栏美化 */
+.exam-nav-bar {
+    background: var(--primary-gradient) !important;
+    box-shadow: var(--shadow-md);
 }
 
+/* 题目导航弹窗 */
 .ac-qn-backdrop {
     position: fixed;
     top: 46px;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, .5);
-    z-index: 1;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
-.van-panel__header {
-    display: none;
+.ac-qn {
+    z-index: 1001;
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    max-width: 90vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: popIn 0.3s ease-out;
 }
 
-.van-cell, .main-qa {
-    white-space: break-spaces;
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.qn-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.qn-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.qn-progress {
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 500;
+    background: var(--bg-secondary);
+    padding: 4px 8px;
+    border-radius: var(--border-radius-sm);
+}
+
+.question-nav-grid {
+    gap: 8px;
+}
+
+.exam-circle {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    line-height: 2.1rem;
+    text-align: center;
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.exam-circle:active {
+    transform: scale(0.9);
+}
+
+.exam-circle.exam-error {
+    color: var(--error-color);
+    border-color: var(--error-color);
+    animation: wobble 0.5s ease-in-out;
+}
+
+.exam-circle.exam-right {
+    color: var(--success-color);
+    border-color: var(--success-color);
+    position: relative;
+}
+
+.exam-circle.exam-right::after {
+    content: '✓';
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 16px;
+    height: 16px;
+    background: var(--success-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 10px;
+    line-height: 16px;
+    text-align: center;
+}
+
+.exam-circle.exam-current {
+    background: var(--primary-gradient);
+    color: var(--text-white);
+    border-color: transparent;
+    box-shadow: var(--shadow-md);
+    transform: scale(1.1);
+}
+
+.exam-circle.exam-error.exam-current {
+    background: var(--error-color);
+    border-color: var(--error-color);
+}
+
+.exam-circle.exam-right.exam-current {
+    background: var(--success-color);
+    border-color: var(--success-color);
+}
+
+/* 题目容器 */
+.question-container {
+    position: relative;
+    width: 100%;
+    min-height: calc(100vh - 180px);
+    padding-bottom: 120px;
+    padding-top: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.question-item {
+    width: 100%;
+    padding: 0 8px;
+}
+
+.question-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    animation: questionSlideIn 0.5s ease-out;
+}
+
+@keyframes questionSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 题目头部 */
+.question-header {
+    padding: 20px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.question-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 8px;
     word-break: break-word;
+    white-space: break-spaces;
 }
 
-.van-cell__title {
-    padding-right: 10px;
+.question-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    padding: 6px 12px;
+    border-radius: var(--border-radius-sm);
+    display: inline-block;
+}
+
+/* 选项容器 */
+.options-container {
+    padding: 16px;
+}
+
+.option-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-item {
+    border: 2px solid var(--border-light);
+    border-radius: var(--border-radius-md);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+.option-item:active {
+    transform: scale(0.98);
+}
+
+.option-item.option-selected {
+    border-color: var(--primary-color);
+    background: var(--bg-overlay);
+    box-shadow: var(--shadow-sm);
+}
+
+.option-item.option-correct {
+    border-color: var(--success-color);
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.option-item.option-incorrect {
+    border-color: var(--error-color);
+    background: rgba(244, 67, 54, 0.1);
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+.option-content {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    gap: 12px;
+}
+
+.option-label {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-color);
+    color: var(--text-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+}
+
+.option-correct .option-label {
+    background: var(--success-color);
+}
+
+.option-incorrect .option-label {
+    background: var(--error-color);
+}
+
+.option-text {
+    flex: 1;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    word-break: break-word;
+    white-space: break-spaces;
+}
+
+.option-checkbox,
+.option-radio {
+    flex-shrink: 0;
+}
+
+/* 题目解析 */
+.question-analysis {
+    margin: 16px;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+    border-left: 4px solid var(--info-color);
+    animation: analysisAppear 0.5s ease-out;
+}
+
+@keyframes analysisAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.analysis-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--info-color);
+    font-size: 14px;
+}
+
+.analysis-content {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    word-break: break-word;
+    white-space: break-spaces;
+}
+
+/* 底部按钮区域 */
+.ac-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    background: var(--bg-card);
+    box-shadow: 0 -4px 20px rgba(0, 196, 167, 0.15);
+    border-top: 1px solid var(--border-light);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.button-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.button-row:last-child {
+    margin-bottom: 0;
+}
+
+.nav-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+}
+
+.action-button,
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    height: 48px;
+    box-shadow: var(--shadow-md);
+}
+
+.submit-button {
+    background: var(--primary-gradient) !important;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+}
+
+.submit-button:active::before {
+    left: 100%;
+}
+
+/* 全局美化 */
+.van-cell {
+    border-radius: var(--border-radius-sm) !important;
+    margin-bottom: 4px;
+    border: 1px solid var(--border-light);
+}
+
+.van-checkbox,
+.van-radio {
+    margin-right: 0 !important;
+}
+
+.van-checkbox__icon--checked,
+.van-radio__icon--checked {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* 过渡动画 */
+.fade-enter-active, .fade-leave-active {
+    transition: all var(--transition-normal);
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+/* 题目切换动画 - 向左滑动 (下一题) */
+.question-slide-left-enter-active,
+.question-slide-left-leave-active {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.question-slide-left-enter {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.question-slide-left-leave-to {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+/* 题目切换动画 - 向右滑动 (上一题) */
+.question-slide-right-enter-active,
+.question-slide-right-leave-active {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.question-slide-right-enter {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.question-slide-right-leave-to {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.question-item {
+    padding: 0 4px;
+    margin: 10px 0 50px 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .question-container {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    
+    .question-item {
+        padding: 0 4px;
+    }
+    
+    .exam-circle {
+        height: 2rem;
+        width: 2rem;
+        line-height: 1.6rem;
+        font-size: 12px;
+    }
+    
+    .option-content {
+        padding: 12px;
+    }
+    
+    .option-label {
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
 }
 </style>

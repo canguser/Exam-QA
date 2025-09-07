@@ -30,11 +30,13 @@
 
 <style>
     #app {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: #2c3e50;
-        margin-top: 60px;
+        color: var(--text-primary);
+        padding-top: 46px;
+        background: var(--bg-primary);
+        min-height: 100vh;
     }
 
     * {
@@ -44,33 +46,71 @@
     .appView {
         position: absolute;
         width: 100%;
-        transition: left .3s ease-out;
+        transition: all var(--transition-normal);
         left: 0;
+        background: var(--bg-primary);
+        min-height: calc(100vh - 60px);
     }
 
     .slide-left-enter {
-        /*transform: translate(100%, 0);*/
         left: 100%;
+        opacity: 0.8;
+        transform: scale(0.95);
     }
 
     .slide-left-leave-active {
-        /*transform: translate(-50%, 0);*/
         left: -50%;
+        opacity: 0.5;
+        transform: scale(1.05);
     }
 
     .slide-right-enter {
-        /*transform: translate(-50%, 0);*/
         left: -50%;
         z-index: 20;
+        opacity: 0.8;
+        transform: scale(0.95);
     }
 
     .slide-right-leave-active {
-        /*transform: translate(100%, 0);*/
         left: 100%;
         z-index: 20;
+        opacity: 0.5;
+        transform: scale(1.05);
     }
 
     p {
         margin: 0;
+        color: var(--text-secondary);
+    }
+
+    /* 美化导航栏 */
+    .van-nav-bar {
+        background: var(--primary-gradient) !important;
+        box-shadow: var(--shadow-md);
+    }
+
+    .van-nav-bar__title {
+        color: var(--text-white) !important;
+        font-weight: 600;
+    }
+
+    .van-nav-bar__arrow,
+    .van-nav-bar__text {
+        color: var(--text-white) !important;
+    }
+
+    /* 美化标签栏 */
+    .van-tabbar {
+        background: var(--bg-card) !important;
+        box-shadow: 0 -2px 12px rgba(0, 196, 167, 0.1);
+        border-top: 1px solid var(--border-light);
+    }
+
+    .van-tabbar-item--active {
+        color: var(--primary-color) !important;
+    }
+
+    .van-tabbar-item--active .van-icon {
+        color: var(--primary-color) !important;
     }
 </style>

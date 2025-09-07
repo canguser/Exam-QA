@@ -1,16 +1,15 @@
 <template>
-    <div>
+    <div class="home-page">
         <van-nav-bar
                 :title="activePage.label"
                 fixed
         ></van-nav-bar>
-        <div class="is-relation">
-            <component :is="activePage.api"></component>
-            <p class="text-align-center is-absolute" style="color: #efefef;width: 100%">{{version}}</p>
+        <div class="is-relation page-container">
+            <transition name="fade" mode="out-in">
+                <component :is="activePage.api" :key="activeTabIndex"></component>
+            </transition>
+            <p class="version-text text-align-center is-absolute">{{version}}</p>
         </div>
-        <van-tabbar v-model="activeTabIndex">
-            <van-tabbar-item v-for="(page, i) in pages" :key="i" :icon="page.icon">{{page.label}}</van-tabbar-item>
-        </van-tabbar>
     </div>
 </template>
 
@@ -49,5 +48,37 @@
 </script>
 
 <style scoped>
+.home-page {
+    background: var(--bg-primary);
+}
 
+.page-container {
+    padding: 20px;
+    padding-bottom: 80px;
+    min-height: calc(100vh - 140px);
+}
+
+.version-text {
+    bottom: 80px;
+    color: var(--text-light);
+    font-size: 12px;
+    opacity: 0.6;
+    pointer-events: none;
+    width: calc(100% - 40px);
+}
+
+.custom-tabbar {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* 页面切换动画 */
+.fade-enter-active, .fade-leave-active {
+    transition: all var(--transition-normal);
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+    transform: translateY(20px);
+}
 </style>

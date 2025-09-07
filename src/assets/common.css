@@ -15,7 +15,7 @@
 }
 
 .exam-p-around-small {
-    padding: 16px;
+    padding: 20px;
 }
 
 .is-absolute {
@@ -28,4 +28,126 @@
 
 .van-grid-item__text{
     word-break: break-word;
+    color: var(--text-primary) !important;
+}
+
+/* 全局Vant组件美化 */
+.van-grid-item__content {
+    background: var(--bg-card) !important;
+    transition: all var(--transition-normal) !important;
+    border-radius: var(--border-radius-md) !important;
+    box-shadow: var(--shadow-sm) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+.van-grid-item__content:active {
+    transform: scale(0.95) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+.van-grid-item__icon {
+    color: var(--primary-color) !important;
+    font-size: 24px !important;
+}
+
+.van-popup {
+    border-radius: var(--border-radius-lg) !important;
+    overflow: hidden !important;
+}
+
+.van-popup--round {
+    border-radius: var(--border-radius-lg) !important;
+}
+
+.van-dialog {
+    border-radius: var(--border-radius-lg) !important;
+}
+
+.van-dialog__header {
+    background: var(--primary-gradient) !important;
+    color: var(--text-white) !important;
+}
+
+.van-dialog__confirm {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.van-loading__spinner {
+    color: var(--primary-color) !important;
+}
+
+.van-field__control {
+    color: var(--text-primary) !important;
+}
+
+.van-field__label {
+    color: var(--text-secondary) !important;
+}
+
+.van-cell {
+    background: var(--bg-card) !important;
+    color: var(--text-primary) !important;
+}
+
+.van-cell:not(:last-child)::after {
+    border-color: var(--border-light) !important;
+}
+
+.van-cell-group {
+    background: transparent !important;
+}
+
+/* 动画增强 */
+.slide-fade-enter-active {
+    transition: all var(--transition-normal);
+}
+
+.slide-fade-leave-active {
+    transition: all var(--transition-fast);
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+/* 工具类 */
+.gradient-border {
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box, var(--primary-gradient) border-box;
+}
+
+.text-gradient {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.shadow-hover:hover {
+    box-shadow: var(--shadow-lg) !important;
+    transform: translateY(-2px);
+}
+
+.bounce-in {
+    animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
