@@ -4,10 +4,12 @@ import jsonp from 'jsonp'
 import Utils from '../utils'
 import AlloyFinger from 'alloyfinger'
 import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger_vue'
+import { Toast } from 'vant'
 
 Vue.use(AlloyFingerPlugin,{
     AlloyFinger
 });
+Vue.use(Toast);
 
 Vue.prototype.$http = axios;
 Vue.prototype.$http.jsonp = jsonp;

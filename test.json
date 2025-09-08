@@ -1,0 +1,363 @@
+{
+    "appid": "__UNI__XXXXXX，创建应用时云端分配的，不要修改。",
+    "name": "应用名称，如uni-app",
+    "versionName": "1.0.0",
+    "versionCode": "100",
+    "uniStatistics": {
+        "enable": false
+    },
+    "app-plus": {
+        "allowsInlineMediaPlayback": true,  
+        "mediaPlaybackRequiresUserAction": false, 
+        "nvueCompiler": "weex",         
+        "nvueStyleCompiler": "weex",    
+        "renderer": "native",           
+        "compilerVersion": 2,           
+        "nvueLaunchMode": "normal",     
+        "nvue": {                       
+        },
+        "optimization": {               
+        },
+        "uniStatistics": {              
+        },
+        "screenOrientation": [          
+            "portrait-primary",                 
+            "portrait-secondary",               
+            "landscape-primary"                
+        ],
+        "splashscreen": {               
+            "alwaysShowBeforeRender": true,     
+            "autoclose": true,                  
+            "waiting": true,                    
+            "event": "loaded",                  
+            "target": "defalt",                 
+            "dealy": 0,                         
+            "ads": {                            
+                "backaground": "#RRGGBB"}},
+        "modules": {                    
+        },
+        "webView": { 
+          "minUserAgentVersion": "95.0.4638.75", 
+          "x5": { 
+            "timeOut": 3000, 
+            "showTipsWithoutWifi": true}
+        },
+		"checkPermissionDenied": false, 
+        "distribute": {      
+            "android": {            
+                "packagename": "",          
+                "keystore": "",             
+                "password": "",             
+                "aliasname": "",            
+                "schemes": "",              
+                "custompermissions": false,     
+                "permissionExternalStorage": {  
+                    "request": "always"},
+                "permissionPhoneState": {       
+                    "request": "always"},
+                "minSdkVersion": 21,            
+                "targetSdkVersion": 30,         
+                "jsEngine": "v8",               
+                "debuggable": false,            
+                "locale": "default",            
+                "forceDarkAllowed": false,      
+                "resizeableActivity": false},
+            "ios": {                
+                "appid": "",                    
+                "mobileprovision": "",          
+                "p12": "",                      
+                "password": "",                 
+                "devices": "iphone",            
+                "urlschemewhitelist": "baidumap",
+                "urltypes": "",                 
+                "deploymentTarget": "10.0",     
+                "privacyDescription": {         
+                    "NSPhotoLibraryUsageDescription": "",                       
+                    "NSPhotoLibraryAddUsageDescription": "",                    
+                    "NSCameraUsageDescription": "",                             
+                    "NSMicrophoneUsageDescription": "",                         
+                    "NSLocationWhenInUseUsageDescription": "",                  
+                    "NSLocationAlwaysUsageDescription": "",                     
+                    "NSLocationAlwaysAndWhenInUseUsageDescription": "",         
+                    "NSCalendarsUsageDescription": "",                          
+                    "NSContactsUsageDescription": "",                           
+                    "NSBluetoothPeripheralUsageDescription": "",                
+                    "NSBluetoothAlwaysUsageDescription": "",                    
+                    "NSSpeechRecognitionUsageDescription": "",                  
+                    "NSRemindersUsageDescription": "",                          
+                    "NSMotionUsageDescription": "",                             
+                    "NSHealthUpdateUsageDescription": "",                       
+                    "NSHealthShareUsageDescription": "",                        
+                    "NSAppleMusicUsageDescription": "",                         
+                    "NFCReaderUsageDescription": "",                            
+                    "NSHealthClinicalHealthRecordsShareUsageDescription": "",   
+                    "NSHomeKitUsageDescription": "",                            
+                    "NSSiriUsageDescription": "",                               
+                    "NSFaceIDUsageDescription": "",                             
+                    "NSLocalNetworkUsageDescription": ""},
+                "idfa": true,                   
+                "capabilities": {    
+                    }}
+                },
+                "pushRegisterMode": "manual"},
+            "sdkConfigs": {         
+                "geolocation": {        
+                    "system": {                     
+                    },
+                    "amap": {                           
+                        "__platform__" : ["ios", "android"],    
+                        "appkey_ios": ""},
+                    "baidu": {                         
+                        "__platform__" : [ "ios", "android" ],  
+                        "appkey_ios": ""}
+                },
+                "maps" : {              
+                    "amap": {                       
+                        "appkey_ios": ""},
+                    "baidu": {                      
+                        "appkey_ios": ""},
+                    "google": {                     
+                        "APIKey_ios": ""}
+                },
+                "push": {               
+                    "unipush": {                    
+                        "icons": {                          
+                            "push": {                               
+                                "ldpi": "",                                 
+                                "mdpi": "",                                 
+                                "hdpi": "",                                 
+                                "xdpi": "",                                 
+                                "xxdpi": ""},
+                            "small": {                               
+                                "ldpi": "",                                 
+                                "mdpi": "",                                 
+                                "hdpi": "",                                 
+                                "xdpi": "",                                 
+                                "xxdpi": ""}
+                        }
+                    },
+                    "igexin": {                     
+                        "appid": "",                            
+                        "appkey": "",                           
+                        "appsecret": "",                        
+                        "icons": {                          
+                            "push": {                               
+                                "ldpi": "",                                 
+                                "mdpi": "",                                 
+                                "hdpi": "",                                 
+                                "xdpi": "",                                 
+                                "xxdpi": ""},
+                            "small": {                               
+                                "ldpi": "",                                 
+                                "mdpi": "",                                 
+                                "hdpi": "",                                 
+                                "xdpi": "",                                 
+                                "xxdpi": ""}
+                        }
+                    }
+                },
+                "share": {              
+                    "weixin": {                     
+                        "appid": ""},
+                    "qq": {                         
+                        "appid": ""},
+                    "sina": {                       
+                        "appkey": "",                           
+                        "redirect_uri": ""}
+                },
+                "speech": {             
+                    "baidu": {                      
+                        "appid": "",                            
+                        "apikey": ""}
+                }
+            },
+            "icons": {              
+                "ios":{                     
+                    "appstore": "",                 
+                    "iphone":{                      
+                        "app@2x": "",                       
+                        "app@3x": "",                       
+                        "spotlight@2x": "",                 
+                        "spotlight@3x": "",                 
+                        "settings@2x": "",                  
+                        "settings@3x": "",                  
+                        "notification@2x": ""},  
+                    "ipad":{                        
+                        "app": "",                          
+                        "app@2x": "",                       
+                        "proapp@2x": "",                    
+                        "spotlight": "",                    
+                        "spotlight@2x": "",                 
+                        "settings": "",                     
+                        "settings@2x": "",                  
+                        "notification": ""}  
+                },  
+                "android":{                 
+                    "ldpi": "",                         
+                    "mdpi": "",                         
+                    "hdpi": "",                         
+                    "xhdpi": "",                        
+                    "xxhdpi": ""}
+            },
+            "splashscreen":{    
+                "iosStyle": "common",   
+                "ios":{                 
+                    "storyboard": "",               
+                    "iphone":{                      
+                        "default": "",                      
+                         "retina35": "",                    
+                         "retina40": "",                    
+                         "retina40l":"",                    
+                         "retina47": "",                    
+                         "retina47l": "",                   
+                         "retina55": "",                    
+                         "retina55l": "",                   
+                         "iphonex": "",                     
+                         "iphonexl": "",                    
+                         "portrait-896h@2x": "",            
+                         "landscape-896h@2x": "",           
+                         "portrait-896h@3x": ""},  
+                    "ipad":{                        
+                         "portrait": "",                    
+                         "portrait-retina": "",             
+                         "landscape": "",                   
+                         "landscape-retina": "",            
+                         "portrait7": "",                   
+                         "landscape7": "",                  
+                         "portrait-retina7": "",            
+                         "landscape-retina7": "",           
+                         "portrait-1112h@2x":"",            
+                         "landscape-1112h@2x":"",           
+                         "portrait-1194h@2x":"",            
+                         "landscape-1194h@2x":"",           
+                         "portrait-1366h@2x":""}  
+                },
+                "androidStyle": "common",
+                "android":{         
+                   "ldpi": "",                          
+                   "mdpi": "",                          
+                   "hdpi": "",                          
+                   "xhdpi": ""}  
+            
+        },
+        "compatible": {                             
+            "ignoreVersion": false,                             
+            "runtimeVersion": ""},
+        "confusion": {                              
+            "description": "",                                      
+            "resources": {                                          
+                }
+            }},
+        "channel": "",                              
+        "cers": {                                   
+        },
+        "cache": {                                  
+        },
+        "error": {                                  
+        },
+        "kernel": {                                 
+            "ios": "WKWebview"},
+        "launchwebview": {                          
+            "plusrequire": "normal",                                
+            "injection": false,                                     
+                {
+                    "match": "",                                    
+                    "redirect":"",                                  
+                    "mime":"",                                      
+                    "encoding":""}  
+                }
+            ],  
+            "overrideurl": {                                
+                "mode": "reject",                                   
+                "match": ""},  
+            "replacewebapi": {                              
+            },  
+                {  
+                    "id": ""},  
+                        {}
+                    ]  
+                }
+            ],  
+            "titleNView": {                                 
+                "backgroundColor": "#RRGGBB",                       
+                "titleText": "",                                    
+                "titleColor": "#RRGGBB",                            
+                "titleSize": "17px",                                
+                "autoBackButton": true,                             
+                "backButton": {                                     
+                    "backgournd": "#RRGGBB",                                
+                    "color": "#RRGGBB"},  
+                    {  
+                        "color": "#RRGGBB",                                 
+                        "colorPressed": "#RRGGBB",                          
+                        "float": "right",                                   
+                        "fontWeight": "normal",                             
+                        "fontSize": "22px",                                 
+                        "fontSrc": ""}
+                ],  
+                "splitLine": {                                      
+                    "color": "#RRGGBB"} 
+            },  
+            "statusbar": {                                  
+            },  
+            "top": "0px",                                   
+            "height": "100%",                               
+            "bottom": "0px",                                
+            "backButtonAutoControl": "none"}
+        },
+        "nativePlugins": {                          
+            }
+        },
+        "popGesture": "none",                       
+        "runmode": "liberate",                      
+        "safearea": {                              
+            "background": "#RRGGBB",                                
+            "backgroundDark": "#RRGGBB",                            
+            "bottom": {                                             
+            },
+            "left": {                                               
+            },
+            "right": {                                              
+            }
+        },
+        "softinput": {                              
+            "navBar": "auto",                                       
+            "auxiliary": false},
+        "ssl": {                                    
+        },
+        "statusbar": {                              
+            "immersed": "none",                                     
+            "style": "light"},
+        "useragent": {                              
+            "value": ""},
+        "useragent_android": {                      
+            "value": ""},
+        "useragent_ios": {                          
+            "value": ""}
+	},
+    "quickapp": {},
+    "mp-weixin": {
+        "uniStatistics": {
+            "enable": false
+        }
+    },
+    "mp-baidu": {
+    },
+    "mp-toutiao": {
+    },
+    "mp-lark": {
+    },
+    "h5": {
+        "template": "index.html",
+        "router": {
+            "mode": "history",
+            "base": "/hello/"
+        },
+        "async": {
+            "loading": "AsyncLoading",
+            "error": "AsyncError",
+            "delay": 200,
+            "timeout": 3000
+        }
+    }
+}

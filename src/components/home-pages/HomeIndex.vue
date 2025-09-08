@@ -1,6 +1,6 @@
 <template>
     <div class="home-index">
-        <div class="welcome-section" v-if="!inCategory">
+        <div class="welcome-section">
             <div class="welcome-card theme-card">
                 <div class="welcome-content">
                     <h2 class="gradient-text welcome-title">欢迎使用答题神器</h2>
@@ -542,6 +542,8 @@ export default {
     margin: 20px auto;
     padding: 24px;
     border-radius: var(--border-radius-lg);
+    border: none;
+    box-shadow: none;
 }
 
 .popup-header {

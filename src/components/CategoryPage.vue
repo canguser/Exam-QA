@@ -4,7 +4,7 @@
             :title="categoryTitle"
             fixed
             left-arrow
-            @click-left="$router.back()"
+            @click-left="handleBack"
             class="category-nav-bar"
         ></van-nav-bar>
         
@@ -55,63 +55,57 @@
 
         <!-- 答题选项弹窗 -->
         <van-popup v-model="isShowOption" position="bottom" round class="option-popup" @click-overlay="isShowOption = false">
-            <div class="exam-options theme-card">
+            <div class="exam-options">
                 <div class="popup-header">
-                    <h3>选择答题模式</h3>
+                    <div class="header-info">
+                        <h3>选择答题模式</h3>
+                        <p class="exam-title">{{ currentExam.title }}</p>
+                    </div>
                     <van-icon name="cross" @click="isShowOption = false" class="close-icon" />
                 </div>
-                <div class="option-buttons">
-                    <van-button 
-                        size="large" 
-                        block 
-                        round
-                        @click="doExam(optionInfo.hashCode, false, true)"
-                        class="theme-button option-button">
-                        <van-icon name="edit" />
-                        <div class="button-content">
-                            <span class="button-title">未做题</span>
-                            <span class="button-desc">只答从未做过的题目</span>
+                <div class="option-grid">
+                    <div class="option-item" 
+                         :class="{ disabled: getUndoneCounts() === 0 }"
+                         @click="getUndoneCounts() > 0 && doExam(optionInfo.hashCode, false, true)">
+                        <div class="option-icon new">
+                            <van-icon name="edit" />
                         </div>
-                    </van-button>
-                    <van-button 
-                        type="primary" 
-                        size="large" 
-                        block 
-                        round
-                        @click="doExam(optionInfo.hashCode)"
-                        class="theme-button option-button">
-                        <van-icon name="replay" />
-                        <div class="button-content">
-                            <span class="button-title">重新测试</span>
-                            <span class="button-desc">完整答题测试</span>
+                        <div class="option-info">
+                            <span class="option-title">未做题</span>
+                            <span class="option-count">{{ getUndoneCounts() }}题</span>
                         </div>
-                    </van-button>
-                    <van-button 
-                        type="warning" 
-                        size="large" 
-                        block 
-                        round
-                        @click="doExam(optionInfo.hashCode, true)"
-                        class="theme-button option-button">
-                        <van-icon name="question-o" />
-                        <div class="button-content">
-                            <span class="button-title">复习错题</span>
-                            <span class="button-desc">专门练习错题</span>
+                    </div>
+                    <div class="option-item primary" 
+                         :class="{ disabled: getTotalCounts() === 0 }"
+                         @click="getTotalCounts() > 0 && doExam(optionInfo.hashCode)">
+                        <div class="option-icon">
+                            <van-icon name="replay" />
                         </div>
-                    </van-button>
-                    <van-button 
-                        type="danger" 
-                        size="large" 
-                        block 
-                        round
-                        @click="clearHistory(optionInfo.hashCode)"
-                        class="theme-button option-button">
-                        <van-icon name="delete-o" />
-                        <div class="button-content">
-                            <span class="button-title">清空错题</span>
-                            <span class="button-desc">清除历史记录</span>
+                        <div class="option-info">
+                            <span class="option-title">重新测试</span>
+                            <span class="option-count">{{ getTotalCounts() }}题</span>
                         </div>
-                    </van-button>
+                    </div>
+                    <div class="option-item warning" 
+                         :class="{ disabled: getErrorCounts() === 0 }"
+                         @click="getErrorCounts() > 0 && doExam(optionInfo.hashCode, true)">
+                        <div class="option-icon">
+                            <van-icon name="question-o" />
+                        </div>
+                        <div class="option-info">
+                            <span class="option-title">复习错题</span>
+                            <span class="option-count">{{ getErrorCounts() }}题</span>
+                        </div>
+                    </div>
+                    <div class="option-item danger" @click="clearHistory(optionInfo.hashCode)">
+                        <div class="option-icon">
+                            <van-icon name="delete-o" />
+                        </div>
+                        <div class="option-info">
+                            <span class="option-title">清空记录</span>
+                            <span class="option-count">重置</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </van-popup>
@@ -145,7 +139,9 @@ export default {
             isShowOption: false,
             optionInfo: {
                 hashCode: ''
-            }
+            },
+            currentExam: {},
+            historyRecords: []
         }
     },
     computed: {
@@ -157,6 +153,16 @@ export default {
         }
     },
     methods: {
+        // 处理返回操作
+        handleBack() {
+            // 使用全局返回管理器
+            if (window.GlobalBackManager) {
+                window.GlobalBackManager.goBack();
+            } else {
+                // 降级处理：如果全局返回管理器不存在，使用原有逻辑
+                this.$router.back();
+            }
+        },
         async loadCategoryExams() {
             const category = this.categoryName;
             
@@ -194,13 +200,46 @@ export default {
             }
         },
         
-        showOption(exam) {
+        async showOption(exam) {
             if (exam.hasHistoryError) {
                 this.optionInfo.hashCode = exam.hashCode;
+                this.currentExam = exam;
+                
+                // 加载历史记录用于计算题目数量
+                try {
+                    const records = await historyRecordDao.queryMany(exam.questions || []);
+                    this.historyRecords = records;
+                } catch (error) {
+                    console.error('加载历史记录失败:', error);
+                    this.historyRecords = [];
+                }
+                
                 this.isShowOption = true;
             } else {
                 this.doExam(exam.hashCode);
             }
+        },
+        
+        // 获取总题目数量
+        getTotalCounts() {
+            return this.currentExam.questions ? this.currentExam.questions.length : 0;
+        },
+        
+        // 获取错题数量
+        getErrorCounts() {
+            if (!this.currentExam.questions || !this.historyRecords.length) return 0;
+            return this.historyRecords.filter(record => record.errorTimes > 0).length;
+        },
+        
+        // 获取未做题数量
+        getUndoneCounts() {
+            if (!this.currentExam.questions || !this.historyRecords.length) {
+                return this.getTotalCounts();
+            }
+            const doneQuestions = this.historyRecords.filter(record => 
+                (record.errorTimes || 0) + (record.rightTimes || 0) > 0
+            ).length;
+            return this.getTotalCounts() - doneQuestions;
         },
         
         doExam(hashCode, isReviewError = false, neverDo = false) {
@@ -268,7 +307,7 @@ export default {
 }
 
 .category-container {
-    padding: 20px 16px;
+    padding: 66px 16px 20px 16px; /* 46px (导航栏) + 20px (顶部间距) */
     animation: fadeIn 0.6s ease-out;
 }
 
@@ -396,26 +435,34 @@ export default {
 
 .exam-options {
     width: 90vw;
-    max-width: 400px;
-    margin: 20px auto;
-    padding: 24px;
+    max-width: 380px;
+    margin: 16px auto;
+    padding: 20px;
     border-radius: var(--border-radius-lg);
+    background: var(--bg-card);
 }
 
 .popup-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-    padding-bottom: 16px;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
     border-bottom: 1px solid var(--border-light);
 }
 
-.popup-header h3 {
-    margin: 0;
+.header-info h3 {
+    margin: 0 0 4px 0;
     font-size: 18px;
     font-weight: 600;
     color: var(--text-primary);
+}
+
+.exam-title {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: normal;
 }
 
 .close-icon {
@@ -432,47 +479,161 @@ export default {
     color: var(--text-secondary);
 }
 
-.option-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.option-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
 }
 
-.option-button {
+.option-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 12px;
+    border-radius: var(--border-radius-md);
+    background: var(--bg-secondary);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: center;
+    min-height: 80px;
+    justify-content: center;
+}
+
+.option-item:active {
+    transform: scale(0.95);
+}
+
+.option-item.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.option-item.disabled .option-icon {
+    background: var(--text-light);
+}
+
+.option-item.disabled .option-title,
+.option-item.disabled .option-count {
+    color: var(--text-light);
+}
+
+.option-item.primary {
+    background: var(--bg-overlay);
+    border-color: var(--primary-color);
+}
+
+.option-item.warning {
+    background: rgba(255, 152, 0, 0.1);
+    border-color: var(--warning-color);
+}
+
+.option-item.danger {
+    background: rgba(244, 67, 54, 0.1);
+    border-color: var(--error-color);
+}
+
+.option-item.new {
+    background: rgba(76, 175, 80, 0.1);
+    border-color: var(--success-color);
+}
+
+.option-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
     display: flex;
     align-items: center;
-    padding: 16px !important;
-    height: auto !important;
-    box-shadow: var(--shadow-sm);
+    justify-content: center;
+    margin-bottom: 8px;
+    background: var(--primary-color);
+    color: var(--text-white);
 }
 
-.option-button .van-icon {
-    margin-right: 12px;
-    font-size: 20px;
+.option-item.warning .option-icon {
+    background: var(--warning-color);
 }
 
-.button-content {
+.option-item.danger .option-icon {
+    background: var(--error-color);
+}
+
+.option-item.new .option-icon {
+    background: var(--success-color);
+}
+
+.option-icon .van-icon {
+    font-size: 16px;
+}
+
+.option-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
+    align-items: center;
 }
 
-.button-title {
+.option-title {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 2px;
     line-height: 1.2;
 }
 
-.button-desc {
+.option-count {
     font-size: 12px;
-    opacity: 0.8;
-    margin-top: 2px;
-    line-height: 1.2;
+    color: var(--text-secondary);
+    font-weight: 500;
 }
 
-.option-button:active {
-    transform: scale(0.98);
+/* 移动端优化 */
+@media (max-width: 480px) {
+    .exam-options {
+        width: 95vw;
+        margin: 12px auto;
+        padding: 16px;
+    }
+    
+    .popup-header {
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+    
+    .header-info h3 {
+        font-size: 16px;
+    }
+    
+    .exam-title {
+        font-size: 13px;
+    }
+    
+    .option-grid {
+        gap: 8px;
+    }
+    
+    .option-item {
+        padding: 12px 8px;
+        min-height: 70px;
+    }
+    
+    .option-icon {
+        width: 28px;
+        height: 28px;
+        margin-bottom: 6px;
+    }
+    
+    .option-icon .van-icon {
+        font-size: 14px;
+    }
+    
+    .option-title {
+        font-size: 13px;
+    }
+    
+    .option-count {
+        font-size: 11px;
+    }
 }
 
 /* 过渡动画 */

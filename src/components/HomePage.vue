@@ -54,6 +54,7 @@
 
 .page-container {
     padding: 20px;
+    padding-top: 66px; /* 46px (导航栏) + 20px (内容间距) */
     padding-bottom: 80px;
     min-height: calc(100vh - 140px);
 }
