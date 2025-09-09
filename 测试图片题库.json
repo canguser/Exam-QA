@@ -1,0 +1,121 @@
+{
+  "title": "图片功能测试题库",
+  "category": "TEST-IMG",
+  "questions": [
+    {
+      "describe": "<p>请根据下图所示的前端架构图，选择正确的描述：</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"前端架构图\" style=\"max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px;\"></p><p>该架构图展示了现代前端应用的层次结构。</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>用户界面层直接与数据库交互</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>业务逻辑层负责处理用户交互和数据处理</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>数据访问层可以绕过业务逻辑层</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>所有层之间都可以直接通信</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>在现代前端架构中，各层职责明确：</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"层次分离示意图\" style=\"max-width: 100%; height: auto; margin: 10px 0; border-radius: 4px;\"></p><p>业务逻辑层是核心，负责处理用户交互、数据验证和业务规则。</p>",
+      "hashCode": "TEST001"
+    },
+    {
+      "describe": "<p>观察以下Vue组件生命周期图：</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"Vue生命周期图\" style=\"max-width: 100%; height: auto; border: 2px solid #dc3545; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);\"></p><p>在哪个阶段可以访问DOM元素？</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>beforeCreate 阶段</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"beforeCreate阶段\" style=\"width: 150px; height: auto; border-radius: 4px;\"></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>created 阶段</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"created阶段\" style=\"width: 150px; height: auto; border-radius: 4px;\"></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>mounted 阶段</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"mounted阶段\" style=\"width: 150px; height: auto; border-radius: 4px;\"></p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>beforeMount 阶段</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"beforeMount阶段\" style=\"width: 150px; height: auto; border-radius: 4px;\"></p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>在Vue生命周期中，只有在mounted阶段，组件的DOM元素才完全渲染完成并挂载到页面上。</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"DOM准备完成\" style=\"max-width: 100%; height: auto; margin: 15px 0; border-radius: 8px;\"></p><p>在此阶段可以安全地访问和操作DOM元素，执行需要DOM的操作如获取元素尺寸、绑定事件等。</p>",
+      "hashCode": "TEST002"
+    },
+    {
+      "describe": "<p>以下代码输出什么结果？</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"JavaScript代码示例\" style=\"max-width: 100%; height: auto; font-family: monospace; border: 1px solid #343a40; border-radius: 6px;\"></p><pre style=\"background: #f8f9fa; padding: 15px; border-radius: 4px; overflow-x: auto;\"><code>console.log(typeof null);\nconsole.log(typeof undefined);\nconsole.log(typeof []);\nconsole.log(typeof {});</code></pre>",
+      "answerOptions": [
+        {
+          "describe": "<p>\"null\", \"undefined\", \"array\", \"object\"</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>\"object\", \"undefined\", \"object\", \"object\"</p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>\"null\", \"undefined\", \"object\", \"object\"</p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>\"object\", \"undefined\", \"array\", \"object\"</p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>JavaScript中typeof操作符的行为有一些特殊情况：</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"typeof结果说明\" style=\"max-width: 100%; height: auto; margin: 10px 0; border-radius: 6px;\"></p><ul><li><code>typeof null</code> 返回 \"object\"（这是一个著名的JavaScript bug）</li><li><code>typeof undefined</code> 返回 \"undefined\"</li><li><code>typeof []</code> 返回 \"object\"（数组是对象的子类型）</li><li><code>typeof {}</code> 返回 \"object\"</li></ul>",
+      "hashCode": "TEST003"
+    },
+    {
+      "describe": "<p>根据下面的CSS Grid布局示意图，选择正确的grid-template-areas配置：</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"CSS Grid布局示意图\" style=\"max-width: 100%; height: auto; border: 2px solid #6f42c1; border-radius: 8px;\"></p><p>布局要求：头部占满宽度，中间分为左侧边栏和主内容，底部占满宽度。</p>",
+      "answerOptions": [
+        {
+          "describe": "<pre style=\"background: #f8f9fa; padding: 10px; border-radius: 4px;\">\"header header\"\n\"sidebar main\"\n\"footer footer\"</pre>",
+          "isRight": true
+        },
+        {
+          "describe": "<pre style=\"background: #f8f9fa; padding: 10px; border-radius: 4px;\">\"header sidebar\"\n\"main main\"\n\"footer footer\"</pre>",
+          "isRight": false
+        },
+        {
+          "describe": "<pre style=\"background: #f8f9fa; padding: 10px; border-radius: 4px;\">\"header\"\n\"sidebar main\"\n\"footer\"</pre>",
+          "isRight": false
+        },
+        {
+          "describe": "<pre style=\"background: #f8f9fa; padding: 10px; border-radius: 4px;\">\"header header header\"\n\"sidebar main main\"\n\"footer footer footer\"</pre>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>CSS Grid的grid-template-areas属性允许我们用命名区域来定义布局：</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"Grid区域说明\" style=\"max-width: 100%; height: auto; margin: 15px 0; border-radius: 6px;\"></p><p>正确答案中：<br>- \"header header\" 表示头部占据两列<br>- \"sidebar main\" 表示中间行分为侧边栏和主内容<br>- \"footer footer\" 表示底部占据两列</p>",
+      "hashCode": "TEST004"
+    },
+    {
+      "describe": "<p>以下是一个React组件的性能优化对比图：</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"React性能对比图\" style=\"max-width: 100%; height: auto; border: 1px solid #e83e8c; border-radius: 10px; box-shadow: 0 6px 12px rgba(0,0,0,0.15);\"></p><p>哪种优化方法最有效？</p>",
+      "answerOptions": [
+        {
+          "describe": "<p>使用React.memo进行浅比较优化</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"React.memo示意\" style=\"width: 140px; height: auto; margin: 5px 0; border-radius: 4px;\"></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>使用useMemo缓存计算结果</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"useMemo示意\" style=\"width: 140px; height: auto; margin: 5px 0; border-radius: 4px;\"></p>",
+          "isRight": true
+        },
+        {
+          "describe": "<p>使用useCallback缓存函数</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"useCallback示意\" style=\"width: 140px; height: auto; margin: 5px 0; border-radius: 4px;\"></p>",
+          "isRight": false
+        },
+        {
+          "describe": "<p>减少state更新频率</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"状态更新示意\" style=\"width: 140px; height: auto; margin: 5px 0; border-radius: 4px;\"></p>",
+          "isRight": false
+        }
+      ],
+      "analysis": "<p>React性能优化的效果取决于具体场景：</p><p><img src=\"https://palerock.cn/file/img/AppCoins.jpg\" alt=\"性能优化指南\" style=\"max-width: 100%; height: auto; margin: 10px 0; border-radius: 8px;\"></p><p>在这个案例中，useMemo用于缓存复杂计算结果最有效，因为：<br>1. 避免了每次渲染时的重复计算<br>2. 减少了不必要的子组件渲染<br>3. 对性能提升最为明显</p>",
+      "hashCode": "TEST005"
+    }
+  ]
+}

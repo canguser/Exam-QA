@@ -1,0 +1,3295 @@
+{
+  "title": "Salesforce MuleSoft Developer I 认证考试题库",
+  "total_questions": 235,
+  "questions": [
+    {
+      "id": 1,
+      "question": "Refer to the exhibits. {img0} The mule application implements a REST API that accepts GET request from two URL's which are as follows 1) http://acme.com/order/status 2) http://acme.com/customer/status What path value should be set in HTTP listener configuration so that requests can be accepted for both these URL's using a single HTTP listener event source?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "*[order,customer]/status",
+        "B": "?[order,customer]/status", 
+        "C": "*/status",
+        "D": "*status"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is */status as it is the correct way to use wildcards while configuring path value in HTTP listener",
+      "images": ["{img0}"]
+    },
+    {
+      "id": 2,
+      "question": "What is the minimum Cloudhub worker size that can be specified while deploying mule application?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "0.2 vCores",
+        "B": "0.5 vCores",
+        "C": "1.0 vCores",
+        "D": "0.1 vCores"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is 0.1 vCores. MuleSoft Doc Ref : https://docs.mulesoft.com/runtime-manager/cloudhub-architecture#cloudhub-workers CloudHub Workers. Workers are dedicated instances of Mule runtime engine that run your integration applications on CloudHub. The memory capacity and processing power of a worker depends on how you configure it at the application level. Worker sizes have different compute, memory, and storage capacities. You can scale workers vertically by selecting one of the available worker sizes: Table Description automatically generated",
+      "images": ["{img1}", "{img2}"]
+    },
+    {
+      "id": 3,
+      "question": "Refer to the exhibit. The main flow contains an HTTP Request in the middle of the flow. The HTTP Listeners and HTTP request use default configurations. What values are accessible to the Logger at the end of the flow after a web client submit request to http://local:801/order?color=red? {img3}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "payload",
+        "B": "payload quantity var",
+        "C": "payload color query param",
+        "D": "payload quantity var color query param"
+      },
+      "correct_answer": "B",
+      "explanation": "In this case as outbound call is made using HTTP: POST /child , all attributes will be replaced by this invocation. Hence query parameter will not be accessible at logger.",
+      "images": ["{img3}"]
+    },
+    {
+      "id": 4,
+      "question": "Refer to the exhibits. In the color flow , both the variable named color and payload are set to \"red\". An HTTP POST request is then sent to the decideColor flow's HTTP Listener. What is the payload value at the Logger component after the HTTP request completes? {img4} {img5} {img6} {img7} {img8} {img9} {img10}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "white",
+        "B": "red",
+        "C": "blue",
+        "D": "Error message"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": ["{img4}", "{img5}", "{img6}", "{img7}", "{img8}", "{img9}", "{img10}"]
+    },
+    {
+      "id": 5,
+      "question": "Refer to the exhibit. {img11} What should be changed to fix the 415 error?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "set the response Content-Type header to text/plain",
+        "B": "set the response Content-Type header to application/json",
+        "C": "Set the request Content-Type header to application/json",
+        "D": "set the request Content-Type header to text/plain"
+      },
+      "correct_answer": "C",
+      "explanation": "The HTTP 415 Unsupported Media Type client error response code indicates that the server refuses to accept the request because the payload format is in an unsupported format. The format problem might be due to the request's indicated Content-Type or Content-Encoding , or as a result of inspecting the data directly. In this case as per RAML specification data is expected in application/json and in request Content-Type is set as \"text/plain\" which is incorrect. Hence solution is set the request Content-Type header to application/json. https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/415",
+      "images": ["{img11}", "{img12}", "{img13}"]
+    },
+    {
+      "id": 6,
+      "question": "Refer to the exhibits. The main flow contains an HTTP Request. The HTTP Listeners and HTTP Request use default configurations. What values are accessible in the child flow after a web client submits a request to http://localhost:8081/order?color=red? {img14}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "payload",
+        "B": "payload quantity var",
+        "C": "payload color query param",
+        "D": "payload quantity var color query param"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img14}"]
+    },
+    {
+      "id": 7,
+      "question": "Refer to the exhibits. {img15} {img16} A web client sends a POST request to the HTTP Listener with the payload \"Hello-\". What response is returned to the web client?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Hello- HTTP-JMS2-Three",
+        "B": "HTTP-JMS2-Three",
+        "C": "Hello-JMS1-HTTP-JMS2 -Three",
+        "D": "Hello-HTTP-Three"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img15}", "{img16}"]
+    },
+    {
+      "id": 8,
+      "question": "Refer to the exhibit. APIkit is used to generate flow components for the RAML specification. How many apikit:router XML elements are generated to handle requests to every endpoint defined in the RAML specification?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "2",
+        "D": "1"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 9,
+      "question": "What is output of Dataweave flatten function?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Object",
+        "B": "Map",
+        "C": "Array",
+        "D": "LinkedHashMap"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is Array. Flatten turns a set of subarrays (such as [ [1,2,3], [4,5,[6]], [], [null] ]) into a single, flattened array (such as [ 1, 2, 3, 4, 5, [6], null ]). This example defines three arrays of numbers, creates another array containing those three arrays, and then uses the flatten function to convert the array of arrays into a single array with all values. Source: %dw 2.0 output application/json var array1 = [1,2,3] var array2 = [4,5,6] var array3 = [7,8,9] var arrayOfArrays = [array1, array2, array3] --- flatten(arrayOfArrays) Output: [ 1,2,3,4,5,6,7,8,9 ]",
+      "images": ["{img17}", "{img18}"]
+    },
+    {
+      "id": 10,
+      "question": "Refer to the exhibit. What is the correct way to create a user? A) B) {img19} {img20} C) D) {img21}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img19}", "{img20}", "{img21}"]
+    },
+    {
+      "id": 11,
+      "question": "Refer to the exhibits. {img22} {img23} Set payload transformer is set the firstName and lastName of the customer as shown in below images. What is the correct Dataweave expression which can be added in message attribute of a Logger activity to access firstName (which in this case is Madhav) from the incoming event? {img24}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "firstName",
+        "B": "customer.firstName",
+        "C": "vars.\"customer.firstName\"",
+        "D": "vars.\"customer\".\"firstName\""
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is vars.\"customer\".\"firstName\". Please note that you can also access firstName using this syntax vars.customer.firstName. Mule Ref Doc : Variables in Mule Apps | MuleSoft Documentation",
+      "images": ["{img22}", "{img23}", "{img24}"]
+    },
+    {
+      "id": 12,
+      "question": "Refer to the exhibits. {img25} {img26} {img27} The Batch Job scope contains two Batch Steps scopes with different accept expression. The input payload is passed to the Batch Job scope. After the entire payload is processed by the batch job scope , what messages have been logged by the Logger component?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "1.{amount=140} 2.{amount=102} 3.{step2amount=100}",
+        "B": "1.{amount=140} 2.{amount=102} 3.{step2amount=100} 4.{step2amount=40}",
+        "C": "1.{amount=140} 2.{amount=102} 3.{step2amount=100} 4.{step2amount=140}",
+        "D": "1.{amount=140} 2.{amount=102} 3.{step2amount=100} 4.{step2amount=140} 5.{step2amount=102}"
+      },
+      "correct_answer": "D",
+      "explanation": "This question validates you knowledge on Batch Processing. Before we analyze the question , lets revise a bit about batch filters. Batch Filters: You can apply one or more filters as attributes to any number of batch steps.Imagine a batch job whose first batch step checks if a Salesforce contact exists for a record, and a second batch step that updates each existing Salesforce contact with new information. You can apply a filter to the second batch step to ensure it only processes records that didn't fail during the first batch step.By having batch steps accept only some records for processing, you streamline the batch job so the Mule runtime engine can focus only on the relevant data for a particular batch step. A batch step uses two attributes to filter records: acceptExpression acceptPolicy Each batch step can accept one acceptExpression and one acceptPolicy attributes to filter records. Use the acceptExpression attribute to process only records that evaluate to true; if the record evaluates to false, the batch step skips the record and sends it to the next one. In other words, the records with an accept expression that resolves to false are the ones that Mule filters out. The example below filters out all records where the age is less than 21; the batch step does not process those records. <batch:job jobName=\"batchJob\"> <batch:process-records > <batch:step name=\"adultsOnlyStep\" acceptExpression=\"#[payload.age > 21]\"> ... </batch:step> </batch:process-records> </batch:job> Mule Ref Doc : Refining Batch Steps Processing | MuleSoft Documentation As we are clear with above concepts , now lets understand this solution step by step. 1. Batch Step (Less than 50) Accept expression for this batch step is less than 50. Hence elements which will go in this batch step are amount value 40 and 2. Hence output of logger in first batch step is {amount=140} {amount=102} 2. Batch Step (Greater than 20) Accept condition for this batch step is greater than 20. Note that input amount values for this batch step are 100 , 140 and 102 (last two values have been updated in batch step less than 50) As all values satisfy this condition out put of second logger is {step2amount=100} {step2amount=140} {step2amount=102}",
+      "images": ["{img25}", "{img26}", "{img27}", "{img28}", "{img29}", "{img30}", "{img31}", "{img32}", "{img33}", "{img34}", "{img35}", "{img36}", "{img37}", "{img38}", "{img39}", "{img40}", "{img41}"]
+    },
+    {
+      "id": 13,
+      "question": "A Mule flow has three Set Variable transformers. What global data structure can be used to access the variables? {img42}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Mule event attributes",
+        "B": "Mule event message",
+        "C": "Mule application properties",
+        "D": "Mule event"
+      },
+      "correct_answer": "D",
+      "explanation": "Mule event is correct answer. Mule event has two parts which are as follows: 1. Message (which contains payload and attributes like headers and query/uri parameters) 2. Variables",
+      "images": ["{img42}"]
+    },
+    {
+      "id": 14,
+      "question": "According to Mulesoft, how are Modern APIs treated as?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Products",
+        "B": "SOAP API's",
+        "C": "Rest API's",
+        "D": "Code"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is Products. Modern API has three features 1) Treated as products for easy consumption 2) Discoverable and accessible through self-service 3) Easily managed for security , scalability and performance",
+      "images": []
+    },
+    {
+      "id": 15,
+      "question": "What is the output type of the DataWeave map operator?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "String",
+        "B": "Array",
+        "C": "Map",
+        "D": "Object"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 16,
+      "question": "What does C4E stands for in MuleSoft recommended IT operating model?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Centre for Empowerment",
+        "B": "Centre for Engagement",
+        "C": "Centre for Enablement",
+        "D": "Centre for Excellence"
+      },
+      "correct_answer": "C",
+      "explanation": "Centre for Enablement (C4E) is an IT operating model that enables an enterprise to build reusable assets, accumulate API's, leverage best practices and knowledge to enable self service and efficient delivery in the organization and implement new solutions faster",
+      "images": []
+    },
+    {
+      "id": 17,
+      "question": "A Mule application contains two HTTP Listeners, each configured for different API endpoints: http://acme.com/apis/orders and http://acme.com/apis/customers. What base path value should be set in an HTTP Listener config element so that it can be used to configure both HTTP Listeners? {img43}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "/apis/?",
+        "B": "/apis/",
+        "C": "/apis/orders|customers",
+        "D": "/apis/*"
+      },
+      "correct_answer": "D",
+      "explanation": "Option D is the correct answer as /apis/* accepts everything starting with /apis/",
+      "images": ["{img43}"]
+    },
+    {
+      "id": 18,
+      "question": "Refer to the exhibit. What is the correct syntax to add a customer ID as a URI parameter in an HTTP Listener's path attribute?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "(customerlD)",
+        "B": "{customerlD}",
+        "C": "#[customerlD]",
+        "D": "${ customerID}"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img44}", "{img45}", "{img46}", "{img47}", "{img48}", "{img49}", "{img50}", "{img51}", "{img52}", "{img53}", "{img54}", "{img55}", "{img56}"]
+    },
+    {
+      "id": 19,
+      "question": "What is the trait name you would use for specifying client credentials in RAML?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "headers",
+        "B": "client-id",
+        "C": "client-id-required",
+        "D": "cannot be specified in RAML"
+      },
+      "correct_answer": "C",
+      "explanation": "client-id-required enforces clients to add client_id and client_secret. Please refer to below steps. Add a section called traits: at the root level to define query parameters: •traits: - client-id-required: queryParameters: client_id: type: string client_secret: type: string 2) Reference the trait in each of the methods to specify that each of the methods require these query parameters. After each method in the RAML file, add is: [client-id-required]. For example: /users: get: is: [client-id-required] description: Gets a list of JSONPlaceholder users.",
+      "images": []
+    },
+    {
+      "id": 20,
+      "question": "A REST connect module is generated for a RAML specification. and then the rest connect module is imported in mule application in Anypoint Studio. For each method of the RAML specification , what does the REST connect module provide?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "A scope",
+        "B": "A flow",
+        "C": "An operation",
+        "D": "An event source"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is an operation. For each method of the RAML specification , REST connect module provide an operation. Please refer to the below screenshot.",
+      "images": ["{img57}", "{img58}"]
+    },
+    {
+      "id": 21,
+      "question": "According to Semantic Versioning, which version would you change for incompatible API changes?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "No change",
+        "B": "MINOR",
+        "C": "MAJOR",
+        "D": "PATCH"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is MAJOR. MAJOR version when you make incompatible API changes, MINOR version when you add functionality in a backwards compatible manner, and PATCH version when you make backwards compatible bug fixes. For details refer to this documentation : https://semver.org/",
+      "images": ["{img59}", "{img60}"]
+    },
+    {
+      "id": 22,
+      "question": "Refer to the exhibits. A JSON payload is set in the Set Payload transformer. What is logged by the Logger?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"String\"",
+        "B": "\"Object\"",
+        "C": "\"Array\"",
+        "D": "\"JSON\""
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 23,
+      "question": "Where would you create SLA Tiers for an API?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Exchange",
+        "B": "API Manager",
+        "C": "Anypoint Studio",
+        "D": "In RAML specifications"
+      },
+      "correct_answer": "B",
+      "explanation": "MuleSoft Doc Ref : https://docs.mulesoft.com/api-manager/2.x/policy-mule3-tutorial-manage-an-api#to-add-the-tier Steps to create SLA Tier are as follows: 1. In API Manager, in API Administration, click a version. 2. Check that the API supports resource-level policies: On the API version details page, in Status, click Configure Endpoint, and check that Type is RAML. 3. Choose the SLA Tiers, and click Add SLA Tier. Set up limit on SLA tier",
+      "images": []
+    },
+    {
+      "id": 24,
+      "question": "How are multiple conditions used in a Choice router to route events?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "To route the same event to the matched route of EVERY true condition",
+        "B": "To find the FIRST true condition, then distribute the event to the ONE matched route.",
+        "C": "None of these",
+        "D": "To find the FIRST true condition, then route the same event to the matched route and ALL FOLLOWING routes"
+      },
+      "correct_answer": "B",
+      "explanation": "Choice router finds the FIRST true condition, then distribute the event to the ONE matched route. MuleSoft Doc Ref : https://docs.mulesoft.com/mule-runtime/4.1/choice-router-concept The Choice router dynamically routes messages through a flow according to a set of DataWeave expressions that evaluate message content. Each expression is associated with a different routing option. The effect is to add conditional processing to a flow, similar to an if/then/else code block in most programming languages. Only one of the routes in the Choice router executes, meaning that the first expression that evaluates to true triggers that route's execution and the others are not checked. If none of the expressions are true, then the default route executes.",
+      "images": ["{img61}", "{img62}"]
+    },
+    {
+      "id": 25,
+      "question": "Where is metadata stored in a Mule project",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Config.yaml file",
+        "B": "POM.xml file",
+        "C": "application-types.xml",
+        "D": "Global Element"
+      },
+      "correct_answer": "C",
+      "explanation": "Metadata is stored in application-types.xml file located under src/main/resources. Mule 4 applications contain an application-types.xml file, which is where metadata around your data types is stored. For example, if you create a new CSV type, that metadata will be added to this file. This new file is easy to share, commit, and merge when conflicts arise, which enables you to do more metadata-driven development. MuleSoft Doc Ref : https://docs.mulesoft.com/mule-runtime/4.3/intro-studio#metadata-storage",
+      "images": ["{img63}", "{img64}"]
+    },
+    {
+      "id": 26,
+      "question": "Refer to the exhibits. {img65} {img66} {img67} {img68} The Batch Job scope contains two Batch Step scopes with different accept expressions. The input payload is passed to the Batch Job scope. After the entire payload is processed by the Batch Job scope, what messages have been logged by the Logger components?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": ["{img65}", "{img66}", "{img67}", "{img68}", "{img69}", "{img70}"]
+    },
+    {
+      "id": 27,
+      "question": "Refer to the exhibits. The Set Payload transformer's value is set to {'year': '2020'}. What message value should be added to the Logger component to output the message 'The year is 2020', without hardcoding 2020?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "'#[The year is $(payload.year)]'",
+        "B": "'The year is #[payload.year]'",
+        "C": "'#[The year is \" + payload.year]'",
+        "D": "#[\"The year is \"++ payload.year]"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 28,
+      "question": "A flow contains an HTTP Listener as the event source. What is the DataWeave expression to log the Content-Type header using a Logger component?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "#[\"Content-Type: \" ++ attributes.headers.'content-type']",
+        "B": "#[\"Content-Type: \" + headers.'content-type']",
+        "C": "#[\"Content-Type: \" + attributes.headers.'content-type']",
+        "D": "#[\"Content-Type: \" ++ headers.'content-type']"
+      },
+      "correct_answer": "A",
+      "explanation": "Option A is the only correct choice due to two reasons. 1) Concatenation is always with ++ sign and not with + sign which makes option 2 and 3 wrong 2) headers can be accessed with attributes.headers and not with only headers which makes option 4 incorrect",
+      "images": []
+    },
+    {
+      "id": 29,
+      "question": "Refer to the exhibit. How should the WHERE clause be changed to set the city and state values from the configured input parameters? {img71} {img72} {img73} {img74} {img75}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img71}", "{img72}", "{img73}", "{img74}", "{img75}"]
+    },
+    {
+      "id": 30,
+      "question": "How can you call a subflow from Dataweave?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Not possible in Mule 4",
+        "B": "Import function",
+        "C": "Lookup function",
+        "D": "Include function"
+      },
+      "correct_answer": "A",
+      "explanation": "This is a trick question. You can call only flows from DataWeave using lookup function. Note that lookup function does not support calling subflows. A subflow needs a parent context to inherit behaviors from such as exception handling, which a flow does not need. Hence correct answer is Not possible in Mule 4",
+      "images": []
+    },
+    {
+      "id": 31,
+      "question": "Refer to the exhibits. {img76} {img77} {img78} What payload and quantity are logged at the end of the main flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "[[1,2,3,4], 14]",
+        "B": "[[order1, order2, order3, order4], 14]",
+        "C": "[[1,2,3,4], 10]",
+        "D": "[order1order2order3order4,14]"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img76}", "{img77}", "{img78}"]
+    },
+    {
+      "id": 32,
+      "question": "In the Database On Table Row operation, what does the Watermark column enable the On Table Row operation to do?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "To avoid duplicate processing of records in a database.",
+        "B": "To delete the most recent records retrieved from a database to enable database caching",
+        "C": "To enable duplicate processing of records in a database",
+        "D": "To save the most recent records retrieved from a database to enable database caching"
+      },
+      "correct_answer": "A",
+      "explanation": "The correct answer is To avoid duplicate processing of records in a database. If a watermark column is provided, the values taken from that column are used to filter the contents of the next poll, so that only rows with a greater watermark value are returned. If an ID column is provided, this component automatically verifies that the same row is not picked twice by concurrent polls. Mule doc reference : https://docs.mulesoft.com/db-connector/1.8/database-documentation#listener",
+      "images": ["{img79}", "{img80}"]
+    },
+    {
+      "id": 33,
+      "question": "Refer to the exhibits. A web client submits a request to http://localhost:8081. What is the structure of the payload at the end of the flow? {img81} {img82} {img83} {img84}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "Scatter-Gather Router: The Scatter-Gather component is a routing event processor that processes a Mule event through different parallel processing routes that contain different event processors. Each route receives a reference to the Mule event and executes a sequence of one or more event processors. Each of these routes uses a separate thread to execute the event processors, and the resulting Mule event can be either the same Mule event without modifications or a new Mule event with its own payload, attributes, and variables. The Scatter-Gather component then combines the Mule events returned by each processing route into a new Mule event that is passed to the next event processor only after every route completes successfully. The Scatter-Gather component executes each route in parallel, not sequentially. Parallel execution of routes can greatly increase the efficiency of your Mule application and may provide more information than sequential processing. Mule Ref Doc : https://docs.mulesoft.com/mule-runtime/4.3/scatter-gather-concept",
+      "images": ["{img81}", "{img82}", "{img83}", "{img84}"]
+    },
+    {
+      "id": 34,
+      "question": "Which out of below is not an asset?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Template",
+        "B": "Connector",
+        "C": "Exchange",
+        "D": "Example"
+      },
+      "correct_answer": "C",
+      "explanation": "Exchange is the odd man out here. Rest all are type of asset",
+      "images": ["{img85}", "{img86}", "{img87}"]
+    },
+    {
+      "id": 35,
+      "question": "According to MuleSoft. what is the first step to create a Modern API?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Gather a list of requirements to secure the API",
+        "B": "Create an API specification and get feedback from stakeholders",
+        "C": "Performance tune and optimize the backend systems and network",
+        "D": "Create a prototype of the API implementation"
+      },
+      "correct_answer": "B",
+      "explanation": "First step in creating Modern API is to create an API specification and get feedback from stakeholders so that any future issues can be identified at early stage thereby reducing overall delivery time",
+      "images": []
+    },
+    {
+      "id": 36,
+      "question": "What is the main purpose of flow designer in Design Center?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "To design and develop fully functional Mule applications in a hosted development environment",
+        "B": "To design API RAML files in a graphical way",
+        "C": "To design and mock Mule application templates that must be implemented using Anypoint Studio",
+        "D": "To define API lifecycle management in a graphical way"
+      },
+      "correct_answer": "A",
+      "explanation": "Its primary function is to design and develop fully functional Mule applications in a hosted development environment.",
+      "images": []
+    },
+    {
+      "id": 37,
+      "question": "Refer to the exhibits. In the choice router, the When expression for the domestic shipping route is set to \"#[payload= \"FR\"]\". What is the output of logger after the execution of choice router is completed? {img88}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"Domestic\"",
+        "B": "\"International\"",
+        "C": "\"US\"",
+        "D": "A dataweave syntax error"
+      },
+      "correct_answer": "D",
+      "explanation": "To compare, DataWeave syntax is #[payload == \"FR\"]. In this case only one = is used so it will give syntax error. Hence the correct answer is A dataweave syntax error",
+      "images": ["{img88}", "{img89}", "{img90}"]
+    },
+    {
+      "id": 38,
+      "question": "Refer to the exhibit. What expression correctly specifies input parameters to pass the city and state values to the SQL query? {img91} {img92} {img93}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "A",
+      "explanation": "MuleSoft Documentation Reference : https://docs.mulesoft.com/db-connector/1.9/database-connector-select",
+      "images": ["{img91}", "{img92}", "{img93}"]
+    },
+    {
+      "id": 39,
+      "question": "Refer to the exhibits. {img94} What is valid text to set the field in the Database connector configuration to the username value specified in the config.yaml file?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "${db.username}",
+        "B": "#[db.username]",
+        "C": "#[db:username]",
+        "D": "${db:username}"
+      },
+      "correct_answer": "A",
+      "explanation": "option A is the correct syntax to access application properties",
+      "images": ["{img94}"]
+    },
+    {
+      "id": 40,
+      "question": "Refer to the exhibits. {img95} {img96} The input array of strings is processed by the batch job that processes, filters, and aggregates the values. What is the last message logged by the Logger component after the batch job completes processing?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "[ [\"A\", \"C\", \"D\" ], [\"E\"] ]",
+        "B": "[\"E\"]",
+        "C": "[\"D\", \"E\"]",
+        "D": "[ \"A\", \"C\", \"D\", \"E\" ]"
+      },
+      "correct_answer": "B",
+      "explanation": "Batch aggregator value is 3. Hence in first time it will print [\"A\", \"C\", \"D\"] and in next iteration it will print [ \"E\" ]. Correct answer is [ \"E\" ]",
+      "images": ["{img95}", "{img96}"]
+    },
+    {
+      "id": 41,
+      "question": "There are three routes configured for Scatter-Gather and incoming event has a payload is an Array of three objects. How routing will take place in this scenario?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Incoming array objects would be split into three and each part would be sent to one route each in sequential manner",
+        "B": "Incoming array objects would be split into three and each part would be sent to one route each in parallel",
+        "C": "Entire event would be sent to each route sequentially",
+        "D": "Entire event would be sent to each route in parallel"
+      },
+      "correct_answer": "D",
+      "explanation": "Entire event would be sent to each route in parallel. Scatter-Gather works as follows: The Scatter-Gather component receives a Mule event and sends a reference of this Mule event to each processing route. Each of the processing routes starts executing in parallel. After all processors inside a route finish processing, the route returns a Mule event, which can be either the same Mule event without modifications or a new Mule event created by the processors in the route as a result of the modifications applied. After all processing routes have finished execution, the Scatter-Gather component creates a new Mule event that combines all resulting Mule events from each route, and then passes the new Mule event to the next component in the flow.",
+      "images": ["{img97}"]
+    },
+    {
+      "id": 42,
+      "question": "Refer to the exhibit. {img98} {img99} {img100} How should be the where clause written for the configured input parameters in such a way that it achieves below SQL query?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "WHERE city := ${city} AND state := ${state}",
+        "B": "WHERE city = attributes.city AND state = attributes.state",
+        "C": "WHERE city = :city AND state = :state",
+        "D": "WHERE city := city AND state := state"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct syntax to use where clause is WHERE city = :city AND state = :state. This question validates knowledge on using dynamic queries in DB select operation. Configure Dynamic Queries in the Select Operation. When you need to parameterize not only the WHERE clause but also parts of the query itself (for example, queries that compare tables that depend on a condition, or complex queries for which the project table columns need to vary), you can configure dynamic queries. In the following example, you configure a dynamic query by using a full expression with a string in which the table depends on a variable $(vars.table). Although some of the query text is dynamic (\"SELECT * FROM $(vars.table)), the WHERE clause still defines the WHERE condition using input parameters: in this case, WHERE name = :name.",
+      "images": ["{img98}", "{img99}", "{img100}", "{img101}", "{img102}", "{img103}", "{img104}", "{img105}", "{img106}", "{img107}", "{img108}", "{img109}"]
+    },
+    {
+      "id": 43,
+      "question": "Refer to the exhibit. The Batch Job processes, filters and aggregates records, What is the expected output from the Logger component? {img110}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "[10. 20, 30. 40, 50, 60]",
+        "B": "[10. 20] [30, 40] [50, 60]",
+        "C": "[20, 40, 60]",
+        "D": "[20. 40] [60]"
+      },
+      "correct_answer": "D",
+      "explanation": "Batch scope has filter criteria which says payload mod 2 = 0 which means only 2, 4 and 6 will be in batch scope. So payload for each of these will be incremented by 10. Aggregator has batch size defined as 2. So it will process in batch of two records. Hence option D is correct answer. [20,40] [60] Behavior with aggregator configured with fixed size: In this scenario, the batch step sends the processed records to an aggregator, which starts processing the records and buffering them until the configured aggregator's size is reached. After that, the aggregator sends the aggregated records to the stepping queue. The batch job builds record blocks of the configured block size and sends them to their corresponding batch step for processing. Each batch step receives one or more record blocks and starts processing them in parallel. After the batch step processes a record, the batch step sends the record to the aggregator for further processing. The aggregator continues processing records until the number of aggregated records reaches the configured aggregator's size.",
+      "images": ["{img110}", "{img111}"]
+    },
+    {
+      "id": 44,
+      "question": "Refer to the exhibits. {img112} {img113} {img114} In the Choice router, the When expression for the domesticShipping route is set to \"#[payload = 'FR']\". What is logged after the Choice router completes?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "A string with value \"FR\"",
+        "B": "A DataWeave syntax error",
+        "C": "The result of the internationalShipping flow",
+        "D": "The result of the domesticShipping flow"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img112}", "{img113}", "{img114}"]
+    },
+    {
+      "id": 45,
+      "question": "What is the output of Dataweave Map operator?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Map",
+        "B": "Object",
+        "C": "String",
+        "D": "Array"
+      },
+      "correct_answer": "D",
+      "explanation": "Returns an array that is the result of applying a transformation function (lambda) to each of the elements. MuleSoft Doc Ref : https://docs.mulesoft.com/mule-runtime/4.3/dataweave-cookbook-map The map operator is a function in Dataweave which iterates over the items in an array and outputs them into a new array. It basically accepts input as a list of items in an array and manipulates the items in the array in order to form a new array as an output.",
+      "images": ["{img115}", "{img116}", "{img117}"]
+    },
+    {
+      "id": 46,
+      "question": "Refer to the exhibit. {img118} {img119} What payload is returned from a request to http://localhost:8081/?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_answer": "C",
+      "explanation": "The flow can be described as below. 1) First HTTP POST request is made in which payload is set to 1 and it gets returned to our main flow. 2) Second call is initiated for JMS Publish Consume JMS: num1 which add 1 to the payload which makes it as 2. Note that publish consume is a synchronous operation. Hence payload is returned to main flow. 3) Third call is initiated for JMS Publish JMS: num2 which add 1 to the payload . Note that publish is asynchronous operation. Hence payload is never returned to main flow. So payload in main flow is still 2. 4) Finally Set Payload increments payload by 1 making payload as 3 which is returned by the flow. Hence option 3 is the correct answer.",
+      "images": ["{img118}", "{img119}"]
+    },
+    {
+      "id": 47,
+      "question": "Refer to the exhibits. The main flow contains an HTTP Request in the middle of the flow. The HTTP Listeners and HTTP Request use default configurations. A web client submits a request to the main flow's HTTP Listener that includes query parameters for the pedigree of the piano. {img120} What values are accessible to the Logger component at the end of the main flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "payload",
+        "B": "payload pedigree query params",
+        "C": "payload producer var",
+        "D": "payload pedigree query params producer var"
+      },
+      "correct_answer": "C",
+      "explanation": "In this case as outbound call is made using HTTP: POST /child , all attributes will be replaced by this invocation. Hence query parameter will not be accessible at logger. Hence correct answer is option C",
+      "images": ["{img120}"]
+    },
+    {
+      "id": 48,
+      "question": "Refer to the exhibits. {img121} {img122} The Mule application does NOT define any global error handlers. The Validation component in the private flow throws an error What response message is returned to a web client request to the main flow's HTTP Listener? {img123}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"Child error\"",
+        "B": "\"Parent error\"",
+        "C": "\"Validation Error\"",
+        "D": "\"Parent completed\""
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": ["{img121}", "{img122}", "{img123}"]
+    },
+    {
+      "id": 49,
+      "question": "Refer to the exhibits. {img124} {img125} All three of the conditions for the Choice router are true. What messages are written in the application log?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Route1",
+        "B": "Route2",
+        "C": "Route1,Route2",
+        "D": "Route1,Route2,Default"
+      },
+      "correct_answer": "A",
+      "explanation": "Only one of the routes in the Choice router executes, meaning that the first expression that evaluates to true triggers that route1 execution and the others are not checked. If none of the expressions are true, then the default route executes. Hence only Route1 will be executed as it is the first expression. hence output of logger is Route1. MuleSoft Doc Ref : https://docs.mulesoft.com/mule-runtime/4.3/choice-router-concept The Choice router dynamically routes messages through a flow according to a set of DataWeave expressions that evaluate message content. Each expression is associated with a different routing option. The effect is to add conditional processing to a flow, similar to an if/then/else code block in most programming languages. Only one of the routes in the Choice router executes, meaning that the first expression that evaluates to true triggers that route's execution and the others are not checked. If none of the expressions are true, then the default route executes.",
+      "images": ["{img124}", "{img125}", "{img126}"]
+    },
+    {
+      "id": 50,
+      "question": "Refer to the exhibits. {img127} The Set Payload transformer In the addItem subflow uses DataWeave to create an order object. What is the correct DataWeave code for the Set Payload transformer in the createOrder flow to use the addItem subflow to add a router cable with the price of 100 to the order?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "addItem( { payload: { price: \"100\", item: \"router\", itemType: \"cable\" } > )",
+        "B": "lookup( \"addItem\", { payload: { price: \"100\", item: \"router\", itemType: \"cable\" } } )",
+        "C": "addItem( { price: \"100\", item: \"router\", itemType: \"cable\" })",
+        "D": "lookup( \"addItem\", { price: \"100\", item: \"router\", itemType: \"cable\" } )"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img127}"]
+    },
+    {
+      "id": 51,
+      "question": "Refer to the exhibit. {img128} The Database Select operation returns five rows from a database. What is logged by the Logger component?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"Array\"",
+        "B": "\"Object\"",
+        "C": "\"LinkedHashMap\"",
+        "D": "\"CaseInsensitiveHashMap\""
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img128}"]
+    },
+    {
+      "id": 52,
+      "question": "Refer to the exhibit. This RAML fragment defines a Book data type that is used in a RAML API specification. {img129} {img130} {img131} {img132} An API implementation is created for this RAML API specification. What is valid JSON input for a request from a web client to an implementation of this RAML API specification?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img129}", "{img130}", "{img131}", "{img132}", "{img133}"]
+    },
+    {
+      "id": 53,
+      "question": "An app team is developing a mobile banking app. It took them two months to create their own APIs to access transaction information from a central database. The app team later found out that another team had already built an API that accesses the transaction information they need. According to MuleSoft, what organization structure could have saved the app team two months of development time?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Center of Excellence",
+        "B": "Center for Enablement",
+        "C": "MuleSoft Support Center",
+        "D": "Central API Review Board"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 54,
+      "question": "A web client submits a request to http://localhost:8081?firstName=john. What is the correct DataWeave expression to access the firstName parameter?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "#[attributes.queryParams.firstName]",
+        "B": "#[message.queryParams.firstName]",
+        "C": "#[message.inboundProperties.'http.query.params'.firstName]",
+        "D": "#[attributes.'http.query.params'.firstName]"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 55,
+      "question": "Which file is used to define the interface contract to invoke a web service implemented as a SOAP service",
+      "question_type": "single_choice",
+      "options": {
+        "A": "RAML",
+        "B": "WSDL",
+        "C": "JSON",
+        "D": "OAS"
+      },
+      "correct_answer": "B",
+      "explanation": "WSDL is used to define the contract in case of SOAP . RAML/OAS is used to REST services",
+      "images": []
+    },
+    {
+      "id": 56,
+      "question": "Which one of them is NOT a flow in Mule?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "sync flow",
+        "B": "subflow",
+        "C": "async sub flow",
+        "D": "async flow"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is async sub flow. Rest are valid flows in Mule. Sub flow is always synchronous.",
+      "images": []
+    },
+    {
+      "id": 57,
+      "question": "Mule application contains ActiveMQ JMS dependency. Mule application was compiled and run successfully in Anypoint Studio. The mule application must now be exported from Anypoint Studio and shared with other developer. What export options should be selected to create the smallest JAR file that can be imported into other developer's Anypoint Studio and run successfully?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Select only Attach Project Sources only",
+        "B": "Select both Attach Project Sources and Include project modules and dependencies option",
+        "C": "Select the Include project modules and dependencies option only",
+        "D": "De-select both Attach Project Sources and Include project modules and dependencies option"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is Select only Attach Project Sources only. You must keep the Attach Project Sources option selected to be able to import the packaged JAR file back into a Studio workspace. Deselect the Include project modules and dependencies option. This option skips bundling the actual modules and external dependencies required to run the Mule application in a Mule runtime engine, creating a lightweight JAR file package that does not include any dependencies specified in the Mule application's pom.xml file. The generated JAR file is not a functional deployable archive and cannot be deployed to a Mule runtime engine, but instead offers a way to archive only the source files that make up the Mule application. This is the same as using the -lightWeightPackage flag when packaging using the Mule Maven Plugin and is useful if you want to distribute your project to other Studio installations because it only keeps a reference to all its dependencies. When you import a lightweight package into Studio, all your dependencies are automatically downloaded. MuleSoft Doc Ref : https://docs.mulesoft.com/studio/7.8/import-export-packages",
+      "images": []
+    },
+    {
+      "id": 58,
+      "question": "What asset cannot be created using Design Center?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Mule Applications",
+        "B": "API fragments",
+        "C": "API specifications",
+        "D": "API portals"
+      },
+      "correct_answer": "D",
+      "explanation": "API portal are created by API Exchange and cannot be created by Design Center",
+      "images": []
+    },
+    {
+      "id": 59,
+      "question": "Refer to the exhibit. {img134} A Mule event is composed of a hierarchy of objects. Where in the hierarchy are variables stored?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Mule event",
+        "B": "Mule message payload",
+        "C": "Mule message",
+        "D": "Mule message attributes"
+      },
+      "correct_answer": "A",
+      "explanation": "Variables are stored under Mule event. Please refer to below image for the hierarchy.",
+      "images": ["{img134}", "{img135}", "{img136}"]
+    },
+    {
+      "id": 60,
+      "question": "Refer to the exhibit. {img137} {img138} {img139} What Database expression transforms the input to the output? {img140} {img141}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "This kind of questions are best solved with filtering technique. Key thing to note here is XML attributes are always access by @ notation. So in this example orderId can be accessed as @OrderId which makes option 3 and option 4 false. Now difference in option 1 and option 2 is in mapping of lineItemPrice. Correct syntax to format a String in Number is value.price as Number. Hence option 2 is correct",
+      "images": ["{img137}", "{img138}", "{img139}", "{img140}", "{img141}"]
+    },
+    {
+      "id": 61,
+      "question": "What module and operation will throw an error if a Mule events payload is not number ?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Filter modules Is Number operation",
+        "B": "Validation modules Is Number operation",
+        "C": "Validation modules Is not Number operation",
+        "D": "None of these"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is Validation modules Is Number operation. Mule 4 does not use filters anymore. The functionality provided by filters in Mule 3 can be achieved by using the Validation Module.",
+      "images": []
+    },
+    {
+      "id": 62,
+      "question": "Refer to the exhibit. What is the output of logger component? {img142} {img143}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "String",
+        "B": "Object",
+        "C": "Array",
+        "D": "Map"
+      },
+      "correct_answer": "C",
+      "explanation": "Database always return rows as an array. Array is the correct answer",
+      "images": ["{img142}", "{img143}", "{img144}"]
+    },
+    {
+      "id": 63,
+      "question": "Refer to the exhibits. A Mule application has an HTTP Request that is configured with hardcoded values. To change this, the Mule application is configured to use a properties file named config.yaml. what valid expression can the HTTP Request host value be set to so that it is no longer hardcoded?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "${training.host}",
+        "B": "${training:host}",
+        "C": "#[training:host]",
+        "D": "#[training.host]"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is ${training.host}. How to Configure Properties to Mule 4.X Platform? 1. Go to /src/main/resources project directory. 2. Create a configuration file with the name configuration.yaml inside the newly created config folder. 3. Go To Project > Global Element > Create > General >select the configuration.yaml file create in step-2) 4. To verify develop a simple flow with HTTP listener which has above entries. Put the logger that prints the values on console. Additional info: Similarly, when you want to access this port in DataWeave you need to use p function",
+      "images": ["{img145}", "{img146}", "{img147}", "{img148}"]
+    },
+    {
+      "id": 64,
+      "question": "Refer to the exhibits. {img149} The input array of strings is processed by the batch job that processes, filters, and aggregates the values. What is the last message logged by the Logger component after the batch job completes processing?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img149}", "{img150}", "{img151}", "{img152}", "{img153}"]
+    },
+    {
+      "id": 65,
+      "question": "A RAML example fragment named StudentExample.raml is placed in the examples folder in an API specification project. What is the correct syntax to reference the fragment?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "examples: !include StudentExample.raml",
+        "B": "examples: #import StudentExample.raml",
+        "C": "examples: !include examples/StudentExample.raml",
+        "D": "examples: #import examples/StudentExample.raml"
+      },
+      "correct_answer": "C",
+      "explanation": "To include property. To keep the API definition concise, you can include external content, such as documentation, schemas, and frequently used patterns outside the definition itself. The parser interprets !include as if the content of the externally-hosted file or a URL were declared in-line. To use the fragments in RAML you have to include the exact path(copy the path) of that fragment you want to use as shown below. Option C is the correct as correct syntax is examples: !include examples/StudentExample.raml",
+      "images": []
+    },
+    {
+      "id": 66,
+      "question": "An API specification is designed using RAML. What is the next step to create a REST Connector from this API specification?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Download the API specification and build the interface using APIkit",
+        "B": "Publish the API specification to Any point Exchange",
+        "C": "Implement the API specification using flow designer in Design Center",
+        "D": "Add the specification to a Mule project's src/main/resources/api folder"
+      },
+      "correct_answer": "B",
+      "explanation": "API Exchange creates REST connector automatically once API is published. Hence correct answer is Publish the API specification to Any point Exchange",
+      "images": ["{img154}"]
+    },
+    {
+      "id": 67,
+      "question": "Refer to the exhibit. What is the response to a web client request to http://localhost:8081?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "After",
+        "B": "before",
+        "C": "Validation Error",
+        "D": "null"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": ["{img155}", "{img156}"]
+    },
+    {
+      "id": 68,
+      "question": "Refer to the exhibits. {img157} {img158} {img159} Mule application has an HTTP request configuration where host name is hardcoded. Organization is looking to move host and port values to configuration file. What valid expression can be used to so that HTTP configuration can pick the value from configuration file?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "#[training.host]",
+        "B": "${http.host}",
+        "C": "#{training.host}",
+        "D": "${training.host}"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is ${training.host}",
+      "images": ["{img157}", "{img158}", "{img159}"]
+    },
+    {
+      "id": 69,
+      "question": "What is the correct way to format the decimal 200.1234 as a string to two decimal places?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "200.1234 as string as format: \".0#\"",
+        "B": "200.1234 as String {format: \".0#\"}",
+        "C": "200.1234 as String as format: \".0#\"",
+        "D": "200.1234 as string {format: \".0#\"}"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is 200.1234 as String {format: \".0#\"} . Rest all options are not syntactically correct.",
+      "images": []
+    },
+    {
+      "id": 70,
+      "question": "A Mule project contains a DataWeave module file WebStore.dwl that defines a function named loginUser The module file is located in the projects src/main/resources/libs/dw folder What is correct DataWeave code to import all of the WebStore.dwl file's functions and then call the loginUser function for the login \"cindy.park@example.com\"?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img160}", "{img161}", "{img162}", "{img163}"]
+    },
+    {
+      "id": 71,
+      "question": "Refer to the exhibits. The main flow contains an HTTP Request operation configured to call the child flow's HTTP Listener. A web client sends a GET request to the HTTP Listener with the qty query parameter set to 30. After the HTTP Request operation completes, what parts of the Mule event at the main flow's Logger component are the same as the Mule event that was input to the HTTP Request operation? {img164} {img165}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The payload and all variables",
+        "B": "All variables",
+        "C": "The entire Mule event",
+        "D": "The payload and all attributes"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img164}", "{img165}", "{img166}", "{img167}"]
+    },
+    {
+      "id": 72,
+      "question": "Refer to the exhibits. The Validation component in the private flow throws an error. What response message is returned to a client request to the main flow's HTTP Listener?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Error - private flow",
+        "B": "Error - main flow",
+        "C": "Success - main flow",
+        "D": "Validation Error"
+      },
+      "correct_answer": "B",
+      "explanation": "Error in validation component will get processed by Processor level On Error Propagate block and then error will be rethrown which will get processed by flow level error handler which will set payload to \"Error- main flow\". Hence correct answer is Error - main flow. 1. Request is received by HTTP listener 2. Try scope gets executed 3. The validator component in the Try scope creates an Error Object because the payload is not null. 4. The On Error Propagate handles the error. The payload is set to \"Error – Try scope\" 5. \"Error – Try scope\" is returned to the 'On Error Continue' block. Main flow execution stops. Payload is set to \"Error - main flow\" 6. \"Error - main flow\" is returned to the requestor in the body of the HTTP request. HTTP Status Code: 200. Reference Diagram though not exactly same, conditions are similar. They will help you answer any new question on error handling in real exam:",
+      "images": ["{img168}", "{img169}"]
+    },
+    {
+      "id": 73,
+      "question": "A Mule project contains a MySQL Database dependency. The project is exported from Anypoint Studio so it can be deployed to CloudHub. What export options create the smallest deployable archive that will successfully deploy to CloudHub?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img170}", "{img171}", "{img172}"]
+    },
+    {
+      "id": 74,
+      "question": "Refer to the exhibit. {img173} {img174} {img175} The main flow is configured with their error handlers. A web client submit a request to the HTTP Listener and the HTTP Request throws an HTTP:NOT_FOUND error. What response message is returned?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "APP: API RESOURCE NOT FOUND",
+        "B": "HTTP: NOT FOUND",
+        "C": "other error",
+        "D": "success - main flow"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is APP: API RESOURCE NOT FOUND. 1. A web client submits the request to the HTTP Listener. 2. The HTTP Request throws an \"HTTP:NOT_FOUND\" error, execution halts. 3. The On Error Propagate error Handler handles the error. In this case ,HTTP:NOT_FOUND error is mapped to custom error APP:API_RESOURCE_NOT_FOUND. This error processor sets payload to APP:API_RESOURCE_NOT_FOUND. 4. \"APP:API_RESOURCE_NOT_FOUND. \" is the error message returned to the requestor in the body of the HTTP request with HTTP Status Code: 500",
+      "images": ["{img173}", "{img174}", "{img175}", "{img176}"]
+    },
+    {
+      "id": 75,
+      "question": "Refer to the exhibits. Client sends the request to ClientRequestFlow which calls ShippingFlow using HTTP Request activity. During E2E testing it is found that that HTTP:METHOD_NOT_ALLOWED error is thrown whenever client sends request to this flow. What attribute you would change in ClientRequestFlow to make this implementation work successfully? {img177} {img178} {img179} {img180} {img181} {img182}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Change the method attribute value to \"*\"",
+        "B": "Change the path attribute value to \"/api/ship\"",
+        "C": "Change the allowed method attributes value to \"POST\"",
+        "D": "Change the protocol attribute value to \"HTTPS\""
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is Change the method attributes value to \"POST\". It can be fixed in either of the two ways as below. 1. Changing method attribute to POST in ClientRequestFlow 2. Setting allowedMethods as PUT in ShippingFlow (but doesn't fit as question mentions about changing ClientRequestFlow)",
+      "images": ["{img177}", "{img178}", "{img179}", "{img180}", "{img181}", "{img182}"]
+    },
+    {
+      "id": 76,
+      "question": "Refer to the exhibits. The Mule application does NOT define any global error handlers. A web client sends a POST request to the Mule application with this input payload. The File Write operation throws a FILE: CONNECTIVITY error. What response message is returned to the web client? {img183} {img184} {img185}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"FILE: CONNECTIVITY\"",
+        "B": "\"OTHER ERROR\"",
+        "C": "\"File written\"",
+        "D": "\"ORDER: NOT CREATED\""
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img183}", "{img184}", "{img185}"]
+    },
+    {
+      "id": 77,
+      "question": "An API instance of type API endpoint with API proxy is created in API manager using an API specification from Anypoint Exchange. The API instance is also configured with an API proxy that is deployed and running in CloudHub. An SLA- based policy is enabled in API manager for this API instance. Where can an external API consumer obtain a valid client ID and client secret to successfully send requests to the API proxy?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "In the organization's public API portal in Anypoint Exchange, from an approved client application for the API proxy",
+        "B": "In Anypoint Studio, from components generated by APIkit for the API specification",
+        "C": "In Anypoint Studio, from components generated by Rest Connect for API specification",
+        "D": "In Runtime Manager, from the properties tab of the deployed approved API proxy"
+      },
+      "correct_answer": "A",
+      "explanation": "When a client application is registered in Anypoint Platform, a pair of credentials consisting of a client ID and client secret is generated. When the client application requests access to an API, a contract is created between the application and that API. An API that is protected with a Client ID Enforcement policy is accessible only to applications that have an approved contract. Correct Answer: In the organization's public API portal in Anypoint Exchange, from an approved client application for the API proxy",
+      "images": []
+    },
+    {
+      "id": 78,
+      "question": "What should this endpoint return considering the API is build using standard practices? http://dev.acme.com/api/patients?year=2021",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Patient with id 2021",
+        "B": "Patients from year 2021",
+        "C": "No patients",
+        "D": "All patients"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is Patients from year 2021. The thing to note here is that year is not a query parameter and not the uri parameter. Hence it will filter all the patients and return the ones for whom year is 2021",
+      "images": []
+    },
+    {
+      "id": 79,
+      "question": "Refer to the exhibits. A web client sends sale data in a POST request to the Mule application. The Transform Message component then enrich the payload by prepending a vendor name to the sale data. What is written to the sales.csv file when the flow executes? {img186}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The enriched payload in JSON format",
+        "B": "The enriched payload in XML format",
+        "C": "The enriched payload in CSV format",
+        "D": "An error message"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img186}"]
+    },
+    {
+      "id": 80,
+      "question": "Refer to the exhibits. {img187} The Mule Application is being debugged in Anypoint Studio and stops at breakpoint. What is the value of payload displayed in debugger at this breakpoint?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Processing",
+        "B": "Begin",
+        "C": "Finished"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img187}"]
+    },
+    {
+      "id": 81,
+      "question": "Which of the following is invalid type of event processor which can be used as a router ?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Choice",
+        "B": "Round Robin",
+        "C": "Pick First",
+        "D": "First Successful"
+      },
+      "correct_answer": "C",
+      "explanation": "Pick First is not valid type. Rest all are valid type of event processor. Choice : https://docs.mulesoft.com/mule-runtime/4.3/choice-router-concept Round Robin : https://docs.mulesoft.com/mule-runtime/4.3/round-robin First Successful : https://docs.mulesoft.com/mule-runtime/4.3/first-successful",
+      "images": []
+    },
+    {
+      "id": 82,
+      "question": "A Utility.dwl is located in a Mule project at src/main/resources/modules. The Utility.dwl file defines a function named encryptString that encrypts a String What is the correct DataWeave to call the encryptString function in a Transform Message component?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "%dw 2.0 output application/json import modules::Utility --- Utility::encryptString( \"John Smith\" )",
+        "B": "%dw 2.0 output application/json import modules::Utility --- encryptString( \"John Smith\" )",
+        "C": "%dw 2.0 output application/json import modules.Utility --- encryptString( \"John Smith\" )",
+        "D": "%dw 2.0 output application/json import modules.Utility --- Utility.encryptString( \"John Smith\" )"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is %dw 2.0 output application/json import modules::Utility --- Utility::encryptString( \"John Smith\" ). DataWeave 2.0 functions are packaged in modules. Before you begin, note that DataWeave 2.0 is for Mule 4 apps. For Mule 3 apps, refer to DataWeave Operators in the Mule 3.9 documentation. For other Mule versions, you can use the version selector for the Mule Runtime table of contents. Functions in the Core (dw::Core) module are imported automatically into your DataWeave scripts. To use other modules, you need to import the module or functions you want to use by adding the import directive to the head of your DataWeave script, for example: import dw::core::Strings import camelize, capitalize from dw::core::Strings import * from dw::core::Strings The way you import a module impacts the way you need to call its functions from a DataWeave script. If the directive does not list specific functions to import or use * from to import all functions from a function module, you need to specify the module when you call the function from your script. For example, this import directive does not identify any functions to import from the String module, so it calls the pluralize function like this: Strings::pluralize(\"box\").",
+      "images": ["{img188}"]
+    },
+    {
+      "id": 83,
+      "question": "Refer to the exhibits. A web client sends a POST request to the HTTP Listener and the Validation component in the Try scope throws an error. What response message is returned to the web client? {img189}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Validation Error",
+        "B": "\"END\"",
+        "C": "\"ERROR1\"",
+        "D": "\"ERROR2\""
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img189}"]
+    },
+    {
+      "id": 84,
+      "question": "What MuleSoft API-led connectivity layer is intended to expose part of a backend database without business logic?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Data layer",
+        "B": "Process layer",
+        "C": "Experience layer",
+        "D": "System layer"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is System layer. System APIs provide a means for insulating the data consumers from the complexity or changes to the underlying backend systems. MuleSoft recommends three-layered approach to API-led connectivity, highlighting the three layers: System APIs, Process APIs, Experience APIs. System APIs are the core systems of record underlying core systems of record (e.g. ERPs, key customer and billing systems, databases, etc.). Process APIs allow you to define a common process which the organization can share, and these APIs perform specific functions, provide access to non-central data, and may be built by either Central IT or Line of Business IT. And finally, the Experience APIs are the means by which data can be reconfigured so that it is most easily consumed by its intended audience, all from a common data source. The three-layered structure allows for a seamless flow of data from systems of record to new experiences, and allows for reusability of assets rather than point to point connections. This approach provides a distributed and tailored approach to architecture, greater flexibility through loose coupling, and deeper operational visibility into what is being built.",
+      "images": ["{img190}"]
+    },
+    {
+      "id": 85,
+      "question": "How does APIkit determine the number of flows to generate from a RAML specification?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Creates a separate flow for each resource",
+        "B": "Creates a separate flow for each HTTP method",
+        "C": "Creates a separate flow for each response status code",
+        "D": "Creates a separate flow for each resource that contains child resources"
+      },
+      "correct_answer": "B",
+      "explanation": "APIKIt Creates a separate flow for each HTTP method",
+      "images": ["{img191}"]
+    },
+    {
+      "id": 86,
+      "question": "Refer to the exhibit. The Mule application Is debugged in Any point Studio and stops at the breakpoint What is the value of the payload displayed In the debugger at this breakpoint?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "0",
+        "B": "\"Processing\"",
+        "C": "\"Start\"",
+        "D": "\"Complete\""
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 87,
+      "question": "What should this endpoint return? http://dev.acme.com/api/patients?name=John&surname=Bell",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Patient with name as John",
+        "B": "Patient with surname as bell",
+        "C": "Patients with either name as John or surname as Bell",
+        "D": "Patients with name as John and surname as Bell"
+      },
+      "correct_answer": "D",
+      "explanation": "Query parameters are a defined set of parameters attached to the end of a url. They are extensions of the URL that are used to help define specific content or actions based on the data being passed. To append query params to the end of a URL, a '?' Is added followed immediately by a query parameter. To add multiple parameters, an '&' is added in between each. Hence coming back to question, endpoint would return Patients with name as John and (and is very important here) surname as Bell",
+      "images": []
+    },
+    {
+      "id": 88,
+      "question": "A function named newProdCode needs to be defined that accepts two input parameters, an integer value for itemID and a string value for productCategory, and returns a new product code. What is the correct DataWeave code to define the newProdCode function?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "fun newProdCode{itemID: Number, productCategory: String) —> \"PC-\" ++ productCategory ++ (itemID as String)",
+        "B": "fun newProdCode(itemID: Number, productCategory: String) = \"PC-\" ++ productCategory ++ (itemID as String)",
+        "C": "function newProdCode(itemID: Number, productCategory: String) = \"PC-\" ++ productCategory ++ (itemID as String)",
+        "D": "var newProdCode(itemID: Number, productCategory: String) -> \"PC-\" ++ productCategory ++ (itemID as String)"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 89,
+      "question": "What is the correct syntax to define and call a function in DataWeave? {img192} {img193} {img194} {img195}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B", 
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "A",
+      "explanation": "Keyword to add function in Dataweave transformation is fun. Hence option 2 and 4 are invalid. Also parameters needs to be passed exactly in same order as defined in function definition. Hence correct answer is fun addKV( object: Object, key: String, value: Any) = object ++ {(key):(value)} --- addKV ( {\"hello': \"world\"}, \"hola\", \"mundo\" ). MuleSoft Documentation Reference : https://docs.mulesoft.com/mule-runtime/4.3/dataweave-functions DataWeave Function Definition Syntax. To define a function in DataWeave use the following syntax: fun myFunction(param1, param2, ...) = <code to execute> The fun keyword starts the definition of a function. myFunction is the name you define for the function. Function names must be valid identifiers. (param1, param2, … , paramn) represents the parameters that your function accepts. You can specify from zero to any number of parameters, separated by commas (,) and enclosed in parentheses. The = sign marks the beginning of the code block to execute when the function is called. <code to execute> represents the actual code that you define for your function.",
+      "images": ["{img192}", "{img193}", "{img194}", "{img195}"]
+    },
+    {
+      "id": 90,
+      "question": "What is minimal requirement in a flow for a Mule application to compile?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Event Source",
+        "B": "Event Processors",
+        "C": "Error handlers",
+        "D": "Source and processors both"
+      },
+      "correct_answer": "B",
+      "explanation": "Process section is must to get compiles. Process section must have one or more processors",
+      "images": ["{img196}", "{img197}"]
+    },
+    {
+      "id": 91,
+      "question": "Refer to the exhibits. {img198} {img199} {img200} The Batch job processes an array of strings. What information is logged by the logger component after the batch job scope completes processing of the input payload? {img201} {img202} {img203}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Total Records Processed: 3 Successful Records: 3 Failed Records: 0 payload: [\"A\",\"B\",\"C\"]",
+        "B": "[\"A\",\"B\",\"C\"]",
+        "C": "Total Records Processed: 3 Successful Records: 3 Failed Records: 0 payload: [\"a\", \"b\", \"c\"]",
+        "D": "Total Records Processed: 3 Successful Records: 3 Failed Records: 0"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is as below. On complete phase only has access to batch job result statistics and payload is not available. Total Records Processed: 3 Successful Records: 3 Failed Records: 0 On Complete. During this phase, you can optionally configure the runtime to create a report or summary of the records it processed for the particular batch job instance. This phase exists to give system administrators and developers some insight into which records failed to address any issues that might exist with the input data. Mule Ref Doc : https://docs.mulesoft.com/mule-runtime/4.3/batch-processing-concept#on-complete",
+      "images": ["{img198}", "{img199}", "{img200}", "{img201}", "{img202}", "{img203}", "{img204}", "{img205}"]
+    },
+    {
+      "id": 92,
+      "question": "Refer to the exhibits. {img206} {img207} {img208} A web client submits a request to the HTTP Listener and the HTTP Request throws an error. What payload and status code are returned to the web client?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Response body: \"Error\" Default response status code: 200",
+        "B": "Response body: \"Success - Begin\" Default response status code: 200",
+        "C": "Error response body: error, description Default error response status code: 500",
+        "D": "Response body: \"Success - End\" Default response status code: 200"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct Answer: Response body: \"Error\" Default response status code: 200. 1. Payload is successfully set to \"Success – Started Flow\" 2. When HTTP Request throws an error, execution halts #[error.description] = \"ABC\" #[error.errorType] = \"XYZ\" 3. The On Error Continue scope handles the error. When On Error Continue scope is invoked, all the processors in error block are executed and success response is sent back to the client with payload which is set in error flow. In this case payload is set to \"Error\" value in error block. 4. \"Error\" is returned to the requestor in the body of the HTTP request with HTTP Status Code: 200 as On error continue always sends success error code.",
+      "images": ["{img206}", "{img207}", "{img208}", "{img209}"]
+    },
+    {
+      "id": 93,
+      "question": "Refer to the exhibits. {img210} The main flow contains a Flow Reference to the child flow. A web client sends a GET request to the main flow's HTTP Listener that includes a make query parameter. What values are accessible in the child flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "payload",
+        "B": "payload make query param",
+        "C": "payload model var",
+        "D": "payload make query param model var"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img210}"]
+    },
+    {
+      "id": 94,
+      "question": "Refer to the exhibits. What payload is logged at the end of the main flow? {img211}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "[order1, order2, order3, order4]",
+        "B": "[1, 2, 3, 4]",
+        "C": "order4",
+        "D": "order1order2order3order4"
+      },
+      "correct_answer": "B",
+      "explanation": "For Each Scope: The For Each scope splits a payload into elements and processes them one by one through the components that you place in the scope. It is similar to a for-each/for loop code block in most programming languages and can process any collection, including lists and arrays. The collection can be any supported content type, such as application/json, application/java, or application/xml. General considerations about the For Each scope: By default, For Each tries to split the payload. If the payload is a simple Java collection, the For Each scope can split it without any configuration. The payload inside the For Each scope is each of the split elements. Attributes within the original message are ignored because they are related to the entire message. For Each does not modify the current payload. The output payload is the same as the input. Mule Doc Reference : https://docs.mulesoft.com/mule-runtime/4.3/for-each-scope-concept",
+      "images": ["{img211}"]
+    },
+    {
+      "id": 95,
+      "question": "Refer to exhibits. {img212} In the execution of the Scatter-Gather , the flow route completes after 10 seconds and the flow2 route completes in 40 seconds. How many seconds does it take for the Scatter-Gather to complete?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "10",
+        "B": "50",
+        "C": "40",
+        "D": "20"
+      },
+      "correct_answer": "C",
+      "explanation": "Scatter-Gather sends the event to each routes concurrently. Hence both route in this example will start in parallel. So total time to complete processing is 40 seconds. The Scatter-Gather component is a routing event processor that processes a Mule event through different parallel processing routes that contain different event processors. Each route receives a reference to the Mule event and executes a sequence of one or more event processors. Each of these routes uses a separate thread to execute the event processors, and the resulting Mule event can be either the same Mule event without modifications or a new Mule event with its own payload, attributes, and variables. The Scatter-Gather component then combines the Mule events returned by each processing route into a new Mule event that is passed to the next event processor only after every route completes successfully. The Scatter-Gather component executes each route in parallel, not sequentially. Parallel execution of routes can greatly increase the efficiency of your Mule application and may provide more information than sequential processing. Mule Ref Doc : https://docs.mulesoft.com/mule-runtime/4.3/scatter-gather-concept",
+      "images": ["{img212}", "{img213}"]
+    },
+    {
+      "id": 96,
+      "question": "Refer to the exhibit. The error occurs when a project is run in Anypoint Studio. The project, which has a dependency that is not in the MuleSoft Maven repository, was created and successfully run on a different computer. What is the next step to fix the error to get the project to run successfully?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Edit the dependency in the Mule project's pom.xml file",
+        "B": "Install the dependency to the computer's local Maven repository",
+        "C": "Deploy the dependency to MuleSoft's Maven repository",
+        "D": "Add the dependency to the MULE_HOME/bin folder"
+      },
+      "correct_answer": "B",
+      "explanation": "As dependency is not present in Mulesoft Maven repository, we need to install the dependency on computer's local Maven repository. https://docs.mulesoft.com/mule-runtime/4.3/maven-reference",
+      "images": []
+    },
+    {
+      "id": 97,
+      "question": "Refer to the exhibits. The Mule application does NOT define any global error handler elements. A web client sends a GET request to the HTTP Listener. What response message is returned to the web client? {img214} {img215}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"End\"",
+        "B": "\"Start\"",
+        "C": "...",
+        "D": "\"String is not blank\""
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img214}", "{img215}"]
+    },
+    {
+      "id": 98,
+      "question": "Refer to the exhibits. A web client submits a request to below flow. What is the output at the end of the flow? {img216} {img217} {img218}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "String",
+        "B": "Object",
+        "C": "Java",
+        "D": "XML"
+      },
+      "correct_answer": "A",
+      "explanation": "String is the correct answer as XML is of an Object type String",
+      "images": ["{img216}", "{img217}", "{img218}"]
+    },
+    {
+      "id": 99,
+      "question": "Refer to the exhibits. {img219} The mule application is debugged in Anypoint Studio and stops at the breakpoint as shown in below exhibit. What is the value of the payload displayed in the debugger at this breakpoint?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Start",
+        "B": "Process",
+        "C": "Finished",
+        "D": "Payload is always empty at the breakpoint"
+      },
+      "correct_answer": "A",
+      "explanation": "Setting Breakpoints: To set breakpoints, right-click a building block, then select Toggle Breakpoint. Studio applies a red dot to the building block's icon on the canvas. When you run your application in Debug mode, Studio stops the flow execution at the breakpoint you have set, allowing you to check the Mule Event content in the Mule Debugger View. Mule Ref Doc : Setting Breakpoints | MuleSoft Documentation",
+      "images": ["{img219}", "{img220}"]
+    },
+    {
+      "id": 100,
+      "question": "A company has an API to manage purchase orders, with each record identified by a unique purchase order ID. The API was built with RAML according to MuleSoft best practices. What URI should a web client use to request order P05555?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "/orders/{P05555}",
+        "B": "/orders/order=P05555",
+        "C": "/orders?order=P05555",
+        "D": "/orders/P05555"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 101,
+      "question": "Refer to the exhibit. How many private flows does APIKIT generate from the RAML specification? {img221} {img222}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img221}", "{img222}"]
+    },
+    {
+      "id": 102,
+      "question": "Refer to the exhibits. {img223} {img224} {img225} {img226} A Mule application is being developed to process web client POST requests with payloads containing order information including the user name and purchased items The Shipping connector returns a shipping address for the input payloads user name The Shipping connector's Shipping Address operation is configured with a target named shippingAddress. The Set Payload transformer needs to set an item key equal to the items value from the original received payload and a shippingInfo key equal to the the ShippingAddress operation's response What is a straightforward way to property configure the Set Payload transformer with the required data? {img227}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img223}", "{img224}", "{img225}", "{img226}", "{img227}"]
+    },
+    {
+      "id": 103,
+      "question": "What is the object type returned by the File List operation?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Object of String file names",
+        "B": "Array of String file names",
+        "C": "Object of Mule event objects",
+        "D": "Array of Mule event objects"
+      },
+      "correct_answer": "D",
+      "explanation": "The List operation returns an array of messages in which: Each message holds the file's content in its payload. The file's attributes section carries the file's metadata (such as name, creation time, and size). The payload is empty if the element is a folder.",
+      "images": []
+    },
+    {
+      "id": 104,
+      "question": "How to import Core (dw::Core) module into your DataWeave scripts?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "#include dw::core",
+        "B": "Not needed",
+        "C": "import core",
+        "D": "import dw::core"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is Not needed as dw::core module is included by default. We don't need to include it explicitly",
+      "images": ["{img228}"]
+    },
+    {
+      "id": 105,
+      "question": "Refer to the exhibit. What can be added to the flow to persist data across different flow executions?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Key/value pairs in the ObjectStore",
+        "B": "Properties of the Mule runtime flow object",
+        "C": "properties of the Mule runtime app object",
+        "D": "session variables"
+      },
+      "correct_answer": "A",
+      "explanation": "An object store is a facility for storing objects in or across Mule applications. Mule runtime engine (Mule) uses object stores to persist data for eventual retrieval. Internally, Mule uses object stores in various filters, routers, and other message processors that need to store states between messages. Object stores are available in all deployment targets. If you deploy your application to CloudHub, you can also use Object Store V2. Correct answer is Key/value pair in Object store MuleSoft Documentation reference : https://docs.mulesoft.com/mule-runtime/4.3/mule-object-stores#use-cases",
+      "images": []
+    },
+    {
+      "id": 106,
+      "question": "An API was designed in API Designer, published to Anypoint Exchange, then imported into API Manager. A Mule application implements this API and is deployed to CloudHub. API Manager manages this deployed API implementation. What is the easiest and most idiomatic (used for its intended purpose) way to enforce a Client ID Enforcement policy on this Mule application?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "In API Manager, apply a Client ID Enforcement policy for the API instance",
+        "B": "In Anypoint Studio, code a custom policy for Client ID Enforcement and then add the custom policy to Runtime Manager for the Mule application deployment",
+        "C": "In Anypoint Design Center, code a custom policy for Client ID Enforcement and then publish the custom policy to the API portal in Anypoint Exchange",
+        "D": "In API Designer, add Client ID Enforcement policy requirements to the API specification"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 107,
+      "question": "A Mule application's HTTP Listener is configured with the HTTP protocol. The HTTP listeners port attribute is configured with a property placeholder named http.port. The mule application sets the http.port property placeholder's value to 9090 The Mule application is deployed to CloudHub without setting any properties in the Runtime manager Properties tab and a log message reports the status of the HTTP listener after the Mule application deployment completes. After the mule applications is deployed, what information is reported in the worker logs related to the port on which the Mule application's HTTP Listener listens?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The HTTP Listener is listening on port 80",
+        "B": "The HTTP Listener is listening on port 9090",
+        "C": "The HTTP Listener is listening on port 8081",
+        "D": "The HTTP Listener failed to bind to the port and is not listening for connections"
+      },
+      "correct_answer": "C",
+      "explanation": "Cloudhub expose services on port 8081 and override value in http.port with this one . Sample log in Runtime Manager is below 21:15:53.148 08/08/2021 Worker-0 ArtifactDeployer.start.01 INFO Listening for connections on 'http://0.0.0.0:8081'",
+      "images": ["{img229}", "{img230}", "{img231}", "{img232}"]
+    },
+    {
+      "id": 108,
+      "question": "A company has an API to manage departments, with each department identified by a unique deptId. The API was built with RAML according to MuleSoft best practices. What is valid RAML to specify a method to update the details for a specific department? {img233}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "URI parameter is basically used to identify a specific resource or resources. Here we want to update details about specific department, so question is asking 'How to use URI parameter' in RAML. Correct answer is /departments: /{deptId}: patch:",
+      "images": ["{img233}"]
+    },
+    {
+      "id": 109,
+      "question": "Refer to the exhibit. What data is expected by the POST /accounts endpoint? {img234} {img235} {img236} {img237}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img234}", "{img235}", "{img236}", "{img237}"]
+    },
+    {
+      "id": 110,
+      "question": "Refer to the exhibits. {img238} {img239} {img240} What payload and variable are logged at the end of the main flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "[[5, 10, 15, 20], 1]",
+        "B": "[[5, 10, 15, 20], 5]",
+        "C": "[[Req5, Req10, Req15, Req20], 5]",
+        "D": "[Req5Req10,Req15Req20, 5]"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is [[5, 10, 15, 20], 5]. Key thing to note here is that any changes made to payload in for each loop are not available outside for each scope where as variable value updated in for each loop is visible out side for each loop too. 1. Payload is set to the value [5, 10, 15, 20] 2. Variable is set to the value of 1 3. For each loop is executed four times and in each loop payload value is updated to append \"Req\" and variable is count is increased by 1 4. Once control comes out of for each , payload changes made within for each are not visible. Hence payload at this point of time is equal to payload available before entering for each loop which was [5, 10, 15, 20]. Similarly variable value updated in for each loop is also available outside hence variable value is 5 as it was updated in loop. 5. Hence correct answer is [[5, 10, 15, 20], 5]. For Each Scope: The For Each scope splits a payload into elements and processes them one by one through the components that you place in the scope. It is similar to a for-each/for loop code block in most programming languages and can process any collection, including lists and arrays. The collection can be any supported content type, such as application/json, application/java, or application/xml. General considerations about the For Each scope: By default, For Each tries to split the payload. If the payload is a simple Java collection, the For Each scope can split it without any configuration. The payload inside the For Each scope is each of the split elements. Attributes within the original message are ignored because they are related to the entire message. For Each does not modify the current payload. The output payload is the same as the input.",
+      "images": ["{img238}", "{img239}", "{img240}"]
+    },
+    {
+      "id": 111,
+      "question": "A flow has a JMS Publish consume operation followed by a JMS Publish operation. Both of these operations have the default configurations. Which operation is asynchronous and which one is synchronous?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Publish consume: Synchronous. Publish: Asynchronous.",
+        "B": "Publish consume: Asynchronous. Publish: Synchronous",
+        "C": "Publish consume: Asynchronous. Publish: Asynchronous",
+        "D": "Publish consume: Synchronous. Publish: Synchronous"
+      },
+      "correct_answer": "A",
+      "explanation": "Publish consume: Synchronous. Publish: Asynchronous.",
+      "images": ["{img241}"]
+    },
+    {
+      "id": 112,
+      "question": "Refer to the exhibits. {img242} The Validation component in the Try scope throws an error. What response message is returned to a client request to the main flow's HTTP Listener?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Success - main flow",
+        "B": "Error - main flow",
+        "C": "Error - Try scope",
+        "D": "Validation Error"
+      },
+      "correct_answer": "A",
+      "explanation": "Note that private flow has error scope defined as On Error Continue . So when error occurs in private flow , it is handled by this On Error Continue scope which sends success response back to main flow and does not throw back an error. So main continues normally and payload is set to Success - main flow. Hence correct answer is Success - main flow. 1. HTTP listener received request 2. The Flow Reference calls the child flow 3. The Is Number validator creates an Error Object because the payload isn't an integer. Child Flow execution stops #[error.description] = \"payload is not a valid INTEGER value\" #[error.errorType] = VALIDATION:INVALID_NUMBER 4. The On Error Continue handles the errorThe payload is set to \"Error – Sub Flow\" 5. \"Error – Sub Flow\" is returned to the main flow as if the child flow was a success. The Set Payload is executed. The payload is reset to \"Success – Finished Main Flow\" 6. \"Success – Main Flow\" is returned to the requestor in the body of the HTTP request. HTTP Status Code: 200. As you can see, in the above example, because the error was caught by an On Error Continue scope in the child flow (RED in, GREEN out) when the Mule Message returns to the parent flow, the parent flow knows none-the-different that there was a failure because the on error continue returns a 200 success message. Note that because, to the mainFlow, the childFlow appeared to succeed, the processing of mainFlow resumed after the flow reference.",
+      "images": ["{img242}", "{img243}"]
+    },
+    {
+      "id": 113,
+      "question": "Pick the component with which DataWeave is tightly integrated.",
+      "question_type": "single_choice",
+      "options": {
+        "A": "All APIs",
+        "B": "Mule runtime",
+        "C": "Exchange",
+        "D": "Flow Designer"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is Mule runtime. DataWeave is the MuleSoft expression language for accessing and transforming data that travels through a Mule app. DataWeave is tightly integrated with the Mule runtime engine, which runs the scripts and expressions in your Mule app. Mule Doc Reference : https://docs.mulesoft.com/mule-runtime/4.3/dataweave",
+      "images": ["{img244}"]
+    },
+    {
+      "id": 114,
+      "question": "Refer to the exhibit. What is the correct DataWeave expression for the Set Payload transformer to call the createCustomerObject flow with values for the first and last names of a new customer?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "lookup( createCustomerObject( \"Alice\", \"Green- ) )",
+        "B": "createCustomerObject( { first: \"Alice\", last: \"Green\" } )",
+        "C": "lookup( \"createCustomerObject\", { first: \"Alice\", last: \"Green\" } )",
+        "D": "createCustomerObject( \"Alice\", \"Green\")"
+      },
+      "correct_answer": "C",
+      "explanation": "lookup(String, Any, Number). This function enables you to execute a flow within a Mule app and retrieve the resulting payload. It works in Mule apps that are running on Mule Runtime version 4.1.4 and later. Similar to the Flow Reference component (recommended), the lookup function enables you to execute another flow within your app and to retrieve the resulting payload. It takes the flow's name and an input payload as parameters. For example, lookup(\"anotherFlow\", payload) executes a flow named anotherFlow. Correct answer is lookup( \"createCustomerObject\", {first: \"Alice\", last: \"Green\"}). MuleSoft Documentation Reference : https://docs.mulesoft.com/mule-runtime/4.3/dw-mule-functions-lookup",
+      "images": ["{img245}"]
+    },
+    {
+      "id": 115,
+      "question": "Refer to exhibits. What message should be added to Logger component so that logger prints \"The city is Pune\" (Double quote should not be part of logged message)?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "#[\"The city is\" ++ payload.City]",
+        "B": "The city is + #[payload.City]",
+        "C": "The city is #[payload.City]",
+        "D": "#[The city is ${payload.City}]"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is The city is #[payload.City]. Answer can get confused with the option #[\"The city is\" ++ payload.City] But note that this option will not print the space between is and city name. This will print The city isPune",
+      "images": []
+    },
+    {
+      "id": 116,
+      "question": "What is not the function of API Gateway ?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Determine which traffic is authorized to pass through the API to backend services",
+        "B": "Meter the traffic flowing through",
+        "C": "Logs all transactions , collecting and tracking analytics data",
+        "D": "Specify throttling , security and other policies"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is Specify throttling , security and other policies. MuleSoft Doc Ref : https://docs.mulesoft.com/api-manager/2.x/api-gateway-capabilities-mule4 API Gateway is responsible for below functions. 1. Determine which traffic is authorized 2. Meter the traffic 3. Logs transaction 4. Apply throttling and other policies (Not specifying. These are specified in API Manager)",
+      "images": ["{img246}"]
+    },
+    {
+      "id": 117,
+      "question": "What is the difference between a subflow and a sync flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "No difference",
+        "B": "Subflow has no error handling of its own and sync flow does",
+        "C": "Sync flow has no error handling of its own and subflow does",
+        "D": "Subflow is synchronous and sync flow is asynchronous"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is Subflow has no error handling implementation where as sync flow has. Subflow: A subflow processes messages synchronously (relative to the flow that triggered its execution) and always inherits both the processing strategy and exception strategy employed by the triggering flow. While a subflow is running, processing on the triggering flow pauses, then resumes only after the subflow completes its processing and hands the message back to the triggering flow. Synchronous Flow: A synchronous flow, like a subflow, processes messages synchronously (relative to the flow that triggered its execution). While a synchronous flow is running, processing on the triggering flow pauses, then resumes only after the synchronous flow completes its processing and hands the message back to the triggering flow. However, unlike a subflow, this type of flow does not inherit processing or exception strategies from the triggering flow. This type of flow processes messages along a single thread, which is ideally suited to transactional processing",
+      "images": ["{img247}"]
+    },
+    {
+      "id": 118,
+      "question": "Refer to the exhibits. What DataWeave expression transforms the conductorIds array to the XML output?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "trains: conductorIds map ((engId, index) -> train: { engineerId: engId })",
+        "B": "{ trains: conductorIds map ((engId, index) -> train: { engineerId: engId })}",
+        "C": "trains: {( conductorIds map ((engId, index) -> train: { engineerId: engId }))}",
+        "D": "{( trains: conductorIds map ((engId, index) -> train: { engineerId: engId }))}"
+      },
+      "correct_answer": "C",
+      "explanation": "Points to remember: XML must have a root element. XML only allows one root element. To avoid multiple root issues, you must create a root element for the XML output, whenever we transform output. When mapping array elements (JSON or JAVA) to XML, wrap the map operations in {(..)}. -{ } are defining the object ( ) are transforming each element in the array as a key/value pair. The transformation to XML would fail if the above mentioned considerations were not taken into account. Thus the transformation script declares a root element as trains and wraps the data in \"{( )}\". Whenever you see such type of question, always look out for root element followed by {( )} wrapping map. I call this a \"Wrap The Map\" scenario. Hope it would help you remember !",
+      "images": ["{img248}"]
+    },
+    {
+      "id": 119,
+      "question": "Refer to the exhibits. {img249} A Mule application contains a Choice router. What is logged when the flow completes?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "EU",
+        "B": "US",
+        "C": "\"REGION\"",
+        "D": "[\"US\", \"EU\"]"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img249}"]
+    },
+    {
+      "id": 120,
+      "question": "In an application network. If the implementation but not the interface of a product API changes, what needs to be done to the other APIs that consume the product API?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The applications associated with the other APIs must be restarted",
+        "B": "The applications associated with the other APIs must be recoded",
+        "C": "The other APIs must be updated to consume the updated product API",
+        "D": "Nothing needs to be changed in the other APIs or their associated applications"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is Nothing needs to be changed in the other APIs or their associated applications. This is the benefit of having separate interface layer. As there are no changes to interface , no changes are required on the API's which consumes this API in context",
+      "images": ["{img250}"]
+    },
+    {
+      "id": 121,
+      "question": "What DataWeave expression transforms the array a to the XML output?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "trains: {( a map ((engId, index) -> train: { TrainNumber: engId }))}",
+        "B": "trains: a map ((engId, index) -> train: { TrainNumber: engId })",
+        "C": "{( trains: a map ((engId, index) -> train: { TrainNumber: engId }))}",
+        "D": "{ trains: a map ((engId, index) -> train: { TrainNumber: engId })}"
+      },
+      "correct_answer": "A",
+      "explanation": "For such questions always look for Syntax: I call it \"Wrap the Map\". trains: {( When mapping array elements (JSON or JAVA) to XML, wrap the map operations in {(..)} -{ } are defining the object -( ) are transforming each element in the array as a key/value pair",
+      "images": ["{img251}"]
+    },
+    {
+      "id": 122,
+      "question": "Refer to the exhibit. The Mule application's connectors are configured with property placeholders whose values are set in the config.yaml file What must be added to the Mule application to link the config.yaml file's values with the property placeholders?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "A configuration-properties element in the acme-app xml file",
+        "B": "A dependency element in the pom xml file",
+        "C": "A file-config element in the acme-app xml file",
+        "D": "A propertiesFile key/value pair in the mule-artifact json file"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 123,
+      "question": "A mule project contains MySQL database dependency . The project is exported from Anypoint Studio so that it can be deployed to Cloudhub. What export options needs to be selected to create the smallest deployable archive that will successfully deploy to Cloudhub?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Select both the options 1) Attach project sources 2) Include project module and dependencies",
+        "B": "No need to select any of the below options 1) Attach project sources 2) Include project module and dependencies",
+        "C": "Select only below option 2) Include project module and dependencies",
+        "D": "Select only below option 1) Attach project sources"
+      },
+      "correct_answer": "C",
+      "explanation": "You can choose Attach Project Sources to include metadata that Studio requires to reimport the deployable file as an open Mule project into your workspace. You must keep the Attach Project Sources option selected to be able to import the packaged JAR file back into a Studio workspace. But requirement here is to create smallest deployable archive that will successfully deploy to Cloudhub. Hence we can ignore this option. We need to select Include project module and dependencies. As actual modules and external dependencies required to run the Mule application in a Mule runtime engine Hence correct answer is Select only below option 2) Include project module and dependencies. MuleSoft Doc Ref : https://docs.mulesoft.com/studio/7.5/import-export-packages#exporting-a-studio-project-to-a-deployable-mule-a",
+      "images": []
+    },
+    {
+      "id": 124,
+      "question": "Refer to the exhibits. The Set Payload transformer in the addItem child flow uses DataWeave to create an order object. What is the correct DataWeave code for the Set Payload transformer in the createOrder flow to use the addItem child flow to add a router call with the price of 100 to the order? {img252}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "lookup( \"addItem\", { price: \"100\", item: \"router\", itemType: \"cable\" } )",
+        "B": "addItem( { payload: { price: \"100\", item: \"router\", itemType: \"cable\" } } )",
+        "C": "lookup( \"addItem\", { payload: { price: \"100\", item: \"router\", itemType: \"cable\" } } )",
+        "D": "addItem( { price: \"100\", item: \"router\", itemType: \"cable\" } )"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": ["{img252}"]
+    },
+    {
+      "id": 125,
+      "question": "Refer to the exhibits. APIKit router is used to generate the flow components for RAML specification. The Mule application must be available to REST clients using the two URL's http://localhost:8081/internal and http://localhost:8081/external How many APIKit Router components are generated to handle requests to every endpoint defined in RAML specification? {img253}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "5"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img253}"]
+    },
+    {
+      "id": 126,
+      "question": "Refer to the exhibit. What is the correct syntax to add an employee ID as a URI parameter in an HTTP Listener path? {img254}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "(employeeID)",
+        "B": "${employeeID}",
+        "C": "{employeeID}",
+        "D": "#[employeeID]"
+      },
+      "correct_answer": "C",
+      "explanation": "Paths: The path of an HTTP listener can be static, which requires exact matches, or feature placeholders. Placeholders can be wildcards (*), which match against anything they are compared to, or parameters ({param}), which not only match against anything but also capture those values on a URI parameters map. Take the following example paths for three listeners using a configuration that establishes api/v1 as the base path: account/mulesoft/main-contact: only match the exact path request http://awesome-company.com/api/v1/account/mulesoft/main-contact account/{accountId}/main-contact: matches all path requests structured similarly, such as http://awesome-company.com/api/v1/account/salesforce/main-contact, and save salesforce as the value of accountId. account/{accountId}/*: matches all path requests different from main-contact, such as http://awesome-company.com/api/v1/account/mulesoft/users, and save mulesoft as the value of accountId. Mule Ref Doc : https://docs.mulesoft.com/http-connector/1.6/http-listener-ref#paths",
+      "images": ["{img254}"]
+    },
+    {
+      "id": 127,
+      "question": "Refer to the exhibit. The main flow contains a Flow Reference for the child flow. What values are accessible in the child flow after a web client submits a request to http://localhost:8081/order?color=red? {img255} {img256} {img257}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "payload",
+        "B": "payload quantity var",
+        "C": "payload color query param",
+        "D": "payload quantity var color query param"
+      },
+      "correct_answer": "D",
+      "explanation": "Flow Reference Component: Flow Reference routes the Mule event to another flow or subflow, executes all processors in the referenced flow, and then routes the event back within the same Mule application. The following diagram shows the order of processing when one flow references another: When the main flow is triggered, the Mule event travels through and executes the flow until the event reaches the Flow Reference. The event then travels through and executes the referenced flow from beginning to end, and then returns to the main flow. This process enables you to treat the entire referenced flow like a single component in your current flow. Mule Ref Doc : https://docs.mulesoft.com/mule-runtime/4.3/flowref-about Correct answer is payload quantity var color query param",
+      "images": ["{img255}", "{img256}", "{img257}", "{img258}"]
+    },
+    {
+      "id": 128,
+      "question": "Which of the below functionality is provided by zip operator in DataWeave?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Merges elements of two lists (arrays) into a single list",
+        "B": "Used for sending attachments",
+        "C": "Minimize the size of long text using encoding.",
+        "D": "All of the above"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is Merges elements of two lists (arrays) into a single list. MuleSoft Doc Reference : https://docs.mulesoft.com/mule-runtime/4.3/dw-core-functions-zip",
+      "images": []
+    },
+    {
+      "id": 129,
+      "question": "The new RAML spec has been published to Anypoint Exchange with client credentials. What is the next step to gain access to the API?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Request access to the API in Anypoint Exchange",
+        "B": "Email the owners of the API",
+        "C": "Create a new client application",
+        "D": "No additional steps needed"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is Request access to the API in Anypoint Exchange. This way we can get clientId and Client secret which we can use to access the API",
+      "images": []
+    },
+    {
+      "id": 130,
+      "question": "Refer to the exhibits. The Mule application is stopped at the breakpoint in Anypoint Studio. A watch expression Is set to the counter variable. What value is displayed for this watch expression? {img259}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "1",
+        "B": "11",
+        "C": "110",
+        "D": "null"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img259}"]
+    },
+    {
+      "id": 131,
+      "question": "Which of the module is imported automatically in Dataweave scripts?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "dw::core",
+        "B": "dw::System",
+        "C": "dw::Runtime",
+        "D": "dw::Crypto"
+      },
+      "correct_answer": "A",
+      "explanation": "Core (dw::Core) This module contains core DataWeave functions for data transformations. It is automatically imported into any DataWeave script.",
+      "images": []
+    },
+    {
+      "id": 132,
+      "question": "Refer to the exhibits. {img260} {img261} The <when> expression for the Choice router needs to be written. What is a valid <when> expression to route Mule events to the non-default flow? {img262}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "#['MuleSoft' == payload.company]",
+        "B": "#[ company = \"MuleSoft\" ]",
+        "C": "#[ if( company = \"MuleSoft\") ]",
+        "D": "#[ if( 'MuleSoft' == payload.company) ]"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img260}", "{img261}", "{img262}"]
+    },
+    {
+      "id": 133,
+      "question": "Refer to the exhibits. How many private flows does APIKIt generate from RAML specification?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "1",
+        "B": "2",
+        "C": "3",
+        "D": "4"
+      },
+      "correct_answer": "D",
+      "explanation": "APIKIt Creates a separate flow for each HTTP method. Hence 4 private flows would be generated. MuleSoft Documentation Reference : https://docs.mulesoft.com/mule-runtime/4.3/build-application-from-api",
+      "images": []
+    },
+    {
+      "id": 134,
+      "question": "By default, what happens to a file after it is read using an FTP connector Read operation?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The file is deleted from the folder",
+        "B": "The file is moved to a different folder",
+        "C": "The file stays in the same folder unchanged",
+        "D": "The file is renamed in the same folder"
+      },
+      "correct_answer": "C",
+      "explanation": "File is not updated when FTP read operations is performed. MuleSoft Doc Ref : https://docs.mulesoft.com/file-connector/1.3/file-read",
+      "images": []
+    },
+    {
+      "id": 135,
+      "question": "Which keyword do you use to create a new function in DataWeave?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "function",
+        "B": "fun",
+        "C": "func",
+        "D": "map"
+      },
+      "correct_answer": "B",
+      "explanation": "You can define your own DataWeave functions using the fun declaration in the header of a DataWeave script. Sample is as below. %dw 2.0 output application/json fun toUpper(aString) = upper(aString) --- toUpper(\"hello\"). MuleSoft Doc Ref : https://docs.mulesoft.com/mule-runtime/4.1/dataweave-functions",
+      "images": []
+    },
+    {
+      "id": 136,
+      "question": "Correct answer is {customerID}.",
+      "question_type": "single_choice",
+      "options": {
+        "A": "var toUpper(userName) -> upper(userName)",
+        "B": "fun toUpper(userName) = upper(userName)",
+        "C": "fun toUpper(userName) -> upper(userName)",
+        "D": "var toUpper(userName) = upper(userName)"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 137,
+      "question": "Refer to the exhibits. A web client sends a GET request to the HTTP Listener. What response message is returned to the web client? {img263}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"\"",
+        "B": "\"End\"",
+        "C": "\"Start\"",
+        "D": "\"String is not blank\""
+      },
+      "correct_answer": "D",
+      "explanation": "1. Set Payload \"Start\" 2. 'Is Blank String' Creates an Error object with #[error.description] =\"String is not blank\" 3. Default Error Handler catches and Propagates error 4. 'On Error Propagate' is 'RED IN RED OUT'. It Returns Status Code : 500 & #[error.description]. Correct answer is String is not blank. Because validation component will throw an error as payload is not blank.",
+      "images": ["{img263}", "{img264}", "{img265}"]
+    },
+    {
+      "id": 138,
+      "question": "Refer to the exhibit. What Database expression transforms the input to the output? {img266} {img267} {img268} {img269}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img266}", "{img267}", "{img268}", "{img269}"]
+    },
+    {
+      "id": 139,
+      "question": "Where are values of query parameters stored in the Mule event by the HTTP Listener? {img270}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Inbound Properties",
+        "B": "Variables",
+        "C": "Attributes",
+        "D": "Payload"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is Attributes. Query parameters , URI parameters and headers are some of examples which are part of attributes.",
+      "images": ["{img270}"]
+    },
+    {
+      "id": 140,
+      "question": "An HTTP Request operation sends an HTTP request with a non-empty JSON object payload to an external HTTP endpoint. The response from the external HTTP endpoint returns an XML body. The result is stored in a target named the Result. What is the payload at the event processor after the HTTP Request?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The XML response body",
+        "B": "null",
+        "C": "The original JSON request body",
+        "D": "A non-empty Java object"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 141,
+      "question": "Which Mule component provides a real-time, graphical representation of the APIs and mule applications that are running and discoverable?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "API Notebook",
+        "B": "Runtime Manager",
+        "C": "Anypoint Visualizer",
+        "D": "API Manager"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is Anypoint Visualizer. MuleSoft Doc Ref : https://docs.mulesoft.com/visualizer/ Anypoint Visualizer provides a real-time, graphical representation of the APIs, and Mule applications that are running and discoverable. It also displays third-party systems that are invoked by a Mule API, proxy, or application within your application network. The data displayed in the graph is dynamically updated and does not require prior configuration. Additionally, the data displayed is secure, as only users with the proper permissions can view the application network graph.",
+      "images": ["{img271}", "{img272}"]
+    },
+    {
+      "id": 142,
+      "question": "Refer to the exhibits. {img273} {img274} {img275} The Batch Job scope processes the array of strings. After the Batch Job scope completes processing the input payload what information is logged by the Logger component?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": ["{img273}", "{img274}", "{img275}", "{img276}", "{img277}", "{img278}", "{img279}"]
+    },
+    {
+      "id": 143,
+      "question": "Following Mulesoft's recommended API-led connectivity approach, an organization has created an application network. The organization now needs to create API's to transform, orchestrate and aggregate the data provided by the other API's in the application network. This API should be flexible enough to handle the data from additional API's in future. According to Mulesoft's recommended API-led connectivity approach, what is the best layer for this new API?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Process layer",
+        "B": "System layer",
+        "C": "Experience layer",
+        "D": "Data layer"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is process layer as all the orchestration and transformation logic should be in process layer as per Mulesoft's recommended approach for API led connectivity. API-led connectivity is a methodical way to connect data to applications through reusable and purposeful APIs. These APIs are developed to play a specific role – unlocking data from systems, composing data into processes, or delivering an experience. System APIs – these usually access the core systems of record and provide a means of insulating the user from the complexity or any changes to the underlying systems. Process APIs – These APIs interact with and shape data within a single system or across systems (breaking down data silos) and are created here without a dependence on the source systems from which that data originates, as well as the target channels through which that data is delivered. Experience APIs – Experience APIs are the means by which data can be reconfigured so that it is most easily consumed by its intended audience, all from a common data source, rather than setting up separate point-to-point integrations for each channel.",
+      "images": []
+    },
+    {
+      "id": 144,
+      "question": "A Database On Table Row listener retrieves data from a CUSTOMER table that contains a primary key user_id column and an increasing login_date_time column. Neither column allows duplicate values. How should the listener be configured so it retrieves each row at most one time?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Set the watermark column to the login_date_time column",
+        "B": "Set the target value to the last retrieved login_date_time value",
+        "C": "Set the target value to the last retrieved user_id value",
+        "D": "Set the watermark column to the user_Id column"
+      },
+      "correct_answer": "A",
+      "explanation": "Watermark allows the poll scope to poll for new resources instead of getting the same resource over and over again. The database table must be ordered so that the \"watermark functionality\" can move effectively in the ordered list. There are two columns and both are unique but user_id can't guarantee sequence whereas date_time will always be in increasing order and table content can easily be ordered on the basis of last processed date_time. So correct answer is: Set the watermark column to the date_time column",
+      "images": []
+    },
+    {
+      "id": 145,
+      "question": "Refer to the exhibits. A web client submits a request to http://localhost:8081/flights?destination=SFO and the Web Service Consumer throws a WSC:BAD_REQUEST error. What is the next step to fix this error? {img280}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Set a header In the Consume operation equal to the destination query parameter",
+        "B": "set a SOAP payload before the Consume operation that contains the destination query parameter",
+        "C": "set a property in the Consume operation equal to the destination query parameter",
+        "D": "set a JSON payload before the Consume operation that contains the destination query parameter"
+      },
+      "correct_answer": "B",
+      "explanation": "As can be seen in error message, SOAP service findFlights expects the SOAP payload. This can be set using transform message processor which forms SOAP payload before the Consume operation that contains the destination query parameter",
+      "images": ["{img280}"]
+    },
+    {
+      "id": 146,
+      "question": "As a part of project requirement, you want to build an API for a legacy client. Legacy client can only consume SOAP webservices. Which type the interface documentation can be prepared to meet the requirement?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "RAML file to define SOAP services",
+        "B": "WSDL file",
+        "C": "JSON file",
+        "D": "plain text file documenting API's"
+      },
+      "correct_answer": "B",
+      "explanation": "Web Services Description Language. WSDL is used to describe SOAP based web services",
+      "images": ["{img281}"]
+    },
+    {
+      "id": 147,
+      "question": "What payload is returned by a Database SELECT operation that does not match any rows in the database?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "false",
+        "B": "null",
+        "C": "Exception",
+        "D": "Empty Array"
+      },
+      "correct_answer": "D",
+      "explanation": "Empty array is returned when no rows are matched. MuleSoft Doc Ref : https://docs.mulesoft.com/db-connector/1.9/database-connector-select",
+      "images": []
+    },
+    {
+      "id": 148,
+      "question": "A company has defined two RAML fragments, Book Data Type and Book Example to be used in APIs. What would be valid RAML to use these fragments? {img282}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "RAML file contains lot of information that could be considered as \"not API-describing\". Through !includes, RAML allows us to build file-distributed API definitions, which is not only useful to encourage code reuse but also improves readability. We can create RAML fragments with such code and then include them in main RAML project using !include like: types: Book: !include bookDataType.raml and examples: input: !include bookExample.raml",
+      "images": ["{img282}"]
+    },
+    {
+      "id": 149,
+      "question": "A shopping API contains a method to look up store details by department. To get the information for a particular store, web clients will submit requests with a query parameter named department and uri parameter named storeId. What is valid RAML snippet that supports requests from a web client to get a data for a specific storeId and department name?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "/{storeId}: get: queryParameter: department:"
+      },
+      "correct_answer": "D",
+      "explanation": "URI parameter is basically used to identify a specific resource or resources. Here we want to get store details by department and storeId, so storeId should be URI parameter and department should be query parameter. Based on the above information, below is the only option which defines storeid as uri parameter and department as query parameter: /{storeId}: get: queryParameter: department:",
+      "images": ["{img283}", "{img284}", "{img285}", "{img286}", "{img287}", "{img288}", "{img289}", "{img290}", "{img291}", "{img292}", "{img293}", "{img294}", "{img295}", "{img296}"]
+    },
+    {
+      "id": 150,
+      "question": "An organization's Center for enablement (C4E) has built foundational assets (API specifications and implementation templates, common frameworks, and best practices guides) and published them to Anypoint Exchange. What is a metric related to these foundational assets that helps the organization measure the success of it's C4E efforts?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Utilization counts of foundational assets in production applications",
+        "B": "Correlation of each foundational asset with the counts of developers that download such asset",
+        "C": "Correlation of key performance indicators (KPI) of production applications with foundational assets",
+        "D": "Count how many Lines Of Business (LoBs) consumed each foundational asset"
+      },
+      "correct_answer": "C",
+      "explanation": "Below are the Key performance indicators (KPIs), to measure and track the and success of the C4E and its activities, as well as the growth and health of the application network. Most of the metrics can be extracted automatically, through REST APIs, from Anypoint Platform.",
+      "images": []
+    },
+    {
+      "id": 151,
+      "question": "A web client submits a request to http://localhost:8081/books/0471767840. The value \"0471767840\" is captured by a Set Variable transformer to a variable named bookISBN. What is the DataWeave expression to access bookISBN later in the flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "bookISBN",
+        "B": "attributes.bookISBN",
+        "C": "flowVars.bookISBN",
+        "D": "vars.bookISBN"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 152,
+      "question": "Refer to the exhibits. {img297} {img298} Each route in the Scatter-Gather sets the payload to the number shown in the label. What response is returned to a web client request to the HTTP Listener?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is as below. After all processing routes have finished execution, the Scatter-Gather component creates a new Mule event that combines all resulting Mule events from each route, and then passes the new Mule event to the next component in the flow. { \"0\": { \"attributes\": ..., \"payload\": \"100\" }, \"1\": { \"attributes\": ..., \"payload\": \"200\" } }",
+      "images": ["{img297}", "{img298}", "{img299}", "{img300}", "{img301}", "{img302}"]
+    },
+    {
+      "id": 153,
+      "question": "Refer to the exhibit. The input array of strings is passed to the batch job, which does NOT do any filtering or aggregating. What payload is logged by the Logger component? {img303}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Summary report of processed records",
+        "B": "[ \"Apple\", \"Banana\" ]",
+        "C": "[ \"Apple2\", \"Banana2\" ]",
+        "D": "[ \"Apple\", \"Banana\", 2 ]"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img303}"]
+    },
+    {
+      "id": 154,
+      "question": "A RAML specification is defined to manage customers with a unique identifier for each customer record. What URI does MuleSoft recommend to uniquely access the customer identified with the unique ID 1234?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "/customers?custid=true&custid=1234",
+        "B": "/customers/1234",
+        "C": "/customers/custid=1234",
+        "D": "/customers?operation=get&custid=1234"
+      },
+      "correct_answer": "B",
+      "explanation": "URI parameter (Path Param) is basically used to identify a specific resource or resources. For eg : the URL to get employee details on the basis of employeeID will be GET /employees/{employeeID} where employees is resource and {employeeID} is URI parameter. Hence option B is the correct answer",
+      "images": []
+    },
+    {
+      "id": 155,
+      "question": "Refer to the payload. {img304} {img305} The Set payload transformer sets the payload to an object. The logger component's message attribute is configured with the string \"Result #[\"INFO\"++ payload]\" What is the output of logger when this flow executes?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Result INFOpayload",
+        "B": "Result INFO{\"student\":{\"name\":\"Anay\",\"age\":6}}",
+        "C": "\"You called the function '++' with these arguments: 1: String (\"INFO\") 2: Object ({student: {name: \"Anay\" as String {class: \"java.lang.String\"},age: 6 as Number...)",
+        "D": "Error : You evaluated inline expression # without ++"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is as below as concatenation operation works only with string and not with the objects. In this case payload is object. \"You called the function '++' with these arguments: 1: String (\"INFO\") 2: Object ({student: {name: \"Anay\" as String {class: \"java.lang.String\"},age",
+      "images": ["{img304}", "{img305}"]
+    },
+    {
+      "id": 156,
+      "question": "Refer to the exhibits. {img306} {img307} What is the response when a client submits a request to http://localhost:8081?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "After",
+        "B": "null",
+        "C": "Before",
+        "D": "Validation error"
+      },
+      "correct_answer": "D",
+      "explanation": "Here's specifically what is happening here: 1. Payload is successfully set to \"Before\" 2. Is null validation is used which will pass the message only if payload is null. In this case as payload is not null, it creates an Error Object. Flow execution stops #[error.description] = \"Validation error\" 3. Because no error handler is defined, the Mule default error handler handles the error 4. \"Validation error\" is the error message returned to the requestor in the body of the HTTP request with HTTP Status Code: 500",
+      "images": ["{img306}", "{img307}", "{img308}"]
+    },
+    {
+      "id": 157,
+      "question": "A Mule project contains a DataWeave module like WebStore.dwl that defines a function named loginUser. The module file is located in the project's src/main/resources/libs/etl folder. What is correct DataWeave code to import all of the WebStore.dwl file's functions and then call the loginUser function for the login \"Todd.Pal@mulesoft.com\"?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "import libs.etl --- WebStore.loginUser(\"Todd.Pal@mulesoft.com\")",
+        "B": "import * from libs::etl --- WebStore::loginUser(\"Todd.Pal@mulesoft.com\")",
+        "C": "import libs.etl.WebStore --- loginUser(\"Todd.Pal@mulesoft.com\")",
+        "D": "import * from libs::etl::WebStore --- loginUser(\"Todd.Pal@mulesoft.com\")"
+      },
+      "correct_answer": "D",
+      "explanation": "To use custom modules, you need to import the module or functions you want to use by adding the import directive to the head of your DataWeave script. To import all functions from a module use: import * from dw::core::Strings. In given scenario, it's mentioned to import all of the WebStore.dwl So correct answer is: import * from libs::etl::WebStore --- loginUser(\"Todd.Pal@mulesoft.com\")",
+      "images": []
+    },
+    {
+      "id": 158,
+      "question": "What valid RAML retrieves details on a specific customer by its customerId as a URI parameter?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "/customers: /get: /customerId:",
+        "B": "/customers: /{customerId}: get:",
+        "C": "/customers: /customerId: get:",
+        "D": "/customers: get: /{customerId}:"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is below as it follows the correct syntax. /customers: /{customerId}: get:",
+      "images": []
+    },
+    {
+      "id": 159,
+      "question": "Refer to the below exhibit. A Mule application configures a property placeholder file named config.yaml to set some property placeholders for an HTTP connector. What is the valid properties placeholder file to set these values? {img309} {img310}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "http: host = \"localhost\" port = \"8081\"",
+        "B": "http: basepath: \"api\" host : \"localhost\" port : \"8081\"",
+        "C": "http.host = localhost http.port = 8081",
+        "D": "{ http: basePath: \"api\", port: \"8081\", host: \" localhost\" }"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is as below as it follows the correct syntax. http: basepath: \"api\" host : \"localhost\" port : \"8081\". Mule Doc Reference : https://docs.mulesoft.com/mule-runtime/4.3/mule-app-properties-to-configure",
+      "images": ["{img309}", "{img310}", "{img311}", "{img312}", "{img313}", "{img314}"]
+    },
+    {
+      "id": 160,
+      "question": "Refer to the exhibits. {img315} This main mule application calls a separate flow called as ShippingAddress which returns the address corresponding to the name of the user sent to it as input. Output of this ShippingAddress is stored in a target variable named address. Next set of requirement is to have a setPayload transformer which will set below two values: 1) orderkey which needs to set to be equal to the order element received in the original request payload. 2) addressKey which needs to be set to be equal to the address received in response of ShippingAddress flow. What is the straightforward way to properly configure the Set Payload transformer with the required data? {img316} {img317} {img318}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "{ orderkey: \"payload.order\", addresskey: \"vars.address\" }",
+        "B": "{ orderkey: \"attributes.shippingaddress.order\", addresskey: \"payload\" }",
+        "C": "{ orderkey: \"payload.order\", addresskey: \"address\" }",
+        "D": "{ orderkey: \"attributes.order\", addresskey: \"vars.address\" }"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is as below. In this case address will be stored in a variable. Hence payload will not be overwritten and will contain order details. { orderkey: \"payload.order\", addresskey: \"vars.address\" }",
+      "images": ["{img315}", "{img316}", "{img317}", "{img318}"]
+    },
+    {
+      "id": 161,
+      "question": "Refer to the exhibits. {img319} The orders.csv file is read, then processed to look up the orders in a database. The Mule application is debugged in Any point Studio and stops at the breakpoint. What is the payload shown in the debugger at this breakpoint?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"none\"",
+        "B": "The entire CSV file",
+        "C": "The database response",
+        "D": "100"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img319}"]
+    },
+    {
+      "id": 162,
+      "question": "Refer to the exhibits. {img320} {img321} As a mulesoft developer, what you would change in Database connector configuration to resolve this error?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Configure the correct host URL",
+        "B": "Configure the correct database name",
+        "C": "Configure the correct table name",
+        "D": "Configure the correct JDBC driver"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is Configure the correct JDBC driver as error message suggests the same. Caused by: java.sql.SQLException: Error trying to load driver: com.mysql.jdbc.Driver",
+      "images": ["{img320}", "{img321}", "{img322}", "{img323}", "{img324}"]
+    },
+    {
+      "id": 163,
+      "question": "Refer to the exhibits. The webClient flow sends requests to the mockServer Row's HTTP Listener. An HTTP: METHOD_NOT ALLOWED error is thrown each time the webClient flow executes. What attribute value must be changed in the webClient flow's HTTP Request operation to prevent this error from being thrown?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Change the method attribute's value to \"POST\"",
+        "B": "Change the path attribute's value to \"api/partners/fastShopping\"",
+        "C": "Change the protocol attribute's value to \"HTTPS\"",
+        "D": "Change the method attribute's value to \"*\""
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 164,
+      "question": "An On Table Row Database listener retrieves data from a table that contains record_id, an increasing numerical column. How should the listener be configured so it retrieves new rows at most one time?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Set the target to store the last retrieved record_id value",
+        "B": "Set the ObjectStore to store the last retrieved record_id value",
+        "C": "Set the target to the record_id column",
+        "D": "Set the watermark column to the record id column"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 165,
+      "question": "Why would a Mule application use the ${http.port} property placeholder for its HTTP Listener port when it is deployed to CloudHub?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Allows CloudHub to automatically change the HTTP port to allow external clients to connect to the HTTP Listener",
+        "B": "Allows CloudHub to automatically register the application with API Manager",
+        "C": "Allows MuleSoft Support to troubleshoot the application by connecting directly to the HTTP Listener",
+        "D": "Allows clients to VPN directly to the application at the Mule application's configured HTTP port"
+      },
+      "correct_answer": "A",
+      "explanation": "This helps CloudHub to dynamically allocates a port at deployment time. MuleSoft Doc Ref : https://docs.mulesoft.com/mule-runtime/4.3/deploy-to-cloudhub#prerequisites",
+      "images": []
+    },
+    {
+      "id": 166,
+      "question": "Which of the below activity doesn't support parallel execution?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Scatter-Gather Router",
+        "B": "First Successful Router",
+        "C": "Parallel For Each",
+        "D": "Batch job"
+      },
+      "correct_answer": "B",
+      "explanation": "The First Successful router iterates through a list of configured processing routes until one of the routes executes successfully. This is sequential execution. In all other options mentioned in the question ,we can achieve parallel execution.",
+      "images": []
+    },
+    {
+      "id": 167,
+      "question": "Refer to the exhibits. {img325} What payload and quantity are logged at the end of the main flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "[[order1, order2, order3, order4], 14]",
+        "B": "[[1,2,3,4], 10]",
+        "C": "[[1,2,3,4], 14]",
+        "D": "[order1order2order3order4, 14]"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": ["{img325}"]
+    },
+    {
+      "id": 168,
+      "question": "Refer to the exhibit. {img326} {img327} The API needs to be updated using the company-wide standard for the Plan data type. The Object data type has already been published in Anypoint Exchange with the global reference ACME/DataTypes/PlanDataType.raml. What is a valid RAML specification that reuses the Plan data type?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "As can be seen in RAML, POST expects input in application/json format which eliminates two of the options as two options are in xml format. Now out of the two remaining options, one has id field in request which is only mentioned for get response and not for POST request. Hence id field is not expected in POST request.",
+      "images": ["{img326}", "{img327}", "{img328}", "{img329}", "{img330}", "{img331}"]
+    },
+    {
+      "id": 169,
+      "question": "Refer to the exhibit. {img332} What is a valid expression for the Choice router's when expression to route events to the domesticShipping flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "#[ payload = 'US' ]",
+        "B": "#[ payload == 'US' ]",
+        "C": "#[ if(payload = 'US') ]",
+        "D": "#[ if(payload == \"US\") ]"
+      },
+      "correct_answer": "B",
+      "explanation": "Choice Router: The Choice router dynamically routes messages through a flow according to a set of DataWeave expressions that evaluate message content. Single = is not the correct syntax to validate the condition. It should be ==. If keyword is not required in when condition.",
+      "images": ["{img332}"]
+    },
+    {
+      "id": 170,
+      "question": "An API has been created in Design Center. What is the next step to make the API discoverable?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Publish the API to Anypoint Exchange",
+        "B": "Publish the API from inside flow designer",
+        "C": "Deploy the API to a Maven repository",
+        "D": "Enable autodiscovery in API Manager"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is Publish the API to Anypoint Exchange. Anypoint Exchange makes this possible by making it discoverable in below ways: 1. In private exchange for internal developers 2. In a public portal for external developers/clients",
+      "images": ["{img333}", "{img334}"]
+    },
+    {
+      "id": 171,
+      "question": "A Mule application contains an ActiveMQ JMS dependency. The Mule application was developed in Anypoint Studio and runs successfully in Anypoint Studio. The Mule application must now be exported from Anypoint Studio and shared with another developer. What export options create the smallest JAR file that can be imported into the other developer's Anypoint Studio and run successfully? {img335}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B", 
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img335}"]
+    },
+    {
+      "id": 172,
+      "question": "To avoid hard-coding values, a flow uses some property placeholders and the corresponding values are stored in a configuration file. Where does the configuration file's location need to be specified in the Mule application?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The pom.xml file",
+        "B": "A global element",
+        "C": "The mule-artifact.json file",
+        "D": "a flow attribute"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is A global element. When we create a configuration file, that file needs to added as Global Configuration file in Global element. A global element is a reusable object containing parameters that any number of elements in a flow can share.",
+      "images": []
+    },
+    {
+      "id": 173,
+      "question": "How would you debug Mule applications?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "By Deploying apps on production",
+        "B": "Checking RAML specifications",
+        "C": "Using debugger component",
+        "D": "Use third party debugger application"
+      },
+      "correct_answer": "C",
+      "explanation": "Debugger can be used to debug applications to see event data moving from one flow to other",
+      "images": []
+    },
+    {
+      "id": 174,
+      "question": "Refer to the exhibit. {img336} The default scope in choice router recursively calls the color flow. A web client sends a PUT request to the HTTP listener with payload Blue. What response is returned to the web client?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"Blk\"",
+        "B": "\"Green\"",
+        "C": "A timeout error",
+        "D": "[\"Blue\", \"Red\", \"Blk\"]"
+      },
+      "correct_answer": "C",
+      "explanation": "When web client sends the request, it sends payload as Blue. In first iteration this will go to default choice, which sets payload to Red. Via default route, flow will call itself with payload as Red. In second iteration, as payload is Red, it will go to first route in choice router which will set payload to Blk and second iteration will end. This causes infinite recursion leading to timeout.",
+      "images": ["{img336}"]
+    },
+    {
+      "id": 175,
+      "question": "An SLA based policy has been enabled in API Manager. What is the next step to configure the API proxy to enforce the new SLA policy?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Add new property placeholders and redeploy the API proxy",
+        "B": "Add new environment variables and restart the API proxy",
+        "C": "Restart the API proxy to clear the API policy cache",
+        "D": "Add required headers to the RAML specification and redeploy the new API proxy"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is Add required headers to RAML specification and redeploy new API proxy. SLA-based rate limiting requires adding a RAML or OAS snippet to your API. MuleSoft Doc Ref : https://docs.mulesoft.com/api-manager/2.x/tutorial-manage-an-api",
+      "images": ["{img337}"]
+    },
+    {
+      "id": 176,
+      "question": "Refer to the exhibit. In the execution of the Scatter_Gather, the flow1 route completes after 10 seconds and the flow2 route completes after 20 seconds. How many seconds does it take for the Scatter_Gather to complete?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "0",
+        "B": "10",
+        "C": "20",
+        "D": "30"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 177,
+      "question": "Refer to the exhibit. {img338} {img339} {img340} {img341} What DataWeave expression transforms the conductorIds array to the XML output?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": ["{img338}", "{img339}", "{img340}", "{img341}", "{img342}", "{img343}"]
+    },
+    {
+      "id": 178,
+      "question": "Refer to the exhibits. {img344} The my-app xml file contains an Error Handler scope named \"global-error-handler\". The Error Handler scope needs to be set to be the default error handler for every flow in the Mule application. Where and how should the value \"global-error-handler\" be added in the Mule project so that the Error Handler scope is the default error handler of the Mule application?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "In the mule-artifact json file, as the value of a key-value pair",
+        "B": "In the Validation folder as the value of a global element in the error-handling yaml file",
+        "C": "In the pom.xml file, as the value of a global element",
+        "D": "In the my-app.xml file, as an attribute of a configuration element"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img344}"]
+    },
+    {
+      "id": 179,
+      "question": "Which of the below is used by Mule application to manage dependencies which make sharing the projects lightweight and easier?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Configuration file",
+        "B": "Global element",
+        "C": "POM.xml",
+        "D": "Cloudhub"
+      },
+      "correct_answer": "C",
+      "explanation": "POM.xml contains info about the project and configuration details used by Maven to build the project",
+      "images": ["{img345}", "{img346}"]
+    },
+    {
+      "id": 180,
+      "question": "Refer to the exhibits. {img347} {img348} The main flow contains a Flow Reference component configured to call the child flow What part(s) of a Mule event passed to the Flow Reference component are available in the child flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The payload and all attributes",
+        "B": "The payload and all variables",
+        "C": "The entire Mule event",
+        "D": "The payload"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img347}", "{img348}"]
+    },
+    {
+      "id": 181,
+      "question": "What DataWeave expression transforms the example XML input to the CSV output? {img349} {img350} {img351}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C", 
+        "D": "Option D"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is as below. Attributes in the incoming xml payload are always accessed using @. Similarly *item is required as we have multiple items in the request. payload.sale.*item map ((value, index) -> { index: index, sale: value.@saleId, itemName: value.desc, itemPrice: (value.quantity) * (value.price), item: value.@itemId })",
+      "images": ["{img349}", "{img350}", "{img351}"]
+    },
+    {
+      "id": 182,
+      "question": "In the execution of scatter gather, the \"sleep 2 sec\" Flow Reference takes about 2 sec to complete, and the \"sleep 8 sec\" Flow Reference takes about 8 sec to complete. About how many sec does it take from the Scatter-Gather is called until the \"Set Payload\" transformer is called? {img352} {img353}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "8",
+        "B": "0",
+        "C": "2", 
+        "D": "10"
+      },
+      "correct_answer": "A",
+      "explanation": "Correct answer is 8 as events are processed in parallel in case of scatter gather router",
+      "images": ["{img352}", "{img353}"]
+    },
+    {
+      "id": 183,
+      "question": "A Scatter-Gather processes three separate HTTP requests. Each request returns a Mule event with a JSON payload. What is the final output of the Scatter-Gather?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "An Array of the three Mule event Objects",
+        "B": "An Object containing all three Mule event Objects",
+        "C": "An Array of the three JSON payload Objects",
+        "D": "An Object containing all three JSON payload Objects"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is An Object containing all three Mule event Objects. The Scatter-Gather component combines the Mule events returned by each processing route into a new Mule event that is passed to the next event processor only after every route completes successfully.",
+      "images": ["{img354}"]
+    },
+    {
+      "id": 184,
+      "question": "Which of the below is not a valid category for connector type? {img355}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Gold",
+        "B": "Select", 
+        "C": "Premium",
+        "D": "Community"
+      },
+      "correct_answer": "A",
+      "explanation": "Gold is not valid category for connector types. MuleSoft Doc Ref : https://docs.mulesoft.com/mule-runtime/3.7/anypoint-connectors#connector-support-categories",
+      "images": ["{img355}"]
+    },
+    {
+      "id": 185,
+      "question": "What is not true about application properties? {img356}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Application properties can be encrypted",
+        "B": "Application properties can be overridden with system properties",
+        "C": "Application properties can be defined in .yaml file only",
+        "D": "Application properties provide easier way to manage configurable values"
+      },
+      "correct_answer": "C",
+      "explanation": "Application properties can be defined in .yaml or in .properties file. MuleSoft Doc Ref : https://docs.mulesoft.com/mule-runtime/4.3/configuring-properties#supported_files",
+      "images": ["{img356}"]
+    },
+    {
+      "id": 186,
+      "question": "Refer to the exhibits. {img357} A web client submits a request to http://localhost:8081/flights. What is the result at the end of the flow?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"string\"",
+        "B": "\"Java\"",
+        "C": "\"object\"",
+        "D": "\"XML\""
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img357}"]
+    },
+    {
+      "id": 187,
+      "question": "What happens to the attributes of a Mule event in a flow after an outbound HTTP Request is made?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Attributes are replaced with new attributes from the HTTP Request response (which might be null)",
+        "B": "New attributes may be added from the HTTP response headers, but no headers are ever removed",
+        "C": "Attributes do not change",
+        "D": "Previous attributes are passed unchanged"
+      },
+      "correct_answer": "A",
+      "explanation": "Attributes are replaced with new attributes from the HTTP Request response. Attributes include everything apart from Payload/body. For ex: Headers, query parameters, URI parameters. So, when outbound HTTP request is made, new attributes need to pass the outbound HTTP request and old attributes are replaced.",
+      "images": ["{img358}", "{img359}"]
+    },
+    {
+      "id": 188,
+      "question": "A Mule application configured with Autodiscovery implements an API. Where is governance enforced for policies defined for this Mule application? {img360}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "In Runtime Manager",
+        "B": "Runtime Manager",
+        "C": "In the Mule application",
+        "D": "In API manager"
+      },
+      "correct_answer": "D",
+      "explanation": "Correct answer is API manager",
+      "images": ["{img360}"]
+    },
+    {
+      "id": 189,
+      "question": "Refer to the exhibits The Mule application does NOT define any global error handlers. A web client sends a POST request to the Multi application with this input payload The File Write operation throws a FILE:CONNECTIVITY error. What response message is returned to the web client? {img361}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"ORDER NOT_CREATED\"",
+        "B": "\"OTHER ERROR\"",
+        "C": "\"File written\"",
+        "D": "\"FILE:CONNECTIVITY\""
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img361}"]
+    },
+    {
+      "id": 190,
+      "question": "Refer to the exhibit. {img362} All three of the condition for the Choice router are true. What log messages are written?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Route 1",
+        "B": "Route2",
+        "C": "Route1, Route2",
+        "D": "Route1, Route2, Default"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": ["{img362}"]
+    },
+    {
+      "id": 191,
+      "question": "A web client sends one GET request to the test flow's HTTP Listener, which causes the test flow to call the updateTemp flow After the test flow returns a response, the web client then sends a different GET request to the getTemp flow's HTTP Listener The test flow is not called a second time. What response is returned from the request to the getTemp flow's HTTP Listener?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": ["{img363}", "{img364}", "{img365}", "{img366}", "{img367}", "{img368}", "{img369}", "{img370}", "{img371}", "{img372}", "{img373}"]
+    },
+    {
+      "id": 192,
+      "question": "What valid RAML retrieves details on a specific by its orderId as a URL parameter?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 193,
+      "question": "How are query parameters dynamically passed to an outbound REST request using an HTTP Request operation?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "As query parameters in the HTTP Request operation",
+        "B": "As URI parameters in the HTTP Request operation",
+        "C": "In the Mule event's payload",
+        "D": "As flow variables"
+      },
+      "correct_answer": "A",
+      "explanation": "In General > Request > Query Parameters, click the plus icon (+) to add a parameter to a request. Type a name and value for the parameter or use a DataWeave expression to define the name and value.",
+      "images": ["{img374}", "{img375}"]
+    },
+    {
+      "id": 194,
+      "question": "What is the correct Syntax to add a customer ID as a URI parameter in the HTTP listener's path attribute? {img376}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "#[customerID]",
+        "B": "$[customerID]",
+        "C": "{customerID}",
+        "D": "(customerID)"
+      },
+      "correct_answer": "C",
+      "explanation": "URL parameters are always accessed using { } like => {customerID}",
+      "images": ["{img376}"]
+    },
+    {
+      "id": 195,
+      "question": "Refer to the exhibits. {img377} {img378} A web client sends a POST request with the payload {\"oid\": \"1000\", \"itemid\": \"AC200\", \"qty\": \"4\" } to the Mule application. The File Write operation throws a FILE:CONNECTIVITY error. What response message is returned to the web client?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "\"FILE:CONNECTIVITY\"",
+        "B": "\"ORDER:NOT_CREATED\"",
+        "C": "\"OTHER ERROR\"",
+        "D": "\"File written\""
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img377}", "{img378}"]
+    },
+    {
+      "id": 196,
+      "question": "A shopping API contains a method to look up store details by department. To get information for a particular store, web clients will submit requests with a query parameter named department and a URI parameter named storeId. What is a valid RAML snippet that supports requests from web clients to get data for a specific storeId and department name?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "C",
+      "explanation": "URI parameter is basically used to identify a specific resource or resources. Here storeId should be URI parameter and department should be query parameter. Based on the above information, below is the only option which defines storeid as uri parameter and department as query parameter: /{storeId}: get: queryParameter: department:",
+      "images": ["{img379}", "{img380}", "{img381}", "{img382}", "{img383}", "{img384}", "{img385}", "{img386}", "{img387}", "{img388}", "{img389}", "{img390}", "{img391}", "{img392}", "{img393}", "{img394}", "{img395}", "{img396}"]
+    },
+    {
+      "id": 197,
+      "question": "A Utility.dwl file is located in a Mule project at src/main/resources/modules. The Utility.dwl file defines a function named pascalize that reformats strings to pascal case. What is the correct DataWeave to call the pascalize function in a Transform Message component?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": ["{img397}", "{img398}", "{img399}"]
+    },
+    {
+      "id": 198,
+      "question": "Which of the below is not the mandatory configurations for HTTP Listener? {img400}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Path",
+        "B": "Allowed methods",
+        "C": "HTTP port in Connector Configuration",
+        "D": "HTTP host in Connector Configuration"
+      },
+      "correct_answer": "B",
+      "explanation": "Allowed methods is an optional configuration. If nothing is specified then all HTTP methods are supported. Rest all are mandatory.",
+      "images": ["{img400}"]
+    },
+    {
+      "id": 199,
+      "question": "Refer to the exhibits. In the requestFlow an HTTP Request operation is configured to send an HTTP request with an XML payload. The request is sent to the HTTP Listener in the transform Flow. That flow transforms the incoming payload into JSON format and returns the response to the HTTP request. The response of the request is stored in a target variable named the Result. What is the payload at the Logger component after the HTTP Request?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "A non-empty Java object",
+        "B": "The original XML payload",
+        "C": "null",
+        "D": "The returned JSON response"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 200,
+      "question": "A Mule application contains a global error handler configured to catch any errors. Where must the global error handler be specified so that the global error handler catches all errors from flows without their own error handlers?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "A configuration properties file",
+        "B": "Nowhere, the global error handler is automatically used",
+        "C": "A global element",
+        "D": "The pom.xml file"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is A global element. Global error handlers are to be created in global element. Quick note to remember here is Global error handlers come in to picture only when there are no error handlers specified as flow level.",
+      "images": ["{img401}", "{img402}", "{img403}", "{img404}", "{img405}"]
+    },
+    {
+      "id": 201,
+      "question": "An organization is beginning to follow Mulesoft's recommended API led connectivity approach to use modern API to support the development and lifecycle of the integration solutions and to close the IT delivery gap. What distinguishes between how modern API's are organized in a MuleSoft recommended API-led connectivity approach as compared to other common enterprise integration solutions?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The API interfaces are specified as macroservices with one API representing all the business logic of an existing and proven end to end solution",
+        "B": "The API interfaces are specified at a granularity intended for developers to consume specific aspect of integration processes",
+        "C": "The API implementation are built with standards using common lifecycle and centralized configuration management tools",
+        "D": "The API implementations are monitored with common tools, centralized monitoring and security systems"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is The API interfaces are specified at a granularity intended for developers to consume specific aspect of integration processes",
+      "images": []
+    },
+    {
+      "id": 202,
+      "question": "A Mule project contains a DataWeave module called MyModule.dwl that defines a function named formatString. The module is located in the project's src/main/resources/modules folder. What is the correct way in DataWeave code to import MyModule using a wildcard and then call the module's formatString function?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Option A",
+        "B": "Option B",
+        "C": "Option C",
+        "D": "Option D"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": ["{img406}", "{img407}", "{img408}", "{img409}"]
+    },
+    {
+      "id": 203,
+      "question": "A web client submits a request to http://localhost:8081?accountType=personal. The query parameter is captured using a Set Variable transformer to a variable named accountType. What is the correct DataWeave expression to log accountType?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Account Type: #[flowVars.accountType]",
+        "B": "Account Type: #[message.inboundProperties.accountType]",
+        "C": "Account Type: #[attributes.accountType]",
+        "D": "Account Type: #[vars.accountType]"
+      },
+      "correct_answer": "D",
+      "explanation": "vars: Keyword for accessing a variable, for example, through a DataWeave expression in a Mule component, such as the Logger. If the name of your variable is myVar, you can access it like this: vars.myVar. Hence correct answer is Account Type: #[vars.accountType]",
+      "images": []
+    },
+    {
+      "id": 204,
+      "question": "Refer to the exhibits. {img410} {img411} {img412} {img413} The Mule application configures and uses two HTTP Listener global configuration elements. Mule application is run in Anypoint Studio. If the mule application starts correctly, what URI and port numbers can receive web client requests? If the mule applications fails to start, what is the reason for the failure?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The mule application fails to start - There is URL path conflict because both HTTP Listeners are configured with same path",
+        "B": "The mule application start successfully - Web client requests can only be received at URI on port 2222 but not on port 3333",
+        "C": "The mule application fails to start because of the port binding conflict as HTTP request also use same port i.e. 3333",
+        "D": "The mule application start successfully - Web client requests can be received at URI on port 2222 and on port 3333."
+      },
+      "correct_answer": "D",
+      "explanation": "In this case both the flows can start without any error and requests can be received on both ports. Flow names httpListener1 can call other flow using HTTP request without any issues. Hence correct answer is The mule application start successfully Web client requests can be received at URI on port 2222 and on port 3333.",
+      "images": ["{img410}", "{img411}", "{img412}", "{img413}"]
+    },
+    {
+      "id": 205,
+      "question": "What execution model is used by For Each and Batch Job scopes?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "For Each is single-threaded and Batch Job is multi-threaded",
+        "B": "Both are single-threaded",
+        "C": "Both are multi-threaded",
+        "D": "Batch Job is single-threaded and For Each Is multi-threaded"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 206,
+      "question": "From which application, Organization Administrators can approve/revoke/delete SLA tier access requests",
+      "question_type": "single_choice",
+      "options": {
+        "A": "API Exchange",
+        "B": "API Portal",
+        "C": "API Gateway",
+        "D": "API Manager"
+      },
+      "correct_answer": "D",
+      "explanation": "Organization Administrators can approve/revoke/delete SLA tier access requests via API Manager only",
+      "images": []
+    },
+    {
+      "id": 207,
+      "question": "An API implementation has been deployed to CloudHub and now needs to be governed. IT will not allocate additional vCore for a new Mule application to act as an API proxy. What is the next step to preserve the current vCore usage, but still allow the Mule application to be managed by API Manager?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Register the same API implementation in Runtime Manager to connect to API Manager",
+        "B": "Modify the API implementation to use auto-discovery to register with API Manager",
+        "C": "Upload the Mule application's JAR file to the API instance in API Manager",
+        "D": "Deploy the same API implementation behind a VPC and configure the VPC to connect to API Manager"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is Modify the API implementation to use auto-discovery to register with API Manager. API Autodiscovery: Configuring autodiscovery allows a deployed Mule runtime engine (Mule) application to connect with API Manager to download and manage policies and to generate analytics data. MuleSoft Doc Ref : https://docs.mulesoft.com/api-manager/2.x/api-auto-discovery-new-concept",
+      "images": []
+    },
+    {
+      "id": 208,
+      "question": "What of the below is not a feature of API Notebooks?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "API documentation",
+        "B": "Creates a client for an API",
+        "C": "Creates a mock service for an API",
+        "D": "Perform authenticated live calls on a real server"
+      },
+      "correct_answer": "C",
+      "explanation": "Correct answer is Creates a mock service for an API. API Notebook is an open source, shareable web application for API documentation, interactive API tutorial and example generation, and a client for your API endpoints. However it cannot be used to mock service for an API. MuleSoft Doc Ref : https://docs.mulesoft.com/api-manager/1.x/api-notebook-concept",
+      "images": []
+    },
+    {
+      "id": 209,
+      "question": "What statement is a part of MuleSoft's description of an application network? {img414} {img415}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Creates and manages high availability and fault tolerant services and infrastructure",
+        "B": "Creates reusable APIs and assets designed to be consumed by other business units",
+        "C": "Creates and manages a collection of JMS messaging services and infrastructure",
+        "D": "Leverages Central IT to deliver complete point-to-point solutions with master data management"
+      },
+      "correct_answer": "B",
+      "explanation": "Creates reusable APIs and assets designed to be consumed by other business units",
+      "images": ["{img414}", "{img415}"]
+    },
+    {
+      "id": 210,
+      "question": "Refer to the exhibits. A web client submits the request to the HTTP Listener. What response message would be returned to web client?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "End",
+        "B": "String is not blank",
+        "C": "No response would be sent back to client and request will get errored out in Mule",
+        "D": "Start"
+      },
+      "correct_answer": "B",
+      "explanation": "Correct answer is String is not blank. Here's specifically what is happening here: 1. Payload is successfully set to \"Start\" 2. The Is Blank String validator creates an Error Object because the payload is string \"Start\". Execution stops #[error.description] = \"String is not blank\" 3. Because no error handler is defined, the Mule default error handler handles the error. 4. \"String is not blank\" is the error message returned to the requestor",
+      "images": ["{img416}", "{img417}"]
+    },
+    {
+      "id": 211,
+      "question": "Refer to the exhibits. {img418} {img419} The web client sends a POST request to the ACME Order API with an XML payload. An error is returned. What should be changed in the request so that a success response code is returned to the web client?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Set a request header with the name Content-Type to a value of application/octet-stream",
+        "B": "Set a request header with the name Content-Type to a value of application/xml",
+        "C": "Set a response header with the name Content-Type to a value of application/xml",
+        "D": "Set a response header with the name Content-Type to a value of application/octet-stream"
+      },
+      "correct_answer": "B",
+      "explanation": "The HTTP 415 Unsupported Media Type client error response code indicates that the server refuses to accept the request because the payload format is in an unsupported format. As per RAML input is expected in application/xml. Hence correct answer is Set a request header with the name Content-Type to a value of application/xml",
+      "images": ["{img418}", "{img419}"]
+    },
+    {
+      "id": 212,
+      "question": "A web client sends a request to http://localhost:8081?dept=sales. What is the correct DataWeave expression to access the value of dept?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "attributes.queryParams.dept",
+        "B": "attributes.dept",
+        "C": "message.queryParams.dept",
+        "D": "vars.dept"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 213,
+      "question": "How we can scale deployed Mule application vertically on cloudhub?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Changing worker size",
+        "B": "Adding multiple workers",
+        "C": "Mule applications can be scaled only horizontally",
+        "D": "Option 1 and 2 both can be used"
+      },
+      "correct_answer": "A",
+      "explanation": "Mule applications can be scaled vertically by changing worker size. Mule applications can be scaled horizontally by adding more workers.",
+      "images": []
+    },
+    {
+      "id": 214,
+      "question": "What is the default port used by Mule application debugger configuration in Anypoint Studio? {img420}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "8082",
+        "B": "8080",
+        "C": "7777",
+        "D": "6666"
+      },
+      "correct_answer": "D",
+      "explanation": "By default, Debugger listens for incoming TCP connections on localhost port 6666. You can change this in a project's run configuration. MuleSoft Doc Ref : https://docs.mulesoft.com/studio/7.5/visual-debugger-concept",
+      "images": ["{img420}"]
+    },
+    {
+      "id": 215,
+      "question": "Refer to the exhibits. A database Address table contains a ZIPCODE column and an increasing ID column. The Address table currently contains four (4) records. The On Table Row Database listener is configured with its watermark set to the Address table's ZIPCODE column and then the Mule application is run in Anypoint Studio for the first time, and the On Table Row Database listener polls the Address table. A new row is added to the database with ID=5 and ZIPCODE=90006, and then the On Table Row Database listener polls the database again. After the next execution of the On Table Row Database listener polling, what database rows have been processed by the Mule flow since the Mule application was started?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "ID 1,2,3,4 with ZIPCODE 90001,90005,90009,90001",
+        "B": "ID 1,2,3,5 with ZIPCODE 90001,90005,90009,90006", 
+        "C": "ID 1,2,3 with ZIPCODE 90001,90005,90009",
+        "D": "ID 1,2,3,4,5 with ZIPCODE 90001,90005,90009,90001,90006"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 216,
+      "question": "What HTTP method in a RESTful web service is typically used to completely replace an existing resource? {img421}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "GET",
+        "B": "PATCH",
+        "C": "PUT",
+        "D": "POST"
+      },
+      "correct_answer": "C",
+      "explanation": "PUT replaces the original version of the resource, whereas the PATCH method supplies a set of instructions to modify the resource",
+      "images": ["{img421}"]
+    },
+    {
+      "id": 217,
+      "question": "Refer to the exhibit. What is the output payload in the On Complete phase",
+      "question_type": "single_choice",
+      "options": {
+        "A": "summary statistics with NO record data",
+        "B": "The records processed by the last batch step: [StepTwo1, StepTwo2, StepTwo3]",
+        "C": "The records processed by all batch steps: [StepTwoStepOne1, StepTwoStepOne2, StepTwoStepOne3]",
+        "D": "The original payload: [1,2,3]"
+      },
+      "correct_answer": "A",
+      "explanation": "This is a trick question. On complete phase payload consists of summary of records processed which gives insight on which records failed or passed. MuleSoft Documentation Reference : https://docs.mulesoft.com/mule-runtime/4.3/batch-processing-concept#on-complete",
+      "images": []
+    },
+    {
+      "id": 218,
+      "question": "What is the purpose of the api:router element in APIkit?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Creates native connectors using a 3rd party Java library",
+        "B": "Serves as an API implementation",
+        "C": "Validates requests against RAML API specifications and routes them to API implementations",
+        "D": "Validates responses returned from API requests and routes them back to the caller"
+      },
+      "correct_answer": "C",
+      "explanation": "The APIkit Router is a key message processor that validates requests against the provided definition, enriches messages (for example by adding default values to the messages) and routes requests to a particular flow. Also, the Router raises errors messages if errors occurs while routing, validating or processing the user request.",
+      "images": []
+    },
+    {
+      "id": 219,
+      "question": "A Batch Job scope has five batch steps. An event processor throws an error in the second batch step because the input data is incomplete. What is the default behavior of the batch job after the error is thrown?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "All processing of the batch job stops.",
+        "B": "Event processing continues to the next batch step.",
+        "C": "Error is ignored",
+        "D": "Batch is retried"
+      },
+      "correct_answer": "A",
+      "explanation": "In case of an error, batch job completes in flight steps and stops further processing. The default is all processing will stop but we can change it by Max Failed Record field. The default value is Zero which corresponds to Finish processing. MuleSoft Doc Ref : Handling Errors During Batch Job | MuleSoft Documentation",
+      "images": []
+    },
+    {
+      "id": 220,
+      "question": "What path setting is required for an HTTP Listener endpoint to route all requests to an APIkit router? {img422}",
+      "question_type": "single_choice",
+      "options": {
+        "A": "/(*)",
+        "B": "/",
+        "C": "/()",
+        "D": "/*"
+      },
+      "correct_answer": "D",
+      "explanation": "Option /* is correct syntax to configure HTTP Listener endpoint",
+      "images": ["{img422}"]
+    },
+    {
+      "id": 221,
+      "question": "Refer to the exhibit. This RAML specification includes a resource and method to retrieve accounts by account_type and industry. What is the correct URI to get all retail finance accounts?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "/accounts?account_type=retail&industry=finance",
+        "B": "/accounts/retail/finance",
+        "C": "/accounts?account_type=retail,industry=finance",
+        "D": "/accounts/{account_type}/{industry}"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 222,
+      "question": "What is the correct syntax for a Logger component to output a message with the current correlation ID?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The correlation ID is #[correlationId]",
+        "B": "The correlation ID is #[attributes.correlationId]",
+        "C": "The correlation ID is #[message.correlationId]",
+        "D": "The correlation ID is #[correlationId()]"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 223,
+      "question": "Refer to the exhibits. A Mule application is being developed to process web client POST requests with payloads containing order information including the user name and purchased items. The Shipping connector returns a shipping address for the input payload's user name. The Shipping connector's Shipping Address operation is configured with a target named shippingAddress. The Set Payload transformer needs to set an item key equal to the items value from the original received payload and a shippingInfo key equal to the Shipping Address operation's response. What is a straightforward way to properly configure the Set Payload transformer with the required data?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "{ item: payload.items, shippingInfo: vars.shippingAddress }",
+        "B": "{ item: attributes.items, shippingInfo: payload }",
+        "C": "{ item: payload.items, shippingInfo: shippingAddress }",
+        "D": "{ item: attributes.items, shippingInfo: vars.shippingAddress }"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 224,
+      "question": "A Database On Table Row listener retrieves data from a CUSTOMER table that contains a primary key customerID column and an increasing timestamp created_date column. Neither column allows duplicate values. How should the listener be configured so it retrieves each row at most one time?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Set the watermark column to the created_date column",
+        "B": "Set the target value to the last retrieved created_date value",
+        "C": "Set the target value to the last retrieved customerID value",
+        "D": "Set the watermark column to the customerID column"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 225,
+      "question": "What DataWeave expression transforms the input to the CSV output?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "payload.customers map ((item, index) -> { name: item.name, email: item.email })",
+        "B": "{ customers: payload map ((item, index) -> { name: item.name, email: item.email }) }",
+        "C": "payload map ((item, index) -> { name: item.name, email: item.email })",
+        "D": "customers: payload map ((item, index) -> { name: item.name, email: item.email })"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 226,
+      "question": "What execution model is used by the Async scope?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Single-threaded",
+        "B": "Multi-threaded",
+        "C": "Synchronous",
+        "D": "Sequential"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 227,
+      "question": "In a Mule application, an HTTP Request operation is configured to send an HTTP request with a non-empty JSON object payload to an external HTTP endpoint. The response from the external HTTP endpoint returns an XML body. The result is stored in a target named result. What is the payload at the next message processor after the HTTP Request?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The XML response body",
+        "B": "null",
+        "C": "The original JSON request body",
+        "D": "A non-empty Java object"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 228,
+      "question": "Which component should be used to log the error description when error occurs?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "#[error.description]",
+        "B": "#[message.error]",
+        "C": "#[error]",
+        "D": "#[error.cause]"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 229,
+      "question": "A Mule application contains a Choice router. What is logged when the flow completes?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The condition that evaluated to true",
+        "B": "All conditions that were evaluated",
+        "C": "Only the default route",
+        "D": "The result of the executed route"
+      },
+      "correct_answer": "D",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 230,
+      "question": "A RAML specification is defined to manage customers with a unique identifier for each customer record. What URI does MuleSoft recommend to uniquely access the customer identified with the unique ID 1234?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "/customers?custid=true&custid=1234",
+        "B": "/customers/1234",
+        "C": "/customers/custid=1234",
+        "D": "/customers?operation=get&custid=1234"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 231,
+      "question": "What is the default behavior of the HTTP Request operation when the HTTP response status code is 4xx or 5xx?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Returns null payload",
+        "B": "Throws an HTTP:BAD_REQUEST error",
+        "C": "Continues with next processor",
+        "D": "Returns the error response as payload"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 232,
+      "question": "A flow contains an HTTP Request operation that returns a 500 status code. What is the outcome?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "The flow continues normally",
+        "B": "An HTTP:INTERNAL_SERVER_ERROR is raised",
+        "C": "The operation retries automatically",
+        "D": "The payload is set to null"
+      },
+      "correct_answer": "B",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 233,
+      "question": "What happens when a Database SELECT operation is configured with both streaming enabled and a watermark column?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Only streaming is applied",
+        "B": "Only watermark is applied",
+        "C": "Both streaming and watermark are applied",
+        "D": "An error is thrown during configuration"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 234,
+      "question": "Which scope allows you to route one copy of the current Mule event to one or more routes?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Choice",
+        "B": "Parallel For Each",
+        "C": "Scatter-Gather",
+        "D": "First Successful"
+      },
+      "correct_answer": "C",
+      "explanation": "",
+      "images": []
+    },
+    {
+      "id": 235,
+      "question": "What is the result when a For Each scope processes an array and one of the elements causes an error?",
+      "question_type": "single_choice",
+      "options": {
+        "A": "Processing stops and an error is thrown",
+        "B": "The error is ignored and processing continues",
+        "C": "Only failed elements are processed again",
+        "D": "Processing continues with next element"
+      },
+      "correct_answer": "A",
+      "explanation": "",
+      "images": []
+    }
+  ]
+}

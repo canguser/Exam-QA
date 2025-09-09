@@ -40,7 +40,7 @@
                 <div class="question-item" 
                      :key="questionNum" v-else>
                     <div class="question-card theme-card">
-                        <div class="question-header">
+                        <div class="question-header" @click="handleImageClick">
                             <div class="question-title" v-for="t in getQuestionTitle(questionsInfo[questionNum])" v-html="t">
                             </div>
                             <div class="question-desc">{{ getQuestionDesc(questionsInfo[questionNum]) }}</div>
@@ -55,7 +55,7 @@
                                               :class="{'option-selected': questionsInfo[questionNum].answer.multi.apis.includes(option.api), 'option-correct': option.isRight&&(isShowResult||(questionsInfo[questionNum].answer.isChecked&&isPractice)), 'option-incorrect': !option.isRight&&(isShowResult||(!option.isRight&&questionsInfo[questionNum].answer.isAnswered&&isPractice)) && questionsInfo[questionNum].answer.multi.apis.includes(option.api)}">
                                         <div class="option-content">
                                             <div class="option-label">{{ letterIndex[oi] }}</div>
-                                            <div class="option-text" v-html="option.describe"></div>
+                                            <div class="option-text" v-html="option.describe" @click="handleImageClick"></div>
                                             <van-checkbox :name="option.api" :checked-color="getOptionColor(questionsInfo[questionNum],option)" class="option-checkbox"></van-checkbox>
                                         </div>
                                     </div>
@@ -72,7 +72,7 @@
                                               :class="{'option-selected': questionsInfo[questionNum].answer.single.api === option.api, 'option-correct': option.isRight&&(isShowResult||(questionsInfo[questionNum].answer.isChecked&&isPractice)), 'option-incorrect': !option.isRight&&(isShowResult||(!option.isRight&&questionsInfo[questionNum].answer.isAnswered&&isPractice)) && questionsInfo[questionNum].answer.single.api === option.api}">
                                         <div class="option-content">
                                             <div class="option-label">{{ letterIndex[oi] }}</div>
-                                            <div class="option-text" v-html="option.describe"></div>
+                                            <div class="option-text" v-html="option.describe" @click="handleImageClick"></div>
                                             <van-radio :name="option.api" :checked-color="getOptionColor(questionsInfo[questionNum],option)" class="option-radio"></van-radio>
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@
                                 <van-icon name="info-o" />
                                 <span>题目解析</span>
                             </div>
-                            <div class="analysis-content" v-html="questionsInfo[questionNum].analysis || '暂无解析'"></div>
+                            <div class="analysis-content" v-html="questionsInfo[questionNum].analysis || '暂无解析'" @click="handleImageClick"></div>
                         </div>
                     </div>
                 </div>
@@ -135,6 +135,39 @@
             </div>
         </div>
 
+        <!-- 图片预览弹窗 -->
+        <div v-if="showImagePreview" class="image-preview-overlay" @click="closeImagePreview">
+            <!-- 顶部控制栏 -->
+            <div class="image-preview-controls-bar" @click.stop>
+                <van-icon name="minus" class="control-icon" @click="zoomOut" />
+                <span class="zoom-text">{{ Math.round(zoomLevel * 100) }}%</span>
+                <van-icon name="plus" class="control-icon" @click="zoomIn" />
+                <van-icon name="replay" class="control-icon" @click="resetZoom" title="重置" />
+                <van-icon name="cross" class="control-icon close-icon" @click="closeImagePreview" />
+            </div>
+            
+            <!-- 图片容器 -->
+            <div 
+                class="image-preview-content" 
+                ref="imageContainer"
+                @touchstart="handleTouchStart"
+                @touchmove="handleTouchMove"
+                @touchend="handleTouchEnd"
+                @wheel="handleWheel"
+                @click.stop
+            >
+                <img 
+                    :src="previewImageSrc" 
+                    :alt="previewImageAlt" 
+                    class="preview-image"
+                    ref="previewImage"
+                    :style="imageStyle"
+                    @load="onImageLoad"
+                    @dragstart.prevent
+                />
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -148,6 +181,7 @@ import {RadioGroup, Radio} from 'vant';
 import {Checkbox, CheckboxGroup} from 'vant';
 import {Dialog} from 'vant';
 import {Row, Col} from 'vant';
+import {Icon} from 'vant';
 import utils from '../../utils';
 import {historyRecordDao, bankDao} from '../../dao'
 
@@ -158,6 +192,7 @@ Vue.use(Checkbox).use(CheckboxGroup);
 Vue.use(RadioGroup);
 Vue.use(Radio);
 Vue.use(Cell).use(CellGroup);
+Vue.use(Icon);
 
 const defaultQuestionInfo = {
     required: true,
@@ -194,7 +229,25 @@ export default {
             backInterceptor: null, // 返回拦截器
             transitionName: 'question-slide-right',
             previousQuestionNum: 0,
-            panStartScrollTop: null // 记录滑动开始时的scrollTop
+            panStartScrollTop: null, // 记录滑动开始时的scrollTop
+            showImagePreview: false, // 是否显示图片预览
+            previewImageSrc: '', // 预览图片地址
+            previewImageAlt: '', // 预览图片描述
+            
+            // 图片缩放和拖拽相关
+            zoomLevel: 1, // 缩放级别
+            translateX: 0, // X轴位移
+            translateY: 0, // Y轴位移
+            initialDistance: 0, // 双指初始距离
+            initialZoom: 1, // 初始缩放级别
+            lastTouchX: 0, // 上次触摸X坐标
+            lastTouchY: 0, // 上次触摸Y坐标
+            isDragging: false, // 是否正在拖拽
+            isZooming: false, // 是否正在缩放
+            imageNaturalWidth: 0, // 图片原始宽度
+            imageNaturalHeight: 0, // 图片原始高度
+            containerWidth: 0, // 容器宽度
+            containerHeight: 0 // 容器高度
         }
     },
     computed: {
@@ -228,6 +281,20 @@ export default {
         },
         doneHashCodes(){
             return this.historyExams.filter(exam => exam.errorTimes + exam.rightTimes > 0).map(exam => exam.hashCode);
+        },
+        
+        // 图片样式计算
+        imageStyle() {
+            return {
+                transform: `translate(${this.translateX}px, ${this.translateY}px) scale(${this.zoomLevel})`,
+                transformOrigin: 'center center',
+                transition: this.isDragging || this.isZooming ? 'none' : 'transform 0.3s ease',
+                cursor: this.zoomLevel > 1 ? 'grab' : 'zoom-in',
+                userSelect: 'none',
+                WebkitUserSelect: 'none',
+                MozUserSelect: 'none',
+                msUserSelect: 'none'
+            };
         }
     },
     methods: {
@@ -306,6 +373,12 @@ export default {
             if (window.GlobalBackManager) {
                 // 创建拦截器函数
                 this.backInterceptor = () => {
+                    // 如果图片预览弹窗打开，优先关闭弹窗
+                    if (this.showImagePreview) {
+                        this.closeImagePreview();
+                        return true; // 拦截返回操作
+                    }
+                    
                     // 检查是否需要确认退出
                     if (this.shouldConfirmExit()) {
                         // 显示确认弹窗
@@ -693,6 +766,221 @@ export default {
                     break
                 default:
             }
+        },
+        
+        // 处理图片点击事件
+        handleImageClick(event) {
+            // 检查点击的是否是图片
+            if (event.target.tagName.toLowerCase() === 'img') {
+                // 只有在真正点击图片时才阻止事件冒泡
+                event.stopPropagation();
+                
+                this.showImagePreview = true;
+                this.previewImageSrc = event.target.src;
+                this.previewImageAlt = event.target.alt || '图片';
+                
+                // 为了更好的用户体验，添加轻微的震动反馈
+                if (navigator.vibrate) {
+                    navigator.vibrate(50);
+                }
+                
+                // 添加键盘监听
+                document.addEventListener('keydown', this.handleKeyDown);
+            }
+            // 如果不是图片，不阻止事件冒泡，让选项正常被选中
+        },
+        
+        // 键盘事件处理
+        handleKeyDown(event) {
+            if (event.key === 'Escape' && this.showImagePreview) {
+                this.closeImagePreview();
+            }
+        },
+        
+        // 关闭图片预览
+        closeImagePreview() {
+            this.showImagePreview = false;
+            this.previewImageSrc = '';
+            this.previewImageAlt = '';
+            
+            // 重置缩放和位移
+            this.resetImageTransform();
+            
+            // 移除键盘监听
+            document.removeEventListener('keydown', this.handleKeyDown);
+        },
+        
+        // 重置图片变换
+        resetImageTransform() {
+            this.zoomLevel = 1;
+            this.translateX = 0;
+            this.translateY = 0;
+            this.isDragging = false;
+            this.isZooming = false;
+        },
+        
+        // 图片加载完成
+        onImageLoad() {
+            if (this.$refs.previewImage) {
+                this.imageNaturalWidth = this.$refs.previewImage.naturalWidth;
+                this.imageNaturalHeight = this.$refs.previewImage.naturalHeight;
+                
+                if (this.$refs.imageContainer) {
+                    this.containerWidth = this.$refs.imageContainer.clientWidth;
+                    this.containerHeight = this.$refs.imageContainer.clientHeight;
+                }
+            }
+        },
+        
+        // 放大
+        zoomIn() {
+            this.zoomLevel = Math.min(this.zoomLevel * 1.2, 5);
+            this.constrainImagePosition();
+        },
+        
+        // 缩小
+        zoomOut() {
+            this.zoomLevel = Math.max(this.zoomLevel / 1.2, 0.1);
+            this.constrainImagePosition();
+        },
+        
+        // 重置缩放
+        resetZoom() {
+            this.zoomLevel = 1;
+            this.translateX = 0;
+            this.translateY = 0;
+        },
+        
+        // 鼠标滚轮缩放
+        handleWheel(event) {
+            event.preventDefault();
+            
+            const delta = event.deltaY;
+            const zoomFactor = delta > 0 ? 0.9 : 1.1;
+            const newZoom = Math.min(Math.max(this.zoomLevel * zoomFactor, 0.1), 5);
+            
+            // 计算缩放中心点
+            const rect = this.$refs.imageContainer.getBoundingClientRect();
+            const centerX = event.clientX - rect.left - rect.width / 2;
+            const centerY = event.clientY - rect.top - rect.height / 2;
+            
+            // 调整位移以保持缩放中心点
+            const zoomChange = newZoom / this.zoomLevel;
+            this.translateX = this.translateX + centerX * (1 - zoomChange);
+            this.translateY = this.translateY + centerY * (1 - zoomChange);
+            
+            this.zoomLevel = newZoom;
+            this.constrainImagePosition();
+        },
+        
+        // 触摸开始
+        handleTouchStart(event) {
+            event.preventDefault();
+            
+            if (event.touches.length === 1) {
+                // 单指拖拽
+                this.isDragging = true;
+                this.lastTouchX = event.touches[0].clientX;
+                this.lastTouchY = event.touches[0].clientY;
+                
+                // 添加拖拽样式
+                if (this.$refs.imageContainer) {
+                    this.$refs.imageContainer.classList.add('dragging');
+                }
+            } else if (event.touches.length === 2) {
+                // 双指缩放
+                this.isZooming = true;
+                this.isDragging = false;
+                
+                const touch1 = event.touches[0];
+                const touch2 = event.touches[1];
+                
+                this.initialDistance = this.getDistance(touch1, touch2);
+                this.initialZoom = this.zoomLevel;
+                
+                // 移除拖拽样式
+                if (this.$refs.imageContainer) {
+                    this.$refs.imageContainer.classList.remove('dragging');
+                }
+            }
+        },
+        
+        // 触摸移动
+        handleTouchMove(event) {
+            event.preventDefault();
+            
+            if (event.touches.length === 1 && this.isDragging && this.zoomLevel > 1) {
+                // 单指拖拽
+                const deltaX = event.touches[0].clientX - this.lastTouchX;
+                const deltaY = event.touches[0].clientY - this.lastTouchY;
+                
+                this.translateX += deltaX;
+                this.translateY += deltaY;
+                
+                this.lastTouchX = event.touches[0].clientX;
+                this.lastTouchY = event.touches[0].clientY;
+                
+                this.constrainImagePosition();
+            } else if (event.touches.length === 2 && this.isZooming) {
+                // 双指缩放
+                const touch1 = event.touches[0];
+                const touch2 = event.touches[1];
+                
+                const currentDistance = this.getDistance(touch1, touch2);
+                const scaleChange = currentDistance / this.initialDistance;
+                
+                this.zoomLevel = Math.min(Math.max(this.initialZoom * scaleChange, 0.1), 5);
+                this.constrainImagePosition();
+            }
+        },
+        
+        // 触摸结束
+        handleTouchEnd(event) {
+            event.preventDefault();
+            
+            if (event.touches.length < 2) {
+                this.isZooming = false;
+            }
+            
+            if (event.touches.length === 0) {
+                this.isDragging = false;
+                
+                // 移除拖拽样式
+                if (this.$refs.imageContainer) {
+                    this.$refs.imageContainer.classList.remove('dragging');
+                }
+            }
+        },
+        
+        // 计算两点间距离
+        getDistance(touch1, touch2) {
+            const dx = touch1.clientX - touch2.clientX;
+            const dy = touch1.clientY - touch2.clientY;
+            return Math.sqrt(dx * dx + dy * dy);
+        },
+        
+        // 约束图片位置，防止拖出边界
+        constrainImagePosition() {
+            if (!this.$refs.previewImage || !this.$refs.imageContainer) return;
+            
+            const img = this.$refs.previewImage;
+            const container = this.$refs.imageContainer;
+            
+            // 获取图片和容器的实际尺寸
+            const imgRect = img.getBoundingClientRect();
+            const containerRect = container.getBoundingClientRect();
+            
+            // 计算缩放后的图片尺寸
+            const scaledWidth = img.offsetWidth * this.zoomLevel;
+            const scaledHeight = img.offsetHeight * this.zoomLevel;
+            
+            // 计算最大允许的位移
+            const maxTranslateX = Math.max(0, (scaledWidth - containerRect.width) / 2);
+            const maxTranslateY = Math.max(0, (scaledHeight - containerRect.height) / 2);
+            
+            // 约束位移范围
+            this.translateX = Math.max(-maxTranslateX, Math.min(maxTranslateX, this.translateX));
+            this.translateY = Math.max(-maxTranslateY, Math.min(maxTranslateY, this.translateY));
         }
     },
     props: {
@@ -750,6 +1038,9 @@ export default {
         }
         // 移除返回拦截器
         this.unregisterBackInterceptor();
+        
+        // 清理键盘监听器
+        document.removeEventListener('keydown', this.handleKeyDown);
     }
 }
 </script>
@@ -1251,6 +1542,165 @@ export default {
     margin: 10px 0 50px 0;
 }
 
+/* 图片预览弹窗样式 */
+.image-preview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 顶部控制栏 */
+.image-preview-controls-bar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 2001;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.control-icon {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all var(--transition-fast);
+    background: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.control-icon:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+}
+
+.control-icon:active {
+    transform: scale(0.95);
+}
+
+.close-icon {
+    color: #ff4757;
+    font-size: 22px;
+}
+
+.close-icon:hover {
+    background: rgba(255, 71, 87, 0.1);
+}
+
+.zoom-text {
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: none;
+}
+
+/* 图片容器 - 全屏无边框 */
+.image-preview-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    touch-action: none; /* 禁用默认触摸行为 */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.preview-image {
+    max-width: none; /* 移除宽度限制 */
+    max-height: none; /* 移除高度限制 */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none; /* 防止图片自身的拖拽 */
+    border-radius: 0; /* 无边框 */
+    box-shadow: none; /* 无阴影 */
+}
+
+/* 当图片被缩放时的拖拽光标 */
+.image-preview-content.dragging {
+    cursor: grabbing !important;
+}
+
+.image-preview-content.dragging .preview-image {
+    cursor: grabbing !important;
+}
+
+/* 为图片添加点击提示样式 */
+.question-title img,
+.option-text img,
+.analysis-content img {
+    cursor: pointer;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+    border: 2px solid transparent;
+}
+
+.question-title img:hover,
+.option-text img:hover,
+.analysis-content img:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0, 196, 167, 0.3);
+    transform: scale(1.02);
+}
+
+.question-title img:active,
+.option-text img:active,
+.analysis-content img:active {
+    transform: scale(0.98);
+}
+
 /* 响应式设计 */
 @media (max-width: 768px) {
     .question-container {
@@ -1277,6 +1727,42 @@ export default {
         width: 28px;
         height: 28px;
         font-size: 12px;
+    }
+    
+    /* 移动端控制栏优化 */
+    .image-preview-controls-bar {
+        top: 10px;
+        padding: 8px 16px;
+        gap: 12px;
+        border-radius: 40px;
+    }
+    
+    .control-icon {
+        font-size: 18px;
+        padding: 6px;
+        width: 36px;
+        height: 36px;
+    }
+    
+    .close-icon {
+        font-size: 20px;
+    }
+    
+    .zoom-text {
+        font-size: 12px;
+        min-width: 45px;
+        padding: 4px 8px;
+        border-radius: 18px;
+    }
+    
+    /* 移动端触摸优化 */
+    .image-preview-content {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* 防止移动端双击缩放页面 */
+    .image-preview-overlay {
+        touch-action: manipulation;
     }
 }
 </style>

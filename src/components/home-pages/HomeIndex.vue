@@ -267,19 +267,33 @@ export default {
         async importLib() {
             try {
                 let lib = JSON.parse(this.questionLib);
+                let importCount = 0;
+                
                 if (lib instanceof Array) {
-                    await Promise.all(lib.map(async l => {
-                        await this.importSingleLib(l);
-                    }))
+                    const results = await Promise.all(lib.map(async l => {
+                        return await this.importSingleLib(l);
+                    }));
+                    importCount = results.filter(r => r).length;
                 } else {
-                    await this.importSingleLib(lib);
+                    const result = await this.importSingleLib(lib);
+                    importCount = result ? 1 : 0;
                 }
+                
+                // 显示导入成功提示
+                if (importCount > 0) {
+                    this.$toast.success(`成功导入 ${importCount} 个题库！`);
+                } else {
+                    this.$toast.fail('未找到有效的题库数据');
+                }
+                
             } catch (e) {
-                alert(`题库格式错误：${utils.getMessage(e)}`)
+                console.error('导入题库失败:', e);
+                this.$toast.fail(`题库格式错误：${utils.getMessage(e)}`);
             }
-            await this.initExamList();
+            
+            await this.initCategories(); // 刷新分类列表
             this.isShowImporter = false;
-            this.questionLib = ''
+            this.questionLib = '';
         },
         async importSingleLib(lib) {
             if (!lib.questions || lib.questions.length === 0) {
