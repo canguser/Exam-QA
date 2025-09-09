@@ -529,4 +529,8 @@
     .van-tabbar-item--active .van-icon {
         color: var(--primary-color) !important;
     }
+
+    img {
+        width: 100%;
+    }
 </style>

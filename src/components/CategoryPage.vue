@@ -23,7 +23,14 @@
                         @click="showOption(exam)"
                         class="exam-item-card"
                         :style="{ 'animation-delay': (index * 0.05) + 's' }">
-                        <div class="exam-card-content">
+                        <div class="exam-card-content"
+                             :class="{ 'long-pressing': longPressTimer && examToDelete && examToDelete.hashCode === exam.hashCode }"
+                             @mousedown="onMouseDown(exam, $event)"
+                             @mouseup="onMouseUp"
+                             @mouseleave="onMouseUp"
+                             @touchstart.passive="onTouchStart(exam, $event)"
+                             @touchend.passive="onTouchEnd"
+                             @touchcancel.passive="onTouchEnd">
                             <div class="exam-icon">
                                 <van-icon name="notes-o" size="24" :color="exam.hasHistoryError ? 'var(--warning-color)' : 'var(--primary-color)'" />
                             </div>
@@ -109,6 +116,36 @@
                 </div>
             </div>
         </van-popup>
+
+        <!-- 删除确认弹窗 -->
+        <van-popup v-model="isShowDeleteConfirm" position="center" round class="delete-confirm-popup" @click-overlay="isShowDeleteConfirm = false">
+            <div class="delete-confirm-content">
+                <div class="delete-icon">
+                    <van-icon name="warning-o" size="48" color="var(--error-color)" />
+                </div>
+                <h3 class="delete-title">确认删除题库</h3>
+                <p class="delete-message">
+                    确定要删除题库 <strong>{{ examToDelete && examToDelete.title }}</strong> 吗？
+                </p>
+                <p class="delete-warning">此操作不可恢复，相关的答题记录也将被删除。</p>
+                <div class="delete-actions">
+                    <van-button 
+                        type="default" 
+                        size="large" 
+                        @click="isShowDeleteConfirm = false"
+                        class="cancel-button">
+                        取消
+                    </van-button>
+                    <van-button 
+                        type="danger" 
+                        size="large" 
+                        @click="confirmDeleteExam"
+                        class="confirm-button">
+                        确认删除
+                    </van-button>
+                </div>
+            </div>
+        </van-popup>
     </div>
 </template>
 
@@ -141,7 +178,13 @@ export default {
                 hashCode: ''
             },
             currentExam: {},
-            historyRecords: []
+            historyRecords: [],
+            // 长按删除相关
+            longPressTimer: null,
+            longPressThreshold: 500, // 长按阈值：500ms
+            isLongPressed: false,
+            isShowDeleteConfirm: false,
+            examToDelete: null
         }
     },
     computed: {
@@ -201,6 +244,12 @@ export default {
         },
         
         async showOption(exam) {
+            // 如果是长按，不执行默认点击操作
+            if (this.isLongPressed) {
+                this.isLongPressed = false;
+                return;
+            }
+            
             if (exam.hasHistoryError) {
                 this.optionInfo.hashCode = exam.hashCode;
                 this.currentExam = exam;
@@ -276,11 +325,115 @@ export default {
                     this.loadCategoryExams(); // 重新加载数据
                 }
             );
+        },
+
+        // 长按开始
+        onTouchStart(exam, event) {
+            console.log('Touch start detected for exam:', exam.title);
+            
+            this.isLongPressed = false;
+            // 清除之前的定时器
+            if (this.longPressTimer) {
+                clearTimeout(this.longPressTimer);
+            }
+            
+            // 立即设置当前选中的题库，用于视觉反馈
+            this.examToDelete = exam;
+            
+            this.longPressTimer = setTimeout(() => {
+                console.log('Long press triggered for exam:', exam.title);
+                this.isLongPressed = true;
+                this.isShowDeleteConfirm = true;
+                
+                // 添加触觉反馈（如果支持）
+                if (navigator.vibrate) {
+                    navigator.vibrate(50);
+                }
+            }, this.longPressThreshold);
+        },
+
+        // 长按结束
+        onTouchEnd(event) {
+            console.log('Touch end detected');
+            if (this.longPressTimer) {
+                clearTimeout(this.longPressTimer);
+                this.longPressTimer = null;
+                // 如果没有触发长按，清除选中的题库
+                if (!this.isLongPressed) {
+                    this.examToDelete = null;
+                }
+            }
+        },
+
+        // 鼠标按下（用于桌面端测试）
+        onMouseDown(exam, event) {
+            console.log('Mouse down detected for exam:', exam.title);
+            this.onTouchStart(exam, event);
+        },
+
+        // 鼠标抬起（用于桌面端测试）
+        onMouseUp(event) {
+            console.log('Mouse up detected');
+            this.onTouchEnd(event);
+        },
+
+        // 确认删除题库
+        async confirmDeleteExam() {
+            if (!this.examToDelete) return;
+
+            this.isShowDeleteConfirm = false;
+            
+            try {
+                const examToDelete = this.examToDelete;
+                const categoryName = this.categoryName;
+                
+                // 1. 删除题库相关的历史记录
+                await historyRecordDao.delete(examToDelete.questions || []);
+                
+                // 2. 删除题库
+                await bankDao.delete(examToDelete.hashCode);
+                
+                // 3. 删除题库中的题目
+                if (examToDelete.questions && examToDelete.questions.length > 0) {
+                    await questionDao.delete(examToDelete.questions);
+                }
+                
+                // 4. 检查当前分类是否还有其他题库
+                const remainingBanks = await bankDao.query('hashCode').notEqual('').toArray();
+                const categoryBanks = remainingBanks.filter(bank => {
+                    const bankCategory = bank.category || 'default';
+                    return bankCategory === categoryName;
+                });
+                
+                // 5. 如果当前分类没有题库了，返回首页
+                if (categoryBanks.length === 0) {
+                    this.$toast.success('题库删除成功，该分类已为空');
+                    this.$router.push('/');
+                } else {
+                    this.$toast.success('题库删除成功');
+                    // 重新加载当前分类的题库列表
+                    await this.loadCategoryExams();
+                }
+                
+            } catch (error) {
+                console.error('删除题库失败:', error);
+                this.$toast.fail('删除题库失败，请重试');
+            } finally {
+                this.examToDelete = null;
+            }
         }
     },
     
     async mounted() {
         await this.loadCategoryExams();
+    },
+    
+    // 组件销毁时清理定时器
+    beforeDestroy() {
+        if (this.longPressTimer) {
+            clearTimeout(this.longPressTimer);
+            this.longPressTimer = null;
+        }
     },
     
     // 监听路由参数变化
@@ -346,10 +499,18 @@ export default {
 /* 考试列表样式 */
 .exam-grid .van-grid-item {
     padding: 0 !important;
+    overflow: hidden; /* 防止内容溢出网格项 */
+}
+
+.exam-grid .van-grid-item__content {
+    padding: 0 !important;
+    overflow: hidden; /* 防止内容溢出 */
 }
 
 .exam-item-card {
     animation: examItemAppear 0.5s ease-out both;
+    width: 100%;
+    overflow: hidden; /* 防止卡片内容溢出 */
 }
 
 @keyframes examItemAppear {
@@ -368,6 +529,13 @@ export default {
     align-items: center;
     padding: 0 16px;
     width: 100%;
+    min-width: 0; /* 确保flex子元素可以收缩 */
+    transition: all var(--transition-fast);
+}
+
+.exam-card-content.long-pressing {
+    background: rgba(244, 67, 54, 0.1);
+    transform: scale(0.98);
 }
 
 .exam-icon {
@@ -383,23 +551,33 @@ export default {
 
 .exam-info {
     flex: 1;
-    min-width: 0;
+    min-width: 0; /* 确保flex子元素可以收缩到0宽度 */
+    overflow: hidden; /* 防止内容溢出 */
 }
 
 .exam-title {
     margin: 0 0 4px 0;
-    font-size: 16px;
+    font-size: 15px; /* 稍微减小字体 */
     font-weight: 600;
     color: var(--text-primary);
+    line-height: 1.4;
+    /* 允许最多2行显示，超出则省略 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2; /* 标准属性 */
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    word-break: break-word; /* 允许在任意位置换行 */
+    hyphens: auto; /* 自动断词 */
 }
 
 .exam-meta {
     margin: 0 0 4px 0;
     font-size: 12px;
     color: var(--text-secondary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .exam-status {
@@ -644,5 +822,104 @@ export default {
 .slide-up-enter, .slide-up-leave-to {
     opacity: 0;
     transform: translateY(30px);
+}
+
+/* 删除确认弹窗样式 */
+.delete-confirm-popup .van-popup {
+    background: transparent;
+}
+
+.delete-confirm-content {
+    width: 85vw;
+    max-width: 320px;
+    margin: 16px auto;
+    padding: 32px 24px 24px;
+    border-radius: var(--border-radius-lg);
+    background: var(--bg-card);
+    text-align: center;
+}
+
+.delete-icon {
+    margin-bottom: 20px;
+}
+
+.delete-title {
+    margin: 0 0 16px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.delete-message {
+    margin: 0 0 12px 0;
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.delete-message strong {
+    color: var(--error-color);
+    font-weight: 600;
+}
+
+.delete-warning {
+    margin: 0 0 24px 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+.delete-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.cancel-button,
+.confirm-button {
+    flex: 1;
+    border-radius: var(--border-radius-md) !important;
+    font-weight: 500;
+    transition: all var(--transition-fast) !important;
+}
+
+.cancel-button {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-light) !important;
+    color: var(--text-secondary) !important;
+}
+
+.confirm-button {
+    background: var(--error-color) !important;
+    border-color: var(--error-color) !important;
+}
+
+.cancel-button:active,
+.confirm-button:active {
+    transform: scale(0.95);
+}
+
+/* 移动端优化 */
+@media (max-width: 480px) {
+    .delete-confirm-content {
+        width: 90vw;
+        padding: 28px 20px 20px;
+    }
+    
+    .delete-title {
+        font-size: 16px;
+    }
+    
+    .delete-message {
+        font-size: 14px;
+    }
+    
+    .delete-warning {
+        font-size: 12px;
+    }
+    
+    .delete-actions {
+        gap: 10px;
+    }
 }
 </style>

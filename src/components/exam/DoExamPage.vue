@@ -136,7 +136,7 @@
         </div>
 
         <!-- 图片预览弹窗 -->
-        <div v-if="showImagePreview" class="image-preview-overlay" @click="closeImagePreview">
+        <div v-if="showImagePreview" class="image-preview-overlay" @click="handleBackgroundClick">
             <!-- 顶部控制栏 -->
             <div class="image-preview-controls-bar" @click.stop>
                 <van-icon name="minus" class="control-icon" @click="zoomOut" />
@@ -150,11 +150,16 @@
             <div 
                 class="image-preview-content" 
                 ref="imageContainer"
-                @touchstart="handleTouchStart"
-                @touchmove="handleTouchMove"
-                @touchend="handleTouchEnd"
+                @click="handleContainerClick"
+                @dblclick="handleDoubleClick"
+                @mousedown="handleMouseDown"
+                @mousemove="handleMouseMove"
+                @mouseup="handleMouseUp"
+                @mouseleave="handleMouseLeave"
+                @touchstart="handleImageTouchStart"
+                @touchmove="handleImageTouchMove"
+                @touchend="handleImageTouchEnd"
                 @wheel="handleWheel"
-                @click.stop
             >
                 <img 
                     :src="previewImageSrc" 
@@ -164,6 +169,7 @@
                     :style="imageStyle"
                     @load="onImageLoad"
                     @dragstart.prevent
+                    @dblclick.stop="handlePreviewImageDoubleClick"
                 />
             </div>
         </div>
@@ -247,7 +253,22 @@ export default {
             imageNaturalWidth: 0, // 图片原始宽度
             imageNaturalHeight: 0, // 图片原始高度
             containerWidth: 0, // 容器宽度
-            containerHeight: 0 // 容器高度
+            containerHeight: 0, // 容器高度
+            
+            // 鼠标拖动相关
+            isMouseDragging: false, // 是否正在鼠标拖拽
+            mouseStartX: 0, // 鼠标开始X坐标
+            mouseStartY: 0, // 鼠标开始Y坐标
+            lastClickTime: 0, // 上次点击时间（用于检测双击）
+            doubleClickDelay: 300, // 双击检测延迟（毫秒）
+            
+            // 触摸双击检测相关
+            lastTouchTime: 0, // 上次触摸时间
+            lastTouchX: 0, // 上次触摸X坐标
+            lastTouchY: 0, // 上次触摸Y坐标
+            doubleTapDelay: 300, // 双击检测延迟（毫秒）
+            doubleTapDistance: 50, // 双击位置允许的最大距离差（像素）
+            touchMoved: false, // 是否有明显的触摸移动
         }
     },
     computed: {
@@ -285,11 +306,16 @@ export default {
         
         // 图片样式计算
         imageStyle() {
+            let cursor = 'zoom-in';
+            if (this.zoomLevel > 1) {
+                cursor = this.isDragging || this.isMouseDragging ? 'grabbing' : 'grab';
+            }
+            
             return {
                 transform: `translate(${this.translateX}px, ${this.translateY}px) scale(${this.zoomLevel})`,
                 transformOrigin: 'center center',
-                transition: this.isDragging || this.isZooming ? 'none' : 'transform 0.3s ease',
-                cursor: this.zoomLevel > 1 ? 'grab' : 'zoom-in',
+                transition: this.isDragging || this.isZooming || this.isMouseDragging ? 'none' : 'transform 0.3s ease',
+                cursor: cursor,
                 userSelect: 'none',
                 WebkitUserSelect: 'none',
                 MozUserSelect: 'none',
@@ -786,8 +812,66 @@ export default {
                 
                 // 添加键盘监听
                 document.addEventListener('keydown', this.handleKeyDown);
+                
+                // 确保控制栏位置正确适配沉浸式状态栏
+                this.$nextTick(() => {
+                    this.adjustImagePreviewControlsPosition();
+                    
+                    // 调试DOM元素和事件绑定
+                    console.log('图片预览打开后DOM检查:');
+                    const overlay = this.$el.querySelector('.image-preview-overlay');
+                    const container = this.$el.querySelector('.image-preview-content');
+                    const img = this.$el.querySelector('.preview-image');
+                    
+                    console.log('overlay元素:', overlay);
+                    console.log('container元素:', container);
+                    console.log('img元素:', img);
+                    
+                    if (container) {
+                        console.log('container计算样式:', window.getComputedStyle(container));
+                        console.log('container位置信息:', container.getBoundingClientRect());
+                    }
+                    
+                    if (img) {
+                        console.log('img计算样式:', window.getComputedStyle(img));
+                        console.log('img位置信息:', img.getBoundingClientRect());
+                    }
+                });
             }
             // 如果不是图片，不阻止事件冒泡，让选项正常被选中
+        },
+        
+        // 调整图片预览控制栏位置以适配沉浸式状态栏
+        adjustImagePreviewControlsPosition() {
+            const controlsBar = this.$el.querySelector('.image-preview-controls-bar');
+            if (controlsBar) {
+                let topOffset = 20; // 默认顶部间距
+                
+                // 获取沉浸式状态栏高度
+                let immersedHeight = 0;
+                
+                // 优先从全局变量获取
+                if (window.app && window.app.immersed) {
+                    immersedHeight = window.app.immersed;
+                } else {
+                    // 从CSS变量获取
+                    const cssImmersedHeight = getComputedStyle(document.documentElement)
+                        .getPropertyValue('--immersed-height').trim();
+                    if (cssImmersedHeight) {
+                        immersedHeight = parseFloat(cssImmersedHeight.replace('px', '')) || 0;
+                    }
+                }
+                
+                // 在移动端使用更小的间距
+                if (window.innerWidth <= 768) {
+                    topOffset = 10;
+                }
+                
+                // 计算最终位置
+                const finalTop = topOffset + immersedHeight;
+                controlsBar.style.top = `${finalTop}px`;
+                
+            }
         },
         
         // 键盘事件处理
@@ -817,6 +901,14 @@ export default {
             this.translateY = 0;
             this.isDragging = false;
             this.isZooming = false;
+            this.isMouseDragging = false;
+            this.mouseStartX = 0;
+            this.mouseStartY = 0;
+            this.lastClickTime = 0;
+            this.lastTouchTime = 0;
+            this.lastTouchX = 0;
+            this.lastTouchY = 0;
+            this.touchMoved = false;
         },
         
         // 图片加载完成
@@ -873,20 +965,74 @@ export default {
             this.constrainImagePosition();
         },
         
-        // 触摸开始
-        handleTouchStart(event) {
+        // 图片预览专用的滑动处理，阻止传播到根元素
+        handleImageSwipe(evt) {
+            // 阻止事件传播，防止触发题目切换
+            evt.preventDefault && evt.preventDefault();
+            evt.stopPropagation && evt.stopPropagation();
+            
+            // 在图片预览中，左右滑动用于移动图片而不是切换题目
+            if (this.zoomLevel > 1) {
+                // 当图片被放大时，滑动移动图片
+                switch (evt.direction) {
+                    case 'Left':
+                        this.translateX -= 50;
+                        break;
+                    case 'Right':
+                        this.translateX += 50;
+                        break;
+                    case 'Up':
+                        this.translateY += 50;
+                        break;
+                    case 'Down':
+                        this.translateY -= 50;
+                        break;
+                }
+                this.constrainImagePosition();
+            }
+            // 如果图片没有放大（zoomLevel = 1），则忽略滑动，不进行任何操作
+        },
+
+        // 图片触摸开始 - 专门处理图片预览的触摸事件
+        handleImageTouchStart(event) {
+            
             event.preventDefault();
+            event.stopPropagation(); // 阻止事件冒泡到根元素
             
             if (event.touches.length === 1) {
-                // 单指拖拽
+                const currentTime = Date.now();
+                const touch = event.touches[0];
+                
+                // 检测双击
+                const timeDiff = currentTime - this.lastTouchTime;
+                const distanceX = Math.abs(touch.clientX - this.lastTouchX);
+                const distanceY = Math.abs(touch.clientY - this.lastTouchY);
+                const distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+                
+                
+                if (timeDiff < this.doubleTapDelay && distance < this.doubleTapDistance) {
+                    // 双击检测成功
+                    this.handleTouchDoubleTap(event);
+                    return; // 不继续处理拖拽
+                }
+                
+                // 记录此次触摸信息
+                this.lastTouchTime = currentTime;
+                this.lastTouchX = touch.clientX;
+                this.lastTouchY = touch.clientY;
+                this.touchMoved = false;
+                
+                // 立即开始拖拽准备，不延迟
                 this.isDragging = true;
-                this.lastTouchX = event.touches[0].clientX;
-                this.lastTouchY = event.touches[0].clientY;
+                this.lastTouchX = touch.clientX;
+                this.lastTouchY = touch.clientY;
+                
                 
                 // 添加拖拽样式
                 if (this.$refs.imageContainer) {
                     this.$refs.imageContainer.classList.add('dragging');
                 }
+                
             } else if (event.touches.length === 2) {
                 // 双指缩放
                 this.isZooming = true;
@@ -898,6 +1044,7 @@ export default {
                 this.initialDistance = this.getDistance(touch1, touch2);
                 this.initialZoom = this.zoomLevel;
                 
+                
                 // 移除拖拽样式
                 if (this.$refs.imageContainer) {
                     this.$refs.imageContainer.classList.remove('dragging');
@@ -905,14 +1052,35 @@ export default {
             }
         },
         
-        // 触摸移动
-        handleTouchMove(event) {
-            event.preventDefault();
+        
+        // 处理触摸双击
+        handleTouchDoubleTap(event) {
             
-            if (event.touches.length === 1 && this.isDragging && this.zoomLevel > 1) {
+            if (this.zoomLevel === 1) {
+                // 如果当前是原始大小，放大到2倍
+                this.zoomToPoint(2, event.touches[0]);
+            } else {
+                // 如果已经放大，重置到原始大小
+                this.resetZoom();
+            }
+        },
+        
+        // 图片触摸移动 - 专门处理图片预览的触摸事件
+        handleImageTouchMove(event) {
+            event.preventDefault();
+            event.stopPropagation(); // 阻止事件冒泡到根元素
+            
+            if (event.touches.length === 1 && this.isDragging) {
                 // 单指拖拽
                 const deltaX = event.touches[0].clientX - this.lastTouchX;
                 const deltaY = event.touches[0].clientY - this.lastTouchY;
+                
+                // 检查移动距离，如果超过阈值则标记为移动
+                const moveDistance = Math.sqrt(deltaX * deltaX + deltaY * deltaY);
+                if (moveDistance > 5) { // 移动超过5像素才算真正移动
+                    this.touchMoved = true;
+                }
+                
                 
                 this.translateX += deltaX;
                 this.translateY += deltaY;
@@ -923,26 +1091,39 @@ export default {
                 this.constrainImagePosition();
             } else if (event.touches.length === 2 && this.isZooming) {
                 // 双指缩放
+                this.touchMoved = true; // 缩放时也标记为移动
+                
                 const touch1 = event.touches[0];
                 const touch2 = event.touches[1];
                 
                 const currentDistance = this.getDistance(touch1, touch2);
                 const scaleChange = currentDistance / this.initialDistance;
                 
+                
                 this.zoomLevel = Math.min(Math.max(this.initialZoom * scaleChange, 0.1), 5);
                 this.constrainImagePosition();
             }
         },
         
-        // 触摸结束
-        handleTouchEnd(event) {
+        // 图片触摸结束 - 专门处理图片预览的触摸事件
+        handleImageTouchEnd(event) {
+            
             event.preventDefault();
+            event.stopPropagation(); // 阻止事件冒泡到根元素
             
             if (event.touches.length < 2) {
                 this.isZooming = false;
             }
             
             if (event.touches.length === 0) {
+                // 检查是否是单击背景关闭
+                const isBackgroundClick = this.checkBackgroundClick(event);
+                
+                if (isBackgroundClick) {
+                    this.closeImagePreview();
+                    return;
+                }
+                
                 this.isDragging = false;
                 
                 // 移除拖拽样式
@@ -950,6 +1131,28 @@ export default {
                     this.$refs.imageContainer.classList.remove('dragging');
                 }
             }
+        },
+        
+        // 检查是否是背景点击
+        checkBackgroundClick(event) {
+            
+            // 如果有明显移动，不算单击
+            if (this.touchMoved) {
+                return false;
+            }
+            
+            // 如果点击的是图片，不关闭
+            if (event.target.tagName === 'IMG') {
+                return false;
+            }
+            
+            // 如果点击的是容器或背景层
+            if (event.target.classList.contains('image-preview-content') || 
+                event.target.classList.contains('image-preview-overlay')) {
+                return true;
+            }
+            
+            return false;
         },
         
         // 计算两点间距离
@@ -974,13 +1177,197 @@ export default {
             const scaledWidth = img.offsetWidth * this.zoomLevel;
             const scaledHeight = img.offsetHeight * this.zoomLevel;
             
-            // 计算最大允许的位移
-            const maxTranslateX = Math.max(0, (scaledWidth - containerRect.width) / 2);
-            const maxTranslateY = Math.max(0, (scaledHeight - containerRect.height) / 2);
+            
+            // 如果图片比容器小，允许在容器范围内自由移动
+            // 如果图片比容器大，限制在合理范围内
+            let maxTranslateX, maxTranslateY;
+            
+            if (scaledWidth <= containerRect.width) {
+                // 图片宽度小于容器，允许在容器范围内移动
+                maxTranslateX = (containerRect.width - scaledWidth) / 2;
+            } else {
+                // 图片宽度大于容器，限制不超出边界
+                maxTranslateX = (scaledWidth - containerRect.width) / 2;
+            }
+            
+            if (scaledHeight <= containerRect.height) {
+                // 图片高度小于容器，允许在容器范围内移动
+                maxTranslateY = (containerRect.height - scaledHeight) / 2;
+            } else {
+                // 图片高度大于容器，限制不超出边界
+                maxTranslateY = (scaledHeight - containerRect.height) / 2;
+            }
             
             // 约束位移范围
+            const oldTranslateX = this.translateX;
+            const oldTranslateY = this.translateY;
+            
             this.translateX = Math.max(-maxTranslateX, Math.min(maxTranslateX, this.translateX));
             this.translateY = Math.max(-maxTranslateY, Math.min(maxTranslateY, this.translateY));
+            
+        },
+        
+        // 处理单击背景退出
+        handleBackgroundClick(event) {
+            
+            // 只有点击overlay背景层或容器空白区域才关闭
+            if (event.target.classList.contains('image-preview-overlay') || 
+                event.target.classList.contains('image-preview-content')) {
+                this.closeImagePreview();
+            }
+        },
+        
+        // 处理容器点击事件
+        handleContainerClick(event) {
+            // 容器点击不阻止传播，让背景点击处理
+        },
+        
+        // 处理预览图片单击事件
+        handlePreviewImageClick(event) {
+            event.stopPropagation();
+            // 图片单击不做任何操作，防止关闭预览
+        },
+        
+        // 处理预览图片双击事件
+        handlePreviewImageDoubleClick(event) {
+            
+            event.stopPropagation();
+            event.preventDefault();
+            
+            if (this.zoomLevel === 1) {
+                // 如果当前是原始大小，放大到2倍
+                this.zoomToPoint(2, event);
+            } else {
+                // 如果已经放大，重置到原始大小
+                this.resetZoom();
+            }
+        },
+        
+        // 处理容器双击事件
+        handleDoubleClick(event) {
+            
+            event.stopPropagation();
+            event.preventDefault();
+            
+            // 只有当双击的不是图片本身时才处理容器双击
+            if (event.target !== this.$refs.previewImage) {
+                this.handlePreviewImageDoubleClick(event);
+            }
+        },
+        
+        // 缩放到指定点
+        zoomToPoint(newZoom, eventOrTouch) {
+            if (!this.$refs.imageContainer) return;
+            
+            const container = this.$refs.imageContainer;
+            const rect = container.getBoundingClientRect();
+            
+            // 支持鼠标事件和触摸事件
+            const clientX = eventOrTouch.clientX;
+            const clientY = eventOrTouch.clientY;
+            
+            
+            // 计算点击点相对于容器中心的偏移
+            const centerX = clientX - rect.left - rect.width / 2;
+            const centerY = clientY - rect.top - rect.height / 2;
+            
+            // 计算缩放前后的位置调整
+            const zoomChange = newZoom / this.zoomLevel;
+            
+            // 调整位移以保持点击点在缩放中心
+            this.translateX = this.translateX - centerX * (zoomChange - 1);
+            this.translateY = this.translateY - centerY * (zoomChange - 1);
+            
+            this.zoomLevel = newZoom;
+            this.constrainImagePosition();
+        },
+        
+        // 鼠标按下事件
+        handleMouseDown(event) {
+            console.log('=== 鼠标按下事件触发 ===', { 
+                button: event.button,
+                clientX: event.clientX,
+                clientY: event.clientY,
+                target: event.target.tagName
+            });
+            
+            if (event.button !== 0) return; // 只处理左键
+            
+            event.preventDefault();
+            event.stopPropagation();
+            
+            this.isMouseDragging = true;
+            this.mouseStartX = event.clientX;
+            this.mouseStartY = event.clientY;
+            
+            console.log('开始拖拽状态:', { 
+                isMouseDragging: this.isMouseDragging, 
+                startX: this.mouseStartX, 
+                startY: this.mouseStartY 
+            });
+            
+            // 添加拖拽样式
+            if (this.$refs.imageContainer) {
+                this.$refs.imageContainer.classList.add('dragging');
+            }
+        },
+        
+        // 鼠标移动事件
+        handleMouseMove(event) {
+            if (!this.isMouseDragging) {
+                return;
+            }
+            
+            event.preventDefault();
+            event.stopPropagation();
+            
+            const deltaX = event.clientX - this.mouseStartX;
+            const deltaY = event.clientY - this.mouseStartY;
+            
+            console.log('=== 鼠标移动事件触发 ===', { 
+                isMouseDragging: this.isMouseDragging,
+                deltaX, 
+                deltaY, 
+                currentTranslateX: this.translateX, 
+                currentTranslateY: this.translateY,
+                zoomLevel: this.zoomLevel
+            });
+            
+            // 简化拖动逻辑：任何时候都允许拖动
+            this.translateX += deltaX;
+            this.translateY += deltaY;
+            
+            console.log('拖动后位置:', { 
+                newTranslateX: this.translateX, 
+                newTranslateY: this.translateY 
+            });
+            
+            this.constrainImagePosition();
+            
+            this.mouseStartX = event.clientX;
+            this.mouseStartY = event.clientY;
+        },
+        
+        // 鼠标松开事件
+        handleMouseUp(event) {
+            if (!this.isMouseDragging) return;
+            
+            event.preventDefault();
+            event.stopPropagation();
+            
+            this.isMouseDragging = false;
+            
+            // 移除拖拽样式
+            if (this.$refs.imageContainer) {
+                this.$refs.imageContainer.classList.remove('dragging');
+            }
+        },
+        
+        // 鼠标离开事件
+        handleMouseLeave(event) {
+            if (this.isMouseDragging) {
+                this.handleMouseUp(event);
+            }
         }
     },
     props: {
@@ -1027,6 +1414,7 @@ export default {
         }
         // 注册返回拦截器
         this.registerBackInterceptor();
+        
     },
     destroyed() {
         console.log('结束答题');
@@ -1566,7 +1954,7 @@ export default {
 /* 顶部控制栏 */
 .image-preview-controls-bar {
     position: fixed;
-    top: 20px;
+    top: calc(20px + var(--immersed-height, 0px));
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -1663,7 +2051,6 @@ export default {
     width: auto;
     height: auto;
     object-fit: contain;
-    pointer-events: none; /* 防止图片自身的拖拽 */
     border-radius: 0; /* 无边框 */
     box-shadow: none; /* 无阴影 */
 }
@@ -1675,6 +2062,32 @@ export default {
 
 .image-preview-content.dragging .preview-image {
     cursor: grabbing !important;
+}
+
+/* 图片预览拖拽优化 */
+.image-preview-content {
+    /* 防止图片在拖拽时被选中 */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    /* 防止长按时出现上下文菜单 */
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.preview-image {
+    /* 防止图片拖拽时出现虚影 */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    
+    /* 提高拖拽性能 */
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 /* 为图片添加点击提示样式 */
@@ -1731,7 +2144,7 @@ export default {
     
     /* 移动端控制栏优化 */
     .image-preview-controls-bar {
-        top: 10px;
+        top: calc(10px + var(--immersed-height, 0px));
         padding: 8px 16px;
         gap: 12px;
         border-radius: 40px;
