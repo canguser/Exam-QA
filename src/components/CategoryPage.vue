@@ -36,9 +36,16 @@
                             </div>
                             <div class="exam-info">
                                 <h3 class="exam-title">{{ exam.title }}</h3>
-                                <p class="exam-meta">题目数量: {{ exam.questions ? exam.questions.length : 0 }}</p>
-                                <div class="exam-status" v-if="exam.hasHistoryError">
-                                    <van-tag type="warning" size="mini">有错题</van-tag>
+                                <p class="exam-meta">
+                                    题目数量: {{ exam.questions ? exam.questions.length : 0 }}
+                                    <span v-if="exam.slashedCount > 0" class="slash-info">
+                                        (已斩: {{ exam.slashedCount }})
+                                    </span>
+                                </p>
+                                <div class="exam-status">
+                                    <van-tag v-if="exam.hasHistoryError" type="warning" size="mini">有错题</van-tag>
+                                    <van-tag v-if="exam.slashRate > 50" type="success" size="mini">已斩过半</van-tag>
+                                    <van-tag v-if="exam.slashRate === 100" type="primary" size="mini">全部已斩</van-tag>
                                 </div>
                             </div>
                             <div class="exam-arrow">
@@ -69,6 +76,51 @@
                         <p class="exam-title">{{ currentExam.title }}</p>
                     </div>
                     <van-icon name="cross" @click="isShowOption = false" class="close-icon" />
+                </div>
+                
+                <!-- 答题设置选项 -->
+                <div class="exam-settings">
+                    <div class="settings-header">
+                        <van-icon name="setting-o" class="settings-icon" />
+                        <span class="settings-title">答题设置</span>
+                    </div>
+                    <div class="settings-options">
+                        <div class="setting-item" @click="toggleSetting('keepQuestionOrder')">
+                            <van-checkbox 
+                                v-model="examSettings.keepQuestionOrder" 
+                                class="setting-checkbox"
+                                @click.stop>
+                            </van-checkbox>
+                            <div class="setting-content">
+                                <span class="setting-label">保持答题顺序</span>
+                                <span class="setting-desc">按原始顺序显示题目，不打乱</span>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item" @click="toggleSetting('keepOptionOrder')">
+                            <van-checkbox 
+                                v-model="examSettings.keepOptionOrder" 
+                                class="setting-checkbox"
+                                @click.stop>
+                            </van-checkbox>
+                            <div class="setting-content">
+                                <span class="setting-label">保持选项顺序</span>
+                                <span class="setting-desc">按原始顺序显示选项，不打乱</span>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-item" @click="toggleSetting('showRealIndex')">
+                            <van-checkbox 
+                                v-model="examSettings.showRealIndex" 
+                                class="setting-checkbox"
+                                @click.stop>
+                            </van-checkbox>
+                            <div class="setting-content">
+                                <span class="setting-label">显示题目真实序号</span>
+                                <span class="setting-desc">在当前序号后额外显示原始题库序号</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="option-grid">
                     <div class="option-item" 
@@ -102,6 +154,15 @@
                         <div class="option-info">
                             <span class="option-title">复习错题</span>
                             <span class="option-count">{{ getErrorCounts() }}题</span>
+                        </div>
+                    </div>
+                    <div class="option-item info" @click="openSlashManager(optionInfo.hashCode)">
+                        <div class="option-icon">
+                            <van-icon name="fire-o" />
+                        </div>
+                        <div class="option-info">
+                            <span class="option-title">斩题管理</span>
+                            <span class="option-count">⚔️</span>
                         </div>
                     </div>
                     <div class="option-item danger" @click="clearHistory(optionInfo.hashCode)">
@@ -146,6 +207,121 @@
                 </div>
             </div>
         </van-popup>
+
+        <!-- 斩题管理弹窗 -->
+        <van-popup v-model="showSlashManager" position="bottom" round class="slash-manager-popup" @click-overlay="showSlashManager = false">
+            <div class="slash-manager">
+                <div class="popup-header">
+                    <div class="header-info">
+                        <h3>斩题管理</h3>
+                        <p class="exam-title">{{ currentExam.title }}</p>
+                    </div>
+                    <van-icon name="cross" @click="showSlashManager = false" class="close-icon" />
+                </div>
+                
+                <div class="slash-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">总题目</span>
+                        <span class="stat-value">{{ getSlashStats().totalQuestions }}</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">已斩题目</span>
+                        <span class="stat-value slash-count">{{ getSlashStats().slashedCount }}</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">斩题率</span>
+                        <span class="stat-value">{{ getSlashStats().slashRate }}%</span>
+                    </div>
+                </div>
+                
+                <div class="slash-actions">
+                    <van-button 
+                        type="primary" 
+                        size="large" 
+                        block 
+                        round
+                        @click="openBatchSlashDialog"
+                        class="action-button">
+                        <van-icon name="apps-o" />
+                        批量斩题
+                    </van-button>
+                    
+                    <van-button 
+                        type="warning" 
+                        size="large" 
+                        block 
+                        round
+                        @click="resetAllSlashedQuestions"
+                        :disabled="getSlashStats().slashedCount === 0"
+                        class="action-button">
+                        <van-icon name="replay" />
+                        重置所有斩题
+                    </van-button>
+                </div>
+            </div>
+        </van-popup>
+
+        <!-- 批量斩题弹窗 -->
+        <van-popup v-model="showBatchSlashDialog" position="bottom" round class="batch-slash-popup" @click-overlay="showBatchSlashDialog = false">
+            <div class="batch-slash-dialog">
+                <div class="popup-header">
+                    <h3>批量斩题</h3>
+                    <van-icon name="cross" @click="showBatchSlashDialog = false" class="close-icon" />
+                </div>
+                
+                <div class="batch-selection-header">
+                    <van-button 
+                        size="small" 
+                        type="info" 
+                        round
+                        @click="toggleSelectAll"
+                        class="select-all-btn">
+                        {{ selectedQuestions.length === currentExamQuestions.length ? '反选全部' : '全选' }}
+                    </van-button>
+                    <span class="selection-count">已选择 {{ selectedQuestions.length }}/{{ currentExamQuestions.length }} 题</span>
+                </div>
+                
+                <div class="batch-question-list">
+                    <van-checkbox-group v-model="selectedQuestions">
+                        <div 
+                            v-for="(question, index) in currentExamQuestions" 
+                            :key="question.hashCode"
+                            class="batch-question-item"
+                            :class="{ 'already-slashed': isQuestionSlashed(question.hashCode) }"
+                            @click="toggleQuestionSelection(question.hashCode)">
+                            <van-checkbox 
+                                :name="question.hashCode"
+                                :disabled="isQuestionSlashed(question.hashCode)">
+                            </van-checkbox>
+                            <div class="question-preview">
+                                <span class="question-number">第{{ index + 1 }}题</span>
+                                <span class="question-status">
+                                    <van-tag v-if="isQuestionSlashed(question.hashCode)" type="success" size="mini">已斩</van-tag>
+                                </span>
+                            </div>
+                        </div>
+                    </van-checkbox-group>
+                </div>
+                
+                <div class="batch-actions">
+                    <van-button 
+                        type="default" 
+                        size="large" 
+                        @click="showBatchSlashDialog = false"
+                        class="cancel-button">
+                        取消
+                    </van-button>
+                    <van-button 
+                        type="warning" 
+                        size="large" 
+                        @click="batchSlashQuestions"
+                        :disabled="selectedQuestions.length === 0"
+                        class="confirm-button">
+                        斩掉 {{ selectedQuestions.length }} 题
+                    </van-button>
+                </div>
+            </div>
+        </van-popup>
     </div>
 </template>
 
@@ -158,7 +334,7 @@ import {Button} from 'vant';
 import {Dialog} from 'vant';
 import {Tag} from 'vant';
 import {Icon} from 'vant';
-import {questionDao, historyRecordDao, bankDao} from '../dao';
+import {questionDao, historyRecordDao, bankDao, slashedQuestionDao, questionBankMappingDao} from '../dao';
 
 Vue.use(NavBar);
 Vue.use(Grid).use(GridItem);
@@ -184,7 +360,21 @@ export default {
             longPressThreshold: 500, // 长按阈值：500ms
             isLongPressed: false,
             isShowDeleteConfirm: false,
-            examToDelete: null
+            examToDelete: null,
+            
+            // 斩题管理相关
+            showSlashManager: false,
+            showBatchSlashDialog: false,
+            selectedQuestions: [],
+            currentSlashedQuestions: [],
+            currentExamQuestions: [],
+            
+            // 答题设置
+            examSettings: {
+                keepQuestionOrder: false,    // 保持答题顺序
+                keepOptionOrder: false,      // 保持选项顺序
+                showRealIndex: true          // 显示题目真实序号（默认选中）
+            }
         }
     },
     computed: {
@@ -224,16 +414,29 @@ export default {
                            b.title.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
                 });
                 
-                // 获取历史记录
-                const promises = filteredBanks.map(bank => {
-                    return historyRecordDao.query('relatedQuestion').anyOf(bank.questions).sortBy('createDate')
-                        .then(records => {
-                            const errorMap = Object.fromEntries(records.map(record => [record.relatedQuestion, {
-                                ...record, times: record.errorTimes
-                            }]));
-                            const hasHistoryError = !!Object.values(errorMap).find(q => q.times > 0);
-                            return {...bank, errorMap, hasHistoryError}
-                        });
+                // 获取历史记录和斩题统计
+                const promises = filteredBanks.map(async bank => {
+                    // 获取历史记录
+                    const records = await historyRecordDao.query('relatedQuestion').anyOf(bank.questions).sortBy('createDate');
+                    const errorMap = Object.fromEntries(records.map(record => [record.relatedQuestion, {
+                        ...record, times: record.errorTimes
+                    }]));
+                    const hasHistoryError = !!Object.values(errorMap).find(q => q.times > 0);
+                    
+                    // 获取斩题统计
+                    const slashedQuestions = await slashedQuestionDao.queryByBankHashCode(bank.hashCode);
+                    const slashedCount = slashedQuestions.length;
+                    const totalQuestions = bank.questions ? bank.questions.length : 0;
+                    const slashRate = totalQuestions > 0 ? Math.round((slashedCount / totalQuestions) * 100) : 0;
+                    
+                    return {
+                        ...bank, 
+                        errorMap, 
+                        hasHistoryError,
+                        slashedCount,
+                        slashRate,
+                        slashedQuestions
+                    };
                 });
                 
                 this.examList = await Promise.all(promises);
@@ -250,34 +453,43 @@ export default {
                 return;
             }
             
-            if (exam.hasHistoryError) {
-                this.optionInfo.hashCode = exam.hashCode;
-                this.currentExam = exam;
-                
+            this.optionInfo.hashCode = exam.hashCode;
+            this.currentExam = exam;
+            
+            try {
                 // 加载历史记录用于计算题目数量
-                try {
-                    const records = await historyRecordDao.queryMany(exam.questions || []);
-                    this.historyRecords = records;
-                } catch (error) {
-                    console.error('加载历史记录失败:', error);
-                    this.historyRecords = [];
-                }
+                const records = await historyRecordDao.queryMany(exam.questions || []);
+                this.historyRecords = records;
                 
-                this.isShowOption = true;
-            } else {
-                this.doExam(exam.hashCode);
+                // 加载斩题数据用于计算实际可答题数量
+                this.currentSlashedQuestions = await slashedQuestionDao.queryByBankHashCode(exam.hashCode);
+            } catch (error) {
+                console.error('加载数据失败:', error);
+                this.historyRecords = [];
+                this.currentSlashedQuestions = [];
             }
+            
+            // 默认总是显示选项弹窗，让用户选择答题模式和设置
+            this.isShowOption = true;
         },
         
         // 获取总题目数量
         getTotalCounts() {
-            return this.currentExam.questions ? this.currentExam.questions.length : 0;
+            if (!this.currentExam.questions) return 0;
+            // 获取已斩题目数量
+            const slashedCount = this.currentSlashedQuestions.length;
+            return this.currentExam.questions.length - slashedCount;
         },
         
         // 获取错题数量
         getErrorCounts() {
             if (!this.currentExam.questions || !this.historyRecords.length) return 0;
-            return this.historyRecords.filter(record => record.errorTimes > 0).length;
+            // 获取已斩题目的hashCode列表
+            const slashedHashCodes = this.currentSlashedQuestions.map(sq => sq.questionHashCode);
+            // 过滤掉已斩题目的错题记录
+            return this.historyRecords.filter(record => 
+                record.errorTimes > 0 && !slashedHashCodes.includes(record.relatedQuestion)
+            ).length;
         },
         
         // 获取未做题数量
@@ -285,30 +497,68 @@ export default {
             if (!this.currentExam.questions || !this.historyRecords.length) {
                 return this.getTotalCounts();
             }
+            // 获取已斩题目的hashCode列表
+            const slashedHashCodes = this.currentSlashedQuestions.map(sq => sq.questionHashCode);
+            // 计算已做题目数量（排除已斩题目）
             const doneQuestions = this.historyRecords.filter(record => 
-                (record.errorTimes || 0) + (record.rightTimes || 0) > 0
+                ((record.errorTimes || 0) + (record.rightTimes || 0) > 0) && 
+                !slashedHashCodes.includes(record.relatedQuestion)
             ).length;
             return this.getTotalCounts() - doneQuestions;
         },
         
+        // 切换答题设置
+        toggleSetting(settingKey) {
+            this.examSettings[settingKey] = !this.examSettings[settingKey];
+        },
+        
         doExam(hashCode, isReviewError = false, neverDo = false) {
             this.isShowOption = false; // 关闭弹窗
+            
+            
             bankDao.query('hashCode').equals(hashCode).first()
-                .then(exam => {
-                    return Promise.all([exam, ...exam.questions.map(q => questionDao.query('hashCode').equals(q).first())])
-                })
-                .then(([exam, ...questions]) => {
-                    exam.questions = questions;
+                .then(async exam => {
                     if (!exam) {
                         Dialog.alert({message: '该题库已失效！'});
                         return;
                     }
+                    
+                    // 使用映射表按顺序加载题目
+                    const mappings = await questionBankMappingDao.getQuestionsByLibId(hashCode);
+                    
+                    if (mappings && mappings.length > 0) {
+                        // 如果有映射表数据，按order顺序加载题目
+                        const questions = [];
+                        for (const mapping of mappings) {
+                            const question = await questionDao.query('hashCode').equals(mapping.questionId).first();
+                            if (question) {
+                                questions.push(question);
+                            }
+                        }
+                        exam.questions = questions;
+                    } else {
+                        // 兼容旧数据：如果没有映射表数据，使用原有逻辑
+                        const questions = [];
+                        for (const questionHashCode of exam.questions) {
+                            const question = await questionDao.query('hashCode').equals(questionHashCode).first();
+                            if (question) {
+                                questions.push(question);
+                            }
+                        }
+                        exam.questions = questions;
+                    }
+                    
                     this.$router.push({
                         name: 'DoExamPage',
                         params: {
                             examConfig: exam,
                             isReviewError,
                             neverDo
+                        },
+                        query: {
+                            keepQuestionOrder: this.examSettings.keepQuestionOrder,
+                            keepOptionOrder: this.examSettings.keepOptionOrder,
+                            showRealIndex: this.examSettings.showRealIndex
                         }
                     })
                 });
@@ -421,6 +671,166 @@ export default {
             } finally {
                 this.examToDelete = null;
             }
+        },
+        
+        // ==================== 斩题管理相关方法 ====================
+        
+        // 打开斩题管理
+        async openSlashManager(hashCode) {
+            this.isShowOption = false; // 先关闭答题选项弹窗
+            
+            try {
+                // 获取题库信息
+                const exam = await bankDao.queryByHashCode(hashCode);
+                if (!exam) {
+                    this.$toast.fail('题库不存在');
+                    return;
+                }
+                
+                this.currentExam = exam;
+                this.optionInfo.hashCode = hashCode;
+                
+                // 获取题库的所有题目
+                const questions = await Promise.all(
+                    exam.questions.map(qHashCode => questionDao.queryByHashCode(qHashCode))
+                );
+                this.currentExamQuestions = questions.filter(q => q); // 过滤掉null值
+                
+                // 获取已斩题目
+                this.currentSlashedQuestions = await slashedQuestionDao.queryByBankHashCode(hashCode);
+                
+                this.showSlashManager = true;
+            } catch (error) {
+                console.error('打开斩题管理失败:', error);
+                this.$toast.fail('打开斩题管理失败');
+            }
+        },
+        
+        // 获取斩题统计
+        getSlashStats() {
+            const totalQuestions = this.currentExamQuestions.length;
+            const slashedCount = this.currentSlashedQuestions.length;
+            const slashRate = totalQuestions > 0 ? Math.round((slashedCount / totalQuestions) * 100) : 0;
+            
+            return {
+                totalQuestions,
+                slashedCount,
+                slashRate
+            };
+        },
+        
+        // 检查题目是否已斩
+        isQuestionSlashed(questionHashCode) {
+            return this.currentSlashedQuestions.some(sq => sq.questionHashCode === questionHashCode);
+        },
+        
+        // 打开批量斩题弹窗
+        openBatchSlashDialog() {
+            this.selectedQuestions = [];
+            this.showBatchSlashDialog = true;
+            this.showSlashManager = false;
+        },
+        
+        // 切换题目选择状态
+        toggleQuestionSelection(questionHashCode) {
+            const index = this.selectedQuestions.indexOf(questionHashCode);
+            if (index > -1) {
+                this.selectedQuestions.splice(index, 1);
+            } else {
+                this.selectedQuestions.push(questionHashCode);
+            }
+        },
+        
+        // 全选/反选
+        toggleSelectAll() {
+            const unslashedQuestions = this.currentExamQuestions.filter(q => 
+                !this.isQuestionSlashed(q.hashCode)
+            );
+            
+            if (this.selectedQuestions.length === unslashedQuestions.length) {
+                // 当前全选，执行反选
+                this.selectedQuestions = [];
+            } else {
+                // 当前未全选，执行全选（只选择未斩的题目）
+                this.selectedQuestions = unslashedQuestions.map(q => q.hashCode);
+            }
+        },
+        
+        // 批量斩题
+        async batchSlashQuestions() {
+            if (this.selectedQuestions.length === 0) {
+                this.$toast.fail('请先选择要斩的题目');
+                return;
+            }
+            
+            Dialog.confirm({
+                title: '批量斩题',
+                message: `确定要斩掉选中的 ${this.selectedQuestions.length} 道题目吗？`,
+                confirmButtonText: '确认斩题',
+                cancelButtonText: '取消',
+                confirmButtonColor: 'var(--warning-color)',
+                className: 'custom-slash-dialog',
+                closeOnClickOverlay: true
+            }).then(async () => {
+                try {
+                    await slashedQuestionDao.batchSlashQuestions(
+                        this.selectedQuestions, 
+                        this.optionInfo.hashCode, 
+                        '批量斩题'
+                    );
+                    
+                    // 重新加载斩题数据
+                    this.currentSlashedQuestions = await slashedQuestionDao.queryByBankHashCode(this.optionInfo.hashCode);
+                    
+                    this.$toast.success(`成功斩掉 ${this.selectedQuestions.length} 道题目！`);
+                    this.showBatchSlashDialog = false;
+                    this.selectedQuestions = [];
+                    
+                    // 重新加载分类数据以更新统计
+                    await this.loadCategoryExams();
+                    
+                    // 强制更新答题选项的数量显示
+                    this.$forceUpdate();
+                } catch (error) {
+                    console.error('批量斩题失败:', error);
+                    this.$toast.fail('批量斩题失败，请重试');
+                }
+            }).catch(() => {
+                // 用户取消
+            });
+        },
+        
+        // 重置所有斩题
+        async resetAllSlashedQuestions() {
+            Dialog.confirm({
+                title: '重置斩题',
+                message: '确定要重置当前题库的所有斩题状态吗？重置后所有已斩题目将重新出现。',
+                confirmButtonText: '确认重置',
+                cancelButtonText: '取消',
+                confirmButtonColor: 'var(--warning-color)',
+                className: 'custom-warning-dialog',
+                closeOnClickOverlay: true
+            }).then(async () => {
+                try {
+                    await slashedQuestionDao.resetBankSlashedQuestions(this.optionInfo.hashCode);
+                    
+                    // 重新加载斩题数据
+                    this.currentSlashedQuestions = [];
+                    
+                    this.$toast.success('斩题状态已重置');
+                    
+                    // 重新加载分类数据以更新统计
+                    await this.loadCategoryExams();
+                    
+                    // 强制更新答题选项的数量显示
+                    this.$forceUpdate();
+                } catch (error) {
+                    console.error('重置斩题失败:', error);
+                    this.$toast.fail('重置失败，请重试');
+                }
+            }).catch(() => {
+                // 用户取消
+            });
         }
     },
     
@@ -582,6 +992,14 @@ export default {
 
 .exam-status {
     margin-top: 4px;
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.slash-info {
+    color: var(--warning-color);
+    font-weight: 500;
 }
 
 .exam-arrow {
@@ -739,6 +1157,98 @@ export default {
 
 .option-item.new .option-icon {
     background: var(--success-color);
+}
+
+.option-item.info {
+    background: rgba(25, 137, 250, 0.1);
+    border-color: var(--info-color);
+}
+
+.option-item.info .option-icon {
+    background: var(--info-color);
+}
+
+/* 答题设置样式 */
+.exam-settings {
+    margin-bottom: 20px;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-light);
+}
+
+.settings-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.settings-icon {
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-right: 8px;
+}
+
+.settings-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.settings-options {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.setting-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+    background: var(--bg-card);
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-light);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.setting-item:hover {
+    background: var(--bg-hover);
+    border-color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+}
+
+.setting-item:active {
+    transform: translateY(0);
+}
+
+.setting-checkbox {
+    margin-right: 12px;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.setting-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.setting-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+    line-height: 1.4;
+}
+
+.setting-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.3;
 }
 
 .option-icon .van-icon {
@@ -921,5 +1431,234 @@ export default {
     .delete-actions {
         gap: 10px;
     }
+}
+
+/* 斩题管理弹窗样式 */
+.slash-manager-popup .van-popup {
+    background: transparent;
+}
+
+.slash-manager {
+    width: 90vw;
+    max-width: 380px;
+    margin: 16px auto;
+    padding: 20px;
+    border-radius: var(--border-radius-lg);
+    background: var(--bg-card);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.header-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.header-info .exam-title {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: normal;
+}
+
+.close-icon {
+    font-size: 18px;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 4px;
+    border-radius: var(--border-radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.close-icon:active {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+
+.slash-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+}
+
+.stat-item {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.stat-value.slash-count {
+    color: var(--warning-color);
+}
+
+.slash-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.slash-actions .action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-weight: 500;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast) !important;
+}
+
+.slash-actions .action-button:active {
+    transform: scale(0.98);
+}
+
+.slash-actions .action-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* 批量斩题弹窗样式 */
+.batch-slash-popup .van-popup {
+    background: transparent;
+}
+
+.batch-slash-dialog {
+    width: 95vw;
+    max-width: 400px;
+    margin: 16px auto;
+    padding: 20px;
+    border-radius: var(--border-radius-lg);
+    background: var(--bg-card);
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.batch-selection-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 12px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+}
+
+.select-all-btn {
+    background: var(--info-color) !important;
+    border-color: var(--info-color) !important;
+}
+
+.selection-count {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.batch-question-list {
+    flex: 1;
+    overflow-y: auto;
+    max-height: 300px;
+    margin-bottom: 16px;
+}
+
+.batch-question-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.batch-question-item:hover {
+    background: var(--bg-secondary);
+}
+
+.batch-question-item.already-slashed {
+    opacity: 0.6;
+    background: var(--bg-secondary);
+}
+
+.question-preview {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 12px;
+}
+
+.question-number {
+    font-size: 14px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.question-status {
+    display: flex;
+    gap: 4px;
+}
+
+.batch-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    border-top: 1px solid var(--border-light);
+    padding-top: 16px;
+}
+
+.cancel-button,
+.confirm-button {
+    flex: 1;
+    border-radius: var(--border-radius-md) !important;
+    font-weight: 500;
+    transition: all var(--transition-fast) !important;
+}
+
+.cancel-button {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-light) !important;
+    color: var(--text-secondary) !important;
+}
+
+.confirm-button {
+    background: var(--warning-color) !important;
+    border-color: var(--warning-color) !important;
+}
+
+.confirm-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.cancel-button:active,
+.confirm-button:active {
+    transform: scale(0.95);
 }
 </style>

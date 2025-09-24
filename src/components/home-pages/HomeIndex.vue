@@ -129,7 +129,7 @@ import {Button} from 'vant';
 import {Field} from 'vant';
 import {Cell, CellGroup} from 'vant';
 import utils from '../../utils';
-import {questionDao, historyRecordDao, bankDao, configDao} from '../../dao';
+import {questionDao, historyRecordDao, bankDao, configDao, questionBankMappingDao} from '../../dao';
 import {Dialog} from 'vant';
 import config from "@/config";
 import {Checkbox, CheckboxGroup} from 'vant';
@@ -307,10 +307,14 @@ export default {
                 questions: lib.questions.map(q=>q.hashCode)
             }
             bank.hashCode = lib.hashCode || utils.getHashCode(bank)
+            
+            // 保存题目数据
             await questionDao.upsert(lib.questions)
-                .then(()=>{
-                    return bankDao.upsert([bank]);
-                })
+            // 保存题库数据
+            await bankDao.upsert([bank])
+            // 保存题目顺序映射关系
+            await questionBankMappingDao.saveMappings(bank.hashCode, bank.questions)
+            
             return true;
         },
         async initCategories() {

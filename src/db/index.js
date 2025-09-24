@@ -13,9 +13,17 @@ dexieDB.version(2).stores({
 dexieDB.version(3).stores({
     question: 'hashCode, describe, type, createDate, modifyDate, analysis',
 });
+dexieDB.version(4).stores({
+    slashedQuestion: 'questionHashCode, bankHashCode, slashDate, reason, createDate, modifyDate'
+});
+dexieDB.version(5).stores({
+    questionBankMapping: '++id, libId, questionId, order, createDate, modifyDate'
+});
 const configDB = dexieDB['config'];
 const questionDB = dexieDB['question'];
 const bankDB = dexieDB['bank'];
 const historyRecordDB = dexieDB['historyRecord'];
+const slashedQuestionDB = dexieDB['slashedQuestion'];
+const questionBankMappingDB = dexieDB['questionBankMapping'];
 
-export {dexieDB, configDB, questionDB, bankDB, historyRecordDB};
+export {dexieDB, configDB, questionDB, bankDB, historyRecordDB, slashedQuestionDB, questionBankMappingDB};

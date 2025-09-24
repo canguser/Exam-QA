@@ -21,6 +21,8 @@
                             <div class="exam-circle exam-done theme-button" @click="turnTo(i)"
                                  :class="getQuestionNavClass(question, i)">
                                 {{ i + 1 }}
+                                <!-- 已斩题目标识 -->
+                                <div v-if="question.isSlashed" class="slash-indicator">⚔️</div>
                             </div>
                         </van-col>
                     </van-row>
@@ -100,6 +102,15 @@
                     class="nav-button theme-button">
                     <van-icon name="arrow-left" />
                     上一题
+                </van-button>
+                <van-button 
+                    type="warning" 
+                    round 
+                    @click="slashCurrentQuestion"
+                    class="slash-button theme-button"
+                    :class="{ 'slashed': isCurrentQuestionSlashed() }">
+                    <van-icon name="fire-o" />
+                    {{ isCurrentQuestionSlashed() ? '已斩' : '斩题' }}
                 </van-button>
                 <van-button 
                     type="info" 
@@ -189,7 +200,7 @@ import {Dialog} from 'vant';
 import {Row, Col} from 'vant';
 import {Icon} from 'vant';
 import utils from '../../utils';
-import {historyRecordDao, bankDao} from '../../dao'
+import {historyRecordDao, bankDao, slashedQuestionDao} from '../../dao'
 
 Vue.use(Row).use(Col);
 // 全局注册
@@ -269,18 +280,62 @@ export default {
             doubleTapDelay: 300, // 双击检测延迟（毫秒）
             doubleTapDistance: 50, // 双击位置允许的最大距离差（像素）
             touchMoved: false, // 是否有明显的触摸移动
+            
+            // 斩题相关
+            slashedQuestions: [], // 已斩题目列表
+            includeSlashedQuestions: false, // 是否包含已斩题目
         }
     },
     computed: {
         totalNum() {
             return this.questions.length;
         },
+        // 从URL query参数读取设置，确保总是有默认值
+        safeExamSettings() {
+            const queryParams = this.$route.query;
+            
+            return {
+                keepQuestionOrder: String(queryParams.keepQuestionOrder) === 'true',
+                keepOptionOrder: String(queryParams.keepOptionOrder) === 'true', 
+                showRealIndex: String(queryParams.showRealIndex) !== 'false' // 默认为true
+            };
+        },
         questions() {
-            return (this.examInfo.questions || []).filter(
+            // 获取过滤后的题目列表（已经在adaptExamConfig中根据设置进行了排序）
+            let filteredQuestions = (this.examInfo.questions || []).filter(
                 q => {
-                    return this.isReviewError ? this.historyErrorHashCodes.includes(q.hashCode) : (this.neverDo ? (!this.doneHashCodes.includes(q.hashCode)) : true)
+                    // 现有的过滤逻辑
+                    const passExistingFilters = this.isReviewError ? 
+                        this.historyErrorHashCodes.includes(q.hashCode) : 
+                        (this.neverDo ? (!this.doneHashCodes.includes(q.hashCode)) : true);
+                        
+                    // 新增：过滤已斩题目（除非明确要求包含）
+                    const slashedHashCodes = this.slashedQuestions.map(sq => sq.questionHashCode);
+                    const passSlashFilter = this.includeSlashedQuestions || !slashedHashCodes.includes(q.hashCode);
+                    
+                    return passExistingFilters && passSlashFilter;
                 }
-            ).map((q, i) => ({...q, active: i === this.questionNum}));
+            );
+            
+            // 为每个题目添加原始索引信息（用于显示真实序号）
+            return filteredQuestions.map((q, i) => {
+                // 查找题目在原始examConfig.questions数组中的位置
+                // 这个位置对应数据库映射表中的order字段
+                let originalIndex = 0; // 默认值
+                
+                if (this.examConfig.questions) {
+                    const foundIndex = this.examConfig.questions.findIndex(oq => oq.hashCode === q.hashCode);
+                    if (foundIndex !== -1) {
+                        originalIndex = foundIndex;
+                    }
+                }
+                
+                return {
+                    ...q, 
+                    active: i === this.questionNum,
+                    originalIndex: originalIndex + 1  // 从1开始计数，对应数据库中的真实序号
+                };
+            });
         },
         questionsInfo() {
             return this.questions.map(
@@ -288,11 +343,17 @@ export default {
                     if (!this.answers[i]) {
                         this.answers[i] = {results: [{}], single: {}, multi: {apis: []}}
                     }
+                    
+                    // 检查题目是否已斩
+                    const slashedHashCodes = this.slashedQuestions.map(sq => sq.questionHashCode);
+                    const isSlashed = slashedHashCodes.includes(q.hashCode);
+                    
                     return {
                         ...q,
                         answer: this.answers[i] || {},
                         orderNum: i + 1,
-                        isMulti: q.answerOptions.filter(opt => opt.isRight).length > 1
+                        isMulti: q.answerOptions.filter(opt => opt.isRight).length > 1,
+                        isSlashed: isSlashed
                     }
                 }
             )
@@ -459,7 +520,17 @@ export default {
             if (!question || !question.describe) {
                 return [`(${this.questionNum + 1}/${this.totalNum})`, '加载中...'];
             }
-            return [`(${this.questionNum + 1}/${this.totalNum})`, question.describe].join(' ').split('\n');
+            
+            // 构建题目序号显示
+            let questionNumber = `${this.questionNum + 1}/${this.totalNum}`;
+            
+            // 如果开启显示真实序号且存在原始序号，则添加真实序号信息
+            const showRealIndex = this.safeExamSettings.showRealIndex;
+            if (showRealIndex && question.originalIndex) {
+                questionNumber = `${this.questionNum + 1}/${this.totalNum} | 题目${question.originalIndex}`;
+            }
+            
+            return [`(${questionNumber})`, question.describe].join(' ').split('\n');
         },
         getQuestionDesc(question) {
             if (!question) {
@@ -686,6 +757,7 @@ export default {
             this.hasSubmit = true;
         },
         adaptExamConfig() {
+            
             let examInfo = {...defaultExamInfo, ...this.examConfig};
             examInfo.questions = examInfo.questions.map(q => ({
                 ...defaultQuestionInfo, ...q, hashCode: q.hashCode,
@@ -721,10 +793,22 @@ export default {
                     console.log('错误的题目（答案中有重复描述且对错不一）.', q);
                     return false;
                 }
-                q.answerOptions = utils.randomSort(resultAnswers);
+                // 根据用户设置决定是否随机排序选项
+                const keepOptionOrder = this.safeExamSettings.keepOptionOrder;
+                if (!keepOptionOrder) {
+                    q.answerOptions = utils.randomSort(resultAnswers);
+                } else {
+                    q.answerOptions = resultAnswers;
+                }
                 return true;
             });
-            examInfo.questions = utils.randomSort(examInfo.questions);
+            
+            // 根据用户设置决定是否随机排序题目
+            const keepQuestionOrder = this.safeExamSettings.keepQuestionOrder;
+            if (!keepQuestionOrder) {
+                examInfo.questions = utils.randomSort(examInfo.questions);
+            }
+            // 如果保持顺序，则不进行随机排序，保持原始顺序
 
             this.examInfo = examInfo;
             this.examHashCode = this.examConfig.hashCode;
@@ -1368,7 +1452,131 @@ export default {
             if (this.isMouseDragging) {
                 this.handleMouseUp(event);
             }
-        }
+        },
+        
+        // ==================== 斩题相关方法 ====================
+        
+        // 加载已斩题目列表
+        async loadSlashedQuestions() {
+            try {
+                this.slashedQuestions = await slashedQuestionDao.queryByBankHashCode(this.examHashCode);
+                console.log('已加载斩题列表:', this.slashedQuestions.length);
+            } catch (error) {
+                console.error('加载斩题列表失败:', error);
+                this.slashedQuestions = [];
+            }
+        },
+        
+        // 检查当前题目是否已斩
+        isCurrentQuestionSlashed() {
+            if (!this.questionsInfo[this.questionNum]) return false;
+            const currentQuestion = this.questionsInfo[this.questionNum];
+            return currentQuestion.isSlashed;
+        },
+        
+        // 斩题操作
+        async slashCurrentQuestion() {
+            if (!this.questionsInfo[this.questionNum]) return;
+            
+            const currentQuestion = this.questionsInfo[this.questionNum];
+            
+            // 如果已经斩过，则取消斩题
+            if (currentQuestion.isSlashed) {
+                await this.unslashQuestion(currentQuestion.hashCode);
+                return;
+            }
+            
+            // 确认斩题操作
+            Dialog.confirm({
+                title: '确认斩题',
+                message: '确定要将此题标记为完全掌握吗？斩题后该题目将不再出现在刷题中。',
+                confirmButtonText: '确认斩题',
+                cancelButtonText: '取消',
+                confirmButtonColor: 'var(--warning-color)',
+                className: 'custom-slash-dialog',
+                closeOnClickOverlay: true
+            }).then(async () => {
+                try {
+                    await slashedQuestionDao.slashQuestion(
+                        currentQuestion.hashCode, 
+                        this.examHashCode, 
+                        '完全掌握'
+                    );
+                    
+                    // 在重新加载斩题列表前，保存当前位置信息
+                    const currentQuestionNum = this.questionNum;
+                    const totalNumBeforeSlash = this.totalNum;
+                    
+                    // 重新加载斩题列表
+                    await this.loadSlashedQuestions();
+                    
+                    this.$toast.success('斩题成功！');
+                    
+                    // 处理斩题后的位置调整
+                    this.handlePositionAfterSlash(currentQuestionNum, totalNumBeforeSlash);
+                } catch (error) {
+                    console.error('斩题失败:', error);
+                    this.$toast.fail('斩题失败，请重试');
+                }
+            }).catch(() => {
+                // 用户取消
+            });
+        },
+        
+        // 取消斩题
+        async unslashQuestion(questionHashCode) {
+            try {
+                await slashedQuestionDao.unslashQuestion(questionHashCode);
+                await this.loadSlashedQuestions();
+                this.$toast.success('已取消斩题');
+            } catch (error) {
+                console.error('取消斩题失败:', error);
+                this.$toast.fail('取消斩题失败');
+            }
+        },
+        
+        // 处理斩题后的位置调整
+        handlePositionAfterSlash(originalQuestionNum, originalTotalNum) {
+            const newTotalNum = this.totalNum;
+            
+            // 如果没有题目了，提示用户
+            if (newTotalNum === 0) {
+                setTimeout(() => {
+                    Dialog.alert({
+                        title: '提示',
+                        message: '当前题库所有可答题目已完成，建议切换其他题库或重置斩题状态。',
+                        confirmButtonText: '知道了'
+                    });
+                }, 1000);
+                return;
+            }
+            
+            // 计算合适的新位置
+            let newQuestionNum;
+            
+            // 如果斩掉的是当前题目，尝试保持在同一个逻辑位置
+            if (originalQuestionNum < newTotalNum) {
+                // 如果原位置在新范围内，保持原位置
+                newQuestionNum = originalQuestionNum;
+            } else {
+                // 如果原位置超出新范围，移动到最后一题
+                newQuestionNum = newTotalNum - 1;
+            }
+            
+            // 确保新位置是有效的
+            if (newQuestionNum < 0) {
+                newQuestionNum = 0;
+            }
+            
+            // 如果新位置和当前位置不同，才进行跳转
+            if (newQuestionNum !== this.questionNum) {
+                this.turnTo(newQuestionNum);
+            } else {
+                // 即使位置相同，也要强制更新以显示新的题目内容
+                this.$forceUpdate();
+            }
+        },
+        
     },
     props: {
         examConfig: {
@@ -1415,6 +1623,8 @@ export default {
         // 注册返回拦截器
         this.registerBackInterceptor();
         
+        // 加载斩题数据
+        this.loadSlashedQuestions();
     },
     destroyed() {
         console.log('结束答题');
@@ -2113,6 +2323,83 @@ export default {
 .analysis-content img:active {
     transform: scale(0.98);
 }
+
+/* 斩题相关样式 */
+
+.slash-button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    background: var(--warning-color) !important;
+    border-color: var(--warning-color) !important;
+    transition: all var(--transition-fast) !important;
+}
+
+.slash-button.slashed {
+    background: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+    opacity: 0.8;
+}
+
+.slash-button:active {
+    transform: scale(0.95);
+}
+
+.slash-button:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+/* 斩题成功动画 */
+@keyframes slashSuccess {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        background: var(--success-color);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.slash-button.slash-success {
+    animation: slashSuccess 0.6s ease-in-out;
+}
+
+.slash-indicator {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    font-size: 10px;
+    background: var(--warning-color);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    animation: slashPulse 2s ease-in-out infinite;
+}
+
+@keyframes slashPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+    }
+}
+
 
 /* 响应式设计 */
 @media (max-width: 768px) {
