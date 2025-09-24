@@ -1,4 +1,4 @@
-import {dexieDB, configDB, questionDB, bankDB, historyRecordDB, slashedQuestionDB, questionBankMappingDB} from '../db';
+import {dexieDB, configDB, questionDB, bankDB, historyRecordDB, slashedQuestionDB, questionBankMappingDB, starredQuestionDB} from '../db';
 
 class BaseDao {
     constructor(db, defaultEntry) {
@@ -189,11 +189,94 @@ class QuestionBankMappingDao extends BaseDao {
     }
 }
 
+// 标星题目数据访问对象
+class StarredQuestionDao extends BaseDao {
+    constructor() {
+        super(starredQuestionDB, {
+            starDate: Date.now()
+        });
+    }
+
+    // 根据题库HashCode查询标星题目
+    async queryByBankHashCode(bankHashCode) {
+        return await this.db.where('bankHashCode').equals(bankHashCode).toArray();
+    }
+
+    // 检查题目是否已标星
+    async isQuestionStarred(questionHashCode) {
+        const count = await this.db.where('questionHashCode').equals(questionHashCode).count();
+        return count > 0;
+    }
+
+    // 标星题目
+    async starQuestion(questionHashCode, bankHashCode) {
+        // 检查是否已经标星
+        const isStarred = await this.isQuestionStarred(questionHashCode);
+        if (isStarred) {
+            return false; // 已经标星，无需重复操作
+        }
+
+        const starRecord = {
+            questionHashCode,
+            bankHashCode,
+            starDate: Date.now(),
+            createDate: Date.now(),
+            modifyDate: Date.now()
+        };
+
+        await this.db.add(starRecord);
+        return true;
+    }
+
+    // 取消标星
+    async unstarQuestion(questionHashCode) {
+        await this.db.where('questionHashCode').equals(questionHashCode).delete();
+        return true;
+    }
+
+    // 批量标星题目
+    async batchStarQuestions(questionHashCodes, bankHashCode) {
+        const starRecords = questionHashCodes.map(questionHashCode => ({
+            questionHashCode,
+            bankHashCode,
+            starDate: Date.now(),
+            createDate: Date.now(),
+            modifyDate: Date.now()
+        }));
+
+        await this.db.bulkAdd(starRecords);
+        return true;
+    }
+
+    // 重置题库的所有标星状态
+    async resetBankStarredQuestions(bankHashCode) {
+        await this.db.where('bankHashCode').equals(bankHashCode).delete();
+        return true;
+    }
+
+    // 批量查询多个题目的标星状态
+    async queryManyStarStatus(questionHashCodes) {
+        const starredQuestions = await this.db.where('questionHashCode').anyOf(questionHashCodes).toArray();
+        const starredHashCodes = starredQuestions.map(sq => sq.questionHashCode);
+        
+        return questionHashCodes.map(hashCode => ({
+            questionHashCode: hashCode,
+            isStarred: starredHashCodes.includes(hashCode)
+        }));
+    }
+
+    // 清空题库的所有标星记录
+    async clearByBankHashCode(bankHashCode) {
+        return await this.db.where('bankHashCode').equals(bankHashCode).delete();
+    }
+}
+
 const configDao = new ConfigDao();
 const questionDao = new QuestionDao();
 const bankDao = new BankDao();
 const historyRecordDao = new HistoryRecordDao();
 const slashedQuestionDao = new SlashedQuestionDao();
 const questionBankMappingDao = new QuestionBankMappingDao();
+const starredQuestionDao = new StarredQuestionDao();
 
-export {configDao, questionDao, bankDao, historyRecordDao, slashedQuestionDao, questionBankMappingDao}
+export {configDao, questionDao, bankDao, historyRecordDao, slashedQuestionDao, questionBankMappingDao, starredQuestionDao}

@@ -23,6 +23,8 @@
                                 {{ i + 1 }}
                                 <!-- 已斩题目标识 -->
                                 <div v-if="question.isSlashed" class="slash-indicator">⚔️</div>
+                                <!-- 已标星题目标识 -->
+                                <div v-if="question.isStarred" class="star-indicator">⭐</div>
                             </div>
                         </van-col>
                     </van-row>
@@ -45,7 +47,13 @@
                         <div class="question-header" @click="handleImageClick">
                             <div class="question-title" v-for="t in getQuestionTitle(questionsInfo[questionNum])" v-html="t">
                             </div>
+                            <div class="question-desc-container">
                             <div class="question-desc">{{ getQuestionDesc(questionsInfo[questionNum]) }}</div>
+                                <van-icon 
+                                    :name="isCurrentQuestionStarred() ? 'star' : 'star-o'" 
+                                    :class="['star-button', { 'starred': isCurrentQuestionStarred() }]"
+                                    @click.stop="toggleStarCurrentQuestion" />
+                            </div>
                         </div>
                         <div v-if="questionsInfo[questionNum].isMulti" class="options-container">
                             <van-checkbox-group v-model="questionsInfo[questionNum].answer.multi.apis" @click.stop>
@@ -200,7 +208,7 @@ import {Dialog} from 'vant';
 import {Row, Col} from 'vant';
 import {Icon} from 'vant';
 import utils from '../../utils';
-import {historyRecordDao, bankDao, slashedQuestionDao} from '../../dao'
+import {historyRecordDao, bankDao, slashedQuestionDao, starredQuestionDao} from '../../dao'
 
 Vue.use(Row).use(Col);
 // 全局注册
@@ -283,7 +291,9 @@ export default {
             
             // 斩题相关
             slashedQuestions: [], // 已斩题目列表
-            includeSlashedQuestions: false, // 是否包含已斩题目
+            
+            // 标星相关
+            starredQuestions: [], // 已标星题目列表
         }
     },
     computed: {
@@ -297,7 +307,11 @@ export default {
             return {
                 keepQuestionOrder: String(queryParams.keepQuestionOrder) === 'true',
                 keepOptionOrder: String(queryParams.keepOptionOrder) === 'true', 
-                showRealIndex: String(queryParams.showRealIndex) !== 'false' // 默认为true
+                showRealIndex: String(queryParams.showRealIndex) !== 'false', // 默认为true
+                includeSlashedQuestions: String(queryParams.includeSlashedQuestions) === 'true', // 默认为false
+                enableQuestionLimit: String(queryParams.enableQuestionLimit) === 'true', // 默认为false
+                questionLimit: parseInt(queryParams.questionLimit) || 50, // 默认50
+                isStarredMode: String(queryParams.isStarredMode) === 'true' // 默认为false
             };
         },
         questions() {
@@ -311,11 +325,20 @@ export default {
                         
                     // 新增：过滤已斩题目（除非明确要求包含）
                     const slashedHashCodes = this.slashedQuestions.map(sq => sq.questionHashCode);
-                    const passSlashFilter = this.includeSlashedQuestions || !slashedHashCodes.includes(q.hashCode);
+                    const passSlashFilter = this.safeExamSettings.includeSlashedQuestions || !slashedHashCodes.includes(q.hashCode);
                     
-                    return passExistingFilters && passSlashFilter;
+                    // 新增：星标模式过滤（如果是星标模式，只显示已标星的题目）
+                    const starredHashCodes = this.starredQuestions.map(sq => sq.questionHashCode);
+                    const passStarredFilter = !this.safeExamSettings.isStarredMode || starredHashCodes.includes(q.hashCode);
+                    
+                    return passExistingFilters && passSlashFilter && passStarredFilter;
                 }
             );
+            
+            // 应用题目数量限制
+            if (this.safeExamSettings.enableQuestionLimit && this.safeExamSettings.questionLimit > 0) {
+                filteredQuestions = filteredQuestions.slice(0, this.safeExamSettings.questionLimit);
+            }
             
             // 为每个题目添加原始索引信息（用于显示真实序号）
             return filteredQuestions.map((q, i) => {
@@ -341,19 +364,24 @@ export default {
             return this.questions.map(
                 (q, i) => {
                     if (!this.answers[i]) {
-                        this.answers[i] = {results: [{}], single: {}, multi: {apis: []}}
+                        this.answers[i] = {results: [{}], single: {}, multi: {apis: []}, isChecked: false}
                     }
                     
                     // 检查题目是否已斩
                     const slashedHashCodes = this.slashedQuestions.map(sq => sq.questionHashCode);
                     const isSlashed = slashedHashCodes.includes(q.hashCode);
                     
+                    // 检查题目是否已标星
+                    const starredHashCodes = this.starredQuestions.map(sq => sq.questionHashCode);
+                    const isStarred = starredHashCodes.includes(q.hashCode);
+                    
                     return {
                         ...q,
                         answer: this.answers[i] || {},
                         orderNum: i + 1,
                         isMulti: q.answerOptions.filter(opt => opt.isRight).length > 1,
-                        isSlashed: isSlashed
+                        isSlashed: isSlashed,
+                        isStarred: isStarred
                     }
                 }
             )
@@ -450,6 +478,11 @@ export default {
                     classes['exam-answered'] = true; // 蓝色 - 未检查但已作答
                 }
                 // 未作答保持默认颜色（不添加特殊class）
+            }
+            
+            // 标星样式
+            if (question.isStarred) {
+                classes['exam-starred'] = true;
             }
             
             return classes;
@@ -796,7 +829,7 @@ export default {
                 // 根据用户设置决定是否随机排序选项
                 const keepOptionOrder = this.safeExamSettings.keepOptionOrder;
                 if (!keepOptionOrder) {
-                    q.answerOptions = utils.randomSort(resultAnswers);
+                q.answerOptions = utils.randomSort(resultAnswers);
                 } else {
                     q.answerOptions = resultAnswers;
                 }
@@ -806,7 +839,7 @@ export default {
             // 根据用户设置决定是否随机排序题目
             const keepQuestionOrder = this.safeExamSettings.keepQuestionOrder;
             if (!keepQuestionOrder) {
-                examInfo.questions = utils.randomSort(examInfo.questions);
+            examInfo.questions = utils.randomSort(examInfo.questions);
             }
             // 如果保持顺序，则不进行随机排序，保持原始顺序
 
@@ -1507,8 +1540,26 @@ export default {
                     const currentQuestionNum = this.questionNum;
                     const totalNumBeforeSlash = this.totalNum;
                     
+                    // 保存当前的答案状态（按题目hashCode索引）
+                    const answersByHashCode = {};
+                    this.questions.forEach((q, i) => {
+                        if (this.answers[i]) {
+                            answersByHashCode[q.hashCode] = this.answers[i];
+                        }
+                    });
+                    
                     // 重新加载斩题列表
                     await this.loadSlashedQuestions();
+                    
+                    // 重建答案数组，保留已有答案，新题目使用默认状态
+                    this.answers = this.questions.map((q) => {
+                        return answersByHashCode[q.hashCode] || {
+                            results: [{}], 
+                            single: {}, 
+                            multi: {apis: []}, 
+                            isChecked: false
+                        };
+                    });
                     
                     this.$toast.success('斩题成功！');
                     
@@ -1568,12 +1619,62 @@ export default {
                 newQuestionNum = 0;
             }
             
+            // 答案数组已经在斩题时重建，这里不需要再重置
+            
             // 如果新位置和当前位置不同，才进行跳转
             if (newQuestionNum !== this.questionNum) {
                 this.turnTo(newQuestionNum);
             } else {
                 // 即使位置相同，也要强制更新以显示新的题目内容
                 this.$forceUpdate();
+            }
+        },
+        
+        // ========== 标星相关方法 ==========
+        
+        // 加载标星题目列表
+        async loadStarredQuestions() {
+            try {
+                this.starredQuestions = await starredQuestionDao.queryByBankHashCode(this.examHashCode);
+            } catch (error) {
+                console.error('加载标星题目失败:', error);
+                this.starredQuestions = [];
+            }
+        },
+        
+        // 检查当前题目是否已标星
+        isCurrentQuestionStarred() {
+            if (!this.questionsInfo[this.questionNum]) return false;
+            const currentQuestion = this.questionsInfo[this.questionNum];
+            return currentQuestion.isStarred;
+        },
+        
+        // 切换当前题目的标星状态
+        async toggleStarCurrentQuestion() {
+            if (!this.questionsInfo[this.questionNum]) return;
+            
+            const currentQuestion = this.questionsInfo[this.questionNum];
+            
+            try {
+                if (currentQuestion.isStarred) {
+                    // 取消标星
+                    await starredQuestionDao.unstarQuestion(currentQuestion.hashCode);
+                    this.$toast.success('已取消标星');
+                } else {
+                    // 标星
+                    await starredQuestionDao.starQuestion(currentQuestion.hashCode, this.examHashCode);
+                    this.$toast.success('已标星');
+                }
+                
+                // 重新加载标星列表
+                await this.loadStarredQuestions();
+                
+                // 强制更新以刷新UI
+                this.$forceUpdate();
+                
+            } catch (error) {
+                console.error('标星操作失败:', error);
+                this.$toast.fail('操作失败，请重试');
             }
         },
         
@@ -1625,6 +1726,9 @@ export default {
         
         // 加载斩题数据
         this.loadSlashedQuestions();
+        
+        // 加载标星数据
+        this.loadStarredQuestions();
     },
     destroyed() {
         console.log('结束答题');
@@ -1867,13 +1971,44 @@ export default {
     white-space: break-spaces;
 }
 
+.question-desc-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+}
+
 .question-desc {
     font-size: 12px;
     color: var(--text-secondary);
     background: var(--bg-card);
     padding: 6px 12px;
     border-radius: var(--border-radius-sm);
-    display: inline-block;
+}
+
+.star-button {
+    font-size: 16px;
+    color: var(--text-light);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.star-button:hover {
+    background: var(--bg-hover);
+    transform: scale(1.1);
+}
+
+.star-button.starred {
+    color: #ffd700;
+    animation: starPulse 0.3s ease-out;
+}
+
+@keyframes starPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
 }
 
 /* 选项容器 */
@@ -2387,6 +2522,46 @@ export default {
     color: white;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     animation: slashPulse 2s ease-in-out infinite;
+}
+
+/* 标星标识 */
+.star-indicator {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    font-size: 8px;
+    background: #ffd700;
+    border-radius: 50%;
+    width: 14px;
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    animation: starGlow 2s ease-in-out infinite;
+}
+
+/* 标星题目的黄色边框 */
+.exam-circle.exam-starred {
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.3);
+}
+
+.exam-circle.exam-starred.exam-current {
+    border-color: #ffd700 !important;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.5);
+}
+
+@keyframes starGlow {
+    0%, 100% { 
+        opacity: 1; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.05);
+    }
 }
 
 @keyframes slashPulse {

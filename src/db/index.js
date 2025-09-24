@@ -19,11 +19,15 @@ dexieDB.version(4).stores({
 dexieDB.version(5).stores({
     questionBankMapping: '++id, libId, questionId, order, createDate, modifyDate'
 });
+dexieDB.version(6).stores({
+    starredQuestion: 'questionHashCode, bankHashCode, starDate, createDate, modifyDate'
+});
 const configDB = dexieDB['config'];
 const questionDB = dexieDB['question'];
 const bankDB = dexieDB['bank'];
 const historyRecordDB = dexieDB['historyRecord'];
 const slashedQuestionDB = dexieDB['slashedQuestion'];
 const questionBankMappingDB = dexieDB['questionBankMapping'];
+const starredQuestionDB = dexieDB['starredQuestion'];
 
-export {dexieDB, configDB, questionDB, bankDB, historyRecordDB, slashedQuestionDB, questionBankMappingDB};
+export {dexieDB, configDB, questionDB, bankDB, historyRecordDB, slashedQuestionDB, questionBankMappingDB, starredQuestionDB};

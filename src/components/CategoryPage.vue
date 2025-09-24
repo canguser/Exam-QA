@@ -120,6 +120,45 @@
                                 <span class="setting-desc">在当前序号后额外显示原始题库序号</span>
                             </div>
                         </div>
+                        
+                        <div class="setting-item" @click="toggleSetting('includeSlashedQuestions')">
+                            <van-checkbox 
+                                v-model="examSettings.includeSlashedQuestions" 
+                                class="setting-checkbox"
+                                @click.stop>
+                            </van-checkbox>
+                            <div class="setting-content">
+                                <span class="setting-label">包含已斩题目</span>
+                                <span class="setting-desc">答题时包含已标记为完全掌握的题目</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 题目数量限制设置 -->
+                        <div class="setting-item limit-setting" @click="toggleSetting('enableQuestionLimit')">
+                            <van-checkbox 
+                                v-model="examSettings.enableQuestionLimit" 
+                                class="setting-checkbox"
+                                @click.stop>
+                            </van-checkbox>
+                            <div class="setting-content full-width">
+                                <div class="limit-header">
+                                    <span class="setting-label">题目数量限制</span>
+                                </div>
+                                <span class="setting-desc">限制答题时显示的题目数量</span>
+                                <div class="limit-input-container" v-if="examSettings.enableQuestionLimit">
+                                    <span class="limit-label">最多显示</span>
+                                    <van-field 
+                                        v-model.number="examSettings.questionLimit"
+                                        type="number"
+                                        :min="1"
+                                        :max="999"
+                                        placeholder="50"
+                                        class="limit-input"
+                                        @click.stop />
+                                    <span class="limit-text">题</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="option-grid">
@@ -154,6 +193,17 @@
                         <div class="option-info">
                             <span class="option-title">复习错题</span>
                             <span class="option-count">{{ getErrorCounts() }}题</span>
+                        </div>
+                    </div>
+                    <div class="option-item starred" 
+                         :class="{ disabled: getStarredCounts() === 0 }"
+                         @click="getStarredCounts() > 0 && doStarredExam(optionInfo.hashCode)">
+                        <div class="option-icon">
+                            <van-icon name="star" />
+                        </div>
+                        <div class="option-info">
+                            <span class="option-title">星标题目</span>
+                            <span class="option-count">{{ getStarredCounts() }}题</span>
                         </div>
                     </div>
                     <div class="option-item info" @click="openSlashManager(optionInfo.hashCode)">
@@ -334,7 +384,7 @@ import {Button} from 'vant';
 import {Dialog} from 'vant';
 import {Tag} from 'vant';
 import {Icon} from 'vant';
-import {questionDao, historyRecordDao, bankDao, slashedQuestionDao, questionBankMappingDao} from '../dao';
+import {questionDao, historyRecordDao, bankDao, slashedQuestionDao, questionBankMappingDao, starredQuestionDao} from '../dao';
 
 Vue.use(NavBar);
 Vue.use(Grid).use(GridItem);
@@ -369,11 +419,17 @@ export default {
             currentSlashedQuestions: [],
             currentExamQuestions: [],
             
+            // 标星相关
+            currentStarredQuestions: [],
+            
             // 答题设置
             examSettings: {
-                keepQuestionOrder: false,    // 保持答题顺序
-                keepOptionOrder: false,      // 保持选项顺序
-                showRealIndex: true          // 显示题目真实序号（默认选中）
+                keepQuestionOrder: false,        // 保持答题顺序
+                keepOptionOrder: false,          // 保持选项顺序
+                showRealIndex: true,             // 显示题目真实序号（默认选中）
+                includeSlashedQuestions: false,  // 包含已斩题目（默认false）
+                enableQuestionLimit: false,      // 启用题目数量限制（默认false）
+                questionLimit: 50               // 题目数量限制（默认50）
             }
         }
     },
@@ -463,48 +519,76 @@ export default {
                 
                 // 加载斩题数据用于计算实际可答题数量
                 this.currentSlashedQuestions = await slashedQuestionDao.queryByBankHashCode(exam.hashCode);
+                
+                // 加载标星数据用于计算星标题目数量
+                this.currentStarredQuestions = await starredQuestionDao.queryByBankHashCode(exam.hashCode);
             } catch (error) {
                 console.error('加载数据失败:', error);
                 this.historyRecords = [];
                 this.currentSlashedQuestions = [];
+                this.currentStarredQuestions = [];
             }
             
             // 默认总是显示选项弹窗，让用户选择答题模式和设置
             this.isShowOption = true;
         },
         
-        // 获取总题目数量
+        // 获取总题目数量（根据设置动态计算）
         getTotalCounts() {
             if (!this.currentExam.questions) return 0;
-            // 获取已斩题目数量
+            
+            // 如果包含已斩题目，返回全部题目数量
+            if (this.examSettings.includeSlashedQuestions) {
+                return this.currentExam.questions.length;
+            }
+            
+            // 否则排除已斩题目
             const slashedCount = this.currentSlashedQuestions.length;
             return this.currentExam.questions.length - slashedCount;
         },
         
-        // 获取错题数量
+        // 获取错题数量（根据设置动态计算）
         getErrorCounts() {
             if (!this.currentExam.questions || !this.historyRecords.length) return 0;
-            // 获取已斩题目的hashCode列表
+            
+            // 如果包含已斩题目，返回全部错题数量
+            if (this.examSettings.includeSlashedQuestions) {
+                return this.historyRecords.filter(record => record.errorTimes > 0).length;
+            }
+            
+            // 否则排除已斩题目的错题记录
             const slashedHashCodes = this.currentSlashedQuestions.map(sq => sq.questionHashCode);
-            // 过滤掉已斩题目的错题记录
             return this.historyRecords.filter(record => 
                 record.errorTimes > 0 && !slashedHashCodes.includes(record.relatedQuestion)
             ).length;
         },
         
-        // 获取未做题数量
+        // 获取未做题数量（根据设置动态计算）
         getUndoneCounts() {
             if (!this.currentExam.questions || !this.historyRecords.length) {
                 return this.getTotalCounts();
             }
-            // 获取已斩题目的hashCode列表
+            
+            // 如果包含已斩题目，计算全部未做题目
+            if (this.examSettings.includeSlashedQuestions) {
+                const doneQuestions = this.historyRecords.filter(record => 
+                    (record.errorTimes || 0) + (record.rightTimes || 0) > 0
+                ).length;
+                return this.currentExam.questions.length - doneQuestions;
+            }
+            
+            // 否则排除已斩题目计算未做题目
             const slashedHashCodes = this.currentSlashedQuestions.map(sq => sq.questionHashCode);
-            // 计算已做题目数量（排除已斩题目）
             const doneQuestions = this.historyRecords.filter(record => 
                 ((record.errorTimes || 0) + (record.rightTimes || 0) > 0) && 
                 !slashedHashCodes.includes(record.relatedQuestion)
             ).length;
             return this.getTotalCounts() - doneQuestions;
+        },
+        
+        // 获取星标题目数量
+        getStarredCounts() {
+            return this.currentStarredQuestions.length;
         },
         
         // 切换答题设置
@@ -558,7 +642,61 @@ export default {
                         query: {
                             keepQuestionOrder: this.examSettings.keepQuestionOrder,
                             keepOptionOrder: this.examSettings.keepOptionOrder,
-                            showRealIndex: this.examSettings.showRealIndex
+                            showRealIndex: this.examSettings.showRealIndex,
+                            includeSlashedQuestions: this.examSettings.includeSlashedQuestions,
+                            enableQuestionLimit: this.examSettings.enableQuestionLimit,
+                            questionLimit: this.examSettings.questionLimit
+                        }
+                    })
+                });
+        },
+        
+        // 星标模式答题
+        doStarredExam(hashCode) {
+            this.isShowOption = false; // 关闭弹窗
+            
+            bankDao.query('hashCode').equals(hashCode).first()
+                .then(async exam => {
+                    if (!exam) {
+                        Dialog.alert({message: '该题库已失效！'});
+                        return;
+                    }
+                    
+                    // 使用映射表按顺序加载题目
+                    const mappings = await questionBankMappingDao.getQuestionsByLibId(hashCode);
+                    
+                    if (mappings && mappings.length > 0) {
+                        // 如果有映射表数据，按order顺序加载题目
+                        const questions = [];
+                        for (const mapping of mappings) {
+                            const question = await questionDao.queryByHashCode(mapping.questionId);
+                            if (question) {
+                                questions.push(question);
+                            }
+                        }
+                        exam.questions = questions;
+                    } else {
+                        // 如果没有映射表，使用原有逻辑
+                        const promises = (exam.questions || []).map(hashCode => questionDao.queryByHashCode(hashCode));
+                        exam.questions = await Promise.all(promises);
+                    }
+                    
+                    this.$router.push({
+                        name: 'DoExamPage',
+                        params: {
+                            examConfig: exam,
+                            isReviewError: false,
+                            neverDo: false,
+                            isStarredMode: true  // 标记为星标模式
+                        },
+                        query: {
+                            keepQuestionOrder: this.examSettings.keepQuestionOrder,
+                            keepOptionOrder: this.examSettings.keepOptionOrder,
+                            showRealIndex: this.examSettings.showRealIndex,
+                            includeSlashedQuestions: this.examSettings.includeSlashedQuestions,
+                            enableQuestionLimit: this.examSettings.enableQuestionLimit,
+                            questionLimit: this.examSettings.questionLimit,
+                            isStarredMode: true  // 通过query参数传递星标模式标识
                         }
                     })
                 });
@@ -566,15 +704,90 @@ export default {
         
         clearHistory(hashCode) {
             this.isShowOption = false; // 先关闭弹窗
-            bankDao.queryByHashCode(hashCode)
-                .then(bankDao => {
-                    bankDao = bankDao || {};
-                    return historyRecordDao.delete(bankDao.questions || []);
-                }).then(() => {
-                    console.log('remove the history.');
-                    this.loadCategoryExams(); // 重新加载数据
-                }
-            );
+            
+            // 第一层确认：基础确认
+            Dialog.confirm({
+                title: '⚠️ 清空记录确认',
+                message: `
+                    <div class="clear-history-dialog">
+                        <div class="warning-text">即将清空该题库的所有记录，包括：</div>
+                        <div class="clear-list">
+                            <div class="clear-item">📊 答题历史记录</div>
+                            <div class="clear-item">⚔️ 已斩题目记录</div>
+                            <div class="clear-item">⭐ 题目标星记录</div>
+                        </div>
+                        <div class="warning-note">此操作不可恢复，请谨慎操作！</div>
+                    </div>
+                `,
+                confirmButtonText: '继续清空',
+                cancelButtonText: '取消',
+                confirmButtonColor: 'var(--warning-color)',
+                className: 'custom-clear-dialog',
+                closeOnClickOverlay: false
+            }).then(() => {
+                // 第二层确认：最终确认
+                Dialog.confirm({
+                    title: '🚨 最终确认',
+                    message: `
+                        <div class="final-confirm-dialog">
+                            <div class="danger-text">确定要永久删除该题库的所有记录吗？</div>
+                            <div class="consequence-text">包括答题历史、斩题记录、星标记录等</div>
+                            <div class="irreversible-text">⚠️ 此操作不可撤销！</div>
+                        </div>
+                    `,
+                    confirmButtonText: '确认删除',
+                    cancelButtonText: '再想想',
+                    confirmButtonColor: 'var(--error-color)',
+                    className: 'custom-danger-dialog',
+                    closeOnClickOverlay: false
+                }).then(async () => {
+                    try {
+                        // 显示加载提示
+                        this.$toast.loading({
+                            message: '正在清空记录...',
+                            forbidClick: true,
+                            duration: 0
+                        });
+                        
+                        // 获取题库信息
+                        const bank = await bankDao.queryByHashCode(hashCode);
+                        if (!bank) {
+                            this.$toast.fail('题库不存在');
+                            return;
+                        }
+                        
+                        const questions = bank.questions || [];
+                        
+                        // 并行清空所有相关数据
+                        await Promise.all([
+                            // 清空答题历史记录
+                            historyRecordDao.delete(questions),
+                            // 清空斩题记录
+                            slashedQuestionDao.resetBankSlashedQuestions(hashCode),
+                            // 清空星标记录
+                            starredQuestionDao.clearByBankHashCode(hashCode)
+                        ]);
+                        
+                        console.log('所有记录已清空');
+                        this.$toast.clear();
+                        this.$toast.success('记录清空成功！');
+                        
+                        // 重新加载数据
+                        this.loadCategoryExams();
+                        
+                    } catch (error) {
+                        console.error('清空记录失败:', error);
+                        this.$toast.clear();
+                        this.$toast.fail('清空记录失败，请重试');
+                    }
+                }).catch(() => {
+                    // 用户在最终确认时取消
+                    console.log('用户取消了最终确认');
+                });
+            }).catch(() => {
+                // 用户在基础确认时取消
+                console.log('用户取消了基础确认');
+            });
         },
 
         // 长按开始
@@ -1032,8 +1245,8 @@ export default {
 .exam-options {
     width: 90vw;
     max-width: 380px;
-    margin: 16px auto;
-    padding: 20px;
+    margin: 12px auto;
+    padding: 16px;
     border-radius: var(--border-radius-lg);
     background: var(--bg-card);
 }
@@ -1077,22 +1290,22 @@ export default {
 
 .option-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
 }
 
 .option-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px 12px;
+    padding: 10px 6px;
     border-radius: var(--border-radius-md);
     background: var(--bg-secondary);
     border: 2px solid transparent;
     cursor: pointer;
     transition: all var(--transition-fast);
     text-align: center;
-    min-height: 80px;
+    min-height: 60px;
     justify-content: center;
 }
 
@@ -1136,13 +1349,13 @@ export default {
 }
 
 .option-icon {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     background: var(--primary-color);
     color: var(--text-white);
 }
@@ -1168,10 +1381,19 @@ export default {
     background: var(--info-color);
 }
 
+.option-item.starred {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: #ffd700;
+}
+
+.option-item.starred .option-icon {
+    background: #ffd700;
+}
+
 /* 答题设置样式 */
 .exam-settings {
-    margin-bottom: 20px;
-    padding: 16px;
+    margin-bottom: 16px;
+    padding: 12px;
     background: var(--bg-secondary);
     border-radius: var(--border-radius-lg);
     border: 1px solid var(--border-light);
@@ -1180,8 +1402,8 @@ export default {
 .settings-header {
     display: flex;
     align-items: center;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
     border-bottom: 1px solid var(--border-light);
 }
 
@@ -1200,18 +1422,19 @@ export default {
 .settings-options {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 8px;
 }
 
 .setting-item {
     display: flex;
-    align-items: flex-start;
-    padding: 12px;
+    align-items: center;
+    padding: 8px 10px;
     background: var(--bg-card);
     border-radius: var(--border-radius-md);
     border: 1px solid var(--border-light);
     cursor: pointer;
     transition: all var(--transition-fast);
+    min-height: 44px;
 }
 
 .setting-item:hover {
@@ -1226,8 +1449,7 @@ export default {
 }
 
 .setting-checkbox {
-    margin-right: 12px;
-    margin-top: 2px;
+    margin-right: 8px;
     flex-shrink: 0;
 }
 
@@ -1235,24 +1457,79 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 1px;
+    margin-left: 10px;
 }
 
 .setting-label {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: var(--text-primary);
-    margin-bottom: 2px;
-    line-height: 1.4;
-}
-
-.setting-desc {
-    font-size: 12px;
-    color: var(--text-secondary);
     line-height: 1.3;
 }
 
+.setting-desc {
+    font-size: 11px;
+    color: var(--text-secondary);
+    line-height: 1.2;
+    opacity: 0.8;
+}
+
+/* 题目数量限制设置样式 */
+.limit-setting {
+    align-items: flex-start !important;
+}
+
+.limit-setting .setting-content.full-width {
+    margin-left: 10px;
+    width: calc(100% - 10px);
+}
+
+.limit-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+.limit-input-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    padding: 6px 8px;
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-light);
+}
+
+.limit-label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.limit-input {
+    flex: 1;
+    min-width: 60px;
+}
+
+.limit-input .van-field__control {
+    text-align: center;
+    font-size: 12px;
+}
+
+.limit-text {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
 .option-icon .van-icon {
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .option-info {
@@ -1263,29 +1540,49 @@ export default {
 
 .option-title {
     font-weight: 600;
-    font-size: 14px;
+    font-size: 12px;
     color: var(--text-primary);
-    margin-bottom: 2px;
-    line-height: 1.2;
+    margin-bottom: 1px;
+    line-height: 1.1;
 }
 
 .option-count {
-    font-size: 12px;
+    font-size: 10px;
     color: var(--text-secondary);
     font-weight: 500;
+    line-height: 1.1;
 }
 
 /* 移动端优化 */
 @media (max-width: 480px) {
     .exam-options {
         width: 95vw;
-        margin: 12px auto;
-        padding: 16px;
+        margin: 8px auto;
+        padding: 12px;
     }
     
     .popup-header {
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+    
+    .exam-settings {
         margin-bottom: 12px;
-        padding-bottom: 10px;
+        padding: 10px;
+    }
+    
+    .settings-header {
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+    }
+    
+    .settings-options {
+        gap: 6px;
+    }
+    
+    .setting-item {
+        padding: 6px 8px;
+        min-height: 40px;
     }
     
     .header-info h3 {
@@ -1297,30 +1594,30 @@ export default {
     }
     
     .option-grid {
-        gap: 8px;
+        gap: 4px;
     }
     
     .option-item {
-        padding: 12px 8px;
-        min-height: 70px;
+        padding: 8px 4px;
+        min-height: 52px;
     }
     
     .option-icon {
-        width: 28px;
-        height: 28px;
-        margin-bottom: 6px;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 3px;
     }
     
     .option-icon .van-icon {
-        font-size: 14px;
+        font-size: 10px;
     }
     
     .option-title {
-        font-size: 13px;
+        font-size: 11px;
     }
     
     .option-count {
-        font-size: 11px;
+        font-size: 9px;
     }
 }
 
@@ -1451,8 +1748,8 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--border-light);
 }
 
@@ -1660,5 +1957,97 @@ export default {
 .cancel-button:active,
 .confirm-button:active {
     transform: scale(0.95);
+}
+
+/* 清空记录对话框样式 */
+.clear-history-dialog {
+    text-align: center;
+    padding: 8px 0;
+}
+
+.warning-text {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.clear-list {
+    background: var(--bg-secondary);
+    border-radius: var(--border-radius-md);
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+.clear-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.clear-item:last-child {
+    border-bottom: none;
+}
+
+.warning-note {
+    font-size: 12px;
+    color: var(--warning-color);
+    font-weight: 600;
+    background: rgba(255, 193, 7, 0.1);
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+/* 最终确认对话框样式 */
+.final-confirm-dialog {
+    text-align: center;
+    padding: 8px 0;
+}
+
+.danger-text {
+    font-size: 15px;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.consequence-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.irreversible-text {
+    font-size: 13px;
+    color: var(--error-color);
+    font-weight: 600;
+    background: rgba(244, 67, 54, 0.1);
+    padding: 8px 12px;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* 自定义对话框主题 */
+:global(.custom-clear-dialog) {
+    --van-dialog-confirm-button-color: var(--warning-color) !important;
+}
+
+:global(.custom-danger-dialog) {
+    --van-dialog-confirm-button-color: var(--error-color) !important;
+}
+
+:global(.custom-clear-dialog .van-dialog__header),
+:global(.custom-danger-dialog .van-dialog__header) {
+    padding-bottom: 8px !important;
+}
+
+:global(.custom-clear-dialog .van-dialog__message),
+:global(.custom-danger-dialog .van-dialog__message) {
+    padding: 16px 20px !important;
 }
 </style>
